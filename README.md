@@ -1,8 +1,10 @@
 # BookmarkHelper
 ## 这是什么？
-BookmarkHelper是Android中，浏览器书签转换工具，需要Root权限。暂未考虑支持iOS或桌面浏览器。例如从魅族Flyme自带浏览器中，提取书签数据，追加到[via浏览器](http://www.coolapk.com/apk/mark.via)，成功帮你用上最牛逼浏览器！
+BookmarkHelper是一款Android下的浏览器书签转换工具类APP，运行时需要Root权限，目标全面兼容主流Android浏览器相互转换书签数据，暂未考虑支持iOS或桌面端。
 
-BookmarkHelper是个人作品，永不考虑收费推广，不会滥用Root权限干坏事，使用完毕可立即卸载。如果你用的爽，可以[鼓励一些闲钱]()，我将用于：VPS月租、更多精彩作品，谢谢！
+使用举例：从魅族Flyme自带浏览器中，提取书签数据，追加到[via浏览器](http://www.coolapk.com/apk/mark.via)，带你轻松脱坑，成功用上最牛逼浏览器！
+
+BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥用Root权限，使用完毕可立即卸载，运行时不需连接网络。如果你用的爽，可以[鼓励一下]()，我将用于：付VPS月租、开发更多精彩APP，谢谢！
 
 ## 版本计划
 ### 0.0.1版
