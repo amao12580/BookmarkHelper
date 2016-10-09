@@ -3,4 +3,11 @@
     <string name="edit_message">Enter a Message</string>
     <string name="button_send">send</string>
     <string name="title_activity_display_message">Your message</string>
+
+
+
+
+    <string name="broswer_name_show_chrome">Chrome</string>
+    <string name="broswer_name_show_flyme5">Flyme5</string>
+    <string name="broswer_name_show_via">Via</string>
 </resources>

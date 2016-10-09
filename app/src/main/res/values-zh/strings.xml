@@ -3,4 +3,9 @@
     <string name="edit_message">请输入.</string>
     <string name="button_send">发送</string>
     <string name="title_activity_display_message">输入的内容</string>
+
+
+
+
+    <string name="broswer_name_show_chrome">谷歌</string>
 </resources>
