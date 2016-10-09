@@ -1,3 +1,4 @@
+<!--不可不知的 Android strings.xml 那些事:http://www.codeceo.com/article/about-android-strings-xml.html-->
 <resources>
     <string name="app_name">书签助手</string>
     <string name="edit_message">请输入.</string>

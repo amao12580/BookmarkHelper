@@ -1,3 +1,5 @@
+
+<!--不可不知的 Android strings.xml 那些事:http://www.codeceo.com/article/about-android-strings-xml.html-->
 <resources>
     <string name="app_name">Bookmark Helper</string>
     <string name="edit_message">Enter a Message</string>
