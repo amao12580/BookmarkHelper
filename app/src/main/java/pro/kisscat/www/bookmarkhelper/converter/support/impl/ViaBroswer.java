@@ -2,8 +2,11 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl;
 
 import android.content.Context;
 
+import lombok.Getter;
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 
 /**
  * Created with Android Studio.
@@ -15,15 +18,31 @@ import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
  */
 
 public class ViaBroswer extends Broswer {
+    private static final String packageName = "mark.via";
 
-    protected ViaBroswer(Context context) {
-        super(context);
+    @Override
+    public String getPackageName() {
+        return packageName;
     }
 
     @Override
-    public Show getBroswerShowInfo() {
-        Show show = new Show();
-        show.setName(getContext().getString(R.string.broswer_name_show_via));
-        return show;
+    public void readBookmarkSum(Context context) {
+        super.setBookmarkSum(99);
+    }
+
+    @Override
+    public void fillDefaultShow(Context context) {
+        this.setName(context.getString(R.string.broswer_name_show_via));
+        this.setPackageName(packageName);
+//        this.setIcon();
+    }
+
+    public abstract class ViaBookmark extends Bookmark {
+        @Setter
+        @Getter
+        private String folder;
+        @Setter
+        @Getter
+        private int order;
     }
 }

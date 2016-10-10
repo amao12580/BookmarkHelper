@@ -2,9 +2,11 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl;
 
 import android.content.Context;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 
 /**
  * Created with Android Studio.
@@ -16,21 +18,32 @@ import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
  */
 
 public class Flyme5Broswer extends Broswer {
+    private String packageName = "com.android.broswer";
 
-    public Flyme5Broswer(Context context) {
-        super(context);
+    @Override
+    public String getPackageName() {
+        return packageName;
     }
 
     @Override
-    public Show getBroswerShowInfo() {
-        Show show=new Show();
-        show.setName(getContext().getString(R.string.broswer_name_show_flyme5));
-        return show;
+    public void readBookmarkSum(Context context) {
+        super.setBookmarkSum(55);
     }
 
-    @Data
-    public abstract class Flyme5Bookmark extends Broswer.Bookmark{
+    @Override
+    public void fillDefaultShow(Context context) {
+        this.setName(context.getString(R.string.broswer_name_show_flyme5));
+        this.setPackageName(packageName);
+//        this.setIcon();
+    }
+
+
+    public abstract class Flyme5Bookmark extends Bookmark {
+        @Setter
+        @Getter
         private String folder;
+        @Setter
+        @Getter
         private int order;
     }
 }

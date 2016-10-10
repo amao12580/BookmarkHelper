@@ -38,10 +38,12 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
-    testCompile 'junit:junit:4.12'
-    provided 'org.projectlombok:lombok:1.16.10'
-    apt "org.projectlombok:lombok:1.16.10"
     compile 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.alibaba:fastjson:1.2.9'
+    compile 'com.android.support:support-v4:24.2.1'
+    testCompile 'junit:junit:4.12'
+    apt 'org.projectlombok:lombok:1.16.10'
+    provided 'org.projectlombok:lombok:1.16.10'
 }
 
 //Android + Git，发布自动版本号方案：http://www.race604.com/android-auto-version/

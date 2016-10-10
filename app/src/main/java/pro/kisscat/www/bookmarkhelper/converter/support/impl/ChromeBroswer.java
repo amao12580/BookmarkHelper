@@ -2,9 +2,11 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl;
 
 import android.content.Context;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 
 /**
  * Created with Android Studio.
@@ -16,20 +18,31 @@ import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
  */
 
 public class ChromeBroswer extends Broswer {
-    public ChromeBroswer(Context context) {
-        super(context);
+    private String packageName = "com.android.chrome";
+
+    @Override
+    public String getPackageName() {
+        return packageName;
     }
 
     @Override
-    public Show getBroswerShowInfo() {
-        Show show = new Show();
-        show.setName(getContext().getString(R.string.broswer_name_show_chrome));
-        return show;
+    public void readBookmarkSum(Context context) {
+        super.setBookmarkSum(11);
     }
 
-    @Data
+    @Override
+    public void fillDefaultShow(Context context) {
+        this.setName(context.getString(R.string.broswer_name_show_chrome));
+        this.setPackageName(packageName);
+//        this.setIcon();
+    }
+
     public abstract class ChromeBookmark extends Bookmark {
+        @Setter
+        @Getter
         private String folder;
+        @Setter
+        @Getter
         private int order;
     }
 }
