@@ -1,4 +1,4 @@
-package pro.kisscat.www.bookmarkhelper.converter.support.pojo;
+package pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule;
 
 /**
  * Created with Android Studio.
@@ -21,6 +21,9 @@ import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
 public class Rule {
     @Setter
     @Getter
+    private int id;
+    @Setter
+    @Getter
     private Broswer source;
     @Setter
     @Getter
@@ -29,7 +32,7 @@ public class Rule {
     @Getter
     private boolean canUse;
 
-    public Rule(Context context, Broswer source, Broswer target) {
+    public Rule(int id, Context context, Broswer source, Broswer target) {
         boolean sourceInstalled = false, targetInstalled = false;
         if (source.isInstalled()) {
             sourceInstalled = true;
@@ -46,6 +49,7 @@ public class Rule {
         if (sourceInstalled && targetInstalled) {
             canUse = true;
         }
+        this.id = id;
         this.source = source;
         this.target = target;
     }

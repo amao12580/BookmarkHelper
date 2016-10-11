@@ -1,16 +1,20 @@
 package pro.kisscat.www.bookmarkhelper.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Window;
 
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.R;
+import pro.kisscat.www.bookmarkhelper.activity.fragment.ConverterFragment;
+import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Rule;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
  * Created with Android Studio.
@@ -23,25 +27,40 @@ import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ConverterFragment converterFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.v("monitor", "onCreate begin.");
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-
+        LogHelper.v("onCreate begin.");
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        if (findViewById(R.id.fragment_container) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+            Broswer.init(this);
+            List<Rule> supports = Broswer.getSupportRule();
+            LogHelper.v(MetaData.LOG_V_BIZ, "supports:" + JsonUtil.toJson(supports.size()));
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            for (Rule rule : supports) {
+            LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(supports));
+            converterFragment = new ConverterFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString(MetaData.RULE_DEFINED, JsonUtil.toJson(supports));
+            converterFragment.setArguments(bundle);
+            fragmentTransaction.add(R.id.fragment_container, converterFragment);
+//            }
+            fragmentTransaction.commit();
+        }
+        LogHelper.v("onCreate end.");
+    }
 
-//        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-//        setSupportActionBar(myToolbar);
-
-
-        //获取所有支持的转换规则
-        Broswer.init(this);
-        List<Rule> supports = Broswer.getSupportRule();
-        Log.v("biz", "supports:" + JsonUtil.toJson(supports));
-        Log.v("monitor", "onCreate end.");
+    public void onAttachFragment(Fragment fragment) {
+        //当前的界面的保存状态，只是从新让新的Fragment指向了原本未被销毁的fragment，它就是onAttach方法对应的Fragment对象
+        if (converterFragment == null && fragment instanceof ConverterFragment) {
+            converterFragment = (ConverterFragment) fragment;
+        }
     }
 
 //    @Override

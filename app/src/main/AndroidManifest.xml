@@ -16,15 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-        <!--android:name=".activity.DisplayMessageActivity"-->
-        <!--android:label="@string/title_activity_display_message"-->
-        <!--android:parentActivityName="activity.MainActivity"-->
-        <!--android:theme="@style/AppTheme.NoActionBar">-->
-        <!--<meta-data-->
-        <!--android:name="android.support.PARENT_ACTIVITY"-->
-        <!--android:value="pro.kisscat.www.bookmarkhelper.activity.MainActivity" />-->
-        <!--</activity>-->
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

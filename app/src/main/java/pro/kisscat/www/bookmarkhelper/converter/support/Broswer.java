@@ -10,7 +10,7 @@ import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Rule;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.pojo.App;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 
@@ -45,8 +45,8 @@ public abstract class Broswer extends App {
         AppListUtil.getInstalledAll(context);
         if (supportRule == null) {
             supportRule = new LinkedList<>();
-            supportRule.add(new Rule(context, new Flyme5Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(context, new ChromeBroswer(), new ViaBroswer()));
+            supportRule.add(new Rule(supportRule.size()+1,context, new Flyme5Broswer(), new ViaBroswer()));
+            supportRule.add(new Rule(supportRule.size()+1,context, new ChromeBroswer(), new ViaBroswer()));
         }
     }
 

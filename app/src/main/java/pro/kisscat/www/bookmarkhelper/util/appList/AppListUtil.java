@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.Map;
+import java.util.TreeMap;
 
 import pro.kisscat.www.bookmarkhelper.pojo.App;
 
@@ -23,13 +24,13 @@ import pro.kisscat.www.bookmarkhelper.pojo.App;
 
 public class AppListUtil {
     private static List<App> installedAllApp;
-    private static Set<String> installedAllAppPackageName;
+    private static Map<String, Drawable> installedAllAppPackageName;
 
     public static List<App> getInstalledAll(Context context) {
         if (installedAllApp != null) {
             return installedAllApp;
         }
-        installedAllAppPackageName = new TreeSet<>();
+        installedAllAppPackageName = new TreeMap<>();
         List<App> appList = new ArrayList<>(); //用来存储获取的应用信息数据
         PackageManager packageManager = context.getPackageManager();
         List<PackageInfo> packages = packageManager.getInstalledPackages(0);
@@ -38,10 +39,10 @@ public class AppListUtil {
             App app = new App();
             app.setName(applicationInfo.loadLabel(packageManager).toString());
             app.setPackageName(packageInfo.packageName);
-            installedAllAppPackageName.add(app.getPackageName());
             app.setVersionName(packageInfo.versionName);
             app.setVersionCode(packageInfo.versionCode);
-            app.setIcon(applicationInfo.loadIcon(packageManager));
+//            app.setIcon(applicationInfo.loadIcon(packageManager));
+            installedAllAppPackageName.put(app.getPackageName(), applicationInfo.loadIcon(packageManager));
             /**
              Only display the non-system app info
              if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
@@ -55,6 +56,10 @@ public class AppListUtil {
     }
 
     public static boolean isInstalled(String packageName) {
-        return installedAllAppPackageName.contains(packageName);
+        return installedAllAppPackageName.keySet().contains(packageName);
+    }
+
+    public static Drawable getIcon(String packageName) {
+        return installedAllAppPackageName.get(packageName);
     }
 }

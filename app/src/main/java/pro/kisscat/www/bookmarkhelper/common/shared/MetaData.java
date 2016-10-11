@@ -11,4 +11,10 @@ package pro.kisscat.www.bookmarkhelper.common.shared;
 
 public final class MetaData {
     public static final String EXTRA_MESSAGE = "MESSAGE";
+
+
+    public static final String RULE_DEFINED = "RULE_DEFINED";
+
+    public static final String LOG_V_DEFAULT = "MONITOR";
+    public static final String LOG_V_BIZ = "BIZ";
 }
