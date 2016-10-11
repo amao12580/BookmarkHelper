@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,21 +45,28 @@ public class ConverterFragment extends ListFragment {
         }
         //将数组加到ArrayAdapter当中
 //        simple_list_item_1
-        adapter = new ArrayAdapter<>(getActivity(),R.layout.fragment_converter,R.id.fragment_converter_text, data);
+        adapter = new ArrayAdapter<>(getActivity(), R.layout.fragment_converter, R.id.fragment_converter_text, data);
         //绑定适配器时，必须通过ListFragment.setListAdapter()接口，而不是ListView.setAdapter()或其它方法
         setListAdapter(adapter);
+    }
+
+    private static int count = 1;
+
+    public void onConverterFragmentClickItem(View view) {
+        Toast.makeText(getActivity(),
+                "hit " + count,
+                Toast.LENGTH_SHORT).show();
+        count++;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onPause() {
-        // TODO Auto-generated method stub
         super.onPause();
     }
 

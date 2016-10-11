@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -61,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
         if (converterFragment == null && fragment instanceof ConverterFragment) {
             converterFragment = (ConverterFragment) fragment;
         }
+    }
+
+    private static int count = 8000;
+
+    public void onConverterFragmentClickItem(View view) {
+        Toast.makeText(this,
+                "hit " + count,
+                Toast.LENGTH_SHORT).show();
+        count++;
     }
 
 //    @Override
