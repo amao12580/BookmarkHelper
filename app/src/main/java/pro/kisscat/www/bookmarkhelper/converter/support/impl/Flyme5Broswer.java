@@ -5,7 +5,7 @@ import android.content.Context;
 import lombok.Getter;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 
 /**
@@ -17,7 +17,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
  * Time:15:38
  */
 
-public class Flyme5Broswer extends Broswer {
+public class Flyme5Broswer extends BasicBroswer {
     private String packageName = "com.android.broswer";
 
     @Override
@@ -32,9 +32,12 @@ public class Flyme5Broswer extends Broswer {
 
     @Override
     public void fillDefaultShow(Context context) {
-        this.setName(context.getString(R.string.broswer_name_show_flyme5));
         this.setPackageName(packageName);
-//        this.setIcon();
+    }
+
+    @Override
+    public void fillDefaultAppName(Context context) {
+        this.setName(context.getString(R.string.broswer_name_show_flyme5));
     }
 
 

@@ -23,14 +23,13 @@ import pro.kisscat.www.bookmarkhelper.pojo.App;
  */
 
 public class AppListUtil {
-    private static List<App> installedAllApp;
-    private static Map<String, Drawable> installedAllAppPackageName;
+    private static Map<String, App> installedAllApp;
 
-    public static List<App> getInstalledAll(Context context) {
+    public static void init(Context context) {
         if (installedAllApp != null) {
-            return installedAllApp;
+            return;
         }
-        installedAllAppPackageName = new TreeMap<>();
+        installedAllApp = new TreeMap<>();
         List<App> appList = new ArrayList<>(); //用来存储获取的应用信息数据
         PackageManager packageManager = context.getPackageManager();
         List<PackageInfo> packages = packageManager.getInstalledPackages(0);
@@ -41,25 +40,32 @@ public class AppListUtil {
             app.setPackageName(packageInfo.packageName);
             app.setVersionName(packageInfo.versionName);
             app.setVersionCode(packageInfo.versionCode);
-//            app.setIcon(applicationInfo.loadIcon(packageManager));
-            installedAllAppPackageName.put(app.getPackageName(), applicationInfo.loadIcon(packageManager));
+            app.setIcon(applicationInfo.loadIcon(packageManager));
+            installedAllApp.put(app.getPackageName(), app);
             /**
              Only display the non-system app info
              if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
              appList.add(tmpInfo);//如果非系统应用，则添加至appList
              }
              */
-            appList.add(app);
         }
-        installedAllApp = appList;
-        return installedAllApp;
     }
 
     public static boolean isInstalled(String packageName) {
-        return installedAllAppPackageName.keySet().contains(packageName);
+        return installedAllApp.keySet().contains(packageName);
     }
 
     public static Drawable getIcon(String packageName) {
-        return installedAllAppPackageName.get(packageName);
+        if (isInstalled(packageName)) {
+            return installedAllApp.get(packageName).getIcon();
+        }
+        return null;
+    }
+
+    public static String getAppName(String packageName) {
+        if (isInstalled(packageName)) {
+            return installedAllApp.get(packageName).getName();
+        }
+        return "ERROR";
     }
 }

@@ -3,6 +3,8 @@ package pro.kisscat.www.bookmarkhelper.util.json;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 
+import java.util.List;
+
 /**
  * Created with Android Studio.
  * Project:BookmarkHelper
@@ -37,14 +39,16 @@ public class JsonUtil {
      * @return 返回对象, 失败返回NULL
      */
     public static <T> T fromJson(String json, Class<T> clazz) {
-
         try {
             return clazz.equals(String.class) ? (T) json : JSON.parseObject(json, clazz);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
+    }
+
+    public static <T> List<T> toList(String json, Class<T> clazz) {
+        return JSON.parseArray(json, clazz);
     }
 
     /**

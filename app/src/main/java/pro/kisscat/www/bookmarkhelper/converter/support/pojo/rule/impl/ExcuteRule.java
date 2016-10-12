@@ -4,7 +4,7 @@ import android.content.Context;
 
 import lombok.Getter;
 import lombok.Setter;
-import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 
 /**
@@ -29,7 +29,7 @@ public class ExcuteRule extends Rule {
     @Getter
     private String message;//toast message  成功或失败需要提示的消息内容
 
-    private ExcuteRule(int id, Context context, Broswer source, Broswer target) {
+    private ExcuteRule(int id, Context context, BasicBroswer source, BasicBroswer target) {
         super(id, context, source, target);
     }
 

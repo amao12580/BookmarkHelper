@@ -13,7 +13,7 @@ import android.content.Context;
 
 import lombok.Getter;
 import lombok.Setter;
-import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 
 /**
  * 从source转换到target
@@ -24,15 +24,26 @@ public class Rule {
     private int id;
     @Setter
     @Getter
-    private Broswer source;
+    private BasicBroswer source;
     @Setter
     @Getter
-    private Broswer target;
+    private BasicBroswer target;
     @Setter
     @Getter
     private boolean canUse;
 
-    public Rule(int id, Context context, Broswer source, Broswer target) {
+    public Rule() {
+    }
+
+//    public Rule(int id, Broswer source, Broswer target, boolean canUse) {
+//        this.id = id;
+//        this.source = source;
+//        this.target = target;
+//        this.canUse = canUse;
+//    }
+
+
+    public Rule(int id, Context context, BasicBroswer source, BasicBroswer target) {
         boolean sourceInstalled = false, targetInstalled = false;
         if (source.isInstalled()) {
             sourceInstalled = true;
@@ -40,6 +51,7 @@ public class Rule {
         } else {
             source.fillDefaultShow(context);
         }
+        source.fillName(context);
         if (target.isInstalled()) {
             targetInstalled = true;
             target.readBookmarkSum(context);
@@ -49,6 +61,7 @@ public class Rule {
         if (sourceInstalled && targetInstalled) {
             canUse = true;
         }
+        target.fillName(context);
         this.id = id;
         this.source = source;
         this.target = target;

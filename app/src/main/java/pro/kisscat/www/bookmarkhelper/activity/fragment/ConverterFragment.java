@@ -7,13 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
+
+import com.alibaba.fastjson.JSON;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 
@@ -36,32 +38,23 @@ public class ConverterFragment extends ListFragment {
         if (savedInstanceState != null) {
             return;
         }
-        String rule = getArguments().getString(MetaData.RULE_DEFINED);
-        LogHelper.v("rule-after:" + rule);
+        String ruleStr = getArguments().getString(MetaData.RULE_DEFINED);
+        LogHelper.v("rule-after:" + ruleStr);
         //定义一个数组
         List<String> data = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            data.add("smyh" + i);
+//        List<Rule> rules = JsonUtil.toList(ruleStr, Rule.class);
+        List<Rule> rules = JSON.parseArray(ruleStr, Rule.class);
+        for (Rule rule : rules) {
+            data.add(rule.getSource().getName() + " TO " + rule.getTarget().getName());
         }
         //将数组加到ArrayAdapter当中
-//        simple_list_item_1
         adapter = new ArrayAdapter<>(getActivity(), R.layout.fragment_converter, R.id.fragment_converter_text, data);
         //绑定适配器时，必须通过ListFragment.setListAdapter()接口，而不是ListView.setAdapter()或其它方法
         setListAdapter(adapter);
     }
 
-    private static int count = 1;
-
-    public void onConverterFragmentClickItem(View view) {
-        Toast.makeText(getActivity(),
-                "hit " + count,
-                Toast.LENGTH_SHORT).show();
-        count++;
-    }
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 

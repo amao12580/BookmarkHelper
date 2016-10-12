@@ -13,7 +13,7 @@ import java.util.List;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.activity.fragment.ConverterFragment;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
-import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
@@ -41,18 +41,15 @@ public class MainActivity extends AppCompatActivity {
             if (savedInstanceState != null) {
                 return;
             }
-            Broswer.init(this);
-            List<Rule> supports = Broswer.getSupportRule();
-            LogHelper.v(MetaData.LOG_V_BIZ, "supports:" + JsonUtil.toJson(supports.size()));
+            ConverterMaster.init(this);
+            List<Rule> rules = ConverterMaster.getSupportRule();
+            LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//            for (Rule rule : supports) {
-            LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(supports));
             converterFragment = new ConverterFragment();
             Bundle bundle = new Bundle();
-            bundle.putString(MetaData.RULE_DEFINED, JsonUtil.toJson(supports));
+            bundle.putString(MetaData.RULE_DEFINED, JsonUtil.toJson(rules));
             converterFragment.setArguments(bundle);
             fragmentTransaction.add(R.id.fragment_container, converterFragment);
-//            }
             fragmentTransaction.commit();
         }
         LogHelper.v("onCreate end.");

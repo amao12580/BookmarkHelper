@@ -5,7 +5,7 @@ import android.content.Context;
 import lombok.Getter;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.converter.support.Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 
 /**
@@ -17,7 +17,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
  * Time:15:38
  */
 
-public class ChromeBroswer extends Broswer {
+public class ChromeBroswer extends BasicBroswer {
     private String packageName = "com.android.chrome";
 
     @Override
@@ -32,9 +32,12 @@ public class ChromeBroswer extends Broswer {
 
     @Override
     public void fillDefaultShow(Context context) {
-        this.setName(context.getString(R.string.broswer_name_show_chrome));
         this.setPackageName(packageName);
-//        this.setIcon();
+    }
+
+    @Override
+    public void fillDefaultAppName(Context context) {
+        this.setName(context.getString(R.string.broswer_name_show_chrome));
     }
 
     public abstract class ChromeBookmark extends Bookmark {

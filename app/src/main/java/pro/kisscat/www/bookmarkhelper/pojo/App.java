@@ -22,4 +22,7 @@ public class App {
     public int versionCode = 0;
     @JSONField(serialize = false)
     public transient Drawable icon;
+
+    public App() {
+    }
 }
