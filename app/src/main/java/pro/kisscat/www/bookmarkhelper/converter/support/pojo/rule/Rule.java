@@ -49,14 +49,14 @@ public class Rule {
             sourceInstalled = true;
             source.readBookmarkSum(context);
         } else {
-            source.fillDefaultShow(context);
+            source.fillDefaultIcon(context);
         }
         source.fillName(context);
         if (target.isInstalled()) {
             targetInstalled = true;
             target.readBookmarkSum(context);
         } else {
-            target.fillDefaultShow(context);
+            target.fillDefaultIcon(context);
         }
         if (sourceInstalled && targetInstalled) {
             canUse = true;

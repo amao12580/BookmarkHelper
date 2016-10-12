@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import pro.kisscat.www.bookmarkhelper.pojo.App;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
  * Created with Android Studio.
@@ -26,11 +27,11 @@ public class AppListUtil {
     private static Map<String, App> installedAllApp;
 
     public static void init(Context context) {
+        LogHelper.v("AppListUtil init");
         if (installedAllApp != null) {
             return;
         }
         installedAllApp = new TreeMap<>();
-        List<App> appList = new ArrayList<>(); //用来存储获取的应用信息数据
         PackageManager packageManager = context.getPackageManager();
         List<PackageInfo> packages = packageManager.getInstalledPackages(0);
         for (PackageInfo packageInfo : packages) {

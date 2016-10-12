@@ -25,7 +25,7 @@ public interface Broswerable {
 
     void readBookmarkSum(Context context);
 
-    void fillDefaultShow(Context context);
+    void fillDefaultIcon(Context context);
 
     String getPackageName();
 }

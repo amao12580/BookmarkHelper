@@ -1,6 +1,9 @@
 package pro.kisscat.www.bookmarkhelper.converter.support;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -45,7 +48,7 @@ public class BasicBroswer extends App implements Broswerable {
     }
 
     @Override
-    public void fillDefaultShow(Context context) {
+    public void fillDefaultIcon(Context context) {
 
     }
 

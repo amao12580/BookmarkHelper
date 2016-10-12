@@ -31,8 +31,8 @@ public class ViaBroswer extends BasicBroswer {
     }
 
     @Override
-    public void fillDefaultShow(Context context) {
-        this.setPackageName(packageName);
+    public void fillDefaultIcon(Context context) {
+        this.setIcon(context.getResources().getDrawable(R.drawable.ic_via));
     }
 
     @Override
