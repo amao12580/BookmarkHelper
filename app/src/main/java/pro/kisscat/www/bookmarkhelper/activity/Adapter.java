@@ -9,9 +9,6 @@ package pro.kisscat.www.bookmarkhelper.activity;
  * Time:15:50
  */
 
-import java.util.List;
-import java.util.Map;
-
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -21,6 +18,9 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import java.util.List;
+import java.util.Map;
+
 public class Adapter extends SimpleAdapter {
     private int[] mTo;
     private String[] mFrom;
@@ -28,7 +28,8 @@ public class Adapter extends SimpleAdapter {
     private List<? extends Map<String, ?>> mData;
     private int mResource;
     private LayoutInflater mInflater;
-    public Adapter(Context context,List<? extends Map<String, ?>> data, int resource, String[] from,int[] to) {
+
+    public Adapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
         mData = data;
         mResource = resource;
@@ -40,16 +41,14 @@ public class Adapter extends SimpleAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mResource);
     }
-    private View createViewFromResource(int position, View convertView,
-                                        ViewGroup parent, int resource) {
+
+    private View createViewFromResource(int position, View convertView, ViewGroup parent, int resource) {
         View v;
         if (convertView == null) {
             v = mInflater.inflate(resource, parent, false);
-
             final int[] to = mTo;
             final int count = to.length;
             final View[] holder = new View[count];
-
             for (int i = 0; i < count; i++) {
                 holder[i] = v.findViewById(to[i]);
             }
@@ -66,13 +65,11 @@ public class Adapter extends SimpleAdapter {
         if (dataSet == null) {
             return;
         }
-
         final ViewBinder binder = mViewBinder;
         final View[] holder = (View[]) view.getTag();
         final String[] from = mFrom;
         final int[] to = mTo;
         final int count = to.length;
-
         for (int i = 0; i < count; i++) {
             final View v = holder[i];
             if (v != null) {
@@ -81,12 +78,10 @@ public class Adapter extends SimpleAdapter {
                 if (text == null) {
                     text = "";
                 }
-
                 boolean bound = false;
                 if (binder != null) {
                     bound = binder.setViewValue(v, data, text);
                 }
-
                 if (!bound) {
                     //自定义适配器，关键在这里，根据传过来的控件类型以及值的数据类型，执行相应的方法
                     //可以根据自己需要自行添加if语句。另CheckBox等继承自TextView的控件也会被识别成TextView， 这就需要判断值的类型了
@@ -106,7 +101,7 @@ public class Adapter extends SimpleAdapter {
         }
     }
 
-    public void setViewImage(ImageView v, Drawable value) {
+    private void setViewImage(ImageView v, Drawable value) {
         v.setImageDrawable(value);
 
     }

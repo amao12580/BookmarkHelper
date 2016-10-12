@@ -9,4 +9,6 @@
 
 
     <string name="broswer_name_show_chrome">谷歌</string>
+    <string name="source_broswer_icon_contentDescription">来源浏览器</string>
+    <string name="target_broswer_icon_contentDescription">目标浏览器</string>
 </resources>

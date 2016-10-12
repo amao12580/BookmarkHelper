@@ -51,11 +51,17 @@ public class Rule {
         } else {
             source.fillDefaultIcon(context);
         }
+        if(source.getIcon()==null){
+            source.fillDefaultIcon(context);
+        }
         source.fillName(context);
         if (target.isInstalled()) {
             targetInstalled = true;
             target.readBookmarkSum(context);
         } else {
+            target.fillDefaultIcon(context);
+        }
+        if(target.getIcon()==null){
             target.fillDefaultIcon(context);
         }
         if (sourceInstalled && targetInstalled) {
