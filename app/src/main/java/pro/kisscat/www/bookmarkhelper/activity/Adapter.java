@@ -21,6 +21,9 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Map;
 
+import pro.kisscat.www.bookmarkhelper.R;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+
 public class Adapter extends SimpleAdapter {
     private int[] mTo;
     private String[] mFrom;
@@ -86,10 +89,12 @@ public class Adapter extends SimpleAdapter {
                     //自定义适配器，关键在这里，根据传过来的控件类型以及值的数据类型，执行相应的方法
                     //可以根据自己需要自行添加if语句。另CheckBox等继承自TextView的控件也会被识别成TextView， 这就需要判断值的类型了
                     if (v instanceof TextView) {
+//                        LogHelper.v("text:"+v.toString());
                         //如果是TextView控件
                         setViewText((TextView) v, text);
                         //调用SimpleAdapter自带的方法，设置文本
                     } else if (v instanceof ImageView) {//如果是ImageView控件
+//                        LogHelper.v("image:"+v.toString());
                         setViewImage((ImageView) v, (Drawable) data);
                         //调用下面自己写的方法，设置图片
                     } else {
@@ -103,7 +108,5 @@ public class Adapter extends SimpleAdapter {
 
     private void setViewImage(ImageView v, Drawable value) {
         v.setImageDrawable(value);
-
     }
-
 }

@@ -1,14 +1,8 @@
 <!--不可不知的 Android strings.xml 那些事:http://www.codeceo.com/article/about-android-strings-xml.html-->
 <resources>
     <string name="app_name">书签助手</string>
-    <string name="edit_message">请输入.</string>
-    <string name="button_send">发送</string>
-    <string name="title_activity_display_message">输入的内容</string>
-
-
-
-
     <string name="broswer_name_show_chrome">谷歌</string>
     <string name="source_broswer_icon_contentDescription">来源浏览器</string>
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
+    <string name="appUninstall">未安装.</string>
 </resources>

@@ -1,9 +1,11 @@
 <!--不可不知的 Android strings.xml 那些事:http://www.codeceo.com/article/about-android-strings-xml.html-->
 <resources>
+    <string name="app_name">BookmarkHelper</string>
     <string name="broswer_name_show_chrome">Chrome</string>
     <string name="broswer_name_show_flyme5">Flyme5</string>
     <string name="broswer_name_show_via">Via</string>
 
     <string name="source_broswer_icon_contentDescription">source broswer</string>
     <string name="target_broswer_icon_contentDescription">target broswer</string>
+    <string name="appUninstall"> not install.</string>
 </resources>
