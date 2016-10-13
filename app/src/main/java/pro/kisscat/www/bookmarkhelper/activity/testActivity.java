@@ -39,8 +39,12 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        if (savedInstanceState == null) {
+
+            LogHelper.init();
+            ConverterMaster.init(this);
+        }
         lv = (ListView) findViewById(R.id.lv);
-        ConverterMaster.init(this);
         rules = ConverterMaster.getSupportRule();
         LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
         for (Rule rule : rules) {
