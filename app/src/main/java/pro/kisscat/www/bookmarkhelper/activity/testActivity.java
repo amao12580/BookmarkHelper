@@ -9,6 +9,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
  * Time:15:49
  */
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,19 +29,27 @@ import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 public class TestActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView lv;
     Adapter adapter;
     List<Rule> rules;
+    boolean isRoot;
+    boolean isGetRootAccess;
     List<Map<String, Object>> items = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.main);
         if (savedInstanceState == null) {
-
+            isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
+            if (!isRoot) {
+                showToastMessage(this, "设备未Root，无法使用.");
+                finish();
+            }
             LogHelper.init();
             ConverterMaster.init(this);
         }
@@ -79,9 +88,18 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
         showToastMessage("hit:" + id);
+        processConverter(rule);
+    }
+
+    private void processConverter(Rule rule) {
+
     }
 
     private void showToastMessage(String message) {
-        Toast.makeText(lv.getContext(), message, Toast.LENGTH_SHORT).show();
+        showToastMessage(lv.getContext(), message);
+    }
+
+    private void showToastMessage(Context context, String message) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 }
