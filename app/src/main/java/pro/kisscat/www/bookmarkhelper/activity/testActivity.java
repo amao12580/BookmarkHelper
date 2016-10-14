@@ -29,6 +29,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 public class TestActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -37,6 +38,7 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
     List<Rule> rules;
     boolean isRoot;
     boolean isGetRootAccess;
+    boolean checkPermission;
     List<Map<String, Object>> items = new ArrayList<>();
 
     @Override
@@ -45,10 +47,15 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
 
         setContentView(R.layout.main);
         if (savedInstanceState == null) {
+            checkPermission = PermissionUtil.check(this);
             isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
+            isGetRootAccess = RootUtil.getRootAhth();
+            showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
             if (!isRoot) {
                 showToastMessage(this, "设备未Root，无法使用.");
                 finish();
+            } else {
+                showToastMessage(this, "成功获取了Root权限.");
             }
             LogHelper.init();
             ConverterMaster.init(this);
@@ -74,16 +81,32 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setOnItemClickListener(this);
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PermissionUtil.getSTORAGE_REQUEST_CODE());
+//        }
+//        //doNext(requestCode,grantResults);
+        if (PermissionUtil.checkOnly(this)) {
+            showToastMessage(this, "权限不足，exit.");
+            finish();
+        }
+    }
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Rule rule = ConverterMaster.getSupportRule().get((int) id);
         if (!rule.isCanUse()) {
             if (!rule.getSource().isInstalled()) {
-                showToastMessage(rule.getSource().getName() + lv.getResources().getString(R.string.appUninstall));
+                showToastMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                 return;
             }
+
             if (!rule.getTarget().isInstalled()) {
-                showToastMessage(rule.getTarget().getName() + lv.getResources().getString(R.string.appUninstall));
+                showToastMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                 return;
             }
         }
