@@ -12,7 +12,7 @@ import lombok.Data;
  */
 
 @Data
-public abstract class Bookmark {
+public class Bookmark {
     private String title;
     private String url;
 }

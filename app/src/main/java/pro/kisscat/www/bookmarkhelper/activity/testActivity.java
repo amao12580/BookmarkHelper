@@ -27,6 +27,7 @@ import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
+import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
@@ -115,14 +116,33 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void processConverter(Rule rule) {
-
+        int ret;
+        try {
+            ret = ConverterMaster.excute(lv.getContext(), rule);
+        } catch (ConverterException e) {
+            showToastMessage(e.getMessage());
+            return;
+        }
+        showToastMessage("成功合并了" + ret + "条书签.");
     }
 
     private void showToastMessage(String message) {
         showToastMessage(lv.getContext(), message);
     }
 
+    private Toast toast;
+
+    /**
+     * Android 解决Toast的延时显示问题
+     * 关键在于重用toast，这样就不用每次都创建一个新的toast
+     */
     private void showToastMessage(Context context, String message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        if (toast == null) {
+            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+        } else {
+            toast.setText(message);
+            toast.setDuration(Toast.LENGTH_SHORT);
+        }
+        toast.show();
     }
 }

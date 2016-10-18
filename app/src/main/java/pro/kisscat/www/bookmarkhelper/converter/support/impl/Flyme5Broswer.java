@@ -2,6 +2,9 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl;
 
 import android.content.Context;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
@@ -26,8 +29,11 @@ public class Flyme5Broswer extends BasicBroswer {
     }
 
     @Override
-    public void readBookmarkSum(Context context) {
-        super.setBookmarkSum(55);
+    public int readBookmarkSum(Context context) {
+        if (bookmarks == null) {
+            readBookmark(context);
+        }
+        return bookmarks.size();
     }
 
     @Override
@@ -38,6 +44,20 @@ public class Flyme5Broswer extends BasicBroswer {
     @Override
     public void fillDefaultAppName(Context context) {
         this.setName(context.getString(R.string.broswer_name_show_flyme5));
+    }
+
+    @Override
+    public List<Bookmark> readBookmark(Context context) {
+        if (bookmarks != null) {
+            return bookmarks;
+        }
+        bookmarks = new LinkedList<>();
+        return bookmarks;
+    }
+
+    @Override
+    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+        return 0;
     }
 
 

@@ -1,12 +1,11 @@
 package pro.kisscat.www.bookmarkhelper.converter.support;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import java.util.List;
 
-import lombok.Getter;
 import lombok.Setter;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.pojo.App;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 
@@ -19,9 +18,8 @@ import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
  * Time:15:31
  */
 public class BasicBroswer extends App implements Broswerable {
-    @Setter
-    @Getter
     protected int bookmarkSum;
+    protected List<Bookmark> bookmarks;
     @Setter
     protected boolean installed;
 
@@ -43,8 +41,8 @@ public class BasicBroswer extends App implements Broswerable {
     }
 
     @Override
-    public void readBookmarkSum(Context context) {
-
+    public int readBookmarkSum(Context context) {
+        return 0;
     }
 
     @Override
@@ -55,5 +53,16 @@ public class BasicBroswer extends App implements Broswerable {
     @Override
     public String getPackageName() {
         return null;
+    }
+
+
+    @Override
+    public List<Bookmark> readBookmark(Context context) {
+        return null;
+    }
+
+    @Override
+    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+        return 0;
     }
 }

@@ -2,6 +2,10 @@ package pro.kisscat.www.bookmarkhelper.converter.support;
 
 import android.content.Context;
 
+import java.util.List;
+
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+
 /**
  * Created with Android Studio.
  * Project:BookmarkHelper
@@ -23,7 +27,11 @@ import android.content.Context;
 public interface Broswerable {
     void fillDefaultAppName(Context context);
 
-    void readBookmarkSum(Context context);
+    int readBookmarkSum(Context context);
+
+    List<Bookmark> readBookmark(Context context);
+
+    int appendBookmark(Context context, List<Bookmark> bookmarks);
 
     void fillDefaultIcon(Context context);
 

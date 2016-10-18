@@ -1,0 +1,42 @@
+{
+   "checksum": "086742cbb97f44921b1a2fc8a02f30dd",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13121233778390362",
+         "date_modified": "0",
+         "id": "1",
+         "name": "书签栏",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13121233778390379",
+         "date_modified": "0",
+         "id": "2",
+         "name": "其他书签",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [ {
+            "date_added": "13121233954929904",
+            "id": "6",
+            "name": "新浪体育_手机新浪网",
+            "type": "url",
+            "url": "http://sports.sina.cn/?vt=4&pos=108"
+         }, {
+            "date_added": "13121235641594097",
+            "id": "9",
+            "name": "新浪博客_手机新浪网",
+            "type": "url",
+            "url": "http://blog.sina.cn/?vt=4&pos=108"
+         } ],
+         "date_added": "13121233778390397",
+         "date_modified": "13121235641594097",
+         "id": "3",
+         "name": "移动设备书签",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
