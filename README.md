@@ -16,7 +16,7 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 ### 0.0.4版
 增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 ## UnStable
-UnStable是指最新通过基础测试，但未进行大面积设备兼容验证的非稳定版本，不会发布到Google Play或Cool Market。如果你是狂热爱好者，请点击【[下载链接](hhttps://github.com/amao12580/BookmarkHelper/raw/master/app/build/outputs/apk/app-debug.apk)】，从我的Github Repo实时获取，不保证会有小瑕疵。
+UnStable是指最新通过基础测试，但未进行大面积设备兼容验证的非稳定版本，不会发布到Google Play或Cool Market。如果你是狂热爱好者，请点击【[下载链接](https://github.com/amao12580/BookmarkHelper/raw/master/app/build/outputs/apk/app-debug.apk)】，从我的Github Repo实时获取，不保证会有小瑕疵。
 
 ## Bug & 反馈
 由于个人精力有限，没有大量设备供测试，如您遇到使用问题，请发送log文件（SD路径：BookmarkHelper/logs/*Log.txt）到Mail：stevenchengmask # gmail.com，我将尽快答复您的疑问！同时也欢迎您的来信建议，我将最短时间内答复您！
