@@ -7,7 +7,7 @@ BookmarkHelper是一款Android平台下，浏览器书签转换工具类APP，�
 BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥用Root权限，使用完毕可立即卸载，运行时不需连接网络。如果你用的爽，可以[鼓励一下](https://www.kisscat.pro/rewards/wechat-reward-image.png)，我将用于：支付VPS月租，开发更多精彩APP，谢谢您的点滴支持！
 
 ## 版本计划
-### 0.0.1版
+### [0.0.1版](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.1%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.1.apk)
 支持从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 ### 0.0.2版
 增加兼容：支持从Flyme5自带浏览器提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
