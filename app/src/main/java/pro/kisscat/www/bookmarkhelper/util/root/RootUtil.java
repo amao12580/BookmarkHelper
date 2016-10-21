@@ -20,10 +20,13 @@ public class RootUtil {
      * @return 应用程序是/否获取Root权限
      */
     public static boolean upgradeRootPermission(String pkgCodePath) {
+        return executeCmd("chmod 777 " + pkgCodePath);
+    }
+
+    public static boolean executeCmd(String cmd) {
         Process process = null;
         DataOutputStream os = null;
         try {
-            String cmd = "chmod 777 " + pkgCodePath;
             process = Runtime.getRuntime().exec("su"); //切换到root帐号
             if (process == null) {
                 return false;

@@ -1,12 +1,18 @@
 package pro.kisscat.www.bookmarkhelper.util.storage;
 
 
+import android.content.Context;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
+import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 /**
  * Created with Android Studio.
@@ -23,7 +29,7 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
      */
     @Override
     public String getRootPath() {
-        List<String> lResult = new ArrayList<String>();
+        List<String> lResult = new ArrayList<>();
         try {
             Runtime rt = Runtime.getRuntime();
             Process proc = rt.exec("mount");
@@ -46,6 +52,29 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
             e.printStackTrace();
         }
         return lResult.isEmpty() ? null : lResult.get(0);
+    }
+
+    /**
+     * 拷贝文件
+     */
+    public static File CP2SDCard(Context context, String source, String target, String mark) {
+        /**
+         * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）
+         * -r  递归复制，包含目录
+         * -a  做一个备份，这里可以不用这个参数，我们可以先备份整个test目录
+         * -p  保持新文件的属性不变
+         */
+        String cmd = "cp -fr " + source + " " + target;
+        boolean result = RootUtil.executeCmd(cmd);
+        if (!result) {
+            throw new ConverterException(ContextUtil.buildCPErrorMessage(context, mark));
+        }
+        File file = new File(target);
+        if (!file.exists()) {
+            throw new ConverterException(ContextUtil.buildCPErrorMessage(context, mark));
+        }
+        file.setReadable(true);
+        return file;
     }
 
 }

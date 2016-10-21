@@ -10,5 +10,7 @@
     <string name="readBookmarksError">读取书签信息失败</string>
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>
     <string name="appendBookmarksError">合并书签信息失败.</string>
+    <string name="readBookmarksDataMiss">读取到数据文件不存在</string>
+    <string name="CPError">文件读写失败</string>
 
 </resources>

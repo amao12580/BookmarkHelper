@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
+import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
@@ -30,7 +31,7 @@ public class LogHelper {
 
     private static boolean MYLOG_WRITE_TO_FILE = true;// 日志写入文件开关
     private static char MYLOG_TYPE = 'v';// 输入日志类型，w代表只输出告警信息等，v代表输出所有信息
-    private static String LOG_DIR = "/bookmarkHelper/";// 日志聚集的目录名
+    private static String LOG_DIR = Path.SDCARD_APP_ROOTPATH + Path.SDCARD_LOG_ROOTPATH;// 日志聚集的目录名
     private static String MYLOG_PATH_SDCARD_DIR = null;// 日志文件在sdcard中的路径
     private static int SDCARD_LOG_FILE_SAVE_DAYS = 0;// sd卡中日志文件的最多保存天数
     private static String MYLOGFILEName = "Log.txt";// 本类输出的日志文件名称
@@ -113,16 +114,27 @@ public class LogHelper {
      *
      * @return
      **/
-    private static void writeLogtoFile(String mylogtype, String tag, String text) {// 新建或打开日志文件
+    private synchronized static void writeLogtoFile(String mylogtype, String tag, String text) {// 新建或打开日志文件
         Date nowtime = new Date();
         String needWriteFiel = logfile.format(nowtime);
         String needWriteMessage = myLogSdf.format(nowtime) + "    " + mylogtype + "    " + tag + "    " + text;
-        File file = new File(MYLOG_PATH_SDCARD_DIR, needWriteFiel + MYLOGFILEName);
         try {
+//            System.out.println("STATE:" + Environment.getExternalStorageState());
+//            System.out.println("log file dir:" + MYLOG_PATH_SDCARD_DIR);
+//            System.out.println("log file path:" + MYLOG_PATH_SDCARD_DIR + needWriteFiel + MYLOGFILEName);
+            File dir = new File(MYLOG_PATH_SDCARD_DIR);
+//            System.out.println("dirPath:" + dir.getAbsolutePath());
+//                boolean flag = dir.mkdirs();
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+//                System.out.println("mkdirs:" + flag);
+            File file = new File(MYLOG_PATH_SDCARD_DIR, needWriteFiel + MYLOGFILEName);
             if (!file.exists()) {
-                file.createNewFile();
-                file.setReadable(true);
-                file.setWritable(true);
+                if (file.createNewFile()) {
+                    file.setReadable(true);
+                    file.setWritable(true);
+                }
             }
             FileWriter filerWriter = new FileWriter(file, true);//后面这个参数代表是不是要接上文件中原来的数据，不进行覆盖
             BufferedWriter bufWriter = new BufferedWriter(filerWriter);
@@ -161,12 +173,13 @@ public class LogHelper {
         String exPath = new ExternalStorageUtil().getRootPath();
         String inPath = new InternalStorageUtil().getRootPath();
         if (exPath != null && !exPath.isEmpty()) {
-            MYLOG_PATH_SDCARD_DIR = exPath + LOG_DIR;
+            Path.SDCARD_ROOTPATH = exPath;
         } else if (inPath != null && !inPath.isEmpty()) {
-            MYLOG_PATH_SDCARD_DIR = inPath + LOG_DIR;
+            Path.SDCARD_ROOTPATH = inPath;
         } else {
             throw new IllegalArgumentException("无法获取日志目录");
         }
+        MYLOG_PATH_SDCARD_DIR = Path.SDCARD_ROOTPATH + LOG_DIR;
         File appDirectory = new File(MYLOG_PATH_SDCARD_DIR);
         if (!appDirectory.exists()) {
             appDirectory.mkdir();

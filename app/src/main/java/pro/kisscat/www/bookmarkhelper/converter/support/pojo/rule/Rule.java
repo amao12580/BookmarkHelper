@@ -35,19 +35,11 @@ public class Rule {
     public Rule() {
     }
 
-//    public Rule(int id, Broswer source, Broswer target, boolean canUse) {
-//        this.id = id;
-//        this.source = source;
-//        this.target = target;
-//        this.canUse = canUse;
-//    }
-
-
     public Rule(int id, Context context, BasicBroswer source, BasicBroswer target) {
         boolean sourceInstalled = false, targetInstalled = false;
         if (source.isInstalled()) {
             sourceInstalled = true;
-            source.readBookmarkSum(context);
+//            source.readBookmarkSum(context);
         } else {
             source.fillDefaultIcon(context);
         }
@@ -57,7 +49,7 @@ public class Rule {
         source.fillName(context);
         if (target.isInstalled()) {
             targetInstalled = true;
-            target.readBookmarkSum(context);
+//            target.readBookmarkSum(context);
         } else {
             target.fillDefaultIcon(context);
         }

@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lombok.Getter;
-import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer;
@@ -14,6 +13,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
+import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 
 /**
  * Created with Android Studio.
@@ -41,28 +41,16 @@ public class ConverterMaster {
         BasicBroswer source = rule.getSource();
         List<Bookmark> sourceBookmarks = source.readBookmark(context);
         if (sourceBookmarks == null) {
-            throw new ConverterException(buildReadBookmarksErrorMessage(context, source.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, source.getName()));
         }
         if (sourceBookmarks.isEmpty()) {
-            throw new ConverterException(buildReadBookmarksEmptyMessage(context, source.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksEmptyMessage(context, source.getName()));
         }
         BasicBroswer target = rule.getTarget();
         int ret = target.appendBookmark(context, sourceBookmarks);
         if (ret < 0) {
-            throw new ConverterException(buildAppendBookmarksErrorMessage(context, target.getName()));
+            throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(context, target.getName()));
         }
         return ret;
-    }
-
-    private static String buildReadBookmarksErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.readBookmarksError);
-    }
-
-    private static String buildReadBookmarksEmptyMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.readBookmarksEmpty);
-    }
-
-    private static String buildAppendBookmarksErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.appendBookmarksError);
     }
 }

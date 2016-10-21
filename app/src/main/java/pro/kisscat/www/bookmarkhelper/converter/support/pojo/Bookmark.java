@@ -1,6 +1,7 @@
 package pro.kisscat.www.bookmarkhelper.converter.support.pojo;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created with Android Studio.
@@ -11,8 +12,24 @@ import lombok.Data;
  * Time:14:21
  */
 
-@Data
 public class Bookmark {
+    @Getter
+    @Setter
     private String title;
+    @Getter
+    @Setter
     private String url;
+
+    public boolean equals(Object anObject) {
+        if (this == anObject) {
+            return true;
+        }
+        if (anObject instanceof Bookmark) {
+            Bookmark anotherBookmark = (Bookmark) anObject;
+            if (getUrl() == anotherBookmark.getUrl()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

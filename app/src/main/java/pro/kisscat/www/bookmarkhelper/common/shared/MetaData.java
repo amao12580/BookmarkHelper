@@ -17,4 +17,8 @@ public final class MetaData {
 
     public static final String LOG_V_DEFAULT = "MONITOR";
     public static final String LOG_V_BIZ = "BIZ";
+
+    public static final String LOG_E_DEFAULT = "EXCEPTION";
+
+    public static final String BOOKMARK_TITLE_DEFAULT = "UnName";
 }

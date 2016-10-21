@@ -2,7 +2,9 @@ package pro.kisscat.www.bookmarkhelper.converter.support;
 
 import android.content.Context;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
@@ -64,5 +66,15 @@ public class BasicBroswer extends App implements Broswerable {
     @Override
     public int appendBookmark(Context context, List<Bookmark> bookmarks) {
         return 0;
+    }
+
+    protected Set<Bookmark> buildNoRepeat(List<Bookmark> bookmarks, List<Bookmark> exists) {
+        Set<Bookmark> result = new HashSet<>();
+        for (Bookmark item : bookmarks) {
+            if (!exists.contains(item)) {
+                result.add(item);
+            }
+        }
+        return result;
     }
 }

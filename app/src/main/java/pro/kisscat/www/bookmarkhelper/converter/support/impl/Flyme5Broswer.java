@@ -54,6 +54,8 @@ public class Flyme5Broswer extends BasicBroswer {
         bookmarks = new LinkedList<>();
         return bookmarks;
     }
+    private static final String dataBase_filePath = "";
+    private static final String dataBase_bookmark_dbName = "";
 
     @Override
     public int appendBookmark(Context context, List<Bookmark> bookmarks) {

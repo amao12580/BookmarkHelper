@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><!-- manifest文件详解：http://www.cnblogs.com/pilang/archive/2011/04/20/2022932.html -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pro.kisscat.www.bookmarkhelper">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <application
         android:allowBackup="true"
@@ -17,8 +20,4 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
 </manifest>
