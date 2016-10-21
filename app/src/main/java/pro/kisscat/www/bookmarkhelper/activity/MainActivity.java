@@ -1,98 +1,151 @@
 package pro.kisscat.www.bookmarkhelper.activity;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.Window;
-import android.widget.Toast;
-
-import java.util.List;
-
-import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.activity.fragment.ConverterFragment;
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
-import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
-import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
-import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
-
 /**
  * Created with Android Studio.
  * Project:BookmarkHelper
  * User:ChengLiang
  * Mail:stevenchengmask@gmail.com
- * Date:2016/10/8
- * Time:15:06
+ * Date:2016/10/12
+ * Time:15:49
  */
 
-public class MainActivity extends AppCompatActivity {
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
-    private ConverterFragment converterFragment;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import pro.kisscat.www.bookmarkhelper.R;
+import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
+import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
+import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    ListView lv;
+    Adapter adapter;
+    List<Rule> rules;
+    boolean isRoot;
+    boolean isGetRootAccess;
+    boolean checkPermission;
+    List<Map<String, Object>> items = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        LogHelper.v("onCreate begin.");
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_main);
-        if (findViewById(R.id.fragment_container) != null) {
-            if (savedInstanceState != null) {
+        if (savedInstanceState == null) {
+            checkPermission = PermissionUtil.check(this);
+            isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
+            isGetRootAccess = RootUtil.getRootAhth();
+            showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
+            if (!isRoot) {
+                showToastMessage(this, "设备未Root，无法使用.");
+                finish();
+            } else {
+                showToastMessage(this, "成功获取了Root权限.");
+            }
+            LogHelper.init();
+            ConverterMaster.init(this);
+        }
+        lv = (ListView) findViewById(R.id.lv);
+        rules = ConverterMaster.getSupportRule();
+        LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
+        for (Rule rule : rules) {
+            Map<String, Object> map = new HashMap<>();
+            BasicBroswer sourceBorswer = rule.getSource();
+            map.put("sourceBroswerIcon", sourceBorswer.getIcon());
+            map.put("sourceBroswerAppNameText", sourceBorswer.getName());
+            map.put("converterDirecterText", " TO ");
+            BasicBroswer targetBorswer = rule.getTarget();
+            map.put("targetBroswerIcon", targetBorswer.getIcon());
+            map.put("targetBroswerAppNameText", targetBorswer.getName());
+            items.add(map);
+        }
+        adapter = new Adapter(this, items, R.layout.listview_item, new String[]{"sourceBroswerIcon", "sourceBroswerAppNameText", "converterDirecterText", "targetBroswerIcon", "targetBroswerAppNameText"},
+                new int[]{R.id.sourceBroswerIcon, R.id.sourceBroswerAppNameText, R.id.converterDirecterText, R.id.targetBroswerIcon, R.id.targetBroswerAppNameText});
+        lv.setAdapter(adapter);
+        lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        lv.setOnItemClickListener(this);
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PermissionUtil.getSTORAGE_REQUEST_CODE());
+//        }
+//        //doNext(requestCode,grantResults);
+        if (PermissionUtil.checkOnly(this)) {
+            showToastMessage(this, "权限不足，exit.");
+            finish();
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Rule rule = ConverterMaster.getSupportRule().get((int) id);
+        if (!rule.isCanUse()) {
+            if (!rule.getSource().isInstalled()) {
+                showToastMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                 return;
             }
-            ConverterMaster.init(this);
-            List<Rule> rules = ConverterMaster.getSupportRule();
-            LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            converterFragment = new ConverterFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString(MetaData.RULE_DEFINED, JsonUtil.toJson(rules));
-            converterFragment.setArguments(bundle);
-            fragmentTransaction.add(R.id.fragment_container, converterFragment);
-            fragmentTransaction.commit();
+            if (!rule.getTarget().isInstalled()) {
+                showToastMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                return;
+            }
         }
-        LogHelper.v("onCreate end.");
+        showToastMessage("hit:" + id);
+        processConverter(rule);
     }
 
-    public void onAttachFragment(Fragment fragment) {
-        //当前的界面的保存状态，只是从新让新的Fragment指向了原本未被销毁的fragment，它就是onAttach方法对应的Fragment对象
-        if (converterFragment == null && fragment instanceof ConverterFragment) {
-            converterFragment = (ConverterFragment) fragment;
+    private void processConverter(Rule rule) {
+        int ret;
+        try {
+            ret = ConverterMaster.excute(lv.getContext(), rule);
+        } catch (ConverterException e) {
+            showToastMessage(e.getMessage());
+            return;
+        }
+        if (ret > 0) {
+            showToastMessage("成功合并了" + ret + "条书签，请重启" + rule.getTarget().getName() + "后查看效果.");
+        } else {
+            showToastMessage("检测到所有书签数据已存在，不需要合并.");
         }
     }
 
-    private static int count = 8000;
-
-    public void onConverterFragmentClickItem(View view) {
-        Toast.makeText(this,
-                "hit " + count,
-                Toast.LENGTH_SHORT).show();
-        count++;
+    private void showToastMessage(String message) {
+        showToastMessage(lv.getContext(), message);
     }
 
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        getSharedPreferences()
-//    }
+    private Toast toast;
 
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//    }
-
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        outState.put
-//        super.onSaveInstanceState(outState);
-//    }
-
-//    public void sendMessage(View view) {
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.edit_message);
-//        String message = editText.getText().toString();
-//        intent.putExtra(MetaData.EXTRA_MESSAGE, message);
-//        startActivity(intent);
-//    }
+    /**
+     * Android 解决Toast的延时显示问题
+     * 关键在于重用toast，这样就不用每次都创建一个新的toast
+     */
+    private void showToastMessage(Context context, String message) {
+        if (toast == null) {
+            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+        } else {
+            toast.setText(message);
+            toast.setDuration(Toast.LENGTH_SHORT);
+        }
+        toast.show();
+    }
 }

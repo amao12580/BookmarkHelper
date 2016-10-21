@@ -32,8 +32,8 @@ public class ConverterMaster {
         AppListUtil.init(context);
         if (supportRule == null) {
             supportRule = new LinkedList<>();
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), new ViaBroswer()));
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), new ViaBroswer()));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), new ViaBroswer()));
         }
     }
 
