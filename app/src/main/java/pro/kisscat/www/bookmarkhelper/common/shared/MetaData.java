@@ -10,6 +10,8 @@ package pro.kisscat.www.bookmarkhelper.common.shared;
  */
 
 public final class MetaData {
+    public static final boolean isDebug = true;
+
     public static final String EXTRA_MESSAGE = "MESSAGE";
 
 

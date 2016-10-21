@@ -105,7 +105,6 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
                 showToastMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                 return;
             }
-
             if (!rule.getTarget().isInstalled()) {
                 showToastMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                 return;
@@ -123,7 +122,11 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
             showToastMessage(e.getMessage());
             return;
         }
-        showToastMessage("成功合并了" + ret + "条书签.");
+        if (ret > 0) {
+            showToastMessage("成功合并了" + ret + "条书签，请重启" + rule.getTarget().getName() + "后查看效果.");
+        } else {
+            showToastMessage("检测到所有书签数据已存在，不需要合并.");
+        }
     }
 
     private void showToastMessage(String message) {

@@ -10,6 +10,7 @@ import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
  * Created with Android Studio.
@@ -22,6 +23,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 
 public class Flyme5Broswer extends BasicBroswer {
     private String packageName = "com.android.broswer";
+    private List<Bookmark> bookmarks;
 
     @Override
     public String getPackageName() {
@@ -31,6 +33,7 @@ public class Flyme5Broswer extends BasicBroswer {
     @Override
     public int readBookmarkSum(Context context) {
         if (bookmarks == null) {
+            LogHelper.v("Flyme5:bookmarks cache is hit.");
             readBookmark(context);
         }
         return bookmarks.size();

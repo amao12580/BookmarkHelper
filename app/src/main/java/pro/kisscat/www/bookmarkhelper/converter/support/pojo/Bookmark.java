@@ -20,16 +20,16 @@ public class Bookmark {
     @Setter
     private String url;
 
-    public boolean equals(Object anObject) {
-        if (this == anObject) {
-            return true;
-        }
-        if (anObject instanceof Bookmark) {
-            Bookmark anotherBookmark = (Bookmark) anObject;
-            if (getUrl() == anotherBookmark.getUrl()) {
-                return true;
-            }
-        }
-        return false;
-    }
+//    public boolean equals(Object anObject) {
+//        if (this == anObject) {
+//            return true;
+//        }
+//        if (anObject instanceof Bookmark) {
+//            Bookmark anotherBookmark = (Bookmark) anObject;
+//            if (getUrl() == anotherBookmark.getUrl()) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 }

@@ -1,0 +1,94 @@
+2016-10-21 03:37:17    v    MONITOR    AppListUtil init
+2016-10-21 03:37:17    v    BIZ    rule-before:[{"canUse":false,"id":1,"source":{"installed":false,"name":"Flyme5浏览器","packageName":"com.android.broswer","versionCode":0,"versionName":""},"target":{"installed":true,"name":"Via浏览器","packageName":"mark.via","versionCode":0,"versionName":""}},{"canUse":true,"id":2,"source":{"installed":true,"name":"谷歌浏览器","packageName":"com.android.chrome","versionCode":0,"versionName":""},"target":{"installed":true,"name":"Via浏览器","packageName":"mark.via","versionCode":0,"versionName":""}}]
+2016-10-21 03:37:21    v    MONITOR    Chrome:开始读取书签数据
+2016-10-21 03:37:21    v    MONITOR    Chrome:origin file path:/data/data/com.android.chrome/app_chrome/Default/Bookmarks
+2016-10-21 03:37:21    v    MONITOR    Chrome:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks
+2016-10-21 03:37:21    v    MONITOR    书签数据:{"roots":{"synced":{"children":[{"name":"新浪体育_手机新浪网","url":"http://sports.sina.cn/?vt=4&pos=108"},{"name":"新浪博客_手机新浪网","url":"http://blog.sina.cn/?vt=4&pos=108"}]}}}
+2016-10-21 03:37:21    v    MONITOR    书签条数:2
+2016-10-21 03:37:21    v    MONITOR    name:新浪体育_手机新浪网
+2016-10-21 03:37:21    v    MONITOR    url:http://sports.sina.cn/?vt=4&pos=108
+2016-10-21 03:37:21    v    MONITOR    name:新浪博客_手机新浪网
+2016-10-21 03:37:21    v    MONITOR    url:http://blog.sina.cn/?vt=4&pos=108
+2016-10-21 03:37:21    v    MONITOR    Chrome:读取书签数据结束
+2016-10-21 03:37:21    v    MONITOR    Via:开始合并书签数据，bookmarks appends size:2
+2016-10-21 03:37:21    v    MONITOR    Via:bookmarks cache is miss.
+2016-10-21 03:37:21    v    MONITOR    Via:开始读取书签数据
+2016-10-21 03:37:21    v    MONITOR    Via:origin file path:/data/data/mark.via/files/bookmarks.dat
+2016-10-21 03:37:21    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-10-21 03:37:21    v    MONITOR    书签数据:[{"title":"cnBeta.COM_中文业界资讯站","url":"http://www.cnbeta.com/","folder":"","order":0},{"title":"酷安网 - 发现应用的乐趣","url":"http://www.coolapk.com/","folder":"","order":0}]
+2016-10-21 03:37:21    v    MONITOR    书签条数:2
+2016-10-21 03:37:21    v    MONITOR    name:cnBeta.COM_中文业界资讯站
+2016-10-21 03:37:21    v    MONITOR    url:http://www.cnbeta.com/
+2016-10-21 03:37:21    v    MONITOR    name:酷安网 - 发现应用的乐趣
+2016-10-21 03:37:21    v    MONITOR    url:http://www.coolapk.com/
+2016-10-21 03:37:21    v    MONITOR    Via:读取书签数据结束
+2016-10-21 03:37:21    v    MONITOR    Via:bookmarks increment size:2
+2016-10-21 03:37:21    v    MONITOR    Via:merge size:4
+2016-10-21 03:37:21    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-10-21 03:37:21    v    MONITOR    Via:合并书签数据结束
+2016-10-21 03:37:32    v    MONITOR    Via:开始合并书签数据，bookmarks appends size:2
+2016-10-21 03:37:32    v    MONITOR    Via:bookmarks cache is miss.
+2016-10-21 03:37:32    v    MONITOR    Via:开始读取书签数据
+2016-10-21 03:37:32    v    MONITOR    Via:origin file path:/data/data/mark.via/files/bookmarks.dat
+2016-10-21 03:37:32    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-10-21 03:37:32    v    MONITOR    书签数据:[{"title":"cnBeta.COM_中文业界资讯站","url":"http://www.cnbeta.com/","folder":"","order":0},{"title":"酷安网 - 发现应用的乐趣","url":"http://www.coolapk.com/","folder":"","order":1},{"title":"新浪博客_手机新浪网","url":"http://blog.sina.cn/?vt=4&pos=108","folder":"","order":2},{"title":"新浪体育_手机新浪网","url":"http://sports.sina.cn/?vt=4&pos=108","folder":"","order":3}]
+2016-10-21 03:37:32    v    MONITOR    书签条数:4
+2016-10-21 03:37:32    v    MONITOR    name:cnBeta.COM_中文业界资讯站
+2016-10-21 03:37:32    v    MONITOR    url:http://www.cnbeta.com/
+2016-10-21 03:37:32    v    MONITOR    name:酷安网 - 发现应用的乐趣
+2016-10-21 03:37:32    v    MONITOR    url:http://www.coolapk.com/
+2016-10-21 03:37:32    v    MONITOR    name:新浪博客_手机新浪网
+2016-10-21 03:37:32    v    MONITOR    url:http://blog.sina.cn/?vt=4&pos=108
+2016-10-21 03:37:32    v    MONITOR    name:新浪体育_手机新浪网
+2016-10-21 03:37:32    v    MONITOR    url:http://sports.sina.cn/?vt=4&pos=108
+2016-10-21 03:37:32    v    MONITOR    Via:读取书签数据结束
+2016-10-21 03:37:32    v    MONITOR    Via:bookmarks increment size:0
+2016-10-21 03:37:32    v    MONITOR    Via:合并书签数据结束
+2016-10-21 03:39:30    v    MONITOR    AppListUtil init
+2016-10-21 03:39:30    v    BIZ    rule-before:[{"canUse":false,"id":1,"source":{"installed":false,"name":"Flyme5浏览器","packageName":"com.android.broswer","versionCode":0,"versionName":""},"target":{"installed":true,"name":"Via浏览器","packageName":"mark.via","versionCode":0,"versionName":""}},{"canUse":true,"id":2,"source":{"installed":true,"name":"谷歌浏览器","packageName":"com.android.chrome","versionCode":0,"versionName":""},"target":{"installed":true,"name":"Via浏览器","packageName":"mark.via","versionCode":0,"versionName":""}}]
+2016-10-21 03:39:35    v    MONITOR    Chrome:开始读取书签数据
+2016-10-21 03:39:35    v    MONITOR    Chrome:origin file path:/data/data/com.android.chrome/app_chrome/Default/Bookmarks
+2016-10-21 03:39:35    v    MONITOR    Chrome:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks
+2016-10-21 03:39:35    v    MONITOR    书签数据:{"roots":{"synced":{"children":[{"name":"新浪体育_手机新浪网","url":"http://sports.sina.cn/?vt=4&pos=108"},{"name":"新浪博客_手机新浪网","url":"http://blog.sina.cn/?vt=4&pos=108"}]}}}
+2016-10-21 03:39:35    v    MONITOR    书签条数:2
+2016-10-21 03:39:35    v    MONITOR    name:新浪体育_手机新浪网
+2016-10-21 03:39:35    v    MONITOR    url:http://sports.sina.cn/?vt=4&pos=108
+2016-10-21 03:39:35    v    MONITOR    name:新浪博客_手机新浪网
+2016-10-21 03:39:35    v    MONITOR    url:http://blog.sina.cn/?vt=4&pos=108
+2016-10-21 03:39:35    v    MONITOR    Chrome:读取书签数据结束
+2016-10-21 03:39:35    v    MONITOR    Via:开始合并书签数据，bookmarks appends size:2
+2016-10-21 03:39:35    v    MONITOR    Via:bookmarks cache is miss.
+2016-10-21 03:39:35    v    MONITOR    Via:开始读取书签数据
+2016-10-21 03:39:35    v    MONITOR    Via:origin file path:/data/data/mark.via/files/bookmarks.dat
+2016-10-21 03:39:35    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-10-21 03:39:35    v    MONITOR    书签数据:[{"title":"cnBeta.COM_中文业界资讯站","url":"http://www.cnbeta.com/","folder":"","order":0},{"title":"酷安网 - 发现应用的乐趣","url":"http://www.coolapk.com/","folder":"","order":1},{"title":"新浪博客_手机新浪网","url":"http://blog.sina.cn/?vt=4&pos=108","folder":"","order":2},{"title":"新浪体育_手机新浪网","url":"http://sports.sina.cn/?vt=4&pos=108","folder":"","order":3}]
+2016-10-21 03:39:35    v    MONITOR    书签条数:4
+2016-10-21 03:39:35    v    MONITOR    name:cnBeta.COM_中文业界资讯站
+2016-10-21 03:39:35    v    MONITOR    url:http://www.cnbeta.com/
+2016-10-21 03:39:35    v    MONITOR    name:酷安网 - 发现应用的乐趣
+2016-10-21 03:39:35    v    MONITOR    url:http://www.coolapk.com/
+2016-10-21 03:39:35    v    MONITOR    name:新浪博客_手机新浪网
+2016-10-21 03:39:35    v    MONITOR    url:http://blog.sina.cn/?vt=4&pos=108
+2016-10-21 03:39:35    v    MONITOR    name:新浪体育_手机新浪网
+2016-10-21 03:39:35    v    MONITOR    url:http://sports.sina.cn/?vt=4&pos=108
+2016-10-21 03:39:35    v    MONITOR    Via:读取书签数据结束
+2016-10-21 03:39:35    v    MONITOR    Via:bookmarks increment size:0
+2016-10-21 03:39:35    v    MONITOR    Via:合并书签数据结束
+2016-10-21 03:39:42    v    MONITOR    Via:开始合并书签数据，bookmarks appends size:2
+2016-10-21 03:39:42    v    MONITOR    Via:bookmarks cache is miss.
+2016-10-21 03:39:42    v    MONITOR    Via:开始读取书签数据
+2016-10-21 03:39:42    v    MONITOR    Via:origin file path:/data/data/mark.via/files/bookmarks.dat
+2016-10-21 03:39:42    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-10-21 03:39:42    v    MONITOR    书签数据:[{"title":"cnBeta.COM_中文业界资讯站","url":"http://www.cnbeta.com/","folder":"","order":0},{"title":"酷安网 - 发现应用的乐趣","url":"http://www.coolapk.com/","folder":"","order":1},{"title":"新浪博客_手机新浪网","url":"http://blog.sina.cn/?vt=4&pos=108","folder":"","order":2},{"title":"新浪体育_手机新浪网","url":"http://sports.sina.cn/?vt=4&pos=108","folder":"","order":3}]
+2016-10-21 03:39:42    v    MONITOR    书签条数:4
+2016-10-21 03:39:42    v    MONITOR    name:cnBeta.COM_中文业界资讯站
+2016-10-21 03:39:42    v    MONITOR    url:http://www.cnbeta.com/
+2016-10-21 03:39:42    v    MONITOR    name:酷安网 - 发现应用的乐趣
+2016-10-21 03:39:42    v    MONITOR    url:http://www.coolapk.com/
+2016-10-21 03:39:42    v    MONITOR    name:新浪博客_手机新浪网
+2016-10-21 03:39:42    v    MONITOR    url:http://blog.sina.cn/?vt=4&pos=108
+2016-10-21 03:39:42    v    MONITOR    name:新浪体育_手机新浪网
+2016-10-21 03:39:42    v    MONITOR    url:http://sports.sina.cn/?vt=4&pos=108
+2016-10-21 03:39:42    v    MONITOR    Via:读取书签数据结束
+2016-10-21 03:39:42    v    MONITOR    Via:bookmarks increment size:0
+2016-10-21 03:39:42    v    MONITOR    Via:合并书签数据结束

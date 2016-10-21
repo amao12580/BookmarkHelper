@@ -5,8 +5,10 @@ import android.content.Context;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,6 +39,7 @@ import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
 public class ViaBroswer extends BasicBroswer {
     private static final String packageName = "mark.via";
+    private List<Bookmark> bookmarks;
 
     @Override
     public String getPackageName() {
@@ -61,31 +64,34 @@ public class ViaBroswer extends BasicBroswer {
         this.setName(context.getString(R.string.broswer_name_show_via));
     }
 
-    private static final String fileName_origin = "/bookmarks.dat";
+    private static final String fileName_origin = "bookmarks.dat";
     private static final String filePath_origin = "/data/data/mark.via/files/";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Via/";
 
     @Override
     public List<Bookmark> readBookmark(Context context) {
         if (bookmarks != null) {
+            LogHelper.v("Via:bookmarks cache is hit.");
             return bookmarks;
         }
+        LogHelper.v("Via:bookmarks cache is miss.");
         LogHelper.v("Via:开始读取书签数据");
         BufferedReader reader = null;
         try {
-            String originFilePathFull = filePath_origin + fileName_origin;
+            String originFilePath = filePath_origin + fileName_origin;
+            LogHelper.v("Via:origin file path:" + originFilePath);
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
             cpPath.mkdirs();
-            File file = ExternalStorageUtil.CP2SDCard(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
+            String tmpFilePath = filePath_cp + fileName_origin;
+            LogHelper.v("Via:tmp file path:" + tmpFilePath);
+            File file = ExternalStorageUtil.CP2SDCard(context, originFilePath, tmpFilePath, this.getName());
             reader = new BufferedReader(new FileReader(file));
-            String tempString;
             List<ViaBookmark> list = new ArrayList<>();
-            int line = 1;
+            String tempString;
             while ((tempString = reader.readLine()) != null) {
                 ViaBookmark item = JsonUtil.fromJson(tempString, ViaBookmark.class);
                 list.add(item);
-                line++;
             }
             reader.close();
             LogHelper.v("书签数据:" + JsonUtil.toJson(list));
@@ -126,16 +132,55 @@ public class ViaBroswer extends BasicBroswer {
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
-        List<Bookmark> exists = readBookmark(context);
-        Set<Bookmark> increment = buildNoRepeat(bookmarks, exists);
-        if (increment.isEmpty()) {
-            return 0;
+    public int appendBookmark(Context context, List<Bookmark> appends) {
+        LogHelper.v("Via:开始合并书签数据，bookmarks appends size:" + appends.size());
+        int successCount = 0;
+        BufferedWriter writer = null;
+        try {
+            List<Bookmark> exists = this.readBookmark(context);
+            Set<Bookmark> increment = buildNoRepeat(appends, exists);
+            LogHelper.v("Via:bookmarks increment size:" + increment.size());
+            if (increment.isEmpty()) {
+                return 0;
+            }
+            exists.addAll(increment);
+            LogHelper.v("Via:merge size:" + exists.size());
+            String tmpFilePath = filePath_cp + fileName_origin;
+            String originFilePath = filePath_origin + fileName_origin;
+            LogHelper.v("Via:tmp file path:" + tmpFilePath);
+            writer = new BufferedWriter(new FileWriter(tmpFilePath, false));//覆盖原文件
+            int index = 0;
+            for (Bookmark item : exists) {
+                ViaBookmark viaBookmark = new ViaBookmark();
+                viaBookmark.setTitle(item.getTitle());
+                viaBookmark.setUrl(item.getUrl());
+                viaBookmark.setOrder(index);
+                index++;
+                writer.write(JsonUtil.toJson(viaBookmark));
+                writer.newLine();//换行
+            }
+            writer.flush();
+            ExternalStorageUtil.CP2SDCard(context, tmpFilePath, originFilePath, this.getName());
+            successCount = increment.size();
+        } catch (Exception e) {
+            e.printStackTrace();
+            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(context, this.getName()));
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e1) {
+                    LogHelper.e(MetaData.LOG_E_DEFAULT, e1.getMessage());
+                }
+            }
+            this.bookmarks = null;
+            LogHelper.v("Via:合并书签数据结束");
         }
-        return 99;
+        return successCount;
     }
 
-    private static class ViaBookmark extends Bookmark {
+    private static class ViaBookmark {
         @Setter
         @Getter
         @JSONField(ordinal = 1)

@@ -79,7 +79,9 @@ public class LogHelper {
     }
 
     public static void v(String tag, String text) {
-        log(tag, text, 'v');
+        if (MetaData.isDebug) {
+            log(tag, text, 'v');
+        }
     }
 
     /**

@@ -21,7 +21,6 @@ import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
  */
 public class BasicBroswer extends App implements Broswerable {
     protected int bookmarkSum;
-    protected List<Bookmark> bookmarks;
     @Setter
     protected boolean installed;
 
@@ -69,9 +68,13 @@ public class BasicBroswer extends App implements Broswerable {
     }
 
     protected Set<Bookmark> buildNoRepeat(List<Bookmark> bookmarks, List<Bookmark> exists) {
+        Set<String> urls = new HashSet<>();
+        for (Bookmark item : exists) {
+            urls.add(item.getUrl());
+        }
         Set<Bookmark> result = new HashSet<>();
         for (Bookmark item : bookmarks) {
-            if (!exists.contains(item)) {
+            if (!urls.contains(item.getUrl())) {
                 result.add(item);
             }
         }

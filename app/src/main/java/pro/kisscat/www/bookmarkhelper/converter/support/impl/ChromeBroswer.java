@@ -33,6 +33,7 @@ import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
 public class ChromeBroswer extends BasicBroswer {
     private String packageName = "com.android.chrome";
+    private List<Bookmark> bookmarks;
 
     @Override
     public String getPackageName() {
@@ -42,6 +43,7 @@ public class ChromeBroswer extends BasicBroswer {
     @Override
     public int readBookmarkSum(Context context) {
         if (bookmarks == null) {
+            LogHelper.v("Chrome:bookmarks cache is hit.");
             readBookmark(context);
         }
         return bookmarks.size();
@@ -57,9 +59,9 @@ public class ChromeBroswer extends BasicBroswer {
         this.setName(context.getString(R.string.broswer_name_show_chrome));
     }
 
-    private static final String fileName_origin = "/Bookmarks";
+    private static final String fileName_origin = "Bookmarks";
     private static final String filePath_origin = "/data/data/com.android.chrome/app_chrome/Default/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/chrome/";
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Chrome/";
 
     @Override
     public List<Bookmark> readBookmark(Context context) {
@@ -70,9 +72,11 @@ public class ChromeBroswer extends BasicBroswer {
         LogHelper.v("Chrome:开始读取书签数据");
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
+            LogHelper.v("Chrome:origin file path:" + originFilePathFull);
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
             cpPath.mkdirs();
+            LogHelper.v("Chrome:tmp file path:" + filePath_cp + fileName_origin);
             File file = ExternalStorageUtil.CP2SDCard(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             jsonReader = new JSONReader(new FileReader(file));
             ChromeBookmark chromeBookmark = jsonReader.readObject(ChromeBookmark.class);

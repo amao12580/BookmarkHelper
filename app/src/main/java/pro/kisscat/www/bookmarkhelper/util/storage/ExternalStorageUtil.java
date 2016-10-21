@@ -56,6 +56,8 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
 
     /**
      * 拷贝文件
+     *
+     * root
      */
     public static File CP2SDCard(Context context, String source, String target, String mark) {
         /**
