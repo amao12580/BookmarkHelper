@@ -124,6 +124,10 @@ public class LogHelper {
 //            System.out.println("STATE:" + Environment.getExternalStorageState());
 //            System.out.println("log file dir:" + MYLOG_PATH_SDCARD_DIR);
 //            System.out.println("log file path:" + MYLOG_PATH_SDCARD_DIR + needWriteFiel + MYLOGFILEName);
+            if (MYLOG_PATH_SDCARD_DIR == null) {
+                init();
+                return;
+            }
             File dir = new File(MYLOG_PATH_SDCARD_DIR);
 //            System.out.println("dirPath:" + dir.getAbsolutePath());
 //                boolean flag = dir.mkdirs();

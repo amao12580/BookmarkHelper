@@ -30,7 +30,15 @@ public class ContextUtil {
         return broswerName + " " + context.getResources().getString(R.string.readBookmarksDataMiss);
     }
 
-    public static String buildCPErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.CPError);
+    public static String buildFileCPErrorMessage(Context context, String broswerName) {
+        return broswerName + " " + context.getResources().getString(R.string.fileCPError);
+    }
+
+    public static String buildFileDeleteErrorMessage(Context context, String broswerName) {
+        return broswerName + " " + context.getResources().getString(R.string.fileDeleteError);
+    }
+
+    public static String buildViaBookmarksFileMiss(Context context, String broswerName) {
+        return broswerName + " " + context.getResources().getString(R.string.viaBookmarksFileMiss);
     }
 }

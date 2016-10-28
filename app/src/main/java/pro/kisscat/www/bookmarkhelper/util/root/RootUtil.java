@@ -1,7 +1,14 @@
 package pro.kisscat.www.bookmarkhelper.util.root;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
+import lombok.Getter;
+import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
+import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
@@ -13,7 +20,11 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
  * Time:18:16
  */
 
-public class RootUtil {
+public final class RootUtil {
+    private static final String COMMAND_SU = "su";
+    private static final String COMMAND_EXIT = "exit\n";
+    private static final String COMMAND_LINE_END = "\n";
+
     /**
      * 应用程序运行命令获取 Root权限，设备必须已破解(获得ROOT权限)
      *
@@ -23,64 +34,121 @@ public class RootUtil {
         return executeCmd("chmod 777 " + pkgCodePath);
     }
 
-    public static boolean executeCmd(String cmd) {
-        Process process = null;
-        DataOutputStream os = null;
-        try {
-            process = Runtime.getRuntime().exec("su"); //切换到root帐号
-            if (process == null) {
-                return false;
-            }
-            os = new DataOutputStream(process.getOutputStream());
-            os.writeBytes(cmd + "\n");
-            os.writeBytes("exit\n");
-            os.flush();
-            process.waitFor();
-        } catch (Exception e) {
-            return false;
-        } finally {
-            try {
-                if (os != null) {
-                    os.close();
-                }
-                process.destroy();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return true;
-    }
 
     /**
      * 判断应用是否获取root权限
      */
-    public static synchronized boolean getRootAhth() {
+    public static boolean checkRootAuth() {
+        boolean flag = executeCmd("");
+        LogHelper.v("checkRootAuth result:" + flag);
+        return flag;
+    }
+
+    public static boolean executeCmd(String cmd) {
+        return executeCmd(new String[]{cmd}).isSuccess();
+    }
+
+    public static synchronized CommandResult executeCmd(String[] commands) {
+        int result = -1;
+        boolean isNeedResultMsg = true;
+        if (commands == null || commands.length == 0) {
+            return new CommandResult(result);
+        }
+        String commandStr = Arrays.toString(commands);
+        LogHelper.v("commands is:" + commandStr);
         Process process = null;
         DataOutputStream os = null;
+        BufferedReader successResult = null;
+        BufferedReader errorResult = null;
+        StringBuilder successMsg = null;
+        StringBuilder errorMsg = null;
         try {
-            process = Runtime.getRuntime().exec("su");
+            process = Runtime.getRuntime().exec(COMMAND_SU);
             os = new DataOutputStream(process.getOutputStream());
-            os.writeBytes("exit\n");
+            for (String command : commands) {
+                if (command == null || command.isEmpty()) {
+                    continue;
+                }
+                os.write(command.getBytes());
+                os.writeBytes(COMMAND_LINE_END);
+                os.flush();
+            }
+            os.writeBytes(COMMAND_EXIT);
             os.flush();
-            int exitValue = process.waitFor();
-            if (exitValue == 0) {
-                return true;
-            } else {
-                return false;
+
+            result = process.waitFor();
+            LogHelper.v("process.waitFor is:" + result);
+            if (isNeedResultMsg) {
+                successMsg = new StringBuilder();
+                errorMsg = new StringBuilder();
+                successResult = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                errorResult = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+                String s;
+                while ((s = successResult.readLine()) != null) {
+                    successMsg.append(s);
+                }
+                LogHelper.v("successMsg is:" + successMsg);
+                while ((s = errorResult.readLine()) != null) {
+                    errorMsg.append(s);
+                }
+                LogHelper.v("errorMsg is:" + errorMsg);
             }
         } catch (Exception e) {
-            LogHelper.v("Unexpected error - Here is what I know: " + e.getMessage());
-            return false;
+            LogHelper.e(MetaData.LOG_E_DEFAULT, "Root cmd 执行失败,commands:" + commandStr + ",exception:" + e.getMessage());
+            e.printStackTrace();
         } finally {
             try {
                 if (os != null) {
                     os.close();
                 }
-                process.destroy();
-            } catch (Exception e) {
+                if (successResult != null) {
+                    successResult.close();
+                }
+                if (errorResult != null) {
+                    errorResult.close();
+                }
+            } catch (IOException e) {
+                LogHelper.e(MetaData.LOG_E_DEFAULT, "Root 资源释放失败,commands:" + commandStr + ",exception:" + e.getMessage());
                 e.printStackTrace();
             }
+
+            if (process != null) {
+                process.destroy();
+            }
         }
+        CommandResult commandResult = new CommandResult(result, successMsg == null ? null : successMsg.toString(), errorMsg == null ? null : errorMsg.toString());
+        LogHelper.v("commandResult is :" + JsonUtil.toJson(commandResult));
+        return commandResult;
     }
 
+    public static class CommandResult {
+
+        /**
+         * result of command
+         **/
+        private int result;
+        /**
+         * success message of command result
+         **/
+        @Getter
+        private String successMsg;
+        /**
+         * error message of command result
+         **/
+        private String errorMsg;
+
+        CommandResult(int result) {
+            this.result = result;
+        }
+
+        CommandResult(int result, String successMsg, String errorMsg) {
+            this.result = result;
+            this.successMsg = successMsg;
+            this.errorMsg = errorMsg;
+        }
+
+        public boolean isSuccess() {
+            return result >= 0;
+        }
+    }
 }

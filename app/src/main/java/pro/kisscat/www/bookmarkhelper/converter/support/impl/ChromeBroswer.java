@@ -43,7 +43,6 @@ public class ChromeBroswer extends BasicBroswer {
     @Override
     public int readBookmarkSum(Context context) {
         if (bookmarks == null) {
-            LogHelper.v("Chrome:bookmarks cache is hit.");
             readBookmark(context);
         }
         return bookmarks.size();
@@ -66,8 +65,10 @@ public class ChromeBroswer extends BasicBroswer {
     @Override
     public List<Bookmark> readBookmark(Context context) {
         if (bookmarks != null) {
+            LogHelper.v("Chrome:bookmarks cache is hit.");
             return bookmarks;
         }
+        LogHelper.v("Chrome:bookmarks cache is miss.");
         JSONReader jsonReader = null;
         LogHelper.v("Chrome:开始读取书签数据");
         try {
@@ -77,7 +78,7 @@ public class ChromeBroswer extends BasicBroswer {
             cpPath.deleteOnExit();
             cpPath.mkdirs();
             LogHelper.v("Chrome:tmp file path:" + filePath_cp + fileName_origin);
-            File file = ExternalStorageUtil.CP2SDCard(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
+            File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             jsonReader = new JSONReader(new FileReader(file));
             ChromeBookmark chromeBookmark = jsonReader.readObject(ChromeBookmark.class);
             LogHelper.v("书签数据:" + JsonUtil.toJson(chromeBookmark));
@@ -91,6 +92,7 @@ public class ChromeBroswer extends BasicBroswer {
                 LogHelper.v("url:" + bookmarkUrl);
                 if (bookmarkUrl == null || bookmarkUrl.isEmpty()) {
                     LogHelper.v("url:" + bookmarkUrl + ",skip.");
+                    continue;
                 }
                 if (bookmarkName == null || bookmarkName.isEmpty()) {
                     LogHelper.v("url:" + bookmarkName + ",set to default value.");

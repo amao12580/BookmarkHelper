@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (savedInstanceState == null) {
             checkPermission = PermissionUtil.check(this);
             isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
-            isGetRootAccess = RootUtil.getRootAhth();
+            isGetRootAccess = RootUtil.checkRootAuth();
             showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
             if (!isRoot) {
                 showToastMessage(this, "设备未Root，无法使用.");

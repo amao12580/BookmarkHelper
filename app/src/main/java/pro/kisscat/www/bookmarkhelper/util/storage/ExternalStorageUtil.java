@@ -12,6 +12,7 @@ import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 /**
@@ -56,10 +57,14 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
 
     /**
      * 拷贝文件
-     *
+     * <p>
+     * 借用root权限
+     * <p>
+     * 可以读写系统文件
+     * <p>
      * root
      */
-    public static File CP2SDCard(Context context, String source, String target, String mark) {
+    public static File copyFile(Context context, String source, String target, String mark) {
         /**
          * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）
          * -r  递归复制，包含目录
@@ -69,14 +74,14 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
         String cmd = "cp -fr " + source + " " + target;
         boolean result = RootUtil.executeCmd(cmd);
         if (!result) {
-            throw new ConverterException(ContextUtil.buildCPErrorMessage(context, mark));
+            throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
         }
         File file = new File(target);
         if (!file.exists()) {
-            throw new ConverterException(ContextUtil.buildCPErrorMessage(context, mark));
+            throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
         }
-        file.setReadable(true);
+        boolean flag = file.setReadable(true);
+        LogHelper.v("file is readable:" + flag);
         return file;
     }
-
 }

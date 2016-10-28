@@ -27,6 +27,7 @@ import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
+import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 /**
  * Created with Android Studio.
@@ -80,12 +81,16 @@ public class ViaBroswer extends BasicBroswer {
         try {
             String originFilePath = filePath_origin + fileName_origin;
             LogHelper.v("Via:origin file path:" + originFilePath);
+            boolean isExist = InternalStorageUtil.isExistFile(originFilePath);
+            if (!isExist) {
+                throw new ConverterException(ContextUtil.buildViaBookmarksFileMiss(context, this.getName()));
+            }
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
             cpPath.mkdirs();
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v("Via:tmp file path:" + tmpFilePath);
-            File file = ExternalStorageUtil.CP2SDCard(context, originFilePath, tmpFilePath, this.getName());
+            File file = ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());
             reader = new BufferedReader(new FileReader(file));
             List<ViaBookmark> list = new ArrayList<>();
             String tempString;
@@ -114,6 +119,10 @@ public class ViaBroswer extends BasicBroswer {
                 bookmark.setUrl(bookmarkUrl);
                 bookmarks.add(bookmark);
             }
+        } catch (ConverterException converterException) {
+            converterException.printStackTrace();
+            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
+            throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
@@ -145,23 +154,35 @@ public class ViaBroswer extends BasicBroswer {
             }
             exists.addAll(increment);
             LogHelper.v("Via:merge size:" + exists.size());
-            String tmpFilePath = filePath_cp + fileName_origin;
             String originFilePath = filePath_origin + fileName_origin;
+            String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v("Via:tmp file path:" + tmpFilePath);
             writer = new BufferedWriter(new FileWriter(tmpFilePath, false));//覆盖原文件
-            int index = 0;
+//            int index = 0;
             for (Bookmark item : exists) {
                 ViaBookmark viaBookmark = new ViaBookmark();
                 viaBookmark.setTitle(item.getTitle());
                 viaBookmark.setUrl(item.getUrl());
-                viaBookmark.setOrder(index);
-                index++;
-                writer.write(JsonUtil.toJson(viaBookmark));
+//                viaBookmark.setOrder(index);
+                viaBookmark.setOrder(0);
+//                index++;
+                String json = JsonUtil.toJson(viaBookmark);
+                if (json == null) {
+                    continue;
+                }
+                writer.write(json);
                 writer.newLine();//换行
             }
             writer.flush();
-            ExternalStorageUtil.CP2SDCard(context, tmpFilePath, originFilePath, this.getName());
+            ExternalStorageUtil.copyFile(context, tmpFilePath, originFilePath, this.getName());
+
+            String cleanFilePath = filePath_origin + "bookmarks.html";//干掉这个缓存文件，以便via重新生成书签页面
+            InternalStorageUtil.deleteFile(context, cleanFilePath, this.getName());
             successCount = increment.size();
+        } catch (ConverterException converterException) {
+            converterException.printStackTrace();
+            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
+            throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
