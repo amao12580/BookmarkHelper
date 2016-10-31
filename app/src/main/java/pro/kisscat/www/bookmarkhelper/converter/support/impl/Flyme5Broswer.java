@@ -3,6 +3,7 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.content.ContextCompat;
 
 import java.io.File;
 import java.util.LinkedList;
@@ -32,13 +33,9 @@ import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
  */
 
 public class Flyme5Broswer extends BasicBroswer {
-    private String packageName = "com.android.browser";
+    private static final String TAG = "Flyme5";
+    private static final String packageName = "com.android.browser";
     private List<Bookmark> bookmarks;
-
-    @Override
-    public String getPackageName() {
-        return packageName;
-    }
 
     @Override
     public int readBookmarkSum(Context context) {
@@ -50,7 +47,7 @@ public class Flyme5Broswer extends BasicBroswer {
 
     @Override
     public void fillDefaultIcon(Context context) {
-        this.setIcon(context.getResources().getDrawable(R.drawable.ic_flyme5));
+        this.setIcon(ContextCompat.getDrawable(context, R.drawable.ic_flyme5));
     }
 
     @Override
@@ -60,24 +57,27 @@ public class Flyme5Broswer extends BasicBroswer {
 
 
     private static final String fileName_origin = "browser2.db";
-    private static final String filePath_origin = "/data/data/com.android.browser/databases/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Flyme5/";
 
     @Override
     public List<Bookmark> readBookmark(Context context) {
         if (bookmarks != null) {
-            LogHelper.v("Flyme5:bookmarks cache is hit.");
+            LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
         }
-        LogHelper.v("Flyme5:bookmarks cache is miss.");
-        LogHelper.v("Flyme5:开始读取书签数据");
+        LogHelper.v(TAG + ":bookmarks cache is miss.");
+        LogHelper.v(TAG + ":开始读取书签数据");
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
-            LogHelper.v("Flyme5:origin file path:" + originFilePathFull);
+            LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
-            cpPath.mkdirs();
-            LogHelper.v("Flyme5:tmp file path:" + filePath_cp + fileName_origin);
+            if (!cpPath.mkdirs()) {
+                LogHelper.e(MetaData.LOG_E_DEFAULT, "path:" + filePath_cp + ",create failure.");
+                throw new Exception();
+            }
+            LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Flyme5Bookmark> bookmarksList = fetchBookmarksList(filePath_cp + fileName_origin);
             LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
@@ -106,7 +106,7 @@ public class Flyme5Broswer extends BasicBroswer {
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
-            LogHelper.v("Flyme5:读取书签数据结束");
+            LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
     }
@@ -114,7 +114,7 @@ public class Flyme5Broswer extends BasicBroswer {
     private final static String[] columns = new String[]{"title", "url"};
 
     private List<Flyme5Bookmark> fetchBookmarksList(String dbFilePath) {
-        LogHelper.v("Flyme5:开始读取书签SQLite数据库:" + dbFilePath);
+        LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
         List<Flyme5Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
@@ -137,7 +137,7 @@ public class Flyme5Broswer extends BasicBroswer {
             if (sqLiteDatabase != null) {
                 sqLiteDatabase.close();
             }
-            LogHelper.v("Flyme5:读取书签SQLite数据库结束");
+            LogHelper.v(TAG + ":读取书签SQLite数据库结束");
         }
         return result;
     }

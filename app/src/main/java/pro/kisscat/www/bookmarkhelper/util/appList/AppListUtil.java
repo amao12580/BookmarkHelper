@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -41,7 +39,7 @@ public class AppListUtil {
             app.setPackageName(packageInfo.packageName);
             app.setVersionName(packageInfo.versionName);
             app.setVersionCode(packageInfo.versionCode);
-            app.setIcon(applicationInfo.loadIcon(packageManager));
+//            app.setIcon(applicationInfo.loadIcon(packageManager));
             installedAllApp.put(app.getPackageName(), app);
             /**
              Only display the non-system app info
@@ -56,12 +54,12 @@ public class AppListUtil {
         return installedAllApp.keySet().contains(packageName);
     }
 
-    public static Drawable getIcon(String packageName) {
-        if (isInstalled(packageName)) {
-            return installedAllApp.get(packageName).getIcon();
-        }
-        return null;
-    }
+//    public static Drawable getIcon(String packageName) {
+//        if (isInstalled(packageName)) {
+//            return installedAllApp.get(packageName).getIcon();
+//        }
+//        return null;
+//    }
 
     public static String getAppName(String packageName) {
         if (isInstalled(packageName)) {

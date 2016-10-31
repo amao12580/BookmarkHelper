@@ -1,6 +1,7 @@
 package pro.kisscat.www.bookmarkhelper.converter.support.impl;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
@@ -39,6 +40,7 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
  */
 
 public class ViaBroswer extends BasicBroswer {
+    private static final String TAG = "Via";
     private static final String packageName = "mark.via";
     private List<Bookmark> bookmarks;
 
@@ -57,7 +59,7 @@ public class ViaBroswer extends BasicBroswer {
 
     @Override
     public void fillDefaultIcon(Context context) {
-        this.setIcon(context.getResources().getDrawable(R.drawable.ic_via));
+        this.setIcon(ContextCompat.getDrawable(context, R.drawable.ic_via));
     }
 
     @Override
@@ -66,30 +68,33 @@ public class ViaBroswer extends BasicBroswer {
     }
 
     private static final String fileName_origin = "bookmarks.dat";
-    private static final String filePath_origin = "/data/data/mark.via/files/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/files/";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Via/";
 
     @Override
     public List<Bookmark> readBookmark(Context context) {
         if (bookmarks != null) {
-            LogHelper.v("Via:bookmarks cache is hit.");
+            LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
         }
-        LogHelper.v("Via:bookmarks cache is miss.");
-        LogHelper.v("Via:开始读取书签数据");
+        LogHelper.v(TAG + ":bookmarks cache is miss.");
+        LogHelper.v(TAG + ":开始读取书签数据");
         BufferedReader reader = null;
         try {
             String originFilePath = filePath_origin + fileName_origin;
-            LogHelper.v("Via:origin file path:" + originFilePath);
+            LogHelper.v(TAG + ":origin file path:" + originFilePath);
             boolean isExist = InternalStorageUtil.isExistFile(originFilePath);
             if (!isExist) {
                 throw new ConverterException(ContextUtil.buildViaBookmarksFileMiss(context, this.getName()));
             }
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
-            cpPath.mkdirs();
+            if (!cpPath.mkdirs()) {
+                LogHelper.e(MetaData.LOG_E_DEFAULT, "path:" + filePath_cp + ",create failure.");
+                throw new Exception();
+            }
             String tmpFilePath = filePath_cp + fileName_origin;
-            LogHelper.v("Via:tmp file path:" + tmpFilePath);
+            LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             File file = ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());
             reader = new BufferedReader(new FileReader(file));
             List<ViaBookmark> list = new ArrayList<>();
@@ -135,28 +140,28 @@ public class ViaBroswer extends BasicBroswer {
                     LogHelper.e(MetaData.LOG_E_DEFAULT, e1.getMessage());
                 }
             }
-            LogHelper.v("Via:读取书签数据结束");
+            LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
     }
 
     @Override
     public int appendBookmark(Context context, List<Bookmark> appends) {
-        LogHelper.v("Via:开始合并书签数据，bookmarks appends size:" + appends.size());
+        LogHelper.v(TAG + ":开始合并书签数据，bookmarks appends size:" + appends.size());
         int successCount = 0;
         BufferedWriter writer = null;
         try {
             List<Bookmark> exists = this.readBookmark(context);
             Set<Bookmark> increment = buildNoRepeat(appends, exists);
-            LogHelper.v("Via:bookmarks increment size:" + increment.size());
+            LogHelper.v(TAG + ":bookmarks increment size:" + increment.size());
             if (increment.isEmpty()) {
                 return 0;
             }
             exists.addAll(increment);
-            LogHelper.v("Via:merge size:" + exists.size());
+            LogHelper.v(TAG + ":merge size:" + exists.size());
             String originFilePath = filePath_origin + fileName_origin;
             String tmpFilePath = filePath_cp + fileName_origin;
-            LogHelper.v("Via:tmp file path:" + tmpFilePath);
+            LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             writer = new BufferedWriter(new FileWriter(tmpFilePath, false));//覆盖原文件
 //            int index = 0;
             for (Bookmark item : exists) {
@@ -196,7 +201,7 @@ public class ViaBroswer extends BasicBroswer {
                 }
             }
             this.bookmarks = null;
-            LogHelper.v("Via:合并书签数据结束");
+            LogHelper.v(TAG + ":合并书签数据结束");
         }
         return successCount;
     }

@@ -26,9 +26,9 @@ public class ContextUtil {
         return broswerName + " " + context.getResources().getString(R.string.appendBookmarksError);
     }
 
-    public static String buildReadBookmarksDataMissMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.readBookmarksDataMiss);
-    }
+//    public static String buildReadBookmarksDataMissMessage(Context context, String broswerName) {
+//        return broswerName + " " + context.getResources().getString(R.string.readBookmarksDataMiss);
+//    }
 
     public static String buildFileCPErrorMessage(Context context, String broswerName) {
         return broswerName + " " + context.getResources().getString(R.string.fileCPError);
