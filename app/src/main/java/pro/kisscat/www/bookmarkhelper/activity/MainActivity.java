@@ -11,6 +11,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,6 +29,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
@@ -45,22 +47,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            checkPermission = PermissionUtil.check(this);
-            isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
-            isGetRootAccess = RootUtil.checkRootAuth();
-            showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
-            if (!isRoot) {
-                showToastMessage(this, "设备未Root，无法使用.");
+            try {
+                LogHelper.init();
+                checkPermission = PermissionUtil.check(this);
+                isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
+                isGetRootAccess = RootUtil.checkRootAuth();
+                showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
+                if (!isRoot) {
+                    showToastMessage(this, "设备未Root，无法使用.");
+                    finish();
+                } else {
+                    showToastMessage(this, "成功获取了Root权限.");
+                }
+                ConverterMaster.init(this);
+            } catch (InitException e) {
+                showToastMessage(this, e.getMessage());
                 finish();
-            } else {
-                showToastMessage(this, "成功获取了Root权限.");
             }
-            LogHelper.init();
-            ConverterMaster.init(this);
         }
+        setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.lv);
         rules = ConverterMaster.getSupportRule();
         LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
@@ -69,14 +75,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             BasicBroswer sourceBorswer = rule.getSource();
             map.put("sourceBroswerIcon", sourceBorswer.getIcon());
             map.put("sourceBroswerAppNameText", sourceBorswer.getName());
-            map.put("converterDirecterText", " TO ");
+            map.put("converterDirecterImage", ContextCompat.getDrawable(this, R.drawable.ic_arrow));
+            map.put("converterDirecterText", "");
             BasicBroswer targetBorswer = rule.getTarget();
             map.put("targetBroswerIcon", targetBorswer.getIcon());
             map.put("targetBroswerAppNameText", targetBorswer.getName());
             items.add(map);
         }
-        adapter = new Adapter(this, items, R.layout.listview_item, new String[]{"sourceBroswerIcon", "sourceBroswerAppNameText", "converterDirecterText", "targetBroswerIcon", "targetBroswerAppNameText"},
-                new int[]{R.id.sourceBroswerIcon, R.id.sourceBroswerAppNameText, R.id.converterDirecterText, R.id.targetBroswerIcon, R.id.targetBroswerAppNameText});
+        adapter = new Adapter(this, items, R.layout.listview_item, new String[]{"sourceBroswerIcon", "sourceBroswerAppNameText", "converterDirecterImage", "converterDirecterText", "targetBroswerIcon", "targetBroswerAppNameText"},
+                new int[]{R.id.sourceBroswerIcon, R.id.sourceBroswerAppNameText, R.id.converterDirecterImage, R.id.converterDirecterText, R.id.targetBroswerIcon, R.id.targetBroswerAppNameText});
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(this);
@@ -92,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        }
 //        //doNext(requestCode,grantResults);
         if (PermissionUtil.checkOnly(this)) {
-            showToastMessage(this, "权限不足，exit.");
+            showToastMessage(this, "未能获取Root权限，无法提供服务.");
             finish();
         }
     }
@@ -101,16 +108,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Rule rule = ConverterMaster.getSupportRule().get((int) id);
         if (!rule.isCanUse()) {
-            if (!rule.getSource().isInstalled()) {
+            if (!rule.getSource().isInstalled(this, rule.getSource())) {
                 showToastMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                 return;
             }
-            if (!rule.getTarget().isInstalled()) {
+            if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
                 showToastMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                 return;
             }
+            showToastMessage(lv.getResources().getString(R.string.notSupport));
         }
-        showToastMessage("hit:" + id);
+//        showToastMessage("hit:" + id);
         processConverter(rule);
     }
 

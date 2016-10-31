@@ -14,5 +14,9 @@
     <string name="readBookmarksDataMiss">read bookmarks file missing.</string>
     <string name="fileCPError">file copy error.</string>
     <string name="fileDeleteError">file delete error.</string>
+    <string name="flyme5BookmarksFileMiss">bookmark file missing.</string>
     <string name="viaBookmarksFileMiss">bookmark file missing.</string>
+    <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
+    <string name="notSupport">Not support now.</string>
+    <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
 </resources>

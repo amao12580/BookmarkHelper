@@ -12,8 +12,10 @@
     <string name="broswer_name_show_chrome">谷歌浏览器</string>
     <string name="broswer_name_show_flyme5">Flyme5浏览器</string>
     <string name="broswer_name_show_via">Via浏览器</string>
+    <string name="converter_directer_arrow_contentDescription">转换方向</string>
     <string name="fileCPError">文件拷贝失败</string>
     <string name="fileDeleteError">文件删除失败</string>
+    <string name="flyme5BookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <string name="readBookmarksDataMiss">读取到数据文件不存在</string>
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>
     <string name="readBookmarksError">读取书签信息失败</string>

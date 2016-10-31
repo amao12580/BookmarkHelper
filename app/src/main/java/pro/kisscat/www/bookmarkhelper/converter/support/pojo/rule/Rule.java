@@ -37,23 +37,23 @@ public class Rule {
 
     public Rule(int id, Context context, BasicBroswer source, BasicBroswer target) {
         boolean sourceInstalled = false, targetInstalled = false;
-        if (source.isInstalled()) {
+        if (source.isInstalled(context, source)) {
             sourceInstalled = true;
 //            source.readBookmarkSum(context);
         } else {
             source.fillDefaultIcon(context);
         }
-        if(source.getIcon()==null){
+        if (source.getIcon() == null) {
             source.fillDefaultIcon(context);
         }
         source.fillName(context);
-        if (target.isInstalled()) {
+        if (target.isInstalled(context, target)) {
             targetInstalled = true;
 //            target.readBookmarkSum(context);
         } else {
             target.fillDefaultIcon(context);
         }
-        if(target.getIcon()==null){
+        if (target.getIcon() == null) {
             target.fillDefaultIcon(context);
         }
         if (sourceInstalled && targetInstalled) {

@@ -24,14 +24,14 @@ public class BasicBroswer extends App implements Broswerable {
     @Setter
     protected boolean installed;
 
-    public boolean isInstalled() {
-        setInstalled(AppListUtil.isInstalled(getPackageName()));
+    public boolean isInstalled(Context context, BasicBroswer broswer) {
+        setInstalled(AppListUtil.isInstalled(context, broswer.getPackageName()));
         return installed;
     }
 
     public void fillName(Context context) {
         if (installed) {
-            super.setName(AppListUtil.getAppName(getPackageName()));
+            super.setName(AppListUtil.getAppName(context, getPackageName()));
         }
         fillDefaultAppName(context);
     }

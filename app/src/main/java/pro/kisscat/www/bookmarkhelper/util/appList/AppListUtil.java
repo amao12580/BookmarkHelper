@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import pro.kisscat.www.bookmarkhelper.R;
+import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
+import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.pojo.App;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
@@ -24,14 +27,30 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 public class AppListUtil {
     private static Map<String, App> installedAllApp;
 
+    public static Map<String, App> getInstalledAllApp(Context context) {
+        if (installedAllApp == null) {
+            init(context);
+        }
+        return installedAllApp;
+    }
+
     public static void init(Context context) {
         LogHelper.v("AppListUtil init");
+        String globalMsg = context.getResources().getString(R.string.notPermissionForReadInstalledAppList);
         if (installedAllApp != null) {
             return;
         }
         installedAllApp = new TreeMap<>();
         PackageManager packageManager = context.getPackageManager();
+        if (packageManager == null) {
+            LogHelper.v("context.getPackageManager is null.");
+            throw new InitException(globalMsg);
+        }
         List<PackageInfo> packages = packageManager.getInstalledPackages(0);
+        if (packages == null || packages.isEmpty()) {
+            LogHelper.v("packageManager.getInstalledPackages(0) is null or empty.");
+            throw new InitException(globalMsg);
+        }
         for (PackageInfo packageInfo : packages) {
             ApplicationInfo applicationInfo = packageInfo.applicationInfo;
             App app = new App();
@@ -48,10 +67,14 @@ public class AppListUtil {
              }
              */
         }
+        if (installedAllApp == null) {
+            LogHelper.e(MetaData.LOG_E_DEFAULT, "AppListUtil init failure,installedAllApp is null.");
+            throw new InitException("AppListUtil init failure.");
+        }
     }
 
-    public static boolean isInstalled(String packageName) {
-        return installedAllApp.keySet().contains(packageName);
+    public static boolean isInstalled(Context context, String packageName) {
+        return getInstalledAllApp(context).keySet().contains(packageName);
     }
 
 //    public static Drawable getIcon(String packageName) {
@@ -61,9 +84,9 @@ public class AppListUtil {
 //        return null;
 //    }
 
-    public static String getAppName(String packageName) {
-        if (isInstalled(packageName)) {
-            return installedAllApp.get(packageName).getName();
+    public static String getAppName(Context context, String packageName) {
+        if (isInstalled(context, packageName)) {
+            return getInstalledAllApp(context).get(packageName).getName();
         }
         return "ERROR";
     }

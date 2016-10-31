@@ -37,6 +37,10 @@ public class Flyme5Broswer extends BasicBroswer {
     private static final String packageName = "com.android.browser";
     private List<Bookmark> bookmarks;
 
+    public String getPackageName() {
+        return packageName;
+    }
+
     @Override
     public int readBookmarkSum(Context context) {
         if (bookmarks == null) {
@@ -73,13 +77,10 @@ public class Flyme5Broswer extends BasicBroswer {
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
-            if (!cpPath.mkdirs()) {
-                LogHelper.e(MetaData.LOG_E_DEFAULT, "path:" + filePath_cp + ",create failure.");
-                throw new Exception();
-            }
+            cpPath.mkdirs();
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
-            List<Flyme5Bookmark> bookmarksList = fetchBookmarksList(filePath_cp + fileName_origin);
+            List<Flyme5Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp + fileName_origin);
             LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
             LogHelper.v("书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
@@ -101,6 +102,10 @@ public class Flyme5Broswer extends BasicBroswer {
                 bookmark.setUrl(bookmarkUrl);
                 bookmarks.add(bookmark);
             }
+        } catch (ConverterException converterException) {
+            converterException.printStackTrace();
+            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
+            throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
@@ -113,14 +118,27 @@ public class Flyme5Broswer extends BasicBroswer {
 
     private final static String[] columns = new String[]{"title", "url"};
 
-    private List<Flyme5Bookmark> fetchBookmarksList(String dbFilePath) {
+    private List<Flyme5Bookmark> fetchBookmarksList(Context context, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
         List<Flyme5Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
+        String tableName = "bookmarks";
+        boolean tableExist = false;
         try {
             sqLiteDatabase = DBHelper.openReadOnlyDatabase(dbFilePath);
-            cursor = sqLiteDatabase.query(false, "bookmarks", columns, null, null, "url", null, "created asc", null);
+            cursor = sqLiteDatabase.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + tableName + "'", null);
+            if (cursor.moveToNext()) {
+                int count = cursor.getInt(0);
+                if (count > 0) {
+                    tableExist = true;
+                }
+            }
+            if (!tableExist) {
+                LogHelper.v(TAG + ":database table " + tableName + " not exist.");
+                throw new ConverterException(ContextUtil.buildFlyme5ReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+            }
+            cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "created asc", null);
             if (cursor != null && cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
                     Flyme5Bookmark item = new Flyme5Bookmark();

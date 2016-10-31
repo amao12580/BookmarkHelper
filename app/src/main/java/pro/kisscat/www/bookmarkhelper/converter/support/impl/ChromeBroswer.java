@@ -37,6 +37,10 @@ public class ChromeBroswer extends BasicBroswer {
     private static final String packageName = "com.android.chrome";
     private List<Bookmark> bookmarks;
 
+    public String getPackageName() {
+        return packageName;
+    }
+
     @Override
     public int readBookmarkSum(Context context) {
         if (bookmarks == null) {
@@ -73,10 +77,7 @@ public class ChromeBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
-            if (!cpPath.mkdirs()) {
-                LogHelper.e(MetaData.LOG_E_DEFAULT, "path:" + filePath_cp + ",create failure.");
-                throw new Exception();
-            }
+            cpPath.mkdirs();
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             jsonReader = new JSONReader(new FileReader(file));

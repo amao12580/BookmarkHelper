@@ -44,7 +44,6 @@ public class ViaBroswer extends BasicBroswer {
     private static final String packageName = "mark.via";
     private List<Bookmark> bookmarks;
 
-    @Override
     public String getPackageName() {
         return packageName;
     }
@@ -89,10 +88,7 @@ public class ViaBroswer extends BasicBroswer {
             }
             File cpPath = new File(filePath_cp);
             cpPath.deleteOnExit();
-            if (!cpPath.mkdirs()) {
-                LogHelper.e(MetaData.LOG_E_DEFAULT, "path:" + filePath_cp + ",create failure.");
-                throw new Exception();
-            }
+            cpPath.mkdirs();
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             File file = ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());

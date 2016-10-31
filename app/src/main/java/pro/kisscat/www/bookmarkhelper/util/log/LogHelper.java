@@ -117,24 +117,24 @@ public class LogHelper {
      * @return
      **/
     private synchronized static void writeLogtoFile(String mylogtype, String tag, String text) {// 新建或打开日志文件
+        if (!isInit()) {
+            System.out.println("LogHelper init not work.");
+            return;
+        }
         Date nowtime = new Date();
         String needWriteFiel = logfile.format(nowtime);
         String needWriteMessage = myLogSdf.format(nowtime) + "    " + mylogtype + "    " + tag + "    " + text;
+        if (MYLOG_PATH_SDCARD_DIR == null) {
+            init();
+            return;
+        }
+        File dir = new File(MYLOG_PATH_SDCARD_DIR);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+        FileWriter filerWriter = null;
+        BufferedWriter bufWriter = null;
         try {
-//            System.out.println("STATE:" + Environment.getExternalStorageState());
-//            System.out.println("log file dir:" + MYLOG_PATH_SDCARD_DIR);
-//            System.out.println("log file path:" + MYLOG_PATH_SDCARD_DIR + needWriteFiel + MYLOGFILEName);
-            if (MYLOG_PATH_SDCARD_DIR == null) {
-                init();
-                return;
-            }
-            File dir = new File(MYLOG_PATH_SDCARD_DIR);
-//            System.out.println("dirPath:" + dir.getAbsolutePath());
-//                boolean flag = dir.mkdirs();
-            if (!dir.exists()) {
-                dir.mkdirs();
-            }
-//                System.out.println("mkdirs:" + flag);
             File file = new File(MYLOG_PATH_SDCARD_DIR, needWriteFiel + MYLOGFILEName);
             if (!file.exists()) {
                 if (file.createNewFile()) {
@@ -142,14 +142,29 @@ public class LogHelper {
                     file.setWritable(true);
                 }
             }
-            FileWriter filerWriter = new FileWriter(file, true);//后面这个参数代表是不是要接上文件中原来的数据，不进行覆盖
-            BufferedWriter bufWriter = new BufferedWriter(filerWriter);
+            filerWriter = new FileWriter(file, true);//后面这个参数代表是不是要接上文件中原来的数据，不进行覆盖
+            bufWriter = new BufferedWriter(filerWriter);
             bufWriter.write(needWriteMessage);
             bufWriter.newLine();
             bufWriter.close();
             filerWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            if (bufWriter != null) {
+                try {
+                    bufWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (filerWriter != null) {
+                try {
+                    filerWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -175,6 +190,13 @@ public class LogHelper {
         return now.getTime();
     }
 
+    private static boolean isSuccessInit = false;
+
+    public static boolean isInit() {
+        return isSuccessInit;
+    }
+
+
     public static void init() {
         String exPath = new ExternalStorageUtil().getRootPath();
         String inPath = new InternalStorageUtil().getRootPath();
@@ -190,5 +212,6 @@ public class LogHelper {
         if (!appDirectory.exists()) {
             appDirectory.mkdir();
         }
+        isSuccessInit = true;
     }
 }
