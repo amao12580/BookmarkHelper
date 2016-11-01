@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon id="search_in_page"
+      name="@string/addon_name"
+       description="@string/description"
+       icon="UCMobile/addon/BuiltinAddons/search_in_page_default.png"
+       type="builtin"
+       enabled="true"
+       launchMode="boot_completed"
+       timeStamp="1000"
+       versionCode="1"
+       detail="@string/addon_detail"
+       sdk-version="1.0"
+       >
+    <extension name="com.uc.browser.addon.builtin.ReadModeBuiltinExtension"
+               description="@string/addon_name"
+               location ="AddonBar"
+               icon="UCMobile/addon/BuiltinAddons/search_in_page_default.png">
+    </extension>
+</addon>

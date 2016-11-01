@@ -91,8 +91,7 @@ public class ChromeBroswer extends BasicBroswer {
                 String bookmarkName = item.getName();
                 LogHelper.v("name:" + bookmarkName);
                 LogHelper.v("url:" + bookmarkUrl);
-                if (bookmarkUrl == null || bookmarkUrl.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkUrl + ",skip.");
+                if (!isGoodUrl(bookmarkUrl)) {
                     continue;
                 }
                 if (bookmarkName == null || bookmarkName.isEmpty()) {

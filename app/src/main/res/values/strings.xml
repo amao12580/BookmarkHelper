@@ -3,6 +3,7 @@
     <string name="app_name">BookmarkHelper</string>
     <string name="broswer_name_show_chrome">Chrome Broswer</string>
     <string name="broswer_name_show_flyme5">Flyme5 Broswer</string>
+    <string name="broswer_name_show_uc">UC Broswer</string>
     <string name="broswer_name_show_via">Via Broswer</string>
 
     <string name="source_broswer_icon_contentDescription">source broswer</string>

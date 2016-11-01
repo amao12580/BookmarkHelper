@@ -4,6 +4,8 @@
     <string name="broswer_name_show_chrome">谷歌浏览器</string>
     <string name="broswer_name_show_flyme5">Flyme5浏览器</string>
     <string name="broswer_name_show_via">Via浏览器</string>
+    <string name="broswer_name_show_uc">UC浏览器</string>
+
     <string name="source_broswer_icon_contentDescription">来源浏览器</string>
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
     <string name="appUninstall">未安装.</string>

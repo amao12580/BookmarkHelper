@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon
+    id="qrcd"
+    name="@string/addon_name"
+    description="@string/description"
+    detail="@string/addon_detail"
+    enabled="true"
+    launchMode="boot_completed"
+    icon="UCMobile/addon/BuiltinAddons/shortcut_panel_barcode.png"
+    sdk-version="1.0"
+    timeStamp="1000"
+    type="builtin"
+    versionCode="1" >
+    <extension
+        name="com.uc.browser.addon.builtin.BarcodeBuiltinExtension"
+        description="@string/addon_name"
+        icon="UCMobile/addon/BuiltinAddons/shortcut_panel_barcode.png"
+        location="AddonBar" >
+    </extension>
+</addon>

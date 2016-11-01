@@ -108,8 +108,8 @@ public class ViaBroswer extends BasicBroswer {
                 String bookmarkName = item.getTitle();
                 LogHelper.v("name:" + bookmarkName);
                 LogHelper.v("url:" + bookmarkUrl);
-                if (bookmarkUrl == null || bookmarkUrl.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkUrl + ",skip.");
+                if (!isGoodUrl(bookmarkUrl)) {
+                    continue;
                 }
                 if (bookmarkName == null || bookmarkName.isEmpty()) {
                     LogHelper.v("url:" + bookmarkName + ",set to default value.");

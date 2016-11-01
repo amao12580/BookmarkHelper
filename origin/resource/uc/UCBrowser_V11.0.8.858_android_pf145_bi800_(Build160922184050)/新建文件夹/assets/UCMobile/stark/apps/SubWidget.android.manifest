@@ -1,0 +1,13 @@
+{
+    "manifest_version": "1.0",
+    "name": "SubWidget",
+    "display_name": "订阅列表",
+    "version": "1.2.0.5",
+    "js_url": "https://image.uc.cn/s/uae/g/20/SubWidget.stark-0.27.3-release.bundle.js",
+    "js_md5": "e8a9d2f7d4ea0cecbbe3a38c3601e9ed",
+    "js_entry_module": "SubWidget",
+    "js_rel_version": "0.27.3",
+    "fallback_url": "http://www.uc.cn",
+    "author": "ucweb inc.",
+    "description": "订阅列表"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon id="facebookua"
+    name="@string/addon_name"
+    description="@string/description"
+    detail="@string/addon_detail"
+    enabled="true"
+    icon="UCMobile/addon/BuiltinAddons/fbua.png"
+    sdk-version="1.0"
+    timeStamp="1000"
+    type="builtin"
+    versionCode="2" >
+
+    <extension
+        name="com.uc.browser.addon.builtin.FaceBookUaExtension"
+        description="@string/addon_name"
+        icon="UCMobile/addon/BuiltinAddons/fbua.png"
+        location="AddonBar" >
+    </extension>
+    <event-receiver name="FaceBookUaReceiver"
+        description="@string/addon_name"
+        icon="UCMobile/addon/BuiltinAddons/fbua.png"
+        location="AddonBar">
+         <intent-filter>
+             <action name="addon.action.PAGE_EVENT"/>
+            <category name="addon.category.PAGE_START" />
+             <data scheme="https" host="*"/> 
+         </intent-filter>
+    </event-receiver>
+</addon>

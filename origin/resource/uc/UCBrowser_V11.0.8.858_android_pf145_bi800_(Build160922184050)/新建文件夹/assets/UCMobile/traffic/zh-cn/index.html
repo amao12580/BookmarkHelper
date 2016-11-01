@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type"  content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="MobileOptimized" content="320"/>
+<title>流量查询</title>
+<style>
+*{ padding:0; margin:0;}
+body{
+	color:#333;
+	font-size:13px;
+    font-family:"\5FAE\8F6F\96C5\9ED1","Gotham-Medium",Helvetica,Arial;
+}
+a{
+	text-decoration:none;
+	color: #1a1a1a;
+}
+li,ul{
+	list-style-type:none;
+}
+img{
+	border:none;
+}
+.headerflow{
+	position: relative;
+	padding-top:27px;
+	width: 100%;
+	height: 206px;
+	color:#fff;
+	background:#329bde url(../images/hbg.png) repeat-x;
+	background-size:1px 233px;
+	z-index:1;
+}
+.headerflow .tips {
+	text-align:center;
+	margin-top:15px;
+}
+.headerflow .tips span {margin:0 10px;}
+.btn-clear {
+	display:block;
+	width:60px;height:26px;line-height:28px;color:#fff;text-indent:24px;
+	background:rgba(255,255,255,.15) url(../images/ico_clear.png) 8px center no-repeat;
+	background-size:12px 12px;
+	border-radius:26px;
+	position:absolute;top:15px;right:12px;
+}
+.dlsave {
+	margin:auto;
+	width:142px;height:142px;line-height:18px;
+	text-align:center;
+	border:2px #ddeef8 solid;
+	border-radius:142px;
+	box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+.dlsave p:nth-child(1) {
+	margin-top:35px;
+}
+.dlsave p:nth-child(2) {
+	margin-top:10px;
+	font-size:34px;
+}
+.dlsave p:nth-child(2) span {
+	color:#deeffa;
+	font-size:14px;
+}
+.wave{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	z-index:-1;
+}
+.wave dt,.wave dd{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 80px;
+	width: 100%;
+}
+.wave dt{
+	background: url("../images/wave_a.png") repeat-x 0 0;
+	background-size: 320px 82px;
+}
+.wave dd{
+	background: url("../images/wave_b.png") repeat-x 0 0;
+	background-size: 320px 82px;
+}
+.wrap {margin:25px;}
+.wrap .text {font-size:14px;}
+.btn {display:block;margin-top:20px;height:40px;line-height:40px;text-align:center;font-size:14px;color:#666;background:#fafafa;border:1px #ccc solid;border-radius:3px;}
+</style>
+</head>
+
+<body>	
+<div class="headerflow">
+	<a href="ext:traffic_clear" class="btn-clear">清零</a>
+    <div class="dlsave">
+    	<p>已为您累积节省<br>移动数据流量</p>
+        <p>#totalsaved#<span>#unit#</span></p>
+    </div>
+    <div class="tips"><span>今日使用：#todaytraffic#</span> <span>累积使用：#totaltraffic#</span></div>
+	<dl id="wave" class="wave">
+		<dt style="background-position:0 0;"></dt>
+		<dd style="background-position:0 0;"></dd>
+	</dl>
+</div>
+
+<div class="wrap">
+	<div class="text">UC采用云端压缩技术，流量一如既往的节省， 请放心使用！</div>
+    <a href="ext:traffic_share" class="btn">分享给好友</a>
+    <a href="ext:traffic_setting" class="btn">设置我的加速省流方案</a>
+</div>
+
+
+</body>
+<script type="text/javascript">
+var numWave=0;
+function wave(){
+	numWave++;
+	var wave=document.getElementById("wave");
+	var subs=wave.children;
+	subs[0].style.backgroundPosition=numWave+"px 0px";
+	subs[1].style.backgroundPosition=-numWave+"px 0px";
+	setTimeout("wave()",20);
+}
+wave();
+</script>
+</html>

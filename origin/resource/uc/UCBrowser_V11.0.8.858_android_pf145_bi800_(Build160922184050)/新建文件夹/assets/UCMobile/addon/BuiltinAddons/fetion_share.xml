@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon id="fetion_share"
+       name="@string/addon_name"
+       description="@string/description"
+       icon="UCMobile/addon/BuiltinAddons/fetion_share.png"
+       type="builtin"
+       enabled="true"
+       timeStamp="1000"
+       launchMode="boot_completed"
+       detail="@string/addon_detail"
+       versionCode="2"
+       sdk-version="1.0"
+       >
+    <extension name="com.uc.browser.addon.builtin.FetionShareBuiltinExtension"
+               description="@string/addon_name"
+               location ="AddonBar"
+               icon="UCMobile/addon/BuiltinAddons/fetion_share.png">
+    </extension>
+    <event-receiver name="ShareFetionReceiver"
+                  description="@string/addon_name"
+                  icon="UCMobile/addon/BuiltinAddons/fetion_share.png">
+         <intent-filter>
+             <action name="addon.action.SHARE_EVENT"/>
+         </intent-filter>
+    </event-receiver>
+</addon>

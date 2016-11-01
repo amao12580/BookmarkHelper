@@ -9,8 +9,6 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
@@ -80,17 +78,16 @@ public class Flyme5Broswer extends BasicBroswer {
             cpPath.mkdirs();
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
-            List<Flyme5Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp + fileName_origin);
+            List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp + fileName_origin);
             LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
             LogHelper.v("书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
-            for (Flyme5Bookmark item : bookmarksList) {
+            for (Bookmark item : bookmarksList) {
                 String bookmarkUrl = item.getUrl();
                 String bookmarkName = item.getTitle();
                 LogHelper.v("name:" + bookmarkName);
                 LogHelper.v("url:" + bookmarkUrl);
-                if (bookmarkUrl == null || bookmarkUrl.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkUrl + ",skip.");
+                if (!isGoodUrl(bookmarkUrl)) {
                     continue;
                 }
                 if (bookmarkName == null || bookmarkName.isEmpty()) {
@@ -118,9 +115,9 @@ public class Flyme5Broswer extends BasicBroswer {
 
     private final static String[] columns = new String[]{"title", "url"};
 
-    private List<Flyme5Bookmark> fetchBookmarksList(Context context, String dbFilePath) {
+    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
-        List<Flyme5Bookmark> result = new LinkedList<>();
+        List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
         String tableName = "bookmarks";
@@ -136,12 +133,12 @@ public class Flyme5Broswer extends BasicBroswer {
             }
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
-                throw new ConverterException(ContextUtil.buildFlyme5ReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
             }
             cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "created asc", null);
             if (cursor != null && cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
-                    Flyme5Bookmark item = new Flyme5Bookmark();
+                    Bookmark item = new Bookmark();
                     item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
                     item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
                     result.add(item);
@@ -163,15 +160,5 @@ public class Flyme5Broswer extends BasicBroswer {
     @Override
     public int appendBookmark(Context context, List<Bookmark> bookmarks) {
         return 0;
-    }
-
-
-    private static class Flyme5Bookmark {
-        @Setter
-        @Getter
-        private String title;
-        @Setter
-        @Getter
-        private String url;
     }
 }

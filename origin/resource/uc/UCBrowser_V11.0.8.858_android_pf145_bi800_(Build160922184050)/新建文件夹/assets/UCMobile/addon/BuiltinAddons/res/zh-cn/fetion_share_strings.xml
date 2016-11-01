@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="addon_name">飞信分享</string>
+    <string name="description">分享页面给飞信好友</string>
+    <string name="addon_detail">分享页面给飞信好友</string>
+</resources>

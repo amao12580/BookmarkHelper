@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">让文本粘贴更便利</string>
+    <string name="addon_name">剪贴板</string>
+    <string name="addon_detail">可便捷填入剪贴板中的常用文本。\n当你需要在输入框粘贴内容时，使用剪贴板，即可从中选择之前复制过的内容或者常用短语。\n点击搜索栏右边的按钮，在面板中点击剪贴板图标，还可以对剪贴板中的内容进行编辑，以及新增常用短语。</string>
+</resources>

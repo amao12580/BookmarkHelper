@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">通过语音控制UC</string>
+    <string name="addon_name">语音</string>
+    <string name="addon_detail">点击搜索栏右边的按钮，在面板中使用语音插件，开始与UC对话吧！\n访问网站、搜索、控制浏览功能，只要你开口，UC全部帮你实现。</string>
+</resources>

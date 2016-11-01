@@ -17,8 +17,12 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 3.Flyme4.X系列的rom暂未测试，没有设备。如您感兴趣，请与我联系，见下方的邮件地址！
 
 4.Via合并书签修复bug，增强稳定性，现在安装via，但是没有打开过，将不能合并，最少需要您手动打开一次！
-### 0.0.3版 Draft
-增加兼容：支持从[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+### [0.0.3版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.3%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.3.apk)
+1.增加兼容：支持从[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+2.界面大调整，美美哒！
+
+3.部分代码重构，精简掉重合代码段。
 ### 0.0.4版 Draft
 增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 

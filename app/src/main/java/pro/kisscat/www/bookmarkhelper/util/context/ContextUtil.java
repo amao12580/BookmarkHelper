@@ -42,7 +42,7 @@ public class ContextUtil {
         return broswerName + " " + context.getResources().getString(R.string.viaBookmarksFileMiss);
     }
 
-    public static String buildFlyme5ReadBookmarksTableNotExistErrorMessage(Context context, String broswerName) {
+    public static String buildReadBookmarksTableNotExistErrorMessage(Context context, String broswerName) {
         return broswerName + " " + context.getResources().getString(R.string.flyme5BookmarksFileMiss);
     }
 }

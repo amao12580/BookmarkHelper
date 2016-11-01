@@ -10,6 +10,7 @@ import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.pojo.App;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
  * Created with Android Studio.
@@ -79,5 +80,13 @@ public class BasicBroswer extends App implements Broswerable {
             }
         }
         return result;
+    }
+
+    protected boolean isGoodUrl(String bookmarkUrl) {
+        if (bookmarkUrl == null || bookmarkUrl.isEmpty() || !bookmarkUrl.startsWith("http")) {
+            LogHelper.v("url is damage,url:" + bookmarkUrl + ",skip.");
+            return false;
+        }
+        return true;
     }
 }

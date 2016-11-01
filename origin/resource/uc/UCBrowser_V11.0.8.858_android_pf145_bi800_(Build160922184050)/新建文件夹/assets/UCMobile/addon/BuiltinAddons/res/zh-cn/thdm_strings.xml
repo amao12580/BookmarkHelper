@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">更快、更省流量</string>
+    <string name="addon_name">极速模式</string>
+    <string name="addon_detail">点击搜索栏右边的按钮，可以在面板中看到极速模式开关图标。\n开启极速模式时，可以帮你节省流量，享受极速的访问体验。\n如果想访问原汁原味的网页，请关闭极速模式。</string>
+</resources>

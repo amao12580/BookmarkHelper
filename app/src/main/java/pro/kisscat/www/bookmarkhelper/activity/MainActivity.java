@@ -10,6 +10,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     boolean checkPermission;
     List<Map<String, Object>> items = new ArrayList<>();
 
+    private static final int default_color = Color.parseColor("#FAF0E6");
+    private static final int choosed_color = Color.parseColor("#DCDCDC");
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.lv);
+        lv.setBackgroundColor(default_color);
         rules = ConverterMaster.getSupportRule();
         LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
         for (Rule rule : rules) {
@@ -106,20 +111,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Rule rule = ConverterMaster.getSupportRule().get((int) id);
-        if (!rule.isCanUse()) {
-            if (!rule.getSource().isInstalled(this, rule.getSource())) {
-                showToastMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
-                return;
+        lv.setClickable(false);
+        int choosed = parent.getPositionForView(view);
+        for (int i = 0; i < parent.getChildCount(); i++) {
+            if (i != choosed) {
+                parent.getChildAt(i).setBackgroundColor(default_color);
+            } else {
+                view.setBackgroundColor(choosed_color);
             }
-            if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
-                showToastMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
-                return;
-            }
-            showToastMessage(lv.getResources().getString(R.string.notSupport));
         }
-//        showToastMessage("hit:" + id);
-        processConverter(rule);
+        try {
+            Rule rule = ConverterMaster.getSupportRule().get((int) id);
+            if (!rule.isCanUse()) {
+                if (!rule.getSource().isInstalled(this, rule.getSource())) {
+                    showToastMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                    return;
+                }
+                if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
+                    showToastMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                    return;
+                }
+                showToastMessage(lv.getResources().getString(R.string.notSupport));
+            }
+            processConverter(rule);
+        } finally {
+            lv.setClickable(true);
+        }
     }
 
     private void processConverter(Rule rule) {
