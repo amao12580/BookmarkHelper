@@ -8,7 +8,7 @@ import java.util.Set;
 
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
-import pro.kisscat.www.bookmarkhelper.pojo.App;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 

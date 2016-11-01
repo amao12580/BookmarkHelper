@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_uc.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_uc.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_flyme5.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_flyme5.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_via.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_via.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_arrow.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_chrome.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_chrome.png"
+    }
+]

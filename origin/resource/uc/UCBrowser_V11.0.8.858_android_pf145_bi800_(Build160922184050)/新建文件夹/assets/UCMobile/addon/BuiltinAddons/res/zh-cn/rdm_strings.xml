@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="description">拼接页面，免翻页</string>
-    <string name="addon_name">阅读模式</string>
-    <string name="addon_detail">看小说、看新闻时，重复地点击下一页，是否让你很烦恼呢？\n开启阅读模式吧，从此不必再点击翻页，简单地拖动网页，连贯的浏览体验，让你看得更爽。\n点击搜索栏右边的按钮，即可在面板中看到阅读模式开关。</string>
-</resources>

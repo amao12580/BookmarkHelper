@@ -12,7 +12,7 @@ import java.util.TreeMap;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
-import pro.kisscat.www.bookmarkhelper.pojo.App;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**

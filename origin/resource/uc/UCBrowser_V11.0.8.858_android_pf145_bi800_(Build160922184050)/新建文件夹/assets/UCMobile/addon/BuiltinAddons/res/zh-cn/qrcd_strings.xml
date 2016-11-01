@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="description">扫描解析扫一扫</string>
-    <string name="addon_name">扫一扫</string>
-    <string name="addon_detail">扫一扫怎么玩？\n点击搜索栏右边的按钮，从面板中使用扫一扫插件，扫描一下，轻松玩转扫一扫。\n网址、电话号码、邮箱、文本等，扫描识别无障碍。</string>
-</resources>

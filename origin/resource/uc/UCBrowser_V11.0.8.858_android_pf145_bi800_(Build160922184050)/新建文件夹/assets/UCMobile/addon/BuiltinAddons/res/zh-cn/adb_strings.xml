@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="addon_name">广告过滤</string>
-    <string name="description">去除网站广告</string>
-    <string name="addon_detail">烦人的网页广告从此不复存在，广告过滤插件给你清爽、极速的浏览体验。\n开启强力过滤，广告过滤更加极致，各类广告一扫而空。\n我们还为你统计了过滤的广告数据，过滤了多少广告、什么网站广告最多，一目了然。</string>
-</resources>

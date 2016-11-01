@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="description">解放双手，网页自动刷新</string>
-    <string name="addon_name">定时刷新</string>
-    <string name="addon_detail">刷微博、逛论坛、玩游戏时，是不是有时候希望UC可以自动刷新呢？定时刷新插件就可以满足你的需求。\n点击面板中定时刷新图标，设定好自动刷新时间，UC就会自动为你刷新页面了。</string>
-</resources>

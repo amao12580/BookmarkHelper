@@ -12,14 +12,43 @@ android {
         versionName "0.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
     buildTypes {
         debug {
             // 为了不和 release 版本冲突
             applicationIdSuffix ".debug"
         }
+        //代码混淆：http://www.jianshu.com/p/f9438603e096
         release {
-            minifyEnabled false
+            // 混淆
+            minifyEnabled true
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            // 前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为appname-1.0-beta1-xxxx-xx-xx.apk
+                        //def fileName = "app-${defaultConfig.versionName}-beta1-${releaseTime()}.apk"
+                        def fileName = "app-debug.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
         }
     }
 
@@ -67,4 +96,8 @@ def gitVersionTag() {
     }
 
     return version
+}
+
+def releaseTime() {
+    return new Date().format("yyyy.MM.dd", TimeZone.getTimeZone("UTC"))
 }

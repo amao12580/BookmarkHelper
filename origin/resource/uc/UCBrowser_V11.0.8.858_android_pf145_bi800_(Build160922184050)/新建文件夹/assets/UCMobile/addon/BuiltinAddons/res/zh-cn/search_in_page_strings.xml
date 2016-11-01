@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="description">快捷查找页面内的文字信息</string>
-    <string name="addon_name">页内查找</string>
-    <string name="addon_detail">在浏览网页时，通过页内查找插件，可帮你快速查找到页面中的文字，通过特定文字定位页面位置。在插件面板中，点击页内查找插件，即可在当前页面开始进行搜索。</string>
-</resources>
