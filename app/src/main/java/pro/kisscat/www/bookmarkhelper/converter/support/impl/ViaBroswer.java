@@ -3,8 +3,6 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,12 +14,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import lombok.Getter;
-import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -200,24 +197,5 @@ public class ViaBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":合并书签数据结束");
         }
         return successCount;
-    }
-
-    private static class ViaBookmark {
-        @Setter
-        @Getter
-        @JSONField(ordinal = 1)
-        String title;
-        @Setter
-        @Getter
-        @JSONField(ordinal = 2)
-        String url;
-        @Setter
-        @Getter
-        @JSONField(ordinal = 3)
-        String folder = "";
-        @Setter
-        @Getter
-        @JSONField(ordinal = 4)
-        int order = 0;
     }
 }

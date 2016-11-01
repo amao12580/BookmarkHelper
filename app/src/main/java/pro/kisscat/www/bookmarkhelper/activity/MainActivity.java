@@ -13,6 +13,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -57,16 +58,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 checkPermission = PermissionUtil.check(this);
                 isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
                 isGetRootAccess = RootUtil.checkRootAuth();
-                showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
+                showMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
                 if (!isRoot) {
-                    showToastMessage(this, "设备未Root，无法使用.");
+                    showMessage(this, "设备未Root，无法使用.");
                     finish();
                 } else {
-                    showToastMessage(this, "成功获取了Root权限.");
+                    showMessage(this, "成功获取了Root权限.");
                 }
                 ConverterMaster.init(this);
             } catch (InitException e) {
-                showToastMessage(this, e.getMessage());
+                showMessage(this, e.getMessage());
                 finish();
             }
         }
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             map.put("sourceBroswerIcon", sourceBorswer.getIcon());
             map.put("sourceBroswerAppNameText", sourceBorswer.getName());
             map.put("converterDirecterImage", ContextCompat.getDrawable(this, R.drawable.ic_arrow));
-            map.put("converterDirecterText", "");
+            map.put("converterDirecterText", "~Biu !");
             BasicBroswer targetBorswer = rule.getTarget();
             map.put("targetBroswerIcon", targetBorswer.getIcon());
             map.put("targetBroswerAppNameText", targetBorswer.getName());
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        }
 //        //doNext(requestCode,grantResults);
         if (PermissionUtil.checkOnly(this)) {
-            showToastMessage(this, "未能获取Root权限，无法提供服务.");
+            showMessage(this, "未能获取Root权限，无法提供服务.");
             finish();
         }
     }
@@ -124,14 +125,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             Rule rule = ConverterMaster.getSupportRule().get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
-                    showToastMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                    showDialogMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                     return;
                 }
                 if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
-                    showToastMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                    showDialogMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
                     return;
                 }
-                showToastMessage(lv.getResources().getString(R.string.notSupport));
+                showDialogMessage(lv.getResources().getString(R.string.notSupport));
             }
             processConverter(rule);
         } finally {
@@ -144,18 +145,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         try {
             ret = ConverterMaster.excute(lv.getContext(), rule);
         } catch (ConverterException e) {
-            showToastMessage(e.getMessage());
+            showDialogMessage(e.getMessage());
             return;
         }
         if (ret > 0) {
-            showToastMessage("成功合并了" + ret + "条书签，请重启" + rule.getTarget().getName() + "后查看效果.");
+            showDialogMessage("成功合并了" + ret + "条书签，请重启" + rule.getTarget().getName() + "后查看效果.");
         } else {
-            showToastMessage("检测到所有书签数据已存在，不需要合并.");
+            showDialogMessage("检测到所有书签数据已存在，不需要合并.");
         }
     }
 
-    private void showToastMessage(String message) {
-        showToastMessage(lv.getContext(), message);
+    private void showDialogMessage(String message) {
+        showSimpleDialog(message);
+    }
+
+    private AlertDialog.Builder builder;
+    private static String dialogTitle = null;
+
+    private void showSimpleDialog(String message) {
+        if (dialogTitle == null) {
+            dialogTitle = lv.getResources().getString(R.string.dialogTitle);
+        }
+        builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setTitle(dialogTitle);
+        builder.setMessage(message);
+        builder.setCancelable(true);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private Toast toast;
@@ -164,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * Android 解决Toast的延时显示问题
      * 关键在于重用toast，这样就不用每次都创建一个新的toast
      */
-    private void showToastMessage(Context context, String message) {
+    private void showMessage(Context context, String message) {
         if (toast == null) {
             toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
         } else {

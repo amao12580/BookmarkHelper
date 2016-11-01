@@ -98,7 +98,7 @@ layout:abc_screen_toolbar:2130968598 => [layout:abc_screen_content_include:21309
 layout:abc_search_dropdown_item_icons_2line:2130968599 => [style:RtlOverlay_Widget_AppCompat_Search_DropDown:2131230769, dimen:abc_dropdownitem_icon_width:2131165233, style:RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1:2131230770, attr:selectableItemBackground:2130772067, style:RtlOverlay_Widget_AppCompat_Search_DropDown_Query:2131230772, id:android:icon2:-1, style:RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2:2131230771, attr:textAppearanceSearchResultSubtitle:2130772081, attr:textAppearanceSearchResultTitle:2130772080]
 layout:abc_search_view:2130968600 => [string:abc_searchview_description_search:2131099661, attr:actionButtonStyle:2130772064, dimen:abc_dropdownitem_icon_width:2131165233, style:RtlOverlay_Widget_AppCompat_SearchView_MagIcon:2131230774, id:search_edit_frame:2131492964, dimen:abc_dropdownitem_text_padding_left:2131165234, dimen:abc_dropdownitem_text_padding_right:2131165235, attr:selectableItemBackgroundBorderless:2130772068, string:abc_searchview_description_clear:2131099659, string:abc_searchview_description_submit:2131099662, string:abc_searchview_description_voice:2131099663]
 layout:abc_select_dialog_material:2130968601 => [attr:listDividerAlertDialog:2130772059, dimen:abc_dialog_list_padding_vertical_material:2131165228, style:Widget_AppCompat_ListView:2131231051]
-layout:design_bottom_sheet_dialog:2130968603 => [string:bottom_sheet_behavior:2131099701, attr:bottomSheetStyle:2130772162]
+layout:design_bottom_sheet_dialog:2130968603 => [string:bottom_sheet_behavior:2131099702, attr:bottomSheetStyle:2130772162]
 layout:design_layout_snackbar:2130968604 => [style:ThemeOverlay_AppCompat_Dark:2131230996, style:Widget_Design_Snackbar:2131231079]
 layout:design_layout_snackbar_include:2130968605 => [integer:design_snackbar_text_max_lines:2131361792, dimen:design_snackbar_padding_vertical:2131165286, dimen:design_snackbar_padding_horizontal:2131165285, style:TextAppearance_Design_Snackbar_Message:2131230969, dimen:design_snackbar_extra_spacing_horizontal:2131165203, attr:colorAccent:2130772099, attr:borderlessButtonStyle:2130772069]
 layout:design_navigation_item:2130968609 => [attr:selectableItemBackground:2130772067, attr:listPreferredItemHeightSmall:2130772085, attr:listPreferredItemPaddingLeft:2130772087, attr:listPreferredItemPaddingRight:2130772088]
@@ -163,7 +163,7 @@ style:Base_TextAppearance_AppCompat_Widget_ActionMode_Title:2131230801 => [style
 style:Base_TextAppearance_AppCompat_Widget_Button:2131230802 => [style:TextAppearance_AppCompat_Button:2131230922, style:TextAppearance_AppCompat_Widget_Button:2131230956]
 style:Base_TextAppearance_AppCompat_Widget_Button_Inverse:2131230854 => [style:TextAppearance_AppCompat_Button:2131230922, attr:android_textColorPrimaryInverse:-1, style:TextAppearance_AppCompat_Widget_Button_Inverse:2131230957]
 style:Base_TextAppearance_AppCompat_Widget_DropDownItem:2131230876 => [style:TextAppearance_AppCompat_Widget_DropDownItem:2131230958]
-style:Base_TextAppearance_AppCompat_Widget_PopupMenu_Header:2131230803 => [style:TextAppearance_AppCompat:2131230919, dimen:abc_text_size_menu_header_material:2131165259, attr:colorAccent:2130772099, style:TextAppearance_AppCompat_Widget_PopupMenu_Header:2131230959, string:abc_font_family_title_material:2131099699]
+style:Base_TextAppearance_AppCompat_Widget_PopupMenu_Header:2131230803 => [style:TextAppearance_AppCompat:2131230919, dimen:abc_text_size_menu_header_material:2131165259, attr:colorAccent:2130772099, style:TextAppearance_AppCompat_Widget_PopupMenu_Header:2131230959, string:abc_font_family_title_material:2131099700]
 style:Base_TextAppearance_AppCompat_Widget_PopupMenu_Large:2131230804 => [style:TextAppearance_AppCompat_Menu:2131230938, style:TextAppearance_AppCompat_Widget_PopupMenu_Large:2131230960]
 style:Base_TextAppearance_AppCompat_Widget_PopupMenu_Small:2131230805 => [style:TextAppearance_AppCompat_Menu:2131230938, style:TextAppearance_AppCompat_Widget_PopupMenu_Small:2131230961]
 style:Base_TextAppearance_AppCompat_Widget_Switch:2131230806 => [style:TextAppearance_AppCompat_Button:2131230922, style:TextAppearance_AppCompat_Widget_Switch:2131230962]
@@ -463,7 +463,7 @@ style:Widget_Design_NavigationView:2131231077 => [dimen:design_navigation_elevat
 style:Widget_Design_Snackbar:2131231079 => [dimen:design_snackbar_min_width:2131165205, dimen:design_snackbar_max_width:2131165204, drawable:design_snackbar_background:2130837589, dimen:design_snackbar_padding_horizontal:2131165285, dimen:design_snackbar_elevation:2131165284, dimen:design_snackbar_action_inline_max_width:2131165201]
 style:Widget_Design_TabLayout:2131230721 => [style:Base_Widget_Design_TabLayout:2131230918]
 style:Widget_Design_TextInputLayout:2131231080 => [style:TextAppearance_Design_Hint:2131230968, style:TextAppearance_Design_Error:2131230967, style:TextAppearance_Design_Counter:2131230965, style:TextAppearance_Design_Counter_Overflow:2131230966, drawable:design_ic_visibility:2130837588, color:design_tint_password_toggle:2131427418]
-layout:listview_item:2130968616 => [string:source_broswer_icon_contentDescription:2131099685, string:converter_directer_arrow_contentDescription:2131099676, string:target_broswer_icon_contentDescription:2131099686]
+layout:listview_item:2130968616 => [string:source_broswer_icon_contentDescription:2131099686, string:converter_directer_arrow_contentDescription:2131099676, string:target_broswer_icon_contentDescription:2131099687]
 style:AppTheme:2131230860 => [style:Theme_AppCompat_Light_DarkActionBar:2131230981, color:colorPrimary:2131427329, color:colorPrimaryDark:2131427330, color:colorAccent:2131427328, style:AppTheme_NoActionBar:2131230862]
 style:AppTheme_AppBarOverlay:2131230861 => [style:ThemeOverlay_AppCompat_Dark_ActionBar:2131230997]
 style:AppTheme_NoActionBar:2131230862 => [style:AppTheme:2131230860]
@@ -729,7 +729,7 @@ anim:design_fab_in:2131034125,
    string:abc_activitychooserview_choose_application:2131099655,
    string:abc_shareactionprovider_share_with:2131099664,
    string:abc_shareactionprovider_share_with_application:2131099665,
-   string:character_counter_pattern:2131099702,
+   string:character_counter_pattern:2131099703,
    string:status_bar_notification_info_overflow:2131099668,
    style:Base_AlertDialog_AppCompat:2131230869,
    style:Base_Animation_AppCompat_Dialog:2131230871,
@@ -939,14 +939,15 @@ anim:design_fab_in:2131034125,
    string:broswer_name_show_flyme5:2131099673,
    string:broswer_name_show_uc:2131099674,
    string:broswer_name_show_via:2131099675,
-   string:fileCPError:2131099677,
-   string:fileDeleteError:2131099678,
-   string:flyme5BookmarksFileMiss:2131099679,
-   string:notPermissionForReadInstalledAppList:2131099680,
-   string:notSupport:2131099681,
-   string:readBookmarksEmpty:2131099683,
-   string:readBookmarksError:2131099684,
-   string:viaBookmarksFileMiss:2131099687,
+   string:dialogTitle:2131099677,
+   string:fileCPError:2131099678,
+   string:fileDeleteError:2131099679,
+   string:flyme5BookmarksFileMiss:2131099680,
+   string:notPermissionForReadInstalledAppList:2131099681,
+   string:notSupport:2131099682,
+   string:readBookmarksEmpty:2131099684,
+   string:readBookmarksError:2131099685,
+   string:viaBookmarksFileMiss:2131099688,
    style:AppTheme:2131230860
 Skipped unused resource res/anim/abc_fade_in.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/anim/abc_fade_out.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
@@ -956,4 +957,4 @@ Skipped unused resource res/anim/abc_slide_out_bottom.xml: 400 bytes (replaced w
 Skipped unused resource res/anim/abc_slide_out_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 800840 to 802061); using original instead
+Resource shrinking did not work (grew from 792960 to 794181); using original instead

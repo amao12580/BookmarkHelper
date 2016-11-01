@@ -1,26 +1,26 @@
-2016-11-01 02:36:45    v    MONITOR    commands is:[chmod 777 /data/app/pro.kisscat.www.bookmarkhelper-1/base.apk]
-2016-11-01 02:36:45    v    MONITOR    process.waitFor is:0
-2016-11-01 02:36:45    v    MONITOR    successMsg is:
-2016-11-01 02:36:45    v    MONITOR    errorMsg is:
-2016-11-01 02:36:45    v    MONITOR    commandResult is :{}
-2016-11-01 02:36:45    v    MONITOR    commands is:[]
-2016-11-01 02:36:45    v    MONITOR    process.waitFor is:0
-2016-11-01 02:36:45    v    MONITOR    successMsg is:
-2016-11-01 02:36:45    v    MONITOR    errorMsg is:
-2016-11-01 02:36:45    v    MONITOR    commandResult is :{}
-2016-11-01 02:36:45    v    MONITOR    checkRootAuth result:true
-2016-11-01 02:36:45    v    MONITOR    AppListUtil init
-2016-11-01 02:36:45    v    BIZ    rule-before:[{},{},{}]
-2016-11-01 02:36:53    v    MONITOR    Chrome:bookmarks cache is miss.
-2016-11-01 02:36:53    v    MONITOR    Chrome:开始读取书签数据
-2016-11-01 02:36:53    v    MONITOR    Chrome:origin file path:/data/data/com.android.chrome/app_chrome/Default/Bookmarks
-2016-11-01 02:36:53    v    MONITOR    Chrome:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks
-2016-11-01 02:36:53    v    MONITOR    commands is:[cp -fr /data/data/com.android.chrome/app_chrome/Default/Bookmarks /storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks]
-2016-11-01 02:36:53    v    MONITOR    process.waitFor is:0
-2016-11-01 02:36:53    v    MONITOR    successMsg is:
-2016-11-01 02:36:53    v    MONITOR    errorMsg is:
-2016-11-01 02:36:53    v    MONITOR    commandResult is :{}
-2016-11-01 02:36:53    v    MONITOR    file is readable:false
-2016-11-01 02:36:53    v    MONITOR    书签数据:{}
-2016-11-01 02:36:53    e    EXCEPTION    Attempt to invoke virtual method 'pro.kisscat.www.bookmarkhelper.a.a.a.a$d pro.kisscat.www.bookmarkhelper.a.a.a.a$c.a()' on a null object reference
-2016-11-01 02:36:53    v    MONITOR    Chrome:读取书签数据结束
+2016-11-01 06:28:11    v    MONITOR    commands is:[chmod 777 /data/app/pro.kisscat.www.bookmarkhelper-1/base.apk]
+2016-11-01 06:28:16    v    MONITOR    process.waitFor is:0
+2016-11-01 06:28:16    v    MONITOR    successMsg is:
+2016-11-01 06:28:16    v    MONITOR    errorMsg is:
+2016-11-01 06:28:16    v    MONITOR    commandResult is :{}
+2016-11-01 06:28:16    v    MONITOR    commands is:[]
+2016-11-01 06:28:16    v    MONITOR    process.waitFor is:0
+2016-11-01 06:28:16    v    MONITOR    successMsg is:
+2016-11-01 06:28:16    v    MONITOR    errorMsg is:
+2016-11-01 06:28:16    v    MONITOR    commandResult is :{}
+2016-11-01 06:28:16    v    MONITOR    checkRootAuth result:true
+2016-11-01 06:28:16    v    MONITOR    AppListUtil init
+2016-11-01 06:28:16    v    BIZ    rule-before:[{},{},{}]
+2016-11-01 06:28:23    v    MONITOR    Chrome:bookmarks cache is miss.
+2016-11-01 06:28:23    v    MONITOR    Chrome:开始读取书签数据
+2016-11-01 06:28:23    v    MONITOR    Chrome:origin file path:/data/data/com.android.chrome/app_chrome/Default/Bookmarks
+2016-11-01 06:28:23    v    MONITOR    Chrome:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks
+2016-11-01 06:28:23    v    MONITOR    commands is:[cp -fr /data/data/com.android.chrome/app_chrome/Default/Bookmarks /storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks]
+2016-11-01 06:28:23    v    MONITOR    process.waitFor is:0
+2016-11-01 06:28:23    v    MONITOR    successMsg is:
+2016-11-01 06:28:23    v    MONITOR    errorMsg is:
+2016-11-01 06:28:23    v    MONITOR    commandResult is :{}
+2016-11-01 06:28:23    v    MONITOR    file is readable:false
+2016-11-01 06:28:23    v    MONITOR    书签数据:{}
+2016-11-01 06:28:23    v    MONITOR    childrens is null.
+2016-11-01 06:28:23    v    MONITOR    Chrome:读取书签数据结束

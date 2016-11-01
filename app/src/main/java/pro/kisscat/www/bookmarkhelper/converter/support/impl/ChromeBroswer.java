@@ -10,12 +10,12 @@ import java.io.FileReader;
 import java.util.LinkedList;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -81,11 +81,19 @@ public class ChromeBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             jsonReader = new JSONReader(new FileReader(file));
-            ChromeBookmark chromeBookmark = jsonReader.readObject(ChromeBookmark.class);
-            LogHelper.v("书签数据:" + JsonUtil.toJson(chromeBookmark));
-            List<Children> childrens = chromeBookmark.getRoots().getSynced().getChildren();
-            LogHelper.v("书签条数:" + childrens.size());
             bookmarks = new LinkedList<>();
+            ChromeBookmark chromeBookmark = jsonReader.readObject(ChromeBookmark.class);
+            if (chromeBookmark == null) {
+                LogHelper.v("chromeBookmark is null.");
+                return bookmarks;
+            }
+            LogHelper.v("书签数据:" + JsonUtil.toJson(chromeBookmark));
+            List<Children> childrens = chromeBookmark.getChildren();
+            if (childrens == null) {
+                LogHelper.v("childrens is null.");
+                return bookmarks;
+            }
+            LogHelper.v("书签条数:" + childrens.size());
             for (Children item : childrens) {
                 String bookmarkUrl = item.getUrl();
                 String bookmarkName = item.getName();
@@ -119,32 +127,5 @@ public class ChromeBroswer extends BasicBroswer {
     @Override
     public int appendBookmark(Context context, List<Bookmark> bookmarks) {
         return 0;
-    }
-
-    private static class ChromeBookmark {
-        @Setter
-        @Getter
-        private Root roots;
-    }
-
-    private static class Root {
-        @Setter
-        @Getter
-        private Synced synced;
-    }
-
-    private static class Synced {
-        @Setter
-        @Getter
-        private List<Children> children;
-    }
-
-    private static class Children {
-        @Setter
-        @Getter
-        private String name;
-        @Setter
-        @Getter
-        private String url;
     }
 }

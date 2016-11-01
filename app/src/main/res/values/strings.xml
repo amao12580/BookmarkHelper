@@ -20,4 +20,5 @@
     <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
     <string name="notSupport">Not support now.</string>
     <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
+    <string name="dialogTitle">Warning !</string>
 </resources>

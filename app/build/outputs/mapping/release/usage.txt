@@ -332,17 +332,6 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     46:49:public int readBookmarkSum(android.content.Context)
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer$Children:
-    143:143:public void setName(java.lang.String)
-    146:146:public void setUrl(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer$ChromeBookmark:
-    125:125:public void setRoots(pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer$Root)
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer$Root:
-    130:130:private ChromeBroswer$Root()
-    131:131:public void setSynced(pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer$Synced)
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer$Synced:
-    136:136:private ChromeBroswer$Synced()
-    137:137:public void setChildren(java.util.List)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -357,11 +346,18 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    53:56:public int readBookmarkSum(android.content.Context)
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer$ViaBookmark:
-    214:214:public void setFolder(java.lang.String)
-    215:215:public java.lang.String getFolder()
-    219:219:public int getOrder()
+    50:53:public int readBookmarkSum(android.content.Context)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark:
+    20:20:public void setRoots(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children:
+    16:16:public void setName(java.lang.String)
+    19:19:public void setUrl(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root:
+    17:17:public Root()
+    18:18:public void setSynced(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced:
+    17:17:public Synced()
+    18:18:public void setChildren(java.util.List)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule:
     22:22:public void setId(int)
     23:23:public int getId()
@@ -369,6 +365,10 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule:
     28:28:public void setTarget(pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
     31:31:public void setCanUse(boolean)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark:
+    26:26:public void setFolder(java.lang.String)
+    27:27:public java.lang.String getFolder()
+    31:31:public int getOrder()
 pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper:
     17:17:public DBHelper()
 pro.kisscat.www.bookmarkhelper.util.Path:

@@ -562,6 +562,7 @@
     <string name="broswer_name_show_via">Via Broswer</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
+    <string name="dialogTitle">Warning !</string>
     <string name="fileCPError">file copy error.</string>
     <string name="fileDeleteError">file delete error.</string>
     <string name="flyme5BookmarksFileMiss">bookmark file missing.</string>

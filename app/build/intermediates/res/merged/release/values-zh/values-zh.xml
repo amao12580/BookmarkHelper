@@ -11,6 +11,7 @@
     <string name="broswer_name_show_uc">UC浏览器</string>
     <string name="broswer_name_show_via">Via浏览器</string>
     <string name="converter_directer_arrow_contentDescription">转换方向</string>
+    <string name="dialogTitle">快看提示！</string>
     <string name="fileCPError">文件拷贝失败</string>
     <string name="fileDeleteError">文件删除失败</string>
     <string name="flyme5BookmarksFileMiss">还未初始化，请最少打开一次.</string>
