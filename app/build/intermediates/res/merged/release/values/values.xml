@@ -29,6 +29,7 @@
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorDefault">#FAF0E6</color>
+    <color name="colorGray">#708090</color>
     <color name="colorItemChoosed">#DCDCDC</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
@@ -553,6 +554,8 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="aboutMe">About me</string>
+    <string name="aboutMeTitle">About me.</string>
     <string name="appUninstall"> not install.</string>
     <string name="app_name">BookmarkHelper</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
@@ -566,11 +569,14 @@
     <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
     <string name="dialogClose">Close</string>
     <string name="dialogTitle">Warning !</string>
+    <string name="donate">Donate</string>
+    <string name="donateTitle">Thanks a lot.</string>
     <string name="fileCPError">file copy error.</string>
     <string name="fileDeleteError">file delete error.</string>
     <string name="flyme5BookmarksFileMiss">bookmark file missing.</string>
     <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
     <string name="notSupport">Not support now.</string>
+    <string name="rating">Rating</string>
     <string name="readBookmarksDataMiss">read bookmarks file missing.</string>
     <string name="readBookmarksEmpty">bookmarks is empty.</string>
     <string name="readBookmarksError">read bookmarks error.</string>

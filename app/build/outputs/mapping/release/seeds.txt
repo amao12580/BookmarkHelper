@@ -27705,6 +27705,7 @@ pro.kisscat.www.bookmarkhelper.R$color: int button_material_dark
 pro.kisscat.www.bookmarkhelper.R$color: int button_material_light
 pro.kisscat.www.bookmarkhelper.R$color: int colorAccent
 pro.kisscat.www.bookmarkhelper.R$color: int colorDefault
+pro.kisscat.www.bookmarkhelper.R$color: int colorGray
 pro.kisscat.www.bookmarkhelper.R$color: int colorItemChoosed
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimary
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimaryDark
@@ -27970,13 +27971,16 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int abc_vector_test
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_fab_background
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_ic_visibility
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_snackbar_background
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_aboutme
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_arrow
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_chrome
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_donate
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_flyme5
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_uc
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_via
 pro.kisscat.www.bookmarkhelper.R$drawable: int navigation_empty_icon
 pro.kisscat.www.bookmarkhelper.R$drawable: int notification_template_icon_bg
+pro.kisscat.www.bookmarkhelper.R$drawable: int web_progress_bar_states
 pro.kisscat.www.bookmarkhelper.R$drawable: R$drawable()
 pro.kisscat.www.bookmarkhelper.R$id
 pro.kisscat.www.bookmarkhelper.R$id: int action0
@@ -28000,9 +28004,13 @@ pro.kisscat.www.bookmarkhelper.R$id: int alertTitle
 pro.kisscat.www.bookmarkhelper.R$id: int all
 pro.kisscat.www.bookmarkhelper.R$id: int always
 pro.kisscat.www.bookmarkhelper.R$id: int auto
+pro.kisscat.www.bookmarkhelper.R$id: int baseweb_webview
 pro.kisscat.www.bookmarkhelper.R$id: int beginning
 pro.kisscat.www.bookmarkhelper.R$id: int bottom
+pro.kisscat.www.bookmarkhelper.R$id: int buttonAboutMe
+pro.kisscat.www.bookmarkhelper.R$id: int buttonDonate
 pro.kisscat.www.bookmarkhelper.R$id: int buttonPanel
+pro.kisscat.www.bookmarkhelper.R$id: int buttonRating
 pro.kisscat.www.bookmarkhelper.R$id: int cancel_action
 pro.kisscat.www.bookmarkhelper.R$id: int center
 pro.kisscat.www.bookmarkhelper.R$id: int center_horizontal
@@ -28048,8 +28056,8 @@ pro.kisscat.www.bookmarkhelper.R$id: int left
 pro.kisscat.www.bookmarkhelper.R$id: int line1
 pro.kisscat.www.bookmarkhelper.R$id: int line3
 pro.kisscat.www.bookmarkhelper.R$id: int listMode
+pro.kisscat.www.bookmarkhelper.R$id: int listViewRules
 pro.kisscat.www.bookmarkhelper.R$id: int list_item
-pro.kisscat.www.bookmarkhelper.R$id: int lv
 pro.kisscat.www.bookmarkhelper.R$id: int media_actions
 pro.kisscat.www.bookmarkhelper.R$id: int middle
 pro.kisscat.www.bookmarkhelper.R$id: int mini
@@ -28116,6 +28124,8 @@ pro.kisscat.www.bookmarkhelper.R$id: int touch_outside
 pro.kisscat.www.bookmarkhelper.R$id: int up
 pro.kisscat.www.bookmarkhelper.R$id: int useLogo
 pro.kisscat.www.bookmarkhelper.R$id: int view_offset_helper
+pro.kisscat.www.bookmarkhelper.R$id: int webview_layout
+pro.kisscat.www.bookmarkhelper.R$id: int webview_toolbar
 pro.kisscat.www.bookmarkhelper.R$id: int withText
 pro.kisscat.www.bookmarkhelper.R$id: int wrap_content
 pro.kisscat.www.bookmarkhelper.R$id: R$id()
@@ -28156,6 +28166,7 @@ pro.kisscat.www.bookmarkhelper.R$layout: int abc_search_dropdown_item_icons_2lin
 pro.kisscat.www.bookmarkhelper.R$layout: int abc_search_view
 pro.kisscat.www.bookmarkhelper.R$layout: int abc_select_dialog_material
 pro.kisscat.www.bookmarkhelper.R$layout: int activity_main
+pro.kisscat.www.bookmarkhelper.R$layout: int activity_webview
 pro.kisscat.www.bookmarkhelper.R$layout: int design_bottom_sheet_dialog
 pro.kisscat.www.bookmarkhelper.R$layout: int design_layout_snackbar
 pro.kisscat.www.bookmarkhelper.R$layout: int design_layout_snackbar_include
@@ -28218,6 +28229,8 @@ pro.kisscat.www.bookmarkhelper.R$string: int abc_searchview_description_voice
 pro.kisscat.www.bookmarkhelper.R$string: int abc_shareactionprovider_share_with
 pro.kisscat.www.bookmarkhelper.R$string: int abc_shareactionprovider_share_with_application
 pro.kisscat.www.bookmarkhelper.R$string: int abc_toolbar_collapse_description
+pro.kisscat.www.bookmarkhelper.R$string: int aboutMe
+pro.kisscat.www.bookmarkhelper.R$string: int aboutMeTitle
 pro.kisscat.www.bookmarkhelper.R$string: int appUninstall
 pro.kisscat.www.bookmarkhelper.R$string: int app_name
 pro.kisscat.www.bookmarkhelper.R$string: int appbar_scrolling_view_behavior
@@ -28231,11 +28244,14 @@ pro.kisscat.www.bookmarkhelper.R$string: int character_counter_pattern
 pro.kisscat.www.bookmarkhelper.R$string: int converter_directer_arrow_contentDescription
 pro.kisscat.www.bookmarkhelper.R$string: int dialogClose
 pro.kisscat.www.bookmarkhelper.R$string: int dialogTitle
+pro.kisscat.www.bookmarkhelper.R$string: int donate
+pro.kisscat.www.bookmarkhelper.R$string: int donateTitle
 pro.kisscat.www.bookmarkhelper.R$string: int fileCPError
 pro.kisscat.www.bookmarkhelper.R$string: int fileDeleteError
 pro.kisscat.www.bookmarkhelper.R$string: int flyme5BookmarksFileMiss
 pro.kisscat.www.bookmarkhelper.R$string: int notPermissionForReadInstalledAppList
 pro.kisscat.www.bookmarkhelper.R$string: int notSupport
+pro.kisscat.www.bookmarkhelper.R$string: int rating
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksDataMiss
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksEmpty
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksError
@@ -29097,8 +29113,14 @@ pro.kisscat.www.bookmarkhelper.R$styleable: int ViewStubCompat_android_inflatedI
 pro.kisscat.www.bookmarkhelper.R$styleable: int ViewStubCompat_android_layout
 pro.kisscat.www.bookmarkhelper.R$styleable: R$styleable()
 pro.kisscat.www.bookmarkhelper.R$styleable: void <clinit>()
+pro.kisscat.www.bookmarkhelper.activity.Html5Activity
+pro.kisscat.www.bookmarkhelper.activity.Html5Activity: Html5Activity()
+pro.kisscat.www.bookmarkhelper.activity.Html5Activity: void onCreate(android.os.Bundle)
 pro.kisscat.www.bookmarkhelper.activity.MainActivity
 pro.kisscat.www.bookmarkhelper.activity.MainActivity: MainActivity()
+pro.kisscat.www.bookmarkhelper.activity.MainActivity: void onclickAboutMe(android.view.View)
+pro.kisscat.www.bookmarkhelper.activity.MainActivity: void onclickRating(android.view.View)
+pro.kisscat.www.bookmarkhelper.activity.MainActivity: void onclickDonate(android.view.View)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String name
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String packageName
@@ -29195,3 +29217,5 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setO
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: int getOrder()
 pro.kisscat.www.bookmarkhelper.exception.ConverterException: ConverterException(java.lang.String)
 pro.kisscat.www.bookmarkhelper.exception.InitException: InitException(java.lang.String)
+pro.kisscat.www.bookmarkhelper.webview.ProgressWebView
+pro.kisscat.www.bookmarkhelper.webview.ProgressWebView: ProgressWebView(android.content.Context,android.util.AttributeSet)

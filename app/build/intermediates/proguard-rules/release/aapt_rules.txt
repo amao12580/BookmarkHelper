@@ -66,12 +66,28 @@
 -keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
 
 # view res/layout/abc_screen_toolbar.xml #generated:36
+# view res/layout/activity_webview.xml #generated:10
 -keep class android.support.v7.widget.Toolbar { <init>(...); }
 
 # view res/layout/abc_screen_simple.xml #generated:25
 # view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
 -keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
 
-# view AndroidManifest.xml #generated:22
+# view AndroidManifest.xml #generated:30
+-keep class pro.kisscat.www.bookmarkhelper.activity.Html5Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:23
 -keep class pro.kisscat.www.bookmarkhelper.activity.MainActivity { <init>(...); }
+
+# view res/layout/activity_webview.xml #generated:19
+-keep class pro.kisscat.www.bookmarkhelper.webview.ProgressWebView { <init>(...); }
+
+# onClick res/layout/activity_main.xml #generated:39
+-keepclassmembers class * { *** onclickAboutMe(...); }
+
+# onClick res/layout/activity_main.xml #generated:61
+-keepclassmembers class * { *** onclickDonate(...); }
+
+# onClick res/layout/activity_main.xml #generated:50
+-keepclassmembers class * { *** onclickRating(...); }
 

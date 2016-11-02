@@ -1,6 +1,6 @@
 # BookmarkHelper
 ## 这是什么？
-BookmarkHelper是一款Android平台下，浏览器书签转换工具类APP，运行时需要Root权限，目标全面兼容主流Android浏览器相互转换书签数据，暂未考虑支持iOS或桌面端。
+BookmarkHelper（书签助手）是一款Android平台下，浏览器书签转换工具类APP，运行时需要Root权限，目标全面兼容主流Android浏览器相互转换书签数据，暂未考虑支持iOS或桌面端。
 
 使用举例：从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)中，提取用户书签数据，追加合并到[Via浏览器](http://www.coolapk.com/apk/mark.via)，带你轻松脱坑，成功用上最牛逼浏览器！
 

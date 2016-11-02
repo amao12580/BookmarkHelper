@@ -11,6 +11,8 @@ package pro.kisscat.www.bookmarkhelper.activity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -206,7 +208,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         toast.show();
     }
 
-    public void onclickAboutMe(View tager) {
-        showSimpleDialog("hit");
+    public void onclickAboutMe(View view) {
+        openUrlInWebview(MetaData.ABOUTMEURL, lv.getResources().getString(R.string.aboutMeTitle), R.drawable.ic_aboutme);
+    }
+
+    public void onclickRating(View view) {
+        showSimpleDialog("hit Rating");
+        //这里开始执行一个应用市场跳转逻辑，默认this为Context上下文对象
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://details?id=" + getPackageName())); //跳转到应用市场，非Google Play市场一般情况也实现了这个接口
+        //存在手机里没安装应用市场的情况，跳转会包异常，做一个接收判断
+        if (intent.resolveActivity(getPackageManager()) != null) { //可以接收
+            startActivity(intent);
+        } else {
+            //您的系统中没有安装应用市场，用WebView打开
+        }
+    }
+
+    public void onclickDonate(View view) {
+        openUrlInWebview(MetaData.DONATEURL, lv.getResources().getString(R.string.donateTitle), R.drawable.ic_donate);
+    }
+
+    public void openUrlInWebview(String url, String title, int logo) {
+        Intent intent = new Intent(MainActivity.this, Html5Activity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("url", url);
+        bundle.putString("title", title);
+        bundle.putInt("logo", logo);
+        intent.putExtra("bundle", bundle);
+        startActivity(intent);
     }
 }

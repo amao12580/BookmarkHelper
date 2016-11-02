@@ -23,5 +23,9 @@
     <string name="dialogTitle">快看提示！</string>
     <string name="dialogClose">关闭</string>
     <string name="aboutMe">关于我</string>
+    <string name="rating">五星好评</string>
+    <string name="donate">捐助</string>
+    <string name="donateTitle">您的捐助是我最大的动力</string>
+    <string name="aboutMeTitle">关于我</string>
 
 </resources>
