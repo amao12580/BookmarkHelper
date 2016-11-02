@@ -29096,5 +29096,99 @@ pro.kisscat.www.bookmarkhelper.R$styleable: R$styleable()
 pro.kisscat.www.bookmarkhelper.R$styleable: void <clinit>()
 pro.kisscat.www.bookmarkhelper.activity.MainActivity
 pro.kisscat.www.bookmarkhelper.activity.MainActivity: MainActivity()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String name
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String packageName
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String versionName
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: int versionCode
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: android.graphics.drawable.Drawable icon
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: App()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String getName()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String getPackageName()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String getVersionName()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: int getVersionCode()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: android.graphics.drawable.Drawable getIcon()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setName(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setPackageName(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setVersionName(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setVersionCode(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setIcon(android.graphics.drawable.Drawable)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: boolean equals(java.lang.Object)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: boolean canEqual(java.lang.Object)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: int hashCode()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String toString()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: java.lang.String title
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: java.lang.String url
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: Bookmark()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: java.lang.String getTitle()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: void setTitle(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: java.lang.String getUrl()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: void setUrl(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root roots
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: ChromeBookmark()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.util.List getChildren()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: void setRoots(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root getRoots()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String name
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String url
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: Children()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: void setName(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String getName()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: void setUrl(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String getUrl()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced synced
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: Root()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: void setSynced(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced getSynced()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced: java.util.List children
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced: Synced()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced: void setChildren(java.util.List)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced: java.util.List getChildren()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: int id
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer source
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer target
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: boolean canUse
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: Rule()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: Rule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setId(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: int getId()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setSource(pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer getSource()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setTarget(pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer getTarget()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setCanUse(boolean)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: boolean isCanUse()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int stage
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int progress
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: java.lang.String message
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: ExcuteRule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: ExcuteRule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setStage(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int getStage()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setProgress(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int getProgress()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setMessage(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: java.lang.String getMessage()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String title
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String url
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String folder
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: int order
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: ViaBookmark()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setTitle(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String getTitle()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setUrl(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String getUrl()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setFolder(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String getFolder()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setOrder(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: int getOrder()
 pro.kisscat.www.bookmarkhelper.exception.ConverterException: ConverterException(java.lang.String)
 pro.kisscat.www.bookmarkhelper.exception.InitException: InitException(java.lang.String)

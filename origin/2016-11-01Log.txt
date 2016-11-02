@@ -1,26 +1,142 @@
-2016-11-01 06:28:11    v    MONITOR    commands is:[chmod 777 /data/app/pro.kisscat.www.bookmarkhelper-1/base.apk]
-2016-11-01 06:28:16    v    MONITOR    process.waitFor is:0
-2016-11-01 06:28:16    v    MONITOR    successMsg is:
-2016-11-01 06:28:16    v    MONITOR    errorMsg is:
-2016-11-01 06:28:16    v    MONITOR    commandResult is :{}
-2016-11-01 06:28:16    v    MONITOR    commands is:[]
-2016-11-01 06:28:16    v    MONITOR    process.waitFor is:0
-2016-11-01 06:28:16    v    MONITOR    successMsg is:
-2016-11-01 06:28:16    v    MONITOR    errorMsg is:
-2016-11-01 06:28:16    v    MONITOR    commandResult is :{}
-2016-11-01 06:28:16    v    MONITOR    checkRootAuth result:true
-2016-11-01 06:28:16    v    MONITOR    AppListUtil init
-2016-11-01 06:28:16    v    BIZ    rule-before:[{},{},{}]
-2016-11-01 06:28:23    v    MONITOR    Chrome:bookmarks cache is miss.
-2016-11-01 06:28:23    v    MONITOR    Chrome:开始读取书签数据
-2016-11-01 06:28:23    v    MONITOR    Chrome:origin file path:/data/data/com.android.chrome/app_chrome/Default/Bookmarks
-2016-11-01 06:28:23    v    MONITOR    Chrome:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks
-2016-11-01 06:28:23    v    MONITOR    commands is:[cp -fr /data/data/com.android.chrome/app_chrome/Default/Bookmarks /storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks]
-2016-11-01 06:28:23    v    MONITOR    process.waitFor is:0
-2016-11-01 06:28:23    v    MONITOR    successMsg is:
-2016-11-01 06:28:23    v    MONITOR    errorMsg is:
-2016-11-01 06:28:23    v    MONITOR    commandResult is :{}
-2016-11-01 06:28:23    v    MONITOR    file is readable:false
-2016-11-01 06:28:23    v    MONITOR    书签数据:{}
-2016-11-01 06:28:23    v    MONITOR    childrens is null.
-2016-11-01 06:28:23    v    MONITOR    Chrome:读取书签数据结束
+2016-11-01 21:35:40    v    MONITOR    commands is:[chmod 777 /data/app/pro.kisscat.www.bookmarkhelper-1/base.apk]
+2016-11-01 21:35:45    v    MONITOR    process.waitFor is:0
+2016-11-01 21:35:45    v    MONITOR    successMsg is:
+2016-11-01 21:35:45    v    MONITOR    errorMsg is:
+2016-11-01 21:35:45    v    MONITOR    commandResult is :{}
+2016-11-01 21:35:45    v    MONITOR    commands is:[]
+2016-11-01 21:35:45    v    MONITOR    process.waitFor is:0
+2016-11-01 21:35:45    v    MONITOR    successMsg is:
+2016-11-01 21:35:45    v    MONITOR    errorMsg is:
+2016-11-01 21:35:45    v    MONITOR    commandResult is :{}
+2016-11-01 21:35:45    v    MONITOR    checkRootAuth result:true
+2016-11-01 21:35:45    v    MONITOR    AppListUtil init
+2016-11-01 21:35:45    v    BIZ    rule-before:[{"canUse":true,"id":1,"source":{"name":"谷歌浏览器","packageName":"","versionCode":0,"versionName":""},"target":{"name":"Via浏览器","packageName":"","versionCode":0,"versionName":""}},{"canUse":true,"id":2,"source":{"name":"Flyme5浏览器","packageName":"","versionCode":0,"versionName":""},"target":{"name":"Via浏览器","packageName":"","versionCode":0,"versionName":""}},{"canUse":false,"id":3,"source":{"name":"UC浏览器","packageName":"","versionCode":0,"versionName":""},"target":{"name":"Via浏览器","packageName":"","versionCode":0,"versionName":""}}]
+2016-11-01 21:36:02    v    MONITOR    Chrome:bookmarks cache is miss.
+2016-11-01 21:36:02    v    MONITOR    Chrome:开始读取书签数据
+2016-11-01 21:36:02    v    MONITOR    Chrome:origin file path:/data/data/com.android.chrome/app_chrome/Default/Bookmarks
+2016-11-01 21:36:02    v    MONITOR    Chrome:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks
+2016-11-01 21:36:02    v    MONITOR    commands is:[cp -fr /data/data/com.android.chrome/app_chrome/Default/Bookmarks /storage/emulated/0/BookmarkHelper/tmp//Chrome/Bookmarks]
+2016-11-01 21:36:02    v    MONITOR    process.waitFor is:0
+2016-11-01 21:36:02    v    MONITOR    successMsg is:
+2016-11-01 21:36:02    v    MONITOR    errorMsg is:
+2016-11-01 21:36:02    v    MONITOR    commandResult is :{}
+2016-11-01 21:36:02    v    MONITOR    file is readable:false
+2016-11-01 21:36:02    v    MONITOR    书签数据:{"children":[{"name":"新浪体育_手机新浪网","url":"http://sports.sina.cn/?vt=4&pos=108"},{"name":"新浪博客_手机新浪网","url":"http://blog.sina.cn/?vt=4&pos=108"},{"name":"冯小刚连开四炮，炮口都对准了谁？_影视圈Magazine","url":"http://blog.sina.cn/dpool/blog/s/blog_4fe3de020102woyf.html?cid=95642&vt=4"}],"roots":{"synced":{"children":[{"$ref":"$.children[0]"},{"$ref":"$.children[1]"},{"$ref":"$.children[2]"}]}}}
+2016-11-01 21:36:02    v    MONITOR    书签条数:3
+2016-11-01 21:36:02    v    MONITOR    name:新浪体育_手机新浪网
+2016-11-01 21:36:02    v    MONITOR    url:http://sports.sina.cn/?vt=4&pos=108
+2016-11-01 21:36:02    v    MONITOR    name:新浪博客_手机新浪网
+2016-11-01 21:36:02    v    MONITOR    url:http://blog.sina.cn/?vt=4&pos=108
+2016-11-01 21:36:02    v    MONITOR    name:冯小刚连开四炮，炮口都对准了谁？_影视圈Magazine
+2016-11-01 21:36:02    v    MONITOR    url:http://blog.sina.cn/dpool/blog/s/blog_4fe3de020102woyf.html?cid=95642&vt=4
+2016-11-01 21:36:02    v    MONITOR    Chrome:读取书签数据结束
+2016-11-01 21:36:02    v    MONITOR    Via:开始合并书签数据，bookmarks appends size:3
+2016-11-01 21:36:02    v    MONITOR    Via:bookmarks cache is miss.
+2016-11-01 21:36:02    v    MONITOR    Via:开始读取书签数据
+2016-11-01 21:36:02    v    MONITOR    Via:origin file path:/data/data/mark.via/files/bookmarks.dat
+2016-11-01 21:36:02    v    MONITOR    commands is:[if test -e /data/data/mark.via/files/bookmarks.dat , then echo 10, else echo 20, fi]
+2016-11-01 21:36:02    v    MONITOR    process.waitFor is:0
+2016-11-01 21:36:02    v    MONITOR    successMsg is:10
+2016-11-01 21:36:02    v    MONITOR    errorMsg is:
+2016-11-01 21:36:02    v    MONITOR    commandResult is :{}
+2016-11-01 21:36:02    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-11-01 21:36:02    v    MONITOR    commands is:[cp -fr /data/data/mark.via/files/bookmarks.dat /storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat]
+2016-11-01 21:36:02    v    MONITOR    process.waitFor is:0
+2016-11-01 21:36:02    v    MONITOR    successMsg is:
+2016-11-01 21:36:02    v    MONITOR    errorMsg is:
+2016-11-01 21:36:02    v    MONITOR    commandResult is :{}
+2016-11-01 21:36:02    v    MONITOR    file is readable:false
+2016-11-01 21:36:02    v    MONITOR    书签数据:[{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0},{"folder":"","order":0}]
+2016-11-01 21:36:02    v    MONITOR    书签条数:16
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    name:null
+2016-11-01 21:36:02    v    MONITOR    url:null
+2016-11-01 21:36:02    v    MONITOR    url is damage,url:null,skip.
+2016-11-01 21:36:02    v    MONITOR    Via:读取书签数据结束
+2016-11-01 21:36:02    v    MONITOR    Via:bookmarks increment size:3
+2016-11-01 21:36:02    v    MONITOR    Via:merge size:3
+2016-11-01 21:36:02    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-11-01 21:36:02    v    MONITOR    commands is:[cp -fr /storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat /data/data/mark.via/files/bookmarks.dat]
+2016-11-01 21:36:02    v    MONITOR    process.waitFor is:0
+2016-11-01 21:36:02    v    MONITOR    successMsg is:
+2016-11-01 21:36:02    v    MONITOR    errorMsg is:
+2016-11-01 21:36:02    v    MONITOR    commandResult is :{}
+2016-11-01 21:36:02    v    MONITOR    file is readable:false
+2016-11-01 21:36:02    v    MONITOR    commands is:[rm -rf /data/data/mark.via/files/bookmarks.html]
+2016-11-01 21:36:02    v    MONITOR    process.waitFor is:0
+2016-11-01 21:36:02    v    MONITOR    successMsg is:
+2016-11-01 21:36:02    v    MONITOR    errorMsg is:
+2016-11-01 21:36:02    v    MONITOR    commandResult is :{}
+2016-11-01 21:36:02    v    MONITOR    Via:合并书签数据结束
+2016-11-01 21:39:25    v    MONITOR    Chrome:bookmarks cache is hit.
+2016-11-01 21:39:25    v    MONITOR    Via:开始合并书签数据，bookmarks appends size:3
+2016-11-01 21:39:25    v    MONITOR    Via:bookmarks cache is miss.
+2016-11-01 21:39:25    v    MONITOR    Via:开始读取书签数据
+2016-11-01 21:39:25    v    MONITOR    Via:origin file path:/data/data/mark.via/files/bookmarks.dat
+2016-11-01 21:39:25    v    MONITOR    commands is:[if test -e /data/data/mark.via/files/bookmarks.dat , then echo 10, else echo 20, fi]
+2016-11-01 21:39:25    v    MONITOR    process.waitFor is:0
+2016-11-01 21:39:25    v    MONITOR    successMsg is:10
+2016-11-01 21:39:25    v    MONITOR    errorMsg is:
+2016-11-01 21:39:25    v    MONITOR    commandResult is :{}
+2016-11-01 21:39:25    v    MONITOR    Via:tmp file path:/storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat
+2016-11-01 21:39:25    v    MONITOR    commands is:[cp -fr /data/data/mark.via/files/bookmarks.dat /storage/emulated/0/BookmarkHelper/tmp//Via/bookmarks.dat]
+2016-11-01 21:39:25    v    MONITOR    process.waitFor is:0
+2016-11-01 21:39:25    v    MONITOR    successMsg is:
+2016-11-01 21:39:25    v    MONITOR    errorMsg is:
+2016-11-01 21:39:25    v    MONITOR    commandResult is :{}
+2016-11-01 21:39:25    v    MONITOR    file is readable:false
+2016-11-01 21:39:25    v    MONITOR    书签数据:[{"title":"冯小刚连开四炮，炮口都对准了谁？_影视圈Magazine","url":"http://blog.sina.cn/dpool/blog/s/blog_4fe3de020102woyf.html?cid=95642&vt=4","folder":"","order":0},{"title":"新浪博客_手机新浪网","url":"http://blog.sina.cn/?vt=4&pos=108","folder":"","order":0},{"title":"新浪体育_手机新浪网","url":"http://sports.sina.cn/?vt=4&pos=108","folder":"","order":0}]
+2016-11-01 21:39:25    v    MONITOR    书签条数:3
+2016-11-01 21:39:25    v    MONITOR    name:冯小刚连开四炮，炮口都对准了谁？_影视圈Magazine
+2016-11-01 21:39:25    v    MONITOR    url:http://blog.sina.cn/dpool/blog/s/blog_4fe3de020102woyf.html?cid=95642&vt=4
+2016-11-01 21:39:25    v    MONITOR    name:新浪博客_手机新浪网
+2016-11-01 21:39:25    v    MONITOR    url:http://blog.sina.cn/?vt=4&pos=108
+2016-11-01 21:39:25    v    MONITOR    name:新浪体育_手机新浪网
+2016-11-01 21:39:25    v    MONITOR    url:http://sports.sina.cn/?vt=4&pos=108
+2016-11-01 21:39:25    v    MONITOR    Via:读取书签数据结束
+2016-11-01 21:39:25    v    MONITOR    Via:bookmarks increment size:0
+2016-11-01 21:39:25    v    MONITOR    Via:合并书签数据结束
