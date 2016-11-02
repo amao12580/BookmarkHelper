@@ -22,4 +22,5 @@
     <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
     <string name="dialogTitle">Warning !</string>
     <string name="dialogClose">Close</string>
+    <string name="aboutMe">About me</string>
 </resources>

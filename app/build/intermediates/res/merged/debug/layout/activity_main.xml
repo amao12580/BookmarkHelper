@@ -1,21 +1,50 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:paddingBottom="8dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="8dp"
-    tools:context=".activity.MainActivity" >
+    tools:context=".activity.MainActivity">
 
-    <ListView
-        android:id="@+id/lv"
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:fastScrollEnabled="true"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_weight="1" >
-    </ListView>
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        android:gravity="top"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp">
+
+        <ListView
+            android:id="@+id/listViewRules"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fastScrollEnabled="true"
+            android:gravity="center|center_horizontal|center_vertical" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="15"
+        android:background="@color/colorGray"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonAboutMe"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:background="@color/colorPrimary"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:onClick="onclickAboutMe"
+            android:text="@string/aboutMe" />
+
+    </LinearLayout>
 </LinearLayout>

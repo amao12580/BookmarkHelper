@@ -17,7 +17,7 @@
         android:layout_weight="2"
         android:orientation="vertical">
 
-        <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        <ImageView
             android:id="@+id/sourceBroswerIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,13 +25,13 @@
             android:contentDescription="@string/source_broswer_icon_contentDescription"
             android:scaleType="center" />
 
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        <TextView
             android:id="@+id/sourceBroswerAppNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:gravity="center"
             android:width="120dp"
+            android:gravity="center"
             android:textIsSelectable="false" />
     </LinearLayout>
 
@@ -42,7 +42,7 @@
         android:layout_weight="6"
         android:orientation="vertical">
 
-        <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        <ImageView
             android:id="@+id/converterDirecterImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,13 +50,13 @@
             android:contentDescription="@string/converter_directer_arrow_contentDescription"
             android:scaleType="center" />
 
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        <TextView
             android:id="@+id/converterDirecterText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:gravity="center"
             android:width="240dp"
+            android:gravity="center"
             android:textIsSelectable="false" />
     </LinearLayout>
 
@@ -73,13 +73,13 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/target_broswer_icon_contentDescription" />
 
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        <TextView
             android:id="@+id/targetBroswerAppNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:gravity="center"
             android:width="120dp"
+            android:gravity="center"
             android:textIsSelectable="false" />
     </LinearLayout>
 

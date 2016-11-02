@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
         setContentView(R.layout.activity_main);
-        lv = (ListView) findViewById(R.id.lv);
+        lv = (ListView) findViewById(R.id.listViewRules);
         lv.setBackgroundColor(default_color);
         rules = ConverterMaster.getSupportRule();
         LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
@@ -204,5 +204,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             toast.setDuration(Toast.LENGTH_SHORT);
         }
         toast.show();
+    }
+
+    public void onclickAboutMe(View tager) {
+        showSimpleDialog("hit");
     }
 }

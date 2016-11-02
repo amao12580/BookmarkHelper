@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Nov 02 10:32:42 CST 2016
+#Wed Nov 02 11:33:33 CST 2016
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\design_layout_tab_text.xml
