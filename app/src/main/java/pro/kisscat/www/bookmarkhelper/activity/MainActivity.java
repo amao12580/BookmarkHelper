@@ -10,7 +10,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.content.Context;
-import android.graphics.Color;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     boolean checkPermission;
     List<Map<String, Object>> items = new ArrayList<>();
 
-    private static final int default_color = Color.parseColor("#FAF0E6");
-    private static final int choosed_color = Color.parseColor("#DCDCDC");
+    private static Integer default_color = null;
+    private static Integer choosed_color = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     showMessage(this, "成功获取了Root权限.");
                 }
                 ConverterMaster.init(this);
+                initColor(this);
             } catch (InitException e) {
                 showMessage(this, e.getMessage());
                 finish();
@@ -93,6 +94,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(this);
+    }
+
+    private void initColor(Context context) {
+        if (default_color == null) {
+            default_color = ContextCompat.getColor(context, R.color.colorDefault);
+        }
+        if (choosed_color == null) {
+            choosed_color = ContextCompat.getColor(context, R.color.colorItemChoosed);
+        }
     }
 
 
@@ -159,18 +169,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         showSimpleDialog(message);
     }
 
-    private AlertDialog.Builder builder;
     private static String dialogTitle = null;
 
     private void showSimpleDialog(String message) {
         if (dialogTitle == null) {
             dialogTitle = lv.getResources().getString(R.string.dialogTitle);
         }
-        builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.mipmap.ic_launcher);
         builder.setTitle(dialogTitle);
         builder.setMessage(message);
         builder.setCancelable(true);
+        builder.setPositiveButton(lv.getResources().getString(R.string.dialogClose),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialoginterface, int i) {
+                        dialoginterface.dismiss();  //关闭对话框
+                    }
+                });
         AlertDialog dialog = builder.create();
         dialog.show();
     }

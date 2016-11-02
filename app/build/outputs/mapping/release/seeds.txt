@@ -27704,6 +27704,8 @@ pro.kisscat.www.bookmarkhelper.R$color: int bright_foreground_material_light
 pro.kisscat.www.bookmarkhelper.R$color: int button_material_dark
 pro.kisscat.www.bookmarkhelper.R$color: int button_material_light
 pro.kisscat.www.bookmarkhelper.R$color: int colorAccent
+pro.kisscat.www.bookmarkhelper.R$color: int colorDefault
+pro.kisscat.www.bookmarkhelper.R$color: int colorItemChoosed
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimary
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimaryDark
 pro.kisscat.www.bookmarkhelper.R$color: int design_error
@@ -28227,6 +28229,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_uc
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_via
 pro.kisscat.www.bookmarkhelper.R$string: int character_counter_pattern
 pro.kisscat.www.bookmarkhelper.R$string: int converter_directer_arrow_contentDescription
+pro.kisscat.www.bookmarkhelper.R$string: int dialogClose
 pro.kisscat.www.bookmarkhelper.R$string: int dialogTitle
 pro.kisscat.www.bookmarkhelper.R$string: int fileCPError
 pro.kisscat.www.bookmarkhelper.R$string: int fileDeleteError

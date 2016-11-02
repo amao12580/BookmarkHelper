@@ -29059,6 +29059,8 @@ pro.kisscat.www.bookmarkhelper.R$color -> pro.kisscat.www.bookmarkhelper.R$color
     int button_material_dark -> button_material_dark
     int button_material_light -> button_material_light
     int colorAccent -> colorAccent
+    int colorDefault -> colorDefault
+    int colorItemChoosed -> colorItemChoosed
     int colorPrimary -> colorPrimary
     int colorPrimaryDark -> colorPrimaryDark
     int design_error -> design_error
@@ -29235,7 +29237,7 @@ pro.kisscat.www.bookmarkhelper.R$dimen -> pro.kisscat.www.bookmarkhelper.R$dimen
     int notification_large_icon_height -> notification_large_icon_height
     int notification_large_icon_width -> notification_large_icon_width
     int notification_subtext_size -> notification_subtext_size
-    2373:2373:void <init>() -> <init>
+    2375:2375:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$drawable:
     int abc_ab_share_pack_mtrl_alpha -> abc_ab_share_pack_mtrl_alpha
     int abc_action_bar_item_background_material -> abc_action_bar_item_background_material
@@ -29330,7 +29332,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$dr
     int ic_via -> ic_via
     int navigation_empty_icon -> navigation_empty_icon
     int notification_template_icon_bg -> notification_template_icon_bg
-    2493:2493:void <init>() -> <init>
+    2495:2495:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int action0 -> action0
     int action_bar -> action_bar
@@ -29471,7 +29473,7 @@ pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int view_offset_helper -> view_offset_helper
     int withText -> withText
     int wrap_content -> wrap_content
-    2588:2588:void <init>() -> <init>
+    2590:2590:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$integer:
     int abc_config_activityDefaultDur -> abc_config_activityDefaultDur
     int abc_config_activityShortDur -> abc_config_activityShortDur
@@ -29480,7 +29482,7 @@ pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$int
     int cancel_button_image_alpha -> cancel_button_image_alpha
     int design_snackbar_text_max_lines -> design_snackbar_text_max_lines
     int status_bar_notification_info_maxnum -> status_bar_notification_info_maxnum
-    2729:2729:void <init>() -> <init>
+    2731:2731:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layout:
     int abc_action_bar_title_item -> abc_action_bar_title_item
     int abc_action_bar_up_container -> abc_action_bar_up_container
@@ -29535,10 +29537,10 @@ pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layo
     int select_dialog_multichoice_material -> select_dialog_multichoice_material
     int select_dialog_singlechoice_material -> select_dialog_singlechoice_material
     int support_simple_spinner_dropdown_item -> support_simple_spinner_dropdown_item
-    2738:2738:void <init>() -> <init>
+    2740:2740:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$mipmap -> pro.kisscat.www.bookmarkhelper.R$mipmap:
     int ic_launcher -> ic_launcher
-    2793:2793:void <init>() -> <init>
+    2795:2795:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$string:
     int abc_action_bar_home_description -> abc_action_bar_home_description
     int abc_action_bar_home_description_format -> abc_action_bar_home_description_format
@@ -29582,6 +29584,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int broswer_name_show_via -> broswer_name_show_via
     int character_counter_pattern -> character_counter_pattern
     int converter_directer_arrow_contentDescription -> converter_directer_arrow_contentDescription
+    int dialogClose -> dialogClose
     int dialogTitle -> dialogTitle
     int fileCPError -> fileCPError
     int fileDeleteError -> fileDeleteError
@@ -29596,7 +29599,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int status_bar_notification_info_overflow -> status_bar_notification_info_overflow
     int target_broswer_icon_contentDescription -> target_broswer_icon_contentDescription
     int viaBookmarksFileMiss -> viaBookmarksFileMiss
-    2796:2796:void <init>() -> <init>
+    2798:2798:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style:
     int AlertDialog_AppCompat -> AlertDialog_AppCompat
     int AlertDialog_AppCompat_Light -> AlertDialog_AppCompat_Light
@@ -29959,7 +29962,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    2854:2854:void <init>() -> <init>
+    2857:2857:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -30447,8 +30450,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3217:3217:void <init>() -> <init>
-    3284:9742:void <clinit>() -> <clinit>
+    3220:3220:void <init>() -> <init>
+    3287:9745:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b
@@ -30469,20 +30472,24 @@ pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmark
     boolean isGetRootAccess -> e
     boolean checkPermission -> f
     java.util.List items -> g
-    int default_color -> h
-    int choosed_color -> i
-    android.support.v7.app.AlertDialog$Builder builder -> j
-    java.lang.String dialogTitle -> k
-    android.widget.Toast toast -> l
+    java.lang.Integer default_color -> h
+    java.lang.Integer choosed_color -> i
+    java.lang.String dialogTitle -> j
+    android.widget.Toast toast -> k
     40:47:void <init>() -> <init>
-    54:96:void onCreate(android.os.Bundle) -> onCreate
-    101:111:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    115:141:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-    146:156:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
-    159:160:void showDialogMessage(java.lang.String) -> a
-    166:176:void showSimpleDialog(java.lang.String) -> b
-    185:192:void showMessage(android.content.Context,java.lang.String) -> a
-    49:163:void <clinit>() -> <clinit>
+    54:97:void onCreate(android.os.Bundle) -> onCreate
+    100:106:void initColor(android.content.Context) -> a
+    111:121:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    125:151:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    156:166:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
+    169:170:void showDialogMessage(java.lang.String) -> a
+    175:191:void showSimpleDialog(java.lang.String) -> b
+    200:207:void showMessage(android.content.Context,java.lang.String) -> a
+    49:172:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.activity.MainActivity$1 -> pro.kisscat.www.bookmarkhelper.activity.MainActivity$1:
+    pro.kisscat.www.bookmarkhelper.activity.MainActivity this$0 -> a
+    184:184:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
+    186:187:void onClick(android.content.DialogInterface,int) -> onClick
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a:
     boolean installed -> a
     23:23:void <init>() -> <init>

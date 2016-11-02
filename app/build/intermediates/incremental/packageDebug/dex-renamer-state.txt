@@ -1,4 +1,4 @@
-#Tue Nov 01 18:01:19 CST 2016
+#Wed Nov 02 10:32:42 CST 2016
 base.0=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

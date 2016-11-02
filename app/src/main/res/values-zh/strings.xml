@@ -21,5 +21,6 @@
     <string name="notSupport">暂未支持.</string>
     <string name="notPermissionForReadInstalledAppList">没有权限读取已安装的应用.</string>
     <string name="dialogTitle">快看提示！</string>
+    <string name="dialogClose">关闭</string>
 
 </resources>
