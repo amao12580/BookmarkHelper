@@ -12,6 +12,10 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_shape.xml",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable\\btn_shape.xml"
+    },
+    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_seekbar_track_material.xml"
     },

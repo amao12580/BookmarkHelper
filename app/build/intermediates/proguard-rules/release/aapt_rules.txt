@@ -82,10 +82,10 @@
 # view res/layout/activity_webview.xml #generated:19
 -keep class pro.kisscat.www.bookmarkhelper.webview.ProgressWebView { <init>(...); }
 
-# onClick res/layout/activity_main.xml #generated:39
+# onClick res/layout/activity_main.xml #generated:37
 -keepclassmembers class * { *** onclickAboutMe(...); }
 
-# onClick res/layout/activity_main.xml #generated:61
+# onClick res/layout/activity_main.xml #generated:63
 -keepclassmembers class * { *** onclickDonate(...); }
 
 # onClick res/layout/activity_main.xml #generated:50

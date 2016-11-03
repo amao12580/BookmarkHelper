@@ -29058,12 +29058,15 @@ pro.kisscat.www.bookmarkhelper.R$color -> pro.kisscat.www.bookmarkhelper.R$color
     int bright_foreground_material_light -> bright_foreground_material_light
     int button_material_dark -> button_material_dark
     int button_material_light -> button_material_light
+    int colorAboutMe -> colorAboutMe
     int colorAccent -> colorAccent
     int colorDefault -> colorDefault
+    int colorDonate -> colorDonate
     int colorGray -> colorGray
     int colorItemChoosed -> colorItemChoosed
     int colorPrimary -> colorPrimary
     int colorPrimaryDark -> colorPrimaryDark
+    int colorRating -> colorRating
     int design_error -> design_error
     int design_fab_shadow_end_color -> design_fab_shadow_end_color
     int design_fab_shadow_mid_color -> design_fab_shadow_mid_color
@@ -29238,7 +29241,7 @@ pro.kisscat.www.bookmarkhelper.R$dimen -> pro.kisscat.www.bookmarkhelper.R$dimen
     int notification_large_icon_height -> notification_large_icon_height
     int notification_large_icon_width -> notification_large_icon_width
     int notification_subtext_size -> notification_subtext_size
-    2376:2376:void <init>() -> <init>
+    2379:2379:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$drawable:
     int abc_ab_share_pack_mtrl_alpha -> abc_ab_share_pack_mtrl_alpha
     int abc_action_bar_item_background_material -> abc_action_bar_item_background_material
@@ -29323,6 +29326,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$dr
     int abc_textfield_search_default_mtrl_alpha -> abc_textfield_search_default_mtrl_alpha
     int abc_textfield_search_material -> abc_textfield_search_material
     int abc_vector_test -> abc_vector_test
+    int btn_shape -> btn_shape
     int design_fab_background -> design_fab_background
     int design_ic_visibility -> design_ic_visibility
     int design_snackbar_background -> design_snackbar_background
@@ -29336,7 +29340,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$dr
     int navigation_empty_icon -> navigation_empty_icon
     int notification_template_icon_bg -> notification_template_icon_bg
     int web_progress_bar_states -> web_progress_bar_states
-    2496:2496:void <init>() -> <init>
+    2499:2499:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int action0 -> action0
     int action_bar -> action_bar
@@ -29483,7 +29487,7 @@ pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int webview_toolbar -> webview_toolbar
     int withText -> withText
     int wrap_content -> wrap_content
-    2594:2594:void <init>() -> <init>
+    2598:2598:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$integer:
     int abc_config_activityDefaultDur -> abc_config_activityDefaultDur
     int abc_config_activityShortDur -> abc_config_activityShortDur
@@ -29492,7 +29496,7 @@ pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$int
     int cancel_button_image_alpha -> cancel_button_image_alpha
     int design_snackbar_text_max_lines -> design_snackbar_text_max_lines
     int status_bar_notification_info_maxnum -> status_bar_notification_info_maxnum
-    2741:2741:void <init>() -> <init>
+    2745:2745:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layout:
     int abc_action_bar_title_item -> abc_action_bar_title_item
     int abc_action_bar_up_container -> abc_action_bar_up_container
@@ -29548,10 +29552,10 @@ pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layo
     int select_dialog_multichoice_material -> select_dialog_multichoice_material
     int select_dialog_singlechoice_material -> select_dialog_singlechoice_material
     int support_simple_spinner_dropdown_item -> support_simple_spinner_dropdown_item
-    2750:2750:void <init>() -> <init>
+    2754:2754:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$mipmap -> pro.kisscat.www.bookmarkhelper.R$mipmap:
     int ic_launcher -> ic_launcher
-    2806:2806:void <init>() -> <init>
+    2810:2810:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$string:
     int abc_action_bar_home_description -> abc_action_bar_home_description
     int abc_action_bar_home_description_format -> abc_action_bar_home_description_format
@@ -29615,7 +29619,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int status_bar_notification_info_overflow -> status_bar_notification_info_overflow
     int target_broswer_icon_contentDescription -> target_broswer_icon_contentDescription
     int viaBookmarksFileMiss -> viaBookmarksFileMiss
-    2809:2809:void <init>() -> <init>
+    2813:2813:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style:
     int AlertDialog_AppCompat -> AlertDialog_AppCompat
     int AlertDialog_AppCompat_Light -> AlertDialog_AppCompat_Light
@@ -29978,7 +29982,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    2873:2873:void <init>() -> <init>
+    2877:2877:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -30466,8 +30470,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3236:3236:void <init>() -> <init>
-    3303:9761:void <clinit>() -> <clinit>
+    3240:3240:void <init>() -> <init>
+    3307:9765:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b

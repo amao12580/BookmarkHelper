@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/colorPrimary"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
@@ -10,7 +9,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:background="@color/colorAccent"
         android:gravity="top"
         android:paddingBottom="8dp"
         android:paddingLeft="8dp"
@@ -31,42 +29,49 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="15"
-        android:background="@color/colorGray"
+        android:layout_marginBottom="3dp"
+        android:layout_weight="11"
         android:gravity="bottom"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonAboutMe"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center|center_horizontal|center_vertical"
-            android:background="@color/colorPrimary"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="3"
+            android:background="@drawable/btn_shape"
             android:gravity="center|center_horizontal|center_vertical"
             android:onClick="onclickAboutMe"
-            android:paddingLeft="10dp"
             android:text="@string/aboutMe" />
 
         <Button
             android:id="@+id/buttonRating"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center|center_horizontal|center_vertical"
-            android:background="@color/colorPrimary"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="4"
+            android:background="@drawable/btn_shape"
             android:gravity="center|center_horizontal|center_vertical"
             android:onClick="onclickRating"
-            android:paddingLeft="10dp"
             android:text="@string/rating" />
 
         <Button
             android:id="@+id/buttonDonate"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center|center_horizontal|center_vertical"
-            android:background="@color/colorPrimary"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="2"
+            android:background="@drawable/btn_shape"
             android:gravity="center|center_horizontal|center_vertical"
             android:onClick="onclickDonate"
-            android:paddingLeft="10dp"
             android:text="@string/donate" />
 
     </LinearLayout>
