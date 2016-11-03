@@ -11,14 +11,7 @@
                     "endOffset": 97
                 },
                 "from": {
-                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\colors.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 249,
-                        "endColumn": 46,
-                        "endOffset": 291
-                    }
+                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\colors.xml"
                 }
             },
             {
@@ -42,14 +35,7 @@
                     "endOffset": 189
                 },
                 "from": {
-                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\colors.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 344,
-                        "endColumn": 45,
-                        "endOffset": 385
-                    }
+                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\colors.xml"
                 }
             },
             {
@@ -97,14 +83,7 @@
                     "endOffset": 377
                 },
                 "from": {
-                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\colors.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 297,
-                        "endColumn": 45,
-                        "endOffset": 338
-                    }
+                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\colors.xml"
                 }
             },
             {
@@ -316,20 +295,27 @@
                     "startLine": 26,
                     "startColumn": 4,
                     "startOffset": 1269,
-                    "endColumn": 78,
-                    "endOffset": 1343
+                    "endColumn": 56,
+                    "endOffset": 1321
                 },
                 "from": {
-                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
+                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1581,
+                        "endColumn": 56,
+                        "endOffset": 1633
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 1348,
-                    "endColumn": 44,
-                    "endOffset": 1388
+                    "startOffset": 1326,
+                    "endColumn": 78,
+                    "endOffset": 1400
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -339,9 +325,9 @@
                 "to": {
                     "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 1393,
-                    "endColumn": 39,
-                    "endOffset": 1428
+                    "startOffset": 1405,
+                    "endColumn": 44,
+                    "endOffset": 1445
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -351,9 +337,9 @@
                 "to": {
                     "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 1433,
-                    "endColumn": 60,
-                    "endOffset": 1489
+                    "startOffset": 1450,
+                    "endColumn": 39,
+                    "endOffset": 1485
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -363,9 +349,9 @@
                 "to": {
                     "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 1494,
-                    "endColumn": 57,
-                    "endOffset": 1547
+                    "startOffset": 1490,
+                    "endColumn": 60,
+                    "endOffset": 1546
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -375,9 +361,9 @@
                 "to": {
                     "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 1552,
-                    "endColumn": 55,
-                    "endOffset": 1603
+                    "startOffset": 1551,
+                    "endColumn": 57,
+                    "endOffset": 1604
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -387,9 +373,9 @@
                 "to": {
                     "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 1608,
-                    "endColumn": 72,
-                    "endOffset": 1676
+                    "startOffset": 1609,
+                    "endColumn": 55,
+                    "endOffset": 1660
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -399,9 +385,9 @@
                 "to": {
                     "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 1681,
+                    "startOffset": 1665,
                     "endColumn": 72,
-                    "endOffset": 1749
+                    "endOffset": 1733
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -411,9 +397,9 @@
                 "to": {
                     "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 1754,
-                    "endColumn": 63,
-                    "endOffset": 1813
+                    "startOffset": 1738,
+                    "endColumn": 72,
+                    "endOffset": 1806
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
@@ -423,22 +409,22 @@
                 "to": {
                     "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 1818,
-                    "endLine": 40,
-                    "endColumn": 12,
-                    "endOffset": 2097
+                    "startOffset": 1811,
+                    "endColumn": 63,
+                    "endOffset": 1870
                 },
                 "from": {
-                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml"
+                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\strings.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 41,
+                    "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 2102,
-                    "endColumn": 89,
-                    "endOffset": 2187
+                    "startOffset": 1875,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2154
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml"
@@ -448,10 +434,9 @@
                 "to": {
                     "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 2192,
-                    "endLine": 45,
-                    "endColumn": 12,
-                    "endOffset": 2337
+                    "startOffset": 2159,
+                    "endColumn": 89,
+                    "endOffset": 2244
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml"
@@ -459,11 +444,24 @@
             },
             {
                 "to": {
-                    "startLine": 46,
+                    "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 2342,
+                    "startOffset": 2249,
+                    "endLine": 46,
+                    "endColumn": 12,
+                    "endOffset": 2394
+                },
+                "from": {
+                    "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 2399,
                     "endColumn": 79,
-                    "endOffset": 2417
+                    "endOffset": 2474
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml"

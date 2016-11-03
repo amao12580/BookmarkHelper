@@ -574,6 +574,7 @@
     <string name="fileCPError">file copy error.</string>
     <string name="fileDeleteError">file delete error.</string>
     <string name="flyme5BookmarksFileMiss">bookmark file missing.</string>
+    <string name="networkError">Network is offing.</string>
     <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
     <string name="notSupport">Not support now.</string>
     <string name="rating">Rating</string>

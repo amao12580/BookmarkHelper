@@ -14,6 +14,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,7 @@ import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
@@ -60,17 +62,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 checkPermission = PermissionUtil.check(this);
                 isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
                 isGetRootAccess = RootUtil.checkRootAuth();
-                showMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
+                showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
                 if (!isRoot) {
-                    showMessage(this, "设备未Root，无法使用.");
+                    showToastMessage(this, "设备未Root，无法使用.");
                     finish();
                 } else {
-                    showMessage(this, "成功获取了Root权限.");
+                    showToastMessage(this, "成功获取了Root权限.");
                 }
                 ConverterMaster.init(this);
                 initColor(this);
             } catch (InitException e) {
-                showMessage(this, e.getMessage());
+                showToastMessage(this, e.getMessage());
                 finish();
             }
         }
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        }
 //        //doNext(requestCode,grantResults);
         if (PermissionUtil.checkOnly(this)) {
-            showMessage(this, "未能获取Root权限，无法提供服务.");
+            showToastMessage(this, "未能获取Root权限，无法提供服务.");
             finish();
         }
     }
@@ -198,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * Android 解决Toast的延时显示问题
      * 关键在于重用toast，这样就不用每次都创建一个新的toast
      */
-    private void showMessage(Context context, String message) {
+    private void showToastMessage(Context context, String message) {
         if (toast == null) {
             toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
         } else {
@@ -230,6 +232,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void openUrlInWebview(String url, String title, int logo) {
+        if (!NetworkUtil.isNetworkConnected(this)) {
+            showToastMessage(this, lv.getResources().getString(R.string.networkError));
+            Intent intent = new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS);
+            startActivity(intent);
+            return;
+        }
         Intent intent = new Intent(MainActivity.this, Html5Activity.class);
         Bundle bundle = new Bundle();
         bundle.putString("url", url);

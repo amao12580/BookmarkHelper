@@ -27,4 +27,5 @@
     <string name="donate">Donate</string>
     <string name="donateTitle">Thanks a lot.</string>
     <string name="aboutMeTitle">About me.</string>
+    <string name="networkError">Network is offing.</string>
 </resources>

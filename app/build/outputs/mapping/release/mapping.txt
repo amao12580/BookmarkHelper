@@ -29608,6 +29608,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int fileCPError -> fileCPError
     int fileDeleteError -> fileDeleteError
     int flyme5BookmarksFileMiss -> flyme5BookmarksFileMiss
+    int networkError -> networkError
     int notPermissionForReadInstalledAppList -> notPermissionForReadInstalledAppList
     int notSupport -> notSupport
     int rating -> rating
@@ -29982,7 +29983,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    2877:2877:void <init>() -> <init>
+    2878:2878:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -30470,8 +30471,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3240:3240:void <init>() -> <init>
-    3307:9765:void <clinit>() -> <clinit>
+    3241:3241:void <init>() -> <init>
+    3308:9766:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b
@@ -30485,30 +30486,47 @@ pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelpe
     67:107:void bindView(int,android.view.View) -> a
     110:111:void setViewImage(android.widget.ImageView,android.graphics.drawable.Drawable) -> a
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity:
-    java.lang.String mUrl -> c
-    java.lang.String mTitle -> d
-    int mLogo -> e
-    android.webkit.WebView mWebView -> f
-    android.webkit.WebViewClient webViewClient -> a
+    java.lang.String mFailingUrl -> c
+    android.webkit.WebView mWebView -> a
     android.webkit.WebChromeClient webChromeClient -> b
-    33:119:void <init>() -> <init>
-    43:76:void onCreate(android.os.Bundle) -> onCreate
-    80:81:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    90:92:void newWin(android.webkit.WebSettings) -> a
-    99:104:void saveData(android.webkit.WebSettings) -> b
-    159:164:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    169:178:void onDestroy() -> onDestroy
+    41:210:void <init>() -> <init>
+    51:114:void onCreate(android.os.Bundle) -> onCreate
+    118:119:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    167:168:void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+    171:176:void onResume() -> onResume
+    180:185:void onPause() -> onPause
+    194:196:void newWin(android.webkit.WebSettings) -> a
+    203:208:void saveData(android.webkit.WebSettings) -> b
+    250:255:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
+    260:269:void onDestroy() -> onDestroy
+    41:41:java.lang.String access$002(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,java.lang.String) -> a
+    41:41:java.lang.String access$000(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> a
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    106:106:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    113:114:boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    74:74:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    77:86:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$2 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$2:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    119:119:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    128:129:void onReceivedIcon(android.webkit.WebView,android.graphics.Bitmap) -> onReceivedIcon
-    133:134:void onGeolocationPermissionsHidePrompt() -> onGeolocationPermissionsHidePrompt
-    138:140:void onGeolocationPermissionsShowPrompt(java.lang.String,android.webkit.GeolocationPermissions$Callback) -> onGeolocationPermissionsShowPrompt
-    146:149:boolean onCreateWindow(android.webkit.WebView,boolean,boolean,android.os.Message) -> onCreateWindow
+    210:210:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    219:220:void onReceivedIcon(android.webkit.WebView,android.graphics.Bitmap) -> onReceivedIcon
+    224:225:void onGeolocationPermissionsHidePrompt() -> onGeolocationPermissionsHidePrompt
+    229:231:void onGeolocationPermissionsShowPrompt(java.lang.String,android.webkit.GeolocationPermissions$Callback) -> onGeolocationPermissionsShowPrompt
+    237:240:boolean onCreateWindow(android.webkit.WebView,boolean,boolean,android.os.Message) -> onCreateWindow
+pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$a:
+    pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
+    150:150:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    153:162:void errorReload() -> errorReload
+pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface$1 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$a$1:
+    pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface this$1 -> a
+    153:153:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface) -> <init>
+    157:160:void run() -> run
+pro.kisscat.www.bookmarkhelper.activity.Html5Activity$MyWebViewClient -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$b:
+    pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
+    122:122:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    126:127:boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    132:133:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
+    137:138:void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
+    142:147:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
 pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmarkhelper.activity.MainActivity:
     android.widget.ListView lv -> a
     pro.kisscat.www.bookmarkhelper.activity.Adapter adapter -> b
@@ -30521,24 +30539,24 @@ pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmark
     java.lang.Integer choosed_color -> i
     java.lang.String dialogTitle -> j
     android.widget.Toast toast -> k
-    42:49:void <init>() -> <init>
-    56:99:void onCreate(android.os.Bundle) -> onCreate
-    102:108:void initColor(android.content.Context) -> a
-    113:123:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    127:153:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-    158:168:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
-    171:172:void showDialogMessage(java.lang.String) -> a
-    177:193:void showSimpleDialog(java.lang.String) -> b
-    202:209:void showMessage(android.content.Context,java.lang.String) -> a
-    212:213:void onclickAboutMe(android.view.View) -> onclickAboutMe
-    216:226:void onclickRating(android.view.View) -> onclickRating
-    229:230:void onclickDonate(android.view.View) -> onclickDonate
-    233:240:void openUrlInWebview(java.lang.String,java.lang.String,int) -> a
-    51:174:void <clinit>() -> <clinit>
+    44:51:void <init>() -> <init>
+    58:101:void onCreate(android.os.Bundle) -> onCreate
+    104:110:void initColor(android.content.Context) -> a
+    115:125:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    129:155:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    160:170:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
+    173:174:void showDialogMessage(java.lang.String) -> a
+    179:195:void showSimpleDialog(java.lang.String) -> b
+    204:211:void showToastMessage(android.content.Context,java.lang.String) -> a
+    214:215:void onclickAboutMe(android.view.View) -> onclickAboutMe
+    218:228:void onclickRating(android.view.View) -> onclickRating
+    231:232:void onclickDonate(android.view.View) -> onclickDonate
+    235:248:void openUrlInWebview(java.lang.String,java.lang.String,int) -> a
+    53:176:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.MainActivity$1 -> pro.kisscat.www.bookmarkhelper.activity.MainActivity$1:
     pro.kisscat.www.bookmarkhelper.activity.MainActivity this$0 -> a
-    186:186:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
-    188:189:void onClick(android.content.DialogInterface,int) -> onClick
+    188:188:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
+    190:191:void onClick(android.content.DialogInterface,int) -> onClick
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a:
     boolean installed -> a
     23:23:void <init>() -> <init>
@@ -30749,15 +30767,17 @@ pro.kisscat.www.bookmarkhelper.util.log.LogHelper -> pro.kisscat.www.bookmarkhel
     196:196:boolean isInit() -> a
     201:216:void init() -> b
     29:193:void <clinit>() -> <clinit>
-pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil -> pro.kisscat.www.bookmarkhelper.c.e.a:
+pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil -> pro.kisscat.www.bookmarkhelper.c.e.a:
+    19:28:boolean isNetworkConnected(android.content.Context) -> a
+pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil -> pro.kisscat.www.bookmarkhelper.c.f.a:
     26:26:boolean checkOnly(android.app.Activity) -> a
     31:35:boolean check(android.app.Activity) -> b
-pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.c.f.a:
+pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.c.g.a:
     34:34:boolean upgradeRootPermission(java.lang.String) -> a
     42:44:boolean checkRootAuth() -> a
     48:48:boolean executeCmd(java.lang.String) -> b
     52:121:pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult executeCmd(java.lang.String[]) -> a
-pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.www.bookmarkhelper.c.f.a$a:
+pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.www.bookmarkhelper.c.g.a$a:
     int result -> a
     java.lang.String successMsg -> b
     java.lang.String errorMsg -> c
@@ -30765,11 +30785,11 @@ pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.w
     144:148:void <init>(int,java.lang.String,java.lang.String) -> <init>
     151:151:boolean isSuccess() -> a
     133:133:java.lang.String getSuccessMsg() -> b
-pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.c.g.a:
+pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.c.h.a:
     27:27:void <init>() -> <init>
     33:55:java.lang.String getRootPath() -> a
     74:85:java.io.File copyFile(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> a
-pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil -> pro.kisscat.www.bookmarkhelper.c.g.b:
+pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil -> pro.kisscat.www.bookmarkhelper.c.h.b:
     21:21:void <init>() -> <init>
     27:33:java.lang.String getRootPath() -> a
     43:48:boolean deleteFile(android.content.Context,java.lang.String,java.lang.String) -> a

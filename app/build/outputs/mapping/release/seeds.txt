@@ -28253,6 +28253,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int donateTitle
 pro.kisscat.www.bookmarkhelper.R$string: int fileCPError
 pro.kisscat.www.bookmarkhelper.R$string: int fileDeleteError
 pro.kisscat.www.bookmarkhelper.R$string: int flyme5BookmarksFileMiss
+pro.kisscat.www.bookmarkhelper.R$string: int networkError
 pro.kisscat.www.bookmarkhelper.R$string: int notPermissionForReadInstalledAppList
 pro.kisscat.www.bookmarkhelper.R$string: int notSupport
 pro.kisscat.www.bookmarkhelper.R$string: int rating
@@ -29120,6 +29121,7 @@ pro.kisscat.www.bookmarkhelper.R$styleable: void <clinit>()
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity: Html5Activity()
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity: void onCreate(android.os.Bundle)
+pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface: void errorReload()
 pro.kisscat.www.bookmarkhelper.activity.MainActivity
 pro.kisscat.www.bookmarkhelper.activity.MainActivity: MainActivity()
 pro.kisscat.www.bookmarkhelper.activity.MainActivity: void onclickAboutMe(android.view.View)
