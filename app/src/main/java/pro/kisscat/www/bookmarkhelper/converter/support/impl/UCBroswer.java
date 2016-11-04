@@ -9,8 +9,6 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
@@ -118,16 +116,10 @@ public class UCBroswer extends BasicBroswer {
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
         String tableName = "bookmark";
-        boolean tableExist = false;
+        boolean tableExist;
         try {
             sqLiteDatabase = DBHelper.openReadOnlyDatabase(dbFilePath);
-            cursor = sqLiteDatabase.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + tableName + "'", null);
-            if (cursor.moveToNext()) {
-                int count = cursor.getInt(0);
-                if (count > 0) {
-                    tableExist = true;
-                }
-            }
+            tableExist = DBHelper.checkTableExist(sqLiteDatabase, tableName);
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));

@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "0.0.3"
+        versionName "0.0.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -50,12 +50,15 @@ android {
                 }
             }
         }
+        println 'debug out info'
+        println gitVersionCode()
+        println gitVersionTag()
     }
 
     applicationVariants.all { variant ->
         if (variant.buildType.name.equals('release')) {
             variant.mergedFlavor.versionCode = gitVersionCode()
-            variant.mergedFlavor.versionName = gitVersionTag()
+            //variant.mergedFlavor.versionName = gitVersionTag()
         }
     }
 }

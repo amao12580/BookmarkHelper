@@ -23,8 +23,11 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 2.界面大调整，美美哒！
 
 3.部分代码重构，精简掉重合代码段。
-### 0.0.4版 Draft
-增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+### [0.0.4版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.4%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.4.apk)
+1.增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+2.底栏小Tip，关于我、五星好评、捐助
+### 0.0.5版 Draft
+增加兼容：支持从[X浏览器](http://www.coolapk.com/apk/com.mmbox.xbrowser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 
 ## UnStable

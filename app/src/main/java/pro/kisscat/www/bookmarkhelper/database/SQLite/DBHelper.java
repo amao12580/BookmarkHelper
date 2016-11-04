@@ -1,5 +1,6 @@
 package pro.kisscat.www.bookmarkhelper.database.SQLite;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
@@ -22,5 +23,16 @@ public class DBHelper {
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             throw e;
         }
+    }
+
+    public static boolean checkTableExist(SQLiteDatabase sqLiteDatabase, String tableName) {
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + tableName + "'", null);
+        if (cursor.moveToNext()) {
+            int count = cursor.getInt(0);
+            if (count > 0) {
+                return true;
+            }
+        }
+        return false;
     }
 }

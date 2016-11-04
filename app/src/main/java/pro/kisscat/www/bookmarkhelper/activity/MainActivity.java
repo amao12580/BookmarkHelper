@@ -215,7 +215,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void onclickRating(View view) {
-        showSimpleDialog("hit Rating");
         //这里开始执行一个应用市场跳转逻辑，默认this为Context上下文对象
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("market://details?id=" + getPackageName())); //跳转到应用市场，非Google Play市场一般情况也实现了这个接口
@@ -224,6 +223,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             startActivity(intent);
         } else {
             //您的系统中没有安装应用市场，用WebView打开
+            showToastMessage(this, lv.getResources().getString(R.string.marketAppNoInstalled));
+            openUrlInWebview(MetaData.RatingURL + getPackageName(), lv.getResources().getString(R.string.app_name), R.mipmap.ic_launcher);
         }
     }
 

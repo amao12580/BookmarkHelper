@@ -3,6 +3,7 @@
     <string name="app_name">BookmarkHelper</string>
     <string name="broswer_name_show_chrome">Chrome Broswer</string>
     <string name="broswer_name_show_flyme5">Flyme5 Broswer</string>
+    <string name="broswer_name_show_qq">QQ Broswer</string>
     <string name="broswer_name_show_uc">UC Broswer</string>
     <string name="broswer_name_show_via">Via Broswer</string>
 
@@ -28,4 +29,5 @@
     <string name="donateTitle">Thanks a lot.</string>
     <string name="aboutMeTitle">About me.</string>
     <string name="networkError">Network is offing.</string>
+    <string name="marketAppNoInstalled">Not found market app.</string>
 </resources>

@@ -8,6 +8,7 @@ import java.util.List;
 import lombok.Getter;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
@@ -36,6 +37,7 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), new ViaBroswer()));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), new ViaBroswer()));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), new ViaBroswer()));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new QQBroswer(), new ViaBroswer()));
         }
     }
 
