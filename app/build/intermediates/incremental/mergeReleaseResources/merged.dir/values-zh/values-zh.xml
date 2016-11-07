@@ -17,6 +17,7 @@
     <string name="broswer_name_show_qq">QQ浏览器</string>
     <string name="broswer_name_show_uc">UC浏览器</string>
     <string name="broswer_name_show_via">Via浏览器</string>
+    <string name="broswer_name_show_x">X浏览器</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
     <string name="converter_directer_arrow_contentDescription">转换方向</string>
     <string name="dialogClose">关闭</string>
@@ -30,6 +31,7 @@
     <string name="networkError">您的网络未连接，快去检查一下！</string>
     <string name="notPermissionForReadInstalledAppList">没有权限读取已安装的应用.</string>
     <string name="notSupport">暂未支持.</string>
+    <string name="notSupportWechatBookmarkForQQBroswer">暂时无法解析微信用户的书签数据.</string>
     <string name="rating">五星好评</string>
     <string name="readBookmarksDataMiss">读取到数据文件不存在</string>
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>

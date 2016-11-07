@@ -3,6 +3,7 @@
     <string name="app_name">书签助手</string>
     <string name="broswer_name_show_chrome">谷歌浏览器</string>
     <string name="broswer_name_show_flyme5">Flyme5浏览器</string>
+    <string name="broswer_name_show_x">X浏览器</string>
     <string name="broswer_name_show_qq">QQ浏览器</string>
     <string name="broswer_name_show_via">Via浏览器</string>
     <string name="broswer_name_show_uc">UC浏览器</string>
@@ -31,5 +32,6 @@
     <string name="networkError">您的网络未连接，快去检查一下！</string>
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
+    <string name="notSupportWechatBookmarkForQQBroswer">暂时无法解析微信用户的书签数据.</string>
 
 </resources>

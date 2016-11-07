@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.LinkedList;
@@ -74,7 +75,7 @@ public class QQBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
             List<Bookmark> bookmarksList = new LinkedList<>();
-            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByQQUserHasLogined(context, filePath_origin);
+            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_cp + fileName_origin);
             LogHelper.v("已登录的QQ用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
             LogHelper.v("已登录的QQ用户书签条数:" + bookmarksListPart1.size());
@@ -118,9 +119,11 @@ public class QQBroswer extends BasicBroswer {
     /**
      * 对QQ号码进行校验 要求5~15位，不能以0开头，只能是数字
      */
-    private List<Bookmark> fetchBookmarksListByQQUserHasLogined(Context context, String dir) {
-        LogHelper.v(TAG + ":开始读取已登录QQ用户的书签SQLite数据库,root dir:" + dir);
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String dir) {
+        LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
         List<Bookmark> result = new LinkedList<>();
+        //QQ 号码登录
+        LogHelper.v(TAG + ":尝试解析QQ用户的书签数据");
         String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
         String searchRule = "[1-9][0-9][0-9][0-9][0-9]*";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
         List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule + ".db");
@@ -128,6 +131,9 @@ public class QQBroswer extends BasicBroswer {
             LogHelper.v("first phase match fileNames is empty.");
             return result;
         }
+        LogHelper.v(TAG + ":QQ用户没有书签数据");
+        Toast.makeText(context, context.getString(R.string.notSupportWechatBookmarkForQQBroswer), Toast.LENGTH_SHORT);
+        //微信登录的先不考虑了，find规则太复杂。db name完全没有规则，随机字符串(可能与openid相关)：oXh-RjjNxEmOPpLmrToJLJBsSHjA.db
         String targetFilePath = null;
         String targetFileName = null;
         for (String item : fileNames) {
@@ -153,7 +159,7 @@ public class QQBroswer extends BasicBroswer {
         result.addAll(fetchBookmarksList(context, tmpFilePath, "pad_bookmark", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, tmpFilePath, "pc_bookmark", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, tmpFilePath, "snapshot", "type=?", new String[]{"-1"}, null));
-        LogHelper.v(TAG + ":读取已登录QQ用户书签SQLite数据库结束");
+        LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
         return result;
     }
 

@@ -27983,6 +27983,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int ic_flyme5
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_qq
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_uc
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_via
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_x
 pro.kisscat.www.bookmarkhelper.R$drawable: int navigation_empty_icon
 pro.kisscat.www.bookmarkhelper.R$drawable: int notification_template_icon_bg
 pro.kisscat.www.bookmarkhelper.R$drawable: int web_progress_bar_states
@@ -28246,6 +28247,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_flyme5
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_qq
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_uc
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_via
+pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_x
 pro.kisscat.www.bookmarkhelper.R$string: int character_counter_pattern
 pro.kisscat.www.bookmarkhelper.R$string: int clickBackToExit
 pro.kisscat.www.bookmarkhelper.R$string: int converter_directer_arrow_contentDescription
@@ -28260,6 +28262,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int marketAppNoInstalled
 pro.kisscat.www.bookmarkhelper.R$string: int networkError
 pro.kisscat.www.bookmarkhelper.R$string: int notPermissionForReadInstalledAppList
 pro.kisscat.www.bookmarkhelper.R$string: int notSupport
+pro.kisscat.www.bookmarkhelper.R$string: int notSupportWechatBookmarkForQQBroswer
 pro.kisscat.www.bookmarkhelper.R$string: int rating
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksDataMiss
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksEmpty

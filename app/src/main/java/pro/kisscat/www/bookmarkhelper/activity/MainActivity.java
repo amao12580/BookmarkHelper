@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -120,11 +121,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setClickable(false);
         checkPermission = PermissionUtil.check(this);
         isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
-        isGetRootAccess = RootUtil.checkRootAuth();
-        showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
+//        isGetRootAccess = RootUtil.checkRootAuth();
+//        showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
         if (!isRoot) {
             showToastMessage(this, "设备未Root，无法使用.");
-            finish();
+            return;
         } else {
             showToastMessage(this, "成功获取了Root权限.");
         }
@@ -156,17 +157,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void processConverter(Rule rule) {
+        long start = System.currentTimeMillis();
+        long end;
         int ret;
         try {
             ret = ConverterMaster.excute(lv.getContext(), rule);
+            end = System.currentTimeMillis();
         } catch (ConverterException e) {
             showDialogMessage(e.getMessage());
             return;
         }
         if (ret > 0) {
-            showDialogMessage("成功合并了" + ret + "条书签，请重启" + rule.getTarget().getName() + "后查看效果.");
+            long ms = end - start;
+            String s;
+            if (ms > 1000) {
+                s = ((end - start) / 1000) + "s";
+            } else {
+                s = ms + "ms";
+            }
+
+            showDialogMessage("合并了" + ret + "条书签，重启" + rule.getTarget().getName() + "后见效." + s + ".");
         } else {
-            showDialogMessage("检测到所有书签数据已存在，不需要合并.");
+            showDialogMessage("所有书签已存在，不需要合并.");
         }
     }
 

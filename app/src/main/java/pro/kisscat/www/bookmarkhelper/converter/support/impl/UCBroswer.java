@@ -20,6 +20,7 @@ import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
+import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 /**
  * Created with Android Studio.
@@ -70,16 +71,16 @@ public class UCBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            String originFilePathFull = filePath_origin + fileName_origin;
-            LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-            File cpPath = new File(filePath_cp);
-            cpPath.deleteOnExit();
-            cpPath.mkdirs();
-            LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
-            ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
-            List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp + fileName_origin);
-            LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
-            LogHelper.v("书签条数:" + bookmarksList.size());
+            List<Bookmark> bookmarksList = new LinkedList<>();
+            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
+            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_cp + fileName_origin);
+            LogHelper.v("已登录的QQ用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
+            LogHelper.v("已登录的QQ用户书签条数:" + bookmarksListPart1.size());
+            LogHelper.v("未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
+            LogHelper.v("未登录的用户书签条数:" + bookmarksListPart2.size());
+            bookmarksList.addAll(bookmarksListPart1);
+            bookmarksList.addAll(bookmarksListPart2);
+            LogHelper.v("总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             for (Bookmark item : bookmarksList) {
                 String bookmarkUrl = item.getUrl();
@@ -110,12 +111,68 @@ public class UCBroswer extends BasicBroswer {
 
     private final static String[] columns = new String[]{"title", "url"};
 
-    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath) {
-        LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
+    private List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String dbFilePath) {
+        List<Bookmark> result = new LinkedList<>();
+        String originFilePathFull = filePath_origin + fileName_origin;
+        LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
+        File cpPath = new File(filePath_cp);
+        cpPath.deleteOnExit();
+        cpPath.mkdirs();
+        LogHelper.v(TAG + ":tmp file path:" + dbFilePath);
+        try {
+            ExternalStorageUtil.copyFile(context, originFilePathFull, dbFilePath, this.getName());
+        } catch (Exception e) {
+            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            return result;
+        }
+        LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);
+        result.addAll(fetchBookmarksList(context, dbFilePath, "bookmark", null, null, "create_time asc"));
+        LogHelper.v(TAG + ":读取未登录用户书签SQLite数据库结束");
+        return result;
+    }
+
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String dir) {
+        LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
+        List<Bookmark> result = new LinkedList<>();
+        String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
+        String searchRule = "[1-9][0-9][0-9][0-9][0-9]*";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
+        List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule + ".db");
+        if (fileNames == null || fileNames.isEmpty()) {
+            LogHelper.v("first phase match fileNames is empty.");
+            return result;
+        }
+        String targetFilePath = null;
+        String targetFileName = null;
+        for (String item : fileNames) {
+            String tmp = item.replace(dir, "");
+            LogHelper.v("origin path:" + item + ",file name:" + tmp);
+            if (tmp.matches(regularRule)) {
+                targetFilePath = item;
+                targetFileName = tmp;
+                //如果有多个符合条件的，多账号切换，取最新的一个
+                break;
+            } else {
+                LogHelper.v("not match.");
+            }
+        }
+        if (targetFilePath == null) {
+            LogHelper.v("targetFilePath is miss.");
+            return result;
+        }
+        LogHelper.v("targetFilePath is:" + targetFilePath);
+        String tmpFilePath = filePath_cp + targetFileName;
+        ExternalStorageUtil.copyFile(context, targetFilePath, tmpFilePath, this.getName());
+
+        result.addAll(fetchBookmarksList(context, tmpFilePath, "bookmark", null, null, "create_time asc"));
+        LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
+        return result;
+    }
+
+    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
+        LogHelper.v(TAG + ":读取SQLite数据库开始,dbFilePath:" + dbFilePath + ",tableName:" + tableName);
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
-        String tableName = "bookmark";
         boolean tableExist;
         try {
             sqLiteDatabase = DBHelper.openReadOnlyDatabase(dbFilePath);
@@ -124,7 +181,7 @@ public class UCBroswer extends BasicBroswer {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "create_time asc", null);
+            cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, "url", null, orderBy, null);
             if (cursor != null && cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
                     Bookmark item = new Bookmark();
@@ -141,7 +198,7 @@ public class UCBroswer extends BasicBroswer {
             if (sqLiteDatabase != null) {
                 sqLiteDatabase.close();
             }
-            LogHelper.v(TAG + ":读取书签SQLite数据库结束");
+            LogHelper.v(TAG + ":读取SQLite数据库结束,dbFilePath:" + dbFilePath);
         }
         return result;
     }

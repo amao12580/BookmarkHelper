@@ -11,6 +11,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
@@ -38,6 +39,7 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), new ViaBroswer()));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), new ViaBroswer()));
             supportRule.add(new Rule(supportRule.size() + 1, context, new QQBroswer(), new ViaBroswer()));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new XBroswer(), new ViaBroswer()));
         }
     }
 

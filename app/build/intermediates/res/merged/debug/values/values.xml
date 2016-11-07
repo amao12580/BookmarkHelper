@@ -566,6 +566,7 @@
     <string name="broswer_name_show_qq">QQ Broswer</string>
     <string name="broswer_name_show_uc">UC Broswer</string>
     <string name="broswer_name_show_via">Via Broswer</string>
+    <string name="broswer_name_show_x">X Broswer</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="clickBackToExit">Next click back will exit.</string>
     <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
@@ -580,6 +581,7 @@
     <string name="networkError">Network offline.</string>
     <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
     <string name="notSupport">Not support now.</string>
+    <string name="notSupportWechatBookmarkForQQBroswer">Not support parse wechat user bookmark data.</string>
     <string name="rating">Rating</string>
     <string name="readBookmarksDataMiss">read bookmarks file missing.</string>
     <string name="readBookmarksEmpty">bookmarks is empty.</string>
