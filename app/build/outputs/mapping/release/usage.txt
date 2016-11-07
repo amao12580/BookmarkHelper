@@ -323,7 +323,7 @@ pro.kisscat.www.bookmarkhelper.common.shared.BuildConfig
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     protected int bookmarkSum
-    47:47:public int readBookmarkSum(android.content.Context)
+    57:57:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
     29:29:public ConverterMaster()
@@ -341,7 +341,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    44:47:public int readBookmarkSum(android.content.Context)
+    46:49:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -386,5 +386,5 @@ pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
     private static final java.lang.String COMMAND_SU
     private static final java.lang.String COMMAND_EXIT
     private static final java.lang.String COMMAND_LINE_END
-    23:23:public RootUtil()
+    25:25:public RootUtil()
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil

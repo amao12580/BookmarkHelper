@@ -18,6 +18,7 @@ import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -59,16 +60,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (savedInstanceState == null) {
             try {
                 LogHelper.init();
-                checkPermission = PermissionUtil.check(this);
-                isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
-                isGetRootAccess = RootUtil.checkRootAuth();
-                showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
-                if (!isRoot) {
-                    showToastMessage(this, "设备未Root，无法使用.");
-                    finish();
-                } else {
-                    showToastMessage(this, "成功获取了Root权限.");
-                }
                 ConverterMaster.init(this);
                 initColor(this);
             } catch (InitException e) {
@@ -80,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv = (ListView) findViewById(R.id.listViewRules);
         lv.setBackgroundColor(default_color);
         rules = ConverterMaster.getSupportRule();
-        LogHelper.v(MetaData.LOG_V_BIZ, "rule-before:" + JsonUtil.toJson(rules));
+        LogHelper.v(MetaData.LOG_V_DEFAULT, "rule-before:" + JsonUtil.toJson(rules));
         for (Rule rule : rules) {
             Map<String, Object> map = new HashMap<>();
             BasicBroswer sourceBorswer = rule.getSource();
@@ -127,6 +118,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         lv.setClickable(false);
+        checkPermission = PermissionUtil.check(this);
+        isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
+        isGetRootAccess = RootUtil.checkRootAuth();
+        showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
+        if (!isRoot) {
+            showToastMessage(this, "设备未Root，无法使用.");
+            finish();
+        } else {
+            showToastMessage(this, "成功获取了Root权限.");
+        }
         int choosed = parent.getPositionForView(view);
         for (int i = 0; i < parent.getChildCount(); i++) {
             if (i != choosed) {
@@ -246,5 +247,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         bundle.putInt("logo", logo);
         intent.putExtra("bundle", bundle);
         startActivity(intent);
+    }
+
+    //上次按下返回键的系统时间
+    private long lastBackTime = 0;
+    //当前按下返回键的系统时间
+    private long currentBackTime = 0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //捕获返回键按下的事件
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            //获取当前系统时间的毫秒数
+            currentBackTime = System.currentTimeMillis();
+            //比较上次按下返回键和当前按下返回键的时间差，如果大于2秒，则提示再按一次退出
+            if (currentBackTime - lastBackTime > 2 * 1000) {
+                Toast.makeText(this, lv.getResources().getString(R.string.clickBackToExit), Toast.LENGTH_SHORT).show();
+                lastBackTime = currentBackTime;
+            } else { //如果两次按下的时间差小于2秒，则退出程序
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

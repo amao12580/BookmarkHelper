@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Set;
 
 import lombok.Setter;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
@@ -35,6 +35,16 @@ public class BasicBroswer extends App implements Broswerable {
             super.setName(AppListUtil.getAppName(context, getPackageName()));
         }
         fillDefaultAppName(context);
+    }
+
+    public void fillVersion(Context context) {
+        if (installed) {
+            App app = AppListUtil.getAppInfo(context, getPackageName());
+            if (app != null) {
+                super.setVersionName(app.getVersionName());
+                super.setVersionCode(app.getVersionCode());
+            }
+        }
     }
 
     @Override

@@ -30,5 +30,6 @@
     <string name="aboutMeTitle">关于我</string>
     <string name="networkError">您的网络未连接，快去检查一下！</string>
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场</string>
+    <string name="clickBackToExit">再按一次返回键退出</string>
 
 </resources>

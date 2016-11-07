@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 import lombok.Getter;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
@@ -60,8 +62,8 @@ public final class RootUtil {
         DataOutputStream os = null;
         BufferedReader successResult = null;
         BufferedReader errorResult = null;
-        StringBuilder successMsg = null;
-        StringBuilder errorMsg = null;
+        List<String> successMsg = null;
+        List<String> errorMsg = null;
         try {
             process = Runtime.getRuntime().exec(COMMAND_SU);
             os = new DataOutputStream(process.getOutputStream());
@@ -79,17 +81,17 @@ public final class RootUtil {
             result = process.waitFor();
             LogHelper.v("process.waitFor is:" + result);
             if (isNeedResultMsg) {
-                successMsg = new StringBuilder();
-                errorMsg = new StringBuilder();
+                successMsg = new LinkedList<>();
+                errorMsg = new LinkedList<>();
                 successResult = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 errorResult = new BufferedReader(new InputStreamReader(process.getErrorStream()));
                 String s;
                 while ((s = successResult.readLine()) != null) {
-                    successMsg.append(s);
+                    successMsg.add(s);
                 }
                 LogHelper.v("successMsg is:" + successMsg);
                 while ((s = errorResult.readLine()) != null) {
-                    errorMsg.append(s);
+                    errorMsg.add(s);
                 }
                 LogHelper.v("errorMsg is:" + errorMsg);
             }
@@ -116,7 +118,7 @@ public final class RootUtil {
                 process.destroy();
             }
         }
-        CommandResult commandResult = new CommandResult(result, successMsg == null ? null : successMsg.toString(), errorMsg == null ? null : errorMsg.toString());
+        CommandResult commandResult = new CommandResult(result, successMsg == null ? null : successMsg, errorMsg == null ? null : errorMsg);
         LogHelper.v("commandResult is :" + JsonUtil.toJson(commandResult));
         return commandResult;
     }
@@ -126,29 +128,29 @@ public final class RootUtil {
         /**
          * result of command
          **/
-        private int result;
+        private int result = -1;
         /**
          * success message of command result
          **/
         @Getter
-        private String successMsg;
+        private List<String> successMsg;
         /**
          * error message of command result
          **/
-        private String errorMsg;
+        private List<String> errorMsg;
 
         CommandResult(int result) {
             this.result = result;
         }
 
-        CommandResult(int result, String successMsg, String errorMsg) {
+        CommandResult(int result, List<String> successMsg, List<String> errorMsg) {
             this.result = result;
             this.successMsg = successMsg;
             this.errorMsg = errorMsg;
         }
 
         public boolean isSuccess() {
-            return result >= 0;
+            return result >= 0 && (errorMsg == null || errorMsg.isEmpty());
         }
     }
 }

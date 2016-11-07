@@ -28247,6 +28247,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_qq
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_uc
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_via
 pro.kisscat.www.bookmarkhelper.R$string: int character_counter_pattern
+pro.kisscat.www.bookmarkhelper.R$string: int clickBackToExit
 pro.kisscat.www.bookmarkhelper.R$string: int converter_directer_arrow_contentDescription
 pro.kisscat.www.bookmarkhelper.R$string: int dialogClose
 pro.kisscat.www.bookmarkhelper.R$string: int dialogTitle
@@ -29188,7 +29189,6 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: int id
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer source
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer target
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: boolean canUse
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: Rule()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: Rule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setId(int)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: int getId()

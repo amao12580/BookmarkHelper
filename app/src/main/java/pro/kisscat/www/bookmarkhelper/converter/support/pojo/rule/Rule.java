@@ -32,14 +32,11 @@ public class Rule {
     @Getter
     private boolean canUse;
 
-    public Rule() {
-    }
-
     public Rule(int id, Context context, BasicBroswer source, BasicBroswer target) {
         boolean sourceInstalled = false, targetInstalled = false;
         if (source.isInstalled(context, source)) {
             sourceInstalled = true;
-//            source.readBookmarkSum(context);
+            source.fillVersion(context);
         } else {
             source.fillDefaultIcon(context);
         }
@@ -49,7 +46,7 @@ public class Rule {
         source.fillName(context);
         if (target.isInstalled(context, target)) {
             targetInstalled = true;
-//            target.readBookmarkSum(context);
+            target.fillVersion(context);
         } else {
             target.fillDefaultIcon(context);
         }

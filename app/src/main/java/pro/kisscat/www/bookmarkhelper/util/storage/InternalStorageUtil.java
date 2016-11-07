@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Environment;
 
 import java.io.File;
+import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -65,6 +66,27 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         commands[2] = "else echo " + notExistFlag;
         commands[3] = "fi";
         RootUtil.CommandResult commandResult = RootUtil.executeCmd(commands);
-        return commandResult != null && commandResult.isSuccess() && existFlag == Integer.valueOf(commandResult.getSuccessMsg());
+        return commandResult != null && commandResult.isSuccess() && commandResult.getSuccessMsg() != null && existFlag == Integer.valueOf(commandResult.getSuccessMsg().get(0));
+    }
+
+    /**
+     * 列出文件夹下，所有文件名称符合regularRule规则的文件。regularRule为null是，列出全部
+     */
+    public static List<String> lsFileByRegular(String dir, String regularRule) {
+        try {
+            StringBuilder command = new StringBuilder("ls ");
+            if (regularRule != null) {
+                command.append(dir + regularRule);
+            } else {
+                command.append(dir);
+            }
+            RootUtil.CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()});
+            if (commandResult != null && commandResult.isSuccess()) {
+                return commandResult.getSuccessMsg();
+            }
+            return null;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

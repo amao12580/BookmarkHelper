@@ -11,8 +11,8 @@ import java.util.TreeMap;
 
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
-import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
+import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
@@ -51,11 +51,15 @@ public class AppListUtil {
             LogHelper.v("packageManager.getInstalledPackages(0) is null or empty.");
             throw new InitException(globalMsg);
         }
+        String mePackageName = context.getPackageName();
         for (PackageInfo packageInfo : packages) {
             ApplicationInfo applicationInfo = packageInfo.applicationInfo;
             App app = new App();
             app.setName(applicationInfo.loadLabel(packageManager).toString());
             app.setPackageName(packageInfo.packageName);
+            if (mePackageName != null && mePackageName.equals(packageInfo.packageName)) {
+                LogHelper.v("App name:" + context.getString(R.string.app_name) + ",packageName:" + mePackageName + ",versionName:" + packageInfo.versionName + ",versionCode:" + packageInfo.versionCode);
+            }
             app.setVersionName(packageInfo.versionName);
             app.setVersionCode(packageInfo.versionCode);
 //            app.setIcon(applicationInfo.loadIcon(packageManager));
@@ -89,5 +93,12 @@ public class AppListUtil {
             return getInstalledAllApp(context).get(packageName).getName();
         }
         return "ERROR";
+    }
+
+    public static App getAppInfo(Context context, String packageName) {
+        if (isInstalled(context, packageName)) {
+            return getInstalledAllApp(context).get(packageName);
+        }
+        return null;
     }
 }
