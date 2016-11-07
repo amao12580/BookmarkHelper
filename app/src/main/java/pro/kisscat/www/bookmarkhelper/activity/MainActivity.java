@@ -16,7 +16,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -119,16 +118,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         lv.setClickable(false);
-        checkPermission = PermissionUtil.check(this);
-        isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
-//        isGetRootAccess = RootUtil.checkRootAuth();
-//        showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
-        if (!isRoot) {
-            showToastMessage(this, "设备未Root，无法使用.");
-            return;
-        } else {
-            showToastMessage(this, "成功获取了Root权限.");
-        }
         int choosed = parent.getPositionForView(view);
         for (int i = 0; i < parent.getChildCount(); i++) {
             if (i != choosed) {
@@ -161,6 +150,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         long end;
         int ret;
         try {
+            checkPermission = PermissionUtil.check(this);
+            isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
+//        isGetRootAccess = RootUtil.checkRootAuth();
+//        showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
+            if (!isRoot) {
+                showSimpleDialog("无法获取Root权限，不能使用.");
+                return;
+            } else {
+                showToastMessage(this, "成功获取了Root权限.");
+            }
             ret = ConverterMaster.excute(lv.getContext(), rule);
             end = System.currentTimeMillis();
         } catch (ConverterException e) {
@@ -176,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 s = ms + "ms";
             }
 
-            showDialogMessage("合并了" + ret + "条书签，重启" + rule.getTarget().getName() + "后见效." + s + ".");
+            showDialogMessage(ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效." + s + ".");
         } else {
             showDialogMessage("所有书签已存在，不需要合并.");
         }

@@ -30547,25 +30547,25 @@ pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmark
     android.widget.Toast toast -> j
     long lastBackTime -> k
     long currentBackTime -> l
-    46:267:void <init>() -> <init>
-    60:93:void onCreate(android.os.Bundle) -> onCreate
-    96:102:void initColor(android.content.Context) -> a
-    107:117:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    121:157:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-    160:183:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
-    186:187:void showDialogMessage(java.lang.String) -> a
-    192:208:void showSimpleDialog(java.lang.String) -> b
-    217:224:void showToastMessage(android.content.Context,java.lang.String) -> a
-    227:228:void onclickAboutMe(android.view.View) -> onclickAboutMe
-    232:242:void onclickRating(android.view.View) -> onclickRating
-    245:246:void onclickDonate(android.view.View) -> onclickDonate
-    249:262:void openUrlInWebview(java.lang.String,java.lang.String,int) -> a
-    272:284:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    55:189:void <clinit>() -> <clinit>
+    45:266:void <init>() -> <init>
+    59:92:void onCreate(android.os.Bundle) -> onCreate
+    95:101:void initColor(android.content.Context) -> a
+    106:116:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    120:146:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    149:182:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
+    185:186:void showDialogMessage(java.lang.String) -> a
+    191:207:void showSimpleDialog(java.lang.String) -> b
+    216:223:void showToastMessage(android.content.Context,java.lang.String) -> a
+    226:227:void onclickAboutMe(android.view.View) -> onclickAboutMe
+    231:241:void onclickRating(android.view.View) -> onclickRating
+    244:245:void onclickDonate(android.view.View) -> onclickDonate
+    248:261:void openUrlInWebview(java.lang.String,java.lang.String,int) -> a
+    271:283:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
+    54:188:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.MainActivity$1 -> pro.kisscat.www.bookmarkhelper.activity.MainActivity$1:
     pro.kisscat.www.bookmarkhelper.activity.MainActivity this$0 -> a
-    201:201:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
-    203:204:void onClick(android.content.DialogInterface,int) -> onClick
+    200:200:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
+    202:203:void onClick(android.content.DialogInterface,int) -> onClick
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a:
     boolean installed -> a
     23:23:void <init>() -> <init>

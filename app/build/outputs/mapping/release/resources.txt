@@ -1054,7 +1054,6 @@ Referenced Strings:
   y
   书签数据:
   书签条数:
-  合并了
   后见效.
   已登录的QQ用户书签数据:
   已登录的QQ用户书签条数:
@@ -2642,4 +2641,4 @@ Skipped unused resource res/anim/abc_slide_out_bottom.xml: 400 bytes (replaced w
 Skipped unused resource res/anim/abc_slide_out_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 904805 to 906074); using original instead
+Resource shrinking did not work (grew from 890128 to 891397); using original instead
