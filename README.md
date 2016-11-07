@@ -37,7 +37,7 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 4.延迟对Root权限的检查和获取！
 
 ## UnStable
-UnStable是指最新通过基础测试，但未进行大面积设备兼容验证的非稳定版本，不会发布到Google Play或Cool Market。如果你是狂热爱好者，请点击【[下载链接](https://github.com/amao12580/BookmarkHelper/raw/master/app/build/outputs/apk/app-debug.apk)】，从我的Github Repo实时获取，不保证会有小瑕疵。
+UnStable是指最新通过基础测试，但未进行大面积设备兼容验证的非稳定版本，不会发布到[Google Play](https://play.google.com/store?hl=zh_CN)或[Cool Market](http://www.coolapk.com)。如果你是狂热爱好者，请点击【[下载链接](https://github.com/amao12580/BookmarkHelper/raw/master/app/build/outputs/apk/app-debug.apk)】，从我的[Github Repo](https://github.com/amao12580/BookmarkHelper)实时获取，不保证会有小瑕疵。
 
 
 
