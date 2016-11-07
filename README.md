@@ -25,11 +25,15 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 3.部分代码重构，精简掉重合代码段。
 ### [0.0.4版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.4%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.4.apk)
 1.增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
 2.底栏小Tip，关于我、五星好评、捐助
 ### [0.0.5版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.5%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.5.apk)
 1.增加兼容：支持从[X浏览器](http://www.coolapk.com/apk/com.mmbox.xbrowser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
-2.Bug 修复：QQ浏览器支持读取QQ用户登录的书签数据，微信登录的还在修复中。
-3.Bug 修复：UC浏览器支持读取QQ和微信用户登录的书签数据。
+
+2.Bug 修复：[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)支持读取QQ用户登录的书签数据，微信登录的还在修复中。
+
+3.Bug 修复：[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)支持读取QQ和微信用户登录的书签数据。
+
 4.延迟对Root权限的检查和获取！
 
 ## UnStable
