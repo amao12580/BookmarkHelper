@@ -133,6 +133,7 @@ Referenced Strings:
   EnvironmentCompat
   Exceptions
   F
+  FATAL
   FEEDBACK_AUDIBLE
   FEEDBACK_GENERIC
   FEEDBACK_HAPTIC
@@ -697,6 +698,7 @@ Referenced Strings:
   http
   http://
   http://schemas.android.com/apk/res/an...
+  http://ww3.sinaimg.cn/large/0060lm7Tg...
   http://www.coolapk.com/apk/
   https://
   https://github.com/amao12580/Bookmark...
@@ -724,6 +726,7 @@ Referenced Strings:
   isWriteMapNullValue
   iso8601
   item
+  item:
   java.
   java.awt.Color
   java.awt.Font
@@ -765,6 +768,7 @@ Referenced Strings:
   java/util/List
   javassist.util.proxy.ProxyObject
   jsinterface
+  keyCode:
   label
   large_icon
   last_modified
@@ -886,6 +890,7 @@ Referenced Strings:
   rm
   rotation
   rtsp://
+  rules:
   rw
   rwt
   s
@@ -972,6 +977,7 @@ Referenced Strings:
   target
   targetBroswerAppNameText
   targetBroswerIcon
+  targetFileName:
   text
   text/html
   text/vnd.android.intent

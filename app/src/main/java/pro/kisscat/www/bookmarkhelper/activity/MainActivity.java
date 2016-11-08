@@ -35,6 +35,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Adapter adapter;
     List<Rule> rules;
     boolean isRoot;
-    boolean isGetRootAccess;
+    //    boolean isGetRootAccess;
     boolean checkPermission;
     List<Map<String, Object>> items = new ArrayList<>();
 
@@ -59,7 +60,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
             try {
+                CrashHandler handler = CrashHandler.getInstance();
+                handler.init(getApplicationContext());
+                Thread.setDefaultUncaughtExceptionHandler(handler);
                 LogHelper.init();
+
                 ConverterMaster.init(this);
                 initColor(this);
             } catch (InitException e) {
@@ -71,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv = (ListView) findViewById(R.id.listViewRules);
         lv.setBackgroundColor(default_color);
         rules = ConverterMaster.getSupportRule();
-        LogHelper.v(MetaData.LOG_V_DEFAULT, "rule-before:" + JsonUtil.toJson(rules));
+        LogHelper.v(MetaData.LOG_V_DEFAULT, "rules:" + JsonUtil.toJson(rules));
         for (Rule rule : rules) {
             Map<String, Object> map = new HashMap<>();
             BasicBroswer sourceBorswer = rule.getSource();
@@ -141,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
             processConverter(rule);
         } finally {
+            LogHelper.write();
             lv.setClickable(true);
         }
     }
@@ -267,6 +273,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        System.out.println("keyCode:" + keyCode);
         //捕获返回键按下的事件
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             //获取当前系统时间的毫秒数
@@ -276,10 +283,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Toast.makeText(this, lv.getResources().getString(R.string.clickBackToExit), Toast.LENGTH_SHORT).show();
                 lastBackTime = currentBackTime;
             } else { //如果两次按下的时间差小于2秒，则退出程序
+                LogHelper.write();
                 finish();
             }
             return true;
         }
+        if (keyCode == KeyEvent.KEYCODE_HOME || keyCode == KeyEvent.KEYCODE_POWER || keyCode == KeyEvent.KEYCODE_CAMERA || keyCode == KeyEvent.KEYCODE_MENU || keyCode == KeyEvent.KEYCODE_SEARCH) {
+            LogHelper.write();
+        }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        LogHelper.write();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        LogHelper.write();
+        super.onStop();
     }
 }

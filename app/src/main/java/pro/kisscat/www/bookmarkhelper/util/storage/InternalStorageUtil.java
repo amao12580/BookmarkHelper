@@ -74,7 +74,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
      */
     public static List<String> lsFileByRegular(String dir, String regularRule) {
         try {
-            StringBuilder command = new StringBuilder("ls -t ");
+            StringBuilder command = new StringBuilder("find ");
             if (regularRule != null) {
                 command.append(dir + regularRule);
             } else {

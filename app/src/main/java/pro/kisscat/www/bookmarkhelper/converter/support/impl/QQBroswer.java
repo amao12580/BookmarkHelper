@@ -125,8 +125,8 @@ public class QQBroswer extends BasicBroswer {
         //QQ 号码登录
         LogHelper.v(TAG + ":尝试解析QQ用户的书签数据");
         String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
-        String searchRule = "[1-9][0-9][0-9][0-9][0-9]*";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
-        List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule + ".db");
+        String searchRule = " -type f -name \"[1-9][0-9][0-9][0-9][0-9]*.db\" | xargs ls -l | sort -r -k5 -k6";
+        List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule);
         if (fileNames == null || fileNames.isEmpty()) {
             LogHelper.v("first phase match fileNames is empty.");
             return result;
@@ -137,10 +137,21 @@ public class QQBroswer extends BasicBroswer {
         String targetFilePath = null;
         String targetFileName = null;
         for (String item : fileNames) {
-            String tmp = item.replace(dir, "");
-            LogHelper.v("origin path:" + item + ",file name:" + tmp);
+            LogHelper.v("item:" + item);
+            if (item == null) {
+                LogHelper.v("item is null.");
+                break;
+            }
+            String tmp;
+            if (!item.contains(dir)) {
+                LogHelper.v("first phase not match.");
+                tmp = item.substring(item.lastIndexOf(" ") + 1, item.length());
+            } else {
+                tmp = item.substring(item.indexOf(dir), item.length());
+            }
+            LogHelper.v("targetFileName:" + tmp);
             if (tmp.matches(regularRule)) {
-                targetFilePath = item;
+                targetFilePath = dir + tmp;
                 targetFileName = tmp;
                 break;
             } else {

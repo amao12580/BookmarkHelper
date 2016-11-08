@@ -26,6 +26,7 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 public class AppListUtil {
     private static Map<String, App> installedAllApp;
+    public static String thisAppInfo;
 
     public static Map<String, App> getInstalledAllApp(Context context) {
         if (installedAllApp == null) {
@@ -57,8 +58,9 @@ public class AppListUtil {
             App app = new App();
             app.setName(applicationInfo.loadLabel(packageManager).toString());
             app.setPackageName(packageInfo.packageName);
-            if (mePackageName != null && mePackageName.equals(packageInfo.packageName)) {
-                LogHelper.v("App name:" + context.getString(R.string.app_name) + ",packageName:" + mePackageName + ",versionName:" + packageInfo.versionName + ",versionCode:" + packageInfo.versionCode);
+            if (mePackageName != null && mePackageName.equals(packageInfo.packageName) && thisAppInfo == null) {
+                thisAppInfo = "App name:" + context.getString(R.string.app_name) + ",packageName:" + mePackageName + ",versionName:" + packageInfo.versionName + ",versionCode:" + packageInfo.versionCode;
+                LogHelper.v(thisAppInfo);
             }
             app.setVersionName(packageInfo.versionName);
             app.setVersionCode(packageInfo.versionCode);

@@ -29229,5 +29229,22 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setO
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: int getOrder()
 pro.kisscat.www.bookmarkhelper.exception.ConverterException: ConverterException(java.lang.String)
 pro.kisscat.www.bookmarkhelper.exception.InitException: InitException(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String level
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String tag
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String text
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.util.Date time
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: LogEntry(java.lang.String,java.lang.String,java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String getLevel()
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String getTag()
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String getText()
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.util.Date getTime()
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: void setLevel(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: void setTag(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: void setText(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: void setTime(java.util.Date)
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: boolean equals(java.lang.Object)
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: int hashCode()
+pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String toString()
 pro.kisscat.www.bookmarkhelper.webview.ProgressWebView
 pro.kisscat.www.bookmarkhelper.webview.ProgressWebView: ProgressWebView(android.content.Context,android.util.AttributeSet)
