@@ -36,6 +36,28 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 4.延迟对Root权限的检查和获取！
 
+### 0.0.6版 Draft
+1.增加兼容：支持从[360浏览器](http://www.coolapk.com/apk/com.qihoo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.7版 Draft
+1.增加兼容：支持从[搜狗浏览器](http://www.coolapk.com/apk/sogou.mobile.explorer)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.8版 Draft
+1.增加兼容：支持从[百度浏览器](http://www.coolapk.com/apk/com.baidu.browser.apps)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.9版 Draft
+1.增加兼容：支持从[欧朋浏览器](http://www.coolapk.com/apk/com.oupeng.mini.android)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.10版 Draft
+1.增加兼容：支持从[猎豹浏览器](http://www.coolapk.com/apk/com.ijinshan.browser_fast)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.11版 Draft
+1.增加兼容：支持从[FireFox浏览器](http://www.coolapk.com/apk/org.mozilla.firefox)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.12版 Draft
+1.增加兼容：支持从[UC国际版浏览器](http://www.coolapk.com/apk/com.UCMobile.intl)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+
 ## UnStable
 UnStable是指最新通过基础测试，但未进行大面积设备兼容验证的非稳定版本，不会发布到[Google Play](https://play.google.com/store?hl=zh_CN)或[Cool Market](http://www.coolapk.com)。如果你是狂热爱好者，请点击【[下载链接](https://github.com/amao12580/BookmarkHelper/raw/master/app/build/outputs/apk/app-debug.apk)】，从我的[Github Repo](https://github.com/amao12580/BookmarkHelper)实时获取，不保证会有小瑕疵。
 
