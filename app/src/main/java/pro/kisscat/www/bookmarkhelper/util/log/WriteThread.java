@@ -8,9 +8,9 @@ package pro.kisscat.www.bookmarkhelper.util.log;
  * Date:2016/11/8
  * Time:14:51
  */
-public class WriteThread extends Thread {
+class WriteThread extends Thread {
 
-    public static boolean isWriteThreadRuning = false;//写日志线程是否已经在运行了
+    static boolean isWriteThreadRuning = false;//写日志线程是否已经在运行了
 
     @Override
     public void run() {
