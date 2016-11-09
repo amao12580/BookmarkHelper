@@ -29,7 +29,6 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 public class LogHelper {
     private static boolean MYLOG_SWITCH = true; // 日志文件总开关
     private static boolean MYLOG_WRITE_TO_FILE = true;// 日志写入文件开关
-    private static int queueMaxRecordCount = 30;// 在内存中最多存放30条，然后写入SD
     private static char MYLOG_TYPE = 'v';// 输入日志类型，w代表只输出告警信息等，v代表输出所有信息
     private static String LOG_DIR = Path.SDCARD_APP_ROOTPATH + Path.SDCARD_LOG_ROOTPATH;// 日志聚集的目录名
     private static String MYLOG_PATH_SDCARD_DIR = null;// 日志文件在sdcard中的路径
@@ -107,16 +106,9 @@ public class LogHelper {
         }
     }
 
-    private static WriteThread writeThread;
-
     public static void write() {
-        if (logQueue.size() > queueMaxRecordCount) {
-            if (!WriteThread.isWriteThreadRuning) {//监察写线程是否工作中，没有 则创建
-                if (writeThread == null) {
-                    writeThread = new WriteThread();
-                }
-                writeThread.start();
-            }
+        if (!WriteThread.isWriteThreadRuning) {//监察写线程是否工作中，没有 则创建
+            new WriteThread().start();
         }
     }
 

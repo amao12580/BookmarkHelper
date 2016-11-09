@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +34,7 @@ import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
@@ -46,9 +47,9 @@ import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView lv;
     Adapter adapter;
-    List<Rule> rules;
+    List<ExcuteRule> rules;
+    boolean isItemRuning;
     boolean isRoot;
-    //    boolean isGetRootAccess;
     boolean checkPermission;
     List<Map<String, Object>> items = new ArrayList<>();
 
@@ -75,9 +76,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.listViewRules);
         lv.setBackgroundColor(default_color);
-        rules = ConverterMaster.getSupportRule();
-        LogHelper.v(MetaData.LOG_V_DEFAULT, "rules:" + JsonUtil.toJson(rules));
-        for (Rule rule : rules) {
+        if (rules == null) {
+            rules = ConverterMaster.cover2Excute(this, ConverterMaster.getSupportRule());
+            LogHelper.v(MetaData.LOG_V_DEFAULT, "excuteRules:" + JsonUtil.toJson(rules));
+        }
+        for (ExcuteRule rule : rules) {
             Map<String, Object> map = new HashMap<>();
             BasicBroswer sourceBorswer = rule.getSource();
             map.put("sourceBroswerIcon", sourceBorswer.getIcon());
@@ -94,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(this);
+        LogHelper.write();
     }
 
     private void initColor(Context context) {
@@ -107,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 //        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
 //                != PackageManager.PERMISSION_GRANTED) {
@@ -122,6 +126,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (isItemRuning) {
+            showToastMessage(lv.getResources().getString(R.string.someTaskIsRuning));
+            return;
+        }
+        isItemRuning = true;
         lv.setClickable(false);
         int choosed = parent.getPositionForView(view);
         for (int i = 0; i < parent.getChildCount(); i++) {
@@ -132,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
         try {
-            Rule rule = ConverterMaster.getSupportRule().get((int) id);
+            ExcuteRule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     showDialogMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
@@ -147,14 +156,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             processConverter(rule);
         } finally {
             LogHelper.write();
+            isItemRuning = false;
             lv.setClickable(true);
         }
     }
 
-    private void processConverter(Rule rule) {
+    private void processConverter(ExcuteRule rule) {
         long start = System.currentTimeMillis();
-        long end;
-        int ret;
+        long end = -1;
+        int ret = -1;
         try {
             checkPermission = PermissionUtil.check(this);
             isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
@@ -164,26 +174,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 showSimpleDialog("无法获取Root权限，不能使用.");
                 return;
             } else {
-                showToastMessage(this, "成功获取了Root权限.");
+                LogHelper.v("成功获取了Root权限.");
             }
+            rule.setStage(1);
             ret = ConverterMaster.excute(lv.getContext(), rule);
             end = System.currentTimeMillis();
         } catch (ConverterException e) {
             showDialogMessage(e.getMessage());
-            return;
-        }
-        if (ret > 0) {
-            long ms = end - start;
-            String s;
-            if (ms > 1000) {
-                s = ((end - start) / 1000) + "s";
+        } finally {
+            if (ret > 0) {
+                rule.setStage(2);
+                String s = null;
+                if (end > 0) {
+                    long ms = end - start;
+                    if (ms > 1000) {
+                        s = ((end - start) / 1000) + "s";
+                    } else {
+                        s = ms + "ms";
+                    }
+                }
+                showDialogMessage(ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效." + (s == null ? "" : (s + ".")));
+            } else if (ret == 0) {
+                rule.setStage(2);
+                showDialogMessage("所有书签已存在，不需要合并.");
             } else {
-                s = ms + "ms";
+                rule.setStage(3);
             }
-
-            showDialogMessage(ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效." + s + ".");
-        } else {
-            showDialogMessage("所有书签已存在，不需要合并.");
         }
     }
 
@@ -228,9 +244,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         toast.show();
     }
 
-    public void onclickAboutMe(View view) {
-        openUrlInWebview(MetaData.ABOUTMEURL, lv.getResources().getString(R.string.aboutMeTitle), R.drawable.ic_aboutme);
+    private void showToastMessage(String message) {
+        showToastMessage(this, message);
     }
+
+    private static String aboutMeUrl = null;
+
+    public void onclickAboutMe(View view) {
+        if (aboutMeUrl == null) {
+            aboutMeUrl = lv.getResources().getString(R.string.aboutMeURL);
+        }
+        openUrlInWebview(aboutMeUrl, lv.getResources().getString(R.string.aboutMeTitle), R.drawable.ic_aboutme);
+    }
+
+    private static String ratingURL = null;
 
     public void onclickRating(View view) {
         //这里开始执行一个应用市场跳转逻辑，默认this为Context上下文对象
@@ -242,12 +269,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         } else {
             //您的系统中没有安装应用市场，用WebView打开
             showToastMessage(this, lv.getResources().getString(R.string.marketAppNoInstalled));
-            openUrlInWebview(MetaData.RatingURL + getPackageName(), lv.getResources().getString(R.string.app_name), R.mipmap.ic_launcher);
+            if (ratingURL == null) {
+                ratingURL = lv.getResources().getString(R.string.ratingURL);
+            }
+            openUrlInWebview(ratingURL + getPackageName(), lv.getResources().getString(R.string.app_name), R.mipmap.ic_launcher);
         }
     }
 
+    private static String donateURL = null;
+
     public void onclickDonate(View view) {
-        openUrlInWebview(MetaData.DONATEURL, lv.getResources().getString(R.string.donateTitle), R.drawable.ic_donate);
+        if (donateURL == null) {
+            donateURL = lv.getResources().getString(R.string.donateURL);
+        }
+        openUrlInWebview(donateURL, lv.getResources().getString(R.string.donateTitle), R.drawable.ic_donate);
     }
 
     public void openUrlInWebview(String url, String title, int logo) {
@@ -290,6 +325,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         if (keyCode == KeyEvent.KEYCODE_HOME || keyCode == KeyEvent.KEYCODE_POWER || keyCode == KeyEvent.KEYCODE_CAMERA || keyCode == KeyEvent.KEYCODE_MENU || keyCode == KeyEvent.KEYCODE_SEARCH) {
             LogHelper.write();
+            return true;
         }
         return super.onKeyDown(keyCode, event);
     }

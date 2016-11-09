@@ -326,7 +326,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     57:57:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    30:30:public ConverterMaster()
+    31:31:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -371,16 +371,16 @@ pro.kisscat.www.bookmarkhelper.util.json.JsonUtil:
     64:69:public static java.lang.Object fromJson(java.lang.String,com.alibaba.fastjson.TypeReference)
 pro.kisscat.www.bookmarkhelper.util.log.LogHelper:
     29:29:public LogHelper()
-    48:49:public static void w(java.lang.String,java.lang.Object)
-    52:53:public static void e(java.lang.String,java.lang.Object)
-    56:57:public static void d(java.lang.String,java.lang.Object)
-    60:61:public static void i(java.lang.String,java.lang.Object)
-    64:65:public static void v(java.lang.String,java.lang.Object)
-    68:69:public static void w(java.lang.String,java.lang.String)
-    76:77:public static void d(java.lang.String,java.lang.String)
-    80:81:public static void i(java.lang.String,java.lang.String)
-    204:209:public static void delFile()
-    215:219:private static java.util.Date getDateBefore()
+    47:48:public static void w(java.lang.String,java.lang.Object)
+    51:52:public static void e(java.lang.String,java.lang.Object)
+    55:56:public static void d(java.lang.String,java.lang.Object)
+    59:60:public static void i(java.lang.String,java.lang.Object)
+    63:64:public static void v(java.lang.String,java.lang.Object)
+    67:68:public static void w(java.lang.String,java.lang.String)
+    75:76:public static void d(java.lang.String,java.lang.String)
+    79:80:public static void i(java.lang.String,java.lang.String)
+    196:201:public static void delFile()
+    207:211:private static java.util.Date getDateBefore()
 pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil:
     16:16:public NetworkUtil()
 pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil:

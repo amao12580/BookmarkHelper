@@ -33,4 +33,8 @@
     <string name="marketAppNoInstalled">Not found market app.</string>
     <string name="clickBackToExit">Next click back will exit.</string>
     <string name="notSupportWechatBookmarkForQQBroswer">Not support parse wechat user bookmark data.</string>
+    <string name="someTaskIsRuning">wait for a coffer time.</string>
+    <string name="donateURL">https://amao12580.github.io/rewards/wechat-reward-image.png</string>
+    <string name="ratingURL">http://www.coolapk.com/apk/</string>
+    <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
 </resources>

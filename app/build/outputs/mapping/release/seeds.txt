@@ -28237,6 +28237,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int abc_shareactionprovider_share_with_
 pro.kisscat.www.bookmarkhelper.R$string: int abc_toolbar_collapse_description
 pro.kisscat.www.bookmarkhelper.R$string: int aboutMe
 pro.kisscat.www.bookmarkhelper.R$string: int aboutMeTitle
+pro.kisscat.www.bookmarkhelper.R$string: int aboutMeURL
 pro.kisscat.www.bookmarkhelper.R$string: int appUninstall
 pro.kisscat.www.bookmarkhelper.R$string: int app_name
 pro.kisscat.www.bookmarkhelper.R$string: int appbar_scrolling_view_behavior
@@ -28255,6 +28256,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int dialogClose
 pro.kisscat.www.bookmarkhelper.R$string: int dialogTitle
 pro.kisscat.www.bookmarkhelper.R$string: int donate
 pro.kisscat.www.bookmarkhelper.R$string: int donateTitle
+pro.kisscat.www.bookmarkhelper.R$string: int donateURL
 pro.kisscat.www.bookmarkhelper.R$string: int fileCPError
 pro.kisscat.www.bookmarkhelper.R$string: int fileDeleteError
 pro.kisscat.www.bookmarkhelper.R$string: int flyme5BookmarksFileMiss
@@ -28264,10 +28266,12 @@ pro.kisscat.www.bookmarkhelper.R$string: int notPermissionForReadInstalledAppLis
 pro.kisscat.www.bookmarkhelper.R$string: int notSupport
 pro.kisscat.www.bookmarkhelper.R$string: int notSupportWechatBookmarkForQQBroswer
 pro.kisscat.www.bookmarkhelper.R$string: int rating
+pro.kisscat.www.bookmarkhelper.R$string: int ratingURL
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksDataMiss
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksEmpty
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksError
 pro.kisscat.www.bookmarkhelper.R$string: int search_menu_title
+pro.kisscat.www.bookmarkhelper.R$string: int someTaskIsRuning
 pro.kisscat.www.bookmarkhelper.R$string: int source_broswer_icon_contentDescription
 pro.kisscat.www.bookmarkhelper.R$string: int status_bar_notification_info_overflow
 pro.kisscat.www.bookmarkhelper.R$string: int target_broswer_icon_contentDescription
@@ -29205,8 +29209,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int stage
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int progress
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: java.lang.String message
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: ExcuteRule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: ExcuteRule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: ExcuteRule(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setStage(int)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int getStage()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setProgress(int)

@@ -32,6 +32,10 @@
     <string name="networkError">您的网络未连接，快去检查一下！</string>
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
-    <string name="notSupportWechatBookmarkForQQBroswer">暂时无法解析微信用户的书签数据.</string>
+    <string name="notSupportWechatBookmarkForQQBroswer">不支持读取微信用户的书签.</string>
+    <string name="someTaskIsRuning">有任务正在执行.</string>
+    <string name="donateURL">http://ww3.sinaimg.cn/large/0060lm7Tgw1f9kfaj0fvsj30u00xc77b.jpg</string>
+    <string name="ratingURL">http://www.coolapk.com/apk/</string>
+    <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
 
 </resources>

@@ -132,7 +132,7 @@ public class QQBroswer extends BasicBroswer {
             return result;
         }
         LogHelper.v(TAG + ":QQ用户没有书签数据");
-        Toast.makeText(context, context.getString(R.string.notSupportWechatBookmarkForQQBroswer), Toast.LENGTH_SHORT);
+        Toast.makeText(context, context.getString(R.string.notSupportWechatBookmarkForQQBroswer), Toast.LENGTH_SHORT).show();
         //微信登录的先不考虑了，find规则太复杂。db name完全没有规则，随机字符串(可能与openid相关)：oXh-RjjNxEmOPpLmrToJLJBsSHjA.db
         String targetFilePath = null;
         String targetFileName = null;
@@ -164,8 +164,10 @@ public class QQBroswer extends BasicBroswer {
         }
         LogHelper.v("targetFilePath is:" + targetFilePath);
         String tmpFilePath = filePath_cp + targetFileName;
+        File cpPath = new File(filePath_cp);
+        cpPath.deleteOnExit();
+        cpPath.mkdirs();
         ExternalStorageUtil.copyFile(context, targetFilePath, tmpFilePath, this.getName());
-
         result.addAll(fetchBookmarksList(context, tmpFilePath, "mtt_bookmarks", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, tmpFilePath, "pad_bookmark", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, tmpFilePath, "pc_bookmark", null, null, "created asc"));
