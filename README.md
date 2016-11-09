@@ -36,8 +36,12 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 4.延迟对Root权限的检查和获取！
 
+5.日志记录进行异步化，不再阻塞主线程
+
 ### 0.0.6版 Draft
 1.增加兼容：支持从[360浏览器](http://www.coolapk.com/apk/com.qihoo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+2.Bug 修复：[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)现在支持读取完整的书签数据。
+3.优化：减少主循环中日志打印，避免响应超时！
 
 ### 0.0.7版 Draft
 1.增加兼容：支持从[搜狗浏览器](http://www.coolapk.com/apk/sogou.mobile.explorer)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

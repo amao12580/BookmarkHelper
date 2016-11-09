@@ -29170,9 +29170,14 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark: void setUrl(java
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root roots
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: ChromeBookmark()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.util.List getChildren()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.util.List fetchChildrens()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: void setRoots(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root getRoots()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar: java.util.List children
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar: BookmarkBar()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar: void setChildren(java.util.List)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar: java.util.List getChildren()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String name
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String url
@@ -29181,9 +29186,20 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: vo
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String getName()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: void setUrl(java.lang.String)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children: java.lang.String getUrl()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other: java.util.List children
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other: Other()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other: void setChildren(java.util.List)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other: java.util.List getChildren()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar bookmark_bar
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other other
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced synced
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: Root()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: void setBookmark_bar(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar getBookmark_bar()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: void setOther(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other getOther()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: void setSynced(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced getSynced()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced
@@ -29232,6 +29248,14 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setO
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: int getOrder()
 pro.kisscat.www.bookmarkhelper.exception.ConverterException: ConverterException(java.lang.String)
 pro.kisscat.www.bookmarkhelper.exception.InitException: InitException(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure BYTE
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure KB
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure MB
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure GB
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure[] values()
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure valueOf(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: java.lang.String toString()
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: void <clinit>()
 pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry
 pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String level
 pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String tag

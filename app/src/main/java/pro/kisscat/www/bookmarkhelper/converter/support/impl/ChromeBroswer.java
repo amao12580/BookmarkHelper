@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat;
 import com.alibaba.fastjson.JSONReader;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,6 +20,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Child
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
+import pro.kisscat.www.bookmarkhelper.util.file.FileUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
@@ -70,7 +72,6 @@ public class ChromeBroswer extends BasicBroswer {
             return bookmarks;
         }
         LogHelper.v(TAG + ":bookmarks cache is miss.");
-        JSONReader jsonReader = null;
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
@@ -80,25 +81,17 @@ public class ChromeBroswer extends BasicBroswer {
             cpPath.mkdirs();
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
-            jsonReader = new JSONReader(new FileReader(file));
-            bookmarks = new LinkedList<>();
-            ChromeBookmark chromeBookmark = jsonReader.readObject(ChromeBookmark.class);
-            if (chromeBookmark == null) {
-                LogHelper.v("chromeBookmark is null.");
-                return bookmarks;
-            }
-            LogHelper.v("书签数据:" + JsonUtil.toJson(chromeBookmark));
-            List<Children> childrens = chromeBookmark.getChildren();
-            if (childrens == null) {
-                LogHelper.v("childrens is null.");
-                return bookmarks;
-            }
-            LogHelper.v("书签条数:" + childrens.size());
-            for (Children item : childrens) {
+            List<Children> chromeBookmarks = fetchBookmarksFromJSONFile(file);
+            int index = 0;
+            int size = chromeBookmarks.size();
+            for (Children item : chromeBookmarks) {
+                index++;
                 String bookmarkUrl = item.getUrl();
                 String bookmarkName = item.getName();
-                LogHelper.v("name:" + bookmarkName);
-                LogHelper.v("url:" + bookmarkUrl);
+                if (allowPrintBookmark(index, size)) {
+                    LogHelper.v("name:" + bookmarkName);
+                    LogHelper.v("url:" + bookmarkUrl);
+                }
                 if (!isGoodUrl(bookmarkUrl)) {
                     continue;
                 }
@@ -116,12 +109,43 @@ public class ChromeBroswer extends BasicBroswer {
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
-            if (jsonReader != null) {
-                jsonReader.close();
-            }
             LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
+    }
+
+    private List<Children> fetchBookmarksFromJSONFile(File file) throws FileNotFoundException {
+        JSONReader jsonReader = null;
+        List<Children> result = new LinkedList<>();
+        try {
+            jsonReader = new JSONReader(new FileReader(file));
+            bookmarks = new LinkedList<>();
+            ChromeBookmark chromeBookmark = jsonReader.readObject(ChromeBookmark.class);
+            if (chromeBookmark == null) {
+                LogHelper.v("chromeBookmark is null.");
+                return result;
+            }
+            FileUtil.FileShow fileShow = FileUtil.formatFileSize(file);
+            if (fileShow.isOver10KB()) {
+                LogHelper.v("书签数据文件大小超过10KB,skip print.size:" + fileShow.toString());
+            } else {
+                LogHelper.v("书签数据:" + JsonUtil.toJson(chromeBookmark));
+            }
+            List<Children> childrens = chromeBookmark.fetchChildrens();
+            if (childrens == null) {
+                LogHelper.v("childrens is null.");
+                return result;
+            }
+            LogHelper.v("书签条数:" + childrens.size());
+            return childrens;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            if (jsonReader != null) {
+                jsonReader.close();
+            }
+        }
     }
 
     @Override

@@ -85,11 +85,16 @@ public class QQBroswer extends BasicBroswer {
             bookmarksList.addAll(bookmarksListPart2);
             LogHelper.v("总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
+            int index = 0;
+            int size = bookmarksList.size();
             for (Bookmark item : bookmarksList) {
+                index++;
                 String bookmarkUrl = item.getUrl();
                 String bookmarkName = item.getTitle();
-                LogHelper.v("name:" + bookmarkName);
-                LogHelper.v("url:" + bookmarkUrl);
+                if (allowPrintBookmark(index, size)) {
+                    LogHelper.v("name:" + bookmarkName);
+                    LogHelper.v("url:" + bookmarkUrl);
+                }
                 if (!isGoodUrl(bookmarkUrl)) {
                     continue;
                 }

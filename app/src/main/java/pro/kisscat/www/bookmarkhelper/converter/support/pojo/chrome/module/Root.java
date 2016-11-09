@@ -1,7 +1,5 @@
 package pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module;
 
-import java.util.List;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +13,12 @@ import lombok.Setter;
  */
 
 public class Root {
+    @Setter
+    @Getter
+    private BookmarkBar bookmark_bar;
+    @Setter
+    @Getter
+    private Other other;
     @Setter
     @Getter
     private Synced synced;

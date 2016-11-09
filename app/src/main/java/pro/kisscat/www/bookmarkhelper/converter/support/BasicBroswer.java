@@ -93,8 +93,28 @@ public class BasicBroswer extends App implements Broswerable {
     }
 
     protected boolean isGoodUrl(String bookmarkUrl) {
-        if (bookmarkUrl == null || bookmarkUrl.isEmpty() || !bookmarkUrl.startsWith("http")) {
+        if (bookmarkUrl == null || bookmarkUrl.isEmpty() || !bookmarkUrl.startsWith("http") || !bookmarkUrl.contains("://")) {
             LogHelper.v("url is damage,url:" + bookmarkUrl + ",skip.");
+            return false;
+        }
+        return true;
+    }
+
+    private transient boolean denyPrintBookmarkHasShow = false;
+
+    protected boolean allowPrintBookmark(int currentIndex, int allSize) {
+        if (currentIndex <= 1) {
+            denyPrintBookmarkHasShow = false;
+        }
+        int threshold = 50;
+        if (allSize < threshold) {
+            return true;
+        }
+        if (currentIndex > threshold) {
+            if (!denyPrintBookmarkHasShow) {
+                LogHelper.v("There too many bookmark,skip unnecessary print.currentIndex:" + currentIndex + ",allSize:" + allSize);
+                denyPrintBookmarkHasShow = true;
+            }
             return false;
         }
         return true;

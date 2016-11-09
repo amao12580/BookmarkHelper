@@ -100,11 +100,16 @@ public class ViaBroswer extends BasicBroswer {
             LogHelper.v("书签数据:" + JsonUtil.toJson(list));
             LogHelper.v("书签条数:" + list.size());
             bookmarks = new LinkedList<>();
+            int index = 0;
+            int size = list.size();
             for (ViaBookmark item : list) {
+                index++;
                 String bookmarkUrl = item.getUrl();
                 String bookmarkName = item.getTitle();
-                LogHelper.v("name:" + bookmarkName);
-                LogHelper.v("url:" + bookmarkUrl);
+                if (allowPrintBookmark(index, size)) {
+                    LogHelper.v("name:" + bookmarkName);
+                    LogHelper.v("url:" + bookmarkUrl);
+                }
                 if (!isGoodUrl(bookmarkUrl)) {
                     continue;
                 }

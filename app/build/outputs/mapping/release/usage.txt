@@ -331,7 +331,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    46:49:public int readBookmarkSum(android.content.Context)
+    48:51:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -365,6 +365,22 @@ pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil:
     27:27:public AppListUtil()
 pro.kisscat.www.bookmarkhelper.util.context.ContextUtil:
     16:16:public ContextUtil()
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil:
+    private static final int phase
+    private static final double byteLimit
+    private static final double KBLimit
+    private static final double MBLimit
+    private static final double GBLimit
+    18:18:public FileUtil()
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$FileShow:
+    67:67:public java.lang.String getPrefix()
+    68:68:public void setPrefix(java.lang.String)
+    70:70:public double getSize()
+    71:71:public void setSize(double)
+    73:73:public long getOriginSize()
+    74:74:public void setOriginSize(long)
+    76:76:public pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure getMeasure()
+    77:77:public void setMeasure(pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure)
 pro.kisscat.www.bookmarkhelper.util.json.JsonUtil:
     17:17:public JsonUtil()
     51:51:public static java.util.List toList(java.lang.String,java.lang.Class)

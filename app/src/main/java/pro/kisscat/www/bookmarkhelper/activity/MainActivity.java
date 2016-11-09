@@ -176,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 LogHelper.v("成功获取了Root权限.");
             }
+            start = System.currentTimeMillis();
             rule.setStage(1);
             ret = ConverterMaster.excute(lv.getContext(), rule);
             end = System.currentTimeMillis();
@@ -193,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         s = ms + "ms";
                     }
                 }
-                showDialogMessage(ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效." + (s == null ? "" : (s + ".")));
+                showDialogMessage(ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效" + (s == null ? "." : ("，耗时：" + s + ".")));
             } else if (ret == 0) {
                 rule.setStage(2);
                 showDialogMessage("所有书签已存在，不需要合并.");

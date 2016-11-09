@@ -30555,31 +30555,32 @@ pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmark
     java.lang.String donateURL -> n
     long lastBackTime -> o
     long currentBackTime -> p
-    47:307:void <init>() -> <init>
+    47:308:void <init>() -> <init>
     61:101:void onCreate(android.os.Bundle) -> onCreate
     104:110:void initColor(android.content.Context) -> a
     115:125:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
     129:162:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-    165:204:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule) -> a
-    207:208:void showDialogMessage(java.lang.String) -> a
-    213:229:void showSimpleDialog(java.lang.String) -> b
-    238:245:void showToastMessage(android.content.Context,java.lang.String) -> a
-    248:249:void showToastMessage(java.lang.String) -> c
-    254:258:void onclickAboutMe(android.view.View) -> onclickAboutMe
-    264:277:void onclickRating(android.view.View) -> onclickRating
-    282:286:void onclickDonate(android.view.View) -> onclickDonate
-    289:302:void openUrlInWebview(java.lang.String,java.lang.String,int) -> a
-    311:330:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    335:337:void onDestroy() -> onDestroy
-    341:343:void onStop() -> onStop
-    56:279:void <clinit>() -> <clinit>
+    165:205:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule) -> a
+    208:209:void showDialogMessage(java.lang.String) -> a
+    214:230:void showSimpleDialog(java.lang.String) -> b
+    239:246:void showToastMessage(android.content.Context,java.lang.String) -> a
+    249:250:void showToastMessage(java.lang.String) -> c
+    255:259:void onclickAboutMe(android.view.View) -> onclickAboutMe
+    265:278:void onclickRating(android.view.View) -> onclickRating
+    283:287:void onclickDonate(android.view.View) -> onclickDonate
+    290:303:void openUrlInWebview(java.lang.String,java.lang.String,int) -> a
+    312:331:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
+    336:338:void onDestroy() -> onDestroy
+    342:344:void onStop() -> onStop
+    56:280:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.MainActivity$1 -> pro.kisscat.www.bookmarkhelper.activity.MainActivity$1:
     pro.kisscat.www.bookmarkhelper.activity.MainActivity this$0 -> a
-    222:222:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
-    224:225:void onClick(android.content.DialogInterface,int) -> onClick
+    223:223:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
+    225:226:void onClick(android.content.DialogInterface,int) -> onClick
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a:
     boolean installed -> a
-    23:23:void <init>() -> <init>
+    boolean denyPrintBookmarkHasShow -> b
+    23:103:void <init>() -> <init>
     29:30:boolean isInstalled(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer) -> a
     34:38:void fillName(android.content.Context) -> a
     41:48:void fillVersion(android.content.Context) -> b
@@ -30590,6 +30591,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www
     78:78:int appendBookmark(android.content.Context,java.util.List) -> a
     82:92:java.util.Set buildNoRepeat(java.util.List,java.util.List) -> a
     96:100:boolean isGoodUrl(java.lang.String) -> a
+    106:120:boolean allowPrintBookmark(int,int) -> a
     25:25:void setInstalled(boolean) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster -> pro.kisscat.www.bookmarkhelper.converter.support.b:
     java.util.List supportRule -> a
@@ -30601,13 +30603,14 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer -> pro.kissc
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
     java.lang.String filePath_cp -> d
-    35:35:void <init>() -> <init>
-    41:41:java.lang.String getPackageName() -> getPackageName
-    54:55:void fillDefaultIcon(android.content.Context) -> d
-    59:60:void fillDefaultAppName(android.content.Context) -> c
-    68:124:java.util.List readBookmark(android.content.Context) -> e
-    129:129:int appendBookmark(android.content.Context,java.util.List) -> a
-    63:64:void <clinit>() -> <clinit>
+    37:37:void <init>() -> <init>
+    43:43:java.lang.String getPackageName() -> getPackageName
+    56:57:void fillDefaultIcon(android.content.Context) -> d
+    61:62:void fillDefaultAppName(android.content.Context) -> c
+    70:114:java.util.List readBookmark(android.content.Context) -> e
+    118:146:java.util.List fetchBookmarksFromJSONFile(java.io.File) -> a
+    153:153:int appendBookmark(android.content.Context,java.util.List) -> a
+    65:66:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.b:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
@@ -30617,10 +30620,10 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer -> pro.kissc
     39:39:java.lang.String getPackageName() -> getPackageName
     52:53:void fillDefaultIcon(android.content.Context) -> d
     57:58:void fillDefaultAppName(android.content.Context) -> c
-    67:113:java.util.List readBookmark(android.content.Context) -> e
-    119:151:java.util.List fetchBookmarksList(android.content.Context,java.lang.String) -> a
-    156:156:int appendBookmark(android.content.Context,java.util.List) -> a
-    62:116:void <clinit>() -> <clinit>
+    67:118:java.util.List readBookmark(android.content.Context) -> e
+    124:156:java.util.List fetchBookmarksList(android.content.Context,java.lang.String) -> a
+    161:161:int appendBookmark(android.content.Context,java.util.List) -> a
+    62:121:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.c:
     java.lang.String[] columns -> b
     java.util.List bookmarks -> c
@@ -30630,11 +30633,11 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer -> pro.kisscat.w
     42:42:java.lang.String getPackageName() -> getPackageName
     55:56:void fillDefaultIcon(android.content.Context) -> d
     60:61:void fillDefaultAppName(android.content.Context) -> c
-    70:116:java.util.List readBookmark(android.content.Context) -> e
-    123:176:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
-    181:200:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
-    204:235:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    240:240:int appendBookmark(android.content.Context,java.util.List) -> a
+    70:121:java.util.List readBookmark(android.content.Context) -> e
+    128:181:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
+    186:205:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
+    209:240:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    245:245:int appendBookmark(android.content.Context,java.util.List) -> a
     38:66:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.d:
     java.util.List bookmarks -> b
@@ -30645,12 +30648,12 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.w
     40:40:java.lang.String getPackageName() -> getPackageName
     53:54:void fillDefaultIcon(android.content.Context) -> d
     58:59:void fillDefaultAppName(android.content.Context) -> c
-    67:109:java.util.List readBookmark(android.content.Context) -> e
-    115:131:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> a
-    135:181:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> b
-    185:216:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    221:221:int appendBookmark(android.content.Context,java.util.List) -> a
-    62:112:void <clinit>() -> <clinit>
+    67:114:java.util.List readBookmark(android.content.Context) -> e
+    120:136:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> a
+    140:186:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> b
+    190:221:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    226:226:int appendBookmark(android.content.Context,java.util.List) -> a
+    62:117:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.e:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
@@ -30659,8 +30662,8 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer -> pro.kisscat.
     45:45:java.lang.String getPackageName() -> getPackageName
     58:59:void fillDefaultIcon(android.content.Context) -> d
     63:64:void fillDefaultAppName(android.content.Context) -> c
-    72:138:java.util.List readBookmark(android.content.Context) -> e
-    143:199:int appendBookmark(android.content.Context,java.util.List) -> a
+    72:143:java.util.List readBookmark(android.content.Context) -> e
+    148:204:int appendBookmark(android.content.Context,java.util.List) -> a
     67:68:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.f:
     java.util.List bookmarks -> b
@@ -30671,10 +30674,10 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer -> pro.kisscat.ww
     39:39:java.lang.String getPackageName() -> getPackageName
     52:53:void fillDefaultIcon(android.content.Context) -> d
     57:58:void fillDefaultAppName(android.content.Context) -> c
-    67:113:java.util.List readBookmark(android.content.Context) -> e
-    119:151:java.util.List fetchBookmarksList(android.content.Context,java.lang.String) -> a
-    156:156:int appendBookmark(android.content.Context,java.util.List) -> a
-    62:116:void <clinit>() -> <clinit>
+    67:118:java.util.List readBookmark(android.content.Context) -> e
+    124:156:java.util.List fetchBookmarksList(android.content.Context,java.lang.String) -> a
+    161:161:int appendBookmark(android.content.Context,java.util.List) -> a
+    62:121:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.App:
     java.lang.String name -> name
     java.lang.String packageName -> packageName
@@ -30706,10 +30709,15 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark -> pro.kisscat.ww
     20:20:void setUrl(java.lang.String) -> setUrl
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark:
     pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root roots -> roots
-    19:19:void <init>() -> <init>
-    25:31:java.util.List getChildren() -> getChildren
-    20:20:void setRoots(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root) -> setRoots
-    21:21:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root getRoots() -> getRoots
+    24:24:void <init>() -> <init>
+    31:60:java.util.List fetchChildrens() -> fetchChildrens
+    25:25:void setRoots(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root) -> setRoots
+    26:26:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root getRoots() -> getRoots
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar:
+    java.util.List children -> children
+    17:17:void <init>() -> <init>
+    18:18:void setChildren(java.util.List) -> setChildren
+    19:19:java.util.List getChildren() -> getChildren
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children:
     java.lang.String name -> name
     java.lang.String url -> url
@@ -30718,11 +30726,22 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children -> 
     17:17:java.lang.String getName() -> getName
     19:19:void setUrl(java.lang.String) -> setUrl
     20:20:java.lang.String getUrl() -> getUrl
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root:
-    pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced synced -> synced
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other:
+    java.util.List children -> children
     17:17:void <init>() -> <init>
-    18:18:void setSynced(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced) -> setSynced
-    19:19:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced getSynced() -> getSynced
+    18:18:void setChildren(java.util.List) -> setChildren
+    19:19:java.util.List getChildren() -> getChildren
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root:
+    pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar bookmark_bar -> bookmark_bar
+    pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other other -> other
+    pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced synced -> synced
+    15:15:void <init>() -> <init>
+    16:16:void setBookmark_bar(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar) -> setBookmark_bar
+    17:17:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.BookmarkBar getBookmark_bar() -> getBookmark_bar
+    19:19:void setOther(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other) -> setOther
+    20:20:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Other getOther() -> getOther
+    22:22:void setSynced(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced) -> setSynced
+    23:23:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced getSynced() -> getSynced
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Synced:
     java.util.List children -> children
     17:17:void <init>() -> <init>
@@ -30805,7 +30824,28 @@ pro.kisscat.www.bookmarkhelper.util.context.ContextUtil -> pro.kisscat.www.bookm
     38:38:java.lang.String buildFileDeleteErrorMessage(android.content.Context,java.lang.String) -> e
     42:42:java.lang.String buildViaBookmarksFileMiss(android.content.Context,java.lang.String) -> f
     46:46:java.lang.String buildReadBookmarksTableNotExistErrorMessage(android.content.Context,java.lang.String) -> g
-pro.kisscat.www.bookmarkhelper.util.json.JsonUtil -> pro.kisscat.www.bookmarkhelper.util.c.a:
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil -> pro.kisscat.www.bookmarkhelper.util.c.a:
+    26:50:pro.kisscat.www.bookmarkhelper.util.file.FileUtil$FileShow formatFileSize(java.io.File) -> a
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$FileShow -> pro.kisscat.www.bookmarkhelper.util.c.a$a:
+    java.lang.String prefix -> a
+    double size -> b
+    long originSize -> c
+    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure measure -> d
+    80:85:void <init>(java.lang.String,long,double,pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure) -> <init>
+    89:95:java.lang.String toString() -> toString
+    102:102:boolean isOver10KB() -> a
+pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure -> pro.kisscat.www.bookmarkhelper.util.c.a$b:
+    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure BYTE -> BYTE
+    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure KB -> KB
+    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure MB -> MB
+    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure GB -> GB
+    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure[] $VALUES -> a
+    53:53:pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure[] values() -> values
+    53:53:pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure valueOf(java.lang.String) -> valueOf
+    53:53:void <init>(java.lang.String,int) -> <init>
+    58:61:java.lang.String toString() -> toString
+    53:54:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.util.json.JsonUtil -> pro.kisscat.www.bookmarkhelper.util.d.a:
     27:31:java.lang.String toJson(java.lang.Object) -> a
     43:47:java.lang.Object fromJson(java.lang.String,java.lang.Class) -> a
 pro.kisscat.www.bookmarkhelper.util.log.LogHelper -> pro.kisscat.www.bookmarkhelper.util.log.a:
@@ -30852,16 +30892,16 @@ pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry -> pro.kisscat.www.bookmar
     15:15:boolean equals(java.lang.Object) -> equals
     15:15:int hashCode() -> hashCode
     15:15:java.lang.String toString() -> toString
-pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil -> pro.kisscat.www.bookmarkhelper.util.d.a:
+pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil -> pro.kisscat.www.bookmarkhelper.util.e.a:
     19:28:boolean isNetworkConnected(android.content.Context) -> a
-pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil -> pro.kisscat.www.bookmarkhelper.util.e.a:
+pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil -> pro.kisscat.www.bookmarkhelper.util.f.a:
     26:26:boolean checkOnly(android.app.Activity) -> a
     31:35:boolean check(android.app.Activity) -> b
-pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.util.f.a:
+pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.util.g.a:
     36:36:boolean upgradeRootPermission(java.lang.String) -> a
     50:50:boolean executeCmd(java.lang.String) -> b
     54:123:pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult executeCmd(java.lang.String[]) -> a
-pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.www.bookmarkhelper.util.f.a$a:
+pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.www.bookmarkhelper.util.g.a$a:
     int result -> a
     java.util.List successMsg -> b
     java.util.List errorMsg -> c
@@ -30869,11 +30909,11 @@ pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.w
     131:150:void <init>(int,java.util.List,java.util.List) -> <init>
     153:153:boolean isSuccess() -> a
     135:135:java.util.List getSuccessMsg() -> b
-pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.g.a:
+pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.h.a:
     27:27:void <init>() -> <init>
     33:55:java.lang.String getRootPath() -> a
     74:85:java.io.File copyFile(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> a
-pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.g.b:
+pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.h.b:
     22:22:void <init>() -> <init>
     28:34:java.lang.String getRootPath() -> a
     44:49:boolean deleteFile(android.content.Context,java.lang.String,java.lang.String) -> a
