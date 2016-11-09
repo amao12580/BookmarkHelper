@@ -40,8 +40,12 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 ### 0.0.6版 Draft
 1.增加兼容：支持从[360浏览器](http://www.coolapk.com/apk/com.qihoo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
 2.Bug 修复：[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)现在支持读取完整的书签数据。
-3.优化：减少主循环中日志打印，避免响应超时！
+
+3.Bug 修复：[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)支持读取微信用户登录的书签数据。
+
+4.优化：减少主循环中日志打印，避免响应超时！
 
 ### 0.0.7版 Draft
 1.增加兼容：支持从[搜狗浏览器](http://www.coolapk.com/apk/sogou.mobile.explorer)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

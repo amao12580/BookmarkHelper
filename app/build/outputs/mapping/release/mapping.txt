@@ -30622,16 +30622,17 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer -> pro.kisscat.w
     java.util.List bookmarks -> c
     java.lang.String filePath_origin -> d
     java.lang.String filePath_cp -> e
-    35:35:void <init>() -> <init>
-    42:42:java.lang.String getPackageName() -> getPackageName
-    55:56:void fillDefaultIcon(android.content.Context) -> d
-    60:61:void fillDefaultAppName(android.content.Context) -> c
-    70:121:java.util.List readBookmark(android.content.Context) -> e
-    128:181:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
-    186:205:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
-    209:240:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    245:245:int appendBookmark(android.content.Context,java.util.List) -> a
-    38:66:void <clinit>() -> <clinit>
+    34:34:void <init>() -> <init>
+    41:41:java.lang.String getPackageName() -> getPackageName
+    54:55:void fillDefaultIcon(android.content.Context) -> d
+    59:60:void fillDefaultAppName(android.content.Context) -> c
+    69:120:java.util.List readBookmark(android.content.Context) -> e
+    124:176:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
+    180:192:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String,java.lang.String) -> a
+    197:216:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
+    220:251:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    256:256:int appendBookmark(android.content.Context,java.util.List) -> a
+    37:65:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.d:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
@@ -30643,9 +30644,9 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.w
     58:59:void fillDefaultAppName(android.content.Context) -> c
     67:114:java.util.List readBookmark(android.content.Context) -> e
     120:136:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> a
-    140:186:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> b
-    190:221:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    226:226:int appendBookmark(android.content.Context,java.util.List) -> a
+    140:185:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> b
+    189:220:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    225:225:int appendBookmark(android.content.Context,java.util.List) -> a
     62:117:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.e:
     java.util.List bookmarks -> b

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
 
 import java.io.File;
 import java.util.LinkedList;
@@ -121,26 +120,22 @@ public class QQBroswer extends BasicBroswer {
         return bookmarks;
     }
 
-    /**
-     * 对QQ号码进行校验 要求5~15位，不能以0开头，只能是数字
-     */
     private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String dir) {
         LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
         List<Bookmark> result = new LinkedList<>();
-        //QQ 号码登录
-        LogHelper.v(TAG + ":尝试解析QQ用户的书签数据");
-        String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
-        String searchRule = " -type f -name \"[1-9][0-9][0-9][0-9][0-9]*.db\" | xargs ls -l | sort -r -k5 -k6";
+        LogHelper.v(TAG + ":尝试解析已登录用户的书签数据");
+        String QQRegularRule = "[1-9][0-9]{4,14}";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
+        String WechatRegularRule = "[a-z0-9A-Z\\-]{28}";
+        String searchRule = " -type f -name \"*.db\" | xargs ls -l | sort -r -k5 -k6";
         List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule);
         if (fileNames == null || fileNames.isEmpty()) {
-            LogHelper.v("first phase match fileNames is empty.");
+            LogHelper.v(TAG + ":已登录用户没有书签数据");
             return result;
         }
-        LogHelper.v(TAG + ":QQ用户没有书签数据");
-        Toast.makeText(context, context.getString(R.string.notSupportWechatBookmarkForQQBroswer), Toast.LENGTH_SHORT).show();
-        //微信登录的先不考虑了，find规则太复杂。db name完全没有规则，随机字符串(可能与openid相关)：oXh-RjjNxEmOPpLmrToJLJBsSHjA.db
-        String targetFilePath = null;
-        String targetFileName = null;
+        boolean isDetectQQ = false;
+        boolean isDetectWechat = false;
+        List<Bookmark> QQUserBookmarks = new LinkedList<>();
+        List<Bookmark> WechatUserBookmarks = new LinkedList<>();
         for (String item : fileNames) {
             LogHelper.v("item:" + item);
             if (item == null) {
@@ -155,20 +150,37 @@ public class QQBroswer extends BasicBroswer {
                 tmp = item.substring(item.indexOf(dir), item.length());
             }
             LogHelper.v("targetFileName:" + tmp);
-            if (tmp.matches(regularRule)) {
-                targetFilePath = dir + tmp;
-                targetFileName = tmp;
-                break;
+            String s = tmp;
+            String name = s.replaceAll(".db", "");
+            if (!isDetectQQ && name.matches(QQRegularRule)) {
+                isDetectQQ = true;
+                LogHelper.v("match success QQRegularRule.");
+                QQUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, tmp);
+                LogHelper.v("QQ用户：" + name + "，书签条数：" + QQUserBookmarks.size());
+            } else if (!isDetectWechat && name.matches(WechatRegularRule)) {
+                isDetectWechat = true;
+                LogHelper.v("match success WechatRegularRule.");
+                WechatUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, tmp);
+                LogHelper.v("微信用户：" + name + "，书签条数：" + WechatUserBookmarks.size());
             } else {
                 LogHelper.v("not match.");
             }
         }
-        if (targetFilePath == null) {
-            LogHelper.v("targetFilePath is miss.");
-            return result;
+        if (isDetectQQ) {
+            result.addAll(QQUserBookmarks);
         }
+        if (isDetectWechat) {
+            result.addAll(WechatUserBookmarks);
+        }
+        LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
+        return result;
+    }
+
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String dir, String fileName) {
+        String targetFilePath = dir + fileName;
         LogHelper.v("targetFilePath is:" + targetFilePath);
-        String tmpFilePath = filePath_cp + targetFileName;
+        List<Bookmark> result = new LinkedList<>();
+        String tmpFilePath = filePath_cp + fileName;
         File cpPath = new File(filePath_cp);
         cpPath.deleteOnExit();
         cpPath.mkdirs();
@@ -177,7 +189,6 @@ public class QQBroswer extends BasicBroswer {
         result.addAll(fetchBookmarksList(context, tmpFilePath, "pad_bookmark", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, tmpFilePath, "pc_bookmark", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, tmpFilePath, "snapshot", "type=?", new String[]{"-1"}, null));
-        LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
         return result;
     }
 

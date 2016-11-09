@@ -6,6 +6,7 @@ Referenced Strings:
   %02d
   .0
   .bak
+  .db
   .sharecompat_
   .xml
   /Chrome/
@@ -224,8 +225,8 @@ Referenced Strings:
   PopupWindowCompatApi21
   PrettyFormat
   PrintHelperKitkat
-  QQ:QQ用户没有书签数据
-  QQ:尝试解析QQ用户的书签数据
+  QQ:尝试解析已登录用户的书签数据
+  QQ:已登录用户没有书签数据
   QQ:开始读取书签数据
   QQ:开始读取未登录用户的书签SQLite数据库:
   QQ:读取书签数据结束
@@ -2550,7 +2551,6 @@ anim:design_fab_in:2131034125,
    string:networkError:2131099692,
    string:notPermissionForReadInstalledAppList:2131099693,
    string:notSupport:2131099694,
-   string:notSupportWechatBookmarkForQQBroswer:2131099695,
    string:ratingURL:2131099697,
    string:readBookmarksEmpty:2131099698,
    string:readBookmarksError:2131099699,

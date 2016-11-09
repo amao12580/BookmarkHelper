@@ -143,10 +143,9 @@ public class UCBroswer extends BasicBroswer {
         String searchRule = " -type f -name \"[1-9][0-9][0-9][0-9][0-9]*.db\" | xargs ls -l | sort -r -k5 -k6";
         List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule);
         if (fileNames == null || fileNames.isEmpty()) {
-            LogHelper.v("first phase match fileNames is empty.");
+            LogHelper.v(TAG + ":已登录用户没有书签数据");
             return result;
         }
-        LogHelper.v(TAG + ":已登录用户没有书签数据");
         String targetFilePath = null;
         String targetFileName = null;
         for (String item : fileNames) {
