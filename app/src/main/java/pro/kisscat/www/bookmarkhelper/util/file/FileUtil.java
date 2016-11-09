@@ -16,7 +16,7 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
  */
 
 public class FileUtil {
-    private static final int phase = 1024;
+    private static final long phase = 1024L;
     private static final double byteLimit = phase;
     private static final double KBLimit = phase * phase;
     private static final double MBLimit = phase * phase * phase;

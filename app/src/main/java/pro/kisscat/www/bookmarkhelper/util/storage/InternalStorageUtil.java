@@ -29,9 +29,9 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         boolean sdCardExist = Environment.getExternalStorageState()
                 .equals(Environment.MEDIA_MOUNTED);   //判断sd卡是否存在
         if (sdCardExist) {
-            sdDir = Environment.getExternalStorageDirectory();//获取跟目录
+            sdDir = Environment.getExternalStorageDirectory();//获取根目录
         }
-        return sdDir.toString();
+        return sdDir == null ? null : sdDir.toString();
     }
 
     /**
@@ -46,7 +46,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         if (!result) {
             throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(context, mark));
         }
-        return result;
+        return true;
     }
 
     /**
@@ -76,7 +76,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         try {
             StringBuilder command = new StringBuilder("find ");
             if (regularRule != null) {
-                command.append(dir + regularRule);
+                command.append(dir).append(regularRule);
             } else {
                 command.append(dir);
             }

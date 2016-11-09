@@ -33,6 +33,7 @@ public class DBHelper {
                 return true;
             }
         }
+        cursor.close();
         return false;
     }
 }

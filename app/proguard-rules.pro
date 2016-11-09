@@ -1,49 +1,49 @@
 #############################################
 #
-# ¶ÔÓÚÒ»Ğ©»ù±¾Ö¸ÁîµÄÌí¼Ó
+# å¯¹äºä¸€äº›åŸºæœ¬æŒ‡ä»¤çš„æ·»åŠ 
 #
 #############################################
-# ´úÂë»ìÏıÑ¹Ëõ±È£¬ÔÚ0~7Ö®¼ä£¬Ä¬ÈÏÎª5£¬Ò»°ã²»×öĞŞ¸Ä
+# ä»£ç æ··æ·†å‹ç¼©æ¯”ï¼Œåœ¨0~7ä¹‹é—´ï¼Œé»˜è®¤ä¸º5ï¼Œä¸€èˆ¬ä¸åšä¿®æ”¹
 -optimizationpasses 5
 
-# »ìºÏÊ±²»Ê¹ÓÃ´óĞ¡Ğ´»ìºÏ£¬»ìºÏºóµÄÀàÃûÎªĞ¡Ğ´
+# æ··åˆæ—¶ä¸ä½¿ç”¨å¤§å°å†™æ··åˆï¼Œæ··åˆåçš„ç±»åä¸ºå°å†™
 -dontusemixedcaseclassnames
 
-# Ö¸¶¨²»È¥ºöÂÔ·Ç¹«¹²¿âµÄÀà
+# æŒ‡å®šä¸å»å¿½ç•¥éå…¬å…±åº“çš„ç±»
 -dontskipnonpubliclibraryclasses
 
-# Õâ¾ä»°ÄÜ¹»Ê¹ÎÒÃÇµÄÏîÄ¿»ìÏıºó²úÉúÓ³ÉäÎÄ¼ş
-# °üº¬ÓĞÀàÃû->»ìÏıºóÀàÃûµÄÓ³Éä¹ØÏµ
+# è¿™å¥è¯èƒ½å¤Ÿä½¿æˆ‘ä»¬çš„é¡¹ç›®æ··æ·†åäº§ç”Ÿæ˜ å°„æ–‡ä»¶
+# åŒ…å«æœ‰ç±»å->æ··æ·†åç±»åçš„æ˜ å°„å…³ç³»
 -verbose
 
-# Ö¸¶¨²»È¥ºöÂÔ·Ç¹«¹²¿âµÄÀà³ÉÔ±
+# æŒ‡å®šä¸å»å¿½ç•¥éå…¬å…±åº“çš„ç±»æˆå‘˜
 -dontskipnonpubliclibraryclassmembers
 
-# ²»×öÔ¤Ğ£Ñé£¬preverifyÊÇproguardµÄËÄ¸ö²½ÖèÖ®Ò»£¬Android²»ĞèÒªpreverify£¬È¥µôÕâÒ»²½ÄÜ¹»¼Ó¿ì»ìÏıËÙ¶È¡£
+# ä¸åšé¢„æ ¡éªŒï¼Œpreverifyæ˜¯proguardçš„å››ä¸ªæ­¥éª¤ä¹‹ä¸€ï¼ŒAndroidä¸éœ€è¦preverifyï¼Œå»æ‰è¿™ä¸€æ­¥èƒ½å¤ŸåŠ å¿«æ··æ·†é€Ÿåº¦ã€‚
 -dontpreverify
 
-# ±£ÁôAnnotation²»»ìÏı
+# ä¿ç•™Annotationä¸æ··æ·†
 -keepattributes *Annotation*,InnerClasses
 
-# ±ÜÃâ»ìÏı·ºĞÍ
+# é¿å…æ··æ·†æ³›å‹
 -keepattributes Signature
 
-# Å×³öÒì³£Ê±±£Áô´úÂëĞĞºÅ
+# æŠ›å‡ºå¼‚å¸¸æ—¶ä¿ç•™ä»£ç è¡Œå·
 -keepattributes SourceFile,LineNumberTable
 
-# Ö¸¶¨»ìÏıÊÇ²ÉÓÃµÄËã·¨£¬ºóÃæµÄ²ÎÊıÊÇÒ»¸ö¹ıÂËÆ÷
-# Õâ¸ö¹ıÂËÆ÷ÊÇ¹È¸èÍÆ¼öµÄËã·¨£¬Ò»°ã²»×ö¸ü¸Ä
+# æŒ‡å®šæ··æ·†æ˜¯é‡‡ç”¨çš„ç®—æ³•ï¼Œåé¢çš„å‚æ•°æ˜¯ä¸€ä¸ªè¿‡æ»¤å™¨
+# è¿™ä¸ªè¿‡æ»¤å™¨æ˜¯è°·æ­Œæ¨èçš„ç®—æ³•ï¼Œä¸€èˆ¬ä¸åšæ›´æ”¹
 -optimizations !code/simplification/cast,!field/*,!class/merging/*
 
 
 #############################################
 #
-# Android¿ª·¢ÖĞÒ»Ğ©ĞèÒª±£ÁôµÄ¹«¹²²¿·Ö
+# Androidå¼€å‘ä¸­ä¸€äº›éœ€è¦ä¿ç•™çš„å…¬å…±éƒ¨åˆ†
 #
 #############################################
 
-# ±£ÁôÎÒÃÇÊ¹ÓÃµÄËÄ´ó×é¼ş£¬×Ô¶¨ÒåµÄApplicationµÈµÈÕâĞ©Àà²»±»»ìÏı
-# ÒòÎªÕâĞ©×ÓÀà¶¼ÓĞ¿ÉÄÜ±»Íâ²¿µ÷ÓÃ
+# ä¿ç•™æˆ‘ä»¬ä½¿ç”¨çš„å››å¤§ç»„ä»¶ï¼Œè‡ªå®šä¹‰çš„Applicationç­‰ç­‰è¿™äº›ç±»ä¸è¢«æ··æ·†
+# å› ä¸ºè¿™äº›å­ç±»éƒ½æœ‰å¯èƒ½è¢«å¤–éƒ¨è°ƒç”¨
 -keep public class * extends android.app.Activity
 -keep public class * extends android.app.Appliction
 -keep public class * extends android.app.Service
@@ -55,35 +55,35 @@
 -keep public class com.android.vending.licensing.ILicensingService
 
 
-# ±£ÁôsupportÏÂµÄËùÓĞÀà¼°ÆäÄÚ²¿Àà
+# ä¿ç•™supportä¸‹çš„æ‰€æœ‰ç±»åŠå…¶å†…éƒ¨ç±»
 -keep class android.support.** {*;}
 
-# ±£Áô¼Ì³ĞµÄ
+# ä¿ç•™ç»§æ‰¿çš„
 -keep public class * extends android.support.v4.**
 -keep public class * extends android.support.v7.**
 -keep public class * extends android.support.annotation.**
 
-# ±£ÁôRÏÂÃæµÄ×ÊÔ´
+# ä¿ç•™Rä¸‹é¢çš„èµ„æº
 -keep class **.R$* {*;}
 
-# ±£Áô±¾µØnative·½·¨²»±»»ìÏı
+# ä¿ç•™æœ¬åœ°nativeæ–¹æ³•ä¸è¢«æ··æ·†
 -keepclasseswithmembernames class * {
     native <methods>;
 }
 
-# ±£ÁôÔÚActivityÖĞµÄ·½·¨²ÎÊıÊÇviewµÄ·½·¨£¬
-# ÕâÑùÒÔÀ´ÎÒÃÇÔÚlayoutÖĞĞ´µÄonClick¾Í²»»á±»Ó°Ïì
+# ä¿ç•™åœ¨Activityä¸­çš„æ–¹æ³•å‚æ•°æ˜¯viewçš„æ–¹æ³•ï¼Œ
+# è¿™æ ·ä»¥æ¥æˆ‘ä»¬åœ¨layoutä¸­å†™çš„onClickå°±ä¸ä¼šè¢«å½±å“
 -keepclassmembers class * extends android.app.Activity{
     public void *(android.view.View);
 }
 
-# ±£ÁôÃ¶¾ÙÀà²»±»»ìÏı
+# ä¿ç•™æšä¸¾ç±»ä¸è¢«æ··æ·†
 -keepclassmembers enum * {
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
 
-# ±£ÁôÎÒÃÇ×Ô¶¨Òå¿Ø¼ş£¨¼Ì³Ğ×ÔView£©²»±»»ìÏı
+# ä¿ç•™æˆ‘ä»¬è‡ªå®šä¹‰æ§ä»¶ï¼ˆç»§æ‰¿è‡ªViewï¼‰ä¸è¢«æ··æ·†
 -keep public class * extends android.view.View{
     *** get*();
     void set*(***);
@@ -92,12 +92,12 @@
     public <init>(android.content.Context, android.util.AttributeSet, int);
 }
 
-# ±£ÁôParcelableĞòÁĞ»¯Àà²»±»»ìÏı
+# ä¿ç•™Parcelableåºåˆ—åŒ–ç±»ä¸è¢«æ··æ·†
 -keep class * implements android.os.Parcelable {
     public static final android.os.Parcelable$Creator *;
 }
 
-# ±£ÁôSerializableĞòÁĞ»¯µÄÀà²»±»»ìÏı
+# ä¿ç•™Serializableåºåˆ—åŒ–çš„ç±»ä¸è¢«æ··æ·†
 -keepclassmembers class * implements java.io.Serializable {
     static final long serialVersionUID;
     private static final java.io.ObjectStreamField[] serialPersistentFields;
@@ -110,13 +110,13 @@
     java.lang.Object readResolve();
 }
 
-# ¶ÔÓÚ´øÓĞ»Øµ÷º¯ÊıµÄonXXEvent¡¢**On*ListenerµÄ£¬²»ÄÜ±»»ìÏı
+# å¯¹äºå¸¦æœ‰å›è°ƒå‡½æ•°çš„onXXEventã€**On*Listenerçš„ï¼Œä¸èƒ½è¢«æ··æ·†
 -keepclassmembers class * {
     void *(**On*Event);
     void *(**On*Listener);
 }
 
-# webView´¦Àí£¬ÏîÄ¿ÖĞÃ»ÓĞÊ¹ÓÃµ½webViewºöÂÔ¼´¿É
+# webViewå¤„ç†ï¼Œé¡¹ç›®ä¸­æ²¡æœ‰ä½¿ç”¨åˆ°webViewå¿½ç•¥å³å¯
 -keepclassmembers class fqcn.of.javascript.interface.for.webview {
     public *;
 }
@@ -128,9 +128,9 @@
     public void *(android.webkit.webView, jav.lang.String);
 }
 
-# ÒÆ³ıLogÀà´òÓ¡¸÷¸öµÈ¼¶ÈÕÖ¾µÄ´úÂë£¬´òÕıÊ½°üµÄÊ±ºò¿ÉÒÔ×öÎª½ûlogÊ¹ÓÃ£¬ÕâÀï¿ÉÒÔ×÷Îª½ûÖ¹log´òÓ¡µÄ¹¦ÄÜÊ¹ÓÃ
-# ¼ÇµÃproguard-android.txtÖĞÒ»¶¨²»Òª¼Ó-dontoptimize²ÅÆğ×÷ÓÃ
-# ÁíÍâµÄÒ»ÖÖÊµÏÖ·½°¸ÊÇÍ¨¹ıBuildConfig.DEBUGµÄ±äÁ¿À´¿ØÖÆ
+# ç§»é™¤Logç±»æ‰“å°å„ä¸ªç­‰çº§æ—¥å¿—çš„ä»£ç ï¼Œæ‰“æ­£å¼åŒ…çš„æ—¶å€™å¯ä»¥åšä¸ºç¦logä½¿ç”¨ï¼Œè¿™é‡Œå¯ä»¥ä½œä¸ºç¦æ­¢logæ‰“å°çš„åŠŸèƒ½ä½¿ç”¨
+# è®°å¾—proguard-android.txtä¸­ä¸€å®šä¸è¦åŠ -dontoptimizeæ‰èµ·ä½œç”¨
+# å¦å¤–çš„ä¸€ç§å®ç°æ–¹æ¡ˆæ˜¯é€šè¿‡BuildConfig.DEBUGçš„å˜é‡æ¥æ§åˆ¶
 #-assumenosideeffects class android.util.Log {
 #    public static int v(...);
 #    public static int i(...);
@@ -141,29 +141,29 @@
 
 #############################################
 #
-# ÏîÄ¿ÖĞÌØÊâ´¦Àí²¿·Ö
+# é¡¹ç›®ä¸­ç‰¹æ®Šå¤„ç†éƒ¨åˆ†
 #
 #############################################
 
-#-----------´¦Àí·´ÉäÀà---------------
+#-----------å¤„ç†åå°„ç±»---------------
 
 
 
-#-----------´¦Àíjs½»»¥---------------
+#-----------å¤„ç†jsäº¤äº’---------------
 
 
 
-#-----------´¦ÀíÊµÌåÀà---------------
-# ÔÚ¿ª·¢µÄÊ±ºòÎÒÃÇ¿ÉÒÔ½«ËùÓĞµÄÊµÌåÀà·ÅÔÚÒ»¸ö°üÄÚ£¬ÕâÑùÎÒÃÇĞ´Ò»´Î»ìÏı¾ÍĞĞÁË¡£
+#-----------å¤„ç†å®ä½“ç±»---------------
+# åœ¨å¼€å‘çš„æ—¶å€™æˆ‘ä»¬å¯ä»¥å°†æ‰€æœ‰çš„å®ä½“ç±»æ”¾åœ¨ä¸€ä¸ªåŒ…å†…ï¼Œè¿™æ ·æˆ‘ä»¬å†™ä¸€æ¬¡æ··æ·†å°±è¡Œäº†ã€‚
 -keep class pro.kisscat.www.bookmarkhelper.converter.support.pojo.** { *; }
 -keep class pro.kisscat.www.bookmarkhelper.util.log.pojo.** { *; }
 
-#ºöÂÔ¾¯¸æ
+#å¿½ç•¥è­¦å‘Š
 -ignorewarning
 -dontwarn com.alibaba.fastjson.**
 
 
-#-----------´¦ÀíµÚÈı·½ÒÀÀµ¿â---------
+#-----------å¤„ç†ç¬¬ä¸‰æ–¹ä¾èµ–åº“---------
 
 
 -keep class lombok.ast.ecj.* { *; }

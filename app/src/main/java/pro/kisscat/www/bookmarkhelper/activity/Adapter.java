@@ -21,10 +21,7 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Map;
 
-import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
-
-public class Adapter extends SimpleAdapter {
+class Adapter extends SimpleAdapter {
     private int[] mTo;
     private String[] mFrom;
     private ViewBinder mViewBinder;
@@ -32,7 +29,7 @@ public class Adapter extends SimpleAdapter {
     private int mResource;
     private LayoutInflater mInflater;
 
-    public Adapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+    Adapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
         mData = data;
         mResource = resource;

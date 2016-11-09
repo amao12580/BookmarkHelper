@@ -29058,15 +29058,11 @@ pro.kisscat.www.bookmarkhelper.R$color -> pro.kisscat.www.bookmarkhelper.R$color
     int bright_foreground_material_light -> bright_foreground_material_light
     int button_material_dark -> button_material_dark
     int button_material_light -> button_material_light
-    int colorAboutMe -> colorAboutMe
     int colorAccent -> colorAccent
     int colorDefault -> colorDefault
-    int colorDonate -> colorDonate
-    int colorGray -> colorGray
     int colorItemChoosed -> colorItemChoosed
     int colorPrimary -> colorPrimary
     int colorPrimaryDark -> colorPrimaryDark
-    int colorRating -> colorRating
     int design_error -> design_error
     int design_fab_shadow_end_color -> design_fab_shadow_end_color
     int design_fab_shadow_mid_color -> design_fab_shadow_mid_color
@@ -29241,7 +29237,7 @@ pro.kisscat.www.bookmarkhelper.R$dimen -> pro.kisscat.www.bookmarkhelper.R$dimen
     int notification_large_icon_height -> notification_large_icon_height
     int notification_large_icon_width -> notification_large_icon_width
     int notification_subtext_size -> notification_subtext_size
-    2379:2379:void <init>() -> <init>
+    2375:2375:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$drawable:
     int abc_ab_share_pack_mtrl_alpha -> abc_ab_share_pack_mtrl_alpha
     int abc_action_bar_item_background_material -> abc_action_bar_item_background_material
@@ -29342,7 +29338,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$dr
     int navigation_empty_icon -> navigation_empty_icon
     int notification_template_icon_bg -> notification_template_icon_bg
     int web_progress_bar_states -> web_progress_bar_states
-    2499:2499:void <init>() -> <init>
+    2495:2495:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int action0 -> action0
     int action_bar -> action_bar
@@ -29489,7 +29485,7 @@ pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int webview_toolbar -> webview_toolbar
     int withText -> withText
     int wrap_content -> wrap_content
-    2600:2600:void <init>() -> <init>
+    2596:2596:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$integer:
     int abc_config_activityDefaultDur -> abc_config_activityDefaultDur
     int abc_config_activityShortDur -> abc_config_activityShortDur
@@ -29498,7 +29494,7 @@ pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$int
     int cancel_button_image_alpha -> cancel_button_image_alpha
     int design_snackbar_text_max_lines -> design_snackbar_text_max_lines
     int status_bar_notification_info_maxnum -> status_bar_notification_info_maxnum
-    2747:2747:void <init>() -> <init>
+    2743:2743:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layout:
     int abc_action_bar_title_item -> abc_action_bar_title_item
     int abc_action_bar_up_container -> abc_action_bar_up_container
@@ -29554,10 +29550,10 @@ pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layo
     int select_dialog_multichoice_material -> select_dialog_multichoice_material
     int select_dialog_singlechoice_material -> select_dialog_singlechoice_material
     int support_simple_spinner_dropdown_item -> support_simple_spinner_dropdown_item
-    2756:2756:void <init>() -> <init>
+    2752:2752:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$mipmap -> pro.kisscat.www.bookmarkhelper.R$mipmap:
     int ic_launcher -> ic_launcher
-    2812:2812:void <init>() -> <init>
+    2808:2808:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$string:
     int abc_action_bar_home_description -> abc_action_bar_home_description
     int abc_action_bar_home_description_format -> abc_action_bar_home_description_format
@@ -29622,7 +29618,6 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int notSupportWechatBookmarkForQQBroswer -> notSupportWechatBookmarkForQQBroswer
     int rating -> rating
     int ratingURL -> ratingURL
-    int readBookmarksDataMiss -> readBookmarksDataMiss
     int readBookmarksEmpty -> readBookmarksEmpty
     int readBookmarksError -> readBookmarksError
     int search_menu_title -> search_menu_title
@@ -29631,7 +29626,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int status_bar_notification_info_overflow -> status_bar_notification_info_overflow
     int target_broswer_icon_contentDescription -> target_broswer_icon_contentDescription
     int viaBookmarksFileMiss -> viaBookmarksFileMiss
-    2815:2815:void <init>() -> <init>
+    2811:2811:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style:
     int AlertDialog_AppCompat -> AlertDialog_AppCompat
     int AlertDialog_AppCompat_Light -> AlertDialog_AppCompat_Light
@@ -29994,7 +29989,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    2889:2889:void <init>() -> <init>
+    2884:2884:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -30482,8 +30477,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3252:3252:void <init>() -> <init>
-    3319:9777:void <clinit>() -> <clinit>
+    3247:3247:void <init>() -> <init>
+    3314:9772:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b
@@ -30491,53 +30486,51 @@ pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelpe
     java.util.List mData -> d
     int mResource -> e
     android.view.LayoutInflater mInflater -> f
-    36:42:void <init>(android.content.Context,java.util.List,int,java.lang.String[],int[]) -> <init>
-    45:45:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    50:63:android.view.View createViewFromResource(int,android.view.View,android.view.ViewGroup,int) -> a
-    67:107:void bindView(int,android.view.View) -> a
-    110:111:void setViewImage(android.widget.ImageView,android.graphics.drawable.Drawable) -> a
+    33:39:void <init>(android.content.Context,java.util.List,int,java.lang.String[],int[]) -> <init>
+    42:42:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    47:60:android.view.View createViewFromResource(int,android.view.View,android.view.ViewGroup,int) -> a
+    64:104:void bindView(int,android.view.View) -> a
+    107:108:void setViewImage(android.widget.ImageView,android.graphics.drawable.Drawable) -> a
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity:
-    java.lang.String mFailingUrl -> c
-    android.webkit.WebView mWebView -> a
-    android.webkit.WebChromeClient webChromeClient -> b
-    41:210:void <init>() -> <init>
-    51:114:void onCreate(android.os.Bundle) -> onCreate
-    118:119:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    167:168:void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
-    171:176:void onResume() -> onResume
-    180:185:void onPause() -> onPause
-    194:196:void newWin(android.webkit.WebSettings) -> a
-    203:208:void saveData(android.webkit.WebSettings) -> b
-    250:255:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    260:269:void onDestroy() -> onDestroy
-    41:41:java.lang.String access$002(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,java.lang.String) -> a
-    41:41:java.lang.String access$000(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> a
+    java.lang.String mFailingUrl -> a
+    android.webkit.WebView mWebView -> b
+    android.webkit.WebChromeClient webChromeClient -> c
+    39:193:void <init>() -> <init>
+    49:112:void onCreate(android.os.Bundle) -> onCreate
+    116:117:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    154:159:void onResume() -> onResume
+    163:168:void onPause() -> onPause
+    177:179:void newWin(android.webkit.WebSettings) -> a
+    186:191:void saveData(android.webkit.WebSettings) -> b
+    218:223:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
+    228:237:void onDestroy() -> onDestroy
+    39:39:java.lang.String access$202(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,java.lang.String) -> a
+    39:39:java.lang.String access$200(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> a
+    39:39:android.webkit.WebView access$300(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> b
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    74:74:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    77:86:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+    72:72:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    75:84:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$2 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$2:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    210:210:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    219:220:void onReceivedIcon(android.webkit.WebView,android.graphics.Bitmap) -> onReceivedIcon
-    224:225:void onGeolocationPermissionsHidePrompt() -> onGeolocationPermissionsHidePrompt
-    229:231:void onGeolocationPermissionsShowPrompt(java.lang.String,android.webkit.GeolocationPermissions$Callback) -> onGeolocationPermissionsShowPrompt
-    237:240:boolean onCreateWindow(android.webkit.WebView,boolean,boolean,android.os.Message) -> onCreateWindow
+    193:193:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    197:199:void onGeolocationPermissionsShowPrompt(java.lang.String,android.webkit.GeolocationPermissions$Callback) -> onGeolocationPermissionsShowPrompt
+    205:208:boolean onCreateWindow(android.webkit.WebView,boolean,boolean,android.os.Message) -> onCreateWindow
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$a:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    150:150:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    153:162:void errorReload() -> errorReload
+    138:138:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    141:150:void errorReload() -> errorReload
+    138:138:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1) -> <init>
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface$1 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$a$1:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface this$1 -> a
-    153:153:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface) -> <init>
-    157:160:void run() -> run
+    141:141:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface) -> <init>
+    145:148:void run() -> run
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$MyWebViewClient -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$b:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    122:122:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    126:127:boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
-    132:133:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
-    137:138:void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
-    142:147:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
+    120:120:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    124:125:boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    130:135:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
+    120:120:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1) -> <init>
 pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmarkhelper.activity.MainActivity:
     android.widget.ListView lv -> a
     pro.kisscat.www.bookmarkhelper.activity.Adapter adapter -> b
@@ -30788,7 +30781,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark -> pro.kis
     31:31:int getOrder() -> getOrder
 pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper -> pro.kisscat.www.bookmarkhelper.a.a.a:
     21:24:android.database.sqlite.SQLiteDatabase openReadOnlyDatabase(java.lang.String) -> a
-    29:36:boolean checkTableExist(android.database.sqlite.SQLiteDatabase,java.lang.String) -> a
+    29:37:boolean checkTableExist(android.database.sqlite.SQLiteDatabase,java.lang.String) -> a
 pro.kisscat.www.bookmarkhelper.exception.ConverterException -> pro.kisscat.www.bookmarkhelper.b.a:
     15:16:void <init>(java.lang.String) -> <init>
 pro.kisscat.www.bookmarkhelper.exception.CrashHandler -> pro.kisscat.www.bookmarkhelper.b.b:
@@ -30811,8 +30804,8 @@ pro.kisscat.www.bookmarkhelper.util.Path -> pro.kisscat.www.bookmarkhelper.util.
 pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil -> pro.kisscat.www.bookmarkhelper.util.a.a:
     java.util.Map installedAllApp -> b
     java.lang.String thisAppInfo -> a
-    32:35:java.util.Map getInstalledAllApp(android.content.Context) -> a
-    39:80:void init(android.content.Context) -> b
+    32:35:java.util.Map getInstalledAllApp(android.content.Context) -> b
+    39:80:void init(android.content.Context) -> a
     83:83:boolean isInstalled(android.content.Context,java.lang.String) -> a
     94:97:java.lang.String getAppName(android.content.Context,java.lang.String) -> b
     101:104:pro.kisscat.www.bookmarkhelper.converter.support.pojo.App getAppInfo(android.content.Context,java.lang.String) -> c
@@ -30900,15 +30893,15 @@ pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil -> pro.kisscat.www
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.util.g.a:
     36:36:boolean upgradeRootPermission(java.lang.String) -> a
     50:50:boolean executeCmd(java.lang.String) -> b
-    54:123:pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult executeCmd(java.lang.String[]) -> a
+    54:120:pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult executeCmd(java.lang.String[]) -> a
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.www.bookmarkhelper.util.g.a$a:
     int result -> a
     java.util.List successMsg -> b
     java.util.List errorMsg -> c
-    131:144:void <init>(int) -> <init>
-    131:150:void <init>(int,java.util.List,java.util.List) -> <init>
-    153:153:boolean isSuccess() -> a
-    135:135:java.util.List getSuccessMsg() -> b
+    128:141:void <init>(int) -> <init>
+    128:147:void <init>(int,java.util.List,java.util.List) -> <init>
+    150:150:boolean isSuccess() -> a
+    132:132:java.util.List getSuccessMsg() -> b
 pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.h.a:
     27:27:void <init>() -> <init>
     33:55:java.lang.String getRootPath() -> a
@@ -30923,8 +30916,10 @@ pro.kisscat.www.bookmarkhelper.webview.ProgressWebView -> pro.kisscat.www.bookma
     android.widget.ProgressBar mProgressBar -> a
     25:32:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     50:55:void onScrollChanged(int,int,int,int) -> onScrollChanged
-    21:21:android.widget.ProgressBar access$000(pro.kisscat.www.bookmarkhelper.webview.ProgressWebView) -> a
+    21:21:android.widget.ProgressBar access$100(pro.kisscat.www.bookmarkhelper.webview.ProgressWebView) -> a
+pro.kisscat.www.bookmarkhelper.webview.ProgressWebView$1 -> pro.kisscat.www.bookmarkhelper.webview.ProgressWebView$1:
 pro.kisscat.www.bookmarkhelper.webview.ProgressWebView$WebChromeClient -> pro.kisscat.www.bookmarkhelper.webview.ProgressWebView$a:
     pro.kisscat.www.bookmarkhelper.webview.ProgressWebView this$0 -> a
     34:34:void <init>(pro.kisscat.www.bookmarkhelper.webview.ProgressWebView) -> <init>
     37:45:void onProgressChanged(android.webkit.WebView,int) -> onProgressChanged
+    34:34:void <init>(pro.kisscat.www.bookmarkhelper.webview.ProgressWebView,pro.kisscat.www.bookmarkhelper.webview.ProgressWebView$1) -> <init>

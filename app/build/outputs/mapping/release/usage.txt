@@ -366,7 +366,7 @@ pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil:
 pro.kisscat.www.bookmarkhelper.util.context.ContextUtil:
     16:16:public ContextUtil()
 pro.kisscat.www.bookmarkhelper.util.file.FileUtil:
-    private static final int phase
+    private static final long phase
     private static final double byteLimit
     private static final double KBLimit
     private static final double MBLimit

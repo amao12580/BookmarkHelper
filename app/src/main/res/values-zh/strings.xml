@@ -14,7 +14,6 @@
     <string name="readBookmarksError">读取书签信息失败</string>
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>
     <string name="appendBookmarksError">合并书签信息失败.</string>
-    <string name="readBookmarksDataMiss">读取到数据文件不存在</string>
     <string name="fileCPError">文件拷贝失败</string>
     <string name="fileDeleteError">文件删除失败</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>

@@ -28,7 +28,7 @@ public class AppListUtil {
     private static Map<String, App> installedAllApp;
     public static String thisAppInfo;
 
-    public static Map<String, App> getInstalledAllApp(Context context) {
+    private static Map<String, App> getInstalledAllApp(Context context) {
         if (installedAllApp == null) {
             init(context);
         }

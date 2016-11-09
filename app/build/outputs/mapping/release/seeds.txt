@@ -27703,15 +27703,11 @@ pro.kisscat.www.bookmarkhelper.R$color: int bright_foreground_material_dark
 pro.kisscat.www.bookmarkhelper.R$color: int bright_foreground_material_light
 pro.kisscat.www.bookmarkhelper.R$color: int button_material_dark
 pro.kisscat.www.bookmarkhelper.R$color: int button_material_light
-pro.kisscat.www.bookmarkhelper.R$color: int colorAboutMe
 pro.kisscat.www.bookmarkhelper.R$color: int colorAccent
 pro.kisscat.www.bookmarkhelper.R$color: int colorDefault
-pro.kisscat.www.bookmarkhelper.R$color: int colorDonate
-pro.kisscat.www.bookmarkhelper.R$color: int colorGray
 pro.kisscat.www.bookmarkhelper.R$color: int colorItemChoosed
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimary
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimaryDark
-pro.kisscat.www.bookmarkhelper.R$color: int colorRating
 pro.kisscat.www.bookmarkhelper.R$color: int design_error
 pro.kisscat.www.bookmarkhelper.R$color: int design_fab_shadow_end_color
 pro.kisscat.www.bookmarkhelper.R$color: int design_fab_shadow_mid_color
@@ -28267,7 +28263,6 @@ pro.kisscat.www.bookmarkhelper.R$string: int notSupport
 pro.kisscat.www.bookmarkhelper.R$string: int notSupportWechatBookmarkForQQBroswer
 pro.kisscat.www.bookmarkhelper.R$string: int rating
 pro.kisscat.www.bookmarkhelper.R$string: int ratingURL
-pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksDataMiss
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksEmpty
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksError
 pro.kisscat.www.bookmarkhelper.R$string: int search_menu_title

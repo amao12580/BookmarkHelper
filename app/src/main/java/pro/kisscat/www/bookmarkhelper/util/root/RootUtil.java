@@ -52,7 +52,6 @@ public final class RootUtil {
 
     public static synchronized CommandResult executeCmd(String[] commands) {
         int result = -1;
-        boolean isNeedResultMsg = true;
         if (commands == null || commands.length == 0) {
             return new CommandResult(result);
         }
@@ -80,21 +79,19 @@ public final class RootUtil {
 
             result = process.waitFor();
             LogHelper.v("process.waitFor is:" + result);
-            if (isNeedResultMsg) {
-                successMsg = new LinkedList<>();
-                errorMsg = new LinkedList<>();
-                successResult = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                errorResult = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-                String s;
-                while ((s = successResult.readLine()) != null) {
-                    successMsg.add(s);
-                }
-                LogHelper.v("successMsg is:" + successMsg);
-                while ((s = errorResult.readLine()) != null) {
-                    errorMsg.add(s);
-                }
-                LogHelper.v("errorMsg is:" + errorMsg);
+            successMsg = new LinkedList<>();
+            errorMsg = new LinkedList<>();
+            successResult = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            errorResult = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            String s;
+            while ((s = successResult.readLine()) != null) {
+                successMsg.add(s);
             }
+            LogHelper.v("successMsg is:" + successMsg);
+            while ((s = errorResult.readLine()) != null) {
+                errorMsg.add(s);
+            }
+            LogHelper.v("errorMsg is:" + errorMsg);
         } catch (Exception e) {
             LogHelper.e(MetaData.LOG_E_DEFAULT, "Root cmd 执行失败,commands:" + commandStr + ",exception:" + e.getMessage());
             e.printStackTrace();

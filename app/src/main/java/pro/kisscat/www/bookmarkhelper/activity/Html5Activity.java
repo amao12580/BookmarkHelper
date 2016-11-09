@@ -10,8 +10,6 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.annotation.TargetApi;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,7 +40,7 @@ public class Html5Activity extends AppCompatActivity {
 
     // 用于记录出错页面的url 方便重新加载
     private String mFailingUrl = null;
-    protected WebView mWebView;
+    private WebView mWebView;
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @JavascriptInterface
@@ -119,22 +117,12 @@ public class Html5Activity extends AppCompatActivity {
         return true;
     }
 
-    class MyWebViewClient extends WebViewClient {
+    private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             // 在webview加载下一页，而不会打开浏览器
             view.loadUrl(url);
             return true;
-        }
-
-        @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            super.onPageStarted(view, url, favicon);
-        }
-
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            super.onPageFinished(view, url);
         }
 
         @Override
@@ -147,7 +135,7 @@ public class Html5Activity extends AppCompatActivity {
         }
     }
 
-    class JsInterface {
+    private class JsInterface {
         @JavascriptInterface
         public void errorReload() {
             new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -160,11 +148,6 @@ public class Html5Activity extends AppCompatActivity {
                 }
             });
         }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
     }
 
     public void onResume() {
@@ -207,22 +190,7 @@ public class Html5Activity extends AppCompatActivity {
         mWebSettings.setAppCachePath(appCachePath);
     }
 
-    WebChromeClient webChromeClient = new WebChromeClient() {
-
-        //=========HTML5定位==========================================================
-        //需要先加入权限
-        //<uses-permission android:name="android.permission.INTERNET"/>
-        //<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-        //<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-        @Override
-        public void onReceivedIcon(WebView view, Bitmap icon) {
-            super.onReceivedIcon(view, icon);
-        }
-
-        @Override
-        public void onGeolocationPermissionsHidePrompt() {
-            super.onGeolocationPermissionsHidePrompt();
-        }
+    private WebChromeClient webChromeClient = new WebChromeClient() {
 
         @Override
         public void onGeolocationPermissionsShowPrompt(final String origin, final GeolocationPermissions.Callback callback) {

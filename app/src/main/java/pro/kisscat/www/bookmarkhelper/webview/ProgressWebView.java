@@ -31,7 +31,7 @@ public class ProgressWebView extends WebView {
         setWebChromeClient(new WebChromeClient());
     }
 
-    public class WebChromeClient extends android.webkit.WebChromeClient {
+    private class WebChromeClient extends android.webkit.WebChromeClient {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             if (newProgress == 100) {

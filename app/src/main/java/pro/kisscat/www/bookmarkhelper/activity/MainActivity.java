@@ -45,13 +45,13 @@ import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    ListView lv;
-    Adapter adapter;
-    List<ExcuteRule> rules;
-    boolean isItemRuning;
-    boolean isRoot;
-    boolean checkPermission;
-    List<Map<String, Object>> items = new ArrayList<>();
+    private ListView lv;
+    private Adapter adapter;
+    private List<ExcuteRule> rules;
+    private boolean isItemRuning;
+    private boolean isRoot;
+    private boolean checkPermission;
+    private List<Map<String, Object>> items = new ArrayList<>();
 
     private static Integer default_color = null;
     private static Integer choosed_color = null;
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         openUrlInWebview(donateURL, lv.getResources().getString(R.string.donateTitle), R.drawable.ic_donate);
     }
 
-    public void openUrlInWebview(String url, String title, int logo) {
+    private void openUrlInWebview(String url, String title, int logo) {
         if (!NetworkUtil.isNetworkConnected(this)) {
             showToastMessage(this, lv.getResources().getString(R.string.networkError));
             Intent intent = new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS);

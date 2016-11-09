@@ -11,6 +11,7 @@ android {
         versionCode 1
         versionName "0.0.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        resConfigs "en", "de", "fr", "it"
     }
 
     signingConfigs {
