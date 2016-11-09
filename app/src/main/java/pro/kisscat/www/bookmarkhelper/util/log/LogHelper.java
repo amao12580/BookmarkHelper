@@ -107,7 +107,7 @@ public class LogHelper {
     }
 
     public static void write() {
-        if (!WriteThread.isWriteThreadRuning) {//监察写线程是否工作中，没有 则创建
+        if (!logQueue.isEmpty() && !WriteThread.isWriteThreadRuning) {//监察写线程是否工作中，没有 则创建
             new WriteThread().start();
         }
     }
