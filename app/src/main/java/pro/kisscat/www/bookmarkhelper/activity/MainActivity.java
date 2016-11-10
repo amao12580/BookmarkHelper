@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
         try {
-            ExcuteRule rule = rules.get((int) id);
+            final ExcuteRule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     showDialogMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
@@ -153,7 +153,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
                 showDialogMessage(lv.getResources().getString(R.string.notSupport));
             }
-            processConverter(rule);
+            view.post(new Runnable() {
+                public void run() {
+                    processConverter(rule);
+                }
+            });
         } finally {
             LogHelper.write();
             isItemRuning = false;
