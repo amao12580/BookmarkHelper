@@ -5,7 +5,6 @@ import android.support.v4.content.ContextCompat;
 
 import com.alibaba.fastjson.JSONReader;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.LinkedList;
@@ -21,6 +20,7 @@ import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.file.FileUtil;
+import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
@@ -76,11 +76,11 @@ public class ChromeBroswer extends BasicBroswer {
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-            File cpPath = new File(filePath_cp);
+            java.io.File cpPath = new java.io.File(filePath_cp);
             cpPath.deleteOnExit();
             cpPath.mkdirs();
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
-            File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
+            java.io.File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Children> chromeBookmarks = fetchBookmarksFromJSONFile(file);
             int index = 0;
             int size = chromeBookmarks.size();
@@ -114,7 +114,7 @@ public class ChromeBroswer extends BasicBroswer {
         return bookmarks;
     }
 
-    private List<Children> fetchBookmarksFromJSONFile(File file) throws FileNotFoundException {
+    private List<Children> fetchBookmarksFromJSONFile(java.io.File file) throws FileNotFoundException {
         JSONReader jsonReader = null;
         List<Children> result = new LinkedList<>();
         try {
@@ -125,7 +125,7 @@ public class ChromeBroswer extends BasicBroswer {
                 LogHelper.v("chromeBookmark is null.");
                 return result;
             }
-            FileUtil.FileShow fileShow = FileUtil.formatFileSize(file);
+            File fileShow = FileUtil.formatFileSize(file);
             if (fileShow.isOver10KB()) {
                 LogHelper.v("书签数据文件大小超过10KB,skip print.size:" + fileShow.toString());
             } else {

@@ -36,16 +36,6 @@ public final class RootUtil {
         return executeCmd("chmod 777 " + pkgCodePath);
     }
 
-
-    /**
-     * 判断应用是否获取root权限
-     */
-    public static boolean checkRootAuth() {
-        boolean flag = executeCmd("");
-        LogHelper.v("checkRootAuth result:" + flag);
-        return flag;
-    }
-
     public static boolean executeCmd(String cmd) {
         return executeCmd(new String[]{cmd}).isSuccess();
     }

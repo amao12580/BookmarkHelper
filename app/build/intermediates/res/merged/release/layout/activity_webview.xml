@@ -4,7 +4,6 @@
     android:id="@+id/webview_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/white"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar

@@ -9,6 +9,7 @@ Referenced Strings:
   .db
   .sharecompat_
   .xml
+  /360/
   /Chrome/
   /Flyme5/
   /QQ/
@@ -21,6 +22,11 @@ Referenced Strings:
   0
   1
   1.2.9
+  360:已登录用户没有书签数据
+  360:已登录用户真的没有书签数据
+  360:开始读取书签数据
+  360:读取书签数据结束
+  360:读取未登录书签SQLite数据库结束
   :00
   :transport:
   ACTION_ACCESSIBILITY_FOCUS
@@ -117,6 +123,7 @@ Referenced Strings:
   D
   DEFAULT
   DETACH
+  DIR
   DisableASM
   DisableCheckSpecialChar
   DisableCircularReferenceDetect
@@ -140,6 +147,7 @@ Referenced Strings:
   FEEDBACK_HAPTIC
   FEEDBACK_SPOKEN
   FEEDBACK_VISUAL
+  FILE
   FINISHED
   FLAG_INCLUDE_NOT_IMPORTANT_VIEWS
   FLAG_REPORT_VIEW_IDS
@@ -546,6 +554,7 @@ Referenced Strings:
   android:user_visible_hint
   android:view_state
   app
+  app_bookmark
   app_color
   app_data
   appcompat:local_night_mode
@@ -568,6 +577,7 @@ Referenced Strings:
   bookmarks.html
   boolean
   bottom
+  browser.db
   browser2.db
   build
   bundle
@@ -593,6 +603,7 @@ Referenced Strings:
   com.android.browser
   com.android.chrome
   com.mmbox.xbrowser
+  com.qihoo.browser
   com.tencent.mtt
   computeFitSystemWindows
   confirmLabel
@@ -610,6 +621,7 @@ Referenced Strings:
   createInstance
   customContentHeight
   customSizePreset
+  d
   dalvik
   data
   data_callback_token
@@ -621,6 +633,7 @@ Referenced Strings:
   data_package_name
   data_result_receiver
   data_root_hints
+  databases
   decimal
   default_user.db
   deserialze
@@ -661,7 +674,7 @@ Referenced Strings:
   fi
   fieldDeserializer
   fieldName
-  file:///android_asset/errorPage/error...
+  file://android_asset/errorPage/error....
   fileName
   fillAlpha
   fillColor
@@ -866,6 +879,7 @@ Referenced Strings:
   parseArray
   parseObject
   parseRest
+  part:
   participants
   path
   pathData
@@ -879,6 +893,8 @@ Referenced Strings:
   progress
   promo
   putIBinder
+  qihoo_mobile_bookmark.
+  qihoo_online_bookmark.
   query
   r
   recommendation
@@ -979,7 +995,7 @@ Referenced Strings:
   target
   targetBroswerAppNameText
   targetBroswerIcon
-  targetFileName:
+  tb_fav
   text
   text/html
   text/vnd.android.intent
@@ -1063,11 +1079,15 @@ Referenced Strings:
   书签数据:
   书签条数:
   后见效
+  已登录用户书签数据:
+  已登录用户书签条数:
   已登录的QQ用户书签数据:
   已登录的QQ用户书签条数:
   总的书签条数:
   成功获取了Root权限.
   无法获取日志目录
+  未登录用户书签数据:
+  未登录用户书签条数:
   未登录的用户书签数据:
   未登录的用户书签条数:
 Marking id:left:2131492904 used because its prefix matches string pool constant left
@@ -1233,7 +1253,7 @@ Marking string:character_counter_pattern:2131099718 used because its prefix matc
 Marking dimen:notification_large_icon_height:2131165299 used because its prefix matches string pool constant notification
 Marking dimen:notification_large_icon_width:2131165300 used because its prefix matches string pool constant notification
 Marking dimen:notification_subtext_size:2131165301 used because its prefix matches string pool constant notification
-Marking drawable:notification_template_icon_bg:2130837602 used because its prefix matches string pool constant notification
+Marking drawable:notification_template_icon_bg:2130837603 used because its prefix matches string pool constant notification
 Marking layout:notification_media_action:2130968618 used because its prefix matches string pool constant notification
 Marking layout:notification_media_cancel_action:2130968619 used because its prefix matches string pool constant notification
 Marking layout:notification_template_big_media:2130968620 used because its prefix matches string pool constant notification
@@ -1273,8 +1293,8 @@ Marking id:fill:2131492912 used because its prefix matches string pool constant 
 Marking id:fill_horizontal:2131492913 used because its prefix matches string pool constant fi
 Marking id:fill_vertical:2131492903 used because its prefix matches string pool constant fi
 Marking id:fixed:2131492923 used because its prefix matches string pool constant fi
-Marking string:fileCPError:2131099688 used because its prefix matches string pool constant fi
-Marking string:fileDeleteError:2131099689 used because its prefix matches string pool constant fi
+Marking string:fileCPError:2131099689 used because its prefix matches string pool constant fi
+Marking string:fileDeleteError:2131099690 used because its prefix matches string pool constant fi
 Marking attr:title:2130771971 used because its prefix matches string pool constant title
 Marking attr:titleEnabled:2130772147 used because its prefix matches string pool constant title
 Marking attr:titleMargin:2130772259 used because its prefix matches string pool constant title
@@ -1420,7 +1440,7 @@ Marking attr:errorEnabled:2130772245 used because its prefix matches string pool
 Marking attr:errorTextAppearance:2130772246 used because its prefix matches string pool constant error
 Marking declare-styleable:ActivityChooserView:-1 used because its prefix matches string pool constant ActivityChooserView
 Marking styleable:ActivityChooserView:-1 used because its prefix matches string pool constant ActivityChooserView
-Marking string:networkError:2131099692 used because its prefix matches string pool constant network
+Marking string:networkError:2131099693 used because its prefix matches string pool constant network
 Resource Reference Graph:
 anim:abc_grow_fade_in_from_bottom:2131034114 => [integer:abc_config_activityDefaultDur:2131361793, integer:abc_config_activityShortDur:2131361794]
 anim:abc_popup_enter:2131034115 => [integer:abc_config_activityShortDur:2131361794]
@@ -1497,7 +1517,7 @@ drawable:abc_switch_thumb_material:2130837570 => [drawable:abc_btn_switch_to_on_
 drawable:abc_tab_indicator_material:2130837572 => [drawable:abc_tab_indicator_mtrl_alpha:2130837573]
 drawable:abc_textfield_search_material:2130837585 => [drawable:abc_textfield_search_activated_mtrl_alpha:2130837583, drawable:abc_textfield_search_default_mtrl_alpha:2130837584]
 drawable:design_snackbar_background:2130837590 => [dimen:design_snackbar_background_corner_radius:2131165202, color:design_snackbar_background_color:2131427358]
-drawable:navigation_empty_icon:2130837600 => [dimen:design_navigation_icon_size:2131165281]
+drawable:navigation_empty_icon:2130837601 => [dimen:design_navigation_icon_size:2131165281]
 layout:abc_action_bar_title_item:2130968576 => [style:RtlOverlay_Widget_AppCompat_ActionBar_TitleItem:2131230764, dimen:abc_action_bar_subtitle_top_margin_material:2131165216]
 layout:abc_action_bar_up_container:2130968577 => [attr:actionBarItemBackground:2130772038]
 layout:abc_action_bar_view_list_nav_layout:2130968578 => [attr:actionBarTabBarStyle:2130772027]
@@ -1886,9 +1906,9 @@ style:Widget_Design_NavigationView:2131231077 => [dimen:design_navigation_elevat
 style:Widget_Design_Snackbar:2131231079 => [dimen:design_snackbar_min_width:2131165205, dimen:design_snackbar_max_width:2131165204, drawable:design_snackbar_background:2130837590, dimen:design_snackbar_padding_horizontal:2131165285, dimen:design_snackbar_elevation:2131165284, dimen:design_snackbar_action_inline_max_width:2131165201]
 style:Widget_Design_TabLayout:2131230721 => [style:Base_Widget_Design_TabLayout:2131230918]
 style:Widget_Design_TextInputLayout:2131231080 => [style:TextAppearance_Design_Hint:2131230968, style:TextAppearance_Design_Error:2131230967, style:TextAppearance_Design_Counter:2131230965, style:TextAppearance_Design_Counter_Overflow:2131230966, drawable:design_ic_visibility:2130837589, color:design_tint_password_toggle:2131427420]
-layout:activity_main:2130968602 => [drawable:btn_shape:2130837587, string:aboutMe:2131099669, string:rating:2131099696, string:donate:2131099685]
+layout:activity_main:2130968602 => [drawable:btn_shape:2130837587, string:aboutMe:2131099669, string:rating:2131099696, string:donate:2131099686]
 layout:activity_webview:2130968603 => [attr:colorPrimary:2130772097, attr:actionBarSize:2130772036, style:AppTheme_PopupOverlay:2131230863]
-layout:listview_item:2130968617 => [string:source_broswer_icon_contentDescription:2131099701, string:converter_directer_arrow_contentDescription:2131099682, string:target_broswer_icon_contentDescription:2131099702]
+layout:listview_item:2130968617 => [string:source_broswer_icon_contentDescription:2131099701, string:converter_directer_arrow_contentDescription:2131099683, string:target_broswer_icon_contentDescription:2131099702]
 style:AppTheme:2131230860 => [style:Theme_AppCompat_Light_DarkActionBar:2131230981, color:colorPrimary:2131427329, color:colorPrimaryDark:2131427330, color:colorAccent:2131427328, style:AppTheme_NoActionBar:2131230862]
 style:AppTheme_AppBarOverlay:2131230861 => [style:ThemeOverlay_AppCompat_Dark_ActionBar:2131230997]
 style:AppTheme_NoActionBar:2131230862 => [style:AppTheme:2131230860]
@@ -2158,8 +2178,8 @@ anim:design_fab_in:2131034125,
    drawable:abc_textfield_search_default_mtrl_alpha:2130837584,
    drawable:abc_textfield_search_material:2130837585,
    drawable:abc_vector_test:2130837586,
-   drawable:navigation_empty_icon:2130837600,
-   drawable:notification_template_icon_bg:2130837602,
+   drawable:navigation_empty_icon:2130837601,
+   drawable:notification_template_icon_bg:2130837603,
    id:action0:2131492996,
    id:action_bar:2131492958,
    id:action_bar_activity_content:2131492864,
@@ -2505,16 +2525,17 @@ anim:design_fab_in:2131034125,
    styleable:ViewStubCompat:-1,
    color:colorDefault:2131427349,
    color:colorItemChoosed:2131427350,
-   drawable:ic_aboutme:2130837591,
-   drawable:ic_arrow:2130837592,
-   drawable:ic_chrome:2130837593,
-   drawable:ic_donate:2130837594,
-   drawable:ic_flyme5:2130837595,
-   drawable:ic_qq:2130837596,
-   drawable:ic_uc:2130837597,
-   drawable:ic_via:2130837598,
-   drawable:ic_x:2130837599,
-   drawable:web_progress_bar_states:2130837601,
+   drawable:ic_360:2130837591,
+   drawable:ic_aboutme:2130837592,
+   drawable:ic_arrow:2130837593,
+   drawable:ic_chrome:2130837594,
+   drawable:ic_donate:2130837595,
+   drawable:ic_flyme5:2130837596,
+   drawable:ic_qq:2130837597,
+   drawable:ic_uc:2130837598,
+   drawable:ic_via:2130837599,
+   drawable:ic_x:2130837600,
+   drawable:web_progress_bar_states:2130837602,
    id:baseweb_webview:2131492979,
    id:converterDirecterImage:2131492992,
    id:converterDirecterText:2131492993,
@@ -2533,24 +2554,25 @@ anim:design_fab_in:2131034125,
    string:appUninstall:2131099672,
    string:app_name:2131099673,
    string:appendBookmarksError:2131099674,
-   string:broswer_name_show_chrome:2131099675,
-   string:broswer_name_show_flyme5:2131099676,
-   string:broswer_name_show_qq:2131099677,
-   string:broswer_name_show_uc:2131099678,
-   string:broswer_name_show_via:2131099679,
-   string:broswer_name_show_x:2131099680,
-   string:clickBackToExit:2131099681,
-   string:dialogClose:2131099683,
-   string:dialogTitle:2131099684,
-   string:donateTitle:2131099686,
-   string:donateURL:2131099687,
-   string:fileCPError:2131099688,
-   string:fileDeleteError:2131099689,
-   string:flyme5BookmarksFileMiss:2131099690,
-   string:marketAppNoInstalled:2131099691,
-   string:networkError:2131099692,
-   string:notPermissionForReadInstalledAppList:2131099693,
-   string:notSupport:2131099694,
+   string:broswer_name_show_360:2131099675,
+   string:broswer_name_show_chrome:2131099676,
+   string:broswer_name_show_flyme5:2131099677,
+   string:broswer_name_show_qq:2131099678,
+   string:broswer_name_show_uc:2131099679,
+   string:broswer_name_show_via:2131099680,
+   string:broswer_name_show_x:2131099681,
+   string:clickBackToExit:2131099682,
+   string:dialogClose:2131099684,
+   string:dialogTitle:2131099685,
+   string:donateTitle:2131099687,
+   string:donateURL:2131099688,
+   string:fileCPError:2131099689,
+   string:fileDeleteError:2131099690,
+   string:flyme5BookmarksFileMiss:2131099691,
+   string:marketAppNoInstalled:2131099692,
+   string:networkError:2131099693,
+   string:notPermissionForReadInstalledAppList:2131099694,
+   string:notSupport:2131099695,
    string:ratingURL:2131099697,
    string:readBookmarksEmpty:2131099698,
    string:readBookmarksError:2131099699,
@@ -2652,4 +2674,4 @@ Skipped unused resource res/anim/abc_slide_out_bottom.xml: 400 bytes (replaced w
 Skipped unused resource res/anim/abc_slide_out_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 898620 to 899889); using original instead
+Resource shrinking did not work (grew from 915904 to 917173); using original instead

@@ -3,6 +3,7 @@
     <string name="app_name">BookmarkHelper</string>
     <string name="broswer_name_show_chrome">Chrome Broswer</string>
     <string name="broswer_name_show_flyme5">Flyme5 Broswer</string>
+    <string name="broswer_name_show_360">360 Broswer</string>
     <string name="broswer_name_show_x">X Broswer</string>
     <string name="broswer_name_show_qq">QQ Broswer</string>
     <string name="broswer_name_show_uc">UC Broswer</string>
@@ -31,7 +32,6 @@
     <string name="networkError">Network offline.</string>
     <string name="marketAppNoInstalled">Not found market app.</string>
     <string name="clickBackToExit">Next click back will exit.</string>
-    <string name="notSupportWechatBookmarkForQQBroswer">Not support parse wechat user bookmark data.</string>
     <string name="someTaskIsRuning">wait for a coffer time.</string>
     <string name="donateURL">https://amao12580.github.io/rewards/wechat-reward-image.png</string>
     <string name="ratingURL">http://www.coolapk.com/apk/</string>

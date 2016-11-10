@@ -27971,6 +27971,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int btn_shape
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_fab_background
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_ic_visibility
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_snackbar_background
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_360
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_aboutme
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_arrow
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_chrome
@@ -28239,6 +28240,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int app_name
 pro.kisscat.www.bookmarkhelper.R$string: int appbar_scrolling_view_behavior
 pro.kisscat.www.bookmarkhelper.R$string: int appendBookmarksError
 pro.kisscat.www.bookmarkhelper.R$string: int bottom_sheet_behavior
+pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_360
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_flyme5
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_qq
@@ -28260,7 +28262,6 @@ pro.kisscat.www.bookmarkhelper.R$string: int marketAppNoInstalled
 pro.kisscat.www.bookmarkhelper.R$string: int networkError
 pro.kisscat.www.bookmarkhelper.R$string: int notPermissionForReadInstalledAppList
 pro.kisscat.www.bookmarkhelper.R$string: int notSupport
-pro.kisscat.www.bookmarkhelper.R$string: int notSupportWechatBookmarkForQQBroswer
 pro.kisscat.www.bookmarkhelper.R$string: int rating
 pro.kisscat.www.bookmarkhelper.R$string: int ratingURL
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksEmpty
@@ -29243,14 +29244,19 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setO
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: int getOrder()
 pro.kisscat.www.bookmarkhelper.exception.ConverterException: ConverterException(java.lang.String)
 pro.kisscat.www.bookmarkhelper.exception.InitException: InitException(java.lang.String)
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure BYTE
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure KB
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure MB
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure GB
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure[] values()
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure valueOf(java.lang.String)
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: java.lang.String toString()
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure: void <clinit>()
+pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType FILE
+pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType DIR
+pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType[] values()
+pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType valueOf(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: void <clinit>()
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure BYTE
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure KB
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure MB
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure GB
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure[] values()
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure valueOf(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: java.lang.String toString()
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure: void <clinit>()
 pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry
 pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String level
 pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry: java.lang.String tag

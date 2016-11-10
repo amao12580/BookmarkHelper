@@ -71,6 +71,9 @@ public class UCBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
+            File cpPath = new File(filePath_cp);
+            cpPath.deleteOnExit();
+            cpPath.mkdirs();
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_cp + fileName_origin);
@@ -117,12 +120,10 @@ public class UCBroswer extends BasicBroswer {
     private final static String[] columns = new String[]{"title", "url"};
 
     private List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String dbFilePath) {
+        LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);
         List<Bookmark> result = new LinkedList<>();
         String originFilePathFull = filePath_origin + fileName_origin;
         LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-        File cpPath = new File(filePath_cp);
-        cpPath.deleteOnExit();
-        cpPath.mkdirs();
         LogHelper.v(TAG + ":tmp file path:" + dbFilePath);
         try {
             ExternalStorageUtil.copyFile(context, originFilePathFull, dbFilePath, this.getName());
@@ -130,7 +131,6 @@ public class UCBroswer extends BasicBroswer {
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             return result;
         }
-        LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);
         result.addAll(fetchBookmarksList(context, dbFilePath, "bookmark", null, null, "create_time asc"));
         LogHelper.v(TAG + ":读取未登录用户书签SQLite数据库结束");
         return result;
@@ -140,7 +140,7 @@ public class UCBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
         List<Bookmark> result = new LinkedList<>();
         String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
-        String searchRule = " -type f -name \"[1-9][0-9][0-9][0-9][0-9]*.db\" | xargs ls -l | sort -r -k5 -k6";
+        String searchRule = "*.db";
         List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule);
         if (fileNames == null || fileNames.isEmpty()) {
             LogHelper.v(TAG + ":已登录用户没有书签数据");
@@ -154,17 +154,12 @@ public class UCBroswer extends BasicBroswer {
                 LogHelper.v("item is null.");
                 break;
             }
-            String tmp;
-            if (!item.contains(dir)) {
-                LogHelper.v("first phase not match.");
-                tmp = item.substring(item.lastIndexOf(" ") + 1, item.length());
-            } else {
-                tmp = item.substring(item.indexOf(dir), item.length());
+            if (item.equals(fileName_origin)) {
+                continue;
             }
-            LogHelper.v("targetFileName:" + tmp);
-            if (tmp.matches(regularRule)) {
-                targetFilePath = dir + tmp;
-                targetFileName = tmp;
+            if (item.matches(regularRule)) {
+                targetFilePath = dir + item;
+                targetFileName = item;
                 break;
             } else {
                 LogHelper.v("not match.");
@@ -176,16 +171,17 @@ public class UCBroswer extends BasicBroswer {
         }
         LogHelper.v("targetFilePath is:" + targetFilePath);
         String tmpFilePath = filePath_cp + targetFileName;
-        File cpPath = new File(filePath_cp);
-        cpPath.deleteOnExit();
-        cpPath.mkdirs();
         ExternalStorageUtil.copyFile(context, targetFilePath, tmpFilePath, this.getName());
-        result.addAll(fetchBookmarksList(context, tmpFilePath, "bookmark", null, null, "create_time asc"));
+        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "bookmark", null, null, "create_time asc"));
         LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
         return result;
     }
 
     private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
+        return fetchBookmarksList(true, context, dbFilePath, tableName, where, whereArgs, orderBy);
+    }
+
+    private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
         LogHelper.v(TAG + ":读取SQLite数据库开始,dbFilePath:" + dbFilePath + ",tableName:" + tableName);
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
@@ -196,7 +192,11 @@ public class UCBroswer extends BasicBroswer {
             tableExist = DBHelper.checkTableExist(sqLiteDatabase, tableName);
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
-                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                if (needThrowException) {
+                    throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                } else {
+                    return result;
+                }
             }
             cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, "url", null, orderBy, null);
             if (cursor != null && cursor.getCount() > 0) {

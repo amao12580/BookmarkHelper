@@ -9,6 +9,7 @@
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
     android:paddingTop="8dp"
+    android:baselineAligned="false"
     tools:context=".activity.MainActivity">
 
     <LinearLayout

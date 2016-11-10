@@ -29326,6 +29326,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$dr
     int design_fab_background -> design_fab_background
     int design_ic_visibility -> design_ic_visibility
     int design_snackbar_background -> design_snackbar_background
+    int ic_360 -> ic_360
     int ic_aboutme -> ic_aboutme
     int ic_arrow -> ic_arrow
     int ic_chrome -> ic_chrome
@@ -29485,7 +29486,7 @@ pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int webview_toolbar -> webview_toolbar
     int withText -> withText
     int wrap_content -> wrap_content
-    2596:2596:void <init>() -> <init>
+    2597:2597:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$integer:
     int abc_config_activityDefaultDur -> abc_config_activityDefaultDur
     int abc_config_activityShortDur -> abc_config_activityShortDur
@@ -29494,7 +29495,7 @@ pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$int
     int cancel_button_image_alpha -> cancel_button_image_alpha
     int design_snackbar_text_max_lines -> design_snackbar_text_max_lines
     int status_bar_notification_info_maxnum -> status_bar_notification_info_maxnum
-    2743:2743:void <init>() -> <init>
+    2744:2744:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layout:
     int abc_action_bar_title_item -> abc_action_bar_title_item
     int abc_action_bar_up_container -> abc_action_bar_up_container
@@ -29550,10 +29551,10 @@ pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layo
     int select_dialog_multichoice_material -> select_dialog_multichoice_material
     int select_dialog_singlechoice_material -> select_dialog_singlechoice_material
     int support_simple_spinner_dropdown_item -> support_simple_spinner_dropdown_item
-    2752:2752:void <init>() -> <init>
+    2753:2753:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$mipmap -> pro.kisscat.www.bookmarkhelper.R$mipmap:
     int ic_launcher -> ic_launcher
-    2808:2808:void <init>() -> <init>
+    2809:2809:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$string:
     int abc_action_bar_home_description -> abc_action_bar_home_description
     int abc_action_bar_home_description_format -> abc_action_bar_home_description_format
@@ -29594,6 +29595,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int appbar_scrolling_view_behavior -> appbar_scrolling_view_behavior
     int appendBookmarksError -> appendBookmarksError
     int bottom_sheet_behavior -> bottom_sheet_behavior
+    int broswer_name_show_360 -> broswer_name_show_360
     int broswer_name_show_chrome -> broswer_name_show_chrome
     int broswer_name_show_flyme5 -> broswer_name_show_flyme5
     int broswer_name_show_qq -> broswer_name_show_qq
@@ -29615,7 +29617,6 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int networkError -> networkError
     int notPermissionForReadInstalledAppList -> notPermissionForReadInstalledAppList
     int notSupport -> notSupport
-    int notSupportWechatBookmarkForQQBroswer -> notSupportWechatBookmarkForQQBroswer
     int rating -> rating
     int ratingURL -> ratingURL
     int readBookmarksEmpty -> readBookmarksEmpty
@@ -29626,7 +29627,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int status_bar_notification_info_overflow -> status_bar_notification_info_overflow
     int target_broswer_icon_contentDescription -> target_broswer_icon_contentDescription
     int viaBookmarksFileMiss -> viaBookmarksFileMiss
-    2811:2811:void <init>() -> <init>
+    2812:2812:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style:
     int AlertDialog_AppCompat -> AlertDialog_AppCompat
     int AlertDialog_AppCompat_Light -> AlertDialog_AppCompat_Light
@@ -29989,7 +29990,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    2884:2884:void <init>() -> <init>
+    2885:2885:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -30477,8 +30478,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3247:3247:void <init>() -> <init>
-    3314:9772:void <clinit>() -> <clinit>
+    3248:3248:void <init>() -> <init>
+    3315:9773:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b
@@ -30588,10 +30589,10 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www
     25:25:void setInstalled(boolean) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster -> pro.kisscat.www.bookmarkhelper.converter.support.b:
     java.util.List supportRule -> a
-    36:45:void init(android.content.Context) -> a
-    48:61:int excute(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
-    65:69:java.util.List cover2Excute(android.content.Context,java.util.List) -> a
-    32:32:java.util.List getSupportRule() -> a
+    37:47:void init(android.content.Context) -> a
+    50:63:int excute(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
+    67:71:java.util.List cover2Excute(android.content.Context,java.util.List) -> a
+    33:33:java.util.List getSupportRule() -> a
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.a:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
@@ -30626,14 +30627,15 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer -> pro.kisscat.w
     41:41:java.lang.String getPackageName() -> getPackageName
     54:55:void fillDefaultIcon(android.content.Context) -> d
     59:60:void fillDefaultAppName(android.content.Context) -> c
-    69:120:java.util.List readBookmark(android.content.Context) -> e
-    124:176:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
-    180:192:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String,java.lang.String) -> a
-    197:216:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
-    220:251:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    256:256:int appendBookmark(android.content.Context,java.util.List) -> a
+    69:123:java.util.List readBookmark(android.content.Context) -> e
+    127:173:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
+    177:191:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String,java.lang.String) -> a
+    196:212:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
+    216:216:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    220:255:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    260:260:int appendBookmark(android.content.Context,java.util.List) -> a
     37:65:void <clinit>() -> <clinit>
-pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.d:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.d:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
     java.lang.String filePath_cp -> d
@@ -30642,13 +30644,29 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.w
     40:40:java.lang.String getPackageName() -> getPackageName
     53:54:void fillDefaultIcon(android.content.Context) -> d
     58:59:void fillDefaultAppName(android.content.Context) -> c
-    67:114:java.util.List readBookmark(android.content.Context) -> e
-    120:136:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> a
-    140:185:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> b
-    189:220:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    66:120:java.util.List readBookmark(android.content.Context) -> e
+    126:164:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> a
+    168:215:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> b
+    219:255:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String,java.lang.String) -> a
+    260:260:int appendBookmark(android.content.Context,java.util.List) -> a
+    61:123:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.e:
+    java.util.List bookmarks -> b
+    java.lang.String filePath_origin -> c
+    java.lang.String filePath_cp -> d
+    java.lang.String[] columns -> e
+    34:34:void <init>() -> <init>
+    40:40:java.lang.String getPackageName() -> getPackageName
+    53:54:void fillDefaultIcon(android.content.Context) -> d
+    58:59:void fillDefaultAppName(android.content.Context) -> c
+    67:117:java.util.List readBookmark(android.content.Context) -> e
+    123:136:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> a
+    140:177:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> b
+    181:181:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    185:220:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
     225:225:int appendBookmark(android.content.Context,java.util.List) -> a
-    62:117:void <clinit>() -> <clinit>
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.e:
+    62:120:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.f:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
     java.lang.String filePath_cp -> d
@@ -30659,7 +30677,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer -> pro.kisscat.
     72:143:java.util.List readBookmark(android.content.Context) -> e
     148:204:int appendBookmark(android.content.Context,java.util.List) -> a
     67:68:void <clinit>() -> <clinit>
-pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.f:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.g:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
     java.lang.String filePath_cp -> d
@@ -30795,12 +30813,12 @@ pro.kisscat.www.bookmarkhelper.exception.CrashHandler -> pro.kisscat.www.bookmar
 pro.kisscat.www.bookmarkhelper.exception.InitException -> pro.kisscat.www.bookmarkhelper.b.c:
     15:16:void <init>(java.lang.String) -> <init>
 pro.kisscat.www.bookmarkhelper.util.Path -> pro.kisscat.www.bookmarkhelper.util.a:
-    java.lang.String FILE_SPLIT -> f
-    java.lang.String INNER_PATH_DATA -> a
-    java.lang.String SDCARD_ROOTPATH -> b
-    java.lang.String SDCARD_APP_ROOTPATH -> c
-    java.lang.String SDCARD_LOG_ROOTPATH -> d
-    java.lang.String SDCARD_TMP_ROOTPATH -> e
+    java.lang.String FILE_SPLIT -> a
+    java.lang.String INNER_PATH_DATA -> b
+    java.lang.String SDCARD_ROOTPATH -> c
+    java.lang.String SDCARD_APP_ROOTPATH -> d
+    java.lang.String SDCARD_LOG_ROOTPATH -> e
+    java.lang.String SDCARD_TMP_ROOTPATH -> f
     15:22:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil -> pro.kisscat.www.bookmarkhelper.util.a.a:
     java.util.Map installedAllApp -> b
@@ -30819,26 +30837,43 @@ pro.kisscat.www.bookmarkhelper.util.context.ContextUtil -> pro.kisscat.www.bookm
     42:42:java.lang.String buildViaBookmarksFileMiss(android.content.Context,java.lang.String) -> f
     46:46:java.lang.String buildReadBookmarksTableNotExistErrorMessage(android.content.Context,java.lang.String) -> g
 pro.kisscat.www.bookmarkhelper.util.file.FileUtil -> pro.kisscat.www.bookmarkhelper.util.c.a:
-    26:50:pro.kisscat.www.bookmarkhelper.util.file.FileUtil$FileShow formatFileSize(java.io.File) -> a
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$FileShow -> pro.kisscat.www.bookmarkhelper.util.c.a$a:
-    java.lang.String prefix -> a
-    double size -> b
-    long originSize -> c
-    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure measure -> d
-    80:85:void <init>(java.lang.String,long,double,pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure) -> <init>
-    89:95:java.lang.String toString() -> toString
-    102:102:boolean isOver10KB() -> a
-pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure -> pro.kisscat.www.bookmarkhelper.util.c.a$b:
-    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure BYTE -> BYTE
-    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure KB -> KB
-    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure MB -> MB
-    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure GB -> GB
-    pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure[] $VALUES -> a
-    53:53:pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure[] values() -> values
-    53:53:pro.kisscat.www.bookmarkhelper.util.file.FileUtil$Measure valueOf(java.lang.String) -> valueOf
-    53:53:void <init>(java.lang.String,int) -> <init>
-    58:61:java.lang.String toString() -> toString
-    53:54:void <clinit>() -> <clinit>
+    16:19:pro.kisscat.www.bookmarkhelper.util.file.pojo.File formatFileSize(java.io.File) -> a
+pro.kisscat.www.bookmarkhelper.util.file.pojo.File -> pro.kisscat.www.bookmarkhelper.util.c.a.a:
+    java.lang.String nameWithSuffix -> a
+    java.util.Date changeTime -> b
+    java.lang.String prefix -> c
+    java.lang.Double size -> d
+    java.lang.Long originSize -> e
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure measure -> f
+    49:74:void <init>(java.lang.String[]) -> <init>
+    77:100:void processSize(long) -> a
+    102:107:void <init>(java.io.File) -> <init>
+    111:117:java.lang.String toString() -> toString
+    124:124:boolean isOver10KB() -> a
+    132:143:int compareTo(pro.kisscat.www.bookmarkhelper.util.file.pojo.File) -> a
+    30:30:java.lang.String getNameWithSuffix() -> b
+    33:33:java.util.Date getChangeTime() -> c
+    42:42:java.lang.Long getOriginSize() -> d
+    22:22:int compareTo(java.lang.Object) -> compareTo
+pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType -> pro.kisscat.www.bookmarkhelper.util.c.a.b:
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType FILE -> FILE
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType DIR -> DIR
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType[] $VALUES -> a
+    12:12:pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType[] values() -> values
+    12:12:pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType valueOf(java.lang.String) -> valueOf
+    12:12:void <init>(java.lang.String,int) -> <init>
+    12:13:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure -> pro.kisscat.www.bookmarkhelper.util.c.a.c:
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure BYTE -> BYTE
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure KB -> KB
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure MB -> MB
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure GB -> GB
+    pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure[] $VALUES -> a
+    12:12:pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure[] values() -> values
+    12:12:pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure valueOf(java.lang.String) -> valueOf
+    12:12:void <init>(java.lang.String,int) -> <init>
+    17:20:java.lang.String toString() -> toString
+    12:13:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.util.json.JsonUtil -> pro.kisscat.www.bookmarkhelper.util.d.a:
     27:31:java.lang.String toJson(java.lang.Object) -> a
     43:47:java.lang.Object fromJson(java.lang.String,java.lang.Class) -> a
@@ -30893,26 +30928,29 @@ pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil -> pro.kisscat.www
     31:35:boolean check(android.app.Activity) -> b
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.util.g.a:
     36:36:boolean upgradeRootPermission(java.lang.String) -> a
-    50:50:boolean executeCmd(java.lang.String) -> b
-    54:120:pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult executeCmd(java.lang.String[]) -> a
+    40:40:boolean executeCmd(java.lang.String) -> b
+    44:110:pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult executeCmd(java.lang.String[]) -> a
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil$CommandResult -> pro.kisscat.www.bookmarkhelper.util.g.a$a:
     int result -> a
     java.util.List successMsg -> b
     java.util.List errorMsg -> c
-    128:141:void <init>(int) -> <init>
-    128:147:void <init>(int,java.util.List,java.util.List) -> <init>
-    150:150:boolean isSuccess() -> a
-    132:132:java.util.List getSuccessMsg() -> b
+    118:131:void <init>(int) -> <init>
+    118:137:void <init>(int,java.util.List,java.util.List) -> <init>
+    140:140:boolean isSuccess() -> a
+    122:122:java.util.List getSuccessMsg() -> b
 pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.h.a:
     27:27:void <init>() -> <init>
     33:55:java.lang.String getRootPath() -> a
     74:85:java.io.File copyFile(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> a
 pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.h.b:
-    22:22:void <init>() -> <init>
-    28:34:java.lang.String getRootPath() -> a
-    44:49:boolean deleteFile(android.content.Context,java.lang.String,java.lang.String) -> a
-    61:69:boolean isExistFile(java.lang.String) -> a
-    77:89:java.util.List lsFileByRegular(java.lang.String,java.lang.String) -> a
+    27:27:void <init>() -> <init>
+    33:39:java.lang.String getRootPath() -> a
+    49:54:boolean deleteFile(android.content.Context,java.lang.String,java.lang.String) -> a
+    66:66:boolean isExistFile(java.lang.String) -> a
+    78:78:boolean isExistDir(java.lang.String) -> b
+    82:90:boolean isExist(java.lang.String,pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType) -> a
+    102:119:java.util.List lsFileByRegular(java.lang.String,java.lang.String) -> a
+    127:153:java.util.List sortByFileChangeTimeDesc(java.util.List) -> a
 pro.kisscat.www.bookmarkhelper.webview.ProgressWebView -> pro.kisscat.www.bookmarkhelper.webview.ProgressWebView:
     android.widget.ProgressBar mProgressBar -> a
     25:32:void <init>(android.content.Context,android.util.AttributeSet) -> <init>

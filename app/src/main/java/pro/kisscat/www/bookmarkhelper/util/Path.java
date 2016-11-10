@@ -12,7 +12,7 @@ import java.io.File;
  */
 
 public class Path {
-    private final static String FILE_SPLIT = File.separator;
+    public final static String FILE_SPLIT = File.separator;
 
 
     public static final String INNER_PATH_DATA = FILE_SPLIT + "data" + FILE_SPLIT + "data" + FILE_SPLIT;

@@ -106,7 +106,7 @@ public class BasicBroswer extends App implements Broswerable {
         if (currentIndex <= 1) {
             denyPrintBookmarkHasShow = false;
         }
-        int threshold = 50;
+        int threshold = 20;
         if (allSize < threshold) {
             return true;
         }
