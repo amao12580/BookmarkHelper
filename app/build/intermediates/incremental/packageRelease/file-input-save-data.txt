@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 10 18:09:17 CST 2016
+#Thu Nov 10 18:17:03 CST 2016
 1863.set=JAVA_RESOURCE
 1117.file=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\proguard\\release\\jars\\3\\1f\\main.jar\\android\\support\\v7\\view\\ActionBarPolicy.class
 1391.set=ANDROID_RESOURCE

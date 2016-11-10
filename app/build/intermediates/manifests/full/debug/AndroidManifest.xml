@@ -21,7 +21,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:windowIsTranslucent="true"
+        android:windowNoTitle="true" >
         <activity android:name="pro.kisscat.www.bookmarkhelper.activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

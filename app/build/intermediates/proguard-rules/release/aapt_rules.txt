@@ -73,10 +73,10 @@
 # view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
 -keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
 
-# view AndroidManifest.xml #generated:32
+# view AndroidManifest.xml #generated:34
 -keep class pro.kisscat.www.bookmarkhelper.activity.Html5Activity { <init>(...); }
 
-# view AndroidManifest.xml #generated:25
+# view AndroidManifest.xml #generated:27
 -keep class pro.kisscat.www.bookmarkhelper.activity.MainActivity { <init>(...); }
 
 # view res/layout/activity_webview.xml #generated:18
