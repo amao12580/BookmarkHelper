@@ -30859,11 +30859,11 @@ pro.kisscat.www.bookmarkhelper.util.log.LogHelper -> pro.kisscat.www.bookmarkhel
     84:86:void v(java.lang.String,java.lang.String) -> b
     92:107:void log(java.lang.String,java.lang.String,char) -> a
     110:113:void write() -> a
-    116:118:void recordLogToQueue(java.lang.String,java.lang.String,java.lang.String) -> a
-    124:190:void flush() -> b
-    217:217:boolean isInit() -> d
-    222:237:void init() -> c
-    30:214:void <clinit>() -> <clinit>
+    116:125:void recordLogToQueue(java.lang.String,java.lang.String,java.lang.String) -> a
+    131:197:void flush() -> b
+    224:224:boolean isInit() -> d
+    229:244:void init() -> c
+    30:221:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.util.log.WriteThread -> pro.kisscat.www.bookmarkhelper.util.log.b:
     boolean isWriteThreadRuning -> a
     11:11:void <init>() -> <init>

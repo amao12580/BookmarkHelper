@@ -395,8 +395,8 @@ pro.kisscat.www.bookmarkhelper.util.log.LogHelper:
     67:68:public static void w(java.lang.String,java.lang.String)
     75:76:public static void d(java.lang.String,java.lang.String)
     79:80:public static void i(java.lang.String,java.lang.String)
-    196:201:public static void delFile()
-    207:211:private static java.util.Date getDateBefore()
+    203:208:public static void delFile()
+    214:218:private static java.util.Date getDateBefore()
 pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil:
     16:16:public NetworkUtil()
 pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil:

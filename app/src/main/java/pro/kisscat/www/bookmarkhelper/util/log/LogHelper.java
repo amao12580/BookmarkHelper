@@ -113,6 +113,13 @@ public class LogHelper {
     }
 
     private static void recordLogToQueue(String level, String tag, String text) {
+        if (text == null || text.isEmpty()) {
+            return;
+        }
+        if (text.length() > 1024) {
+            text = text.substring(0, 1024);
+            text += "...";
+        }
         logQueue.add(new LogEntry(level, tag, text));
         write();
     }
@@ -190,7 +197,7 @@ public class LogHelper {
     }
 
     /**
-     * 删除制定的日志文件
+     * 删除指定的日志文件
      */
     public static void delFile() {// 删除日志文件
         String needDelFiel = logfile.format(getDateBefore());
