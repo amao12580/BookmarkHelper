@@ -434,7 +434,7 @@ pro.kisscat.www.bookmarkhelper.common.shared.BuildConfig
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     protected int bookmarkSum
-    57:57:public int readBookmarkSum(android.content.Context)
+    58:58:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
     32:32:public ConverterMaster()

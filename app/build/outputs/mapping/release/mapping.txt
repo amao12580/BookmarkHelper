@@ -30797,19 +30797,19 @@ pro.kisscat.www.bookmarkhelper.activity.MainActivity$4 -> pro.kisscat.www.bookma
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a:
     boolean installed -> a
     boolean denyPrintBookmarkHasShow -> b
-    23:103:void <init>() -> <init>
-    29:30:boolean isInstalled(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer) -> a
-    34:38:void fillName(android.content.Context) -> a
-    41:48:void fillVersion(android.content.Context) -> b
-    53:53:void fillDefaultAppName(android.content.Context) -> c
-    63:63:void fillDefaultIcon(android.content.Context) -> d
-    67:67:java.lang.String getPackageName() -> getPackageName
-    73:73:java.util.List readBookmark(android.content.Context) -> e
-    78:78:int appendBookmark(android.content.Context,java.util.List) -> a
-    82:92:java.util.Set buildNoRepeat(java.util.List,java.util.List) -> a
-    96:100:boolean isGoodUrl(java.lang.String) -> a
-    106:120:boolean allowPrintBookmark(int,int) -> a
-    25:25:void setInstalled(boolean) -> a
+    24:104:void <init>() -> <init>
+    30:31:boolean isInstalled(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer) -> a
+    35:39:void fillName(android.content.Context) -> a
+    42:49:void fillVersion(android.content.Context) -> b
+    54:54:void fillDefaultAppName(android.content.Context) -> c
+    64:64:void fillDefaultIcon(android.content.Context) -> d
+    68:68:java.lang.String getPackageName() -> getPackageName
+    74:74:java.util.List readBookmark(android.content.Context) -> e
+    79:79:int appendBookmark(android.content.Context,java.util.List) -> a
+    83:93:java.util.Set buildNoRepeat(java.util.List,java.util.List) -> a
+    97:101:boolean isGoodUrl(java.lang.String) -> a
+    107:121:boolean allowPrintBookmark(int,int) -> a
+    26:26:void setInstalled(boolean) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster -> pro.kisscat.www.bookmarkhelper.converter.support.b:
     java.util.List supportRule -> a
     37:47:void init(android.content.Context) -> a

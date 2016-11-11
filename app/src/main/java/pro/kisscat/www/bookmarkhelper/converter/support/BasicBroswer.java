@@ -3,6 +3,7 @@ package pro.kisscat.www.bookmarkhelper.converter.support;
 import android.content.Context;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -83,7 +84,7 @@ public class BasicBroswer extends App implements Broswerable {
         for (Bookmark item : exists) {
             urls.add(item.getUrl());
         }
-        Set<Bookmark> result = new HashSet<>();
+        Set<Bookmark> result = new LinkedHashSet<>();
         for (Bookmark item : bookmarks) {
             if (!urls.contains(item.getUrl())) {
                 result.add(item);
