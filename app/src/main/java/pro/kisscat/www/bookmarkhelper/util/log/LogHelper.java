@@ -60,7 +60,11 @@ public class LogHelper {
     }
 
     public static void v(String tag, Object msg) {
-        log(tag, msg.toString(), 'v');
+        v(tag, msg.toString(), true);
+    }
+
+    public static void v(String msg, boolean needIntercept) {
+        v(MetaData.LOG_V_DEFAULT, msg, false);
     }
 
     public static void w(String tag, String text) {
@@ -79,8 +83,15 @@ public class LogHelper {
         log(tag, text, 'i');
     }
 
-    public static void v(String tag, String text) {
+    public static void v(String tag, String text, boolean needIntercept) {
         if (MetaData.isDebug) {
+            if (text == null || text.isEmpty()) {
+                return;
+            }
+            if (needIntercept && text.length() > 1024) {
+                text = text.substring(0, 1024);
+                text += "...";
+            }
             log(tag, text, 'v');
         }
     }
@@ -113,13 +124,6 @@ public class LogHelper {
     }
 
     private static void recordLogToQueue(String level, String tag, String text) {
-        if (text == null || text.isEmpty()) {
-            return;
-        }
-        if (text.length() > 1024) {
-            text = text.substring(0, 1024);
-            text += "...";
-        }
         logQueue.add(new LogEntry(level, tag, text));
         write();
     }

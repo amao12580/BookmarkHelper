@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorDefault">#FAF0E6</color>
     <color name="colorItemChoosed">#DCDCDC</color>
+    <color name="colorDialogButtonOk">#4169E1</color>
 </resources>

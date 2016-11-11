@@ -29,6 +29,7 @@
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorDefault">#FAF0E6</color>
+    <color name="colorDialogButtonOk">#4169E1</color>
     <color name="colorItemChoosed">#DCDCDC</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
@@ -571,7 +572,7 @@
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="clickBackToExit">Next click back will exit.</string>
     <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
-    <string name="dialogClose">Close</string>
+    <string name="dialogButtonOk">OK</string>
     <string name="dialogTitle">Warning !</string>
     <string name="donate">Donate</string>
     <string name="donateTitle">Thanks a lot.</string>

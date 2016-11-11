@@ -305,6 +305,117 @@ com.alibaba.fastjson.util.ServiceLoader:
 com.alibaba.fastjson.util.TypeUtils:
     950:952:public static void clearClassMapping()
     1474:1474:public static com.alibaba.fastjson.annotation.JSONType getJSONType(java.lang.Class)
+com.flyco.animation.Attention.Flash
+com.flyco.animation.Attention.RubberBand
+com.flyco.animation.Attention.ShakeHorizontal
+com.flyco.animation.Attention.ShakeVertical
+com.flyco.animation.Attention.Swing
+com.flyco.animation.Attention.Tada
+com.flyco.animation.BaseAnimatorSet:
+    74:75:public com.flyco.animation.BaseAnimatorSet duration(long)
+    80:81:public com.flyco.animation.BaseAnimatorSet delay(long)
+    86:87:public com.flyco.animation.BaseAnimatorSet interpolator(android.view.animation.Interpolator)
+com.flyco.animation.BounceEnter.BounceBottomEnter
+com.flyco.animation.BounceEnter.BounceEnter
+com.flyco.animation.BounceEnter.BounceLeftEnter
+com.flyco.animation.BounceEnter.BounceRightEnter
+com.flyco.animation.BounceEnter.BounceTopEnter
+com.flyco.animation.FadeEnter.FadeEnter
+com.flyco.animation.FallEnter.FallEnter
+com.flyco.animation.FallEnter.FallRotateEnter
+com.flyco.animation.FlipEnter.FlipBottomEnter
+com.flyco.animation.FlipEnter.FlipHorizontalEnter
+com.flyco.animation.FlipEnter.FlipHorizontalSwingEnter
+com.flyco.animation.FlipEnter.FlipLeftEnter
+com.flyco.animation.FlipEnter.FlipRightEnter
+com.flyco.animation.FlipEnter.FlipTopEnter
+com.flyco.animation.FlipEnter.FlipVerticalEnter
+com.flyco.animation.FlipExit.FlipHorizontalExit
+com.flyco.animation.FlipExit.FlipVerticalExit
+com.flyco.animation.Jelly
+com.flyco.animation.NewsPaperEnter
+com.flyco.animation.SlideEnter.SlideBottomEnter
+com.flyco.animation.SlideEnter.SlideLeftEnter
+com.flyco.animation.SlideEnter.SlideRightEnter
+com.flyco.animation.SlideEnter.SlideTopEnter
+com.flyco.animation.SlideExit.SlideBottomExit
+com.flyco.animation.SlideExit.SlideLeftExit
+com.flyco.animation.SlideExit.SlideRightExit
+com.flyco.animation.SlideExit.SlideTopExit
+com.flyco.animation.ZoomEnter.ZoomInBottomEnter
+com.flyco.animation.ZoomEnter.ZoomInEnter
+com.flyco.animation.ZoomEnter.ZoomInLeftEnter
+com.flyco.animation.ZoomEnter.ZoomInRightEnter
+com.flyco.animation.ZoomEnter.ZoomInTopEnter
+com.flyco.animation.ZoomExit.ZoomInExit
+com.flyco.animation.ZoomExit.ZoomOutBottomExit
+com.flyco.animation.ZoomExit.ZoomOutExit
+com.flyco.animation.ZoomExit.ZoomOutLeftExit
+com.flyco.animation.ZoomExit.ZoomOutRightExit
+com.flyco.animation.ZoomExit.ZoomOutTopExit
+com.flyco.dialog.BuildConfig
+com.flyco.dialog.R:
+    9:9:public R()
+com.flyco.dialog.entity.DialogMenuItem
+com.flyco.dialog.listener.OnOperItemClickL
+com.flyco.dialog.utils.CornerUtils:
+    11:11:public CornerUtils()
+    29:34:public static android.graphics.drawable.Drawable cornerDrawable(int,float[],int,int)
+    69:83:public static android.graphics.drawable.StateListDrawable listItemSelector(float,int,int,boolean)
+    92:114:public static android.graphics.drawable.StateListDrawable listItemSelector(float,int,int,int,int)
+com.flyco.dialog.utils.StatusBarUtils:
+    11:11:public StatusBarUtils()
+com.flyco.dialog.widget.ActionSheetDialog
+com.flyco.dialog.widget.ActionSheetDialog$1
+com.flyco.dialog.widget.ActionSheetDialog$2
+com.flyco.dialog.widget.ActionSheetDialog$ListDialogAdapter
+com.flyco.dialog.widget.MaterialDialog
+com.flyco.dialog.widget.NormalDialog:
+    public static final int STYLE_ONE
+    public static final int STYLE_TWO
+    149:150:public com.flyco.dialog.widget.NormalDialog style(int)
+    155:156:public com.flyco.dialog.widget.NormalDialog titleLineColor(int)
+    161:162:public com.flyco.dialog.widget.NormalDialog titleLineHeight(float)
+    167:168:public com.flyco.dialog.widget.NormalDialog dividerColor(int)
+com.flyco.dialog.widget.NormalListDialog
+com.flyco.dialog.widget.NormalListDialog$1
+com.flyco.dialog.widget.NormalListDialog$ListDialogAdapter
+com.flyco.dialog.widget.base.BaseDialog:
+    77:79:public BaseDialog(android.content.Context,boolean)
+    144:144:public android.view.View getCreateView()
+    275:278:public void show(int)
+    282:291:public void showAtLocation(int,int,int)
+    295:297:public void showAtLocation(int,int)
+    301:306:public com.flyco.dialog.widget.base.BaseDialog dimEnabled(boolean)
+    317:318:public com.flyco.dialog.widget.base.BaseDialog heightScale(float)
+    335:336:public com.flyco.dialog.widget.base.BaseDialog autoDismiss(boolean)
+    341:342:public com.flyco.dialog.widget.base.BaseDialog autoDismissDelay(long)
+com.flyco.dialog.widget.base.BottomBaseDialog
+com.flyco.dialog.widget.base.BottomBaseDialog$1
+com.flyco.dialog.widget.base.BottomBaseDialog$WindowInAs
+com.flyco.dialog.widget.base.BottomBaseDialog$WindowOutAs
+com.flyco.dialog.widget.base.BottomTopBaseDialog
+com.flyco.dialog.widget.base.BottomTopBaseDialog$1
+com.flyco.dialog.widget.base.BottomTopBaseDialog$2
+com.flyco.dialog.widget.base.TopBaseDialog
+com.flyco.dialog.widget.base.TopBaseDialog$1
+com.flyco.dialog.widget.base.TopBaseDialog$WindowInAs
+com.flyco.dialog.widget.base.TopBaseDialog$WindowOutAs
+com.flyco.dialog.widget.internal.BaseAlertDialog:
+    189:190:public com.flyco.dialog.widget.internal.BaseAlertDialog titleTextColor(int)
+    195:196:public com.flyco.dialog.widget.internal.BaseAlertDialog titleTextSize(float)
+    213:214:public com.flyco.dialog.widget.internal.BaseAlertDialog contentGravity(int)
+    219:220:public com.flyco.dialog.widget.internal.BaseAlertDialog contentTextColor(int)
+    225:226:public com.flyco.dialog.widget.internal.BaseAlertDialog contentTextSize(float)
+    301:316:public varargs com.flyco.dialog.widget.internal.BaseAlertDialog btnTextSize(float[])
+    321:322:public com.flyco.dialog.widget.internal.BaseAlertDialog btnPressColor(int)
+    327:328:public com.flyco.dialog.widget.internal.BaseAlertDialog cornerRadius(float)
+    333:334:public com.flyco.dialog.widget.internal.BaseAlertDialog bgColor(int)
+com.flyco.dialog.widget.internal.InternalBasePopup
+com.flyco.dialog.widget.internal.InternalBasePopup$1
+com.flyco.dialog.widget.popup.BubblePopup
+com.flyco.dialog.widget.popup.base.BaseBubblePopup
+com.flyco.dialog.widget.popup.base.BasePopup
 javax.annotation.Generated
 javax.annotation.PostConstruct
 javax.annotation.PreDestroy
@@ -396,18 +507,19 @@ pro.kisscat.www.bookmarkhelper.util.log.LogHelper:
     51:52:public static void e(java.lang.String,java.lang.Object)
     55:56:public static void d(java.lang.String,java.lang.Object)
     59:60:public static void i(java.lang.String,java.lang.Object)
-    63:64:public static void v(java.lang.String,java.lang.Object)
-    67:68:public static void w(java.lang.String,java.lang.String)
-    75:76:public static void d(java.lang.String,java.lang.String)
-    79:80:public static void i(java.lang.String,java.lang.String)
-    203:208:public static void delFile()
-    214:218:private static java.util.Date getDateBefore()
+    71:72:public static void w(java.lang.String,java.lang.String)
+    79:80:public static void d(java.lang.String,java.lang.String)
+    83:84:public static void i(java.lang.String,java.lang.String)
+    207:212:public static void delFile()
+    218:222:private static java.util.Date getDateBefore()
 pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil:
     16:16:public NetworkUtil()
 pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil:
     private static final int STORAGE_REQUEST_CODE
     20:20:public PermissionUtil()
     21:21:public static int getSTORAGE_REQUEST_CODE()
+pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil:
+    14:14:public PhoneUtil()
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
     private static final java.lang.String COMMAND_SU
     private static final java.lang.String COMMAND_EXIT

@@ -23,7 +23,7 @@
     <string name="notSupport">暂未支持.</string>
     <string name="notPermissionForReadInstalledAppList">没有权限读取已安装的应用.</string>
     <string name="dialogTitle">快看提示！</string>
-    <string name="dialogClose">关闭</string>
+    <string name="dialogButtonOk">已阅</string>
     <string name="aboutMe">关于我</string>
     <string name="rating">五星好评</string>
     <string name="donate">捐助</string>

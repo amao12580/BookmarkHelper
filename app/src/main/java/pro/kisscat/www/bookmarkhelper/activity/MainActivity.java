@@ -10,20 +10,24 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.flyco.animation.BaseAnimatorSet;
+import com.flyco.animation.FadeExit.FadeExit;
+import com.flyco.animation.FlipEnter.FlipVerticalSwingEnter;
+import com.flyco.dialog.listener.OnBtnClickL;
+import com.flyco.dialog.widget.NormalDialog;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +46,7 @@ import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
+import pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -50,11 +55,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private List<ExcuteRule> rules;
     private boolean isItemRuning;
     private boolean isRoot;
-    private boolean checkPermission;
+    //    private boolean checkPermission;
     private List<Map<String, Object>> items = new ArrayList<>();
 
     private static Integer default_color = null;
     private static Integer choosed_color = null;
+    private static Integer dialog_button_ok_color = null;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,7 +104,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(this);
-        LogHelper.write();
+        lv.post(new Runnable() {
+            @Override
+            public void run() {
+                PhoneUtil.record();
+                LogHelper.write();
+            }
+        });
     }
 
     private void initColor(Context context) {
@@ -106,6 +119,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         if (choosed_color == null) {
             choosed_color = ContextCompat.getColor(context, R.color.colorItemChoosed);
+        }
+        if (dialog_button_ok_color == null) {
+            dialog_button_ok_color = ContextCompat.getColor(context, R.color.colorDialogButtonOk);
         }
     }
 
@@ -170,7 +186,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         long end = -1;
         int ret = -1;
         try {
-            checkPermission = PermissionUtil.check(this);
+//            checkPermission = PermissionUtil.check(this);
+            PermissionUtil.check(this);
             isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
 //        isGetRootAccess = RootUtil.checkRootAuth();
 //        showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
@@ -212,25 +229,37 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         showSimpleDialog(message);
     }
 
-    private static String dialogTitle = null;
+    private final static BaseAnimatorSet bas_in = new FlipVerticalSwingEnter();
+    private final static BaseAnimatorSet bas_out = new FadeExit();
+    private static String dialog_default_title;
+    private static String dialog_default_button_ok;
 
+    /**
+     * http://www.jianshu.com/p/f4d3a20d281c
+     */
     private void showSimpleDialog(String message) {
-        if (dialogTitle == null) {
-            dialogTitle = lv.getResources().getString(R.string.dialogTitle);
+        if (dialog_default_button_ok == null) {
+            dialog_default_button_ok = lv.getResources().getString(R.string.dialogButtonOk);
         }
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setTitle(dialogTitle);
-        builder.setMessage(message);
-        builder.setCancelable(true);
-        builder.setPositiveButton(lv.getResources().getString(R.string.dialogClose),
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialoginterface, int i) {
-                        dialoginterface.dismiss();  //关闭对话框
-                    }
-                });
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        if (dialog_default_title == null) {
+            dialog_default_title = lv.getResources().getString(R.string.dialogTitle);
+        }
+        final NormalDialog dialog = new NormalDialog(this);
+        dialog.isTitleShow(true)
+                .title(dialog_default_title)
+                .content(message)
+                .btnNum(1)
+                .btnText(dialog_default_button_ok)
+                .btnTextColor(dialog_button_ok_color)
+                .showAnim(bas_in)
+                .dismissAnim(bas_out)
+                .show();
+        dialog.setOnBtnClickL(new OnBtnClickL() {
+            @Override
+            public void onBtnClick() {
+                dialog.dismiss();
+            }
+        });
     }
 
     private Toast toast;

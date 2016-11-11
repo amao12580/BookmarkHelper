@@ -23,7 +23,7 @@
     <string name="notSupport">Not support now.</string>
     <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
     <string name="dialogTitle">Warning !</string>
-    <string name="dialogClose">Close</string>
+    <string name="dialogButtonOk">OK</string>
     <string name="aboutMe">About me</string>
     <string name="rating">Rating</string>
     <string name="donate">Donate</string>

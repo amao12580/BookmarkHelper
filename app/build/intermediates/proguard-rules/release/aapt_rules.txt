@@ -73,6 +73,9 @@
 # view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
 -keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
 
+# view res/layout/popup_bubble.xml #generated:7
+-keep class com.flyco.dialog.view.TriangleView { <init>(...); }
+
 # view AndroidManifest.xml #generated:34
 -keep class pro.kisscat.www.bookmarkhelper.activity.Html5Activity { <init>(...); }
 
@@ -82,12 +85,12 @@
 # view res/layout/activity_webview.xml #generated:18
 -keep class pro.kisscat.www.bookmarkhelper.webview.ProgressWebView { <init>(...); }
 
-# onClick res/layout/activity_main.xml #generated:37
+# onClick res/layout/activity_main.xml #generated:34
 -keepclassmembers class * { *** onclickAboutMe(...); }
 
 # onClick res/layout/activity_main.xml #generated:63
 -keepclassmembers class * { *** onclickDonate(...); }
 
-# onClick res/layout/activity_main.xml #generated:50
+# onClick res/layout/activity_main.xml #generated:49
 -keepclassmembers class * { *** onclickRating(...); }
 

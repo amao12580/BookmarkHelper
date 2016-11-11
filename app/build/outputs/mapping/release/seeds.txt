@@ -27322,6 +27322,21 @@ com.alibaba.fastjson.serializer.SerializerFeature: boolean isEnabled(int,int,com
 com.alibaba.fastjson.serializer.SerializerFeature: int config(int,com.alibaba.fastjson.serializer.SerializerFeature,boolean)
 com.alibaba.fastjson.serializer.SerializerFeature: int of(com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.serializer.SerializerFeature: void <clinit>()
+com.flyco.dialog.R$id
+com.flyco.dialog.R$id: int ll_content
+com.flyco.dialog.R$id: int triangle_view
+com.flyco.dialog.R$id: R$id()
+com.flyco.dialog.R$layout
+com.flyco.dialog.R$layout: int popup_base
+com.flyco.dialog.R$layout: int popup_bubble
+com.flyco.dialog.R$layout: R$layout()
+com.flyco.dialog.view.TriangleView
+com.flyco.dialog.view.TriangleView: TriangleView(android.content.Context)
+com.flyco.dialog.view.TriangleView: TriangleView(android.content.Context,android.util.AttributeSet)
+com.flyco.dialog.view.TriangleView: void setColor(int)
+com.flyco.dialog.view.TriangleView: void setGravity(int)
+com.flyco.dialog.view.TriangleView: int getColor()
+com.flyco.dialog.view.TriangleView: int getGravity()
 javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$AuthenticationType CONTAINER
 javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$AuthenticationType APPLICATION
 javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$AuthenticationType[] values()
@@ -27338,6 +27353,7 @@ pro.kisscat.www.bookmarkhelper.R$anim: int abc_slide_in_bottom
 pro.kisscat.www.bookmarkhelper.R$anim: int abc_slide_in_top
 pro.kisscat.www.bookmarkhelper.R$anim: int abc_slide_out_bottom
 pro.kisscat.www.bookmarkhelper.R$anim: int abc_slide_out_top
+pro.kisscat.www.bookmarkhelper.R$anim: int anim_layout
 pro.kisscat.www.bookmarkhelper.R$anim: int design_appbar_state_list_animator
 pro.kisscat.www.bookmarkhelper.R$anim: int design_bottom_sheet_slide_in
 pro.kisscat.www.bookmarkhelper.R$anim: int design_bottom_sheet_slide_out
@@ -27345,6 +27361,7 @@ pro.kisscat.www.bookmarkhelper.R$anim: int design_fab_in
 pro.kisscat.www.bookmarkhelper.R$anim: int design_fab_out
 pro.kisscat.www.bookmarkhelper.R$anim: int design_snackbar_in
 pro.kisscat.www.bookmarkhelper.R$anim: int design_snackbar_out
+pro.kisscat.www.bookmarkhelper.R$anim: int from_bottom_to_top
 pro.kisscat.www.bookmarkhelper.R$anim: R$anim()
 pro.kisscat.www.bookmarkhelper.R$attr
 pro.kisscat.www.bookmarkhelper.R$attr: int actionBarDivider
@@ -27705,6 +27722,7 @@ pro.kisscat.www.bookmarkhelper.R$color: int button_material_dark
 pro.kisscat.www.bookmarkhelper.R$color: int button_material_light
 pro.kisscat.www.bookmarkhelper.R$color: int colorAccent
 pro.kisscat.www.bookmarkhelper.R$color: int colorDefault
+pro.kisscat.www.bookmarkhelper.R$color: int colorDialogButtonOk
 pro.kisscat.www.bookmarkhelper.R$color: int colorItemChoosed
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimary
 pro.kisscat.www.bookmarkhelper.R$color: int colorPrimaryDark
@@ -28061,6 +28079,7 @@ pro.kisscat.www.bookmarkhelper.R$id: int line3
 pro.kisscat.www.bookmarkhelper.R$id: int listMode
 pro.kisscat.www.bookmarkhelper.R$id: int listViewRules
 pro.kisscat.www.bookmarkhelper.R$id: int list_item
+pro.kisscat.www.bookmarkhelper.R$id: int ll_content
 pro.kisscat.www.bookmarkhelper.R$id: int media_actions
 pro.kisscat.www.bookmarkhelper.R$id: int middle
 pro.kisscat.www.bookmarkhelper.R$id: int mini
@@ -28124,6 +28143,7 @@ pro.kisscat.www.bookmarkhelper.R$id: int title_template
 pro.kisscat.www.bookmarkhelper.R$id: int top
 pro.kisscat.www.bookmarkhelper.R$id: int topPanel
 pro.kisscat.www.bookmarkhelper.R$id: int touch_outside
+pro.kisscat.www.bookmarkhelper.R$id: int triangle_view
 pro.kisscat.www.bookmarkhelper.R$id: int up
 pro.kisscat.www.bookmarkhelper.R$id: int useLogo
 pro.kisscat.www.bookmarkhelper.R$id: int view_offset_helper
@@ -28192,6 +28212,8 @@ pro.kisscat.www.bookmarkhelper.R$layout: int notification_template_lines
 pro.kisscat.www.bookmarkhelper.R$layout: int notification_template_media
 pro.kisscat.www.bookmarkhelper.R$layout: int notification_template_part_chronometer
 pro.kisscat.www.bookmarkhelper.R$layout: int notification_template_part_time
+pro.kisscat.www.bookmarkhelper.R$layout: int popup_base
+pro.kisscat.www.bookmarkhelper.R$layout: int popup_bubble
 pro.kisscat.www.bookmarkhelper.R$layout: int select_dialog_item_material
 pro.kisscat.www.bookmarkhelper.R$layout: int select_dialog_multichoice_material
 pro.kisscat.www.bookmarkhelper.R$layout: int select_dialog_singlechoice_material
@@ -28250,7 +28272,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_x
 pro.kisscat.www.bookmarkhelper.R$string: int character_counter_pattern
 pro.kisscat.www.bookmarkhelper.R$string: int clickBackToExit
 pro.kisscat.www.bookmarkhelper.R$string: int converter_directer_arrow_contentDescription
-pro.kisscat.www.bookmarkhelper.R$string: int dialogClose
+pro.kisscat.www.bookmarkhelper.R$string: int dialogButtonOk
 pro.kisscat.www.bookmarkhelper.R$string: int dialogTitle
 pro.kisscat.www.bookmarkhelper.R$string: int donate
 pro.kisscat.www.bookmarkhelper.R$string: int donateTitle

@@ -18,7 +18,7 @@
     <string name="broswer_name_show_x">X浏览器</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
     <string name="converter_directer_arrow_contentDescription">转换方向</string>
-    <string name="dialogClose">关闭</string>
+    <string name="dialogButtonOk">已阅</string>
     <string name="dialogTitle">快看提示！</string>
     <string name="donate">捐助</string>
     <string name="donateTitle">您的捐助是我最大的动力</string>
@@ -39,7 +39,7 @@
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
