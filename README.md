@@ -4,7 +4,7 @@ BookmarkHelper（书签助手）是一款Android平台下，浏览器书签转�
 
 使用举例：从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)中，提取用户书签数据，追加合并到[Via浏览器](http://www.coolapk.com/apk/mark.via)，带你轻松脱坑，成功用上最牛逼浏览器！
 
-BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥用Root权限，使用完毕可立即卸载，运行时不需连接网络。如果你用的爽，可以[鼓励一下](https://www.kisscat.pro/rewards/wechat-reward-image.png)，我将用于：支付VPS月租，开发更多精彩APP，谢谢您的点滴支持！
+BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥用Root权限，使用完毕可立即卸载，运行时按需连接网络。如果你用的爽，可以[鼓励一下](https://www.kisscat.pro/rewards/wechat-reward-image.png)，我将用于：支付VPS月租，开发更多精彩APP，谢谢您的点滴支持！
 
 ![使用教程Gif：5.8MB](http://ww2.sinaimg.cn/mw690/becd6b85gw1f9oaniwbdig208e0dwu11.gif)
 
@@ -68,6 +68,15 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 ### 0.0.12版 Draft
 1.增加兼容：支持从[UC国际版浏览器](http://www.coolapk.com/apk/com.UCMobile.intl)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.13版 Draft
+1.增加兼容：支持从[Chrome Canary浏览器](http://www.coolapk.com/apk/com.chrome.canary)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.14版 Draft
+1.增加兼容：支持从[Chrome Beta浏览器](http://www.coolapk.com/apk/com.chrome.beta)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.15版 Draft
+1.增加兼容：支持从[Chrome Dev浏览器](http://www.coolapk.com/apk/com.chrome.dev)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 
 ## UnStable
