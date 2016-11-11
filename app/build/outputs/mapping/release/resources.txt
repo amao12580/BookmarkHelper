@@ -789,7 +789,6 @@ Referenced Strings:
   java/util/List
   javassist.util.proxy.ProxyObject
   jsinterface
-  keyCode:
   label
   large_icon
   last_modified
@@ -2707,4 +2706,4 @@ Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (r
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 907718 to 908530); using original instead
+Resource shrinking did not work (grew from 907729 to 908541); using original instead

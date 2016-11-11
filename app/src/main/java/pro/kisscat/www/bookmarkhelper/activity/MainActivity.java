@@ -10,6 +10,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -53,8 +54,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ListView lv;
     private Adapter adapter;
     private List<ExcuteRule> rules;
-    private boolean isItemRuning;
+    private volatile boolean isItemRuning = false;
     private boolean isRoot;
+    private boolean isRecordRule = false;
     //    private boolean checkPermission;
     private List<Map<String, Object>> items = new ArrayList<>();
 
@@ -62,6 +64,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static Integer choosed_color = null;
     private static Integer dialog_button_ok_color = null;
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,13 +86,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 finish();
             }
         }
+        if (rules == null) {
+            rules = ConverterMaster.cover2Excute(this, ConverterMaster.getSupportRule());
+            if (!isRecordRule) {
+                LogHelper.v(MetaData.LOG_V_DEFAULT, "excuteRules:" + JsonUtil.toJson(rules));
+            }
+        }
         setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.listViewRules);
         lv.setBackgroundColor(default_color);
-        if (rules == null) {
-            rules = ConverterMaster.cover2Excute(this, ConverterMaster.getSupportRule());
-            LogHelper.v(MetaData.LOG_V_DEFAULT, "excuteRules:" + JsonUtil.toJson(rules));
-        }
         for (ExcuteRule rule : rules) {
             Map<String, Object> map = new HashMap<>();
             BasicBroswer sourceBorswer = rule.getSource();
@@ -140,14 +148,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
+
+    private long lastClickItemTime = 0;
+    private long currentClickItemTime = 0;
+    private String someTaskIsRuning;
+
+    private View currentClientItem = null;
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (isItemRuning) {
-            showToastMessage(lv.getResources().getString(R.string.someTaskIsRuning));
-            return;
-        }
-        isItemRuning = true;
-        lv.setClickable(false);
+        currentClientItem = view;
+        currentClientItem.setEnabled(false);
         int choosed = parent.getPositionForView(view);
         for (int i = 0; i < parent.getChildCount(); i++) {
             if (i != choosed) {
@@ -157,6 +168,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
         try {
+            currentClickItemTime = System.currentTimeMillis();
+            long diff = currentClickItemTime - lastClickItemTime;
+            if (diff <= 1000) {
+                return;
+            }
+            lastClickItemTime = currentClickItemTime;
             final ExcuteRule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
@@ -168,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     return;
                 }
                 showDialogMessage(lv.getResources().getString(R.string.notSupport));
+                return;
             }
             view.post(new Runnable() {
                 public void run() {
@@ -176,12 +194,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             });
         } finally {
             LogHelper.write();
-            isItemRuning = false;
-            lv.setClickable(true);
+            currentClientItem.setEnabled(true);
         }
     }
 
     private void processConverter(ExcuteRule rule) {
+        if (isItemRuning) {
+            if (someTaskIsRuning == null) {
+                someTaskIsRuning = lv.getResources().getString(R.string.someTaskIsRuning);
+            }
+            showToastMessage(someTaskIsRuning);
+            return;
+        }
+        isItemRuning = true;
         long start = System.currentTimeMillis();
         long end = -1;
         int ret = -1;
@@ -222,6 +247,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 rule.setStage(3);
             }
+            isItemRuning = false;
         }
     }
 
@@ -258,6 +284,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onBtnClick() {
                 dialog.dismiss();
+            }
+        });
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (currentClientItem != null) {
+                    currentClientItem.setEnabled(true);
+                }
             }
         });
     }
@@ -342,7 +376,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        System.out.println("keyCode:" + keyCode);
         //捕获返回键按下的事件
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             //获取当前系统时间的毫秒数

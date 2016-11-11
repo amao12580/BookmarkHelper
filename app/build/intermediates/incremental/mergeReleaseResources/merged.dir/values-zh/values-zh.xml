@@ -21,7 +21,7 @@
     <string name="dialogButtonOk">已阅</string>
     <string name="dialogTitle">快看提示！</string>
     <string name="donate">捐助</string>
-    <string name="donateTitle">您的捐助是我最大的动力</string>
+    <string name="donateTitle">请我喝杯咖啡？</string>
     <string name="donateURL">http://ww3.sinaimg.cn/large/0060lm7Tgw1f9kfaj0fvsj30u00xc77b.jpg</string>
     <string name="fileCPError">文件拷贝失败</string>
     <string name="fileDeleteError">文件删除失败</string>
@@ -39,7 +39,7 @@
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

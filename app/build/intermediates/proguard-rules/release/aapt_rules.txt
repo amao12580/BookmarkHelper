@@ -76,7 +76,7 @@
 # view res/layout/popup_bubble.xml #generated:7
 -keep class com.flyco.dialog.view.TriangleView { <init>(...); }
 
-# view AndroidManifest.xml #generated:34
+# view AndroidManifest.xml #generated:36
 -keep class pro.kisscat.www.bookmarkhelper.activity.Html5Activity { <init>(...); }
 
 # view AndroidManifest.xml #generated:27

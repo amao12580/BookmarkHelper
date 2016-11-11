@@ -2,7 +2,7 @@
 <!-- manifest文件详解：http://www.cnblogs.com/pilang/archive/2011/04/20/2022932.html -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pro.kisscat.www.bookmarkhelper"
-    android:versionCode="62"
+    android:versionCode="63"
     android:versionName="0.0.6" >
 
     <uses-sdk
@@ -24,7 +24,9 @@
         android:theme="@style/AppTheme"
         android:windowIsTranslucent="true"
         android:windowNoTitle="true" >
-        <activity android:name="pro.kisscat.www.bookmarkhelper.activity.MainActivity" >
+        <activity
+            android:name="pro.kisscat.www.bookmarkhelper.activity.MainActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

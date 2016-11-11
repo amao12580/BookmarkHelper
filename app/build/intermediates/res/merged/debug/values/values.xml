@@ -573,7 +573,7 @@
     <string name="clickBackToExit">Next click back will exit.</string>
     <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
     <string name="dialogButtonOk">OK</string>
-    <string name="dialogTitle">Warning !</string>
+    <string name="dialogTitle">Notice</string>
     <string name="donate">Donate</string>
     <string name="donateTitle">Thanks a lot.</string>
     <string name="donateURL">https://amao12580.github.io/rewards/wechat-reward-image.png</string>

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml
@@ -34,7 +34,7 @@ ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:9:5-79
 	android:name
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:9:22-76
 application
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:11:5-31:19
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:11:5-32:19
 MERGED from [com.android.support:design:24.2.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:24.2.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\AndroidManifest.xml:25:5-20
@@ -62,25 +62,27 @@ MERGED from [com.android.support:animated-vector-drawable:24.2.1] D:\GitHub\Book
 	android:theme
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:17:9-40
 activity#pro.kisscat.www.bookmarkhelper.activity.MainActivity
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:22:9-27:20
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:21:9-28:20
+	android:screenOrientation
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:23:13-49
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:22:19-56
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:22:13-50
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:23:13-26:29
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:24:13-27:29
 action#android.intent.action.MAIN
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:24:17-69
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:24:25-66
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:26:27-74
 activity#pro.kisscat.www.bookmarkhelper.activity.Html5Activity
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:28:9-30:59
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:29:9-31:59
 	android:theme
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:30:13-56
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:31:13-56
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:29:13-51
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:30:13-51
 uses-sdk
 INJECTED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:24.2.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\AndroidManifest.xml:20:5-43
