@@ -43,17 +43,6 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new QQBroswer(), new ViaBroswer()));
             supportRule.add(new Rule(supportRule.size() + 1, context, new XBroswer(), new ViaBroswer()));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
         }
     }
 

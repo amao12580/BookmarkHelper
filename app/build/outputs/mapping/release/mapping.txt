@@ -30801,9 +30801,9 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www
     25:25:void setInstalled(boolean) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster -> pro.kisscat.www.bookmarkhelper.converter.support.b:
     java.util.List supportRule -> a
-    37:58:void init(android.content.Context) -> a
-    61:74:int excute(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
-    78:82:java.util.List cover2Excute(android.content.Context,java.util.List) -> a
+    37:47:void init(android.content.Context) -> a
+    50:63:int excute(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
+    67:71:java.util.List cover2Excute(android.content.Context,java.util.List) -> a
     33:33:java.util.List getSupportRule() -> a
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.a:
     java.util.List bookmarks -> b

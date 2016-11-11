@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Nov 11 11:16:58 CST 2016
+#Fri Nov 11 11:20:37 CST 2016
 1863.set=JAVA_RESOURCE
 1117.file=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\proguard\\release\\jars\\3\\1f\\main.jar\\android\\support\\v4\\print\\PrintHelperKitkat$1.class
 1391.set=JAVA_RESOURCE
