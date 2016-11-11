@@ -6,7 +6,7 @@ BookmarkHelper（书签助手）是一款Android平台下，浏览器书签转�
 
 BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥用Root权限，使用完毕可立即卸载，运行时按需连接网络。如果你用的爽，可以[鼓励一下](https://www.kisscat.pro/rewards/wechat-reward-image.png)，我将用于：支付VPS月租，开发更多精彩APP，谢谢您的点滴支持！
 
-[使用教程Gif：5.8MB](http://ww2.sinaimg.cn/mw690/becd6b85gw1f9oaniwbdig208e0dwu11.gif)
+<a target="_blank" href="http://ww2.sinaimg.cn/mw690/becd6b85gw1f9oaniwbdig208e0dwu11.gif">使用教程Gif：5.8MB</a>
 
 ## 版本计划
 ### [0.0.1版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.1%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.1.apk)
