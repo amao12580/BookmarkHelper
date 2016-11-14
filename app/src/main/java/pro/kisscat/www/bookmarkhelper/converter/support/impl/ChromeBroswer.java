@@ -130,13 +130,13 @@ public class ChromeBroswer extends BasicBroswer {
             } else {
                 LogHelper.v("书签数据:" + JsonUtil.toJson(chromeBookmark));
             }
-            List<Bookmark> childrens = chromeBookmark.fetchAll();
-            if (childrens == null) {
-                LogHelper.v("childrens is null.");
+            List<Bookmark> bookmarks = chromeBookmark.fetchAll();
+            if (bookmarks == null) {
+                LogHelper.v("bookmarks is null.");
                 return result;
             }
-            LogHelper.v("书签条数:" + childrens.size());
-            return childrens;
+            LogHelper.v("书签条数:" + bookmarks.size());
+            return bookmarks;
         } catch (Exception e) {
             e.printStackTrace();
             throw e;

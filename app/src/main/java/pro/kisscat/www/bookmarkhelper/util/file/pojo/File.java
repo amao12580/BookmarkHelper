@@ -9,6 +9,7 @@ import java.util.Date;
 
 import lombok.Getter;
 import lombok.Setter;
+import pro.kisscat.www.bookmarkhelper.common.shared.BuildConfig;
 
 /**
  * Created with Android Studio.
@@ -121,7 +122,7 @@ public class File implements Comparable<File> {
      * 文件大小是否超过10KB
      */
     public boolean isOver10KB() {
-        return size > 10 && measure.toString().equals(Measure.KB.toString());
+        return !BuildConfig.DEBUG && size > 10 && measure.toString().equals(Measure.KB.toString());
     }
 
     /**
