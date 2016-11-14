@@ -9,9 +9,10 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 <a target="_blank" href="http://ww2.sinaimg.cn/mw690/becd6b85gw1f9oaniwbdig208e0dwu11.gif">使用教程Gif：5.8MB</a>
 
 ## 版本计划
-### [0.0.1版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.1%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.1.apk)
+### 0.0.X
+#### [0.0.1版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.1%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.1.apk)
 支持从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
-### [0.0.2版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.2%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.2.apk)
+#### [0.0.2版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.2%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.2.apk)
 1.增加兼容：支持从Flyme5自带浏览器提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 2.当rom不是flyme时，如果rom存在包名为：com.android.browser的浏览器，也可以用Flyme5的规则，一般的内置浏览器都是这个包名。
@@ -19,17 +20,17 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 3.Flyme4.X系列的rom暂未测试，没有设备。如您感兴趣，请与我联系，见下方的邮件地址！
 
 4.Via合并书签修复bug，增强稳定性，现在安装via，但是没有打开过，将不能合并，最少需要您手动打开一次！
-### [0.0.3版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.3%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.3.apk)
+#### [0.0.3版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.3%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.3.apk)
 1.增加兼容：支持从[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 2.界面大调整，美美哒！
 
 3.部分代码重构，精简掉重合代码段。
-### [0.0.4版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.4%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.4.apk)
+#### [0.0.4版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.4%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.4.apk)
 1.增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 2.底栏小Tip，关于我、五星好评、捐助
-### [0.0.5版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.5%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.5.apk)
+#### [0.0.5版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.5%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.5.apk)
 1.增加兼容：支持从[X浏览器](http://www.coolapk.com/apk/com.mmbox.xbrowser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 2.Bug 修复：[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)支持读取QQ用户登录的书签数据，微信登录的还在修复中。
@@ -40,7 +41,7 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 5.日志记录进行异步化，不再阻塞主线程
 
-### [0.0.6版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.6%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.6.apk)
+#### [0.0.6版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.6%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.6.apk)
 1.增加兼容：支持从[360浏览器](http://www.coolapk.com/apk/com.qihoo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 2.Bug 修复：[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)现在支持读取完整的书签数据。
@@ -51,41 +52,40 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 5.背景线程处理书签交换，避免UI响应超时
 
-### 0.0.7版 Draft
+#### 0.0.7版 Draft
 1.增加兼容：支持从[搜狗浏览器](http://www.coolapk.com/apk/sogou.mobile.explorer)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.8版 Draft
+#### 0.0.8版 Draft
 1.增加兼容：支持从[百度浏览器](http://www.coolapk.com/apk/com.baidu.browser.apps)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.9版 Draft
+#### 0.0.9版 Draft
 1.增加兼容：支持从[欧朋浏览器](http://www.coolapk.com/apk/com.oupeng.mini.android)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.10版 Draft
+#### 0.0.10版 Draft
 1.增加兼容：支持从[猎豹浏览器](http://www.coolapk.com/apk/com.ijinshan.browser_fast)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.11版 Draft
+#### 0.0.11版 Draft
 1.增加兼容：支持从[FireFox浏览器](http://www.coolapk.com/apk/org.mozilla.firefox)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.12版 Draft
+#### 0.0.12版 Draft
 1.增加兼容：支持从[UC国际版浏览器](http://www.coolapk.com/apk/com.UCMobile.intl)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.13版 Draft
+#### 0.0.13版 Draft
 1.增加兼容：支持从[Chrome Canary浏览器](http://www.coolapk.com/apk/com.chrome.canary)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.14版 Draft
+#### 0.0.14版 Draft
 1.增加兼容：支持从[Chrome Beta浏览器](http://www.coolapk.com/apk/com.chrome.beta)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.15版 Draft
+#### 0.0.15版 Draft
 1.增加兼容：支持从[Chrome Dev浏览器](http://www.coolapk.com/apk/com.chrome.dev)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.16版 Draft
+#### 0.0.16版 Draft
 1.增加兼容：支持从[MIUI浏览器](https://play.google.com/store/apps/details?id=com.miui.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-### 0.0.17版 Draft
+#### 0.0.17版 Draft
 1.增加兼容：支持从[Yandex浏览器](http://www.coolapk.com/apk/ru.yandex.searchplugin)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-
-### 0.0.18版 Draft
+#### 0.0.18版 Draft
 1.增加兼容：支持从[旗鱼浏览器](http://www.coolapk.com/apk/com.ruanmei.qiyubrowser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 
@@ -94,19 +94,20 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 【FBI Waring！】0.1.X版的开发顺序随时会做出调整，请关注最新README
 
 ---
-
-### 0.1.1版 Draft
+### 0.1.X
+#### 0.1.1版 Draft
 1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)。
 
-### 0.1.2版 Draft
+#### 0.1.2版 Draft
 1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)。
 
-### 0.1.3版 Draft
+#### 0.1.3版 Draft
 1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Mercury浏览器](https://play.google.com/store/apps/details?id=com.miui.browser)。
 
-### 0.1.4版 Draft
+#### 0.1.4版 Draft
 1.增加兼容：支持从[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)提取书签，追加到[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)。
 
+---
 
 ## TO-DO List
 
