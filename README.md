@@ -78,6 +78,116 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 ### 0.0.15版 Draft
 1.增加兼容：支持从[Chrome Dev浏览器](http://www.coolapk.com/apk/com.chrome.dev)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
+### 0.0.16版 Draft
+1.增加兼容：支持从[MIUI浏览器](https://play.google.com/store/apps/details?id=com.miui.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+### 0.0.17版 Draft
+1.增加兼容：支持从[Yandex浏览器](http://www.coolapk.com/apk/ru.yandex.searchplugin)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+
+### 0.0.18版 Draft
+1.增加兼容：支持从[旗鱼浏览器](http://www.coolapk.com/apk/com.ruanmei.qiyubrowser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+
+---
+
+0.1.X版的开发顺序随时会做出调整，请关注最新README
+
+---
+
+### 0.1.1版 Draft
+1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)。
+
+### 0.1.2版 Draft
+1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)。
+
+### 0.1.3版 Draft
+1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Mercury浏览器](https://play.google.com/store/apps/details?id=com.miui.browser)。
+
+### 0.1.4版 Draft
+1.增加兼容：支持从[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)提取书签，追加到[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)。
+
+
+## TO-DO List
+
+### Issue
+
+1.读取不到... 红米2 5.1 MIUI8     红米3
+
+着手修复
+
+2.能做一个转移书签到夸克浏览器不？
+
+增加兼容
+
+3.识别不出chrome beta 和dev还有chromium啊。。有啥用？
+
+增加兼容
+
+4.有没有adui自带浏览器的书签转换？
+
+增加兼容
+
+5.魅族mx4，版本号：Flyme 5.1.11.0A 并不能转移成功……点击一下就卡在界面了
+
+着手修复
+
+6.谷歌浏览器书签栏的书签能转移了，但是书签栏里的文件夹里面的书签仍然不行
+
+着手修复
+
+7.可不可以把via书签移到chrome？
+
+增加兼容
+
+8.作者大大，反馈一个bug，uc浏览器转via书签中有相当一部分会复制两次，如图
+
+着手修复
+
+9.什么时候做个移书签到妮哩萌萌浏览器
+
+增加兼容
+
+10.希望能将别的浏览器书签能导入mercury浏览器
+
+增加兼容
+
+11.不能保存为文件吗
+
+新特性
+
+12.[笑哭再见]是我打开方式不对吗？导入QQ的书签，然后原来QQ浏览器和via分好类的文件夹都被被拆开了，现在打开书签满屏的书签，我得整理到什么时候啊！心酸[w累]
+
+着手修复
+
+13.可以导UC的首页标签吗？
+
+着手修复
+
+14.大兄弟们告诉我，这个能不能把uc的导入QQ？
+
+增加兼容
+
+15.支持yandex
+
+增加兼容
+
+16.支持旗鱼浏览器
+
+增加兼容
+
+17.QQ浏览器也有这样的主页书签，也没法同步的吗？[w调皮][w调皮][w调皮]
+
+着手修复
+
+18.打开后安装新浏览器，显示未安装
+
+着手修复
+
+19.报via未安装，我的是g play版的，包名与国内版不一致
+
+增加兼容
+
 
 ## UnStable
 UnStable是指最新通过基础测试，但未进行大面积设备兼容验证的非稳定版本，不会发布到[Google Play](https://play.google.com/store?hl=zh_CN)或[Cool Market](http://www.coolapk.com)。如果你是狂热爱好者，请点击【[下载链接](https://github.com/amao12580/BookmarkHelper/raw/master/app/build/outputs/apk/app-debug.apk)】，从我的[Github Repo](https://github.com/amao12580/BookmarkHelper)实时获取，不保证会有小瑕疵。
