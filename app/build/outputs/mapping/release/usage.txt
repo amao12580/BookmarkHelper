@@ -437,12 +437,12 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     58:58:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    32:32:public ConverterMaster()
+    33:33:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    48:51:public int readBookmarkSum(android.content.Context)
+    47:50:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -462,16 +462,21 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     45:48:public int readBookmarkSum(android.content.Context)
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer:
-    private static final java.lang.String TAG
-    private static final java.lang.String packageName
-    private static final java.lang.String fileName_origin
-    50:53:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     44:47:public int readBookmarkSum(android.content.Context)
+pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable:
+    public static final java.lang.String packageName
+    46:49:public int readBookmarkSum(android.content.Context)
+pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage1Broswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String fileName_origin
+pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Broswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String fileName_origin
+    private static final java.lang.String tableName
 pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper:
     18:18:public DBHelper()
 pro.kisscat.www.bookmarkhelper.util.Path:

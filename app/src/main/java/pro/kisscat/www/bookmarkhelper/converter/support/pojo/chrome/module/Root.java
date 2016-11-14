@@ -15,11 +15,11 @@ import lombok.Setter;
 public class Root {
     @Setter
     @Getter
-    private BookmarkBar bookmark_bar;
+    private Node bookmark_bar;
     @Setter
     @Getter
-    private Other other;
+    private Node other;
     @Setter
     @Getter
-    private Synced synced;
+    private Node synced;
 }

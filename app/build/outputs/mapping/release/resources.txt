@@ -308,9 +308,14 @@ Referenced Strings:
   V
   VdcInflateDelegate
   VectorDrawableCompat
-  Via:合并书签数据结束
-  Via:开始读取书签数据
-  Via:读取书签数据结束
+  ViaStage1:合并书签数据结束
+  ViaStage1:开始读取书签数据
+  ViaStage1:读取书签数据结束
+  ViaStage2:合并书签数据结束
+  ViaStage2:开始读取书签SQLite数据库:
+  ViaStage2:开始读取书签数据
+  ViaStage2:读取书签SQLite数据库结束
+  ViaStage2:读取书签数据结束
   View
   ViewAnimatorCompat
   ViewCompat
@@ -685,6 +690,7 @@ Referenced Strings:
   fillColor
   flags
   float
+  folder
   fragment
   free_form
   g
@@ -725,6 +731,7 @@ Referenced Strings:
   https://
   i
   icon
+  id
   ident
   illegal.char
   inProgressLabel
@@ -845,7 +852,6 @@ Referenced Strings:
   mtt_bookmarks
   mv
   name
-  name:
   nativeMethod
   nature
   net.sf.cglib.proxy.Factory
@@ -1015,6 +1021,7 @@ Referenced Strings:
   timestamp
   tintMode
   title
+  title:
   tmp
   toCharArray
   toJdbc
@@ -1043,6 +1050,7 @@ Referenced Strings:
   val
   valueOf
   vector
+  via
   view
   viewportHeight
   viewportWidth
@@ -1106,6 +1114,7 @@ Referenced Strings:
   温馨提示
   确定
   继续
+Marking string:viaBookmarksFileMiss:2131099703 used because its prefix matches string pool constant via
 Marking id:left:2131492904 used because its prefix matches string pool constant left
 Marking declare-styleable:ActionMenuView:-1 used because its prefix matches string pool constant ActionMenuView
 Marking styleable:ActionMenuView:-1 used because its prefix matches string pool constant ActionMenuView
@@ -2706,4 +2715,4 @@ Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (r
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 907729 to 908541); using original instead
+Resource shrinking did not work (grew from 927487 to 928299); using original instead

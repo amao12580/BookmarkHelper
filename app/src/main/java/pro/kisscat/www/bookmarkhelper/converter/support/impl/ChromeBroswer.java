@@ -15,7 +15,6 @@ import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Children;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -81,26 +80,26 @@ public class ChromeBroswer extends BasicBroswer {
             cpPath.mkdirs();
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             java.io.File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
-            List<Children> chromeBookmarks = fetchBookmarksFromJSONFile(file);
+            List<Bookmark> chromeBookmarks = fetchBookmarksFromJSONFile(file);
             int index = 0;
             int size = chromeBookmarks.size();
-            for (Children item : chromeBookmarks) {
+            for (Bookmark item : chromeBookmarks) {
                 index++;
                 String bookmarkUrl = item.getUrl();
-                String bookmarkName = item.getName();
+                String bookmarkTitle = item.getTitle();
                 if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("name:" + bookmarkName);
+                    LogHelper.v("title:" + bookmarkTitle);
                     LogHelper.v("url:" + bookmarkUrl);
                 }
                 if (!isValidUrl(bookmarkUrl)) {
                     continue;
                 }
-                if (bookmarkName == null || bookmarkName.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkName + ",set to default value.");
-                    bookmarkName = MetaData.BOOKMARK_TITLE_DEFAULT;
+                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
+                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
+                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
                 }
                 Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkName);
+                bookmark.setTitle(bookmarkTitle);
                 bookmark.setUrl(bookmarkUrl);
                 bookmarks.add(bookmark);
             }
@@ -114,9 +113,9 @@ public class ChromeBroswer extends BasicBroswer {
         return bookmarks;
     }
 
-    private List<Children> fetchBookmarksFromJSONFile(java.io.File file) throws FileNotFoundException {
+    private List<Bookmark> fetchBookmarksFromJSONFile(java.io.File file) throws FileNotFoundException {
         JSONReader jsonReader = null;
-        List<Children> result = new LinkedList<>();
+        List<Bookmark> result = new LinkedList<>();
         try {
             jsonReader = new JSONReader(new FileReader(file));
             bookmarks = new LinkedList<>();
@@ -131,7 +130,7 @@ public class ChromeBroswer extends BasicBroswer {
             } else {
                 LogHelper.v("书签数据:" + JsonUtil.toJson(chromeBookmark));
             }
-            List<Children> childrens = chromeBookmark.fetchChildrens();
+            List<Bookmark> childrens = chromeBookmark.fetchAll();
             if (childrens == null) {
                 LogHelper.v("childrens is null.");
                 return result;

@@ -7,6 +7,8 @@ import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage1Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 
 /**

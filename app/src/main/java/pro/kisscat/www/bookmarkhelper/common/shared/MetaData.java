@@ -16,4 +16,5 @@ public final class MetaData {
     public static final String LOG_E_FATAL = "FATAL";
     public static final String BOOKMARK_TITLE_DEFAULT = "UnNamed";
     public static final String NETWORKERRORURL = "file://android_asset/errorPage/error.html";
+    public static final String folderTypeDefaultName = "folder";
 }

@@ -87,20 +87,20 @@ public class Flyme5Broswer extends BasicBroswer {
             for (Bookmark item : bookmarksList) {
                 index++;
                 String bookmarkUrl = item.getUrl();
-                String bookmarkName = item.getTitle();
+                String bookmarkTitle = item.getTitle();
                 if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("name:" + bookmarkName);
+                    LogHelper.v("title:" + bookmarkTitle);
                     LogHelper.v("url:" + bookmarkUrl);
                 }
                 if (!isValidUrl(bookmarkUrl)) {
                     continue;
                 }
-                if (bookmarkName == null || bookmarkName.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkName + ",set to default value.");
-                    bookmarkName = MetaData.BOOKMARK_TITLE_DEFAULT;
+                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
+                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
+                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
                 }
                 Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkName);
+                bookmark.setTitle(bookmarkTitle);
                 bookmark.setUrl(bookmarkUrl);
                 bookmarks.add(bookmark);
             }
