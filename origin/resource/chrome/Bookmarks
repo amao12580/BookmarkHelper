@@ -1,5 +1,5 @@
 {
-   "checksum": "00a1c93376c4b33dba4a50257af759d2",
+   "checksum": "4874eef8a533249944ca22bdaa371465",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -176,32 +176,40 @@
             "type": "url",
             "url": "http://www.bttt8.com/"
          }, {
-            "date_added": "13073378191549000",
-            "id": "251",
-            "meta_info": {
-               "stars.id": "ssc_d7d7802bd20af9fc",
-               "stars.imageData": "Cg5JWjFxeGtyOGJWWnM4TRJYClBodHRwOi8vbXAud2VpeGluLnFxLmNvbS9tcC9xcmNvZGU/c2NlbmU9MTAwMDAwMDQmc2l6ZT0xMDImX19iaXo9TXpBM01qUXhNakU0T1E9PRCBARiBARphCltodHRwOi8vdDEuZ3N0YXRpYy5jb20vaW1hZ2VzP3E9dGJuOkFOZDlHY1E0OWNyUnpYZjBXcW13VEpxRVFSQkE2VGFibTJnNy0yQ040T2lVTHJCUXV3SWVndnVOEGcYZyIOCAEQZxhnQgYSBJJKAP8ol+XvqN/qzQI=",
-               "stars.note": "",
-               "stars.pageData": "EuAP6IKy5YS/6LWE5paZ77yI56ys5LiJ5pyf77yJLS0tLeacgOWAvOW+l+mZquWtqeWtkOingueci+eahDEwMOmDqGJiY+e7j+WFuOe6quW9leeJhyAyMDE1LTA0LTExIOmFt+WmiOWSqiBCQkPvvIjoi7Hlm73lub/mkq3lhazlj7jvvInnmoTnuqrlvZXniYfpopjmnZDlub/ms5vjgIHliLbkvZznsr7oia/jgILnnIvov5nkupvnu4/lhbjnmoTnuqrlvZXniYfvvIzml6Llj6/ku6Xov73muq/kuIrkuIvmlbDljYPlubTnmoTljoblj7LmlofljJbvvIzkuZ/lj6/ku6XmrKPotY/ku47lroflrpnliLDlnLDkv6Hmt7HlpITnmoTlpYflppnlooPnlYzjgILogIzlhbbnsr7lvannmoTnlLvpnaLljbPkvb/lrprmoLzvvIzmi7/lh7rmnaXkuZ/mmK/kuIDlvKDmkYTlvbHkvbPkvZzjgILpmarlranlrZDnnIvnnItCQkPkuI3ku4Xog73mrKPotY/kuJbnlYzkuIfniannmoTlpYflppnvvIzmm7Tog73ku47kuK3lrabliLDkuI3lsJHnn6Xor4bjgIIgMDAx5oGS5rKzKOWbveiLseS4reiLseWtl+W5lS/lm73or63niYjlnYfmnIkz6ZuGKSDlnLDnkIPkuIrmsqHmnInkuIDkuKrlnLDmlrnog73lg4/ljbDluqbkuIDmoLfvvIzlsIboh6rnhLblkoznsr7npZ7kuJbnlYzntKflr4bkuqTnu4flnKjkuIDotbfjgILogIzlnKjmiYDmnInoh6rnhLbnpZ7ngbXlvZPkuK3vvIzmnIDlvLrlpKfnmoTkuIDkvY3lvZPnhLbopoHmlbDmgZLmsrPjgILkuIDljYPlubTmnaXvvIzlroPkuLrov5nniYflubLnh6XnmoTlnJ/lnLDluKbmnaXkuobml6DpmZDnlJ/mnLrlkozlj5jljJbjgILnhLbogIzov5nmnaHlnKPmsrPnmoTotbfmupDnqbbnq5/lnKjlk6rph4zlp4vnu4jmmK/kuIDkuKrosJzvvJ/pgqPkuYjlk6rmnaHmsrPmtYHmiY3mmK/mgZLmsrPnnJ/mraPnmoTmupDlpLTlkaLvvJ8g5LiL6L295Zyw5Z2A77yaaHR0cDovL3l1bnBhbi5jbi9jVmNCaWpaa3dKcE5YIOWvhuegge+8mmM1ZTkgMDAy5rS75Yqb5pif55CDKOiLseivreS4reiLseWtl+W5lTEy6ZuGKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZxcWJKcXl2QWEg5a+G56CB77yaMjlmNyAwMDPlnLDlubPnur/lkIjpm4Yo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzY4NU5YWW1OaG4g5a+G56CB77yaODNhMCAwMDTnmb7mhZXovr7kuInop5LmtLLkuYvosJwo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZuZVdtTmZUemgg5a+G56CB77yaYmFkNyAwMDXph47mgKfliqDli5Lmr5Qo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZwUUw4VHE3bmYg5a+G56CB77yaNDJhYyAwMDbmmJ/pmYXmvKvmuLgo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZUQWt0czN4dHMg5a+G56CB77yaOWMxMiAwMDfmjqLmvZzpsqjpsbzngavlsbEo5Zu96Iux5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzY3TjliWnEyY1gg5a+G56CB77yaYjQxZCAwMDjnpZ7np5jnmoTnjpvpm4Uo5Zu96Iux5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY01LNVYyY0FKeGsg5a+G56CB77yaMDdmNSAwMDnnjpvpm4XlnLDlupXkuYvosJwo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY013Qng1MzZpeWUg5a+G56CB77yaNTUwOCAwMTDlhrfooYDnlJ/lkb0o6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY01ISUxqZEpSZ1Mg5a+G56CB77yaY2Y0ZiAwMTHlnLDnkIPnmoTlipvph48o6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY014UFNwWGVFcEsg5a+G56CB77yaZjVmNCAwMTLpgI/op4bliqjniako6Iux6K+t5Lit5paH5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY01CYUlw",
-               "stars.type": "2",
-               "stars.version": "sync.server.Chrome45"
-            },
-            "name": "纪录片",
-            "sync_transaction_version": "3",
-            "type": "url",
-            "url": "http://mp.weixin.qq.com/s?__biz=MzA3MjQxMjE4OQ==&mid=205201875&idx=1&sn=737811fa09e476c3ccfc675977fb52da&scene=5#rd"
-         }, {
-            "date_added": "13038763629844738",
-            "id": "252",
-            "meta_info": {
-               "stars.flags": "5",
-               "stars.userEdit": "false",
-               "stars.version": "crx.2.2014.1029.10943"
-            },
-            "name": "专访淘宝仲明：揭秘阿里运维部的故障响应机制(1) - 51CTO.COM",
-            "sync_transaction_version": "3",
-            "type": "url",
-            "url": "http://os.51cto.com/art/201212/371228.htm"
+            "children": [ {
+               "date_added": "13073378191549000",
+               "id": "251",
+               "meta_info": {
+                  "stars.id": "ssc_d7d7802bd20af9fc",
+                  "stars.imageData": "Cg5JWjFxeGtyOGJWWnM4TRJYClBodHRwOi8vbXAud2VpeGluLnFxLmNvbS9tcC9xcmNvZGU/c2NlbmU9MTAwMDAwMDQmc2l6ZT0xMDImX19iaXo9TXpBM01qUXhNakU0T1E9PRCBARiBARphCltodHRwOi8vdDEuZ3N0YXRpYy5jb20vaW1hZ2VzP3E9dGJuOkFOZDlHY1E0OWNyUnpYZjBXcW13VEpxRVFSQkE2VGFibTJnNy0yQ040T2lVTHJCUXV3SWVndnVOEGcYZyIOCAEQZxhnQgYSBJJKAP8ol+XvqN/qzQI=",
+                  "stars.note": "",
+                  "stars.pageData": "EuAP6IKy5YS/6LWE5paZ77yI56ys5LiJ5pyf77yJLS0tLeacgOWAvOW+l+mZquWtqeWtkOingueci+eahDEwMOmDqGJiY+e7j+WFuOe6quW9leeJhyAyMDE1LTA0LTExIOmFt+WmiOWSqiBCQkPvvIjoi7Hlm73lub/mkq3lhazlj7jvvInnmoTnuqrlvZXniYfpopjmnZDlub/ms5vjgIHliLbkvZznsr7oia/jgILnnIvov5nkupvnu4/lhbjnmoTnuqrlvZXniYfvvIzml6Llj6/ku6Xov73muq/kuIrkuIvmlbDljYPlubTnmoTljoblj7LmlofljJbvvIzkuZ/lj6/ku6XmrKPotY/ku47lroflrpnliLDlnLDkv6Hmt7HlpITnmoTlpYflppnlooPnlYzjgILogIzlhbbnsr7lvannmoTnlLvpnaLljbPkvb/lrprmoLzvvIzmi7/lh7rmnaXkuZ/mmK/kuIDlvKDmkYTlvbHkvbPkvZzjgILpmarlranlrZDnnIvnnItCQkPkuI3ku4Xog73mrKPotY/kuJbnlYzkuIfniannmoTlpYflppnvvIzmm7Tog73ku47kuK3lrabliLDkuI3lsJHnn6Xor4bjgIIgMDAx5oGS5rKzKOWbveiLseS4reiLseWtl+W5lS/lm73or63niYjlnYfmnIkz6ZuGKSDlnLDnkIPkuIrmsqHmnInkuIDkuKrlnLDmlrnog73lg4/ljbDluqbkuIDmoLfvvIzlsIboh6rnhLblkoznsr7npZ7kuJbnlYzntKflr4bkuqTnu4flnKjkuIDotbfjgILogIzlnKjmiYDmnInoh6rnhLbnpZ7ngbXlvZPkuK3vvIzmnIDlvLrlpKfnmoTkuIDkvY3lvZPnhLbopoHmlbDmgZLmsrPjgILkuIDljYPlubTmnaXvvIzlroPkuLrov5nniYflubLnh6XnmoTlnJ/lnLDluKbmnaXkuobml6DpmZDnlJ/mnLrlkozlj5jljJbjgILnhLbogIzov5nmnaHlnKPmsrPnmoTotbfmupDnqbbnq5/lnKjlk6rph4zlp4vnu4jmmK/kuIDkuKrosJzvvJ/pgqPkuYjlk6rmnaHmsrPmtYHmiY3mmK/mgZLmsrPnnJ/mraPnmoTmupDlpLTlkaLvvJ8g5LiL6L295Zyw5Z2A77yaaHR0cDovL3l1bnBhbi5jbi9jVmNCaWpaa3dKcE5YIOWvhuegge+8mmM1ZTkgMDAy5rS75Yqb5pif55CDKOiLseivreS4reiLseWtl+W5lTEy6ZuGKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZxcWJKcXl2QWEg5a+G56CB77yaMjlmNyAwMDPlnLDlubPnur/lkIjpm4Yo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzY4NU5YWW1OaG4g5a+G56CB77yaODNhMCAwMDTnmb7mhZXovr7kuInop5LmtLLkuYvosJwo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZuZVdtTmZUemgg5a+G56CB77yaYmFkNyAwMDXph47mgKfliqDli5Lmr5Qo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZwUUw4VHE3bmYg5a+G56CB77yaNDJhYyAwMDbmmJ/pmYXmvKvmuLgo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzZUQWt0czN4dHMg5a+G56CB77yaOWMxMiAwMDfmjqLmvZzpsqjpsbzngavlsbEo5Zu96Iux5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWYzY3TjliWnEyY1gg5a+G56CB77yaYjQxZCAwMDjnpZ7np5jnmoTnjpvpm4Uo5Zu96Iux5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY01LNVYyY0FKeGsg5a+G56CB77yaMDdmNSAwMDnnjpvpm4XlnLDlupXkuYvosJwo6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY013Qng1MzZpeWUg5a+G56CB77yaNTUwOCAwMTDlhrfooYDnlJ/lkb0o6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY01ISUxqZEpSZ1Mg5a+G56CB77yaY2Y0ZiAwMTHlnLDnkIPnmoTlipvph48o6Iux6K+t5Lit6Iux5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY014UFNwWGVFcEsg5a+G56CB77yaZjVmNCAwMTLpgI/op4bliqjniako6Iux6K+t5Lit5paH5a2X5bmVKSDkuIvovb3lnLDlnYDvvJpodHRwOi8veXVucGFuLmNuL2NWY01CYUlw",
+                  "stars.type": "2",
+                  "stars.version": "sync.server.Chrome45"
+               },
+               "name": "纪录片",
+               "sync_transaction_version": "4",
+               "type": "url",
+               "url": "http://mp.weixin.qq.com/s?__biz=MzA3MjQxMjE4OQ==&mid=205201875&idx=1&sn=737811fa09e476c3ccfc675977fb52da&scene=5#rd"
+            }, {
+               "date_added": "13038763629844738",
+               "id": "252",
+               "meta_info": {
+                  "stars.flags": "5",
+                  "stars.userEdit": "false",
+                  "stars.version": "crx.2.2014.1029.10943"
+               },
+               "name": "专访淘宝仲明：揭秘阿里运维部的故障响应机制(1) - 51CTO.COM",
+               "sync_transaction_version": "4",
+               "type": "url",
+               "url": "http://os.51cto.com/art/201212/371228.htm"
+            } ],
+            "date_added": "13123578307493951",
+            "date_modified": "13123578307494334",
+            "id": "280",
+            "name": "我是测试文件夹",
+            "sync_transaction_version": "4",
+            "type": "folder"
          }, {
             "date_added": "13038886006912803",
             "id": "253",
@@ -214,6 +222,14 @@
             "sync_transaction_version": "3",
             "type": "url",
             "url": "http://xiaoruanjian.iteye.com/blog/1091493"
+         }, {
+            "children": [  ],
+            "date_added": "13123578307494078",
+            "date_modified": "13123578307494080",
+            "id": "281",
+            "name": "测试文件夹V2",
+            "sync_transaction_version": "4",
+            "type": "folder"
          }, {
             "date_added": "13039086668688820",
             "id": "254",
@@ -528,9 +544,17 @@
             "sync_transaction_version": "3",
             "type": "url",
             "url": "http://database.51cto.com/art/201103/248114.htm"
+         }, {
+            "children": [  ],
+            "date_added": "13123578307494105",
+            "date_modified": "13123578307494107",
+            "id": "282",
+            "name": "新建文件夹1",
+            "sync_transaction_version": "4",
+            "type": "folder"
          } ],
          "date_added": "13123133820754326",
-         "date_modified": "13092112785528307",
+         "date_modified": "13123578307494413",
          "id": "1",
          "name": "书签栏",
          "sync_transaction_version": "3",
@@ -4064,6 +4088,18 @@
             "sync_transaction_version": "3",
             "type": "url",
             "url": "http://pic.xiaojianjian.net/"
+         }, {
+            "children": [  ],
+            "date_added": "13123578307494129",
+            "date_modified": "13123578307494131",
+            "id": "283",
+            "meta_info": {
+               "stars.description": "test22222222",
+               "stars.version": "crx.2.2016.128.11729"
+            },
+            "name": "新建文件夹2",
+            "sync_transaction_version": "4",
+            "type": "folder"
          } ],
          "date_added": "13123133820754335",
          "date_modified": "13123042065197498",
@@ -4072,7 +4108,7 @@
          "sync_transaction_version": "3",
          "type": "folder"
       },
-      "sync_transaction_version": "3",
+      "sync_transaction_version": "4",
       "synced": {
          "children": [ {
             "date_added": "13036849354764191",
@@ -4105,6 +4141,22 @@
             "sync_transaction_version": "3",
             "type": "url",
             "url": "chrome-native://newtab/"
+         }, {
+            "children": [ {
+               "children": [  ],
+               "date_added": "13123578307494364",
+               "date_modified": "13123578307494366",
+               "id": "285",
+               "name": "新建文件夹",
+               "sync_transaction_version": "4",
+               "type": "folder"
+            } ],
+            "date_added": "13123578307494182",
+            "date_modified": "13123578307494184",
+            "id": "284",
+            "name": "新建文件夹3",
+            "sync_transaction_version": "4",
+            "type": "folder"
          } ],
          "date_added": "13123133820754338",
          "date_modified": "13123134180644300",

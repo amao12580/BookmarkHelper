@@ -96,15 +96,18 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 ---
 ### 0.1.X
 #### 0.1.1版 Draft
-1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)。
+1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[夸克浏览器](http://www.coolapk.com/apk/com.quark.browser)。
 
 #### 0.1.2版 Draft
 1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)。
 
 #### 0.1.3版 Draft
-1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Mercury浏览器](https://play.google.com/store/apps/details?id=com.miui.browser)。
+1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[妮哩萌萌](http://www.coolapk.com/apk/nico.styTool)。
 
 #### 0.1.4版 Draft
+1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[Mercury浏览器](http://www.coolapk.com/apk/com.ilegendsoft.mercury)。
+
+#### 0.1.5版 Draft
 1.增加兼容：支持从[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)提取书签，追加到[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)。
 
 ---

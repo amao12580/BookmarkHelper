@@ -43,6 +43,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRul
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
+import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
@@ -177,12 +178,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             final ExcuteRule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
-                    showDialogMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
-                    return;
+                    AppListUtil.reInit(this);
+                    if (!rule.getSource().isInstalled(this, rule.getSource())) {
+                        showDialogMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                        return;
+                    }
                 }
                 if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
-                    showDialogMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
-                    return;
+                    AppListUtil.reInit(this);
+                    if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
+                        showDialogMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                        return;
+                    }
                 }
                 showDialogMessage(lv.getResources().getString(R.string.notSupport));
                 return;

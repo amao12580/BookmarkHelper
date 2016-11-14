@@ -1,24 +1,19 @@
-package pro.kisscat.www.bookmarkhelper.converter.support.impl;
+package pro.kisscat.www.bookmarkhelper.converter.support.impl.via;
 
+import android.content.ContentValues;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
-import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark;
+import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -32,39 +27,18 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
  * Project:BookmarkHelper
  * User:ChengLiang
  * Mail:stevenchengmask@gmail.com
- * Date:2016/10/9
- * Time:15:38
+ * Date:2016/11/14
+ * Time:13:18
+ * <p>
+ * versionName>=2.1.1  && versionCode>=20161113
+ * <p>
+ * stage2较stage1主要是书签存取由json txt转变为sqlite3
  */
 
-public class ViaBroswer extends BasicBroswer {
-    private static final String TAG = "Via";
-    private static final String packageName = "mark.via";
-    private List<Bookmark> bookmarks;
-
-    public String getPackageName() {
-        return packageName;
-    }
-
-    @Override
-    public int readBookmarkSum(Context context) {
-        if (bookmarks == null) {
-            readBookmark(context);
-        }
-        return bookmarks.size();
-    }
-
-    @Override
-    public void fillDefaultIcon(Context context) {
-        this.setIcon(ContextCompat.getDrawable(context, R.drawable.ic_via));
-    }
-
-    @Override
-    public void fillDefaultAppName(Context context) {
-        this.setName(context.getString(R.string.broswer_name_show_via));
-    }
-
-    private static final String fileName_origin = "bookmarks.dat";
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/files/";
+public class ViaStage2Broswer extends ViaBroswerable {
+    private static final String TAG = "ViaStage2";
+    private static final String fileName_origin = "via";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Via/";
 
     @Override
@@ -75,7 +49,6 @@ public class ViaBroswer extends BasicBroswer {
         }
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
-        BufferedReader reader = null;
         try {
             String originFilePath = filePath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePath);
@@ -88,21 +61,14 @@ public class ViaBroswer extends BasicBroswer {
             cpPath.mkdirs();
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
-            File file = ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());
-            reader = new BufferedReader(new FileReader(file));
-            List<ViaBookmark> list = new ArrayList<>();
-            String tempString;
-            while ((tempString = reader.readLine()) != null) {
-                ViaBookmark item = JsonUtil.fromJson(tempString, ViaBookmark.class);
-                list.add(item);
-            }
-            reader.close();
-            LogHelper.v("书签数据:" + JsonUtil.toJson(list));
-            LogHelper.v("书签条数:" + list.size());
+            ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());
+            List<ViaBookmark> bookmarksList = fetchBookmarksList(context, tmpFilePath);
+            LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
+            LogHelper.v("书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             int index = 0;
-            int size = list.size();
-            for (ViaBookmark item : list) {
+            int size = bookmarksList.size();
+            for (ViaBookmark item : bookmarksList) {
                 index++;
                 String bookmarkUrl = item.getUrl();
                 String bookmarkName = item.getTitle();
@@ -110,7 +76,7 @@ public class ViaBroswer extends BasicBroswer {
                     LogHelper.v("name:" + bookmarkName);
                     LogHelper.v("url:" + bookmarkUrl);
                 }
-                if (!isGoodUrl(bookmarkUrl)) {
+                if (!isValidUrl(bookmarkUrl)) {
                     continue;
                 }
                 if (bookmarkName == null || bookmarkName.isEmpty()) {
@@ -131,23 +97,62 @@ public class ViaBroswer extends BasicBroswer {
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e1) {
-                    LogHelper.e(MetaData.LOG_E_DEFAULT, e1.getMessage());
-                }
-            }
             LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
+    }
+
+    private final static String[] columns = new String[]{"id", "url", "title", "folder"};
+    private final static String tableName = "bookmarks";
+    private Integer latestIndex = null;
+
+    private List<ViaBookmark> fetchBookmarksList(Context context, String dbFilePath) {
+        LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
+        List<ViaBookmark> result = new LinkedList<>();
+        SQLiteDatabase sqLiteDatabase = null;
+        Cursor cursor = null;
+        boolean tableExist;
+        try {
+            sqLiteDatabase = DBHelper.openReadOnlyDatabase(dbFilePath);
+            tableExist = DBHelper.checkTableExist(sqLiteDatabase, tableName);
+            if (!tableExist) {
+                LogHelper.v(TAG + ":database table " + tableName + " not exist.");
+                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+            }
+            cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "id asc", null);
+            if (cursor != null && cursor.getCount() > 0) {
+                while (cursor.moveToNext()) {
+                    ViaBookmark item = new ViaBookmark();
+                    item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+                    item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+                    item.setFolder(cursor.getString(cursor.getColumnIndex("folder")));
+                    item.setOrder(cursor.getInt(cursor.getColumnIndex("id")));
+                    result.add(item);
+                }
+            }
+
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            if (sqLiteDatabase != null) {
+                sqLiteDatabase.close();
+            }
+            LogHelper.v(TAG + ":读取书签SQLite数据库结束");
+        }
+        if (!result.isEmpty()) {
+            latestIndex = result.get(result.size() - 1).getOrder();
+        } else {
+            latestIndex = 1;
+        }
+        return result;
     }
 
     @Override
     public int appendBookmark(Context context, List<Bookmark> appends) {
         LogHelper.v(TAG + ":开始合并书签数据，bookmarks appends size:" + appends.size());
         int successCount = 0;
-        BufferedWriter writer = null;
+        SQLiteDatabase sqLiteDatabase = null;
         try {
             List<Bookmark> exists = this.readBookmark(context);
             Set<Bookmark> increment = buildNoRepeat(appends, exists);
@@ -155,33 +160,29 @@ public class ViaBroswer extends BasicBroswer {
             if (increment.isEmpty()) {
                 return 0;
             }
-            exists.addAll(increment);
-            LogHelper.v(TAG + ":merge size:" + exists.size());
             String originFilePath = filePath_origin + fileName_origin;
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
-            writer = new BufferedWriter(new FileWriter(tmpFilePath, false));//覆盖原文件
-//            int index = 0;
-            for (Bookmark item : exists) {
-                ViaBookmark viaBookmark = new ViaBookmark();
-                viaBookmark.setTitle(item.getTitle());
-                viaBookmark.setUrl(item.getUrl());
-//                viaBookmark.setOrder(index);
-                viaBookmark.setOrder(0);
-//                index++;
-                String json = JsonUtil.toJson(viaBookmark);
-                if (json == null) {
+            sqLiteDatabase = DBHelper.openDatabase(tmpFilePath);
+            int count = 0;
+            for (Bookmark item : increment) {
+                latestIndex++;
+                ContentValues cv = new ContentValues();
+                cv.put("id", latestIndex);
+                cv.put("url", item.getUrl());
+                cv.put("title", item.getTitle());
+                cv.put("folder", item.getFolder());
+                long ret = sqLiteDatabase.insert(tableName, null, cv);
+                if (ret <= -1) {
+                    LogHelper.e(MetaData.LOG_E_DEFAULT, "database insert error");
                     continue;
                 }
-                writer.write(json);
-                writer.newLine();//换行
+                count++;
             }
-            writer.flush();
             ExternalStorageUtil.copyFile(context, tmpFilePath, originFilePath, this.getName());
-
             String cleanFilePath = filePath_origin + "bookmarks.html";//干掉这个缓存文件，以便via重新生成书签页面
             InternalStorageUtil.deleteFile(context, cleanFilePath, this.getName());
-            successCount = increment.size();
+            successCount = count;
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
@@ -191,14 +192,11 @@ public class ViaBroswer extends BasicBroswer {
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(context, this.getName()));
         } finally {
-            if (writer != null) {
-                try {
-                    writer.close();
-                } catch (IOException e1) {
-                    LogHelper.e(MetaData.LOG_E_DEFAULT, e1.getMessage());
-                }
+            if (sqLiteDatabase != null) {
+                sqLiteDatabase.close();
             }
             this.bookmarks = null;
+            this.latestIndex = null;
             LogHelper.v(TAG + ":合并书签数据结束");
         }
         return successCount;

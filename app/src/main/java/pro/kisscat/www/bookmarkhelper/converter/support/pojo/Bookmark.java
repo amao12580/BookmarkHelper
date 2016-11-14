@@ -19,6 +19,9 @@ public class Bookmark {
     @Getter
     @Setter
     private String url;
+    @Getter
+    @Setter
+    private String folder;
 
 //    public boolean equals(Object anObject) {
 //        if (this == anObject) {

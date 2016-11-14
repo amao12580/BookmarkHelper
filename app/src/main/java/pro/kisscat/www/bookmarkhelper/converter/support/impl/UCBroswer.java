@@ -95,7 +95,7 @@ public class UCBroswer extends BasicBroswer {
                     LogHelper.v("name:" + bookmarkName);
                     LogHelper.v("url:" + bookmarkUrl);
                 }
-                if (!isGoodUrl(bookmarkUrl)) {
+                if (!isValidUrl(bookmarkUrl)) {
                     continue;
                 }
                 if (bookmarkName == null || bookmarkName.isEmpty()) {

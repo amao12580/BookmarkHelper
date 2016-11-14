@@ -79,21 +79,30 @@ public class BasicBroswer extends App implements Broswerable {
         return 0;
     }
 
-    protected Set<Bookmark> buildNoRepeat(List<Bookmark> bookmarks, List<Bookmark> exists) {
-        Set<String> urls = new HashSet<>();
+    protected Set<Bookmark> buildNoRepeat(List<Bookmark> appends, List<Bookmark> exists) {
+        Set<String> appendURLs = new HashSet<>();
+        Set<Bookmark> noRepeatAppends = new LinkedHashSet<>();
+        for (Bookmark item : appends) {
+            String url = item.getUrl();
+            if (url != null && !url.isEmpty() && !appendURLs.contains(url)) {
+                appendURLs.add(url);
+                noRepeatAppends.add(item);
+            }
+        }
+        Set<String> existURLs = new HashSet<>();
         for (Bookmark item : exists) {
-            urls.add(item.getUrl());
+            existURLs.add(item.getUrl());
         }
         Set<Bookmark> result = new LinkedHashSet<>();
-        for (Bookmark item : bookmarks) {
-            if (!urls.contains(item.getUrl())) {
+        for (Bookmark item : noRepeatAppends) {
+            if (!existURLs.contains(item.getUrl())) {
                 result.add(item);
             }
         }
         return result;
     }
 
-    protected boolean isGoodUrl(String bookmarkUrl) {
+    protected boolean isValidUrl(String bookmarkUrl) {
         if (bookmarkUrl == null || bookmarkUrl.isEmpty() || !bookmarkUrl.startsWith("http") || !bookmarkUrl.contains("://")) {
             LogHelper.v("url is damage,url:" + bookmarkUrl + ",skip.");
             return false;

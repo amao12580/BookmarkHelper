@@ -11,8 +11,9 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.ViaBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule;
@@ -37,12 +38,20 @@ public class ConverterMaster {
         AppListUtil.init(context);
         if (supportRule == null) {
             supportRule = new LinkedList<>();
-            supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new QQBroswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new XBroswer(), new ViaBroswer()));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), new ViaBroswer()));
+            App via = AppListUtil.getAppInfo(context, ViaBroswerable.packageName);
+            ViaBroswerable viaBroswerable = null;
+            if (via != null) {
+                viaBroswerable = ViaBroswerable.fetchViaBroswer(via.getVersionName(), via.getVersionCode());
+            }
+            if (viaBroswerable == null) {
+                viaBroswerable = ViaBroswerable.chooseDefault();
+            }
+            supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new QQBroswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new XBroswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Broswer(), viaBroswerable));
         }
     }
 

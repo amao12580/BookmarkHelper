@@ -25,6 +25,15 @@ public class DBHelper {
         }
     }
 
+    public synchronized static SQLiteDatabase openDatabase(String dbFilePath) {
+        try {
+            return SQLiteDatabase.openDatabase(dbFilePath, null, SQLiteDatabase.OPEN_READWRITE);
+        } catch (Exception e) {
+            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            throw e;
+        }
+    }
+
     public static boolean checkTableExist(SQLiteDatabase sqLiteDatabase, String tableName) {
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + tableName + "'", null);
         if (cursor.moveToNext()) {

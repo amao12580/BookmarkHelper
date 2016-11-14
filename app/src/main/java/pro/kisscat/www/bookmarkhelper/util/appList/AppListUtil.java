@@ -35,6 +35,12 @@ public class AppListUtil {
         return installedAllApp;
     }
 
+    public static void reInit(Context context) {
+        LogHelper.v("AppListUtil reInit");
+        installedAllApp = null;
+        init(context);
+    }
+
     public static void init(Context context) {
         LogHelper.v("AppListUtil init");
         String globalMsg = context.getResources().getString(R.string.notPermissionForReadInstalledAppList);
