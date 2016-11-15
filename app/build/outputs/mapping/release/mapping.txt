@@ -30694,15 +30694,15 @@ pro.kisscat.www.bookmarkhelper.activity.Html5Activity -> pro.kisscat.www.bookmar
     java.lang.String mFailingUrl -> a
     android.webkit.WebView mWebView -> b
     android.webkit.WebChromeClient webChromeClient -> c
-    39:193:void <init>() -> <init>
-    49:112:void onCreate(android.os.Bundle) -> onCreate
-    116:117:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    154:159:void onResume() -> onResume
-    163:168:void onPause() -> onPause
-    177:179:void newWin(android.webkit.WebSettings) -> a
-    186:191:void saveData(android.webkit.WebSettings) -> b
-    218:223:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
-    228:237:void onDestroy() -> onDestroy
+    39:194:void <init>() -> <init>
+    49:113:void onCreate(android.os.Bundle) -> onCreate
+    117:118:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    155:160:void onResume() -> onResume
+    164:169:void onPause() -> onPause
+    178:180:void newWin(android.webkit.WebSettings) -> a
+    187:192:void saveData(android.webkit.WebSettings) -> b
+    219:224:boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
+    229:238:void onDestroy() -> onDestroy
     39:39:java.lang.String access$202(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,java.lang.String) -> a
     39:39:java.lang.String access$200(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> a
     39:39:android.webkit.WebView access$300(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> b
@@ -30712,24 +30712,24 @@ pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1 -> pro.kisscat.www.bookm
     75:84:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$2 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$2:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    193:193:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    197:199:void onGeolocationPermissionsShowPrompt(java.lang.String,android.webkit.GeolocationPermissions$Callback) -> onGeolocationPermissionsShowPrompt
-    205:208:boolean onCreateWindow(android.webkit.WebView,boolean,boolean,android.os.Message) -> onCreateWindow
+    194:194:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    198:200:void onGeolocationPermissionsShowPrompt(java.lang.String,android.webkit.GeolocationPermissions$Callback) -> onGeolocationPermissionsShowPrompt
+    206:209:boolean onCreateWindow(android.webkit.WebView,boolean,boolean,android.os.Message) -> onCreateWindow
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$a:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    138:138:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    141:150:void errorReload() -> errorReload
-    138:138:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1) -> <init>
+    139:139:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    142:151:void errorReload() -> errorReload
+    139:139:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1) -> <init>
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface$1 -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$a$1:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface this$1 -> a
-    141:141:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface) -> <init>
-    145:148:void run() -> run
+    142:142:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity$JsInterface) -> <init>
+    146:149:void run() -> run
 pro.kisscat.www.bookmarkhelper.activity.Html5Activity$MyWebViewClient -> pro.kisscat.www.bookmarkhelper.activity.Html5Activity$b:
     pro.kisscat.www.bookmarkhelper.activity.Html5Activity this$0 -> a
-    120:120:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
-    124:125:boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
-    130:135:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
-    120:120:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1) -> <init>
+    121:121:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity) -> <init>
+    125:126:boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    131:136:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
+    121:121:void <init>(pro.kisscat.www.bookmarkhelper.activity.Html5Activity,pro.kisscat.www.bookmarkhelper.activity.Html5Activity$1) -> <init>
 pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmarkhelper.activity.MainActivity:
     android.widget.ListView lv -> a
     pro.kisscat.www.bookmarkhelper.activity.Adapter adapter -> b
@@ -30919,15 +30919,16 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage1Broswer 
     124:183:int appendBookmark(android.content.Context,java.util.List) -> a
     43:44:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Broswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.a.a.b:
-    java.lang.String filePath_origin -> c
-    java.lang.String filePath_cp -> d
-    java.lang.String[] columns -> e
-    java.lang.Integer latestIndex -> f
-    39:109:void <init>() -> <init>
-    48:104:java.util.List readBookmark(android.content.Context) -> e
-    112:150:java.util.List fetchBookmarksList(android.content.Context,java.lang.String) -> a
-    155:204:int appendBookmark(android.content.Context,java.util.List) -> a
-    43:107:void <clinit>() -> <clinit>
+    java.lang.String databaseDirPath_origin -> c
+    java.lang.String filesDirPath_origin -> d
+    java.lang.String filePath_cp -> e
+    java.lang.String[] columns -> f
+    java.lang.Integer latestIndex -> g
+    39:110:void <init>() -> <init>
+    49:105:java.util.List readBookmark(android.content.Context) -> e
+    113:151:java.util.List fetchBookmarksList(android.content.Context,java.lang.String) -> a
+    156:210:int appendBookmark(android.content.Context,java.util.List) -> a
+    43:108:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.App:
     java.lang.String name -> name
     java.lang.String packageName -> packageName

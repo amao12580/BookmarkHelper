@@ -40,7 +40,8 @@ public class ViaStage2Broswer extends ViaBroswerable {
     private static final String TAG = "ViaStage2";
     public static final int minVersionCode = 20161113;
     private static final String fileName_origin = "via";
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
+    private static final String databaseDirPath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
+    private static final String filesDirPath_origin = Path.INNER_PATH_DATA + packageName + "/files/";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Via/";
 
     @Override
@@ -52,7 +53,7 @@ public class ViaStage2Broswer extends ViaBroswerable {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            String originFilePath = filePath_origin + fileName_origin;
+            String originFilePath = databaseDirPath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePath);
             boolean isExist = InternalStorageUtil.isExistFile(originFilePath);
             if (!isExist) {
@@ -145,7 +146,7 @@ public class ViaStage2Broswer extends ViaBroswerable {
         if (!result.isEmpty()) {
             latestIndex = result.get(result.size() - 1).getOrder();
         } else {
-            latestIndex = 1;
+            latestIndex = 0;
         }
         return result;
     }
@@ -162,7 +163,7 @@ public class ViaStage2Broswer extends ViaBroswerable {
             if (increment.isEmpty()) {
                 return 0;
             }
-            String originFilePath = filePath_origin + fileName_origin;
+            String originFilePath = databaseDirPath_origin + fileName_origin;
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             sqLiteDatabase = DBHelper.openDatabase(tmpFilePath);
@@ -173,7 +174,12 @@ public class ViaStage2Broswer extends ViaBroswerable {
                 cv.put("id", latestIndex);
                 cv.put("url", item.getUrl());
                 cv.put("title", item.getTitle());
-                cv.put("folder", item.getFolder());
+                if (item.getFolder() == null) {
+                    cv.put("folder", "");
+                } else {
+                    cv.put("folder", item.getFolder());
+                }
+                cv.put("clickTimes", 0);
                 long ret = sqLiteDatabase.insert(tableName, null, cv);
                 if (ret <= -1) {
                     LogHelper.e(MetaData.LOG_E_DEFAULT, "database insert error");
@@ -182,7 +188,7 @@ public class ViaStage2Broswer extends ViaBroswerable {
                 count++;
             }
             ExternalStorageUtil.copyFile(context, tmpFilePath, originFilePath, this.getName());
-            String cleanFilePath = filePath_origin + "bookmarks.html";//干掉这个缓存文件，以便via重新生成书签页面
+            String cleanFilePath = filesDirPath_origin + "bookmarks.html";//干掉这个缓存文件，以便via重新生成书签页面
             InternalStorageUtil.deleteFile(context, cleanFilePath, this.getName());
             successCount = count;
         } catch (ConverterException converterException) {

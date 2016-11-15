@@ -108,7 +108,8 @@ public class Html5Activity extends AppCompatActivity {
         newWin(mWebSettings);
         mWebView.setWebChromeClient(webChromeClient);
         mWebView.addJavascriptInterface(new JsInterface(), "jsinterface");
-        mWebView.loadUrl(mUrl);
+//        mWebView.loadUrl(mUrl);
+        mWebView.loadUrl(MetaData.NETWORKERRORURL);
     }
 
     @Override
