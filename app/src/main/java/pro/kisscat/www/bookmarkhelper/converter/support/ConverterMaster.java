@@ -13,7 +13,6 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule;
@@ -48,7 +47,7 @@ public class ConverterMaster {
         }
     }
 
-    public static int excute(Context context, Rule rule) {
+    public static int execute(Context context, Rule rule) {
         BasicBroswer source = rule.getSource();
         List<Bookmark> sourceBookmarks = source.readBookmark(context);
         if (sourceBookmarks == null) {
@@ -65,7 +64,7 @@ public class ConverterMaster {
         return ret;
     }
 
-    public static List<ExcuteRule> cover2Excute(Context context, List<Rule> rules) {
+    public static List<ExcuteRule> cover2Execute(Context context, List<Rule> rules) {
         List<ExcuteRule> result = new LinkedList<>();
         for (Rule item : rules) {
             result.add(new ExcuteRule(context, item));

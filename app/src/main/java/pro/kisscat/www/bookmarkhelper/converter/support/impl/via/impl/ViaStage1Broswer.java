@@ -59,9 +59,7 @@ public class ViaStage1Broswer extends ViaBroswerable {
             if (!isExist) {
                 throw new ConverterException(ContextUtil.buildViaBookmarksFileMiss(context, this.getName()));
             }
-            File cpPath = new File(filePath_cp);
-            cpPath.deleteOnExit();
-            cpPath.mkdirs();
+            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             File file = ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());

@@ -25,6 +25,7 @@
     <string name="donateURL">http://ww3.sinaimg.cn/large/0060lm7Tgw1f9kfaj0fvsj30u00xc77b.jpg</string>
     <string name="fileCPError">文件拷贝失败</string>
     <string name="fileDeleteError">文件删除失败</string>
+    <string name="fileMkdirError">无法创建工作目录，可能缺少读写存储权限.</string>
     <string name="flyme5BookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场</string>
     <string name="networkError">您的网络未连接，快去检查一下！</string>

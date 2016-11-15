@@ -36,4 +36,5 @@
     <string name="donateURL">https://amao12580.github.io/rewards/wechat-reward-image.png</string>
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
+    <string name="fileMkdirError">work dir create failed.</string>
 </resources>

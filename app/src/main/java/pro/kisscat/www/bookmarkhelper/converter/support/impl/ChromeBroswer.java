@@ -75,9 +75,7 @@ public class ChromeBroswer extends BasicBroswer {
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-            java.io.File cpPath = new java.io.File(filePath_cp);
-            cpPath.deleteOnExit();
-            cpPath.mkdirs();
+            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             java.io.File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Bookmark> chromeBookmarks = fetchBookmarks(file);

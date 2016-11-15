@@ -66,9 +66,8 @@ public final class RootUtil {
             }
             os.writeBytes(COMMAND_EXIT);
             os.flush();
-
             result = process.waitFor();
-            LogHelper.v("process.waitFor is:" + result);
+            LogHelper.v("result is:" + result);
             successMsg = new LinkedList<>();
             errorMsg = new LinkedList<>();
             successResult = new BufferedReader(new InputStreamReader(process.getInputStream()));

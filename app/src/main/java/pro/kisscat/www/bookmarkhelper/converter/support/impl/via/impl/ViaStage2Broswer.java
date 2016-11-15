@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -59,9 +58,7 @@ public class ViaStage2Broswer extends ViaBroswerable {
             if (!isExist) {
                 throw new ConverterException(ContextUtil.buildViaBookmarksFileMiss(context, this.getName()));
             }
-            File cpPath = new File(filePath_cp);
-            cpPath.deleteOnExit();
-            cpPath.mkdirs();
+            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());

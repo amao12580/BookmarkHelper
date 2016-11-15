@@ -63,8 +63,8 @@ public class LogHelper {
         v(tag, msg.toString(), true);
     }
 
-    public static void v(String msg, boolean needIntercept) {
-        v(MetaData.LOG_V_DEFAULT, msg, false);
+    public static void v(String msg, boolean trim) {
+        v(MetaData.LOG_V_DEFAULT, msg, trim);
     }
 
     public static void w(String tag, String text) {
@@ -83,12 +83,12 @@ public class LogHelper {
         log(tag, text, 'i');
     }
 
-    public static void v(String tag, String text, boolean needIntercept) {
+    public static void v(String tag, String text, boolean trim) {
         if (MetaData.isDebug) {
             if (text == null || text.isEmpty()) {
                 return;
             }
-            if (needIntercept && text.length() > 1024) {
+            if (trim && text.length() > 1024) {
                 text = text.substring(0, 1024);
                 text += "...";
             }

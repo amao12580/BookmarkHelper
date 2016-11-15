@@ -73,9 +73,7 @@ public class Flyme5Broswer extends BasicBroswer {
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-            File cpPath = new File(filePath_cp);
-            cpPath.deleteOnExit();
-            cpPath.mkdirs();
+            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp + fileName_origin);

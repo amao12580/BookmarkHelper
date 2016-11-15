@@ -88,9 +88,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
         if (rules == null) {
-            rules = ConverterMaster.cover2Excute(this, ConverterMaster.getSupportRule());
+            rules = ConverterMaster.cover2Execute(this, ConverterMaster.getSupportRule());
             if (!isRecordRule) {
-                LogHelper.v(MetaData.LOG_V_DEFAULT, "excuteRules:" + JsonUtil.toJson(rules));
+                LogHelper.v(MetaData.LOG_V_DEFAULT, "executeRules:" + JsonUtil.toJson(rules));
             }
         }
         setContentView(R.layout.activity_main);
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
             start = System.currentTimeMillis();
             rule.setStage(1);
-            ret = ConverterMaster.excute(lv.getContext(), rule);
+            ret = ConverterMaster.execute(lv.getContext(), rule);
             end = System.currentTimeMillis();
         } catch (ConverterException e) {
             showDialogMessage(e.getMessage());

@@ -14,10 +14,10 @@ import java.io.File;
 public class Path {
     public final static String FILE_SPLIT = File.separator;
 
-
-    public static final String INNER_PATH_DATA = FILE_SPLIT + "data" + FILE_SPLIT + "data" + FILE_SPLIT;
+    private static final String INNER_PATH_ROOT = FILE_SPLIT + "data";
+    public static final String INNER_PATH_DATA = INNER_PATH_ROOT + INNER_PATH_ROOT + FILE_SPLIT;
     public static String SDCARD_ROOTPATH = "";
     public static final String SDCARD_APP_ROOTPATH = FILE_SPLIT + "BookmarkHelper" + FILE_SPLIT;
-    public static final String SDCARD_LOG_ROOTPATH = "logs" + FILE_SPLIT + FILE_SPLIT;
+    public static final String SDCARD_LOG_ROOTPATH = "logs" + FILE_SPLIT;
     public static final String SDCARD_TMP_ROOTPATH = "tmp" + FILE_SPLIT;
 }

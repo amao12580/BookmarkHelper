@@ -71,9 +71,7 @@ public class UCBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            File cpPath = new File(filePath_cp);
-            cpPath.deleteOnExit();
-            cpPath.mkdirs();
+            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_cp + fileName_origin);

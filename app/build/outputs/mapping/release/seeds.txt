@@ -27342,6 +27342,13 @@ javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$Authenti
 javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$AuthenticationType[] values()
 javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$AuthenticationType valueOf(java.lang.String)
 javax.annotation.Resource$AuthenticationType: void <clinit>()
+org.apache.commons.exec.ExecuteException: long serialVersionUID
+org.apache.commons.exec.ExecuteException: java.lang.Throwable cause
+org.apache.commons.exec.ExecuteException: int exitValue
+org.apache.commons.exec.ExecuteException: ExecuteException(java.lang.String,int)
+org.apache.commons.exec.ExecuteException: ExecuteException(java.lang.String,int,java.lang.Throwable)
+org.apache.commons.exec.ExecuteException: java.lang.Throwable getCause()
+org.apache.commons.exec.ExecuteException: int getExitValue()
 pro.kisscat.www.bookmarkhelper.R$anim
 pro.kisscat.www.bookmarkhelper.R$anim: int abc_fade_in
 pro.kisscat.www.bookmarkhelper.R$anim: int abc_fade_out
@@ -28279,6 +28286,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int donateTitle
 pro.kisscat.www.bookmarkhelper.R$string: int donateURL
 pro.kisscat.www.bookmarkhelper.R$string: int fileCPError
 pro.kisscat.www.bookmarkhelper.R$string: int fileDeleteError
+pro.kisscat.www.bookmarkhelper.R$string: int fileMkdirError
 pro.kisscat.www.bookmarkhelper.R$string: int flyme5BookmarksFileMiss
 pro.kisscat.www.bookmarkhelper.R$string: int marketAppNoInstalled
 pro.kisscat.www.bookmarkhelper.R$string: int networkError

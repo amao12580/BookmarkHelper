@@ -12,7 +12,6 @@ import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 /**
@@ -80,8 +79,21 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
         if (!file.exists()) {
             throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
         }
-        boolean flag = file.setReadable(true);
-        LogHelper.v("file is readable:" + flag);
+        file.setReadable(true);
         return file;
+    }
+
+    public static void mkdir(Context context, String dirPath, String mark) {
+        /**
+         * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）
+         * -r  递归复制，包含目录
+         * -a  做一个备份，这里可以不用这个参数，我们可以先备份整个test目录
+         * -p  保持新文件的属性不变
+         */
+        String cmd = "mkdir -p " + dirPath;
+        boolean result = RootUtil.executeCmd(cmd);
+        if (!result) {
+            throw new ConverterException(ContextUtil.buildFileMkdirErrorMessage(context, mark));
+        }
     }
 }
