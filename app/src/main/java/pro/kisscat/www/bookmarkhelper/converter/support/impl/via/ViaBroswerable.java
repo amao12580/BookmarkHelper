@@ -9,7 +9,9 @@ import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage1Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 
 /**
  * Created with Android Studio.
@@ -24,8 +26,20 @@ public class ViaBroswerable extends BasicBroswer {
     public static final String packageName = "mark.via";
     protected List<Bookmark> bookmarks;
 
-    public static ViaBroswerable fetchViaBroswer(String versionName, int versionCode) {
-        if (versionCode >= 20161113) {
+    public static ViaBroswerable fetchViaBroswer(Context context) {
+        App via = AppListUtil.getAppInfo(context, ViaBroswerable.packageName);
+        ViaBroswerable viaBroswerable = null;
+        if (via != null) {
+            viaBroswerable = ViaBroswerable.fetchViaBroswer(via.getVersionName(), via.getVersionCode());
+        }
+        if (viaBroswerable == null) {
+            viaBroswerable = ViaBroswerable.chooseDefault();
+        }
+        return viaBroswerable;
+    }
+
+    private static ViaBroswerable fetchViaBroswer(String versionName, int versionCode) {
+        if (versionCode >= ViaStage2Broswer.minVersionCode && versionName != null && !versionName.isEmpty()) {
             return new ViaStage2Broswer();
         } else {
             return new ViaStage1Broswer();
@@ -33,7 +47,7 @@ public class ViaBroswerable extends BasicBroswer {
     }
 
 
-    public static ViaBroswerable chooseDefault() {
+    private static ViaBroswerable chooseDefault() {
         return fetchViaBroswer(null, 0);
     }
 

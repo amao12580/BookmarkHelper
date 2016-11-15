@@ -81,7 +81,7 @@ public class AppListUtil {
         }
         if (installedAllApp == null) {
             LogHelper.e(MetaData.LOG_E_DEFAULT, "AppListUtil init failure,installedAllApp is null.");
-            throw new InitException("AppListUtil init failure.");
+            throw new InitException("无法获取应用列表，请确认权限.");
         }
     }
 

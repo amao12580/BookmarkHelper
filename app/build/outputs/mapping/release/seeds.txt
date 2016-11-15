@@ -29193,10 +29193,10 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: pro
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: ChromeBookmark()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.util.List fetchAll()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.util.List parseNode(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.util.List parseNode(java.util.List,java.lang.StringBuilder,pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.util.List parseNode(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: boolean checkIsFolder(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: void addPath(java.lang.StringBuilder,java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: void addAll(java.util.List,java.lang.String,java.util.List)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: java.lang.String addPath(java.lang.String,java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: void addAll(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: void setRoots(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root getRoots()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node

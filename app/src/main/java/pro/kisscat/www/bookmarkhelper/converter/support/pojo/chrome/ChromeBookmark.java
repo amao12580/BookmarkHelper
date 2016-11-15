@@ -50,27 +50,25 @@ public class ChromeBookmark {
     private List<Bookmark> parseNode(Node node) {
         if (node != null) {
             List<Bookmark> bookmarks = new LinkedList<>();
-            StringBuilder folderNameBuilder = new StringBuilder();
-            return parseNode(bookmarks, folderNameBuilder, node);
+            return parseNode(bookmarks, "", node);
         }
         return new LinkedList<>();
     }
 
-    private List<Bookmark> parseNode(List<Bookmark> bookmarks, StringBuilder folderNameBuilder, Node node) {
+    private List<Bookmark> parseNode(List<Bookmark> bookmarks, String folderPath, Node node) {
         if (node == null) {
             return bookmarks;
         }
-        String folderName = node.getName();
-        folderNameBuilder.append(folderName);
         List<Node> children = node.getChildren();
         if (children != null) {
-            LogHelper.v("bookmarkBar part;folderName:" + folderName + ",size:" + children.size());
+            String folderName = node.getName();
+            String myFolderPath = addPath(folderPath, folderName);
+            LogHelper.v("bookmarkBar part;folderName:" + myFolderPath + ",size:" + children.size());
             for (Node item : children) {
                 if (checkIsFolder(item)) {
-                    addPath(folderNameBuilder, item.getName());
-                    parseNode(bookmarks, folderNameBuilder, item);
+                    parseNode(bookmarks, myFolderPath, item);
                 } else {
-                    addAll(bookmarks, folderNameBuilder.toString(), children);
+                    addAll(bookmarks, myFolderPath, item);
                 }
             }
         }
@@ -81,19 +79,20 @@ public class ChromeBookmark {
         return node != null && node.getType() != null && MetaData.folderTypeDefaultName.equals(node.getType());
     }
 
-    private void addPath(StringBuilder folderNameBuilder, String name) {
-        if (!folderNameBuilder.toString().isEmpty()) {
-            folderNameBuilder.append(Path.FILE_SPLIT);
+    private String addPath(String folderPath, String name) {
+        if (folderPath.isEmpty()) {
+            return name;
         }
-        folderNameBuilder.append(name);
+        return folderPath + Path.FILE_SPLIT + name;
     }
 
-    private void addAll(List<Bookmark> result, String folderName, List<Node> nodes) {
-        for (Node item : nodes) {
+    private void addAll(List<Bookmark> result, String folderName, Node nodes) {
+        String url = nodes.getUrl();
+        if (url != null && !url.isEmpty()) {
             Bookmark bookmark = new Bookmark();
             bookmark.setFolder(folderName);
-            bookmark.setUrl(item.getUrl());
-            bookmark.setTitle(item.getName());
+            bookmark.setUrl(url);
+            bookmark.setTitle(nodes.getName());
             result.add(bookmark);
         }
     }

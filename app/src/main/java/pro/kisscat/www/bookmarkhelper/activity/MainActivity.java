@@ -199,6 +199,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     processConverter(rule);
                 }
             });
+        } catch (InitException e) {
+            showDialogMessage(e.getMessage());
         } finally {
             LogHelper.write();
             currentClientItem.setEnabled(true);

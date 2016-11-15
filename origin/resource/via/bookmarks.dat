@@ -1,2 +1,267 @@
-{"title":"cnBeta.COM_中文业界资讯站","url":"http:\/\/www.cnbeta.com\/","folder":"","order":0}
-{"title":"酷安网 - 发现应用的乐趣","url":"http:\/\/www.coolapk.com\/","folder":"","order":0}
+{"title":"Google","url":"https://www.google.com.hk/","folder":"书签栏","order":0}
+{"title":"RSS","url":"https://www.inoreader.com/all_articles","folder":"书签栏","order":0}
+{"title":"快科技","url":"http://news.mydrivers.com/","folder":"书签栏","order":0}
+{"title":"微博","url":"http://weibo.com/u/3201133445/home?topnav=1&wvr=6","folder":"书签栏","order":0}
+{"title":"煎蛋","url":"http://jandan.net/","folder":"书签栏","order":0}
+{"title":"京东","url":"http://www.jd.com/","folder":"书签栏","order":0}
+{"title":"淘宝","url":"http://www.taobao.com/","folder":"书签栏","order":0}
+{"title":"51job","url":"http://my.51job.com/my/60101008/My_Pmc.php","folder":"书签栏","order":0}
+{"title":"天天","url":"http://ttmeiju.com/","folder":"书签栏","order":0}
+{"title":"字幕库","url":"http://www.zimuku.net/","folder":"书签栏","order":0}
+{"title":"torrent","url":"http://www.queentorrent.com/","folder":"书签栏","order":0}
+{"title":"BT吧","url":"http://www.bttt8.com/","folder":"书签栏","order":0}
+{"title":"纪录片","url":"http://mp.weixin.qq.com/s?__biz=MzA3MjQxMjE4OQ==&mid=205201875&idx=1&sn=737811fa09e476c3ccfc675977fb52da&scene=5#rd","folder":"书签栏/我是测试文件夹","order":0}
+{"title":"专访淘宝仲明：揭秘阿里运维部的故障响应机制(1) - 51CTO.COM","url":"http://os.51cto.com/art/201212/371228.htm","folder":"书签栏/我是测试文件夹","order":0}
+{"title":"运维：互联网产品的灰度发布模型 - 软件开发资料库 - ITeye技术网站","url":"http://xiaoruanjian.iteye.com/blog/1091493","folder":"书签栏","order":0}
+{"title":"软件概要设计做什么，怎么做 - 赵磊的博客 - ITeye技术网站","url":"http://elf8848.iteye.com/blog/1582323","folder":"书签栏","order":0}
+{"title":"思考、学习新技术的原则和方式 - WEB开发者","url":"http://www.admin10000.com/document/4033.html","folder":"书签栏","order":0}
+{"title":"11个重要的数据库设计规则 - 51CTO.COM","url":"http://database.51cto.com/art/201204/328629.htm","folder":"书签栏","order":0}
+{"title":"江涛: 阿里巴巴集团研究（1）：阿里巴巴集团业务发展史 $阿里巴巴(01688)$ 前言 ：在中国... - 雪球","url":"http://xueqiu.com/8417755168/20494054","folder":"书签栏","order":0}
+{"title":"加盐密码哈希：如何正确使用 - 博客 - 伯乐在线","url":"http://blog.jobbole.com/61872/#java","folder":"书签栏","order":0}
+{"title":"对称、非对称加密算法、消息摘要算法、数字证书详解","url":"http://www.360doc.com/content/12/0411/12/9523427_202727230.shtml","folder":"书签栏","order":0}
+{"title":"使用 Eclipse Memory Analyzer 进行堆转储文件分析","url":"http://www.ibm.com/developerworks/cn/opensource/os-cn-ecl-ma/","folder":"书签栏","order":0}
+{"title":"一次使用Eclipse Memory Analyzer分析Tomcat内存溢出 - - ITeye技术网站","url":"http://tivan.iteye.com/blog/1487855","folder":"书签栏","order":0}
+{"title":"Java 内存模型及GC原理 - IT-Homer - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/ithomer/article/details/6252552","folder":"书签栏","order":0}
+{"title":"如何写好一封邮件 -- 奋斗 -- IT技术博客大学习 -- 共学习 共进步！","url":"http://blogread.cn/it/article/6758?f=wb2","folder":"书签栏","order":0}
+{"title":"[转]开发大型高负载类网站应用的几个要点 - 最实用的Linux博客 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/chinalinuxzend/article/details/1812602","folder":"书签栏","order":0}
+{"title":"淘宝开放低耗服务器设计规范","url":"http://www.infoq.com/cn/news/2011/11/taobao-greencompute","folder":"书签栏","order":0}
+{"title":"(2)update中加入select最常用的update语法 (转)_志在四方_新浪博客","url":"http://blog.sina.com.cn/s/blog_5e06afe00100ko51.html","folder":"书签栏","order":0}
+{"title":"socket阻塞与非阻塞，同步与异步、I/O模型 - 一颗平常心 - 51CTO技术博客","url":"http://nyc1991.blog.51cto.com/6424159/1175188","folder":"书签栏","order":0}
+{"title":"IT运维自动化正在成为趋势 - 研究报告 - 道客巴巴","url":"http://www.doc88.com/p-50858582714.html","folder":"书签栏","order":0}
+{"title":"运维人员需要有产品观-CSDN.NET","url":"http://www.csdn.net/article/2013-10-30/2817343","folder":"书签栏","order":0}
+{"title":"使用SyncNavigator轻松实现数据库异地同步、断点续传、异构同步 - 刘水镜 - 博客园","url":"http://www.cnblogs.com/liushuijinger/archive/2012/06/30/2571096.html","folder":"书签栏","order":0}
+{"title":"MySQL性能分析 - yhawaii的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/yhawaii/article/details/7246008","folder":"书签栏","order":0}
+{"title":"mysqlsla的安装与使用 - 冰刀(skate) - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/wyzxg/article/details/7268969","folder":"书签栏","order":0}
+{"title":"关于MySQL的慢日志分析工具 - 上帝，咱们不见不散！ - 51CTO技术博客","url":"http://yueliangdao0608.blog.51cto.com/397025/312602/","folder":"书签栏","order":0}
+{"title":"mysqlreport使用指南 - 白云` - 51CTO技术博客","url":"http://chinablog.blog.51cto.com/276793/279463","folder":"书签栏","order":0}
+{"title":"MySQL 读写分离 - HelloWorld - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/justdb/article/details/17331569","folder":"书签栏","order":0}
+{"title":"MySQL Cluster集群探索与实践 -- MySQL -- IT技术博客大学习 -- 共学习 共进步！","url":"http://blogread.cn/it/article/5523?f=wb","folder":"书签栏","order":0}
+{"title":"MySQL数据库的优化（下）MySQL数据库的高可用架构方案 - 51CTO.COM","url":"http://database.51cto.com/art/201103/248114.htm","folder":"书签栏","order":0}
+{"title":"REST/RESTful项目 - 开源软件库 - 开源中国社区","url":"http://www.oschina.net/project/tag/403/restful","folder":"其他书签","order":0}
+{"title":"快速例子学习mongodb的mapreduce - jackyrong - ITeye技术网站","url":"http://jackyrong.iteye.com/blog/1408548","folder":"其他书签","order":0}
+{"title":"PO BO VO DTO POJO DAO概念及其作用(转） - 费吉德 - 51CTO技术博客","url":"http://jeoff.blog.51cto.com/186264/88517","folder":"其他书签","order":0}
+{"title":"HBase的特征和优点 - 博客 - 伯乐在线","url":"http://blog.jobbole.com/83614/","folder":"其他书签","order":0}
+{"title":"Query and Projection Operators — MongoDB Manual 3.0.1","url":"http://docs.mongodb.org/manual/reference/operator/query/","folder":"其他书签","order":0}
+{"title":"Spring Datastore Document - Reference Documentation","url":"http://docs.spring.io/spring-data/data-document/docs/1.0.0.M2/reference/html/#d0e1678","folder":"其他书签","order":0}
+{"title":"高可用、开源的Redis缓存集群方案","url":"http://www.infoq.com/cn/news/2014/11/open-source-redis-cache","folder":"其他书签","order":0}
+{"title":"Springmvc 应用Mongodb分页实现 - 凌云 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/chunqiuwei/article/details/17188523","folder":"其他书签","order":0}
+{"title":"@RequestBody, @ResponseBody 注解详解 - 行者无疆 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/walkerjong/article/details/7520896","folder":"其他书签","order":0}
+{"title":"Spring mvc中@RequestMapping 6个基本用法小结 - jackyrong - ITeye技术网站","url":"http://jackyrong.iteye.com/blog/1806326","folder":"其他书签","order":0}
+{"title":"MongoDB 集成Spring 的时间研究 - 跳舞的驴子 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/deepbluecn/article/details/19049137","folder":"其他书签","order":0}
+{"title":"spring 3.0 应用springmvc 构造RESTful URL 详细讲解","url":"http://www.360doc.com/content/12/1128/11/820209_250711667.shtml","folder":"其他书签","order":0}
+{"title":"Spring MVC 监听文件上传进度，实现上传进度条 - herestay的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/herestay/article/details/8567967","folder":"其他书签","order":0}
+{"title":"SpringMVC3.2 文件上传，带进度listener - 张桢的个人空间 - 开源中国社区","url":"http://my.oschina.net/iamalegend/blog/150421","folder":"其他书签","order":0}
+{"title":"互联网公司高并发图片存储服务架构设计一 - 李志涛的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/lizhitao/article/details/9323137","folder":"其他书签","order":0}
+{"title":"SpringMVC中使用Interceptor拦截器 - 好好学习，天天向上 - ITeye技术网站","url":"http://haohaoxuexi.iteye.com/blog/1750680","folder":"其他书签","order":0}
+{"title":"spring-data-mongodb查询结果返回指定字段 - 唾手可得的树 - 博客园","url":"http://www.cnblogs.com/usual2013blog/p/4103549.html","folder":"其他书签","order":0}
+{"title":"COS首页、文档和下载 - Java文件上传组件 - 开源中国社区","url":"http://www.oschina.net/p/cos","folder":"其他书签","order":0}
+{"title":"阿里云产品博客 » 图片服务架构演进","url":"http://blog.aliyun.com/967","folder":"其他书签","order":0}
+{"title":"MongoDB数据库关系表示和设计：（1）嵌套文档和引用链接 - Right Track Wrong Train - ITeye技术网站","url":"http://huangz.iteye.com/blog/1196185","folder":"其他书签","order":0}
+{"title":"大型网站系统架构的演进（五）深入探讨web应用高可用方案 - 风过无痕-唐 - 博客园","url":"http://www.cnblogs.com/tangyanbo/p/4431136.html","folder":"其他书签","order":0}
+{"title":"mysql中间件研究（Atlas，cobar，TDDL） | 日志 | 果壳网 科技有意思","url":"http://www.guokr.com/blog/475765/","folder":"其他书签","order":0}
+{"title":"Spring MVC防御CSRF、XSS和SQL注入攻击 - Mainz - 博客园","url":"http://www.cnblogs.com/Mainz/archive/2012/11/01/2749874.html","folder":"其他书签","order":0}
+{"title":"Mongodb与spring集成（3）------MongoRepository实现增删改查和复杂查询 - 云端分布式搜索技术 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/laigood/article/details/7056093","folder":"其他书签","order":0}
+{"title":"Spring 依赖注入：自动注入properties文件中的配置 - 为程序员服务","url":"http://outofmemory.cn/code-snippet/3700/spring-bean-property-inject","folder":"其他书签","order":0}
+{"title":"用Java实现断点续传(HTTP) - 观千剑而后识器，操千曲而后晓声。 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/shimiso/article/details/5956314","folder":"其他书签","order":0}
+{"title":"设计基于HTML5的APP登录功能及安全调用接口的方式（原理篇） - DCloud问答","url":"http://ask.dcloud.net.cn/article/157","folder":"其他书签","order":0}
+{"title":"防止恶意刷新页面的Java实现 - xiaofan_sap的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/xiaofan_sap/article/details/5585241","folder":"其他书签","order":0}
+{"title":"Spring Data Redis简介以及项目Demo，RedisTemplate和 Serializer详解","url":"http://www.sxt.cn/u/2839/blog/4363","folder":"其他书签","order":0}
+{"title":"一次非常有意思的sql优化经历 - 风过无痕-唐 - 博客园","url":"http://www.cnblogs.com/tangyanbo/p/4462734.html","folder":"其他书签","order":0}
+{"title":"系统架构设计之--异步日志记录篇 - 树袋熊的猪 - 博客园","url":"http://www.cnblogs.com/peopleyl/archive/2008/09/11/1289524.html","folder":"其他书签","order":0}
+{"title":"Android应用增量升级 - Tibib的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/tu_bingbing/article/details/8538592","folder":"其他书签","order":0}
+{"title":"深入浅出Symfony2 - 结合MongoDB开发LBS应用","url":"http://www.infoq.com/cn/articles/depth-study-of-Symfony2","folder":"其他书签","order":0}
+{"title":"微博 文章 - 武术题材纪录片合集资源","url":"http://weibo.com/p/1001603847793583242758","folder":"其他书签","order":0}
+{"title":"Tomcat7调优及JVM性能优化for Linux环境 | IT瘾","url":"http://itindex.net/detail/51498-tomcat7-jvm-%E6%80%A7%E8%83%BD","folder":"其他书签","order":0}
+{"title":"mongodb 全文搜索解决方案(lucene+IKAnalyzer) - 章彦儿的个人空间 - 开源中国社区","url":"http://my.oschina.net/u/200745/blog/68941","folder":"其他书签","order":0}
+{"title":"MongoDB的模糊查询 - yuhaibo736 - BlogJava","url":"http://www.blogjava.net/yuhaibo736/archive/2012/06/27/381612.html","folder":"其他书签","order":0}
+{"title":"淘宝分布式文件系统TFS安装配置手册：系统安装 - 51CTO.COM","url":"http://os.51cto.com/art/201401/427208.htm","folder":"其他书签","order":0}
+{"title":"TFS开源用户常见问题(FAQ)","url":"http://blog.yunnotes.net/index.php/tfs_user_faq/","folder":"其他书签","order":0}
+{"title":"MongoDB的备份与恢复 - 水逝流年 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/xia7139/article/details/12066801","folder":"其他书签","order":0}
+{"title":"Genymotion：超赞的安卓虚拟机 | JerryQu 的小站","url":"https://www.imququ.com/post/genymotion.html","folder":"其他书签","order":0}
+{"title":"MySQL 调优/优化的 100 个建议 - 博客 - 伯乐在线","url":"http://blog.jobbole.com/87989/","folder":"其他书签","order":0}
+{"title":"激活Maven profile的几种方式 - Maven中文 - ITeye技术网站","url":"http://juvenshun.iteye.com/blog/208714","folder":"其他书签","order":0}
+{"title":"Maven最佳实践：划分模块 - Maven中文 - ITeye技术网站","url":"http://juvenshun.iteye.com/blog/305865","folder":"其他书签","order":0}
+{"title":"第\u00A06\u00A0章\u00A0支持创建镜像的工具\u00A0-\u00A0OpenStack 虚拟机镜像制作指南 \u00A0-\u00A0current","url":"http://docs.openstack.org/zh_CN/image-guide/content/ch_creating_images_automatically.html","folder":"其他书签","order":0}
+{"title":"ElasticSearch 初次使用小结，一起学习进步哈~ » 社区 » Ruby China","url":"https://ruby-china.org/topics/15337","folder":"其他书签","order":0}
+{"title":"ElasticSearch 安装配置 - szzhaom的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/szzhaom/article/details/44237687","folder":"其他书签","order":0}
+{"title":"elasticsearch - guide - 集群健康状态 API","url":"http://www.elasticsearch.cn/guide/reference/api/admin-cluster-health.html","folder":"其他书签","order":0}
+{"title":"Elasticsearch- 集群状态查询 - FANET - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/fan158/article/details/27308915","folder":"其他书签","order":0}
+{"title":"elasticsearch插件大全（不断更新） - 云端分布式搜索技术","url":"http://www.searchtech.pro/elasticsearch-plugins","folder":"其他书签","order":0}
+{"title":"Introduction | Elasticsearch权威指南（中文版）","url":"http://es.xiaoleilu.com/","folder":"其他书签","order":0}
+{"title":"Elasticsearch与MongoDB 数据同步及分布式集群搭建 （一） | Yuansir-web菜鸟 | LAMP学习笔记","url":"http://www.yuansir-web.com/2015/03/06/elasticsearch%e4%b8%8emongodb-%e6%95%b0%e6%8d%ae%e5%90%8c%e6%ad%a5%e5%8f%8a%e5%88%86%e5%b8%83%e5%bc%8f%e9%9b%86%e7%be%a4%e6%90%ad%e5%bb%ba-%ef%bc%88%e4%b8%80%ef%bc%89/","folder":"其他书签","order":0}
+{"title":"elasticsearch文档-字段的mapping - buzzlight - 博客园","url":"http://www.cnblogs.com/buzzlight/p/elasticsearch_mapping_fields.html","folder":"其他书签","order":0}
+{"title":"让SpringMVC支持可版本管理的Restful接口 - 海鸟 - 博客园","url":"http://www.cnblogs.com/jcli/p/springmvc_restful_version.html","folder":"其他书签","order":0}
+{"title":"REST URI设计：版本号放在http header中，rewrite配置 - sink_cup - 博客园","url":"http://www.cnblogs.com/sink_cup/archive/2011/11/05/rest_uri_rewrite_header_version_number.html","folder":"其他书签","order":0}
+{"title":"安全API开发手册 - 腾讯云平台","url":"http://www.qcloud.com/wiki/%E5%AE%89%E5%85%A8API%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C","folder":"其他书签","order":0}
+{"title":"搭建高可用mongodb集群（二）—— 副本集 | 严澜(lanceyan)的博客 - 技术分享 框架交流 大数据处理 架构搭建 机器人","url":"http://www.lanceyan.com/tech/mongodb/mongodb_repset1.html","folder":"其他书签","order":0}
+{"title":"kindlereader","url":"https://github.com/jiedan/kindlereader","folder":"其他书签","order":0}
+{"title":"【国内最优秀的Kindle电子书下载搜索 —— ForFrigg.com】","url":"http://forfrigg.com/#gsc.tab=0","folder":"其他书签","order":0}
+{"title":"电子书-programthink","url":"https://github.com/programthink/books","folder":"其他书签","order":0}
+{"title":"电子书-free-programming-books","url":"https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md#information-retrieval","folder":"其他书签","order":0}
+{"title":"IT eBooks","url":"http://www.it-ebooks.info/","folder":"其他书签","order":0}
+{"title":"cdhigh/KindleEar · GitHub","url":"https://github.com/cdhigh/KindleEar","folder":"其他书签","order":0}
+{"title":"如何安排每天读书的时间 - 阅读","url":"http://www.vikilife.com/83336.html","folder":"其他书签","order":0}
+{"title":"React 入门实例教程 - 阮一峰的网络日志","url":"http://www.ruanyifeng.com/blog/2015/03/react.html","folder":"其他书签","order":0}
+{"title":"ebook_免费高速下载|百度云 网盘-分享无限制","url":"http://pan.baidu.com/share/link?shareid=1730752524&uk=3896639862#path=%252Febook","folder":"其他书签","order":0}
+{"title":"Linux学习","url":"http://www.cnblogs.com/vamei/tag/Linux/","folder":"其他书签","order":0}
+{"title":"前端开发框架对比","url":"https://www.ibm.com/developerworks/cn/web/1404_wangfx_jsframeworks/","folder":"其他书签","order":0}
+{"title":"Facebook移动架构：Android Flux架构详解 – 码农网","url":"http://www.codeceo.com/article/facebook-android-flux-artch.html","folder":"其他书签","order":0}
+{"title":"Sco.js - Bootstrap javascript组件的增强版","url":"http://www.bootcss.com/p/sco.js/","folder":"其他书签","order":0}
+{"title":"Cookie安全漫谈","url":"http://www.infoq.com/cn/articles/cookie-security","folder":"其他书签","order":0}
+{"title":"关于使用cookie自动登录的安全性问题 - 开源中国社区","url":"http://www.oschina.net/question/1048342_116886","folder":"其他书签","order":0}
+{"title":"CSRF(跨站请求伪造攻击)漏洞详细说明 | 独自等待-信息安全博客","url":"http://www.waitalone.cn/csrf-cross-site-request-forgery-defense.html","folder":"其他书签","order":0}
+{"title":"伪造IP与伪造referer - 过客阵营 -- 简单的就要最简单 - ITeye技术网站","url":"http://vb2005xu.iteye.com/blog/1183760","folder":"其他书签","order":0}
+{"title":"移动时代的前端加密 - Div.IO","url":"http://div.io/topic/1220","folder":"其他书签","order":0}
+{"title":"关于HTML加密混淆、源码保护、代码安全，防止解压直接看源码 - web开发 - 爱上编程技术博客","url":"http://www.tqcto.com/article/web/1731.html","folder":"其他书签","order":0}
+{"title":"移动客户端与服务端的安全交互(二次优化)","url":"http://m.oschina.net/blog/167928","folder":"其他书签","order":0}
+{"title":"45个实用的JavaScript技巧、窍门和最佳实践 - 博客 - 伯乐在线","url":"http://blog.jobbole.com/54495/","folder":"其他书签","order":0}
+{"title":"crypto-js - JavaScript implementations of standard and secure cryptographic algorithms - Google Project Hosting","url":"https://code.google.com/p/crypto-js/","folder":"其他书签","order":0}
+{"title":"Spring 注解拦截器使用详解","url":"http://www.bubuko.com/infodetail-968402.html","folder":"其他书签","order":0}
+{"title":"开始使用 - Blade","url":"http://bladejava.com/docs/intro/getting_start","folder":"其他书签","order":0}
+{"title":"Ember.js即学即用（一） - Ember.js框架研究 - 前端乱炖","url":"http://www.html-js.com/article/Research-of-Emberjs-framework-Emberjs-for-immediate-use","folder":"其他书签","order":0}
+{"title":"Twitter-Snowflake，64位自增ID算法详解 - 漫漫路","url":"http://www.lanindex.com/twitter-snowflake%EF%BC%8C64%E4%BD%8D%E8%87%AA%E5%A2%9Eid%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/","folder":"其他书签","order":0}
+{"title":"通过redis-trib.rb脚本构建并增删改查redis cluster集群 | 峰云就她了","url":"http://xiaorui.cc/2015/05/16/%E9%80%9A%E8%BF%87redis-trib-rb%E8%84%9A%E6%9C%AC%E6%9E%84%E5%BB%BA%E5%B9%B6%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5redis-cluster%E9%9B%86%E7%BE%A4/","folder":"其他书签","order":0}
+{"title":"从零开始nodejs系列文章 | 粉丝日志","url":"http://blog.fens.me/series-nodejs/","folder":"其他书签","order":0}
+{"title":"AngularJS 入门教学视频【更新至第 8 集】 - 博客 - 伯乐在线","url":"http://blog.jobbole.com/87995/","folder":"其他书签","order":0}
+{"title":"spring mvc 请求转发和重定向 - jackpk的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/jackpk/article/details/19121777","folder":"其他书签","order":0}
+{"title":"Redis Memcache比较 - 任何技能都是从模仿开始，逐步升华。 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/zhu_tianwei/article/details/44928783","folder":"其他书签","order":0}
+{"title":"将负数转换为二进制 - Onewalkingman的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/onewalkingman/article/details/3746154","folder":"其他书签","order":0}
+{"title":"Java 位运算(移位、位与、或、异或、非） - Ely's Blog - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/xiaochunyong/article/details/7748713","folder":"其他书签","order":0}
+{"title":"陌生但默默一统江湖的MurmurHash | 花钱的年华","url":"http://calvin1978.blogcn.com/articles/murmur.html","folder":"其他书签","order":0}
+{"title":"主从复制 - Redis 源码日志 - 极客学院Wiki","url":"http://wiki.jikexueyuan.com/project/redis/master-slave-replication.html","folder":"其他书签","order":0}
+{"title":"GeoHash核心原理解析 - zhanlijun - 博客园","url":"http://www.cnblogs.com/LBSer/p/3310455.html","folder":"其他书签","order":0}
+{"title":"如何避免故障？ - zhanlijun - 博客园","url":"http://www.cnblogs.com/LBSer/p/4753112.html","folder":"其他书签","order":0}
+{"title":"接口限流实践 - zhanlijun - 博客园","url":"http://www.cnblogs.com/LBSer/p/4083131.html","folder":"其他书签","order":0}
+{"title":"Java API 设计清单 - 博客 - 伯乐在线","url":"http://blog.jobbole.com/12958/","folder":"其他书签","order":0}
+{"title":"ActiveMQ的几种集群配置 - √不错 - 博客园","url":"http://www.cnblogs.com/forchase/p/4317752.html","folder":"其他书签","order":0}
+{"title":"Redis集群解决方案比较 - Java Under - ITeye技术网站","url":"http://chong-zh.iteye.com/blog/2175166","folder":"其他书签","order":0}
+{"title":"每天进步一点点——五分钟理解一致性哈希算法(consistent hashing) - Cynric 的博客 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/cywosp/article/details/23397179","folder":"其他书签","order":0}
+{"title":"Hash碰撞与拒绝服务攻击 - 玄魂 - 博客园","url":"http://www.cnblogs.com/xuanhun/archive/2012/01/01/2309571.html","folder":"其他书签","order":0}
+{"title":"java_集合体系之:LinkedList详解、源码及示例——04 - AlienChen - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/crave_shy/article/details/17440835","folder":"其他书签","order":0}
+{"title":"Array and Linkedlist区别与操作的时间复杂度（转载） - 爱做饭的小莹子 - 博客园","url":"http://www.cnblogs.com/springfor/p/3985333.html","folder":"其他书签","order":0}
+{"title":"如何从十进制转换为二进制","url":"http://zh.wikihow.com/%E4%BB%8E%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6","folder":"其他书签","order":0}
+{"title":"算法的时间复杂度和空间复杂度-总结 - zolalad的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/zolalad/article/details/11848739","folder":"其他书签","order":0}
+{"title":"jdk1.5、1.6、1.7新特性详细介绍（整理） - you know,do not explain! - ITeye技术网站","url":"http://medbricom.iteye.com/blog/1443045","folder":"其他书签","order":0}
+{"title":"Linux内存管理原理 - aitao - 博客园","url":"http://www.cnblogs.com/zhaoyl/p/3695517.html","folder":"其他书签","order":0}
+{"title":"Java 内存分配全面浅析 - 观千剑而后识器，操千曲而后晓声。 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/shimiso/article/details/8595564","folder":"其他书签","order":0}
+{"title":"JSP九大内置对象及四个作用域 - ourday - BlogJava","url":"http://www.blogjava.net/ourday/archive/2008/09/20/230107.html","folder":"其他书签","order":0}
+{"title":"面向报文（UDP）和面向字节流（TCP）的区别 - ce123的技术博客 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/ce123/article/details/8976006","folder":"其他书签","order":0}
+{"title":"深入解析Bloom Filter(上) - Yebangyu's Blog","url":"http://www.yebangyu.org/blog/2016/01/23/insidethebloomfilter/","folder":"其他书签","order":0}
+{"title":"Bitmap的秘密","url":"http://www.infoq.com/cn/articles/the-secret-of-bitmap","folder":"其他书签","order":0}
+{"title":"java_集合体系之ArrayList详解、源码及示例——03 - AlienChen - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/crave_shy/article/details/17436773","folder":"其他书签","order":0}
+{"title":"你在浏览器中输入 google.com 并且按下回车之后发生了什么？","url":"https://github.com/skyline75489/what-happens-when-zh_CN","folder":"其他书签","order":0}
+{"title":"技术方向的简历要求","url":"https://github.com/yuanzm/resume","folder":"其他书签","order":0}
+{"title":"java_集合体系之HashMap详解、源码及示例——09 - AlienChen - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/crave_shy/article/details/17552679","folder":"其他书签","order":0}
+{"title":"科学网—[转载]jvm32位、64位区别 - 孙静宇的博文","url":"http://blog.sciencenet.cn/blog-273829-741456.html","folder":"其他书签","order":0}
+{"title":"麻省理工学院公开课：算法导论_全23集_网易公开课","url":"http://open.163.com/special/opencourse/algorithms.html","folder":"其他书签","order":0}
+{"title":"Leetcode 编程训练 | 酷 壳 - CoolShell.cn","url":"http://coolshell.cn/articles/12052.html","folder":"其他书签","order":0}
+{"title":"地理围栏算法解析（Geo-fencing） - zhanlijun - 博客园","url":"http://www.cnblogs.com/LBSer/p/4471742.html","folder":"其他书签","order":0}
+{"title":"R树介绍及其发展历程 | 学步园","url":"http://www.xuebuyuan.com/676517.html","folder":"其他书签","order":0}
+{"title":"字符串高频面试题精讲：","url":"http://www.julyedu.com/video/play/25","folder":"其他书签","order":0}
+{"title":"Percona XtraDB Cluster 5.6安装配置 - 从心开始 - 51CTO技术博客","url":"http://hao360.blog.51cto.com/5820068/1674062","folder":"其他书签","order":0}
+{"title":"乐观锁与悲观锁的区别 - Wayne-FD - 博客园","url":"http://www.cnblogs.com/Bob-FD/p/3352216.html","folder":"其他书签","order":0}
+{"title":"ActiveMQ学习（三）——MQ的通讯模式 - Dream_c - 博客园","url":"http://www.cnblogs.com/macula/p/3474305.html","folder":"其他书签","order":0}
+{"title":"GRASP (职责分配原则) - Bill Yuan - 博客园","url":"http://www.cnblogs.com/sevenyuan/archive/2010/03/05/1678730.html","folder":"其他书签","order":0}
+{"title":"领域驱动设计和实践","url":"http://www.infoq.com/cn/articles/cjq-ddd","folder":"其他书签","order":0}
+{"title":"聚合（根）、实体、值对象精炼思考总结 - netfocus - 博客园","url":"http://www.cnblogs.com/netfocus/archive/2012/02/12/2347938.html","folder":"其他书签","order":0}
+{"title":"对CQRS的基础理解 - 逸言","url":"http://agiledon.github.io/blog/2012/12/31/basic-understanding-on-cqrs/","folder":"其他书签","order":0}
+{"title":"ENode 1.0 - 整体架构介绍 - netfocus - 博客园","url":"http://www.cnblogs.com/netfocus/p/3139661.html","folder":"其他书签","order":0}
+{"title":"浅谈12306核心模型设计思路和架构设计 – 码农网","url":"http://www.codeceo.com/article/12306-artch.html","folder":"其他书签","order":0}
+{"title":"Activemq中的KahaDB消息日志的恢复机制 - 给生活加点盐 - ITeye技术网站","url":"http://berdy.iteye.com/blog/813300","folder":"其他书签","order":0}
+{"title":"Base64 算法原理，以及编码、解码【加密、解密】 介绍 - 程默 - 博客园","url":"http://www.cnblogs.com/chengmo/p/3735917.html","folder":"其他书签","order":0}
+{"title":"深入浅出空间索引：为什么需要空间索引 - zhanlijun - 博客园","url":"http://www.cnblogs.com/LBSer/p/3392491.html","folder":"其他书签","order":0}
+{"title":"一个故事讲清楚NIO - zhanlijun - 博客园","url":"http://www.cnblogs.com/LBSer/p/4622749.html","folder":"其他书签","order":0}
+{"title":"Redis Sentinel 机制与用法（二） - beanlam - SegmentFault","url":"https://segmentfault.com/a/1190000002685515","folder":"其他书签","order":0}
+{"title":"Redis 集群（上） - Redis 源码日志 - 极客学院Wiki","url":"http://wiki.jikexueyuan.com/project/redis/cluster-up.html","folder":"其他书签","order":0}
+{"title":"Java 集合系列12之 TreeMap详细介绍(源码解析)和使用示例 - 如果天空不死 - 博客园","url":"http://www.cnblogs.com/skywang12345/p/3310928.html","folder":"其他书签","order":0}
+{"title":"红黑树(一)之 原理和算法详细介绍 - 如果天空不死 - 博客园","url":"http://www.cnblogs.com/skywang12345/p/3245399.html","folder":"其他书签","order":0}
+{"title":"Hash 函数概览 - 技术翻译 - 开源中国社区","url":"http://www.oschina.net/translate/state-of-hash-functions","folder":"其他书签","order":0}
+{"title":"搭建高可用mongodb集群（三）—— 深入副本集内部机制 | 严澜(lanceyan)的博客 - 技术分享 框架交流 大数据处理 架构搭建 机器人","url":"http://www.lanceyan.com/tech/mongodb_repset2.html","folder":"其他书签","order":0}
+{"title":"ActiveMQ的集群与高可用 - KimmKing的技术博客 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/kimmking/article/details/13768367","folder":"其他书签","order":0}
+{"title":"CRC32 Usage In MySQL","url":"http://shopperplus.github.io/blog/2015/01/10/crc32-hash-usage-in-mysql.html","folder":"其他书签","order":0}
+{"title":"cncounter/Redis本地环境搭建.md at master · cncounter/cncounter · GitHub","url":"https://github.com/cncounter/cncounter/blob/master/cncounter/src/test/resources/Redis%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md","folder":"其他书签","order":0}
+{"title":"Java多线程（六）之Deque与LinkedBlockingDeque深入分析 - IT 巨人 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/guangcigeyun/article/details/8278355","folder":"其他书签","order":0}
+{"title":"ActiveMQ学习笔记(2)——JMS消息模型","url":"http://m.oschina.net/blog/378752","folder":"其他书签","order":0}
+{"title":"性能优化模式 - 美团点评技术团队","url":"http://tech.meituan.com/performance_tuning_pattern.html","folder":"其他书签","order":0}
+{"title":"JavaCC使用小结 - BHQ的技术学习 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/bhq2010/article/details/8763920","folder":"其他书签","order":0}
+{"title":"使用Gatling进行性能测试 | 羊八井花园","url":"http://www.yangbajing.me/2015/07/31/%E4%BD%BF%E7%94%A8Gatling%E8%BF%9B%E8%A1%8C%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/","folder":"其他书签","order":0}
+{"title":"jenkins应用篇：Gatling plugin的使用 - IT大道","url":"http://www.itdadao.com/2016/01/21/254629/","folder":"其他书签","order":0}
+{"title":"Redis是否要设置内存大小限制？ - Linux 运维 - 知乎","url":"https://www.zhihu.com/question/31102463","folder":"其他书签","order":0}
+{"title":"为什么我要用 Node.js? 案例逐一介绍 - 博客 - 伯乐在线","url":"http://blog.jobbole.com/53736/","folder":"其他书签","order":0}
+{"title":"CAP原理和最终一致性 // Arccode's blog","url":"http://arccode.net/2015/07/03/CAP%E5%8E%9F%E7%90%86%E5%92%8C%E6%9C%80%E7%BB%88%E4%B8%80%E8%87%B4%E6%80%A7/","folder":"其他书签","order":0}
+{"title":"jOOQ and Transactions | LiftOff LLC","url":"http://blog.liftoffllc.in/2014/06/jooq-and-transactions.html","folder":"其他书签","order":0}
+{"title":"mogilefs 的简单部署 - 和风细雨 - 51CTO技术博客","url":"http://essun.blog.51cto.com/721033/1409108","folder":"其他书签","order":0}
+{"title":"（总结）Nginx配置文件nginx.conf中文详解","url":"http://www.ha97.com/5194.html","folder":"其他书签","order":0}
+{"title":"开启nginx状态监控，查看web服务器的并发连接数 - 林中路 - 51CTO技术博客","url":"http://juven.blog.51cto.com/749867/1008494","folder":"其他书签","order":0}
+{"title":"Nginx安全加固配置手册 - 梦朝思夕 - 51CTO技术博客","url":"http://qiangmzsx.blog.51cto.com/2052549/1610200","folder":"其他书签","order":0}
+{"title":"为nginx配置https并自签名证书 | Creke Blog | 梦溪博客","url":"http://blog.creke.net/762.html","folder":"其他书签","order":0}
+{"title":"nginx upstream 容错机制 原创-胡志广 - 酷爱 HHVM qq 群：271240899（满） 387626087（新） - ITeye技术网站","url":"http://saiyaren.iteye.com/blog/1914865","folder":"其他书签","order":0}
+{"title":"如何利用nginx_upstream_check_module-master对nginx的后端机器进行健康状态检查 - 运维笔记 - 51CTO技术博客","url":"http://axlewire.blog.51cto.com/1418858/1622870","folder":"其他书签","order":0}
+{"title":"[转载总结]高质量代码的一些要素 - ThinkingPool - SegmentFault","url":"https://segmentfault.com/a/1190000004355331","folder":"其他书签","order":0}
+{"title":"LINUX服务器集群时间同步之NTP配置 - sliverdang - 博客园","url":"http://www.cnblogs.com/sliverdang/p/linux_ntp.html","folder":"其他书签","order":0}
+{"title":"分布式文件系统FastDFS原理介绍 | UC技术博客","url":"http://tech.uc.cn/?p=221","folder":"其他书签","order":0}
+{"title":"debian中如何为软件包降级 - Moose W. Oler的日志 - 网易博客","url":"http://moosewoler.blog.163.com/blog/static/6986605201111344728545/","folder":"其他书签","order":0}
+{"title":"简介 | Docker —— 从入门到实践","url":"https://yeasy.gitbooks.io/docker_practice/content/compose/intro.html","folder":"其他书签","order":0}
+{"title":"一种基于“哨兵”的分布式缓存设计 – 佐井","url":"http://blog.lichengwu.cn/architecture/2015/06/14/distributed-cache/","folder":"其他书签","order":0}
+{"title":"如何减少接口响应时间 – 佐井","url":"http://blog.lichengwu.cn/optimization/2016/03/12/how-to-reduce-the-computational-response-time/","folder":"其他书签","order":0}
+{"title":"解决Github访问超慢问题 | zrong's blog","url":"http://zengrong.net/post/2092.htm","folder":"其他书签","order":0}
+{"title":"App安全之网络传输安全 | MrPeak技术分享","url":"http://mrpeak.cn/blog/encrypt/","folder":"其他书签","order":0}
+{"title":"【LVS】LVS工作总结之原理篇–DR模式 | 乡村运维","url":"http://www.chenqing.org/2012/11/%E3%80%90lvs%E3%80%91lvs%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93%E4%B9%8B%E5%8E%9F%E7%90%86%E7%AF%87.html","folder":"其他书签","order":0}
+{"title":"LB 负载均衡的层次结构 - mindwind - 博客园","url":"http://www.cnblogs.com/mindwind/p/5339657.html","folder":"其他书签","order":0}
+{"title":"配置sonar、jenkins进行持续审查 - 没头脑的土豆 - 博客园","url":"http://www.cnblogs.com/gao241/p/3190701.html","folder":"其他书签","order":0}
+{"title":"（总结）Nginx/LVS/HAProxy负载均衡软件的优缺点详解","url":"http://www.ha97.com/5646.html","folder":"其他书签","order":0}
+{"title":"(6)[转]linux下UDP单次发送大小限制是多少？_梦在远方_新浪博客","url":"http://blog.sina.com.cn/s/blog_68282f2e0102uzld.html","folder":"其他书签","order":0}
+{"title":"分布式系统技术系列--Gossip算法 - 推酷","url":"http://www.tuicool.com/articles/ayYjIzV","folder":"其他书签","order":0}
+{"title":"codis/tutorial_zh.md at master · CodisLabs/codis","url":"https://github.com/CodisLabs/codis/blob/master/doc/tutorial_zh.md","folder":"其他书签","order":0}
+{"title":"java异步编程 - tangyongzhe的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/tangyongzhe/article/details/49851769","folder":"其他书签","order":0}
+{"title":"redis分布式内存锁：余量扣除示例 - 架构师的知识与实践 - ITeye技术网站","url":"http://wh0426.iteye.com/blog/2212025","folder":"其他书签","order":0}
+{"title":"四层和七层负载均衡的区别_知识库_博客园","url":"http://kb.cnblogs.com/page/188170/","folder":"其他书签","order":0}
+{"title":"Redis 配置文件 redis.conf 项目详解 一介布衣","url":"http://yijiebuyi.com/blog/bc2b3d3e010bf87ba55267f95ab3aa71.html","folder":"其他书签","order":0}
+{"title":"Redis的安装和使用之三------redis.conf配置释义 - 记事本 - 51CTO技术博客","url":"http://wangzhijian.blog.51cto.com/6427016/1734868","folder":"其他书签","order":0}
+{"title":"Java资源大全中文版","url":"https://github.com/jobbole/awesome-java-cn","folder":"其他书签","order":0}
+{"title":"MySQL 资源大全中文版","url":"https://github.com/jobbole/awesome-mysql-cn","folder":"其他书签","order":0}
+{"title":"redis in action学习笔记","url":"https://abcfy2.gitbooks.io/redis-in-action-reading-notes/content/getting_to_know_redis/session1.html","folder":"其他书签","order":0}
+{"title":"HashMap和Hashtable的区别 - ImportNew","url":"http://www.importnew.com/7010.html","folder":"其他书签","order":0}
+{"title":"Codis集群的搭建与使用 - GoogSQL - 博客园","url":"http://www.cnblogs.com/xuanzhi201111/p/4425194.html","folder":"其他书签","order":0}
+{"title":"codis集群部署实战 - 屌丝运维男 - 51CTO技术博客","url":"http://navyaijm.blog.51cto.com/4647068/1637688","folder":"其他书签","order":0}
+{"title":"精益技术简历之道——改善技术简历的47条原则 - _Luc_ - 博客园","url":"http://www.cnblogs.com/figure9/p/lean-technical-resume.html#rule26","folder":"其他书签","order":0}
+{"title":"6天通吃树结构—— 第五天 Trie树 - 一线码农 - 博客园","url":"http://www.cnblogs.com/huangxincheng/archive/2012/11/25/2788268.html","folder":"其他书签","order":0}
+{"title":"Linux软连接和硬链接 - iTech - 博客园","url":"http://www.cnblogs.com/itech/archive/2009/04/10/1433052.html","folder":"其他书签","order":0}
+{"title":"浅析Docker容器的应用场景","url":"http://mp.weixin.qq.com/s?src=3&timestamp=1462549958&ver=1&signature=plxFcNT4dK2Ge*jf97Yw6o4ec7dOgIQoVraZu4o8J1PpsmTV5ZVag5G6Z7EBZcTw8iqihRk-84kYCcniAdjoWBSjwvo8l28g*X1sqVrrML382UhR3sWKKczlCuUtK1Q0l*f4nkfFgL7EcHeUjjoUrcAHk4DycEx9D1s5Np*ioSg=","folder":"其他书签","order":0}
+{"title":"360开源的类Redis存储系统:Pika","url":"http://media.weibo.cn/article?id=2309403974295628970629&jumpfrom=weibocom","folder":"其他书签","order":0}
+{"title":"语言设计中的折中（权衡tradeoff） - 胡是 - 博客园","url":"http://www.cnblogs.com/whos/archive/2010/09/18/1830144.html","folder":"其他书签","order":0}
+{"title":"Nginx+Keepalived实现站点高可用 | Sean's Notes","url":"http://seanlook.com/2015/05/18/nginx-keepalived-ha/","folder":"其他书签","order":0}
+{"title":"用 PMD 铲除 bug","url":"http://www.ibm.com/developerworks/cn/java/j-pmd/","folder":"其他书签","order":0}
+{"title":"Docker入门实战_电子书免费在线阅读_百度阅读","url":"http://yuedu.baidu.com/ebook/d817967416fc700abb68fca1?pn=1&rf=http%3A%2F%2Fdockone.io%2Farticle%2F233###","folder":"其他书签","order":0}
+{"title":"用最少的机器支撑万亿级访问，微博6年Redis优化历程","url":"http://weibo.com/ttarticle/p/show?id=2309403978986932807291","folder":"其他书签","order":0}
+{"title":"静态化调用和实例化调用的区别 - 承影 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/chengyingzhilian/article/details/7821292","folder":"其他书签","order":0}
+{"title":"在线压缩图片-好使","url":"https://tinypng.com/","folder":"其他书签","order":0}
+{"title":"gulp基本入门 - 淡定的魂魄 - 博客园","url":"http://www.cnblogs.com/marymei0107/p/4620666.html","folder":"其他书签","order":0}
+{"title":"28个Unix/Linux的命令行神器 -- Linux -- IT技术博客大学习 -- 共学习 共进步！","url":"http://blogread.cn/it/article/5913?f=sa","folder":"其他书签","order":0}
+{"title":"GET和POST有什么区别？及为什么网上的多数答案都是错的。 - 全栈开发者","url":"http://www.admin10000.com/document/9194.html","folder":"其他书签","order":0}
+{"title":"使用Mesos管理Docker集群（Mesos + Marathon + Chronos + Docker） - ee900222 - 博客园","url":"http://www.cnblogs.com/ee900222/p/docker_2.html","folder":"其他书签","order":0}
+{"title":"敏捷开发之scrum实践（入门篇） - 软件开发程序员博客文章收藏网","url":"http://www.programgo.com/article/65631881045/","folder":"其他书签","order":0}
+{"title":"软件开发模式对比(瀑布、迭代、螺旋、敏捷) - OYK - 博客园","url":"http://www.cnblogs.com/-OYK/archive/2012/10/08/2714669.html","folder":"其他书签","order":0}
+{"title":"计数排序、桶排序和基数排序 - zhoutk - SegmentFault","url":"https://segmentfault.com/a/1190000003054515","folder":"其他书签","order":0}
+{"title":"Jenkins 2.0新时代：从CI到CD - DockOne.io","url":"http://dockone.io/article/1421","folder":"其他书签","order":0}
+{"title":"计算机科学中最重要的32个算法","url":"http://www.infoq.com/cn/news/2012/08/32-most-important-algorithms","folder":"其他书签","order":0}
+{"title":"逆天神器 cmder","url":"http://bg.biedalian.com/2014/09/11/cmder.html","folder":"其他书签","order":0}
+{"title":"JavaMelody应用监控使用指南 - xingoo - 博客园","url":"http://www.cnblogs.com/xing901022/p/4116430.html","folder":"其他书签","order":0}
+{"title":"Redis实战 — Redis 实战","url":"http://redisinaction.com/index.html","folder":"其他书签","order":0}
+{"title":"每个程序员都应该收藏的算法复杂度速查表 – 码农网","url":"http://www.codeceo.com/article/algorithm-complexity-table.html","folder":"其他书签","order":0}
+{"title":"浅谈算法和数据结构（12）：无向图相关算法基础 - 文章 - 伯乐在线","url":"http://blog.jobbole.com/79314/","folder":"其他书签","order":0}
+{"title":"新浪公有云Docker编排实践 - DockOne.io","url":"http://dockone.io/article/1495","folder":"其他书签","order":0}
+{"title":"8. Spring Boot介绍 · Spring Boot参考指南","url":"https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/II.%20Getting%20started/8.%20Introducing%20Spring%20Boot.html","folder":"其他书签","order":0}
+{"title":"理解OAuth 2.0 - 阮一峰的网络日志","url":"http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html","folder":"其他书签","order":0}
+{"title":"FunctionQuery - Solr Wiki","url":"http://wiki.apache.org/solr/FunctionQuery#recip","folder":"其他书签","order":0}
+{"title":"TumblrGet - 批量下载Tumblr、汤不热、汤博乐福利视频！","url":"http://www.tumblrget.com/","folder":"其他书签","order":0}
+{"title":"中国自然语言开源组织","url":"http://demo.nlpcn.org/demo.jsp","folder":"其他书签","order":0}
+{"title":"基于Sentinel的Redis3.0高可用方案 - 天宇骑士 - 博客园","url":"http://www.cnblogs.com/wjoyxt/p/4242184.html","folder":"其他书签","order":0}
+{"title":"sentinel、JedisSentinelPool实战 | 晓的技术博客","url":"http://lanjingling.github.io/2015/12/29/redis-sentinel-jedis-shizhan/","folder":"其他书签","order":0}
+{"title":"hilo高低位算法的优点和用途（非Hibernate主键策略） - Awisper的个人空间 - 开源中国社区","url":"https://my.oschina.net/js99st/blog/546515","folder":"其他书签","order":0}
+{"title":"各种设计指南和规范 - UXRen","url":"http://uxren.cn/?p=45477","folder":"其他书签","order":0}
+{"title":"序言 | Android官方培训课程中文版(v0.9.5)","url":"http://hukai.me/android-training-course-in-chinese/index.html","folder":"其他书签","order":0}
+{"title":"小贱贱图床 | 图床API - 免费图床 - 微博图床 - 网络图片库 - 免费CDN图床","url":"http://pic.xiaojianjian.net/","folder":"其他书签","order":0}
+{"title":"AngularJS: Developer Guide: Developer Guide","url":"http://docs.ngnice.com/guide","folder":"其他书签/新建文件夹2","order":0}
+{"title":"MySQL增加Sequence管理功能 JAVA","url":"http://www.rrzhai.com/p/23089","folder":"移动设备书签","order":0}
+{"title":"Java线程池使用说明 - tywei2012的专栏 - 博客频道 - CSDN.NET","url":"http://blog.csdn.net/tengbaichuan/article/details/16117341","folder":"移动设备书签","order":0}

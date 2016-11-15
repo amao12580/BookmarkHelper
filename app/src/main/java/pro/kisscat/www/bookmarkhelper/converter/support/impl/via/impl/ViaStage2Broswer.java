@@ -38,6 +38,7 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 public class ViaStage2Broswer extends ViaBroswerable {
     private static final String TAG = "ViaStage2";
+    public static final int minVersionCode = 20161113;
     private static final String fileName_origin = "via";
     private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Via/";

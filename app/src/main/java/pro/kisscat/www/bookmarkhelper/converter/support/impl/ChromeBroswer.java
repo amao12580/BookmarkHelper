@@ -80,13 +80,14 @@ public class ChromeBroswer extends BasicBroswer {
             cpPath.mkdirs();
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             java.io.File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
-            List<Bookmark> chromeBookmarks = fetchBookmarksFromJSONFile(file);
+            List<Bookmark> chromeBookmarks = fetchBookmarks(file);
             int index = 0;
             int size = chromeBookmarks.size();
             for (Bookmark item : chromeBookmarks) {
                 index++;
                 String bookmarkUrl = item.getUrl();
                 String bookmarkTitle = item.getTitle();
+                String bookmarkFolder = item.getFolder();
                 if (allowPrintBookmark(index, size)) {
                     LogHelper.v("title:" + bookmarkTitle);
                     LogHelper.v("url:" + bookmarkUrl);
@@ -101,6 +102,9 @@ public class ChromeBroswer extends BasicBroswer {
                 Bookmark bookmark = new Bookmark();
                 bookmark.setTitle(bookmarkTitle);
                 bookmark.setUrl(bookmarkUrl);
+                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
+                    bookmark.setFolder(bookmarkFolder);
+                }
                 bookmarks.add(bookmark);
             }
         } catch (Exception e) {
@@ -113,7 +117,7 @@ public class ChromeBroswer extends BasicBroswer {
         return bookmarks;
     }
 
-    private List<Bookmark> fetchBookmarksFromJSONFile(java.io.File file) throws FileNotFoundException {
+    private List<Bookmark> fetchBookmarks(java.io.File file) throws FileNotFoundException {
         JSONReader jsonReader = null;
         List<Bookmark> result = new LinkedList<>();
         try {

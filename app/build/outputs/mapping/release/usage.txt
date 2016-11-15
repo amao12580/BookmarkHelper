@@ -469,12 +469,13 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     44:47:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable:
     public static final java.lang.String packageName
-    46:49:public int readBookmarkSum(android.content.Context)
+    60:63:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage1Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String fileName_origin
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Broswer:
     private static final java.lang.String TAG
+    public static final int minVersionCode
     private static final java.lang.String fileName_origin
     private static final java.lang.String tableName
 pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper:
@@ -493,15 +494,15 @@ pro.kisscat.www.bookmarkhelper.util.file.pojo.File:
     private static final double KBLimit
     private static final double MBLimit
     private static final double GBLimit
-    31:31:public void setNameWithSuffix(java.lang.String)
-    34:34:public void setChangeTime(java.util.Date)
-    36:36:public java.lang.String getPrefix()
-    37:37:public void setPrefix(java.lang.String)
-    39:39:public java.lang.Double getSize()
-    40:40:public void setSize(java.lang.Double)
-    43:43:public void setOriginSize(java.lang.Long)
-    45:45:public pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure getMeasure()
-    46:46:public void setMeasure(pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure)
+    32:32:public void setNameWithSuffix(java.lang.String)
+    35:35:public void setChangeTime(java.util.Date)
+    37:37:public java.lang.String getPrefix()
+    38:38:public void setPrefix(java.lang.String)
+    40:40:public java.lang.Double getSize()
+    41:41:public void setSize(java.lang.Double)
+    44:44:public void setOriginSize(java.lang.Long)
+    46:46:public pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure getMeasure()
+    47:47:public void setMeasure(pro.kisscat.www.bookmarkhelper.util.file.pojo.Measure)
 pro.kisscat.www.bookmarkhelper.util.json.JsonUtil:
     17:17:public JsonUtil()
     51:51:public static java.util.List toList(java.lang.String,java.lang.Class)

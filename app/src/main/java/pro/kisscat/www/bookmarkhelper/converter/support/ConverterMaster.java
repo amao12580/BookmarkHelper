@@ -38,14 +38,7 @@ public class ConverterMaster {
         AppListUtil.init(context);
         if (supportRule == null) {
             supportRule = new LinkedList<>();
-            App via = AppListUtil.getAppInfo(context, ViaBroswerable.packageName);
-            ViaBroswerable viaBroswerable = null;
-            if (via != null) {
-                viaBroswerable = ViaBroswerable.fetchViaBroswer(via.getVersionName(), via.getVersionCode());
-            }
-            if (viaBroswerable == null) {
-                viaBroswerable = ViaBroswerable.chooseDefault();
-            }
+            ViaBroswerable viaBroswerable = ViaBroswerable.fetchViaBroswer(context);
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), viaBroswerable));
