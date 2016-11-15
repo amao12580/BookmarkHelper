@@ -7,9 +7,13 @@ package pro.kisscat.www.bookmarkhelper.activity;
  * Mail:stevenchengmask@gmail.com
  * Date:2016/11/2
  * Time:14:19
+ * <p>
+ * <p>
+ * http://blog.csdn.net/wei18359100306/article/details/42468739
  */
 
 import android.annotation.TargetApi;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,7 +38,6 @@ import android.webkit.WebViewClient;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
-import pro.kisscat.www.bookmarkhelper.webview.ProgressWebView;
 
 public class Html5Activity extends AppCompatActivity {
 
@@ -53,7 +56,7 @@ public class Html5Activity extends AppCompatActivity {
         String mUrl = bundle.getString("url");
         String mTitle = bundle.getString("title");
         int mLogo = bundle.getInt("logo");
-        LogHelper.v("Url:" + mUrl + ",title:" + mTitle);
+        LogHelper.v("title:" + mTitle + ",URL:" + mUrl);
         Toolbar toolbar = (Toolbar) findViewById(R.id.webview_toolbar);
         toolbar.setLogo(ContextCompat.getDrawable(this, mLogo));
         toolbar.setTitle("  " + mTitle);
@@ -65,9 +68,7 @@ public class Html5Activity extends AppCompatActivity {
 
             actionBar.setDisplayUseLogoEnabled(true);
         }
-        mWebView = (ProgressWebView) findViewById(R.id.baseweb_webview);
-
-
+        mWebView = (WebView) findViewById(R.id.baseweb_webview);
         mWebView.setWebViewClient(new MyWebViewClient());
         mWebView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -90,11 +91,8 @@ public class Html5Activity extends AppCompatActivity {
         mWebSettings.setUseWideViewPort(true);
         mWebSettings.setDefaultTextEncodingName("utf-8");
         mWebSettings.setLoadsImagesAutomatically(true);
-        mWebSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         mWebSettings.setJavaScriptEnabled(true);
-        mWebSettings.setDomStorageEnabled(true);
         mWebSettings.setAllowFileAccess(true);
-        mWebSettings.setAppCacheEnabled(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mWebSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
@@ -103,13 +101,14 @@ public class Html5Activity extends AppCompatActivity {
                 mWebSettings.setPluginState(WebSettings.PluginState.ON);
             }
         }
+        mWebSettings.setDefaultTextEncodingName("utf-8");
+        mWebSettings.setUserAgentString("Mozilla/5.0 (Linux; Android 4.1.2; C1905 Build/15.1.C.2.8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36");
         //调用JS方法.安卓版本大于17,加上注解 @JavascriptInterface
         saveData(mWebSettings);
         newWin(mWebSettings);
         mWebView.setWebChromeClient(webChromeClient);
         mWebView.addJavascriptInterface(new JsInterface(), "jsinterface");
-//        mWebView.loadUrl(mUrl);
-        mWebView.loadUrl(MetaData.NETWORKERRORURL);
+        mWebView.loadUrl(mUrl);
     }
 
     @Override
@@ -124,6 +123,17 @@ public class Html5Activity extends AppCompatActivity {
             // 在webview加载下一页，而不会打开浏览器
             view.loadUrl(url);
             return true;
+        }
+
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
         }
 
         @Override

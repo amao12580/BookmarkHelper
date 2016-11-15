@@ -82,9 +82,6 @@
 # view AndroidManifest.xml #generated:27
 -keep class pro.kisscat.www.bookmarkhelper.activity.MainActivity { <init>(...); }
 
-# view res/layout/activity_webview.xml #generated:18
--keep class pro.kisscat.www.bookmarkhelper.webview.ProgressWebView { <init>(...); }
-
 # onClick res/layout/activity_main.xml #generated:34
 -keepclassmembers class * { *** onclickAboutMe(...); }
 

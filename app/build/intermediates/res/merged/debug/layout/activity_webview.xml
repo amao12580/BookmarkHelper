@@ -12,10 +12,9 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:layout_scrollFlags="scroll|enterAlways"
-        app:popupTheme="@style/AppTheme.PopupOverlay">
-    </android.support.v7.widget.Toolbar>
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <pro.kisscat.www.bookmarkhelper.webview.ProgressWebView
+    <WebView
         android:id="@+id/baseweb_webview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
