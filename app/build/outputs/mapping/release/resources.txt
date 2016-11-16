@@ -167,6 +167,7 @@ Referenced Strings:
   FragmentPagerAdapter
   FragmentStatePagerAdapter
   GB
+  GB2312
   GridLayoutManager
   HIDE
   Hebr
@@ -854,6 +855,7 @@ Referenced Strings:
   name
   nativeMethod
   nature
+  needParseFolder:
   net.sf.cglib.proxy.Factory
   network
   networkInfo
@@ -891,6 +893,7 @@ Referenced Strings:
   pad_bookmark
   pages
   parent
+  parent_uuid
   parseArray
   parseObject
   parseRest
@@ -1047,6 +1050,7 @@ Referenced Strings:
   url
   url:
   user_query
+  uuid
   val
   valueOf
   vector
@@ -1096,6 +1100,7 @@ Referenced Strings:
   x
   xx
   y
+  主页
   书签数据:
   书签条数:
   取消
@@ -2717,4 +2722,4 @@ Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (r
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 927939 to 928751); using original instead
+Resource shrinking did not work (grew from 927938 to 928750); using original instead

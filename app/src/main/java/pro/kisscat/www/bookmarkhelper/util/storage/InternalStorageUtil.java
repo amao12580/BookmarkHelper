@@ -9,6 +9,7 @@ import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.util.command.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
 import pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType;
@@ -86,7 +87,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         commands[1] = "then echo " + existFlag;
         commands[2] = "else echo " + notExistFlag;
         commands[3] = "fi";
-        RootUtil.CommandResult commandResult = RootUtil.executeCmd(commands);
+        CommandResult commandResult = RootUtil.executeCmd(commands);
         return commandResult != null && commandResult.isSuccess() && commandResult.getSuccessMsg() != null && existFlag == Integer.valueOf(commandResult.getSuccessMsg().get(0));
     }
 
@@ -109,7 +110,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
                 command.append(regularRule);
             }
             command.append(" -l");
-            RootUtil.CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()});
+            CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()});
             if (commandResult != null && commandResult.isSuccess()) {
                 return sortByFileChangeTimeDesc(commandResult.getSuccessMsg());
             }

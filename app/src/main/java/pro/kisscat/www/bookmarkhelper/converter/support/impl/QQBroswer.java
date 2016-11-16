@@ -5,10 +5,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
 
-import java.io.File;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
+import lombok.Getter;
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
@@ -34,7 +38,8 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 public class QQBroswer extends BasicBroswer {
     private static final String TAG = "QQ";
     private static final String packageName = "com.tencent.mtt";
-    private final static String[] columns = new String[]{"title", "url"};
+    private final static String[] columns = new String[]{"title", "url", "folder", "parent_uuid", "uuid"};
+    private final static String[] columns_snapshot = new String[]{"title", "url", "parent_uuid", "uuid"};
     private List<Bookmark> bookmarks;
 
     public String getPackageName() {
@@ -90,6 +95,7 @@ public class QQBroswer extends BasicBroswer {
             for (Bookmark item : bookmarksList) {
                 index++;
                 String bookmarkUrl = item.getUrl();
+                String bookmarkFolder = item.getFolder();
                 String bookmarkTitle = item.getTitle();
                 if (allowPrintBookmark(index, size)) {
                     LogHelper.v("title:" + bookmarkTitle);
@@ -105,6 +111,7 @@ public class QQBroswer extends BasicBroswer {
                 Bookmark bookmark = new Bookmark();
                 bookmark.setTitle(bookmarkTitle);
                 bookmark.setUrl(bookmarkUrl);
+                bookmark.setFolder(bookmarkFolder);
                 bookmarks.add(bookmark);
             }
         } catch (ConverterException converterException) {
@@ -185,10 +192,9 @@ public class QQBroswer extends BasicBroswer {
         result.addAll(fetchBookmarksList(false, context, tmpFilePath, "mtt_bookmarks", null, null, "created asc"));
         result.addAll(fetchBookmarksList(false, context, tmpFilePath, "pad_bookmark", null, null, "created asc"));
         result.addAll(fetchBookmarksList(false, context, tmpFilePath, "pc_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "snapshot", "type=?", new String[]{"-1"}, null));
+        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
         return result;
     }
-
 
     private List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);
@@ -205,16 +211,24 @@ public class QQBroswer extends BasicBroswer {
         result.addAll(fetchBookmarksList(context, dbFilePath, "mtt_bookmarks", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, dbFilePath, "pad_bookmark", null, null, "created asc"));
         result.addAll(fetchBookmarksList(context, dbFilePath, "pc_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(context, dbFilePath, "snapshot", "type=?", new String[]{"-1"}, null));
+        result.addAll(fetchBookmarksList(context, dbFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
         LogHelper.v(TAG + ":读取未登录用户书签SQLite数据库结束");
         return result;
     }
 
     private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
-        return fetchBookmarksList(true, context, dbFilePath, tableName, where, whereArgs, orderBy);
+        return fetchBookmarksList(true, context, dbFilePath, tableName, columns, where, whereArgs, orderBy);
+    }
+
+    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath, String tableName, String[] columns, String where, String[] whereArgs, String orderBy) {
+        return fetchBookmarksList(true, context, dbFilePath, tableName, columns, where, whereArgs, orderBy);
     }
 
     private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
+        return fetchBookmarksList(needThrowException, context, dbFilePath, tableName, columns, where, whereArgs, orderBy);
+    }
+
+    private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String[] columns, String where, String[] whereArgs, String orderBy) {
         LogHelper.v(TAG + ":读取SQLite数据库开始,dbFilePath:" + dbFilePath + ",tableName:" + tableName);
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
@@ -233,11 +247,18 @@ public class QQBroswer extends BasicBroswer {
             }
             cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, "url", null, orderBy, null);
             if (cursor != null && cursor.getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    Bookmark item = new Bookmark();
-                    item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-                    item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
-                    result.add(item);
+                boolean needParseFolder = checkNeedParseFolder(columns);
+                LogHelper.v("needParseFolder:" + needParseFolder);
+                if (!needParseFolder) {
+                    while (cursor.moveToNext()) {
+                        Bookmark item = new Bookmark();
+                        item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+                        item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+                        item.setFolder("主页");
+                        result.add(item);
+                    }
+                } else {
+                    parseBookmarkWithFolder(cursor, result);
                 }
             }
 
@@ -251,6 +272,64 @@ public class QQBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":读取SQLite数据库结束,dbFilePath:" + dbFilePath);
         }
         return result;
+    }
+
+    private void parseBookmarkWithFolder(Cursor cursor, List<Bookmark> result) {
+        List<QQBookmark> qqBookmarks = parseQQBookmark(cursor);
+        Map<Long, QQBookmark> folders = new HashMap<>();
+        for (QQBookmark item : qqBookmarks) {
+            String folder = item.getFolder();
+            if (folder != null && "1".equals(folder)) {
+                folders.put(item.getUuid(), item);
+            }
+        }
+
+        for (QQBookmark item : qqBookmarks) {
+            String folder = item.getFolder();
+            if (folder != null && "0".equals(folder)) {
+                String folderPath = parseFolderPath(folders, item.getParent_uuid());
+                Bookmark bookmark = new Bookmark();
+                bookmark.setTitle(item.getTitle());
+                bookmark.setUrl(item.getUrl());
+                bookmark.setFolder(folderPath == null ? "" : folderPath);
+                result.add(bookmark);
+            }
+        }
+    }
+
+    private String parseFolderPath(Map<Long, QQBookmark> folders, long parent_uuid) {
+        QQBookmark parent = folders.get(parent_uuid);
+        if (parent == null) {
+            return null;
+        }
+        return null;
+    }
+
+    private List<QQBookmark> parseQQBookmark(Cursor cursor) {
+        List<QQBookmark> result = new LinkedList<>();
+        while (cursor.moveToNext()) {
+            QQBookmark item = new QQBookmark();
+            item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+            item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+            item.setFolder(cursor.getInt(cursor.getColumnIndex("folder")) + "");
+            item.setParent_uuid(cursor.getLong(cursor.getColumnIndex("parent_uuid")));
+            item.setUuid(cursor.getLong(cursor.getColumnIndex("uuid")));
+            result.add(item);
+        }
+        return result;
+    }
+
+    private class QQBookmark extends Bookmark {
+        @Getter
+        @Setter
+        private long parent_uuid;
+        @Getter
+        @Setter
+        private long uuid;
+    }
+
+    private boolean checkNeedParseFolder(String[] current) {
+        return Arrays.equals(current, columns);
     }
 
     @Override

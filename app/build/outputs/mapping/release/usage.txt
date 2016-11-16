@@ -489,7 +489,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    46:49:public int readBookmarkSum(android.content.Context)
+    51:54:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -521,6 +521,10 @@ pro.kisscat.www.bookmarkhelper.util.Path:
     14:14:public Path()
 pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil:
     27:27:public AppListUtil()
+pro.kisscat.www.bookmarkhelper.util.command.CommandUtil:
+    private static final java.lang.String COMMAND_SU
+    private static final java.lang.String COMMAND_EXIT
+    private static final java.lang.String COMMAND_LINE_END
 pro.kisscat.www.bookmarkhelper.util.context.ContextUtil:
     16:16:public ContextUtil()
 pro.kisscat.www.bookmarkhelper.util.file.FileUtil:
@@ -565,8 +569,5 @@ pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil:
     14:14:public PhoneUtil()
 pro.kisscat.www.bookmarkhelper.util.root.ProcessWithTimeout
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
-    private static final java.lang.String COMMAND_SU
-    private static final java.lang.String COMMAND_EXIT
-    private static final java.lang.String COMMAND_LINE_END
-    25:25:public RootUtil()
+    15:15:public RootUtil()
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil
