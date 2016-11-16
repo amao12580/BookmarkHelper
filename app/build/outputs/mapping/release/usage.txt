@@ -474,7 +474,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     58:58:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    32:32:public ConverterMaster()
+    33:33:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -494,6 +494,11 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     48:51:public int readBookmarkSum(android.content.Context)
+pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    49:52:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

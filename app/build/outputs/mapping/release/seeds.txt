@@ -28274,6 +28274,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_360
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_flyme5
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_qq
+pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_sougou
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_uc
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_via
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_x

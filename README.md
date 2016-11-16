@@ -52,8 +52,36 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 5.背景线程处理书签交换，避免UI响应超时
 
-#### 0.0.7版 Draft
+#### [0.0.7版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.7%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.7.apk)
 1.增加兼容：支持从[搜狗浏览器](http://www.coolapk.com/apk/sogou.mobile.explorer)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+2.Bug 修复：修复部分机型底层shell命令无限阻塞问题
+
+3.Bug 修复：现在所有书签已经完成重复性验证。
+
+4.Bug 修复：[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)支持提取嵌套文件夹里的书签数据。
+
+5.Bug 修复：[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)支持提取时保留文件夹路径。
+
+6.Bug 修复：[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)支持提取时保留文件夹路径。
+
+7.Bug 修复：[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)支持提取时保留文件夹路径。
+
+8.Bug 修复：[360浏览器](http://www.coolapk.com/apk/com.qihoo.browser)支持提取时保留文件夹路径。
+
+9.Bug 修复：[X浏览器](http://www.coolapk.com/apk/com.mmbox.xbrowser)支持提取时保留文件夹路径。
+
+10.Bug 修复：完善对浏览器应用是否安装的检测。
+
+11.Bug 修复：[Via浏览器](http://www.coolapk.com/apk/mark.via)现在支持最新版本(2.1.1)。
+
+12.一些webview的优化。
+
+================  割   ================
+
+已知问题：
+
+1.[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)无法读取首页的书签数据，找不到存取路径，研究中。
 
 #### 0.0.8版 Draft
 1.增加兼容：支持从[百度浏览器](http://www.coolapk.com/apk/com.baidu.browser.apps)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

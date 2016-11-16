@@ -75,7 +75,7 @@ public class CommandUtil {
             successMsg = stdoutList;
             LogHelper.v("successMsg is:" + JsonUtil.toJson(successMsg));
             errorMsg = erroroutList;
-            LogHelper.v("errorMsg is:" + JsonUtil.toJson(successMsg));
+            LogHelper.v("errorMsg is:" + JsonUtil.toJson(errorMsg));
         } catch (IOException e) {
             LogHelper.e(MetaData.LOG_E_DEFAULT, "IOException:Root cmd 执行失败,commands:" + commandStr + ",exception:" + e.getMessage());
             e.printStackTrace();

@@ -29798,6 +29798,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int broswer_name_show_chrome -> broswer_name_show_chrome
     int broswer_name_show_flyme5 -> broswer_name_show_flyme5
     int broswer_name_show_qq -> broswer_name_show_qq
+    int broswer_name_show_sougou -> broswer_name_show_sougou
     int broswer_name_show_uc -> broswer_name_show_uc
     int broswer_name_show_via -> broswer_name_show_via
     int broswer_name_show_x -> broswer_name_show_x
@@ -30190,7 +30191,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    2894:2894:void <init>() -> <init>
+    2895:2895:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -30678,8 +30679,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3257:3257:void <init>() -> <init>
-    3324:9782:void <clinit>() -> <clinit>
+    3258:3258:void <init>() -> <init>
+    3325:9783:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b
@@ -30816,10 +30817,10 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www
     26:26:void setInstalled(boolean) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster -> pro.kisscat.www.bookmarkhelper.converter.support.b:
     java.util.List supportRule -> a
-    37:48:void init(android.content.Context) -> a
-    51:64:int execute(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
-    68:72:java.util.List cover2Execute(android.content.Context,java.util.List) -> a
-    33:33:java.util.List getSupportRule() -> a
+    38:50:void init(android.content.Context) -> a
+    53:66:int execute(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
+    70:74:java.util.List cover2Execute(android.content.Context,java.util.List) -> a
+    34:34:java.util.List getSupportRule() -> a
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.a:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
@@ -30932,7 +30933,44 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer$Qihoo360Wi
     305:305:long getParent() -> b
     306:306:void setParent(long) -> b
     301:301:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer$1) -> <init>
-pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.e:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.e:
+    java.lang.String[] columns -> b
+    java.util.List bookmarks -> c
+    java.lang.String filePath_origin -> d
+    java.lang.String filePath_cp -> e
+    37:37:void <init>() -> <init>
+    44:44:java.lang.String getPackageName() -> getPackageName
+    57:58:void fillDefaultIcon(android.content.Context) -> d
+    62:63:void fillDefaultAppName(android.content.Context) -> c
+    72:129:java.util.List readBookmark(android.content.Context) -> e
+    133:173:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
+    177:189:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String,java.lang.String) -> a
+    193:207:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
+    211:211:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    215:215:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    219:249:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> a
+    253:273:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> a
+    276:279:java.lang.String trim(java.lang.String) -> b
+    283:287:java.lang.String parseFolderPath(java.util.Map,java.lang.String) -> a
+    291:299:java.lang.String parseFolderPath(java.util.Map,java.lang.String,java.lang.String) -> a
+    303:313:java.util.List parseQQBookmark(android.database.Cursor) -> a
+    331:331:int appendBookmark(android.content.Context,java.util.List) -> a
+    40:68:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer$1 -> pro.kisscat.www.bookmarkhelper.converter.support.a.e$1:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer$SogouBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.a.e$a:
+    java.lang.String f_server_id -> b
+    java.lang.String f_server_pid -> c
+    int f_is_folder -> d
+    pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer this$0 -> a
+    316:316:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer) -> <init>
+    317:317:java.lang.String getF_server_id() -> a
+    318:318:void setF_server_id(java.lang.String) -> a
+    320:320:java.lang.String getF_server_pid() -> b
+    321:321:void setF_server_pid(java.lang.String) -> b
+    324:324:int getF_is_folder() -> c
+    325:325:void setF_is_folder(int) -> a
+    316:316:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer$1) -> <init>
+pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.f:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
     java.lang.String filePath_cp -> d
@@ -30948,7 +30986,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer -> pro.kisscat.w
     183:218:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
     223:223:int appendBookmark(android.content.Context,java.util.List) -> a
     62:118:void <clinit>() -> <clinit>
-pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.f:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.g:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
     java.lang.String filePath_cp -> d

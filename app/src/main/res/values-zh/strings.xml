@@ -8,6 +8,7 @@
     <string name="broswer_name_show_qq">QQ浏览器</string>
     <string name="broswer_name_show_via">Via浏览器</string>
     <string name="broswer_name_show_uc">UC浏览器</string>
+    <string name="broswer_name_show_sougou">搜狗浏览器</string>
 
     <string name="source_broswer_icon_contentDescription">来源浏览器</string>
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
