@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "0.0.7"
+        versionName "0.0.7-f1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //大部分应用其实并不需要支持几十种语言的国际化支持。还好强大的gradle支持语言的配置，比如国内应用只支持中文、英文
         resConfigs "zh","en"
