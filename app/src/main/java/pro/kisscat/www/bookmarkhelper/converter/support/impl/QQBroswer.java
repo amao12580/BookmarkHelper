@@ -245,18 +245,12 @@ public class QQBroswer extends BasicBroswer {
                     return result;
                 }
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, "url", null, orderBy, null);
+            cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, null, null, orderBy, null);
             if (cursor != null && cursor.getCount() > 0) {
                 boolean needParseFolder = checkNeedParseFolder(columns);
                 LogHelper.v("needParseFolder:" + needParseFolder);
                 if (!needParseFolder) {
-                    while (cursor.moveToNext()) {
-                        Bookmark item = new Bookmark();
-                        item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-                        item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
-                        item.setFolder("主页");
-                        result.add(item);
-                    }
+                    parseBookmarkWithoutFolder(cursor, result);
                 } else {
                     parseBookmarkWithFolder(cursor, result);
                 }
@@ -274,6 +268,16 @@ public class QQBroswer extends BasicBroswer {
         return result;
     }
 
+    private void parseBookmarkWithoutFolder(Cursor cursor, List<Bookmark> result) {
+        while (cursor.moveToNext()) {
+            Bookmark item = new Bookmark();
+            item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+            item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+            item.setFolder("主页");
+            result.add(item);
+        }
+    }
+
     private void parseBookmarkWithFolder(Cursor cursor, List<Bookmark> result) {
         List<QQBookmark> qqBookmarks = parseQQBookmark(cursor);
         Map<Long, QQBookmark> folders = new HashMap<>();
@@ -287,7 +291,7 @@ public class QQBroswer extends BasicBroswer {
         for (QQBookmark item : qqBookmarks) {
             String folder = item.getFolder();
             if (folder != null && "0".equals(folder)) {
-                String folderPath = parseFolderPath(folders, item.getParent_uuid());
+                String folderPath = trim(parseFolderPath(folders, item.getParent_uuid()));
                 Bookmark bookmark = new Bookmark();
                 bookmark.setTitle(item.getTitle());
                 bookmark.setUrl(item.getUrl());
@@ -297,12 +301,31 @@ public class QQBroswer extends BasicBroswer {
         }
     }
 
+    private String trim(String folderPath) {
+        if (folderPath != null && folderPath.endsWith(Path.FILE_SPLIT)) {
+            folderPath = folderPath.substring(0, folderPath.length() - 1);
+        }
+        return folderPath;
+    }
+
     private String parseFolderPath(Map<Long, QQBookmark> folders, long parent_uuid) {
         QQBookmark parent = folders.get(parent_uuid);
         if (parent == null) {
             return null;
         }
-        return null;
+        return parseFolderPath(folders, parent_uuid, "");
+    }
+
+    private String parseFolderPath(Map<Long, QQBookmark> folders, long parent_uuid, String path) {
+        QQBookmark parent = folders.get(parent_uuid);
+        if (parent == null) {
+            return path;
+        }
+        String title = parent.getTitle();
+        if (!(title == null || title.isEmpty() || "root".equals(title))) {
+            path = title + Path.FILE_SPLIT + path;
+        }
+        return parseFolderPath(folders, parent.getParent_uuid(), path);
     }
 
     private List<QQBookmark> parseQQBookmark(Cursor cursor) {

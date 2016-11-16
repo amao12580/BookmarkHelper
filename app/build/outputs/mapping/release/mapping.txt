@@ -30861,24 +30861,27 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer -> pro.kisscat.w
     220:220:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
     224:224:java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> a
     228:228:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    232:274:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> a
-    278:298:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> a
-    301:305:java.lang.String parseFolderPath(java.util.Map,long) -> a
-    309:319:java.util.List parseQQBookmark(android.database.Cursor) -> a
-    332:332:boolean checkNeedParseFolder(java.lang.String[]) -> a
-    337:337:int appendBookmark(android.content.Context,java.util.List) -> a
+    232:268:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> a
+    272:279:void parseBookmarkWithoutFolder(android.database.Cursor,java.util.List) -> a
+    282:302:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> b
+    305:308:java.lang.String trim(java.lang.String) -> b
+    312:316:java.lang.String parseFolderPath(java.util.Map,long) -> a
+    320:328:java.lang.String parseFolderPath(java.util.Map,long,java.lang.String) -> a
+    332:342:java.util.List parseQQBookmark(android.database.Cursor) -> a
+    355:355:boolean checkNeedParseFolder(java.lang.String[]) -> a
+    360:360:int appendBookmark(android.content.Context,java.util.List) -> a
     41:70:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$1 -> pro.kisscat.www.bookmarkhelper.converter.support.a.c$1:
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$QQBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.a.c$a:
     long parent_uuid -> b
     long uuid -> c
     pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer this$0 -> a
-    322:322:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer) -> <init>
-    323:323:long getParent_uuid() -> a
-    324:324:void setParent_uuid(long) -> a
-    326:326:long getUuid() -> b
-    327:327:void setUuid(long) -> b
-    322:322:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$1) -> <init>
+    345:345:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer) -> <init>
+    346:346:long getParent_uuid() -> a
+    347:347:void setParent_uuid(long) -> a
+    349:349:long getUuid() -> b
+    350:350:void setUuid(long) -> b
+    345:345:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$1) -> <init>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.d:
     java.util.List bookmarks -> b
     java.lang.String filePath_origin -> c
