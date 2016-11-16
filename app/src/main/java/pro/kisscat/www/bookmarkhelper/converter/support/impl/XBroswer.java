@@ -160,17 +160,6 @@ public class XBroswer extends BasicBroswer {
         return result;
     }
 
-    private String trim(String folder) {
-        String key = "/";
-        if (folder == null || folder.isEmpty() || key.equals(folder)) {
-            return "";
-        }
-        if (folder.startsWith(key)) {
-            folder = folder.substring(key.length());
-        }
-        return folder;
-    }
-
     @Override
     public int appendBookmark(Context context, List<Bookmark> bookmarks) {
         return 0;

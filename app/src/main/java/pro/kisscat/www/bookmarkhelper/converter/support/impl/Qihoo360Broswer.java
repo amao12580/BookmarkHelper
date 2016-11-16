@@ -166,16 +166,16 @@ public class Qihoo360Broswer extends BasicBroswer {
     }
 
     private void parseBookmarkWithoutLogin(Cursor cursor, List<Bookmark> result) {
-        List<Qihoo360WithoutLoginBookmark> qqBookmarks = parseQQBookmarkWithoutLogin(cursor);
+        List<Qihoo360WithoutLoginBookmark> bookmarks = parseBookmarkWithoutLogin(cursor);
         Map<Long, Qihoo360WithoutLoginBookmark> folders = new HashMap<>();
-        for (Qihoo360WithoutLoginBookmark item : qqBookmarks) {
+        for (Qihoo360WithoutLoginBookmark item : bookmarks) {
             String folder = item.getFolder();
             if (folder != null && "1".equals(folder)) {
                 folders.put(item.getId(), item);
             }
         }
 
-        for (Qihoo360WithoutLoginBookmark item : qqBookmarks) {
+        for (Qihoo360WithoutLoginBookmark item : bookmarks) {
             String folder = item.getFolder();
             if (folder != null && "0".equals(folder)) {
                 String folderPath = trim(parseFolderPathWithoutLogin(folders, item.getParent()));
@@ -189,16 +189,16 @@ public class Qihoo360Broswer extends BasicBroswer {
     }
 
     private void parseBookmarkWithLogined(Cursor cursor, List<Bookmark> result) {
-        List<Qihoo360WithLoginedBookmark> qqBookmarks = parseQQBookmarkWithLogined(cursor);
+        List<Qihoo360WithLoginedBookmark> bookmarks = parseBookmarkWithLogined(cursor);
         Map<Long, Qihoo360WithLoginedBookmark> folders = new HashMap<>();
-        for (Qihoo360WithLoginedBookmark item : qqBookmarks) {
+        for (Qihoo360WithLoginedBookmark item : bookmarks) {
             int is_folder = item.getIs_folder();
             if (is_folder == 1) {
                 folders.put(item.getId(), item);
             }
         }
 
-        for (Qihoo360WithLoginedBookmark item : qqBookmarks) {
+        for (Qihoo360WithLoginedBookmark item : bookmarks) {
             int is_folder = item.getIs_folder();
             if (is_folder == 0) {
                 String folderPath = trim(parseFolderPathWithLogined(folders, item.getParent_id()));
@@ -209,13 +209,6 @@ public class Qihoo360Broswer extends BasicBroswer {
                 result.add(bookmark);
             }
         }
-    }
-
-    private String trim(String folderPath) {
-        if (folderPath != null && folderPath.endsWith(Path.FILE_SPLIT)) {
-            folderPath = folderPath.substring(0, folderPath.length() - 1);
-        }
-        return folderPath;
     }
 
     private String parseFolderPathWithLogined(Map<Long, Qihoo360WithLoginedBookmark> folders, long parent_id) {
@@ -258,7 +251,7 @@ public class Qihoo360Broswer extends BasicBroswer {
         return parseFolderPathWithoutLogin(folders, parent.getParent(), path);
     }
 
-    private List<Qihoo360WithLoginedBookmark> parseQQBookmarkWithLogined(Cursor cursor) {
+    private List<Qihoo360WithLoginedBookmark> parseBookmarkWithLogined(Cursor cursor) {
         List<Qihoo360WithLoginedBookmark> result = new LinkedList<>();
         while (cursor.moveToNext()) {
             Qihoo360WithLoginedBookmark item = new Qihoo360WithLoginedBookmark();
@@ -272,7 +265,7 @@ public class Qihoo360Broswer extends BasicBroswer {
         return result;
     }
 
-    private List<Qihoo360WithoutLoginBookmark> parseQQBookmarkWithoutLogin(Cursor cursor) {
+    private List<Qihoo360WithoutLoginBookmark> parseBookmarkWithoutLogin(Cursor cursor) {
         List<Qihoo360WithoutLoginBookmark> result = new LinkedList<>();
         while (cursor.moveToNext()) {
             Qihoo360WithoutLoginBookmark item = new Qihoo360WithoutLoginBookmark();

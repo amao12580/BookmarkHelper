@@ -250,16 +250,16 @@ public class SogouBroswer extends BasicBroswer {
     }
 
     private void parseBookmarkWithFolder(Cursor cursor, List<Bookmark> result) {
-        List<SogouBookmark> qqBookmarks = parseQQBookmark(cursor);
+        List<SogouBookmark> bookmarks = parseBookmark(cursor);
         Map<String, SogouBookmark> folders = new HashMap<>();
-        for (SogouBookmark item : qqBookmarks) {
+        for (SogouBookmark item : bookmarks) {
             int folder = item.getF_is_folder();
             if (folder == 1) {
                 folders.put(item.getF_server_id(), item);
             }
         }
 
-        for (SogouBookmark item : qqBookmarks) {
+        for (SogouBookmark item : bookmarks) {
             int folder = item.getF_is_folder();
             if (folder == 0) {
                 String folderPath = trim(parseFolderPath(folders, item.getF_server_pid()));
@@ -270,13 +270,6 @@ public class SogouBroswer extends BasicBroswer {
                 result.add(bookmark);
             }
         }
-    }
-
-    private String trim(String folderPath) {
-        if (folderPath != null && folderPath.endsWith(Path.FILE_SPLIT)) {
-            folderPath = folderPath.substring(0, folderPath.length() - 1);
-        }
-        return folderPath;
     }
 
     private String parseFolderPath(Map<String, SogouBookmark> folders, String parent_uuid) {
@@ -293,13 +286,13 @@ public class SogouBroswer extends BasicBroswer {
             return path;
         }
         String title = parent.getTitle();
-        if (!(title == null || title.isEmpty() || "root".equals(title))) {
+        if (!(title == null || title.isEmpty())) {
             path = title + Path.FILE_SPLIT + path;
         }
         return parseFolderPath(folders, parent.getF_server_pid(), path);
     }
 
-    private List<SogouBookmark> parseQQBookmark(Cursor cursor) {
+    private List<SogouBookmark> parseBookmark(Cursor cursor) {
         List<SogouBookmark> result = new LinkedList<>();
         while (cursor.moveToNext()) {
             SogouBookmark item = new SogouBookmark();

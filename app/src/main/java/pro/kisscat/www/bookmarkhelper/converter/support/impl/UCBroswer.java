@@ -75,8 +75,8 @@ public class UCBroswer extends BasicBroswer {
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_cp + fileName_origin);
-            LogHelper.v("已登录的QQ用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
-            LogHelper.v("已登录的QQ用户书签条数:" + bookmarksListPart1.size());
+            LogHelper.v("已登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
+            LogHelper.v("已登录的用户书签条数:" + bookmarksListPart1.size());
             LogHelper.v("未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
             LogHelper.v("未登录的用户书签条数:" + bookmarksListPart2.size());
             bookmarksList.addAll(bookmarksListPart1);

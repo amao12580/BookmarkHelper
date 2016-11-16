@@ -10,6 +10,7 @@
     <string name="app_name">书签助手</string>
     <string name="appendBookmarksError">合并书签信息失败.</string>
     <string name="broswer_name_show_360">360浏览器</string>
+    <string name="broswer_name_show_baidu">百度浏览器</string>
     <string name="broswer_name_show_chrome">谷歌浏览器</string>
     <string name="broswer_name_show_flyme5">Flyme5浏览器</string>
     <string name="broswer_name_show_qq">QQ浏览器</string>

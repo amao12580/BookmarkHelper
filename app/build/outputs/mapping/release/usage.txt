@@ -471,10 +471,15 @@ pro.kisscat.www.bookmarkhelper.common.shared.BuildConfig
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     protected int bookmarkSum
-    58:58:public int readBookmarkSum(android.content.Context)
+    59:59:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    33:33:public ConverterMaster()
+    34:34:public ConverterMaster()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    48:51:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

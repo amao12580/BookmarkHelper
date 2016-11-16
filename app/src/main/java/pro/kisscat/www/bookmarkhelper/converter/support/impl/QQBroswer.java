@@ -303,13 +303,6 @@ public class QQBroswer extends BasicBroswer {
         }
     }
 
-    private String trim(String folderPath) {
-        if (folderPath != null && folderPath.endsWith(Path.FILE_SPLIT)) {
-            folderPath = folderPath.substring(0, folderPath.length() - 1);
-        }
-        return folderPath;
-    }
-
     private String parseFolderPath(Map<Long, QQBookmark> folders, long parent_uuid) {
         QQBookmark parent = folders.get(parent_uuid);
         if (parent == null) {

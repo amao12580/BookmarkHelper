@@ -83,8 +83,10 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 1.[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)无法读取首页的书签数据，找不到存取路径，研究中。
 
-#### 0.0.8版 Draft
+#### [0.0.8版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.8%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.8.apk)
 1.增加兼容：支持从[百度浏览器](http://www.coolapk.com/apk/com.baidu.browser.apps)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+2.代码优化
 
 #### 0.0.9版 Draft
 1.增加兼容：支持从[欧朋浏览器](http://www.coolapk.com/apk/com.oupeng.mini.android)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

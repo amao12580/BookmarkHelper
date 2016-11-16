@@ -10,6 +10,7 @@ import java.util.Set;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
@@ -103,7 +104,7 @@ public class BasicBroswer extends App implements Broswerable {
     }
 
     protected boolean isValidUrl(String bookmarkUrl) {
-        if (bookmarkUrl == null || bookmarkUrl.isEmpty() || !bookmarkUrl.startsWith("http") || !bookmarkUrl.contains("://")) {
+        if (bookmarkUrl == null || bookmarkUrl.isEmpty() || !(bookmarkUrl.startsWith("http") || bookmarkUrl.startsWith("www")) || !bookmarkUrl.contains("://")) {
             LogHelper.v("url is damage,url:" + bookmarkUrl + ",skip.");
             return false;
         }
@@ -128,5 +129,12 @@ public class BasicBroswer extends App implements Broswerable {
             return false;
         }
         return true;
+    }
+
+    protected String trim(String folderPath) {
+        if (folderPath != null && folderPath.endsWith(Path.FILE_SPLIT)) {
+            folderPath = folderPath.substring(0, folderPath.length() - 1);
+        }
+        return folderPath;
     }
 }

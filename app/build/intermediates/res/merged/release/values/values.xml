@@ -563,6 +563,7 @@
     <string name="appendBookmarksError">merge bookmarks error.</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="broswer_name_show_360">360 Broswer</string>
+    <string name="broswer_name_show_baidu">Baidu Broswer</string>
     <string name="broswer_name_show_chrome">Chrome Broswer</string>
     <string name="broswer_name_show_flyme5">Flyme5 Broswer</string>
     <string name="broswer_name_show_qq">QQ Broswer</string>
