@@ -16,6 +16,9 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
  */
 
 public class DBHelper {
+    /**
+     * read-only
+     */
     public synchronized static SQLiteDatabase openReadOnlyDatabase(String dbFilePath) {
         try {
             return SQLiteDatabase.openDatabase(dbFilePath, null, SQLiteDatabase.OPEN_READONLY);
@@ -25,6 +28,9 @@ public class DBHelper {
         }
     }
 
+    /**
+     * read-write
+     */
     public synchronized static SQLiteDatabase openDatabase(String dbFilePath) {
         try {
             return SQLiteDatabase.openDatabase(dbFilePath, null, SQLiteDatabase.OPEN_READWRITE);
@@ -34,6 +40,9 @@ public class DBHelper {
         }
     }
 
+    /**
+     * if table exists
+     */
     public static boolean checkTableExist(SQLiteDatabase sqLiteDatabase, String tableName) {
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + tableName + "'", null);
         if (cursor.moveToNext()) {

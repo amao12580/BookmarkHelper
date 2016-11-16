@@ -5,10 +5,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
 
-import java.io.File;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
+import lombok.Getter;
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
@@ -118,7 +121,8 @@ public class Qihoo360Broswer extends BasicBroswer {
         return bookmarks;
     }
 
-    private final static String[] columns = new String[]{"title", "url"};
+    private final static String[] columns_noLogin = new String[]{"_id", "title", "url", "folder", "parent"};
+    private final static String[] columns_hasLogined = new String[]{"id", "parent_id", "is_folder", "title", "url"};
 
     private List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String rootDir) {
         LogHelper.v(TAG + ":开始读取未登录用户书签,rootDir:" + rootDir);
@@ -140,14 +144,9 @@ public class Qihoo360Broswer extends BasicBroswer {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "created asc", null);
+            cursor = sqLiteDatabase.query(false, tableName, columns_noLogin, null, null, null, null, "created asc", null);
             if (cursor != null && cursor.getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    Bookmark item = new Bookmark();
-                    item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-                    item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
-                    result.add(item);
-                }
+                parseBookmarkWithoutLogin(cursor, result);
             }
 
         } finally {
@@ -160,6 +159,148 @@ public class Qihoo360Broswer extends BasicBroswer {
             LogHelper.v(TAG + ":读取未登录书签SQLite数据库结束");
         }
         return result;
+    }
+
+    private void parseBookmarkWithoutLogin(Cursor cursor, List<Bookmark> result) {
+        List<Qihoo360WithoutLoginBookmark> qqBookmarks = parseQQBookmarkWithoutLogin(cursor);
+        Map<Long, Qihoo360WithoutLoginBookmark> folders = new HashMap<>();
+        for (Qihoo360WithoutLoginBookmark item : qqBookmarks) {
+            String folder = item.getFolder();
+            if (folder != null && "1".equals(folder)) {
+                folders.put(item.getId(), item);
+            }
+        }
+
+        for (Qihoo360WithoutLoginBookmark item : qqBookmarks) {
+            String folder = item.getFolder();
+            if (folder != null && "0".equals(folder)) {
+                String folderPath = trim(parseFolderPathWithoutLogin(folders, item.getParent()));
+                Bookmark bookmark = new Bookmark();
+                bookmark.setTitle(item.getTitle());
+                bookmark.setUrl(item.getUrl());
+                bookmark.setFolder(folderPath == null ? "" : folderPath);
+                result.add(bookmark);
+            }
+        }
+    }
+
+    private void parseBookmarkWithLogined(Cursor cursor, List<Bookmark> result) {
+        List<Qihoo360WithLoginedBookmark> qqBookmarks = parseQQBookmarkWithLogined(cursor);
+        Map<Long, Qihoo360WithLoginedBookmark> folders = new HashMap<>();
+        for (Qihoo360WithLoginedBookmark item : qqBookmarks) {
+            int is_folder = item.getIs_folder();
+            if (is_folder == 1) {
+                folders.put(item.getId(), item);
+            }
+        }
+
+        for (Qihoo360WithLoginedBookmark item : qqBookmarks) {
+            int is_folder = item.getIs_folder();
+            if (is_folder == 0) {
+                String folderPath = trim(parseFolderPathWithLogined(folders, item.getParent_id()));
+                Bookmark bookmark = new Bookmark();
+                bookmark.setTitle(item.getTitle());
+                bookmark.setUrl(item.getUrl());
+                bookmark.setFolder(folderPath == null ? "" : folderPath);
+                result.add(bookmark);
+            }
+        }
+    }
+
+    private String trim(String folderPath) {
+        if (folderPath != null && folderPath.endsWith(Path.FILE_SPLIT)) {
+            folderPath = folderPath.substring(0, folderPath.length() - 1);
+        }
+        return folderPath;
+    }
+
+    private String parseFolderPathWithLogined(Map<Long, Qihoo360WithLoginedBookmark> folders, long parent_id) {
+        Qihoo360WithLoginedBookmark parent = folders.get(parent_id);
+        if (parent == null) {
+            return null;
+        }
+        return parseFolderPathWithLogined(folders, parent_id, "");
+    }
+
+    private String parseFolderPathWithoutLogin(Map<Long, Qihoo360WithoutLoginBookmark> folders, long parent_id) {
+        Qihoo360WithoutLoginBookmark parent = folders.get(parent_id);
+        if (parent == null) {
+            return null;
+        }
+        return parseFolderPathWithoutLogin(folders, parent_id, "");
+    }
+
+    private String parseFolderPathWithLogined(Map<Long, Qihoo360WithLoginedBookmark> folders, long parent_id, String path) {
+        Qihoo360WithLoginedBookmark parent = folders.get(parent_id);
+        if (parent == null) {
+            return path;
+        }
+        String title = parent.getTitle();
+        if (!(title == null || title.isEmpty())) {
+            path = title + Path.FILE_SPLIT + path;
+        }
+        return parseFolderPathWithLogined(folders, parent.getParent_id(), path);
+    }
+
+    private String parseFolderPathWithoutLogin(Map<Long, Qihoo360WithoutLoginBookmark> folders, long parent_id, String path) {
+        Qihoo360WithoutLoginBookmark parent = folders.get(parent_id);
+        if (parent == null) {
+            return path;
+        }
+        String title = parent.getTitle();
+        if (!(title == null || title.isEmpty())) {
+            path = title + Path.FILE_SPLIT + path;
+        }
+        return parseFolderPathWithoutLogin(folders, parent.getParent(), path);
+    }
+
+    private List<Qihoo360WithLoginedBookmark> parseQQBookmarkWithLogined(Cursor cursor) {
+        List<Qihoo360WithLoginedBookmark> result = new LinkedList<>();
+        while (cursor.moveToNext()) {
+            Qihoo360WithLoginedBookmark item = new Qihoo360WithLoginedBookmark();
+            item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+            item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+            item.setId(cursor.getLong(cursor.getColumnIndex("id")));
+            item.setParent_id(cursor.getLong(cursor.getColumnIndex("parent_id")));
+            item.setIs_folder(cursor.getInt(cursor.getColumnIndex("is_folder")));
+            result.add(item);
+        }
+        return result;
+    }
+
+    private List<Qihoo360WithoutLoginBookmark> parseQQBookmarkWithoutLogin(Cursor cursor) {
+        List<Qihoo360WithoutLoginBookmark> result = new LinkedList<>();
+        while (cursor.moveToNext()) {
+            Qihoo360WithoutLoginBookmark item = new Qihoo360WithoutLoginBookmark();
+            item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+            item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+            item.setFolder(cursor.getInt(cursor.getColumnIndex("folder")) + "");
+            item.setId(cursor.getLong(cursor.getColumnIndex("_id")));
+            item.setParent(cursor.getLong(cursor.getColumnIndex("parent")));
+            result.add(item);
+        }
+        return result;
+    }
+
+    private class Qihoo360WithLoginedBookmark extends Bookmark {
+        @Getter
+        @Setter
+        private long id;
+        @Getter
+        @Setter
+        private long parent_id;
+        @Getter
+        @Setter
+        private int is_folder;
+    }
+
+    private class Qihoo360WithoutLoginBookmark extends Bookmark {
+        @Getter
+        @Setter
+        private long id;
+        @Getter
+        @Setter
+        private long parent;
     }
 
     private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String appRootDir) {
@@ -231,14 +372,9 @@ public class Qihoo360Broswer extends BasicBroswer {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 return result;
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "create_time asc", null);
+            cursor = sqLiteDatabase.query(false, tableName, columns_hasLogined, null, null, null, null, "create_time asc", null);
             if (cursor != null && cursor.getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    Bookmark item = new Bookmark();
-                    item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-                    item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
-                    result.add(item);
-                }
+                parseBookmarkWithLogined(cursor, result);
             }
 
         } finally {

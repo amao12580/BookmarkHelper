@@ -753,6 +753,7 @@ Referenced Strings:
   isWriteAsArray
   isWriteClassName
   isWriteMapNullValue
+  is_folder
   iso8601
   item
   item:
@@ -893,6 +894,7 @@ Referenced Strings:
   pad_bookmark
   pages
   parent
+  parent_id
   parent_uuid
   parseArray
   parseObject
@@ -1290,7 +1292,7 @@ Marking string:character_counter_pattern:2131099719 used because its prefix matc
 Marking dimen:notification_large_icon_height:2131165299 used because its prefix matches string pool constant notification
 Marking dimen:notification_large_icon_width:2131165300 used because its prefix matches string pool constant notification
 Marking dimen:notification_subtext_size:2131165301 used because its prefix matches string pool constant notification
-Marking drawable:notification_template_icon_bg:2130837603 used because its prefix matches string pool constant notification
+Marking drawable:notification_template_icon_bg:2130837604 used because its prefix matches string pool constant notification
 Marking layout:notification_media_action:2130968618 used because its prefix matches string pool constant notification
 Marking layout:notification_media_cancel_action:2130968619 used because its prefix matches string pool constant notification
 Marking layout:notification_template_big_media:2130968620 used because its prefix matches string pool constant notification
@@ -1555,7 +1557,7 @@ drawable:abc_switch_thumb_material:2130837570 => [drawable:abc_btn_switch_to_on_
 drawable:abc_tab_indicator_material:2130837572 => [drawable:abc_tab_indicator_mtrl_alpha:2130837573]
 drawable:abc_textfield_search_material:2130837585 => [drawable:abc_textfield_search_activated_mtrl_alpha:2130837583, drawable:abc_textfield_search_default_mtrl_alpha:2130837584]
 drawable:design_snackbar_background:2130837590 => [dimen:design_snackbar_background_corner_radius:2131165202, color:design_snackbar_background_color:2131427359]
-drawable:navigation_empty_icon:2130837601 => [dimen:design_navigation_icon_size:2131165281]
+drawable:navigation_empty_icon:2130837602 => [dimen:design_navigation_icon_size:2131165281]
 layout:abc_action_bar_title_item:2130968576 => [style:RtlOverlay_Widget_AppCompat_ActionBar_TitleItem:2131230764, dimen:abc_action_bar_subtitle_top_margin_material:2131165216]
 layout:abc_action_bar_up_container:2130968577 => [attr:actionBarItemBackground:2130772038]
 layout:abc_action_bar_view_list_nav_layout:2130968578 => [attr:actionBarTabBarStyle:2130772027]
@@ -2220,8 +2222,8 @@ anim:design_fab_in:2131034126,
    drawable:abc_textfield_search_default_mtrl_alpha:2130837584,
    drawable:abc_textfield_search_material:2130837585,
    drawable:abc_vector_test:2130837586,
-   drawable:navigation_empty_icon:2130837601,
-   drawable:notification_template_icon_bg:2130837603,
+   drawable:navigation_empty_icon:2130837602,
+   drawable:notification_template_icon_bg:2130837604,
    id:action0:2131492996,
    id:action_bar:2131492958,
    id:action_bar_activity_content:2131492864,
@@ -2578,10 +2580,10 @@ anim:design_fab_in:2131034126,
    drawable:ic_donate:2130837595,
    drawable:ic_flyme5:2130837596,
    drawable:ic_qq:2130837597,
-   drawable:ic_uc:2130837598,
-   drawable:ic_via:2130837599,
-   drawable:ic_x:2130837600,
-   drawable:web_progress_bar_states:2130837602,
+   drawable:ic_uc:2130837599,
+   drawable:ic_via:2130837600,
+   drawable:ic_x:2130837601,
+   drawable:web_progress_bar_states:2130837603,
    id:baseweb_webview:2131492979,
    id:converterDirecterImage:2131492992,
    id:converterDirecterText:2131492993,
@@ -2719,8 +2721,12 @@ Skipped unused resource res/anim/abc_slide_in_bottom.xml: 400 bytes (replaced wi
 Skipped unused resource res/anim/abc_slide_in_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/anim/abc_slide_out_bottom.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/anim/abc_slide_out_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
+Skipped unused resource res/drawable-hdpi-v4/ic_sougou.png: 2669 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-mdpi-v4/ic_sougou.png: 1017 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-xhdpi-v4/ic_sougou.png: 3362 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-xxhdpi-v4/ic_sougou.png: 4358 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-xxxhdpi-v4/ic_sougou.png: 5393 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 927938 to 928750); using original instead

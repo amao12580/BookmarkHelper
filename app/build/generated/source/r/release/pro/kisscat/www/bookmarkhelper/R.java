@@ -2590,12 +2590,13 @@ containing a value of this type.
         public static final int ic_donate=0x7f02005b;
         public static final int ic_flyme5=0x7f02005c;
         public static final int ic_qq=0x7f02005d;
-        public static final int ic_uc=0x7f02005e;
-        public static final int ic_via=0x7f02005f;
-        public static final int ic_x=0x7f020060;
-        public static final int navigation_empty_icon=0x7f020061;
-        public static final int notification_template_icon_bg=0x7f020063;
-        public static final int web_progress_bar_states=0x7f020062;
+        public static final int ic_sougou=0x7f02005e;
+        public static final int ic_uc=0x7f02005f;
+        public static final int ic_via=0x7f020060;
+        public static final int ic_x=0x7f020061;
+        public static final int navigation_empty_icon=0x7f020062;
+        public static final int notification_template_icon_bg=0x7f020064;
+        public static final int web_progress_bar_states=0x7f020063;
     }
     public static final class id {
         public static final int action0=0x7f0c0084;
