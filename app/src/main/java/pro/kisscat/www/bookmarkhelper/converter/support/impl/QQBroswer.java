@@ -111,7 +111,9 @@ public class QQBroswer extends BasicBroswer {
                 Bookmark bookmark = new Bookmark();
                 bookmark.setTitle(bookmarkTitle);
                 bookmark.setUrl(bookmarkUrl);
-                bookmark.setFolder(bookmarkFolder);
+                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
+                    bookmark.setFolder(bookmarkFolder);
+                }
                 bookmarks.add(bookmark);
             }
         } catch (ConverterException converterException) {

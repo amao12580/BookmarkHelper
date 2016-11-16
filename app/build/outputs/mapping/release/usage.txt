@@ -503,7 +503,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    44:47:public int readBookmarkSum(android.content.Context)
+    43:46:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable:
     public static final java.lang.String packageName
     60:63:public int readBookmarkSum(android.content.Context)

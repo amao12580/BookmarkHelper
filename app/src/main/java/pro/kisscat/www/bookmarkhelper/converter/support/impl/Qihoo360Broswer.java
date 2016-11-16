@@ -91,6 +91,7 @@ public class Qihoo360Broswer extends BasicBroswer {
                 index++;
                 String bookmarkUrl = item.getUrl();
                 String bookmarkTitle = item.getTitle();
+                String bookmarkFolder = item.getFolder();
                 if (allowPrintBookmark(index, size)) {
                     LogHelper.v("title:" + bookmarkTitle);
                     LogHelper.v("url:" + bookmarkUrl);
@@ -105,6 +106,9 @@ public class Qihoo360Broswer extends BasicBroswer {
                 Bookmark bookmark = new Bookmark();
                 bookmark.setTitle(bookmarkTitle);
                 bookmark.setUrl(bookmarkUrl);
+                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
+                    bookmark.setFolder(bookmarkFolder);
+                }
                 bookmarks.add(bookmark);
             }
         } catch (ConverterException converterException) {

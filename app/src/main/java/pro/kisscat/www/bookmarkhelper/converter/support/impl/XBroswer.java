@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
 
-import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -86,6 +85,7 @@ public class XBroswer extends BasicBroswer {
                 index++;
                 String bookmarkUrl = item.getUrl();
                 String bookmarkTitle = item.getTitle();
+                String bookmarkFolder = item.getFolder();
                 if (allowPrintBookmark(index, size)) {
                     LogHelper.v("title:" + bookmarkTitle);
                     LogHelper.v("url:" + bookmarkUrl);
@@ -100,6 +100,9 @@ public class XBroswer extends BasicBroswer {
                 Bookmark bookmark = new Bookmark();
                 bookmark.setTitle(bookmarkTitle);
                 bookmark.setUrl(bookmarkUrl);
+                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
+                    bookmark.setFolder(bookmarkFolder);
+                }
                 bookmarks.add(bookmark);
             }
         } catch (ConverterException converterException) {
@@ -116,7 +119,7 @@ public class XBroswer extends BasicBroswer {
         return bookmarks;
     }
 
-    private final static String[] columns = new String[]{"title", "url"};
+    private final static String[] columns = new String[]{"title", "url", "parent"};
 
     private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
@@ -132,12 +135,15 @@ public class XBroswer extends BasicBroswer {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, "status=?", new String[]{"1"}, "url", null, null, null);
+            cursor = sqLiteDatabase.query(false, tableName, columns, "type=?", new String[]{"0"}, "url", null, null, null);
             if (cursor != null && cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
                     Bookmark item = new Bookmark();
                     item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
                     item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+                    String folder = cursor.getString(cursor.getColumnIndex("parent"));
+                    folder = trim(folder);
+                    item.setFolder(folder);
                     result.add(item);
                 }
             }
@@ -152,6 +158,17 @@ public class XBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":读取书签SQLite数据库结束");
         }
         return result;
+    }
+
+    private String trim(String folder) {
+        String key = "/";
+        if (folder == null || folder.isEmpty() || key.equals(folder)) {
+            return "";
+        }
+        if (folder.startsWith(key)) {
+            folder = folder.substring(key.length());
+        }
+        return folder;
     }
 
     @Override
