@@ -487,7 +487,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    35:35:public ConverterMaster()
+    36:36:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -503,6 +503,12 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     42:45:public int readBookmarkSum(android.content.Context)
+pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    47:50:public int readBookmarkSum(android.content.Context)
+pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer$LiebaoBookmark
 pro.kisscat.www.bookmarkhelper.converter.support.impl.OupengBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

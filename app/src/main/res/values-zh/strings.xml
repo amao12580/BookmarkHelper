@@ -11,6 +11,7 @@
     <string name="broswer_name_show_sougou">搜狗浏览器</string>
     <string name="broswer_name_show_baidu">百度浏览器</string>
     <string name="broswer_name_show_oupeng">欧朋浏览器</string>
+    <string name="broswer_name_show_liebao">猎豹浏览器</string>
 
     <string name="source_broswer_icon_contentDescription">来源浏览器</string>
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>

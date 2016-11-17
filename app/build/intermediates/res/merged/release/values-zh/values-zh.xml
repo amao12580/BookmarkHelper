@@ -13,6 +13,7 @@
     <string name="broswer_name_show_baidu">百度浏览器</string>
     <string name="broswer_name_show_chrome">谷歌浏览器</string>
     <string name="broswer_name_show_flyme5">Flyme5浏览器</string>
+    <string name="broswer_name_show_liebao">猎豹浏览器</string>
     <string name="broswer_name_show_oupeng">欧朋浏览器</string>
     <string name="broswer_name_show_qq">QQ浏览器</string>
     <string name="broswer_name_show_sougou">搜狗浏览器</string>
@@ -43,7 +44,7 @@
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

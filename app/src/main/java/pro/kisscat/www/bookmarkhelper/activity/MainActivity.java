@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void run() {
                 PhoneUtil.record();
                 LogHelper.write();
-                InternalStorageUtil.remountDataDir();
             }
         });
     }
@@ -222,6 +221,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 LogHelper.v("成功获取了Root权限.");
             }
+            InternalStorageUtil.remountDataDir();
             start = System.currentTimeMillis();
             rule.setStage(1);
             ret = ConverterMaster.execute(lv.getContext(), rule);

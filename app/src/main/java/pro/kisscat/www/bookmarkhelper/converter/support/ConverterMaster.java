@@ -9,6 +9,7 @@ import lombok.Getter;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.OupengBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer;
@@ -50,6 +51,7 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new SogouBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new BaiduBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new OupengBroswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new LiebaoBroswer(), viaBroswerable));
         }
     }
 
