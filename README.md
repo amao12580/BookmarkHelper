@@ -88,9 +88,10 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 2.代码优化
 
-#### 0.0.9版 Draft
+#### [0.0.9版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.9%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.9.apk)
 1.增加兼容：支持从[欧朋浏览器](http://www.coolapk.com/apk/com.oupeng.mini.android)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
+2.代码优化
 #### 0.0.10版 Draft
 1.增加兼容：支持从[猎豹浏览器](http://www.coolapk.com/apk/com.ijinshan.browser_fast)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
@@ -117,6 +118,9 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 #### 0.0.18版 Draft
 1.增加兼容：支持从[旗鱼浏览器](http://www.coolapk.com/apk/com.ruanmei.qiyubrowser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+#### 0.0.19版 Draft
+1.增加兼容：支持从[H5浏览器](http://www.coolapk.com/apk/org.noear.h5)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 
 ---
@@ -227,6 +231,16 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 确认修复
 
 21.那希望大大早日添加华为自带浏览器的切换，应该不是很难，可能就包名不一样吧[w调皮][w调皮][w调皮]
+
+增加兼容
+
+22.@amao12580 何时支持h5
+
+增加兼容
+
+23.via浏览器 文件删除失败！
+
+
 
 ## UnStable
 UnStable是指最新通过基础测试，但未进行大面积设备兼容验证的非稳定版本，不会发布到[Google Play](https://play.google.com/store?hl=zh_CN)或[Cool Market](http://www.coolapk.com)。如果你是狂热爱好者，请点击【[下载链接](https://github.com/amao12580/BookmarkHelper/raw/master/app/build/outputs/apk/app-debug.apk)】，从我的[Github Repo](https://github.com/amao12580/BookmarkHelper)实时获取，不保证会有小瑕疵。

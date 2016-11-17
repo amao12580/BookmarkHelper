@@ -64,42 +64,21 @@ public class ViaStage1Broswer extends ViaBroswerable {
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             File file = ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());
             reader = new BufferedReader(new FileReader(file));
-            List<ViaBookmark> list = new ArrayList<>();
+            List<Bookmark> list = new ArrayList<>();
             String tempString;
             while ((tempString = reader.readLine()) != null) {
                 ViaBookmark item = JsonUtil.fromJson(tempString, ViaBookmark.class);
-                list.add(item);
+                if (item != null) {
+                    Bookmark bookmark = new Bookmark();
+                    bookmark.setFolder(item.getFolder());
+                    bookmark.setTitle(item.getTitle());
+                    bookmark.setUrl(item.getUrl());
+                    list.add(bookmark);
+                }
             }
             reader.close();
-            LogHelper.v("书签数据:" + JsonUtil.toJson(list));
-            LogHelper.v("书签条数:" + list.size());
             bookmarks = new LinkedList<>();
-            int index = 0;
-            int size = list.size();
-            for (ViaBookmark item : list) {
-                index++;
-                String bookmarkUrl = item.getUrl();
-                String bookmarkTitle = item.getTitle();
-                String bookmarkFolder = item.getFolder();
-                if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("title:" + bookmarkTitle);
-                    LogHelper.v("url:" + bookmarkUrl);
-                }
-                if (!isValidUrl(bookmarkUrl)) {
-                    continue;
-                }
-                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
-                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
-                }
-                Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkTitle);
-                bookmark.setUrl(bookmarkUrl);
-                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
-                    bookmark.setFolder(bookmarkFolder);
-                }
-                bookmarks.add(bookmark);
-            }
+            fetchValidBookmarks(bookmarks, list);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());

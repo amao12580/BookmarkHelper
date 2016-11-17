@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
 
-import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,7 +16,6 @@ import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
@@ -77,31 +75,8 @@ public class Flyme5Broswer extends BasicBroswer {
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp + fileName_origin);
-            LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
-            LogHelper.v("书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
-            int index = 0;
-            int size = bookmarksList.size();
-            for (Bookmark item : bookmarksList) {
-                index++;
-                String bookmarkUrl = item.getUrl();
-                String bookmarkTitle = item.getTitle();
-                if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("title:" + bookmarkTitle);
-                    LogHelper.v("url:" + bookmarkUrl);
-                }
-                if (!isValidUrl(bookmarkUrl)) {
-                    continue;
-                }
-                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
-                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
-                }
-                Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkTitle);
-                bookmark.setUrl(bookmarkUrl);
-                bookmarks.add(bookmark);
-            }
+            fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());

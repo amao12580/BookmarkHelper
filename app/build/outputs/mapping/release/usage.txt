@@ -467,19 +467,17 @@ org.apache.commons.exec.util.StringUtils
 pro.kisscat.www.bookmarkhelper.BuildConfig
 pro.kisscat.www.bookmarkhelper.R:
     10:10:public R()
-pro.kisscat.www.bookmarkhelper.common.shared.BuildConfig
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
-    protected int bookmarkSum
-    59:59:public int readBookmarkSum(android.content.Context)
+    62:62:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    34:34:public ConverterMaster()
+    35:35:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    48:51:public int readBookmarkSum(android.content.Context)
+    47:50:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -489,7 +487,12 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    44:47:public int readBookmarkSum(android.content.Context)
+    42:45:public int readBookmarkSum(android.content.Context)
+pro.kisscat.www.bookmarkhelper.converter.support.impl.OupengBroswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    46:49:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -508,7 +511,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    45:48:public int readBookmarkSum(android.content.Context)
+    44:47:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

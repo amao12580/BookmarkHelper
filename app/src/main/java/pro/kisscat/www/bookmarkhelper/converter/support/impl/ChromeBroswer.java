@@ -79,32 +79,8 @@ public class ChromeBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             java.io.File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Bookmark> chromeBookmarks = fetchBookmarks(file);
-            int index = 0;
-            int size = chromeBookmarks.size();
-            for (Bookmark item : chromeBookmarks) {
-                index++;
-                String bookmarkUrl = item.getUrl();
-                String bookmarkTitle = item.getTitle();
-                String bookmarkFolder = item.getFolder();
-                if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("title:" + bookmarkTitle);
-                    LogHelper.v("url:" + bookmarkUrl);
-                }
-                if (!isValidUrl(bookmarkUrl)) {
-                    continue;
-                }
-                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
-                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
-                }
-                Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkTitle);
-                bookmark.setUrl(bookmarkUrl);
-                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
-                    bookmark.setFolder(bookmarkFolder);
-                }
-                bookmarks.add(bookmark);
-            }
+            bookmarks = new LinkedList<>();
+            fetchValidBookmarks(bookmarks, chromeBookmarks);
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());

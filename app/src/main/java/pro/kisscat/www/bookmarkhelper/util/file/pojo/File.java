@@ -1,6 +1,7 @@
 package pro.kisscat.www.bookmarkhelper.util.file.pojo;
 
 import android.support.annotation.NonNull;
+import android.support.compat.BuildConfig;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,7 +10,6 @@ import java.util.Date;
 
 import lombok.Getter;
 import lombok.Setter;
-import pro.kisscat.www.bookmarkhelper.common.shared.BuildConfig;
 
 /**
  * Created with Android Studio.

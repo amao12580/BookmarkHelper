@@ -20,7 +20,6 @@ import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
@@ -77,37 +76,8 @@ public class BaiduBroswer extends BasicBroswer {
         try {
             ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp, fileName_origin);
-            LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
-            LogHelper.v("书签条数:" + bookmarksList.size());
-            LogHelper.v("总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
-            int index = 0;
-            int size = bookmarksList.size();
-            for (Bookmark item : bookmarksList) {
-                index++;
-                String bookmarkUrl = item.getUrl();
-                String bookmarkFolder = item.getFolder();
-                String bookmarkTitle = item.getTitle();
-                if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("title:" + bookmarkTitle);
-                    LogHelper.v("url:" + bookmarkUrl);
-                }
-                if (!isValidUrl(bookmarkUrl)) {
-                    continue;
-                }
-                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
-                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
-                }
-                Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkTitle);
-                bookmark.setUrl(bookmarkUrl);
-                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
-                    bookmark.setFolder(bookmarkFolder);
-                }
-                bookmarks.add(bookmark);
-            }
-            LogHelper.v("result:" + JsonUtil.toJson(bookmarks));
+            fetchValidBookmarks(bookmarks,bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());

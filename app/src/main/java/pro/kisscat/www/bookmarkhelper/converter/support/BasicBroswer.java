@@ -8,10 +8,12 @@ import java.util.List;
 import java.util.Set;
 
 import lombok.Setter;
+import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
+import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
@@ -23,6 +25,7 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
  * Time:15:31
  */
 public class BasicBroswer extends App implements Broswerable {
+    @Setter
     protected int bookmarkSum;
     @Setter
     protected boolean installed;
@@ -103,7 +106,7 @@ public class BasicBroswer extends App implements Broswerable {
         return result;
     }
 
-    protected boolean isValidUrl(String bookmarkUrl) {
+    private boolean isValidUrl(String bookmarkUrl) {
         if (bookmarkUrl == null || bookmarkUrl.isEmpty() || !(bookmarkUrl.startsWith("http") || bookmarkUrl.startsWith("www")) || !bookmarkUrl.contains("://")) {
             LogHelper.v("url is damage,url:" + bookmarkUrl + ",skip.");
             return false;
@@ -113,7 +116,7 @@ public class BasicBroswer extends App implements Broswerable {
 
     private transient boolean denyPrintBookmarkHasShow = false;
 
-    protected boolean allowPrintBookmark(int currentIndex, int allSize) {
+    private boolean allowPrintBookmark(int currentIndex, int allSize) {
         if (currentIndex <= 1) {
             denyPrintBookmarkHasShow = false;
         }
@@ -136,5 +139,46 @@ public class BasicBroswer extends App implements Broswerable {
             folderPath = folderPath.substring(0, folderPath.length() - 1);
         }
         return folderPath;
+    }
+
+    protected void fetchValidBookmarks(List<Bookmark> target, List<Bookmark> source) {
+        if (target == null) {
+            return;
+        } else if (!target.isEmpty()) {
+            target.clear();
+        }
+        if (source == null || source.isEmpty()) {
+            return;
+        }
+        LogHelper.v("书签数据:" + JsonUtil.toJson(source));
+        LogHelper.v("书签条数:" + source.size());
+        LogHelper.v("总的书签条数:" + source.size());
+        int index = 0;
+        int size = source.size();
+        for (Bookmark item : source) {
+            index++;
+            String bookmarkUrl = item.getUrl();
+            String bookmarkFolder = item.getFolder();
+            String bookmarkTitle = item.getTitle();
+            if (allowPrintBookmark(index, size)) {
+                LogHelper.v("title:" + bookmarkTitle);
+                LogHelper.v("url:" + bookmarkUrl);
+            }
+            if (!isValidUrl(bookmarkUrl)) {
+                continue;
+            }
+            if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
+                LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
+                bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
+            }
+            Bookmark bookmark = new Bookmark();
+            bookmark.setTitle(bookmarkTitle);
+            bookmark.setUrl(bookmarkUrl);
+            if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
+                bookmark.setFolder(bookmarkFolder);
+            }
+            target.add(bookmark);
+        }
+        setBookmarkSum(target.size());
     }
 }

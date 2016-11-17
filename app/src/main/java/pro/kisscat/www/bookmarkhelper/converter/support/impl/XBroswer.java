@@ -79,32 +79,7 @@ public class XBroswer extends BasicBroswer {
             LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
             LogHelper.v("书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
-            int index = 0;
-            int size = bookmarksList.size();
-            for (Bookmark item : bookmarksList) {
-                index++;
-                String bookmarkUrl = item.getUrl();
-                String bookmarkTitle = item.getTitle();
-                String bookmarkFolder = item.getFolder();
-                if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("title:" + bookmarkTitle);
-                    LogHelper.v("url:" + bookmarkUrl);
-                }
-                if (!isValidUrl(bookmarkUrl)) {
-                    continue;
-                }
-                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
-                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
-                }
-                Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkTitle);
-                bookmark.setUrl(bookmarkUrl);
-                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
-                    bookmark.setFolder(bookmarkFolder);
-                }
-                bookmarks.add(bookmark);
-            }
+            fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
@@ -135,7 +110,7 @@ public class XBroswer extends BasicBroswer {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, "type=?", new String[]{"0"}, "url", null, null, null);
+            cursor = sqLiteDatabase.query(false, tableName, columns, "type=?", new String[]{"0"}, null, null, null, null);
             if (cursor != null && cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
                     Bookmark item = new Bookmark();

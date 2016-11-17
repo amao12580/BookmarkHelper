@@ -12,7 +12,6 @@ import java.util.Set;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
@@ -62,36 +61,9 @@ public class ViaStage2Broswer extends ViaBroswerable {
             String tmpFilePath = filePath_cp + fileName_origin;
             LogHelper.v(TAG + ":tmp file path:" + tmpFilePath);
             ExternalStorageUtil.copyFile(context, originFilePath, tmpFilePath, this.getName());
-            List<ViaBookmark> bookmarksList = fetchBookmarksList(context, tmpFilePath);
-            LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
-            LogHelper.v("书签条数:" + bookmarksList.size());
+            List<Bookmark> bookmarksList = fetchBookmarksList(context, tmpFilePath);
             bookmarks = new LinkedList<>();
-            int index = 0;
-            int size = bookmarksList.size();
-            for (ViaBookmark item : bookmarksList) {
-                index++;
-                String bookmarkUrl = item.getUrl();
-                String bookmarkTitle = item.getTitle();
-                String bookmarkFolder = item.getFolder();
-                if (allowPrintBookmark(index, size)) {
-                    LogHelper.v("title:" + bookmarkTitle);
-                    LogHelper.v("url:" + bookmarkUrl);
-                }
-                if (!isValidUrl(bookmarkUrl)) {
-                    continue;
-                }
-                if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
-                    LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
-                    bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
-                }
-                Bookmark bookmark = new Bookmark();
-                bookmark.setTitle(bookmarkTitle);
-                bookmark.setUrl(bookmarkUrl);
-                if (!(bookmarkFolder == null || bookmarkFolder.isEmpty())) {
-                    bookmark.setFolder(bookmarkFolder);
-                }
-                bookmarks.add(bookmark);
-            }
+            fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
@@ -110,12 +82,13 @@ public class ViaStage2Broswer extends ViaBroswerable {
     private final static String tableName = "bookmarks";
     private Integer latestIndex = null;
 
-    private List<ViaBookmark> fetchBookmarksList(Context context, String dbFilePath) {
+    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
-        List<ViaBookmark> result = new LinkedList<>();
+        List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
         boolean tableExist;
+        latestIndex = 0;
         try {
             sqLiteDatabase = DBHelper.openReadOnlyDatabase(dbFilePath);
             tableExist = DBHelper.checkTableExist(sqLiteDatabase, tableName);
@@ -126,11 +99,11 @@ public class ViaStage2Broswer extends ViaBroswerable {
             cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "id asc", null);
             if (cursor != null && cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
-                    ViaBookmark item = new ViaBookmark();
+                    Bookmark item = new Bookmark();
                     item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
                     item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
                     item.setFolder(cursor.getString(cursor.getColumnIndex("folder")));
-                    item.setOrder(cursor.getInt(cursor.getColumnIndex("id")));
+                    latestIndex = cursor.getInt(cursor.getColumnIndex("id"));
                     result.add(item);
                 }
             }
@@ -143,11 +116,6 @@ public class ViaStage2Broswer extends ViaBroswerable {
                 sqLiteDatabase.close();
             }
             LogHelper.v(TAG + ":读取书签SQLite数据库结束");
-        }
-        if (!result.isEmpty()) {
-            latestIndex = result.get(result.size() - 1).getOrder();
-        } else {
-            latestIndex = 0;
         }
         return result;
     }

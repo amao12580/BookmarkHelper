@@ -43,14 +43,27 @@ public final class InternalStorageUtil implements BasicStorageUtil {
     /**
      * 删除文件
      * <p>
+     * 失败后重试一次
+     * <p>
      * 借用root权限
      * <p>
      */
     public static boolean deleteFile(Context context, String filePath, String mark) {
+        return deleteFile(true, context, filePath, mark);
+    }
+
+    private static boolean deleteFile(boolean needRetry, Context context, String filePath, String mark) {
         String cmd = "rm -rf " + filePath;
         boolean result = RootUtil.executeCmd(cmd);
         if (!result) {
-            throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(context, mark));
+            if (needRetry) {
+                boolean retry = deleteFile(false, context, filePath, mark);
+                if (!retry) {
+                    throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(context, mark));
+                }
+            } else {
+                throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(context, mark));
+            }
         }
         return true;
     }
