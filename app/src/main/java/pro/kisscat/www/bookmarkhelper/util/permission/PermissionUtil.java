@@ -9,6 +9,8 @@ import android.support.v4.content.ContextCompat;
 import lombok.Getter;
 
 /**
+ * http://jijiaxin89.com/2015/08/30/Android-s-Runtime-Permission/
+ * <p>
  * Created with Android Studio.
  * Project:BookmarkHelper
  * User:ChengLiang
@@ -23,13 +25,17 @@ public class PermissionUtil {
 
     public static boolean checkOnly(Activity activity) {
         //权限不够时返回false
-        return ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED;
+        return ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED;
     }
 
-    public static boolean check(Activity activity) {
+    public static boolean checkAndRequest(Activity activity) {
         //权限不够时返回false
         if (checkOnly(activity)) {
-            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_REQUEST_CODE);
+            ActivityCompat.requestPermissions(activity, new String[]{
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+            }, STORAGE_REQUEST_CODE);
             return false;
         }
         return true;

@@ -9,6 +9,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
  * Time:15:49
  */
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -35,6 +36,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
@@ -50,7 +57,9 @@ import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
+import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
+@RuntimePermissions
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView lv;
     private Adapter adapter;
@@ -58,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private volatile boolean isItemRuning = false;
     private boolean isRoot;
     private boolean isRecordRule = false;
-    //    private boolean checkPermission;
     private List<Map<String, Object>> items = new ArrayList<>();
 
     private static Integer default_color = null;
@@ -70,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onSaveInstanceState(outState);
     }
 
+    @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void run() {
                 PhoneUtil.record();
                 LogHelper.write();
+                InternalStorageUtil.remountDataDir();
             }
         });
     }
@@ -133,22 +143,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             dialog_button_ok_color = ContextCompat.getColor(context, R.color.colorDialogButtonOk);
         }
     }
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PermissionUtil.getSTORAGE_REQUEST_CODE());
-//        }
-//        //doNext(requestCode,grantResults);
-        if (PermissionUtil.checkOnly(this)) {
-            showToastMessage(this, "未能获取Root权限，无法提供服务.");
-            finish();
-        }
-    }
-
 
     private long lastClickItemTime = 0;
     private long currentClickItemTime = 0;
@@ -207,6 +201,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
+    @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
     private void processConverter(ExcuteRule rule) {
         if (isItemRuning) {
             if (someTaskIsRuning == null) {
@@ -220,11 +215,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         long end = -1;
         int ret = -1;
         try {
-//            checkPermission = PermissionUtil.check(this);
-            PermissionUtil.check(this);
             isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
-//        isGetRootAccess = RootUtil.checkRootAuth();
-//        showToastMessage(this, "isRoot:" + isRoot + ",isGetRootAccess:" + isGetRootAccess + ",checkPermission:" + checkPermission);
             if (!isRoot) {
                 showSimpleDialog("无法获取Root权限，不能使用.");
                 return;
@@ -416,5 +407,36 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onStop() {
         LogHelper.write();
         super.onStop();
+    }
+
+    @OnShowRationale({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
+    void showRationaleForStorage(final PermissionRequest request) {
+        showToastMessage(this, "需要存储权限来记录运行时日志");
+        request.proceed();
+    }
+
+    @OnPermissionDenied({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
+    void showDeniedForStorage() {
+        showToastMessage(this, "你拒绝了存储权限");
+    }
+
+    @OnNeverAskAgain({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
+    void showNeverAskForStorage() {
+        showToastMessage(this, "你永久拒绝了存储权限");
+    }
+
+    /**
+     * 权限回调方法，用户点击允许或者拒绝之后都会调用此方法
+     * requestCode 定义的权限编码--->请求码
+     * permisssions 权限名称
+     * grantResults 允许/拒绝
+     **/
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (PermissionUtil.checkOnly(this)) {
+            showToastMessage(this, "未能获取权限，无法提供服务.");
+            finish();
+        }
     }
 }

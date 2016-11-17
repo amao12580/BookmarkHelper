@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 
+import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+
 /**
  * Created with Android Studio.
  * Project:BookmarkHelper
@@ -31,6 +34,9 @@ class IOThread implements Runnable {
     }
 
     public void run() {
+        if (inputStream == null) {
+            return;
+        }
         BufferedReader br = null;
         try {
             String character = "GB2312";
@@ -40,14 +46,25 @@ class IOThread implements Runnable {
                 list.add(line);
             }
         } catch (IOException e) {
+            LogHelper.e(MetaData.LOG_E_DEFAULT, "IOThread.run," + e.getMessage());
             e.printStackTrace();
         } finally {
-            if (br != null) {
+            if (inputStream != null) {
                 try {
                     //释放资源
                     inputStream.close();
+                    inputStream = null;
+                } catch (IOException e) {
+                    LogHelper.e(MetaData.LOG_E_DEFAULT, "IOThread.run.finally.inputStream," + e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+            if (br != null) {
+                try {
+                    //释放资源
                     br.close();
                 } catch (IOException e) {
+                    LogHelper.e(MetaData.LOG_E_DEFAULT, "IOThread.run.finally.br," + e.getMessage());
                     e.printStackTrace();
                 }
             }

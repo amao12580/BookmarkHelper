@@ -166,4 +166,43 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         }
         return result;
     }
+
+    public static void remountDataDir() {
+        remountDataDir(false);
+    }
+
+    private static boolean isReadOnlyNow = true;
+
+    /**
+     * 重新挂载data目录为读写或只读
+     */
+    private static void remountDataDir(boolean isNeedReadOnly) {
+        String command;
+        if (isNeedReadOnly) {
+            if (isReadOnlyNow) {
+                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
+                return;
+            } else {
+                command = "mount -o remount, ro /data/";
+            }
+        } else {
+            if (!isReadOnlyNow) {
+                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
+                return;
+            } else {
+                command = "mount -o remount, rw /data/";
+            }
+        }
+        boolean ret = RootUtil.executeCmd(command);
+        if (isNeedReadOnly) {
+            if (ret) {
+                isReadOnlyNow = true;
+            }
+        } else {
+            if (ret) {
+                isReadOnlyNow = false;
+            }
+        }
+        LogHelper.v("remountDataDir ret:" + ret + ",isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
+    }
 }

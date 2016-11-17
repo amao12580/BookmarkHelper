@@ -3,7 +3,7 @@
     package="pro.kisscat.www.bookmarkhelper.debug.test" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="16"
         android:targetSdkVersion="24" />
 
     <instrumentation

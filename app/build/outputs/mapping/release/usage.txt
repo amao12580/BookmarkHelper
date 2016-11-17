@@ -464,9 +464,24 @@ org.apache.commons.exec.launcher.WinNTCommandLauncher
 org.apache.commons.exec.util.DebugUtils
 org.apache.commons.exec.util.MapUtils
 org.apache.commons.exec.util.StringUtils
+permissions.dispatcher.BuildConfig
+permissions.dispatcher.GrantableRequest
+permissions.dispatcher.NeedsPermission
+permissions.dispatcher.OnNeverAskAgain
+permissions.dispatcher.OnPermissionDenied
+permissions.dispatcher.OnShowRationale
+permissions.dispatcher.PermissionRequest
+permissions.dispatcher.PermissionUtils
+permissions.dispatcher.RuntimePermissions
+permissions.dispatcher.v13.PermissionUtilsV13
+permissions.dispatcher.v13.V13Access
 pro.kisscat.www.bookmarkhelper.BuildConfig
 pro.kisscat.www.bookmarkhelper.R:
     10:10:public R()
+pro.kisscat.www.bookmarkhelper.activity.MainActivity:
+    414:416:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
+    420:421:void showDeniedForStorage()
+    425:426:void showNeverAskForStorage()
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum(android.content.Context)
@@ -576,8 +591,9 @@ pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil:
     16:16:public NetworkUtil()
 pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil:
     private static final int STORAGE_REQUEST_CODE
-    20:20:public PermissionUtil()
-    21:21:public static int getSTORAGE_REQUEST_CODE()
+    22:22:public PermissionUtil()
+    34:41:public static boolean checkAndRequest(android.app.Activity)
+    23:23:public static int getSTORAGE_REQUEST_CODE()
 pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil:
     14:14:public PhoneUtil()
 pro.kisscat.www.bookmarkhelper.util.root.ProcessWithTimeout
