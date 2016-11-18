@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 handler.init(getApplicationContext());
                 Thread.setDefaultUncaughtExceptionHandler(handler);
                 LogHelper.init();
-
                 ConverterMaster.init(this);
                 initColor(this);
             } catch (InitException e) {

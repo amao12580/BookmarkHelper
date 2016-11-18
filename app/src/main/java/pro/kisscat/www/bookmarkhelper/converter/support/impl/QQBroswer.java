@@ -111,7 +111,7 @@ public class QQBroswer extends BasicBroswer {
         String QQRegularRule = "[1-9][0-9]{4,14}";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
         String WechatRegularRule = "[a-z0-9A-Z\\-]{28}";
         String searchRule = "*.db";
-        List<String> fileNames = InternalStorageUtil.lsFileByRegular(dir, searchRule);
+        List<String> fileNames = InternalStorageUtil.lsFileAndSortByRegular(dir, searchRule);
         if (fileNames == null || fileNames.isEmpty()) {
             LogHelper.v(TAG + ":已登录用户没有书签数据");
             return result;
@@ -184,10 +184,10 @@ public class QQBroswer extends BasicBroswer {
             LogHelper.e(e.getMessage());
             return result;
         }
-        result.addAll(fetchBookmarksList(context, dbFilePath, "mtt_bookmarks", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(context, dbFilePath, "pad_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(context, dbFilePath, "pc_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(context, dbFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
+        result.addAll(fetchBookmarksList(false, context, dbFilePath, "mtt_bookmarks", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, context, dbFilePath, "pad_bookmark", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, context, dbFilePath, "pc_bookmark", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, context, dbFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
         LogHelper.v(TAG + ":读取未登录用户书签SQLite数据库结束");
         return result;
     }

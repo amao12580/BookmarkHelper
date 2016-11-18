@@ -111,7 +111,7 @@ public class SogouBroswer extends BasicBroswer {
         }
         String regularRule = "[a-z0-9\\-]{33}";
         String searchRule = "*.db";
-        List<String> fileNames = InternalStorageUtil.lsFileByRegular(appRootDir, searchRule);
+        List<String> fileNames = InternalStorageUtil.lsFileAndSortByRegular(appRootDir, searchRule);
         if (fileNames == null || fileNames.isEmpty()) {
             LogHelper.v(TAG + ":已登录用户没有书签数据");
             return result;

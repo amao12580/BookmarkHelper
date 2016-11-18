@@ -285,7 +285,7 @@ public class Qihoo360Broswer extends BasicBroswer {
         }
         String regularRule = "[a-z0-9]{32}";
         String searchRule = "*.db";
-        List<String> fileNames = InternalStorageUtil.lsFileByRegular(originFileDirPath, searchRule);
+        List<String> fileNames = InternalStorageUtil.lsFileAndSortByRegular(originFileDirPath, searchRule);
         if (fileNames == null || fileNames.isEmpty()) {
             LogHelper.v(TAG + ":已登录用户没有书签数据");
             return result;

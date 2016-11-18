@@ -190,12 +190,6 @@ public class LiebaoBroswer extends BasicBroswer {
         return result;
     }
 
-    private class LiebaoBookmark extends Bookmark {
-        @Getter
-        @Setter
-        private int folder_id;
-    }
-
     private class LiebaoFolder {
         @Getter
         @Setter

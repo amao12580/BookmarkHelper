@@ -28002,6 +28002,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int ic_arrow
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_baidu
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_chrome
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_donate
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_firefox
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_flyme5
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_liebao
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_oupeng
@@ -28276,6 +28277,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int bottom_sheet_behavior
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_360
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_baidu
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome
+pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_firefox
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_flyme5
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_liebao
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_oupeng

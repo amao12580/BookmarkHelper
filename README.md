@@ -101,8 +101,12 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 4.少许错误描述修复
 
-#### 0.0.11版 Draft
+#### [0.0.10版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.11%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.11.apk)
 1.增加兼容：支持从[FireFox浏览器](http://www.coolapk.com/apk/org.mozilla.firefox)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+2.现在6.0及以上的rom，会在运行时申请权限
+
+3.改善shell命令交互稳定性
 
 #### 0.0.12版 Draft
 1.增加兼容：支持从[UC国际版浏览器](http://www.coolapk.com/apk/com.UCMobile.intl)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

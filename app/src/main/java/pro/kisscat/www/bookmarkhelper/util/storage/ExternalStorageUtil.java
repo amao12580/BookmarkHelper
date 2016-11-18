@@ -79,7 +79,6 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
         if (!file.exists()) {
             throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
         }
-        file.setReadable(true);
         return file;
     }
 

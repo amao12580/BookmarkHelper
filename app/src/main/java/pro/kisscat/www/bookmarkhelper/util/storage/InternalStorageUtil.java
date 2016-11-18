@@ -105,13 +105,39 @@ public final class InternalStorageUtil implements BasicStorageUtil {
     }
 
     /**
+     * 列出dir下的所有dir
+     */
+    public static List<String> lsDir(String dir) {
+        try {
+            StringBuilder command = new StringBuilder("ls ");
+            if (dir == null || dir.isEmpty()) {
+                //不指定dir可能造成命令过量输出，refuse
+                return null;
+            }
+            command.append(dir);
+            CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()});
+            if (commandResult != null && commandResult.isSuccess()) {
+                return commandResult.getSuccessMsg();
+            }
+            return null;
+        } catch (Exception e) {
+            LogHelper.e(e.getMessage());
+            return null;
+        }
+    }
+
+    /**
      * 列出文件夹下，所有文件名称符合regularRule规则的文件。regularRule为null是，列出全部
      * <p>
      * 不能用find、locate等高级命令，android shell bash 自身是一个裁剪版linux,不支持
      * <p>
      * 不能用高级特性，ls -t -au等，不支持
      */
-    public static List<String> lsFileByRegular(String dir, String regularRule) {
+    public static List<String> lsFileAndSortByRegular(String dir, String regularRule) {
+        return lsFileByRegular(dir, regularRule, true);
+    }
+
+    private static List<String> lsFileByRegular(String dir, String regularRule, boolean needSort) {
         try {
             StringBuilder command = new StringBuilder("ls ");
             if (dir == null || dir.isEmpty()) {
@@ -125,7 +151,11 @@ public final class InternalStorageUtil implements BasicStorageUtil {
             command.append(" -l");
             CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()});
             if (commandResult != null && commandResult.isSuccess()) {
-                return sortByFileChangeTimeDesc(commandResult.getSuccessMsg());
+                if (needSort) {
+                    return parseFileAndSortByFileChangeTimeDesc(commandResult.getSuccessMsg());
+                } else {
+                    return parseFile(commandResult.getSuccessMsg());
+                }
             }
             return null;
         } catch (Exception e) {
@@ -134,15 +164,12 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         }
     }
 
-    /**
-     * 将文件以修改时间进行倒序排序后返回
-     */
-    private static List<String> sortByFileChangeTimeDesc(List<String> filePropertys) {
-        if (filePropertys == null || filePropertys.isEmpty()) {
+    private static List<String> parseFile(List<String> fileProperty) {
+        if (fileProperty == null || fileProperty.isEmpty()) {
             return null;
         }
         List<File> files = new LinkedList<>();
-        for (String item : filePropertys) {
+        for (String item : fileProperty) {
             if (item == null) {
                 continue;
             }
@@ -160,11 +187,19 @@ public final class InternalStorageUtil implements BasicStorageUtil {
             result.add(files.get(0).getNameWithSuffix());
             return result;
         }
-        Collections.sort(files);
         for (File item : files) {
             result.add(item.getNameWithSuffix());
         }
         return result;
+    }
+
+    /**
+     * 将文件以修改时间进行倒序排序后返回
+     */
+    private static List<String> parseFileAndSortByFileChangeTimeDesc(List<String> fileProperty) {
+        List<String> files = parseFile(fileProperty);
+        Collections.sort(files);
+        return files;
     }
 
     public static void remountDataDir() {
