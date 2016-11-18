@@ -13,7 +13,6 @@ import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
@@ -77,14 +76,14 @@ public class BaiduBroswer extends BasicBroswer {
             ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp, fileName_origin);
             bookmarks = new LinkedList<>();
-            fetchValidBookmarks(bookmarks,bookmarksList);
+            fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
+            LogHelper.e(converterException.getMessage());
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
@@ -99,7 +98,7 @@ public class BaiduBroswer extends BasicBroswer {
         try {
             ExternalStorageUtil.copyFile(context, filePath_origin + fileName_origin, targetFilePath, this.getName());
         } catch (Exception e) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             return result;
         }
         result.addAll(fetchBookmarksList(false, context, targetFilePath, "bookmark", null, null, "create_time asc"));

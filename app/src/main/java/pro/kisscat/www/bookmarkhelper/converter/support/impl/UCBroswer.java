@@ -9,7 +9,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
@@ -85,7 +84,7 @@ public class UCBroswer extends BasicBroswer {
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
@@ -104,7 +103,7 @@ public class UCBroswer extends BasicBroswer {
         try {
             ExternalStorageUtil.copyFile(context, originFilePathFull, dbFilePath, this.getName());
         } catch (Exception e) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             return result;
         }
         result.addAll(fetchBookmarksList(context, dbFilePath, "bookmark", null, null, "create_time asc"));

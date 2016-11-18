@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
@@ -80,7 +79,7 @@ public class AppListUtil {
              */
         }
         if (installedAllApp == null) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, "AppListUtil init failure,installedAllApp is null.");
+            LogHelper.e("AppListUtil init failure,installedAllApp is null.");
             throw new InitException("无法获取应用列表，请确认权限.");
         }
     }

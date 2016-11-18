@@ -14,7 +14,6 @@ import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
@@ -93,11 +92,11 @@ public class QQBroswer extends BasicBroswer {
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
+            LogHelper.e(converterException.getMessage());
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
@@ -163,7 +162,7 @@ public class QQBroswer extends BasicBroswer {
         try {
             ExternalStorageUtil.copyFile(context, targetFilePath, tmpFilePath, this.getName());
         } catch (Exception e) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             return result;
         }
         result.addAll(fetchBookmarksList(false, context, tmpFilePath, "mtt_bookmarks", null, null, "created asc"));
@@ -182,7 +181,7 @@ public class QQBroswer extends BasicBroswer {
         try {
             ExternalStorageUtil.copyFile(context, originFilePathFull, dbFilePath, this.getName());
         } catch (Exception e) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             return result;
         }
         result.addAll(fetchBookmarksList(context, dbFilePath, "mtt_bookmarks", null, null, "created asc"));

@@ -13,7 +13,6 @@ import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
@@ -87,12 +86,12 @@ public class Qihoo360Broswer extends BasicBroswer {
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
+            LogHelper.e(converterException.getMessage());
             converterException.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
             throw converterException;
         } catch (Exception e) {
+            LogHelper.e(e.getMessage());
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");

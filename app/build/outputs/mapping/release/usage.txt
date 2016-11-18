@@ -479,9 +479,9 @@ pro.kisscat.www.bookmarkhelper.BuildConfig
 pro.kisscat.www.bookmarkhelper.R:
     10:10:public R()
 pro.kisscat.www.bookmarkhelper.activity.MainActivity:
-    414:416:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
-    420:421:void showDeniedForStorage()
-    425:426:void showNeverAskForStorage()
+    415:417:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
+    421:422:void showDeniedForStorage()
+    426:427:void showNeverAskForStorage()
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum(android.content.Context)
@@ -492,52 +492,52 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    47:50:public int readBookmarkSum(android.content.Context)
+    46:49:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    47:50:public int readBookmarkSum(android.content.Context)
+    46:49:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    42:45:public int readBookmarkSum(android.content.Context)
+    41:44:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    47:50:public int readBookmarkSum(android.content.Context)
+    46:49:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer$LiebaoBookmark
 pro.kisscat.www.bookmarkhelper.converter.support.impl.OupengBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    46:49:public int readBookmarkSum(android.content.Context)
+    45:48:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    51:54:public int readBookmarkSum(android.content.Context)
+    50:53:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
-    48:51:public int readBookmarkSum(android.content.Context)
+    47:50:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    49:52:public int readBookmarkSum(android.content.Context)
+    48:51:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    44:47:public int readBookmarkSum(android.content.Context)
+    43:46:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    43:46:public int readBookmarkSum(android.content.Context)
+    42:45:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable:
     public static final java.lang.String packageName
     60:63:public int readBookmarkSum(android.content.Context)
@@ -550,11 +550,11 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Broswer:
     private static final java.lang.String fileName_origin
     private static final java.lang.String tableName
 pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper:
-    18:18:public DBHelper()
+    17:17:public DBHelper()
 pro.kisscat.www.bookmarkhelper.util.Path:
     14:14:public Path()
 pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil:
-    27:27:public AppListUtil()
+    26:26:public AppListUtil()
 pro.kisscat.www.bookmarkhelper.util.command.CommandUtil:
     private static final java.lang.String COMMAND_SU
     private static final java.lang.String COMMAND_EXIT
@@ -589,20 +589,18 @@ pro.kisscat.www.bookmarkhelper.util.log.LogHelper:
     55:56:public static void d(java.lang.String,java.lang.Object)
     59:60:public static void i(java.lang.String,java.lang.Object)
     71:72:public static void w(java.lang.String,java.lang.String)
-    79:80:public static void d(java.lang.String,java.lang.String)
-    83:84:public static void i(java.lang.String,java.lang.String)
-    207:212:public static void delFile()
-    218:222:private static java.util.Date getDateBefore()
+    83:84:public static void d(java.lang.String,java.lang.String)
+    87:88:public static void i(java.lang.String,java.lang.String)
+    211:216:public static void delFile()
+    222:226:private static java.util.Date getDateBefore()
 pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil:
     16:16:public NetworkUtil()
 pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil:
     private static final int STORAGE_REQUEST_CODE
     22:22:public PermissionUtil()
-    34:41:public static boolean checkAndRequest(android.app.Activity)
     23:23:public static int getSTORAGE_REQUEST_CODE()
 pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil:
     14:14:public PhoneUtil()
-pro.kisscat.www.bookmarkhelper.util.root.ProcessWithTimeout
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
     15:15:public RootUtil()
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil

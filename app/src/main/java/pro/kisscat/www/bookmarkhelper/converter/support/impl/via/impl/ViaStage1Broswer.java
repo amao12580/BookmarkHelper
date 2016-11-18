@@ -13,7 +13,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark;
@@ -80,19 +79,19 @@ public class ViaStage1Broswer extends ViaBroswerable {
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, list);
         } catch (ConverterException converterException) {
+            LogHelper.e(converterException.getMessage());
             converterException.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
             throw converterException;
         } catch (Exception e) {
+            LogHelper.e(e.getMessage());
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
                 } catch (IOException e1) {
-                    LogHelper.e(MetaData.LOG_E_DEFAULT, e1.getMessage());
+                    LogHelper.e(e1.getMessage());
                 }
             }
             LogHelper.v(TAG + ":读取书签数据结束");
@@ -144,18 +143,18 @@ public class ViaStage1Broswer extends ViaBroswerable {
             successCount = increment.size();
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
+            LogHelper.e(converterException.getMessage());
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(context, this.getName()));
         } finally {
             if (writer != null) {
                 try {
                     writer.close();
                 } catch (IOException e1) {
-                    LogHelper.e(MetaData.LOG_E_DEFAULT, e1.getMessage());
+                    LogHelper.e(e1.getMessage());
                 }
             }
             this.bookmarks = null;

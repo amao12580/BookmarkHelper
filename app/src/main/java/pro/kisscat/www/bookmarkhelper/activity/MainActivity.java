@@ -46,7 +46,7 @@ import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
@@ -63,7 +63,7 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView lv;
     private Adapter adapter;
-    private List<ExcuteRule> rules;
+    private List<ExecuteRule> rules;
     private volatile boolean isItemRuning = false;
     private boolean isRoot;
     private boolean isRecordRule = false;
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.listViewRules);
         lv.setBackgroundColor(default_color);
-        for (ExcuteRule rule : rules) {
+        for (ExecuteRule rule : rules) {
             Map<String, Object> map = new HashMap<>();
             BasicBroswer sourceBorswer = rule.getSource();
             map.put("sourceBroswerIcon", sourceBorswer.getIcon());
@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 new int[]{R.id.sourceBroswerIcon, R.id.sourceBroswerAppNameText, R.id.converterDirecterImage, R.id.converterDirecterText, R.id.targetBroswerIcon, R.id.targetBroswerAppNameText});
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        PermissionUtil.checkAndRequest(this);
         lv.setOnItemClickListener(this);
         lv.post(new Runnable() {
             @Override
@@ -168,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return;
             }
             lastClickItemTime = currentClickItemTime;
-            final ExcuteRule rule = rules.get((int) id);
+            final ExecuteRule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     AppListUtil.reInit(this);
@@ -201,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
-    private void processConverter(ExcuteRule rule) {
+    private void processConverter(ExecuteRule rule) {
         if (isItemRuning) {
             if (someTaskIsRuning == null) {
                 someTaskIsRuning = lv.getResources().getString(R.string.someTaskIsRuning);

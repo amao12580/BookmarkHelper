@@ -7,9 +7,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
-import pro.kisscat.www.bookmarkhelper.util.command.CommandResult;
+import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
 import pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType;
@@ -101,7 +100,8 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         commands[2] = "else echo " + notExistFlag;
         commands[3] = "fi";
         CommandResult commandResult = RootUtil.executeCmd(commands);
-        return commandResult != null && commandResult.isSuccess() && commandResult.getSuccessMsg() != null && existFlag == Integer.valueOf(commandResult.getSuccessMsg().get(0));
+        return commandResult != null && commandResult.isSuccess() && commandResult.getSuccessMsg() != null &&
+                existFlag == Integer.valueOf(commandResult.getSuccessMsg().isEmpty() ? "0" : commandResult.getSuccessMsg().get(0));
     }
 
     /**
@@ -129,7 +129,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
             }
             return null;
         } catch (Exception e) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             return null;
         }
     }

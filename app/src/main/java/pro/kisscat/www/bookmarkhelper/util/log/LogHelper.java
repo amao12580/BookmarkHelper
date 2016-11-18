@@ -75,6 +75,10 @@ public class LogHelper {
         log(tag, text, 'e');
     }
 
+    public static void e(String text) {
+        log(MetaData.LOG_E_DEFAULT, text, 'e');
+    }
+
     public static void d(String tag, String text) {
         log(tag, text, 'd');
     }
@@ -151,17 +155,17 @@ public class LogHelper {
                     break;
                 }
                 Date recordTime = logEntry.getTime();
-                String needWriteFiel = logfile.format(recordTime);
+                String needWriteFile = logfile.format(recordTime);
                 String needWriteMessage = myLogSdf.format(recordTime) + "    " + logEntry.getLevel() + "    " + logEntry.getTag() + "    " + logEntry.getText();
                 File dir = new File(MYLOG_PATH_SDCARD_DIR);
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                }
-                File file = new File(MYLOG_PATH_SDCARD_DIR, needWriteFiel + MYLOGFILEName);
+                dir.mkdirs();
+                File file = new File(MYLOG_PATH_SDCARD_DIR, needWriteFile + MYLOGFILEName);
                 if (!file.exists()) {
                     if (file.createNewFile()) {
                         file.setReadable(true);
                         file.setWritable(true);
+                    } else {
+                        file.createNewFile();
                     }
                     filerWriter = new FileWriter(file, true);//后面这个参数代表是不是要接上文件中原来的数据，不进行覆盖
                     bufWriter = new BufferedWriter(filerWriter);

@@ -29254,17 +29254,17 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setTarget(
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer getTarget()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setCanUse(boolean)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: boolean isCanUse()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int stage
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int progress
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: java.lang.String message
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: ExcuteRule(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setStage(int)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int getStage()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setProgress(int)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: int getProgress()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: void setMessage(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule: java.lang.String getMessage()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int stage
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int progress
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: java.lang.String message
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: ExecuteRule(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: void setStage(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int getStage()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: void setProgress(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int getProgress()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: void setMessage(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: java.lang.String getMessage()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String title
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String url
@@ -29281,6 +29281,17 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: void setO
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: int getOrder()
 pro.kisscat.www.bookmarkhelper.exception.ConverterException: ConverterException(java.lang.String)
 pro.kisscat.www.bookmarkhelper.exception.InitException: InitException(java.lang.String)
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: int result
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: java.util.List successMsg
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: java.util.List errorMsg
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: CommandResult()
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: CommandResult(int)
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: CommandResult(int,java.util.List,java.util.List)
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: boolean isSuccess()
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: int getResult()
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: java.util.List getSuccessMsg()
+pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult: java.util.List getErrorMsg()
 pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType FILE
 pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType DIR
 pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType: pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType[] values()

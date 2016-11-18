@@ -9,14 +9,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
@@ -65,12 +63,12 @@ public class ViaStage2Broswer extends ViaBroswerable {
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
+            LogHelper.e(converterException.getMessage());
             converterException.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
@@ -151,7 +149,7 @@ public class ViaStage2Broswer extends ViaBroswerable {
                 cv.put("clickTimes", 0);
                 long ret = sqLiteDatabase.insert(tableName, null, cv);
                 if (ret <= -1) {
-                    LogHelper.e(MetaData.LOG_E_DEFAULT, "database insert error");
+                    LogHelper.e("database insert error");
                     continue;
                 }
                 count++;
@@ -161,12 +159,12 @@ public class ViaStage2Broswer extends ViaBroswerable {
             InternalStorageUtil.deleteFile(context, cleanFilePath, this.getName());
             successCount = count;
         } catch (ConverterException converterException) {
+            LogHelper.e(converterException.getMessage());
             converterException.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, converterException.getMessage());
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(context, this.getName()));
         } finally {
             if (sqLiteDatabase != null) {

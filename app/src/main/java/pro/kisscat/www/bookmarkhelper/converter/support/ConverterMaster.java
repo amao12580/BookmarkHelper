@@ -19,7 +19,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExcuteRule;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -72,10 +72,10 @@ public class ConverterMaster {
         return ret;
     }
 
-    public static List<ExcuteRule> cover2Execute(Context context, List<Rule> rules) {
-        List<ExcuteRule> result = new LinkedList<>();
+    public static List<ExecuteRule> cover2Execute(Context context, List<Rule> rules) {
+        List<ExecuteRule> result = new LinkedList<>();
         for (Rule item : rules) {
-            result.add(new ExcuteRule(context, item));
+            result.add(new ExecuteRule(context, item));
         }
         return result;
     }

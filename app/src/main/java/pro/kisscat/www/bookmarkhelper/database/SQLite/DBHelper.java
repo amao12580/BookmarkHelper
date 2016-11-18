@@ -3,7 +3,6 @@ package pro.kisscat.www.bookmarkhelper.database.SQLite;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
@@ -23,7 +22,7 @@ public class DBHelper {
         try {
             return SQLiteDatabase.openDatabase(dbFilePath, null, SQLiteDatabase.OPEN_READONLY);
         } catch (Exception e) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw e;
         }
     }
@@ -35,7 +34,7 @@ public class DBHelper {
         try {
             return SQLiteDatabase.openDatabase(dbFilePath, null, SQLiteDatabase.OPEN_READWRITE);
         } catch (Exception e) {
-            LogHelper.e(MetaData.LOG_E_DEFAULT, e.getMessage());
+            LogHelper.e(e.getMessage());
             throw e;
         }
     }
