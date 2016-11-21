@@ -207,8 +207,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 LogHelper.v("成功获取了Root权限.");
             }
-            InternalStorageUtil.remountDataDir();
-            InternalStorageUtil.remountSDCardDir();
+            if (!InternalStorageUtil.remountDataDir()) {
+                showDialogMessage(this.getResources().getString(R.string.SystemNotReadOrWriteable));
+                return;
+            }
+
+            if (!InternalStorageUtil.remountSDCardDir()) {
+                showDialogMessage(this.getResources().getString(R.string.SDCardNotReadOrWriteable));
+                return;
+            }
             start = System.currentTimeMillis();
             rule.setStage(1);
             ret = ConverterMaster.execute(lv.getContext(), rule);

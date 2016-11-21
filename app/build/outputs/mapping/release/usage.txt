@@ -482,9 +482,9 @@ pro.kisscat.www.bookmarkhelper.activity.Adapter:
     44:44:public int getSelectItem()
     46:46:public android.view.View getCurrentClickItem()
 pro.kisscat.www.bookmarkhelper.activity.MainActivity:
-    395:397:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
-    401:402:void showDeniedForStorage()
-    406:407:void showNeverAskForStorage()
+    402:404:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
+    408:409:void showDeniedForStorage()
+    413:414:void showNeverAskForStorage()
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum(android.content.Context)

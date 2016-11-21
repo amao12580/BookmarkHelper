@@ -44,4 +44,6 @@
     <string name="fileMkdirError">work dir create failed.</string>
     <string name="keepRootAppRunning">keep root app running,example:SuperSU</string>
     <string name="notSupportParseHomepageBookmarks">not support parse UC homepage bookmarks</string>
+    <string name="SDCardNotReadOrWriteable">Storage is not available.</string>
+    <string name="SystemNotReadOrWriteable">System storage is not available.</string>
 </resources>

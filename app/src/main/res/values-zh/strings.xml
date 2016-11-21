@@ -45,4 +45,6 @@
     <string name="fileMkdirError">无法创建工作目录，可能缺少读写存储权限.</string>
     <string name="keepRootAppRunning">请保持Root程序运行，如：SuperSU</string>
     <string name="notSupportParseHomepageBookmarks">暂不支持读取UC首页书签数据，无法解密.</string>
+    <string name="SDCardNotReadOrWriteable">无法读写存储，可能缺少权限.</string>
+    <string name="SystemNotReadOrWriteable">无法挂载/data/分区为读写模式.</string>
 </resources>

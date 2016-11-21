@@ -203,8 +203,8 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         return files;
     }
 
-    public static void remountDataDir() {
-        remountDataDir(false);
+    public static boolean remountDataDir() {
+        return remountDataDir(false);
     }
 
     private static boolean isReadOnlyNow = true;
@@ -212,7 +212,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
     /**
      * 重新挂载data目录为读写或只读
      */
-    private static void remountDataDir(boolean isNeedReadOnly) {
+    private static boolean remountDataDir(boolean isNeedReadOnly) {
         String command;
         if (isNeedReadOnly) {
 //            if (isReadOnlyNow) {
@@ -246,14 +246,20 @@ public final class InternalStorageUtil implements BasicStorageUtil {
             //尝试挂载根目录为读写
             command = "mount -o remount, rw /";
             RootUtil.executeCmd(command);
+            return false;
         }
         LogHelper.v("remountDataDir ret:" + ret + ",isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
+        return true;
     }
 
-    public static void remountSDCardDir() {
+    public static boolean remountSDCardDir() {
         String SDCardDir = Path.SDCARD_ROOTPATH;
         LogHelper.v("SDCardDir:" + SDCardDir);
         String command = "mount -o remount, rw " + SDCardDir;
-        RootUtil.executeCmd(command);
+        boolean ret = RootUtil.executeCmd(command);
+        if (!ret) {
+            return false;
+        }
+        return true;
     }
 }

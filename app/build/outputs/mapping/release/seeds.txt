@@ -29645,6 +29645,8 @@ pro.kisscat.www.bookmarkhelper.R$mipmap
 pro.kisscat.www.bookmarkhelper.R$mipmap: int ic_launcher
 pro.kisscat.www.bookmarkhelper.R$mipmap: R$mipmap()
 pro.kisscat.www.bookmarkhelper.R$string
+pro.kisscat.www.bookmarkhelper.R$string: int SDCardNotReadOrWriteable
+pro.kisscat.www.bookmarkhelper.R$string: int SystemNotReadOrWriteable
 pro.kisscat.www.bookmarkhelper.R$string: int abc_action_bar_home_description
 pro.kisscat.www.bookmarkhelper.R$string: int abc_action_bar_home_description_format
 pro.kisscat.www.bookmarkhelper.R$string: int abc_action_bar_home_subtitle_description_format
