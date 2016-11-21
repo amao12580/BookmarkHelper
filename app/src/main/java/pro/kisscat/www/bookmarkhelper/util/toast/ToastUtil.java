@@ -1,6 +1,8 @@
 package pro.kisscat.www.bookmarkhelper.util.toast;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
 
 /**
@@ -13,19 +15,80 @@ import android.widget.Toast;
  */
 
 public class ToastUtil {
-    private static Toast toast;
+    private static Handler handler = new Handler(Looper.getMainLooper());
+    private static Toast toast = null;
+    private static final Object synObj = new Object();
 
-    /**
-     * Android 解决Toast的延时显示问题
-     * 关键在于重用toast，这样就不用每次都创建一个新的toast
-     */
-    public static void showToastMessage(Context context, String message) {
-        if (toast == null) {
-            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+    public static void showMessage(final Context context, final String msg) {
+        showMessage(context, msg, Toast.LENGTH_SHORT);
+    }
+
+//    public static void showMessage(final Activity activity, final String msg) {
+//        activity.runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("hit");
+//                if (toast != null) {
+//                    toast.cancel();
+//                    toast.setText(msg);
+//                    toast.setDuration(Toast.LENGTH_SHORT);
+//                } else {
+//                    toast = Toast.makeText(activity, msg, Toast.LENGTH_SHORT);
+//                }
+//                toast.show();
+//            }
+//        });
+//    }
+
+
+    public static void showMessage(final Context context, final int msg) {
+        showMessage(context, msg, Toast.LENGTH_SHORT);
+    }
+
+    private static void showMessage(final Context context, final String msg, final int len) {
+        //https://github.com/zhitaocai/ToastCompat_Deprecated
+//        ToastCompat.makeText(context,msg,len).show();
+
+//        new Thread(new Runnable() {
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        synchronized (synObj) {
+        if (toast != null) {
+            toast.cancel();
+            toast.setText(msg);
+            toast.setDuration(len);
         } else {
-            toast.setText(message);
-            toast.setDuration(Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, msg, len);
         }
         toast.show();
+//                        }
+//                    }
+//                });
+//            }
+//        }).start();
+    }
+
+    private static void showMessage(final Context context, final int msg, final int len) {
+        new Thread(new Runnable() {
+            public void run() {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        synchronized (synObj) {
+                            if (toast != null) {
+                                toast.cancel();
+                                toast.setText(msg);
+                                toast.setDuration(len);
+                            } else {
+                                toast = Toast.makeText(context, msg, len);
+                            }
+                            toast.show();
+                        }
+                    }
+                });
+            }
+        }).start();
     }
 }

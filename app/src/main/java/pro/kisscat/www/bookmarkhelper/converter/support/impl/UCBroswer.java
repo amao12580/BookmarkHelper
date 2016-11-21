@@ -78,7 +78,7 @@ public class UCBroswer extends BasicBroswer {
             if (notSupportParseHomepageBookmarks == null) {
                 notSupportParseHomepageBookmarks = context.getResources().getString(R.string.notSupportParseHomepageBookmarks);
             }
-            ToastUtil.showToastMessage(context, notSupportParseHomepageBookmarks);
+            ToastUtil.showMessage(context, notSupportParseHomepageBookmarks);
             ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);

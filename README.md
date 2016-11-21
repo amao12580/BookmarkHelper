@@ -112,6 +112,8 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 5.Bug 修复：[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)支持提取时保留文件夹路径。
 
+6.Bug 修复：“文件拷贝失败”问题。
+
 #### 0.0.12版 Draft
 1.增加兼容：支持从[UC国际版浏览器](http://www.coolapk.com/apk/com.UCMobile.intl)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 

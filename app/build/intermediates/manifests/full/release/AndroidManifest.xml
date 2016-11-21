@@ -2,7 +2,7 @@
 <!-- manifest文件详解：http://www.cnblogs.com/pilang/archive/2011/04/20/2022932.html -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pro.kisscat.www.bookmarkhelper"
-    android:versionCode="95"
+    android:versionCode="96"
     android:versionName="0.0.11" >
 
     <uses-sdk
@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <!-- <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> -->
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"

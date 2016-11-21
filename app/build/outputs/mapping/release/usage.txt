@@ -482,9 +482,9 @@ pro.kisscat.www.bookmarkhelper.activity.Adapter:
     44:44:public int getSelectItem()
     46:46:public android.view.View getCurrentClickItem()
 pro.kisscat.www.bookmarkhelper.activity.MainActivity:
-    391:393:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
-    397:398:void showDeniedForStorage()
-    402:403:void showNeverAskForStorage()
+    395:397:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
+    401:402:void showDeniedForStorage()
+    406:407:void showNeverAskForStorage()
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum(android.content.Context)
@@ -569,7 +569,8 @@ pro.kisscat.www.bookmarkhelper.util.command.CommandUtil:
     private static final java.lang.String COMMAND_EXIT
     private static final java.lang.String COMMAND_LINE_END
 pro.kisscat.www.bookmarkhelper.util.context.ContextUtil:
-    16:16:public ContextUtil()
+    private static final java.lang.String split
+    17:17:public ContextUtil()
 pro.kisscat.www.bookmarkhelper.util.file.FileUtil:
     14:14:public FileUtil()
 pro.kisscat.www.bookmarkhelper.util.file.pojo.File:
@@ -611,7 +612,15 @@ pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil:
 pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil:
     14:14:public PhoneUtil()
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
-    15:15:public RootUtil()
+    19:19:public RootUtil()
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil
 pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil:
-    15:15:public ToastUtil()
+    17:17:public ToastUtil()
+    45:46:public static void showMessage(android.content.Context,int)
+    74:93:private static void showMessage(android.content.Context,int,int)
+    17:17:static synthetic java.lang.Object access$000()
+    17:17:static synthetic android.widget.Toast access$100()
+    17:17:static synthetic android.widget.Toast access$102(android.widget.Toast)
+    17:17:static synthetic android.os.Handler access$200()
+pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil$1
+pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil$1$1

@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
@@ -214,19 +215,19 @@ public final class InternalStorageUtil implements BasicStorageUtil {
     private static void remountDataDir(boolean isNeedReadOnly) {
         String command;
         if (isNeedReadOnly) {
-            if (isReadOnlyNow) {
-                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
-                return;
-            } else {
-                command = "mount -o remount, ro /data/";
-            }
+//            if (isReadOnlyNow) {
+//                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
+//                return;
+//            } else {
+            command = "mount -o remount, ro /data/";
+//            }
         } else {
-            if (!isReadOnlyNow) {
-                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
-                return;
-            } else {
-                command = "mount -o remount, rw /data/";
-            }
+//            if (!isReadOnlyNow) {
+//                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
+//                return;
+//            } else {
+            command = "mount -o remount, rw /data/";
+//            }
         }
         boolean ret = RootUtil.executeCmd(command);
         if (isNeedReadOnly) {
@@ -238,6 +239,21 @@ public final class InternalStorageUtil implements BasicStorageUtil {
                 isReadOnlyNow = false;
             }
         }
+        if (!ret) {
+            //记录mount信息
+            command = "mount";
+            RootUtil.executeCmd(command);
+            //尝试挂载根目录为读写
+            command = "mount -o remount, rw /";
+            RootUtil.executeCmd(command);
+        }
         LogHelper.v("remountDataDir ret:" + ret + ",isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
+    }
+
+    public static void remountSDCardDir() {
+        String SDCardDir = Path.SDCARD_ROOTPATH;
+        LogHelper.v("SDCardDir:" + SDCardDir);
+        String command = "mount -o remount, rw " + SDCardDir;
+        RootUtil.executeCmd(command);
     }
 }

@@ -10,7 +10,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.Manifest;
-import android.content.Context;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -43,7 +43,6 @@ import permissions.dispatcher.OnShowRationale;
 import permissions.dispatcher.PermissionRequest;
 import permissions.dispatcher.RuntimePermissions;
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
@@ -51,6 +50,7 @@ import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
+import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
@@ -80,7 +80,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             try {
                 CrashHandler handler = CrashHandler.getInstance();
@@ -96,10 +98,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (rules == null) {
             rules = ConverterMaster.cover2Execute(this, ConverterMaster.getSupportRule());
             if (!isRecordRule) {
-                LogHelper.v(MetaData.LOG_V_DEFAULT, "executeRules:" + JsonUtil.toJson(rules));
+                LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
             }
         }
-        setContentView(R.layout.activity_main);
+
         lv = (ListView) findViewById(R.id.listViewRules);
         for (ExecuteRule rule : rules) {
             Map<String, Object> map = new HashMap<>();
@@ -119,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         PermissionUtil.checkAndRequest(this);
         lv.setOnItemClickListener(this);
+        ToastUtil.showMessage(this, this.getResources().getString(R.string.keepRootAppRunning));
         lv.post(new Runnable() {
             @Override
             public void run() {
@@ -131,9 +134,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private long lastClickItemTime = 0;
     private long currentClickItemTime = 0;
     private String someTaskIsRunning;
-    private String keepRootAppRunning;
+
 
     @Override
+    @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         adapter.setSelectItem(position, view);
         adapter.notifyDataSetInvalidated();
@@ -150,24 +154,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     AppListUtil.reInit(this);
                     if (!rule.getSource().isInstalled(this, rule.getSource())) {
-                        showDialogMessage(rule.getSource().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(this, rule.getSource().getName()));
                         return;
                     }
                 }
                 if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
                     AppListUtil.reInit(this);
                     if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
-                        showDialogMessage(rule.getTarget().getName() + " " + lv.getResources().getString(R.string.appUninstall));
+                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(this, rule.getTarget().getName()));
                         return;
                     }
                 }
-                showDialogMessage(lv.getResources().getString(R.string.notSupport));
+                showDialogMessage(ContextUtil.buildRuleNotSupportedNowMessage(this, rule));
                 return;
             }
-            if (keepRootAppRunning == null) {
-                keepRootAppRunning = lv.getResources().getString(R.string.keepRootAppRunning);
-            }
-            showToastMessage(keepRootAppRunning);
+            ToastUtil.showMessage(this, this.getResources().getString(R.string.keepRootAppRunning));
             view.post(new Runnable() {
                 public void run() {
                     processConverter(rule);
@@ -175,16 +176,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             });
         } catch (InitException e) {
             showDialogMessage(e.getMessage());
-        } finally {
-            LogHelper.write();
-            setCurrentClickItemEnabled(true);
+            e.printStackTrace();
         }
     }
 
     private void setCurrentClickItemEnabled(boolean isEnable) {
-        if (adapter == null) {
-            System.out.println("adapter is null.");
-        }
         adapter.setCurrentClickItemEnabled(isEnable);
     }
 
@@ -202,14 +198,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         long end = -1;
         int ret = -1;
         try {
-            isRoot = RootUtil.upgradeRootPermission(getPackageCodePath());
+            isRoot = RootUtil.upgradeRootPermission(this);
             if (!isRoot) {
-                showSimpleDialog("无法获取Root权限，不能使用.");
+                String erroUpgrade = "无法获取Root权限，不能使用.";
+                showSimpleDialog(erroUpgrade);
+                LogHelper.v(erroUpgrade);
                 return;
             } else {
                 LogHelper.v("成功获取了Root权限.");
             }
             InternalStorageUtil.remountDataDir();
+            InternalStorageUtil.remountSDCardDir();
             start = System.currentTimeMillis();
             rule.setStage(1);
             ret = ConverterMaster.execute(lv.getContext(), rule);
@@ -228,14 +227,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         s = ms + "ms";
                     }
                 }
-                showDialogMessage(ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效" + (s == null ? "." : ("，耗时：" + s + ".")));
+                showDialogMessage(rule.getSource().getName() + "：" + ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效" + (s == null ? "." : ("，耗时：" + s + ".")));
             } else if (ret == 0) {
                 rule.setStage(2);
-                showDialogMessage("所有书签已存在，不需要合并.");
+                showDialogMessage(rule.getSource().getName() + "：" + "所有书签已存在，不需要合并.");
             } else {
                 rule.setStage(3);
             }
             isItemRuning = false;
+            LogHelper.write();
+            setCurrentClickItemEnabled(true);
         }
     }
 
@@ -285,11 +286,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    private void showToastMessage(Context context, String message) {
-        ToastUtil.showToastMessage(context, message);
+    private void showToastMessage(Activity activity, String message) {
+        ToastUtil.showMessage(activity, message);
     }
 
     private void showToastMessage(String message) {
+        if (message == null || message.isEmpty()) {
+            return;
+        }
         showToastMessage(this, message);
     }
 

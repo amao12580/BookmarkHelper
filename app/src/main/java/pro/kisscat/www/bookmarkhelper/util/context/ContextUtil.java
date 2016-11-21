@@ -3,6 +3,7 @@ package pro.kisscat.www.bookmarkhelper.util.context;
 import android.content.Context;
 
 import pro.kisscat.www.bookmarkhelper.R;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 
 /**
  * Created with Android Studio.
@@ -14,39 +15,45 @@ import pro.kisscat.www.bookmarkhelper.R;
  */
 
 public class ContextUtil {
+    private static final String split = "：";
+
     public static String buildReadBookmarksErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.readBookmarksError);
+        return broswerName + split + context.getResources().getString(R.string.readBookmarksError);
     }
 
     public static String buildReadBookmarksEmptyMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.readBookmarksEmpty);
+        return broswerName + split + context.getResources().getString(R.string.readBookmarksEmpty);
     }
 
     public static String buildAppendBookmarksErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.appendBookmarksError);
+        return broswerName + split + context.getResources().getString(R.string.appendBookmarksError);
     }
 
-//    public static String buildReadBookmarksDataMissMessage(Context context, String broswerName) {
-//        return broswerName + " " + context.getResources().getString(R.string.readBookmarksDataMiss);
-//    }
-
     public static String buildFileCPErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.fileCPError);
+        return broswerName + split + context.getResources().getString(R.string.fileCPError);
     }
 
     public static String buildFileMkdirErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.fileMkdirError);
+        return broswerName + split + context.getResources().getString(R.string.fileMkdirError);
     }
 
     public static String buildFileDeleteErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.fileDeleteError);
+        return broswerName + split + context.getResources().getString(R.string.fileDeleteError);
     }
 
     public static String buildViaBookmarksFileMiss(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.viaBookmarksFileMiss);
+        return broswerName + split + context.getResources().getString(R.string.viaBookmarksFileMiss);
     }
 
     public static String buildReadBookmarksTableNotExistErrorMessage(Context context, String broswerName) {
-        return broswerName + " " + context.getResources().getString(R.string.flyme5BookmarksFileMiss);
+        return broswerName + split + context.getResources().getString(R.string.flyme5BookmarksFileMiss);
+    }
+
+    public static String buildAppNotInstalledMessage(Context context, String broswerName) {
+        return broswerName + split + context.getResources().getString(R.string.appUninstall);
+    }
+
+    public static String buildRuleNotSupportedNowMessage(Context context, Rule rule) {
+        return context.getResources().getString(R.string.notSupport);
     }
 }

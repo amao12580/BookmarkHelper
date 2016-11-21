@@ -1,7 +1,11 @@
 package pro.kisscat.www.bookmarkhelper.util.root;
 
-import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
+import android.content.Context;
+
+import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.util.command.CommandUtil;
+import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
+import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 /**
  * Created with Android Studio.
@@ -18,8 +22,8 @@ public final class RootUtil {
      *
      * @return 应用程序是/否获取Root权限
      */
-    public static boolean upgradeRootPermission(String pkgCodePath) {
-        return executeCmd("chmod 777 " + pkgCodePath);
+    public static boolean upgradeRootPermission(Context context) {
+        return executeCmd("chmod 777 " + context.getPackageCodePath());
     }
 
     public static boolean executeCmd(String cmd) {

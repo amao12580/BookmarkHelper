@@ -52,9 +52,6 @@ class Adapter extends SimpleAdapter {
     }
 
     void setCurrentClickItemEnabled(boolean isEnable) {
-        if (currentClickItem == null) {
-            System.out.println("currentClickItem is null.");
-        }
         currentClickItem.setEnabled(isEnable);
     }
 
