@@ -69,7 +69,7 @@ public class CommandUtil {
             LogHelper.v("process.waitFor() start.");
             result = process.waitFor();
             LogHelper.v("process.waitFor() end.");
-            Thread.sleep(50);//睡眠50毫秒，等待io流线程读取
+            Thread.sleep(25);//睡眠25毫秒，等待io流线程读取
             LogHelper.v("result is:" + result + ",successMsg is:" + JsonUtil.toJson(stdoutList) + ",errorMsg is:" + JsonUtil.toJson(erroroutList));
         } catch (IOException e) {
             LogHelper.e("IOException:Root cmd 执行失败,commands:" + commandStr + ",exception:" + e.getMessage());

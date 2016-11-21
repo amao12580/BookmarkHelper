@@ -1,3 +1,6 @@
+# view res/layout/design_bottom_navigation_item.xml #generated:26
+-keep class android.support.design.internal.BaselineLayout { <init>(...); }
+
 # view res/layout/design_navigation_item.xml #generated:17
 -keep class android.support.design.internal.NavigationMenuItemView { <init>(...); }
 
@@ -82,12 +85,12 @@
 # view AndroidManifest.xml #generated:27
 -keep class pro.kisscat.www.bookmarkhelper.activity.MainActivity { <init>(...); }
 
-# onClick res/layout/activity_main.xml #generated:34
+# onClick res/layout/activity_main.xml #generated:33
 -keepclassmembers class * { *** onclickAboutMe(...); }
 
-# onClick res/layout/activity_main.xml #generated:63
+# onClick res/layout/activity_main.xml #generated:62
 -keepclassmembers class * { *** onclickDonate(...); }
 
-# onClick res/layout/activity_main.xml #generated:49
+# onClick res/layout/activity_main.xml #generated:48
 -keepclassmembers class * { *** onclickRating(...); }
 

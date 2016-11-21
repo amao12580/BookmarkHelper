@@ -58,6 +58,7 @@ import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
+import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 @RuntimePermissions
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -69,8 +70,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private boolean isRecordRule = false;
     private List<Map<String, Object>> items = new ArrayList<>();
 
-    private static Integer default_color = null;
-    private static Integer choosed_color = null;
     private static Integer dialog_button_ok_color = null;
 
     @Override
@@ -89,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Thread.setDefaultUncaughtExceptionHandler(handler);
                 LogHelper.init();
                 ConverterMaster.init(this);
-                initColor(this);
             } catch (InitException e) {
                 showToastMessage(this, e.getMessage());
                 finish();
@@ -103,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         setContentView(R.layout.activity_main);
         lv = (ListView) findViewById(R.id.listViewRules);
-        lv.setBackgroundColor(default_color);
         for (ExecuteRule rule : rules) {
             Map<String, Object> map = new HashMap<>();
             BasicBroswer sourceBorswer = rule.getSource();
@@ -131,36 +128,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    private void initColor(Context context) {
-        if (default_color == null) {
-            default_color = ContextCompat.getColor(context, R.color.colorDefault);
-        }
-        if (choosed_color == null) {
-            choosed_color = ContextCompat.getColor(context, R.color.colorItemChoosed);
-        }
-        if (dialog_button_ok_color == null) {
-            dialog_button_ok_color = ContextCompat.getColor(context, R.color.colorDialogButtonOk);
-        }
-    }
-
     private long lastClickItemTime = 0;
     private long currentClickItemTime = 0;
-    private String someTaskIsRuning;
-
-    private View currentClientItem = null;
+    private String someTaskIsRunning;
+    private String keepRootAppRunning;
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        currentClientItem = view;
-        currentClientItem.setEnabled(false);
-        int choosed = parent.getPositionForView(view);
-        for (int i = 0; i < parent.getChildCount(); i++) {
-            if (i != choosed) {
-                parent.getChildAt(i).setBackgroundColor(default_color);
-            } else {
-                view.setBackgroundColor(choosed_color);
-            }
-        }
+        adapter.setSelectItem(position, view);
+        adapter.notifyDataSetInvalidated();
         try {
             currentClickItemTime = System.currentTimeMillis();
             long diff = currentClickItemTime - lastClickItemTime;
@@ -168,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return;
             }
             lastClickItemTime = currentClickItemTime;
+            setCurrentClickItemEnabled(false);
             final ExecuteRule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
@@ -187,6 +164,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 showDialogMessage(lv.getResources().getString(R.string.notSupport));
                 return;
             }
+            if (keepRootAppRunning == null) {
+                keepRootAppRunning = lv.getResources().getString(R.string.keepRootAppRunning);
+            }
+            showToastMessage(keepRootAppRunning);
             view.post(new Runnable() {
                 public void run() {
                     processConverter(rule);
@@ -196,17 +177,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             showDialogMessage(e.getMessage());
         } finally {
             LogHelper.write();
-            currentClientItem.setEnabled(true);
+            setCurrentClickItemEnabled(true);
         }
+    }
+
+    private void setCurrentClickItemEnabled(boolean isEnable) {
+        if (adapter == null) {
+            System.out.println("adapter is null.");
+        }
+        adapter.setCurrentClickItemEnabled(isEnable);
     }
 
     @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
     private void processConverter(ExecuteRule rule) {
         if (isItemRuning) {
-            if (someTaskIsRuning == null) {
-                someTaskIsRuning = lv.getResources().getString(R.string.someTaskIsRuning);
+            if (someTaskIsRunning == null) {
+                someTaskIsRunning = lv.getResources().getString(R.string.someTaskIsRuning);
             }
-            showToastMessage(someTaskIsRuning);
+            showToastMessage(someTaskIsRunning);
             return;
         }
         isItemRuning = true;
@@ -270,6 +258,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (dialog_default_title == null) {
             dialog_default_title = lv.getResources().getString(R.string.dialogTitle);
         }
+        if (dialog_button_ok_color == null) {
+            dialog_button_ok_color = ContextCompat.getColor(this, R.color.colorDialogButtonOk);
+        }
         final NormalDialog dialog = new NormalDialog(this);
         dialog.isTitleShow(true)
                 .title(dialog_default_title)
@@ -289,27 +280,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                if (currentClientItem != null) {
-                    currentClientItem.setEnabled(true);
-                }
+                setCurrentClickItemEnabled(true);
             }
         });
     }
 
-    private Toast toast;
-
-    /**
-     * Android 解决Toast的延时显示问题
-     * 关键在于重用toast，这样就不用每次都创建一个新的toast
-     */
     private void showToastMessage(Context context, String message) {
-        if (toast == null) {
-            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-        } else {
-            toast.setText(message);
-            toast.setDuration(Toast.LENGTH_SHORT);
-        }
-        toast.show();
+        ToastUtil.showToastMessage(context, message);
     }
 
     private void showToastMessage(String message) {

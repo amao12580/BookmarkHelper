@@ -21,6 +21,9 @@ import android.widget.TextView;
 import java.util.List;
 import java.util.Map;
 
+import lombok.Getter;
+import pro.kisscat.www.bookmarkhelper.R;
+
 class Adapter extends SimpleAdapter {
     private int[] mTo;
     private String[] mFrom;
@@ -38,8 +41,31 @@ class Adapter extends SimpleAdapter {
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    @Getter
+    private int selectItem = -1;
+    @Getter
+    private View currentClickItem;
+
+    void setSelectItem(int position, View view) {
+        this.currentClickItem = view;
+        this.selectItem = position;
+    }
+
+    void setCurrentClickItemEnabled(boolean isEnable) {
+        if (currentClickItem == null) {
+            System.out.println("currentClickItem is null.");
+        }
+        currentClickItem.setEnabled(isEnable);
+    }
+
     public View getView(int position, View convertView, ViewGroup parent) {
-        return createViewFromResource(position, convertView, parent, mResource);
+        View view = createViewFromResource(position, convertView, parent, mResource);
+        if (position == selectItem) {
+            view.setBackgroundResource(R.drawable.listview_item_selected_bg);
+        } else {
+            view.setBackgroundResource(R.drawable.listview_item_default_bg);
+        }
+        return view;
     }
 
     private View createViewFromResource(int position, View convertView, ViewGroup parent, int resource) {
@@ -95,8 +121,7 @@ class Adapter extends SimpleAdapter {
                         setViewImage((ImageView) v, (Drawable) data);
                         //调用下面自己写的方法，设置图片
                     } else {
-                        throw new IllegalStateException(v.getClass().getName() + " is not a " +
-                                " view that can be bounds by this SimpleAdapter");
+                        throw new IllegalStateException(v.getClass().getName() + " is not a " + " view that can be bounds by this SimpleAdapter");
                     }
                 }
             }

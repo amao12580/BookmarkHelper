@@ -38,10 +38,11 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
     public void uncaughtException(Thread thread, Throwable throwable) {
         // 在此可以把用户手机的一些信息以及异常信息捕获并上传,
-        String fatalErrorMessage = AppListUtil.thisAppInfo + " is crash.exception message:" + throwable.getMessage();
+        String fatalErrorMessage = MetaData.LOG_E_FATAL + ":" + AppListUtil.thisAppInfo + " is crash.exception message:" + throwable.getMessage();
         System.out.println(fatalErrorMessage);
         LogHelper.e(MetaData.LOG_E_FATAL, fatalErrorMessage);
         LogHelper.write();
+        throwable.printStackTrace();
         //干掉当前的程序
         android.os.Process.killProcess(android.os.Process.myPid());
     }

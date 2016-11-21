@@ -43,5 +43,7 @@
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
     <string name="fileMkdirError">无法创建工作目录，可能缺少读写存储权限.</string>
+    <string name="keepRootAppRunning">保持Root程序正在运行，如:SuperSU</string>
+    <string name="notSupportParseHomepageBookmarks">暂不支持读取UC首页书签数据，无法解密.</string>
 
 </resources>

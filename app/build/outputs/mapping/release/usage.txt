@@ -478,10 +478,13 @@ permissions.dispatcher.v13.V13Access
 pro.kisscat.www.bookmarkhelper.BuildConfig
 pro.kisscat.www.bookmarkhelper.R:
     10:10:public R()
+pro.kisscat.www.bookmarkhelper.activity.Adapter:
+    44:44:public int getSelectItem()
+    46:46:public android.view.View getCurrentClickItem()
 pro.kisscat.www.bookmarkhelper.activity.MainActivity:
-    414:416:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
-    420:421:void showDeniedForStorage()
-    425:426:void showNeverAskForStorage()
+    391:393:void showRationaleForStorage(permissions.dispatcher.PermissionRequest)
+    397:398:void showDeniedForStorage()
+    402:403:void showNeverAskForStorage()
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum(android.content.Context)
@@ -538,7 +541,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.UCBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    43:46:public int readBookmarkSum(android.content.Context)
+    48:51:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -610,3 +613,5 @@ pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil:
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
     15:15:public RootUtil()
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil
+pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil:
+    15:15:public ToastUtil()

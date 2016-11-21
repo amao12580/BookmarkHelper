@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/listview_item_selector"
+    android:baselineAligned="false"
     android:orientation="horizontal"
     android:paddingBottom="6dp"
     android:paddingLeft="6dp"
     android:paddingRight="6dp"
     android:paddingTop="6dp"
-    android:baselineAligned="false"
     tools:context=".activity.MainActivity">
 
     <LinearLayout
@@ -57,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:width="240dp"
+            android:duplicateParentState="true"
             android:gravity="center"
             android:textIsSelectable="false" />
     </LinearLayout>
@@ -80,6 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:width="120dp"
+            android:duplicateParentState="true"
             android:gravity="center"
             android:textIsSelectable="false" />
     </LinearLayout>

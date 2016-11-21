@@ -42,4 +42,6 @@
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
     <string name="fileMkdirError">work dir create failed.</string>
+    <string name="keepRootAppRunning">keep root app running,example:SuperSU</string>
+    <string name="notSupportParseHomepageBookmarks">not support parse UC homepage bookmarks</string>
 </resources>

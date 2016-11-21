@@ -5,9 +5,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
+import lombok.Getter;
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
@@ -19,6 +23,7 @@ import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
+import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 /**
  * Created with Android Studio.
@@ -59,6 +64,7 @@ public class UCBroswer extends BasicBroswer {
     private static final String fileName_origin = "bookmark.db";
     private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/UC/";
+    private static String notSupportParseHomepageBookmarks;
 
     @Override
     public List<Bookmark> readBookmark(Context context) {
@@ -69,6 +75,10 @@ public class UCBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
+            if (notSupportParseHomepageBookmarks == null) {
+                notSupportParseHomepageBookmarks = context.getResources().getString(R.string.notSupportParseHomepageBookmarks);
+            }
+            ToastUtil.showToastMessage(context, notSupportParseHomepageBookmarks);
             ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
@@ -82,6 +92,7 @@ public class UCBroswer extends BasicBroswer {
             LogHelper.v("总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
+            LogHelper.v("result:" + JsonUtil.toJson(bookmarks));
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());
@@ -92,7 +103,7 @@ public class UCBroswer extends BasicBroswer {
         return bookmarks;
     }
 
-    private final static String[] columns = new String[]{"title", "url"};
+    private final static String[] columns = new String[]{"luid", "parent_id", "title", "url", "folder"};
 
     private List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);
@@ -173,14 +184,9 @@ public class UCBroswer extends BasicBroswer {
                     return result;
                 }
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, "url", null, orderBy, null);
+            cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, null, null, orderBy, null);
             if (cursor != null && cursor.getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    Bookmark item = new Bookmark();
-                    item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-                    item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
-                    result.add(item);
-                }
+                parseBookmarkWithFolder(cursor, result);
             }
 
         } finally {
@@ -193,6 +199,75 @@ public class UCBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":读取SQLite数据库结束,dbFilePath:" + dbFilePath);
         }
         return result;
+    }
+
+    private void parseBookmarkWithFolder(Cursor cursor, List<Bookmark> result) {
+        List<UCBookmark> bookmarks = parseBookmark(cursor);
+        Map<Long, UCBookmark> folders = new HashMap<>();
+        for (UCBookmark item : bookmarks) {
+            int folder = item.getIsFolder();
+            if (folder == 1) {
+                folders.put(item.getLuid(), item);
+            }
+        }
+
+        for (UCBookmark item : bookmarks) {
+            int folder = item.getIsFolder();
+            if (folder == 0) {
+                String folderPath = trim(parseFolderPath(folders, item.getParent_id()));
+                Bookmark bookmark = new Bookmark();
+                bookmark.setTitle(item.getTitle());
+                bookmark.setUrl(item.getUrl());
+                bookmark.setFolder(folderPath == null ? "" : folderPath);
+                result.add(bookmark);
+            }
+        }
+    }
+
+    private String parseFolderPath(Map<Long, UCBookmark> folders, long parent_uuid) {
+        UCBookmark parent = folders.get(parent_uuid);
+        if (parent == null) {
+            return null;
+        }
+        return parseFolderPath(folders, parent_uuid, "");
+    }
+
+    private String parseFolderPath(Map<Long, UCBookmark> folders, long parent_uuid, String path) {
+        UCBookmark parent = folders.get(parent_uuid);
+        if (parent == null) {
+            return path;
+        }
+        String title = parent.getTitle();
+        if (!(title == null || title.isEmpty())) {
+            path = title + Path.FILE_SPLIT + path;
+        }
+        return parseFolderPath(folders, parent.getParent_id(), path);
+    }
+
+    private List<UCBookmark> parseBookmark(Cursor cursor) {
+        List<UCBookmark> result = new LinkedList<>();
+        while (cursor.moveToNext()) {
+            UCBookmark item = new UCBookmark();
+            item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+            item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+            item.setLuid(cursor.getLong(cursor.getColumnIndex("luid")));
+            item.setParent_id(cursor.getLong(cursor.getColumnIndex("parent_id")));
+            item.setIsFolder(cursor.getInt(cursor.getColumnIndex("folder")));
+            result.add(item);
+        }
+        return result;
+    }
+
+    private class UCBookmark extends Bookmark {
+        @Getter
+        @Setter
+        private long luid;
+        @Getter
+        @Setter
+        private long parent_id;
+        @Getter
+        @Setter
+        private int isFolder;
     }
 
     @Override
