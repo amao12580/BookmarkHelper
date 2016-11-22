@@ -405,7 +405,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @OnPermissionDenied({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
     void showDeniedForStorage() {
-        showToastMessage(this, "你拒绝了存储权限");
+        showToastMessage(this, "你临时拒绝了存储权限");
     }
 
     @OnNeverAskAgain({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})

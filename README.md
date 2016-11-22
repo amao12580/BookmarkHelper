@@ -138,6 +138,8 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 #### 0.0.19版 Draft
 1.增加兼容：支持从[H5浏览器](http://www.coolapk.com/apk/org.noear.h5)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
+#### 0.0.20版 Draft
+1.增加兼容：支持从[星尘浏览器](http://www.coolapk.com/apk/com.chaozhuo.browser_phone)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 ---
 
@@ -159,6 +161,9 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 #### 0.1.5版 Draft
 1.增加兼容：支持从[UC浏览器](http://www.coolapk.com/apk/com.UCMobile)提取书签，追加到[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)。
+
+#### 0.1.6版 Draft
+1.增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[X浏览器](http://www.coolapk.com/apk/com.mmbox.xbrowser)。
 
 ---
 
