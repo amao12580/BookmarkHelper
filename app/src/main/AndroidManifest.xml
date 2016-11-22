@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowIsTranslucent="true"
+        android:name="android.support.multidex.MultiDexApplication"
         android:windowNoTitle="true">
 
         <activity

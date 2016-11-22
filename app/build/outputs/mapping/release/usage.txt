@@ -490,7 +490,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    37:37:public ConverterMaster()
+    39:39:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -618,9 +618,5 @@ pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil:
     17:17:public ToastUtil()
     45:46:public static void showMessage(android.content.Context,int)
     74:93:private static void showMessage(android.content.Context,int,int)
-    17:17:static synthetic java.lang.Object access$000()
-    17:17:static synthetic android.widget.Toast access$100()
-    17:17:static synthetic android.widget.Toast access$102(android.widget.Toast)
-    17:17:static synthetic android.os.Handler access$200()
-pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil$1
-pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil$1$1
+pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil$2
+pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil$2$1

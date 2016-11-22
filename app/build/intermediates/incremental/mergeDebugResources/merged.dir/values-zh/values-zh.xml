@@ -49,7 +49,7 @@
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

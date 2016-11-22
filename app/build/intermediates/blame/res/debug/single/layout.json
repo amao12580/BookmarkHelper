@@ -8,12 +8,12 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
@@ -64,12 +64,12 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
-        "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\layout\\design_text_input_password_icon.xml"
-    },
-    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",

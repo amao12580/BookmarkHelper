@@ -24,6 +24,8 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRu
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 /**
  * Created with Android Studio.
@@ -58,7 +60,10 @@ public class ConverterMaster {
     }
 
     public static int execute(Context context, Rule rule) {
+        ToastUtil.showMessage(context, "正在执行，大约需要5秒钟，请等待.");
+        long s = System.currentTimeMillis();
         BasicBroswer source = rule.getSource();
+        LogHelper.v("正在执行的转换规则是:" + rule.getSource().getName() + "------------>" + rule.getTarget().getName());
         List<Bookmark> sourceBookmarks = source.readBookmark(context);
         if (sourceBookmarks == null) {
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, source.getName()));
@@ -71,6 +76,7 @@ public class ConverterMaster {
         if (ret < 0) {
             throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(context, target.getName()));
         }
+        LogHelper.v("转换规则:" + rule.getSource().getName() + "------------>" + rule.getTarget().getName() + "执行完成，耗时：" + (System.currentTimeMillis() - s) + "ms.");
         return ret;
     }
 

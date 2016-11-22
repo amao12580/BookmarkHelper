@@ -17,6 +17,9 @@
 # view sw600dp-v13\res/layout-sw600dp-v13/design_layout_snackbar.xml #generated:18
 -keep class android.support.design.widget.Snackbar$SnackbarLayout { <init>(...); }
 
+# view AndroidManifest.xml #generated:18
+-keep class android.support.multidex.MultiDexApplication { <init>(...); }
+
 # view res/layout/abc_alert_dialog_material.xml #generated:75
 -keep class android.support.v4.widget.NestedScrollView { <init>(...); }
 
@@ -79,10 +82,10 @@
 # view res/layout/popup_bubble.xml #generated:7
 -keep class com.flyco.dialog.view.TriangleView { <init>(...); }
 
-# view AndroidManifest.xml #generated:36
+# view AndroidManifest.xml #generated:37
 -keep class pro.kisscat.www.bookmarkhelper.activity.Html5Activity { <init>(...); }
 
-# view AndroidManifest.xml #generated:27
+# view AndroidManifest.xml #generated:28
 -keep class pro.kisscat.www.bookmarkhelper.activity.MainActivity { <init>(...); }
 
 # onClick res/layout/activity_main.xml #generated:33

@@ -1,4 +1,4 @@
-#Tue Nov 22 11:58:41 CST 2016
+#Tue Nov 22 14:09:46 CST 2016
 base.0=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ed10044c93824f0db7378e6518335b10de8fd39d
 renamed.1=classes.dex
 renamed.0=classes2.dex

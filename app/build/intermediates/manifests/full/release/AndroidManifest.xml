@@ -2,8 +2,8 @@
 <!-- manifest文件详解：http://www.cnblogs.com/pilang/archive/2011/04/20/2022932.html -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pro.kisscat.www.bookmarkhelper"
-    android:versionCode="100"
-    android:versionName="0.0.11" >
+    android:versionCode="101"
+    android:versionName="0.0.11-f1" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> -->
     <application
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"

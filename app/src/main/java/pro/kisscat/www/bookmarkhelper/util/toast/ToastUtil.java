@@ -46,28 +46,28 @@ public class ToastUtil {
     }
 
     private static void showMessage(final Context context, final String msg, final int len) {
-        //https://github.com/zhitaocai/ToastCompat_Deprecated
-//        ToastCompat.makeText(context,msg,len).show();
+//        https:github.com/zhitaocai/ToastCompat_Deprecated
+//        ToastCompat.makeText(context, msg, len).show();
 
-//        new Thread(new Runnable() {
-//            public void run() {
-//                handler.post(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        synchronized (synObj) {
-        if (toast != null) {
-            toast.cancel();
-            toast.setText(msg);
-            toast.setDuration(len);
-        } else {
-            toast = Toast.makeText(context, msg, len);
-        }
-        toast.show();
-//                        }
-//                    }
-//                });
-//            }
-//        }).start();
+        new Thread(new Runnable() {
+            public void run() {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        synchronized (synObj) {
+                            if (toast != null) {
+                                toast.cancel();
+                                toast.setText(msg);
+                                toast.setDuration(len);
+                            } else {
+                                toast = Toast.makeText(context, msg, len);
+                            }
+                            toast.show();
+                        }
+                    }
+                });
+            }
+        }).start();
     }
 
     private static void showMessage(final Context context, final int msg, final int len) {
