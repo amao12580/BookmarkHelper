@@ -525,9 +525,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    50:53:public int readBookmarkSum(android.content.Context)
-    196:196:private java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String)
-    200:200:private java.util.List fetchBookmarksList(android.content.Context,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)
+    51:54:public int readBookmarkSum(android.content.Context)
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -613,7 +611,9 @@ pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil:
     14:14:public PhoneUtil()
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
     19:19:public RootUtil()
-pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil
+pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil:
+    public abstract java.lang.String getRootPath()
+pro.kisscat.www.bookmarkhelper.util.storage.Storageable
 pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil:
     17:17:public ToastUtil()
     45:46:public static void showMessage(android.content.Context,int)

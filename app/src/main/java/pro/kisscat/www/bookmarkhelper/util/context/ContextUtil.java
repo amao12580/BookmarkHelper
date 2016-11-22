@@ -34,6 +34,9 @@ public class ContextUtil {
     }
 
     public static String buildFileMkdirErrorMessage(Context context, String broswerName) {
+        if (broswerName == null || broswerName.isEmpty()) {
+            return context.getResources().getString(R.string.fileMkdirError);
+        }
         return broswerName + split + context.getResources().getString(R.string.fileMkdirError);
     }
 

@@ -26,6 +26,7 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 public class AppListUtil {
     private static Map<String, App> installedAllApp;
     public static String thisAppInfo;
+    public static String thisAppPackageName;
 
     private static Map<String, App> getInstalledAllApp(Context context) {
         if (installedAllApp == null) {
@@ -58,6 +59,7 @@ public class AppListUtil {
             throw new InitException(globalMsg);
         }
         String mePackageName = context.getPackageName();
+        thisAppPackageName = mePackageName;
         for (PackageInfo packageInfo : packages) {
             ApplicationInfo applicationInfo = packageInfo.applicationInfo;
             App app = new App();

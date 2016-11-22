@@ -11,7 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.util.Path;
+import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
 /**
@@ -23,7 +26,7 @@ import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
  * Time:15:06
  */
 
-public final class ExternalStorageUtil implements BasicStorageUtil {
+public final class ExternalStorageUtil extends BasicStorageUtil {
     /**
      * 获取外置SD卡路径
      */
@@ -83,16 +86,23 @@ public final class ExternalStorageUtil implements BasicStorageUtil {
     }
 
     public static void mkdir(Context context, String dirPath, String mark) {
-        /**
-         * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）
-         * -r  递归复制，包含目录
-         * -a  做一个备份，这里可以不用这个参数，我们可以先备份整个test目录
-         * -p  保持新文件的属性不变
-         */
-        String cmd = "mkdir -p " + dirPath;
-        boolean result = RootUtil.executeCmd(cmd);
-        if (!result) {
-            throw new ConverterException(ContextUtil.buildFileMkdirErrorMessage(context, mark));
+        mkdir(context, dirPath, mark, true);
+    }
+
+    public static boolean remountSDCardDir(Context context) {
+        boolean readWriteable = checkReadWriteable(context, Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH);
+        LogHelper.v("remountSDCardDir 读写权限检查结果：" + readWriteable);
+        if (readWriteable) {
+            return true;
         }
+        String command = "mount -o remount, rw /sdcard";
+        boolean ret = RootUtil.executeCmd(command);
+        if (!ret) {
+            //记录mount信息
+            command = "mount";
+            RootUtil.executeCmd(command);
+            return false;
+        }
+        return true;
     }
 }

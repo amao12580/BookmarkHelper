@@ -4,7 +4,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <string name="SDCardNotReadOrWriteable">无法读写存储，可能缺少权限.</string>
-    <string name="SystemNotReadOrWriteable">无法挂载/data/分区为读写模式.</string>
+    <string name="SystemNotReadOrWriteable">无法挂载"/data"分区为读写模式.</string>
     <string name="aboutMe">关于我</string>
     <string name="aboutMeTitle">关于我</string>
     <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
@@ -23,7 +23,7 @@
     <string name="broswer_name_show_uc">UC浏览器</string>
     <string name="broswer_name_show_via">Via浏览器</string>
     <string name="broswer_name_show_x">X浏览器</string>
-    <string name="clickBackToExit">再按一次退出</string>
+    <string name="clickBackToExit">再按一次返回键退出</string>
     <string name="converter_directer_arrow_contentDescription">转换方向</string>
     <string name="dialogButtonOk">已阅</string>
     <string name="dialogTitle">快看提示！</string>
@@ -49,7 +49,7 @@
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -116,10 +117,8 @@ public class QQBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":已登录用户没有书签数据");
             return result;
         }
-        boolean isDetectQQ = false;
-        boolean isDetectWechat = false;
-        List<Bookmark> QQUserBookmarks = new LinkedList<>();
-        List<Bookmark> WechatUserBookmarks = new LinkedList<>();
+        Map<String, String> QQUser = new LinkedHashMap<>();
+        Map<String, String> WechatUser = new LinkedHashMap<>();
         for (String item : fileNames) {
             LogHelper.v("item:" + item);
             if (item == null) {
@@ -130,24 +129,32 @@ public class QQBroswer extends BasicBroswer {
                 continue;
             }
             String name = item.replaceAll(".db", "");
-            if (!isDetectQQ && name.matches(QQRegularRule)) {
-                isDetectQQ = true;
+            if (name.matches(QQRegularRule)) {
                 LogHelper.v("match success QQRegularRule.");
-                QQUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, item);
-                LogHelper.v("QQ用户：" + name + "，书签条数：" + QQUserBookmarks.size());
-            } else if (!isDetectWechat && name.matches(WechatRegularRule)) {
-                isDetectWechat = true;
-                LogHelper.v("match success WechatRegularRule.");
-                WechatUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, item);
-                LogHelper.v("微信用户：" + name + "，书签条数：" + WechatUserBookmarks.size());
+                QQUser.put(name, item);
+
             } else {
-                LogHelper.v("not match.");
+                LogHelper.v("not match QQRegularRule.");
+            }
+            if (name.matches(WechatRegularRule)) {
+                LogHelper.v("match success WechatRegularRule.");
+                WechatUser.put(name, item);
+            } else {
+                LogHelper.v("not match WechatRegularRule.");
             }
         }
-        if (isDetectQQ) {
+        for (Map.Entry<String, String> entry : QQUser.entrySet()) {
+            String name = entry.getKey();
+            String item = entry.getValue();
+            List<Bookmark> QQUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, item);
+            LogHelper.v("QQ用户：" + name + "，书签条数：" + QQUserBookmarks.size());
             result.addAll(QQUserBookmarks);
         }
-        if (isDetectWechat) {
+        for (Map.Entry<String, String> entry : WechatUser.entrySet()) {
+            String name = entry.getKey();
+            String item = entry.getValue();
+            List<Bookmark> WechatUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, item);
+            LogHelper.v("微信用户：" + name + "，书签条数：" + WechatUserBookmarks.size());
             result.addAll(WechatUserBookmarks);
         }
         LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
@@ -190,14 +197,6 @@ public class QQBroswer extends BasicBroswer {
         result.addAll(fetchBookmarksList(false, context, dbFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
         LogHelper.v(TAG + ":读取未登录用户书签SQLite数据库结束");
         return result;
-    }
-
-    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
-        return fetchBookmarksList(true, context, dbFilePath, tableName, columns, where, whereArgs, orderBy);
-    }
-
-    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath, String tableName, String[] columns, String where, String[] whereArgs, String orderBy) {
-        return fetchBookmarksList(true, context, dbFilePath, tableName, columns, where, whereArgs, orderBy);
     }
 
     private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {

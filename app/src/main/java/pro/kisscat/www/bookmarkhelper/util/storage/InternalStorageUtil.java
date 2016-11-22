@@ -6,9 +6,11 @@ import android.os.Environment;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
+import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
@@ -25,7 +27,7 @@ import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
  * Time:15:01
  */
 
-public final class InternalStorageUtil implements BasicStorageUtil {
+public final class InternalStorageUtil extends BasicStorageUtil {
     /**
      * 获取内置SD卡路径
      */
@@ -203,8 +205,8 @@ public final class InternalStorageUtil implements BasicStorageUtil {
         return files;
     }
 
-    public static boolean remountDataDir() {
-        return remountDataDir(false);
+    public static boolean remountDataDir(Context context) {
+        return remountDataDir(context, false);
     }
 
     private static boolean isReadOnlyNow = true;
@@ -212,21 +214,26 @@ public final class InternalStorageUtil implements BasicStorageUtil {
     /**
      * 重新挂载data目录为读写或只读
      */
-    private static boolean remountDataDir(boolean isNeedReadOnly) {
+    private static boolean remountDataDir(Context context, boolean isNeedReadOnly) {
+        boolean readWriteable = checkReadWriteable(context, Path.INNER_PATH_DATA + AppListUtil.thisAppPackageName + Path.FILE_SPLIT);
+        LogHelper.v("remountDataDir 读写权限检查结果：" + readWriteable);
+        if (readWriteable) {
+            return true;
+        }
         String command;
         if (isNeedReadOnly) {
 //            if (isReadOnlyNow) {
 //                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
 //                return;
 //            } else {
-            command = "mount -o remount, ro /data/";
+            command = "mount -o remount, ro /data";
 //            }
         } else {
 //            if (!isReadOnlyNow) {
 //                LogHelper.v("unnecessary remount.isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
 //                return;
 //            } else {
-            command = "mount -o remount, rw /data/";
+            command = "mount -o remount, rw /data";
 //            }
         }
         boolean ret = RootUtil.executeCmd(command);
@@ -248,18 +255,7 @@ public final class InternalStorageUtil implements BasicStorageUtil {
             RootUtil.executeCmd(command);
             return false;
         }
-        LogHelper.v("remountDataDir ret:" + ret + ",isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
-        return true;
-    }
-
-    public static boolean remountSDCardDir() {
-        String SDCardDir = Path.SDCARD_ROOTPATH;
-        LogHelper.v("SDCardDir:" + SDCardDir);
-        String command = "mount -o remount, rw " + SDCardDir;
-        boolean ret = RootUtil.executeCmd(command);
-        if (!ret) {
-            return false;
-        }
+        LogHelper.v("isReadOnlyNow:" + isReadOnlyNow + ",isNeedReadOnly:" + isNeedReadOnly);
         return true;
     }
 }

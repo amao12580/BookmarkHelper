@@ -57,6 +57,7 @@ import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
+import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
@@ -207,12 +208,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 LogHelper.v("成功获取了Root权限.");
             }
-            if (!InternalStorageUtil.remountDataDir()) {
+            if (!InternalStorageUtil.remountDataDir(this)) {
                 showDialogMessage(this.getResources().getString(R.string.SystemNotReadOrWriteable));
                 return;
             }
-
-            if (!InternalStorageUtil.remountSDCardDir()) {
+            if (!ExternalStorageUtil.remountSDCardDir(this)) {
                 showDialogMessage(this.getResources().getString(R.string.SDCardNotReadOrWriteable));
                 return;
             }

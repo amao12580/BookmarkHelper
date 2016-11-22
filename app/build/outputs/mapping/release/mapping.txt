@@ -32206,12 +32206,12 @@ pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmark
     java.lang.String donateURL -> r
     long lastBackTime -> s
     long currentBackTime -> t
-    64:363:void <init>() -> <init>
-    77:78:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-    83:132:void onCreate(android.os.Bundle) -> onCreate
-    142:181:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-    184:185:void setCurrentClickItemEnabled(boolean) -> a
-    189:248:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule) -> a
+    65:363:void <init>() -> <init>
+    78:79:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+    84:133:void onCreate(android.os.Bundle) -> onCreate
+    143:182:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    185:186:void setCurrentClickItemEnabled(boolean) -> a
+    190:248:void processConverter(pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule) -> a
     251:252:void showDialogMessage(java.lang.String) -> a
     263:294:void showSimpleDialog(java.lang.String) -> b
     297:298:void showToastMessage(android.app.Activity,java.lang.String) -> a
@@ -32224,18 +32224,18 @@ pro.kisscat.www.bookmarkhelper.activity.MainActivity -> pro.kisscat.www.bookmark
     390:392:void onDestroy() -> onDestroy
     396:398:void onStop() -> onStop
     424:429:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    64:64:void access$000(pro.kisscat.www.bookmarkhelper.activity.MainActivity,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule) -> a
-    64:64:void access$100(pro.kisscat.www.bookmarkhelper.activity.MainActivity,boolean) -> a
-    73:335:void <clinit>() -> <clinit>
+    65:65:void access$000(pro.kisscat.www.bookmarkhelper.activity.MainActivity,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule) -> a
+    65:65:void access$100(pro.kisscat.www.bookmarkhelper.activity.MainActivity,boolean) -> a
+    74:335:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.MainActivity$1 -> pro.kisscat.www.bookmarkhelper.activity.MainActivity$1:
     pro.kisscat.www.bookmarkhelper.activity.MainActivity this$0 -> a
-    125:125:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
-    128:130:void run() -> run
+    126:126:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity) -> <init>
+    129:131:void run() -> run
 pro.kisscat.www.bookmarkhelper.activity.MainActivity$2 -> pro.kisscat.www.bookmarkhelper.activity.MainActivity$2:
     pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule val$rule -> a
     pro.kisscat.www.bookmarkhelper.activity.MainActivity this$0 -> b
-    172:172:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule) -> <init>
-    174:175:void run() -> run
+    173:173:void <init>(pro.kisscat.www.bookmarkhelper.activity.MainActivity,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule) -> <init>
+    175:176:void run() -> run
 pro.kisscat.www.bookmarkhelper.activity.MainActivity$3 -> pro.kisscat.www.bookmarkhelper.activity.MainActivity$3:
     com.flyco.dialog.widget.NormalDialog val$dialog -> a
     pro.kisscat.www.bookmarkhelper.activity.MainActivity this$0 -> b
@@ -32426,35 +32426,35 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer -> pro.kisscat.w
     java.util.List bookmarks -> e
     java.lang.String filePath_origin -> f
     java.lang.String filePath_cp -> g
-    37:37:void <init>() -> <init>
-    45:45:java.lang.String getPackageName() -> getPackageName
-    58:59:void fillDefaultIcon(android.content.Context) -> d
-    63:64:void fillDefaultAppName(android.content.Context) -> c
-    73:104:java.util.List readBookmark(android.content.Context) -> e
-    108:154:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
-    158:172:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String,java.lang.String) -> a
-    176:192:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
-    204:204:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    208:244:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> a
-    248:255:void parseBookmarkWithoutFolder(android.database.Cursor,java.util.List) -> a
-    258:278:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> b
-    281:285:java.lang.String parseFolderPath(java.util.Map,long) -> a
-    289:297:java.lang.String parseFolderPath(java.util.Map,long,java.lang.String) -> a
-    301:311:java.util.List parseQQBookmark(android.database.Cursor) -> a
-    324:324:boolean checkNeedParseFolder(java.lang.String[]) -> a
-    329:329:int appendBookmark(android.content.Context,java.util.List) -> a
-    40:69:void <clinit>() -> <clinit>
+    38:38:void <init>() -> <init>
+    46:46:java.lang.String getPackageName() -> getPackageName
+    59:60:void fillDefaultIcon(android.content.Context) -> d
+    64:65:void fillDefaultAppName(android.content.Context) -> c
+    74:105:java.util.List readBookmark(android.content.Context) -> e
+    109:161:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String) -> a
+    165:179:java.util.List fetchBookmarksListByUserHasLogined(android.content.Context,java.lang.String,java.lang.String) -> a
+    183:199:java.util.List fetchBookmarksListByNoUserLogined(android.content.Context,java.lang.String) -> b
+    203:203:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    207:243:java.util.List fetchBookmarksList(boolean,android.content.Context,java.lang.String,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> a
+    247:254:void parseBookmarkWithoutFolder(android.database.Cursor,java.util.List) -> a
+    257:277:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> b
+    280:284:java.lang.String parseFolderPath(java.util.Map,long) -> a
+    288:296:java.lang.String parseFolderPath(java.util.Map,long,java.lang.String) -> a
+    300:310:java.util.List parseQQBookmark(android.database.Cursor) -> a
+    323:323:boolean checkNeedParseFolder(java.lang.String[]) -> a
+    328:328:int appendBookmark(android.content.Context,java.util.List) -> a
+    41:70:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$1 -> pro.kisscat.www.bookmarkhelper.converter.support.a.g$1:
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$QQBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.a.g$a:
     long parent_uuid -> b
     long uuid -> c
     pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer this$0 -> a
-    314:314:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer) -> <init>
-    315:315:long getParent_uuid() -> a
-    316:316:void setParent_uuid(long) -> a
-    318:318:long getUuid() -> b
-    319:319:void setUuid(long) -> b
-    314:314:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$1) -> <init>
+    313:313:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer) -> <init>
+    314:314:long getParent_uuid() -> a
+    315:315:void setParent_uuid(long) -> a
+    317:317:long getUuid() -> b
+    318:318:void setUuid(long) -> b
+    313:313:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer$1) -> <init>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.h:
     java.util.List bookmarks -> c
     java.lang.String filePath_origin -> d
@@ -32746,14 +32746,15 @@ pro.kisscat.www.bookmarkhelper.util.Path -> pro.kisscat.www.bookmarkhelper.util.
     java.lang.String SDCARD_TMP_ROOTPATH -> f
     15:22:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil -> pro.kisscat.www.bookmarkhelper.util.a.a:
-    java.util.Map installedAllApp -> b
+    java.util.Map installedAllApp -> c
     java.lang.String thisAppInfo -> a
-    31:34:java.util.Map getInstalledAllApp(android.content.Context) -> c
-    38:41:void reInit(android.content.Context) -> a
-    44:85:void init(android.content.Context) -> b
-    88:88:boolean isInstalled(android.content.Context,java.lang.String) -> a
-    99:102:java.lang.String getAppName(android.content.Context,java.lang.String) -> b
-    106:109:pro.kisscat.www.bookmarkhelper.converter.support.pojo.App getAppInfo(android.content.Context,java.lang.String) -> c
+    java.lang.String thisAppPackageName -> b
+    32:35:java.util.Map getInstalledAllApp(android.content.Context) -> c
+    39:42:void reInit(android.content.Context) -> a
+    45:87:void init(android.content.Context) -> b
+    90:90:boolean isInstalled(android.content.Context,java.lang.String) -> a
+    101:104:java.lang.String getAppName(android.content.Context,java.lang.String) -> b
+    108:111:pro.kisscat.www.bookmarkhelper.converter.support.pojo.App getAppInfo(android.content.Context,java.lang.String) -> c
 pro.kisscat.www.bookmarkhelper.util.command.CommandUtil -> pro.kisscat.www.bookmarkhelper.util.command.a:
     pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult commandResult -> a
     24:29:void <init>() -> <init>
@@ -32785,12 +32786,12 @@ pro.kisscat.www.bookmarkhelper.util.context.ContextUtil -> pro.kisscat.www.bookm
     25:25:java.lang.String buildReadBookmarksEmptyMessage(android.content.Context,java.lang.String) -> b
     29:29:java.lang.String buildAppendBookmarksErrorMessage(android.content.Context,java.lang.String) -> c
     33:33:java.lang.String buildFileCPErrorMessage(android.content.Context,java.lang.String) -> d
-    37:37:java.lang.String buildFileMkdirErrorMessage(android.content.Context,java.lang.String) -> e
-    41:41:java.lang.String buildFileDeleteErrorMessage(android.content.Context,java.lang.String) -> f
-    45:45:java.lang.String buildViaBookmarksFileMiss(android.content.Context,java.lang.String) -> g
-    49:49:java.lang.String buildReadBookmarksTableNotExistErrorMessage(android.content.Context,java.lang.String) -> h
-    53:53:java.lang.String buildAppNotInstalledMessage(android.content.Context,java.lang.String) -> i
-    57:57:java.lang.String buildRuleNotSupportedNowMessage(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
+    37:40:java.lang.String buildFileMkdirErrorMessage(android.content.Context,java.lang.String) -> e
+    44:44:java.lang.String buildFileDeleteErrorMessage(android.content.Context,java.lang.String) -> f
+    48:48:java.lang.String buildViaBookmarksFileMiss(android.content.Context,java.lang.String) -> g
+    52:52:java.lang.String buildReadBookmarksTableNotExistErrorMessage(android.content.Context,java.lang.String) -> h
+    56:56:java.lang.String buildAppNotInstalledMessage(android.content.Context,java.lang.String) -> i
+    60:60:java.lang.String buildRuleNotSupportedNowMessage(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule) -> a
 pro.kisscat.www.bookmarkhelper.util.file.FileUtil -> pro.kisscat.www.bookmarkhelper.util.c.a:
     16:19:pro.kisscat.www.bookmarkhelper.util.file.pojo.File formatFileSize(java.io.File) -> a
 pro.kisscat.www.bookmarkhelper.util.file.pojo.File -> pro.kisscat.www.bookmarkhelper.util.c.a.a:
@@ -32893,29 +32894,35 @@ pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhel
     26:26:boolean upgradeRootPermission(android.content.Context) -> a
     30:30:boolean executeCmd(java.lang.String) -> a
     34:40:pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult executeCmd(java.lang.String[]) -> a
-pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.i.a:
-    26:26:void <init>() -> <init>
-    32:54:java.lang.String getRootPath() -> a
-    73:82:java.io.File copyFile(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> a
-    92:97:void mkdir(android.content.Context,java.lang.String,java.lang.String) -> a
-pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.i.b:
+pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil -> pro.kisscat.www.bookmarkhelper.util.i.a:
+    22:22:void <init>() -> <init>
+    30:35:boolean mkdir(android.content.Context,java.lang.String,java.lang.String,boolean) -> a
+    39:40:boolean createNewFile(java.lang.String) -> a
+    44:45:boolean readFile(java.lang.String) -> b
+    52:71:boolean checkReadWriteable(android.content.Context,java.lang.String) -> a
+pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.i.b:
+    29:29:void <init>() -> <init>
+    35:57:java.lang.String getRootPath() -> a
+    76:85:java.io.File copyFile(android.content.Context,java.lang.String,java.lang.String,java.lang.String) -> a
+    89:90:void mkdir(android.content.Context,java.lang.String,java.lang.String) -> a
+    93:106:boolean remountSDCardDir(android.content.Context) -> a
+pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil -> pro.kisscat.www.bookmarkhelper.util.i.c:
     boolean isReadOnlyNow -> a
-    28:28:void <init>() -> <init>
-    34:40:java.lang.String getRootPath() -> a
-    52:52:boolean deleteFile(android.content.Context,java.lang.String,java.lang.String) -> a
-    56:68:boolean deleteFile(boolean,android.content.Context,java.lang.String,java.lang.String) -> a
-    80:80:boolean isExistFile(java.lang.String) -> a
-    92:92:boolean isExistDir(java.lang.String) -> b
-    96:105:boolean isExist(java.lang.String,pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType) -> a
-    113:126:java.util.List lsDir(java.lang.String) -> c
-    138:138:java.util.List lsFileAndSortByRegular(java.lang.String,java.lang.String) -> a
-    143:164:java.util.List lsFileByRegular(java.lang.String,java.lang.String,boolean) -> a
-    169:194:java.util.List parseFile(java.util.List) -> a
-    201:203:java.util.List parseFileAndSortByFileChangeTimeDesc(java.util.List) -> b
-    207:207:boolean remountDataDir() -> b
-    217:252:boolean remountDataDir(boolean) -> a
-    256:263:boolean remountSDCardDir() -> c
-    210:210:void <clinit>() -> <clinit>
+    30:30:void <init>() -> <init>
+    36:42:java.lang.String getRootPath() -> a
+    54:54:boolean deleteFile(android.content.Context,java.lang.String,java.lang.String) -> a
+    58:70:boolean deleteFile(boolean,android.content.Context,java.lang.String,java.lang.String) -> a
+    82:82:boolean isExistFile(java.lang.String) -> a
+    94:94:boolean isExistDir(java.lang.String) -> b
+    98:107:boolean isExist(java.lang.String,pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType) -> a
+    115:128:java.util.List lsDir(java.lang.String) -> c
+    140:140:java.util.List lsFileAndSortByRegular(java.lang.String,java.lang.String) -> a
+    145:166:java.util.List lsFileByRegular(java.lang.String,java.lang.String,boolean) -> a
+    171:196:java.util.List parseFile(java.util.List) -> a
+    203:205:java.util.List parseFileAndSortByFileChangeTimeDesc(java.util.List) -> b
+    209:209:boolean remountDataDir(android.content.Context) -> a
+    218:259:boolean remountDataDir(android.content.Context,boolean) -> a
+    212:212:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil -> pro.kisscat.www.bookmarkhelper.util.j.a:
     android.os.Handler handler -> a
     android.widget.Toast toast -> b
