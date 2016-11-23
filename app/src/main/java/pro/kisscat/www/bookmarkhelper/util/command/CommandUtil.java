@@ -20,6 +20,7 @@ import lombok.Getter;
 import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
+import pro.kisscat.www.bookmarkhelper.util.random.RandomUtil;
 
 public class CommandUtil {
     private static final String COMMAND_SU = "su";
@@ -62,14 +63,17 @@ public class CommandUtil {
             }
             os.writeBytes(COMMAND_EXIT);
             os.flush();
+            os.close();
             is = process.getInputStream();
             es = process.getErrorStream();
             stdoutThread = new IOThread(is, stdoutList).start();
             erroroutThread = new IOThread(es, erroroutList).start();
-            LogHelper.v("process.waitFor() start.");
+            LogHelper.v("waitFor start.");
             result = process.waitFor();
-            LogHelper.v("process.waitFor() end.");
-            Thread.sleep(20);//睡眠20毫秒，等待io流线程读取，实测低于10时会出现io流没读到的问题
+            LogHelper.v("waitFor end.");
+            int sleep = 20 + RandomUtil.nextInt(10);//随机睡眠20~30毫秒，等待io流线程读取，实测低于10时会出现io流没读完整的问题
+            LogHelper.v("sleep:" + sleep);
+            Thread.sleep(sleep);
             LogHelper.v("result is:" + result + ",successMsg is:" + JsonUtil.toJson(stdoutList) + ",errorMsg is:" + JsonUtil.toJson(erroroutList), false);
         } catch (IOException e) {
             LogHelper.e("IOException:Root cmd 执行失败,commands:" + commandStr + ",exception:" + e.getMessage());

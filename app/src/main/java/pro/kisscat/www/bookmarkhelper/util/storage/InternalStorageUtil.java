@@ -71,43 +71,6 @@ public final class InternalStorageUtil extends BasicStorageUtil {
     }
 
     /**
-     * 文件是否存在？
-     * <p>
-     * 与JDK File.exist()的区别是，利用root权限，不受android权限框架限制，可以读取任意文件的存在性
-     * <p>
-     * 借用root权限
-     * <p>
-     */
-    public static boolean isExistFile(String filePath) {
-        return isExist(filePath, FileType.FILE);
-    }
-
-    /**
-     * 目录是否存在？
-     * <p>
-     * 与JDK File.exist()的区别是，利用root权限，不受android权限框架限制，可以读取任意目录的存在性
-     * <p>
-     * 借用root权限
-     * <p>
-     */
-    public static boolean isExistDir(String dirPath) {
-        return isExist(dirPath, FileType.DIR);
-    }
-
-    private static boolean isExist(String path, FileType fileType) {
-        String[] commands = new String[4];
-        int existFlag = 10;
-        int notExistFlag = 20;
-        commands[0] = "if test -" + (fileType.equals(FileType.FILE) ? "f" : "d") + " " + path + " ";
-        commands[1] = "then echo " + existFlag;
-        commands[2] = "else echo " + notExistFlag;
-        commands[3] = "fi";
-        CommandResult commandResult = RootUtil.executeCmd(commands);
-        return commandResult != null && commandResult.isSuccess() && commandResult.getSuccessMsg() != null &&
-                existFlag == Integer.valueOf(commandResult.getSuccessMsg().isEmpty() ? "0" : commandResult.getSuccessMsg().get(0));
-    }
-
-    /**
      * 列出dir下的所有dir
      */
     public static List<String> lsDir(String dir) {

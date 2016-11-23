@@ -75,6 +75,7 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
 
     private void initWebView(String mUrl) {
         mCustomWebView = new CustomWebView(this, this);
+//        mCustomWebView.loadUrl("http://blog.csdn.net/lmj623565791/article/details/50709663");//加载页面
         mCustomWebView.loadUrl(mUrl);//加载页面
         mCustomWebView.setFocusable(true);
         mCustomWebView.setFocusableInTouchMode(true);
@@ -98,9 +99,9 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
      */
     private boolean decodeImage(String sUrl) {
         System.out.println("decodeImage.sUrl:" + sUrl);
-        Bitmap bitmap=getBitmap(sUrl);
+        Bitmap bitmap = getBitmap(sUrl);
         System.out.println("decodeImage.bitmap:" + bitmap);
-        result = DecodeImage.handleQRCodeFormBitmap(getBitmap(sUrl));
+        result = DecodeImage.handleQRCodeFormBitmap(bitmap);
         System.out.println("decodeImage.result:" + result);
         isQR = result != null;
         return isQR;
@@ -126,10 +127,11 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
      * 根据地址获取网络图片 sUrl 图片地址
      */
     public Bitmap getBitmap(String sUrl) {
+        HttpURLConnection conn = null;
         try {
             URL url = new URL(sUrl);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setConnectTimeout(5000);
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setConnectTimeout(3000);
             conn.setRequestMethod("GET");
             if (conn.getResponseCode() == 200) {
                 InputStream inputStream = conn.getInputStream();
@@ -139,6 +141,10 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
         }
         return null;
     }
@@ -167,7 +173,7 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
                                 break;
                             case 1:
                                 saveImageToGallery(QRCodeActivity.this);
-                                Toast.makeText(QRCodeActivity.this, "已保存", Toast.LENGTH_LONG).show();
+                                Toast.makeText(QRCodeActivity.this, "已保存到相册", Toast.LENGTH_LONG).show();
                                 closeDialog();
                                 break;
                             case 2:

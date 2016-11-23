@@ -12,7 +12,6 @@ import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
-import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
@@ -78,11 +77,10 @@ public final class ExternalStorageUtil extends BasicStorageUtil {
         if (!result) {
             throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
         }
-        File file = new File(target);
-        if (!file.exists()) {
+        if (!isExistFile(target)) {
             throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
         }
-        return file;
+        return new File(target);
     }
 
     public static void mkdir(Context context, String dirPath, String mark) {
