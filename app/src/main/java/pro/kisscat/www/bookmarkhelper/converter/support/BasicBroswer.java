@@ -181,4 +181,14 @@ public class BasicBroswer extends App implements Broswerable {
         }
         setBookmarkSum(target.size());
     }
+
+    protected String getFileNameByTrimPath(String dir, String fileFullName) {
+        if (fileFullName == null || fileFullName.isEmpty()) {
+            return fileFullName;
+        }
+        if (fileFullName.startsWith(dir)) {
+            return fileFullName.replace(dir, "");
+        }
+        return fileFullName;
+    }
 }

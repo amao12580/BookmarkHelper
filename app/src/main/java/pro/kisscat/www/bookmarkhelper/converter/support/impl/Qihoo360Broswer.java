@@ -299,6 +299,7 @@ public class Qihoo360Broswer extends BasicBroswer {
                 LogHelper.v("item is null.");
                 break;
             }
+            item = getFileNameByTrimPath(appRootDir, item);
             String tmp = item;
             if (tmp.startsWith(startKey1) || tmp.startsWith(startKey2)) {
                 tmp = tmp.replaceAll(startKey1, "");

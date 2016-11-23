@@ -30,5 +30,4 @@ public class DecodeImage {
         }
         return result;
     }
-
 }

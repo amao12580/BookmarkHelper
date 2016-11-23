@@ -128,6 +128,7 @@ public class QQBroswer extends BasicBroswer {
             if (item.equals(fileName_origin)) {
                 continue;
             }
+            item = getFileNameByTrimPath(dir, item);
             String name = item.replaceAll(".db", "");
             if (name.matches(QQRegularRule)) {
                 LogHelper.v("match success QQRegularRule.");

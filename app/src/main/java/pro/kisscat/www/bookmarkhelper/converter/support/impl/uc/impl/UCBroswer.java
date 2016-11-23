@@ -122,6 +122,7 @@ public class UCBroswer extends UCBroswerable {
             if (item.equals(fileName_origin)) {
                 continue;
             }
+            item = getFileNameByTrimPath(dir, item);
             if (item.matches(regularRule)) {
                 targetFilePath = dir + item;
                 targetFileName = item;

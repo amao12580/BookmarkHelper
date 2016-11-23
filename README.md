@@ -117,7 +117,9 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 #### [0.0.12版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.12%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.12.apk)
 1.增加兼容：支持从[UC国际版浏览器](http://www.coolapk.com/apk/com.UCMobile.intl)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-2.现在捐助页面，支持长按二维码使用微信打开
+2.Bug 修复：针对部分机型，无法获取到：QQ、搜狗、360、UC等浏览器的登录用户书签的问题
+
+3.现在捐助页面，支持长按二维码使用微信打开
 
 #### 0.0.13版 Draft
 1.增加兼容：支持从[Chrome Canary浏览器](http://www.coolapk.com/apk/com.chrome.canary)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

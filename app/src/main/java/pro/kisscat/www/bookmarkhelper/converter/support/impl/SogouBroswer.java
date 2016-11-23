@@ -124,6 +124,7 @@ public class SogouBroswer extends BasicBroswer {
                 LogHelper.v("item is null.");
                 break;
             }
+            item = getFileNameByTrimPath(appRootDir, item);
             String tmp = item;
             if (tmp.startsWith(startKey)) {
                 tmp = tmp.replaceAll(startKey, "");
