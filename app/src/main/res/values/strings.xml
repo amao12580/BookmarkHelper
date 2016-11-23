@@ -12,6 +12,7 @@
     <string name="broswer_name_show_baidu">Baidu Broswer</string>
     <string name="broswer_name_show_sougou">Sougou Broswer</string>
     <string name="broswer_name_show_uc">UC Broswer</string>
+    <string name="broswer_name_show_ucintl">UC international</string>
     <string name="broswer_name_show_via">Via Broswer</string>
 
     <string name="source_broswer_icon_contentDescription">source broswer</string>

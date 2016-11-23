@@ -38,6 +38,10 @@
         <activity
             android:name="pro.kisscat.www.bookmarkhelper.activity.Html5Activity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

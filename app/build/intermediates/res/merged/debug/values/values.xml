@@ -599,6 +599,7 @@
     <string name="broswer_name_show_qq">QQ Broswer</string>
     <string name="broswer_name_show_sougou">Sougou Broswer</string>
     <string name="broswer_name_show_uc">UC Broswer</string>
+    <string name="broswer_name_show_ucintl">UC international</string>
     <string name="broswer_name_show_via">Via Broswer</string>
     <string name="broswer_name_show_x">X Broswer</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
@@ -1661,6 +1662,20 @@
         <item name="tabBackground">?attr/selectableItemBackground</item>
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>

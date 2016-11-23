@@ -43,6 +43,7 @@ import permissions.dispatcher.OnShowRationale;
 import permissions.dispatcher.PermissionRequest;
 import permissions.dispatcher.RuntimePermissions;
 import pro.kisscat.www.bookmarkhelper.R;
+import pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
@@ -338,17 +339,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (donateURL == null) {
             donateURL = lv.getResources().getString(R.string.donateURL);
         }
-        openUrlInWebview(donateURL, lv.getResources().getString(R.string.donateTitle), R.drawable.ic_donate);
+        openUrlInWebview(donateURL, lv.getResources().getString(R.string.donateTitle), R.drawable.ic_donate, true);
     }
 
     private void openUrlInWebview(String url, String title, int logo) {
+        openUrlInWebview(url, title, logo, false);
+    }
+
+    private void openUrlInWebview(String url, String title, int logo, boolean withQRCode) {
         if (!NetworkUtil.isNetworkConnected(this)) {
             showToastMessage(this, lv.getResources().getString(R.string.networkError));
             Intent intent = new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS);
             startActivity(intent);
             return;
         }
-        Intent intent = new Intent(MainActivity.this, Html5Activity.class);
+        Intent intent;
+        if (withQRCode) {
+            intent = new Intent(MainActivity.this, QRCodeActivity.class);
+        } else {
+            intent = new Intent(MainActivity.this, Html5Activity.class);
+        }
         Bundle bundle = new Bundle();
         bundle.putString("url", url);
         bundle.putString("title", title);

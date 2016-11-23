@@ -5,47 +5,33 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="363747587606174"
+    timestamp="381218040039281"
     token="8197979418733297465"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1285" />
+        duration="1016" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="21" />
+        duration="1644" />
     <task
         name="verifier"
-        duration="1" />
+        duration="93" />
 
     <artifact
-        location="D:\GitHub\BookmarkHelper\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
-        type="DEX" />
+        location="D:\GitHub\BookmarkHelper\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="362432396281833"
+        timestamp="381218040039281"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\GitHub\BookmarkHelper\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="362903432900319"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="D:\GitHub\BookmarkHelper\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="363747587606174"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="D:\GitHub\BookmarkHelper\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

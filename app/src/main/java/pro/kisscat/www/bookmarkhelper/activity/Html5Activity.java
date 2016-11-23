@@ -49,7 +49,7 @@ public class Html5Activity extends AppCompatActivity {
     @JavascriptInterface
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        LogHelper.v("WebView start.");
+        LogHelper.v("Html5Activity start.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
         Bundle bundle = getIntent().getBundleExtra("bundle");
@@ -65,7 +65,6 @@ public class Html5Activity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(true);
-
             actionBar.setDisplayUseLogoEnabled(true);
         }
         mWebView = (WebView) findViewById(R.id.baseweb_webview);
@@ -92,6 +91,7 @@ public class Html5Activity extends AppCompatActivity {
         mWebSettings.setDefaultTextEncodingName("utf-8");
         mWebSettings.setLoadsImagesAutomatically(true);
         mWebSettings.setJavaScriptEnabled(true);
+        mWebSettings.setBlockNetworkImage(true);
         mWebSettings.setAllowFileAccess(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mWebSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
