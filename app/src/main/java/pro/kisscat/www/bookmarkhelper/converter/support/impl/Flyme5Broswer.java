@@ -5,9 +5,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.content.ContextCompat;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
+import lombok.Getter;
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
@@ -15,6 +19,7 @@ import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
+import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
@@ -90,7 +95,7 @@ public class Flyme5Broswer extends BasicBroswer {
         return bookmarks;
     }
 
-    private final static String[] columns = new String[]{"title", "url"};
+    private final static String[] columns = new String[]{"_id", "title", "url", "folder", "parent"};
 
     private List<Bookmark> fetchBookmarksList(String dbFilePath) {
         LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
@@ -106,16 +111,10 @@ public class Flyme5Broswer extends BasicBroswer {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(this.getName()));
             }
-            cursor = sqLiteDatabase.query(false, tableName, columns, null, null, "url", null, "created asc", null);
+            cursor = sqLiteDatabase.query(false, tableName, columns, null, null, null, null, "created asc", null);
             if (cursor != null && cursor.getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    Bookmark item = new Bookmark();
-                    item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-                    item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
-                    result.add(item);
-                }
+                parseBookmarkWithFolder(cursor, result);
             }
-
         } finally {
             if (cursor != null) {
                 cursor.close();
@@ -126,6 +125,78 @@ public class Flyme5Broswer extends BasicBroswer {
             LogHelper.v(TAG + ":读取书签SQLite数据库结束");
         }
         return result;
+    }
+
+    private void parseBookmarkWithFolder(Cursor cursor, List<Bookmark> result) {
+        List<Flyme5Bookmark> bookmarks = parseBookmark(cursor);
+        Map<Integer, Flyme5Bookmark> folders = new HashMap<>();
+        for (Flyme5Bookmark item : bookmarks) {
+            int folder = item.getIsFolder();
+            if (folder == 1) {
+                folders.put(item.getId(), item);
+            }
+        }
+
+        for (Flyme5Bookmark item : bookmarks) {
+            int folder = item.getIsFolder();
+            if (folder == 0) {
+                String folderPath = trim(parseFolderPath(folders, item.getParent()));
+                Bookmark bookmark = new Bookmark();
+                bookmark.setTitle(item.getTitle());
+                bookmark.setUrl(item.getUrl());
+                bookmark.setFolder(folderPath == null ? "" : folderPath);
+                result.add(bookmark);
+            }
+        }
+    }
+
+    private String parseFolderPath(Map<Integer, Flyme5Bookmark> folders, Integer parentId) {
+        Flyme5Bookmark parent = folders.get(parentId);
+        if (parent == null) {
+            return null;
+        }
+        return parseFolderPath(folders, parentId, "");
+    }
+
+    private String parseFolderPath(Map<Integer, Flyme5Bookmark> folders, Integer parent_uuid, String path) {
+        if (parent_uuid == null || parent_uuid <= 0) {
+            return path;
+        }
+        Flyme5Bookmark parent = folders.get(parent_uuid);
+        if (parent == null) {
+            return path;
+        }
+        String title = parent.getTitle();
+        if (!(title == null || title.isEmpty())) {
+            path = title + Path.FILE_SPLIT + path;
+        }
+        return parseFolderPath(folders, parent.getParent(), path);
+    }
+
+    private List<Flyme5Bookmark> parseBookmark(Cursor cursor) {
+        List<Flyme5Bookmark> result = new LinkedList<>();
+        while (cursor.moveToNext()) {
+            Flyme5Bookmark item = new Flyme5Bookmark();
+            item.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+            item.setUrl(cursor.getString(cursor.getColumnIndex("url")));
+            item.setId(cursor.getInt(cursor.getColumnIndex("_id")));
+            item.setIsFolder(cursor.getInt(cursor.getColumnIndex("folder")));
+            item.setParent(cursor.getInt(cursor.getColumnIndex("parent")));
+            result.add(item);
+        }
+        return result;
+    }
+
+    private class Flyme5Bookmark extends Bookmark {
+        @Getter
+        @Setter
+        private int id;
+        @Getter
+        @Setter
+        private int isFolder;
+        @Getter
+        @Setter
+        private int parent;
     }
 
     @Override

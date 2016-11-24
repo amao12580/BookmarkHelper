@@ -856,7 +856,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    41:44:public int readBookmarkSum()
+    46:49:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

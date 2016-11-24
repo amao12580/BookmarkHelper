@@ -33671,14 +33671,32 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer -> pro.kissc
     java.lang.String filePath_origin -> d
     java.lang.String filePath_cp -> e
     java.lang.String[] columns -> f
-    30:30:void <init>() -> <init>
-    36:36:java.lang.String getPackageName() -> getPackageName
-    49:50:void fillDefaultIcon(android.content.Context) -> d
-    54:55:void fillDefaultAppName(android.content.Context) -> c
-    64:90:java.util.List readBookmark() -> a
-    96:128:java.util.List fetchBookmarksList(java.lang.String) -> b
-    133:133:int appendBookmark(java.util.List) -> a
-    59:93:void <clinit>() -> <clinit>
+    35:35:void <init>() -> <init>
+    41:41:java.lang.String getPackageName() -> getPackageName
+    54:55:void fillDefaultIcon(android.content.Context) -> d
+    59:60:void fillDefaultAppName(android.content.Context) -> c
+    69:95:java.util.List readBookmark() -> a
+    101:127:java.util.List fetchBookmarksList(java.lang.String) -> b
+    131:151:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> a
+    154:158:java.lang.String parseFolderPath(java.util.Map,java.lang.Integer) -> a
+    162:173:java.lang.String parseFolderPath(java.util.Map,java.lang.Integer,java.lang.String) -> a
+    177:187:java.util.List parseBookmark(android.database.Cursor) -> a
+    204:204:int appendBookmark(java.util.List) -> a
+    64:98:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer$1 -> pro.kisscat.www.bookmarkhelper.converter.support.a.d$1:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer$Flyme5Bookmark -> pro.kisscat.www.bookmarkhelper.converter.support.a.d$a:
+    int id -> b
+    int isFolder -> c
+    int parent -> d
+    pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer this$0 -> a
+    190:190:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer) -> <init>
+    191:191:int getId() -> a
+    192:192:void setId(int) -> a
+    194:194:int getIsFolder() -> b
+    195:195:void setIsFolder(int) -> b
+    197:197:int getParent() -> c
+    198:198:void setParent(int) -> c
+    190:190:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer$1) -> <init>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.e:
     java.util.List bookmarks -> c
     java.lang.String filePath_origin -> d
@@ -33844,7 +33862,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer -> pro.kissca
     250:254:java.lang.String parseFolderPath(java.util.Map,java.lang.String) -> a
     258:266:java.lang.String parseFolderPath(java.util.Map,java.lang.String,java.lang.String) -> a
     270:280:java.util.List parseBookmark(android.database.Cursor) -> a
-    298:298:int appendBookmark(java.util.List) -> a
+    297:297:int appendBookmark(java.util.List) -> a
     39:67:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer$1 -> pro.kisscat.www.bookmarkhelper.converter.support.a.i$1:
 pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer$SogouBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.a.i$a:
@@ -33857,8 +33875,8 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer$SogouBookmark
     285:285:void setF_server_id(java.lang.String) -> a
     287:287:java.lang.String getF_server_pid() -> b
     288:288:void setF_server_pid(java.lang.String) -> b
-    291:291:int getF_is_folder() -> c
-    292:292:void setF_is_folder(int) -> a
+    290:290:int getF_is_folder() -> c
+    291:291:void setF_is_folder(int) -> a
     283:283:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer,pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer$1) -> <init>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.j:
     java.util.List bookmarks -> c

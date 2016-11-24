@@ -287,7 +287,6 @@ public class SogouBroswer extends BasicBroswer {
         @Getter
         @Setter
         private String f_server_pid;
-
         @Getter
         @Setter
         private int f_is_folder;
