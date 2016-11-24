@@ -20,7 +20,7 @@ public class ToastUtil {
     private static final Object synObj = new Object();
 
     public static void showMessage(final Context context, final String msg) {
-        showMessage(context, msg, Toast.LENGTH_SHORT);
+        showMessage(context, msg, Toast.LENGTH_LONG);
     }
 
 //    public static void showMessage(final Activity activity, final String msg) {
@@ -42,32 +42,32 @@ public class ToastUtil {
 
 
     public static void showMessage(final Context context, final int msg) {
-        showMessage(context, msg, Toast.LENGTH_SHORT);
+        showMessage(context, msg, Toast.LENGTH_LONG);
     }
 
     private static void showMessage(final Context context, final String msg, final int len) {
 //        https:github.com/zhitaocai/ToastCompat_Deprecated
 //        ToastCompat.makeText(context, msg, len).show();
-
-        new Thread(new Runnable() {
-            public void run() {
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        synchronized (synObj) {
-                            if (toast != null) {
-                                toast.cancel();
-                                toast.setText(msg);
-                                toast.setDuration(len);
-                            } else {
-                                toast = Toast.makeText(context, msg, len);
-                            }
-                            toast.show();
-                        }
-                    }
-                });
-            }
-        }).start();
+//
+//        new Thread(new Runnable() {
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        synchronized (synObj) {
+        if (toast != null) {
+            toast.cancel();
+            toast.setText(msg);
+            toast.setDuration(len);
+        } else {
+            toast = Toast.makeText(context, msg, len);
+        }
+        toast.show();
+//                        }
+//                    }
+//                });
+//            }
+//        }).start();
     }
 
     private static void showMessage(final Context context, final int msg, final int len) {

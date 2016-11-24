@@ -16,7 +16,6 @@ import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
-import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 /**
  * Created with Android Studio.
@@ -43,9 +42,9 @@ public class UCBroswer extends UCBroswerable {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -62,10 +61,9 @@ public class UCBroswer extends UCBroswerable {
 
     private static final String fileName_origin = "bookmark.db";
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/UC/";
-    private static String notSupportParseHomepageBookmarks;
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -73,15 +71,11 @@ public class UCBroswer extends UCBroswerable {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            if (notSupportParseHomepageBookmarks == null) {
-                notSupportParseHomepageBookmarks = context.getResources().getString(R.string.notSupportParseHomepageBookmarks);
-            }
-            ToastUtil.showMessage(context, notSupportParseHomepageBookmarks);
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
             String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
-            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
-            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_origin + fileName_origin, filePath_cp + fileName_origin);
+            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin);
+            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_origin + fileName_origin, filePath_cp + fileName_origin);
             LogHelper.v("已登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
             LogHelper.v("已登录的用户书签条数:" + bookmarksListPart1.size());
             LogHelper.v("未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
@@ -94,14 +88,18 @@ public class UCBroswer extends UCBroswerable {
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
     }
 
-    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String dir) {
+    public String getPreExecuteConverterMessage() {
+        return ContextUtil.buildNotSupportParseHomepageBookmarksMessage();
+    }
+
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(String dir) {
         LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
         List<Bookmark> result = new LinkedList<>();
         String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
@@ -137,14 +135,14 @@ public class UCBroswer extends UCBroswerable {
         }
         LogHelper.v("targetFilePath is:" + targetFilePath);
         String tmpFilePath = filePath_cp + targetFileName;
-        ExternalStorageUtil.copyFile(context, targetFilePath, tmpFilePath, this.getName());
-        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "bookmark", null, null, "create_time asc"));
+        ExternalStorageUtil.copyFile(targetFilePath, tmpFilePath, this.getName());
+        result.addAll(fetchBookmarksList(false, tmpFilePath, "bookmark", null, null, "create_time asc"));
         LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
         return result;
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

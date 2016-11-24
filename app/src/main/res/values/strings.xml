@@ -47,4 +47,5 @@
     <string name="notSupportParseHomepageBookmarks">not support parse UC homepage bookmarks</string>
     <string name="SDCardNotReadOrWriteable">Storage is not available.</string>
     <string name="SystemNotReadOrWriteable">System storage is not available.</string>
+    <string name="opeartionTooFast">Too fastest.</string>
 </resources>

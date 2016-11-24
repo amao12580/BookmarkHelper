@@ -1,8 +1,6 @@
 package pro.kisscat.www.bookmarkhelper.util.storage;
 
 
-import android.content.Context;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
@@ -65,7 +63,7 @@ public final class ExternalStorageUtil extends BasicStorageUtil {
      * <p>
      * root
      */
-    public static File copyFile(Context context, String source, String target, String mark) {
+    public static File copyFile(String source, String target, String mark) {
         /**
          * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）
          * -r  递归复制，包含目录
@@ -75,20 +73,20 @@ public final class ExternalStorageUtil extends BasicStorageUtil {
         String cmd = "cp -fr " + source + " " + target;
         boolean result = RootUtil.executeCmd(cmd);
         if (!result) {
-            throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
+            throw new ConverterException(ContextUtil.buildFileCPErrorMessage(mark));
         }
         if (!isExistFile(target)) {
-            throw new ConverterException(ContextUtil.buildFileCPErrorMessage(context, mark));
+            throw new ConverterException(ContextUtil.buildFileCPErrorMessage(mark));
         }
         return new File(target);
     }
 
-    public static void mkdir(Context context, String dirPath, String mark) {
-        mkdir(context, dirPath, mark, true);
+    public static void mkdir(String dirPath, String mark) {
+        mkdir(dirPath, mark, true);
     }
 
-    public static boolean remountSDCardDir(Context context) {
-        boolean readWriteable = checkReadWriteable(context, Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH);
+    public static boolean remountSDCardDir() {
+        boolean readWriteable = checkReadWriteable(Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH);
         LogHelper.v("remountSDCardDir 读写权限检查结果：" + readWriteable);
         if (readWriteable) {
             return true;

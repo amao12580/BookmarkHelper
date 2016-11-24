@@ -41,9 +41,9 @@ public class OupengBroswer extends BasicBroswer {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -64,7 +64,7 @@ public class OupengBroswer extends BasicBroswer {
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Oupeng/";
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -74,10 +74,10 @@ public class OupengBroswer extends BasicBroswer {
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
-            ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
-            List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp + fileName_origin);
+            ExternalStorageUtil.copyFile(originFilePathFull, filePath_cp + fileName_origin, this.getName());
+            List<Bookmark> bookmarksList = fetchBookmarksList(filePath_cp + fileName_origin);
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
@@ -87,7 +87,7 @@ public class OupengBroswer extends BasicBroswer {
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             e.printStackTrace();
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
@@ -96,7 +96,7 @@ public class OupengBroswer extends BasicBroswer {
 
     private final static String[] columns = new String[]{"_id", "parent", "isfolder", "title", "url"};
 
-    private List<Bookmark> fetchBookmarksList(Context context, String dbFilePath) {
+    private List<Bookmark> fetchBookmarksList(String dbFilePath) {
         LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
@@ -108,7 +108,7 @@ public class OupengBroswer extends BasicBroswer {
             tableExist = DBHelper.checkTableExist(sqLiteDatabase, tableName);
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
-                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(this.getName()));
             }
             cursor = sqLiteDatabase.query(false, tableName, columns, null, null, null, null, null, null);
             if (cursor != null && cursor.getCount() > 0) {
@@ -198,7 +198,7 @@ public class OupengBroswer extends BasicBroswer {
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

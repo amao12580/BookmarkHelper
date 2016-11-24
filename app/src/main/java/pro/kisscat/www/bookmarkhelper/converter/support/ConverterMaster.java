@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lombok.Getter;
+import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterExecutor;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.FirefoxBroswer;
@@ -19,14 +20,10 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCIntlBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
-import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
-import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
-import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
+import pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil;
 
 /**
  * Created with Android Studio.
@@ -45,7 +42,7 @@ public class ConverterMaster {
         AppListUtil.init(context);
         if (supportRule == null) {
             supportRule = new LinkedList<>();
-            ViaBroswerable viaBroswerable = ViaBroswerable.fetchViaBroswer(context);
+            ViaBroswerable viaBroswerable = ViaBroswerable.fetchViaBroswer();
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), viaBroswerable));
@@ -61,25 +58,8 @@ public class ConverterMaster {
         }
     }
 
-    public static int execute(Context context, Rule rule) {
-        ToastUtil.showMessage(context, "正在执行，大约需要5秒钟，请等待.");
-        long s = System.currentTimeMillis();
-        BasicBroswer source = rule.getSource();
-        LogHelper.v("正在执行的转换规则是:" + rule.getSource().getName() + "------------>" + rule.getTarget().getName());
-        List<Bookmark> sourceBookmarks = source.readBookmark(context);
-        if (sourceBookmarks == null) {
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, source.getName()));
-        }
-        if (sourceBookmarks.isEmpty()) {
-            throw new ConverterException(ContextUtil.buildReadBookmarksEmptyMessage(context, source.getName()));
-        }
-        BasicBroswer target = rule.getTarget();
-        int ret = target.appendBookmark(context, sourceBookmarks);
-        if (ret < 0) {
-            throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(context, target.getName()));
-        }
-        LogHelper.v("转换规则:" + rule.getSource().getName() + "------------>" + rule.getTarget().getName() + "执行完成，耗时：" + (System.currentTimeMillis() - s) + "ms.");
-        return ret;
+    public static int execute(Context context, ExecuteRule rule, ProgressBarUtil progressBarUtil) {
+        return new ConverterExecutor(context, rule,progressBarUtil).execute();
     }
 
     public static List<ExecuteRule> cover2Execute(Context context, List<Rule> rules) {

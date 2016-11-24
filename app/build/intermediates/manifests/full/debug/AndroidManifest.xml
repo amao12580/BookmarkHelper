@@ -3,7 +3,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pro.kisscat.www.bookmarkhelper.debug"
     android:versionCode="1"
-    android:versionName="0.0.11-f1" >
+    android:versionName="0.0.12" >
 
     <uses-sdk
         android:minSdkVersion="16"

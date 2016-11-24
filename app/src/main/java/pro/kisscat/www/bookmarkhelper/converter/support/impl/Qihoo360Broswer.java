@@ -43,9 +43,9 @@ public class Qihoo360Broswer extends BasicBroswer {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -64,7 +64,7 @@ public class Qihoo360Broswer extends BasicBroswer {
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/360/";
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -72,10 +72,10 @@ public class Qihoo360Broswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
-            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
-            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_origin);
+            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin);
+            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_origin);
             LogHelper.v("已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
             LogHelper.v("已登录用户书签条数:" + bookmarksListPart1.size());
             LogHelper.v("未登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
@@ -92,7 +92,7 @@ public class Qihoo360Broswer extends BasicBroswer {
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             e.printStackTrace();
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
@@ -102,14 +102,14 @@ public class Qihoo360Broswer extends BasicBroswer {
     private final static String[] columns_noLogin = new String[]{"_id", "title", "url", "folder", "parent"};
     private final static String[] columns_hasLogined = new String[]{"id", "parent_id", "is_folder", "title", "url"};
 
-    private List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String rootDir) {
+    private List<Bookmark> fetchBookmarksListByNoUserLogined(String rootDir) {
         LogHelper.v(TAG + ":开始读取未登录用户书签,rootDir:" + rootDir);
         String fileName_origin = "browser.db";
         String fileDir_origin = Path.FILE_SPLIT + "databases" + Path.FILE_SPLIT;
         String originFilePathFull = rootDir + fileDir_origin + fileName_origin;
         LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
         LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
-        ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
+        ExternalStorageUtil.copyFile(originFilePathFull, filePath_cp + fileName_origin, this.getName());
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
@@ -120,7 +120,7 @@ public class Qihoo360Broswer extends BasicBroswer {
             tableExist = DBHelper.checkTableExist(sqLiteDatabase, tableName);
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
-                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(this.getName()));
             }
             cursor = sqLiteDatabase.query(false, tableName, columns_noLogin, null, null, null, null, "created asc", null);
             if (cursor != null && cursor.getCount() > 0) {
@@ -274,7 +274,7 @@ public class Qihoo360Broswer extends BasicBroswer {
         private long parent;
     }
 
-    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String appRootDir) {
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(String appRootDir) {
         LogHelper.v(TAG + ":开始读取已登录用户书签,appRootDir:" + appRootDir);
         String fileDir_origin = Path.FILE_SPLIT + "app_bookmark" + Path.FILE_SPLIT;
         String originFileDirPath = appRootDir + fileDir_origin;
@@ -318,7 +318,7 @@ public class Qihoo360Broswer extends BasicBroswer {
             return result;
         }
         for (String item : targetFileNames) {
-            List<Bookmark> part = fetchBookmarksListByUserHasLogined(context, originFileDirPath, item);
+            List<Bookmark> part = fetchBookmarksListByUserHasLogined(originFileDirPath, item);
             LogHelper.v("part:" + targetFileNames + ",size:" + part.size());
             result.addAll(part);
         }
@@ -326,13 +326,13 @@ public class Qihoo360Broswer extends BasicBroswer {
         return result;
     }
 
-    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String bookmarkDir, String fileName) {
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(String bookmarkDir, String fileName) {
         LogHelper.v(TAG + ":开始读取已登录用户书签,bookmarkDir:" + bookmarkDir + ",fileName:" + fileName);
         List<Bookmark> result = new LinkedList<>();
         String originFilePathFull = bookmarkDir + fileName;
         LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
         LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName);
-        ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName, this.getName());
+        ExternalStorageUtil.copyFile(originFilePathFull, filePath_cp + fileName, this.getName());
         SQLiteDatabase sqLiteDatabase = null;
         Cursor cursor = null;
         String tableName = "tb_fav";
@@ -362,7 +362,7 @@ public class Qihoo360Broswer extends BasicBroswer {
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

@@ -39,7 +39,7 @@
     <string name="networkError">您的网络未连接，快去检查一下！</string>
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场.</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
-    <string name="someTaskIsRuning">有任务正在执行.</string>
+    <string name="someTaskIsRuning">书签转换任务正在执行.</string>
     <string name="donateURL">http://ww3.sinaimg.cn/large/0060lm7Tgw1f9kfaj0fvsj30u00xc77b.jpg</string>
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
@@ -48,4 +48,5 @@
     <string name="notSupportParseHomepageBookmarks">暂不支持读取UC首页书签数据，无法解密.</string>
     <string name="SDCardNotReadOrWriteable">无法读写存储，可能缺少权限.</string>
     <string name="SystemNotReadOrWriteable">无法挂载"/data"分区为读写模式.</string>
+    <string name="opeartionTooFast">点这么快会被肛的.</string>
 </resources>

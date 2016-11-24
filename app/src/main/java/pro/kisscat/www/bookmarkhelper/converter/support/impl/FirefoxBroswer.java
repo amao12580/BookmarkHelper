@@ -35,8 +35,8 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 public class FirefoxBroswer extends BasicBroswer {
     private static final String TAG = "Firefox";
-//    private static final String packageName = "org.mozilla.fennec";//每夜版
-        private static final String packageName = "org.mozilla.firefox";//正式版
+    //    private static final String packageName = "org.mozilla.fennec";//每夜版
+    private static final String packageName = "org.mozilla.firefox";//正式版
     private List<Bookmark> bookmarks;
 
     public String getPackageName() {
@@ -44,9 +44,9 @@ public class FirefoxBroswer extends BasicBroswer {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -67,7 +67,7 @@ public class FirefoxBroswer extends BasicBroswer {
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Firefox/";
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -75,8 +75,8 @@ public class FirefoxBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
-            List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_origin);
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
+            List<Bookmark> bookmarksList = fetchBookmarksList(filePath_origin);
             LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
             LogHelper.v("书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
@@ -88,7 +88,7 @@ public class FirefoxBroswer extends BasicBroswer {
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
@@ -97,7 +97,7 @@ public class FirefoxBroswer extends BasicBroswer {
 
     private final static String[] columns = new String[]{"_id", "title", "url", "type", "parent"};
 
-    private List<Bookmark> fetchBookmarksList(Context context, String dir) {
+    private List<Bookmark> fetchBookmarksList(String dir) {
         List<Bookmark> result = new LinkedList<>();
         List<String> dirs = InternalStorageUtil.lsDir(dir);
         if (dirs == null || dirs.isEmpty()) {
@@ -127,12 +127,12 @@ public class FirefoxBroswer extends BasicBroswer {
         dir += targetDir + Path.FILE_SPLIT;
         String sourceFilePath = dir + fileName_origin;
         LogHelper.v(TAG + ":sourceFilePath:" + sourceFilePath);
-        ExternalStorageUtil.copyFile(context, sourceFilePath, filePath_cp + fileName_origin, this.getName());
+        ExternalStorageUtil.copyFile(sourceFilePath, filePath_cp + fileName_origin, this.getName());
         LogHelper.v(TAG + ":targetFilePath:" + filePath_cp + fileName_origin);
-        return fetchBookmarksList(context, filePath_cp, fileName_origin);
+        return fetchBookmarksList(filePath_cp, fileName_origin);
     }
 
-    private List<Bookmark> fetchBookmarksList(Context context, String dir, String fileName) {
+    private List<Bookmark> fetchBookmarksList(String dir, String fileName) {
         String dbFilePath = dir + fileName;
         LogHelper.v(TAG + ":开始读取书签SQLite数据库:" + dbFilePath);
         List<Bookmark> result = new LinkedList<>();
@@ -145,7 +145,7 @@ public class FirefoxBroswer extends BasicBroswer {
             tableExist = DBHelper.checkTableExist(sqLiteDatabase, tableName);
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
-                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(this.getName()));
             }
             cursor = sqLiteDatabase.query(false, tableName, columns, null, null, null, null, null, null);
             if (cursor != null && cursor.getCount() > 0) {
@@ -234,7 +234,7 @@ public class FirefoxBroswer extends BasicBroswer {
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

@@ -26,8 +26,8 @@ public class ViaBroswerable extends BasicBroswer {
     public static final String packageName = "mark.via";
     protected List<Bookmark> bookmarks;
 
-    public static ViaBroswerable fetchViaBroswer(Context context) {
-        App via = AppListUtil.getAppInfo(context, ViaBroswerable.packageName);
+    public static ViaBroswerable fetchViaBroswer() {
+        App via = AppListUtil.getAppInfo(ViaBroswerable.packageName);
         ViaBroswerable viaBroswerable = null;
         if (via != null) {
             viaBroswerable = ViaBroswerable.fetchViaBroswer(via.getVersionName(), via.getVersionCode());
@@ -56,9 +56,9 @@ public class ViaBroswerable extends BasicBroswer {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }

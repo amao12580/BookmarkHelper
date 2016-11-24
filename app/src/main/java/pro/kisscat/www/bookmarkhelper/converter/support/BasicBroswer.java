@@ -58,7 +58,7 @@ public class BasicBroswer extends App implements Broswerable {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         return 0;
     }
 
@@ -74,12 +74,12 @@ public class BasicBroswer extends App implements Broswerable {
 
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         return null;
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 
@@ -190,5 +190,9 @@ public class BasicBroswer extends App implements Broswerable {
             return fileFullName.replace(dir, "");
         }
         return fileFullName;
+    }
+
+    public String getPreExecuteConverterMessage() {
+        return null;
     }
 }

@@ -17,46 +17,98 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 public class ContextUtil {
     private static final String split = "：";
 
-    public static String buildReadBookmarksErrorMessage(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.readBookmarksError);
-    }
+    private static String readBookmarksError;
+    private static String readBookmarksEmpty;
+    private static String appendBookmarksError;
+    private static String fileCPError;
+    private static String fileMkdirError;
+    private static String fileDeleteError;
+    private static String viaBookmarksFileMiss;
+    private static String flyme5BookmarksFileMiss;
+    private static String appUninstall;
+    private static String notSupport;
+    private static String notSupportParseHomepageBookmarks;
 
-    public static String buildReadBookmarksEmptyMessage(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.readBookmarksEmpty);
-    }
-
-    public static String buildAppendBookmarksErrorMessage(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.appendBookmarksError);
-    }
-
-    public static String buildFileCPErrorMessage(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.fileCPError);
-    }
-
-    public static String buildFileMkdirErrorMessage(Context context, String broswerName) {
-        if (broswerName == null || broswerName.isEmpty()) {
-            return context.getResources().getString(R.string.fileMkdirError);
+    public static void init(Context context) {
+        if (readBookmarksError == null) {
+            readBookmarksError = context.getResources().getString(R.string.readBookmarksError);
         }
-        return broswerName + split + context.getResources().getString(R.string.fileMkdirError);
+        if (readBookmarksEmpty == null) {
+            readBookmarksEmpty = context.getResources().getString(R.string.readBookmarksEmpty);
+        }
+        if (appendBookmarksError == null) {
+            appendBookmarksError = context.getResources().getString(R.string.appendBookmarksError);
+        }
+        if (fileCPError == null) {
+            fileCPError = context.getResources().getString(R.string.fileCPError);
+        }
+        if (fileMkdirError == null) {
+            fileMkdirError = context.getResources().getString(R.string.fileMkdirError);
+        }
+        if (fileDeleteError == null) {
+            fileDeleteError = context.getResources().getString(R.string.fileDeleteError);
+        }
+        if (viaBookmarksFileMiss == null) {
+            viaBookmarksFileMiss = context.getResources().getString(R.string.viaBookmarksFileMiss);
+        }
+        if (flyme5BookmarksFileMiss == null) {
+            flyme5BookmarksFileMiss = context.getResources().getString(R.string.flyme5BookmarksFileMiss);
+        }
+        if (appUninstall == null) {
+            appUninstall = context.getResources().getString(R.string.appUninstall);
+        }
+        if (notSupport == null) {
+            notSupport = context.getResources().getString(R.string.notSupport);
+        }
+        if (notSupportParseHomepageBookmarks == null) {
+            notSupportParseHomepageBookmarks = context.getResources().getString(R.string.notSupportParseHomepageBookmarks);
+        }
     }
 
-    public static String buildFileDeleteErrorMessage(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.fileDeleteError);
+    public static String buildNotSupportParseHomepageBookmarksMessage() {
+        return notSupportParseHomepageBookmarks;
     }
 
-    public static String buildViaBookmarksFileMiss(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.viaBookmarksFileMiss);
+    public static String buildReadBookmarksErrorMessage(String browserName) {
+        return browserName + split + readBookmarksError;
     }
 
-    public static String buildReadBookmarksTableNotExistErrorMessage(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.flyme5BookmarksFileMiss);
+    public static String buildReadBookmarksEmptyMessage(String browserName) {
+        return browserName + split + readBookmarksEmpty;
     }
 
-    public static String buildAppNotInstalledMessage(Context context, String broswerName) {
-        return broswerName + split + context.getResources().getString(R.string.appUninstall);
+    public static String buildAppendBookmarksErrorMessage(String browserName) {
+        return browserName + split + appendBookmarksError;
     }
 
-    public static String buildRuleNotSupportedNowMessage(Context context, Rule rule) {
-        return context.getResources().getString(R.string.notSupport);
+    public static String buildFileCPErrorMessage(String browserName) {
+        return browserName + split + fileCPError;
+    }
+
+    public static String buildFileMkdirErrorMessage(String browserName) {
+        if (browserName == null || browserName.isEmpty()) {
+            return fileMkdirError;
+        }
+        return browserName + split + fileMkdirError;
+    }
+
+    public static String buildFileDeleteErrorMessage(String browserName) {
+        return browserName + split + fileDeleteError;
+    }
+
+    public static String buildViaBookmarksFileMiss(String browserName) {
+        return browserName + split + viaBookmarksFileMiss;
+    }
+
+    public static String buildReadBookmarksTableNotExistErrorMessage(String browserName) {
+        return browserName + split + flyme5BookmarksFileMiss;
+    }
+
+    public static String buildAppNotInstalledMessage(String browserName) {
+        return browserName + split + appUninstall;
+    }
+
+    public static String buildRuleNotSupportedNowMessage(Rule rule) {
+        return notSupport;
     }
 }

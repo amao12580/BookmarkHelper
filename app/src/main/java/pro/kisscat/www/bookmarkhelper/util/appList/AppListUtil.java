@@ -110,4 +110,11 @@ public class AppListUtil {
         }
         return null;
     }
+
+    public static App getAppInfo(String packageName) {
+        if (installedAllApp != null) {
+            return installedAllApp.get(packageName);
+        }
+        return null;
+    }
 }

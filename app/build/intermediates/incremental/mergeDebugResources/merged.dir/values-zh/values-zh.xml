@@ -41,11 +41,12 @@
     <string name="notPermissionForReadInstalledAppList">没有权限读取已安装的应用.</string>
     <string name="notSupport">暂未支持.</string>
     <string name="notSupportParseHomepageBookmarks">暂不支持读取UC首页书签数据，无法解密.</string>
+    <string name="opeartionTooFast">点这么快会被肛的.</string>
     <string name="rating">五星好评</string>
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>
     <string name="readBookmarksError">读取书签信息失败.</string>
-    <string name="someTaskIsRuning">有任务正在执行.</string>
+    <string name="someTaskIsRuning">书签转换任务正在执行.</string>
     <string name="source_broswer_icon_contentDescription">来源浏览器</string>
     <string name="target_broswer_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>

@@ -10,11 +10,14 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -25,6 +28,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.flyco.animation.BaseAnimatorSet;
 import com.flyco.animation.FadeExit.FadeExit;
 import com.flyco.animation.FlipEnter.FlipVerticalSwingEnter;
@@ -46,6 +50,9 @@ import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
+import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask;
+import pro.kisscat.www.bookmarkhelper.converter.support.executor.Params;
+import pro.kisscat.www.bookmarkhelper.converter.support.executor.Result;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
@@ -57,6 +64,7 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil;
+import pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
@@ -67,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ListView lv;
     private Adapter adapter;
     private List<ExecuteRule> rules;
-    private volatile boolean isItemRuning = false;
     private boolean isRoot;
     private boolean isRecordRule = false;
     private List<Map<String, Object>> items = new ArrayList<>();
@@ -103,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
             }
         }
-
         lv = (ListView) findViewById(R.id.listViewRules);
         for (ExecuteRule rule : rules) {
             Map<String, Object> map = new HashMap<>();
@@ -123,7 +129,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         PermissionUtil.checkAndRequest(this);
         lv.setOnItemClickListener(this);
-        ToastUtil.showMessage(this, this.getResources().getString(R.string.keepRootAppRunning));
+        Toast.makeText(this, this.getResources().getString(R.string.keepRootAppRunning), Toast.LENGTH_LONG).show();
+        ContextUtil.init(lv.getContext());
         lv.post(new Runnable() {
             @Override
             public void run() {
@@ -135,7 +142,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private long lastClickItemTime = 0;
     private long currentClickItemTime = 0;
-    private String someTaskIsRunning;
 
 
     @Override
@@ -147,55 +153,75 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             currentClickItemTime = System.currentTimeMillis();
             long diff = currentClickItemTime - lastClickItemTime;
             if (diff <= 1000) {
+                Toast.makeText(view.getContext(), view.getResources().getString(R.string.opeartionTooFast), Toast.LENGTH_SHORT).show();
                 return;
             }
             lastClickItemTime = currentClickItemTime;
             setCurrentClickItemEnabled(false);
-            final ExecuteRule rule = rules.get((int) id);
+            ExecuteRule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     AppListUtil.reInit(this);
                     if (!rule.getSource().isInstalled(this, rule.getSource())) {
-                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(this, rule.getSource().getName()));
+                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getSource().getName()));
                         return;
                     }
                 }
                 if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
                     AppListUtil.reInit(this);
                     if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
-                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(this, rule.getTarget().getName()));
+                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getTarget().getName()));
                         return;
                     }
                 }
-                showDialogMessage(ContextUtil.buildRuleNotSupportedNowMessage(this, rule));
+                showDialogMessage(ContextUtil.buildRuleNotSupportedNowMessage(rule));
                 return;
             }
-            ToastUtil.showMessage(this, this.getResources().getString(R.string.keepRootAppRunning));
-            view.post(new Runnable() {
-                public void run() {
-                    processConverter(rule);
-                }
-            });
+            NumberProgressBar progressBar = (NumberProgressBar) view.findViewById(R.id.executeProgressesBar);
+            int progress = progressBar.getProgress();
+            if (progress == 0) {
+                Toast.makeText(view.getContext(), view.getResources().getString(R.string.keepRootAppRunning), Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setClickable(false);
+                progressBar.setProgress(0);
+                ProgressBarUtil progressBarUtil = new ProgressBarUtil(progressBar);
+                ConverterAsyncTask task = new ConverterAsyncTask(progressBarUtil);
+                task.execute(new Params(rule, converterTaskMessage));
+//                processConverter(rule, progressBarUtil);
+            } else {
+                Toast.makeText(view.getContext(), view.getResources().getString(R.string.someTaskIsRuning), Toast.LENGTH_SHORT).show();
+            }
         } catch (InitException e) {
             showDialogMessage(e.getMessage());
             e.printStackTrace();
         }
     }
 
+    @SuppressLint("HandlerLeak")
+    private Handler converterTaskMessage = new Handler() {
+        public void handleMessage(Message msg) {
+            Bundle data = msg.getData();
+            if (msg.what == 0) {//toast
+                System.out.println("toast");
+                String resultStr = data.get("result").toString();
+                Result result = JsonUtil.fromJson(resultStr, Result.class);
+                System.out.println("converterTaskMessage：" + JsonUtil.toJson(result));
+            } else if (msg.what == 1) {//dialog
+                System.out.println("dialog");
+                String resultStr = data.get("result").toString();
+                Result result = JsonUtil.fromJson(resultStr, Result.class);
+                System.out.println("converterTaskMessage：" + JsonUtil.toJson(result));
+            } else {
+                System.out.println("msg.what：" + msg.what);
+            }
+        }
+    };
+
     private void setCurrentClickItemEnabled(boolean isEnable) {
         adapter.setCurrentClickItemEnabled(isEnable);
     }
 
-    @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
-    private void processConverter(ExecuteRule rule) {
-        if (isItemRuning) {
-            if (someTaskIsRunning == null) {
-                someTaskIsRunning = lv.getResources().getString(R.string.someTaskIsRuning);
-            }
-            showToastMessage(someTaskIsRunning);
-            return;
-        }
-        isItemRuning = true;
+    private void processConverter(ExecuteRule rule, ProgressBarUtil progressBarUtil) {
         long start = System.currentTimeMillis();
         long end = -1;
         int ret = -1;
@@ -207,19 +233,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 LogHelper.v(erroUpgrade);
                 return;
             } else {
+                progressBarUtil.next();
+                Toast.makeText(progressBarUtil.getProgressBar().getContext(), "正在执行，约需要5秒钟，请等待.", Toast.LENGTH_LONG).show();
                 LogHelper.v("成功获取了Root权限.");
             }
-            if (!InternalStorageUtil.remountDataDir(this)) {
+            if (!InternalStorageUtil.remountDataDir()) {
                 showDialogMessage(this.getResources().getString(R.string.SystemNotReadOrWriteable));
                 return;
             }
-            if (!ExternalStorageUtil.remountSDCardDir(this)) {
+            progressBarUtil.next();
+            if (!ExternalStorageUtil.remountSDCardDir()) {
                 showDialogMessage(this.getResources().getString(R.string.SDCardNotReadOrWriteable));
                 return;
             }
+            progressBarUtil.next();
             start = System.currentTimeMillis();
             rule.setStage(1);
-            ret = ConverterMaster.execute(lv.getContext(), rule);
+            ret = ConverterMaster.execute(progressBarUtil.getProgressBar().getContext(), rule, progressBarUtil);
             end = System.currentTimeMillis();
         } catch (ConverterException e) {
             showDialogMessage(e.getMessage());
@@ -242,7 +272,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else {
                 rule.setStage(3);
             }
-            isItemRuning = false;
             LogHelper.write();
             setCurrentClickItemEnabled(true);
         }
@@ -298,13 +327,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ToastUtil.showMessage(activity, message);
     }
 
-    private void showToastMessage(String message) {
-        if (message == null || message.isEmpty()) {
-            return;
-        }
-        showToastMessage(this, message);
-    }
-
     private static String aboutMeUrl = null;
 
     public void onclickAboutMe(View view) {
@@ -348,7 +370,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void openUrlInWebview(String url, String title, int logo, boolean withQRCode) {
         if (!NetworkUtil.isNetworkConnected(this)) {
-            showToastMessage(this, lv.getResources().getString(R.string.networkError));
+            Toast.makeText(this, lv.getResources().getString(R.string.networkError), Toast.LENGTH_LONG).show();
             Intent intent = new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS);
             startActivity(intent);
             return;

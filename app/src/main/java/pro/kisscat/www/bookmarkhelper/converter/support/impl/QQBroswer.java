@@ -47,9 +47,9 @@ public class QQBroswer extends BasicBroswer {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -70,7 +70,7 @@ public class QQBroswer extends BasicBroswer {
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/QQ/";
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -78,10 +78,10 @@ public class QQBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
-            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(context, filePath_origin);
-            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(context, filePath_cp + fileName_origin);
+            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin);
+            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_cp + fileName_origin);
             LogHelper.v("已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
             LogHelper.v("已登录用户书签条数:" + bookmarksListPart1.size());
             LogHelper.v("未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
@@ -98,14 +98,14 @@ public class QQBroswer extends BasicBroswer {
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
     }
 
-    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String dir) {
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(String dir) {
         LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
         List<Bookmark> result = new LinkedList<>();
         LogHelper.v(TAG + ":尝试解析已登录用户的书签数据");
@@ -147,14 +147,14 @@ public class QQBroswer extends BasicBroswer {
         for (Map.Entry<String, String> entry : QQUser.entrySet()) {
             String name = entry.getKey();
             String item = entry.getValue();
-            List<Bookmark> QQUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, item);
+            List<Bookmark> QQUserBookmarks = fetchBookmarksListByUserHasLogined(dir, item);
             LogHelper.v("QQ用户：" + name + "，书签条数：" + QQUserBookmarks.size());
             result.addAll(QQUserBookmarks);
         }
         for (Map.Entry<String, String> entry : WechatUser.entrySet()) {
             String name = entry.getKey();
             String item = entry.getValue();
-            List<Bookmark> WechatUserBookmarks = fetchBookmarksListByUserHasLogined(context, dir, item);
+            List<Bookmark> WechatUserBookmarks = fetchBookmarksListByUserHasLogined(dir, item);
             LogHelper.v("微信用户：" + name + "，书签条数：" + WechatUserBookmarks.size());
             result.addAll(WechatUserBookmarks);
         }
@@ -162,49 +162,49 @@ public class QQBroswer extends BasicBroswer {
         return result;
     }
 
-    private List<Bookmark> fetchBookmarksListByUserHasLogined(Context context, String dir, String fileName) {
+    private List<Bookmark> fetchBookmarksListByUserHasLogined(String dir, String fileName) {
         String targetFilePath = dir + fileName;
         LogHelper.v("targetFilePath is:" + targetFilePath);
         List<Bookmark> result = new LinkedList<>();
         String tmpFilePath = filePath_cp + fileName;
         try {
-            ExternalStorageUtil.copyFile(context, targetFilePath, tmpFilePath, this.getName());
+            ExternalStorageUtil.copyFile(targetFilePath, tmpFilePath, this.getName());
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             return result;
         }
-        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "mtt_bookmarks", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "pad_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "pc_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(false, context, tmpFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
+        result.addAll(fetchBookmarksList(false, tmpFilePath, "mtt_bookmarks", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, tmpFilePath, "pad_bookmark", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, tmpFilePath, "pc_bookmark", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, tmpFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
         return result;
     }
 
-    private List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String dbFilePath) {
+    private List<Bookmark> fetchBookmarksListByNoUserLogined(String dbFilePath) {
         LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);
         List<Bookmark> result = new LinkedList<>();
         String originFilePathFull = filePath_origin + fileName_origin;
         LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
         LogHelper.v(TAG + ":tmp file path:" + dbFilePath);
         try {
-            ExternalStorageUtil.copyFile(context, originFilePathFull, dbFilePath, this.getName());
+            ExternalStorageUtil.copyFile(originFilePathFull, dbFilePath, this.getName());
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             return result;
         }
-        result.addAll(fetchBookmarksList(false, context, dbFilePath, "mtt_bookmarks", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(false, context, dbFilePath, "pad_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(false, context, dbFilePath, "pc_bookmark", null, null, "created asc"));
-        result.addAll(fetchBookmarksList(false, context, dbFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
+        result.addAll(fetchBookmarksList(false, dbFilePath, "mtt_bookmarks", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, dbFilePath, "pad_bookmark", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, dbFilePath, "pc_bookmark", null, null, "created asc"));
+        result.addAll(fetchBookmarksList(false, dbFilePath, "snapshot", columns_snapshot, "type=?", new String[]{"-1"}, null));
         LogHelper.v(TAG + ":读取未登录用户书签SQLite数据库结束");
         return result;
     }
 
-    private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
-        return fetchBookmarksList(needThrowException, context, dbFilePath, tableName, columns, where, whereArgs, orderBy);
+    private List<Bookmark> fetchBookmarksList(boolean needThrowException, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
+        return fetchBookmarksList(needThrowException, dbFilePath, tableName, columns, where, whereArgs, orderBy);
     }
 
-    private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String[] columns, String where, String[] whereArgs, String orderBy) {
+    private List<Bookmark> fetchBookmarksList(boolean needThrowException, String dbFilePath, String tableName, String[] columns, String where, String[] whereArgs, String orderBy) {
         LogHelper.v(TAG + ":读取SQLite数据库开始,dbFilePath:" + dbFilePath + ",tableName:" + tableName);
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
@@ -216,7 +216,7 @@ public class QQBroswer extends BasicBroswer {
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 if (needThrowException) {
-                    throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                    throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(this.getName()));
                 } else {
                     return result;
                 }
@@ -325,7 +325,7 @@ public class QQBroswer extends BasicBroswer {
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

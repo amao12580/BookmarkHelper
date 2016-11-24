@@ -9,7 +9,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
-        versionName "0.0.11-f1"
+        versionName "0.0.12"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         //大部分应用其实并不需要支持几十种语言的国际化支持。还好强大的gradle支持语言的配置，比如国内应用只支持中文、英文
@@ -88,6 +88,7 @@ dependencies {
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.2.0'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.google.zxing:core:3.2.0'
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
 //    compile 'io.github.zhitaocai:toastcompat:0.1.0'
 }
 

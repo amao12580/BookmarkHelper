@@ -9,6 +9,9 @@ import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebSettings.ZoomDensity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
+
+import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 
 /**
  * 自定义WebView，长按图片获取图片url
@@ -49,6 +52,7 @@ public class CustomWebView extends WebView implements OnLongClickListener {
 
     @Override
     public boolean onLongClick(View v) {
+        Toast.makeText(v.getContext(), "实验性特性：二维码长按功能处于beta阶段", Toast.LENGTH_LONG).show();
         System.out.println("longClick hit.");
         // 长按事件监听（注意：需要实现LongClickCallBack接口并传入对象）
         final HitTestResult htr = getHitTestResult();//获取所点击的内容
@@ -99,6 +103,7 @@ public class CustomWebView extends WebView implements OnLongClickListener {
         public void onReceivedError(WebView view, int errorCode,
                                     String description, String failingUrl) {
             super.onReceivedError(view, errorCode, description, failingUrl);
+            view.loadUrl(MetaData.NETWORKERRORURL);
         }
 
         @Override

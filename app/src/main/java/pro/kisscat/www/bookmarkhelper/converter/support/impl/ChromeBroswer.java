@@ -42,9 +42,9 @@ public class ChromeBroswer extends BasicBroswer {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -64,7 +64,7 @@ public class ChromeBroswer extends BasicBroswer {
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Chrome/";
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -74,16 +74,16 @@ public class ChromeBroswer extends BasicBroswer {
         try {
             String originFilePathFull = filePath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
-            java.io.File file = ExternalStorageUtil.copyFile(context, originFilePathFull, filePath_cp + fileName_origin, this.getName());
+            java.io.File file = ExternalStorageUtil.copyFile(originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Bookmark> chromeBookmarks = fetchBookmarks(file);
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, chromeBookmarks);
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
@@ -125,7 +125,7 @@ public class ChromeBroswer extends BasicBroswer {
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

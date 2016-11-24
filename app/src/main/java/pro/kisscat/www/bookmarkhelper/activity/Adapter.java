@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -57,10 +58,13 @@ class Adapter extends SimpleAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = createViewFromResource(position, convertView, parent, mResource);
+        LinearLayout executeProgressesLayout = (LinearLayout) view.findViewById(R.id.executeProgressesLayout);
         if (position == selectItem) {
             view.setBackgroundResource(R.drawable.listview_item_selected_bg);
+            executeProgressesLayout.setVisibility(View.VISIBLE);
         } else {
             view.setBackgroundResource(R.drawable.listview_item_default_bg);
+            executeProgressesLayout.setVisibility(View.GONE);
         }
         return view;
     }

@@ -1,7 +1,5 @@
 package pro.kisscat.www.bookmarkhelper.util.storage;
 
-import android.content.Context;
-
 import java.util.UUID;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
@@ -22,7 +20,7 @@ import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
  */
 
 abstract class BasicStorageUtil implements Storageable {
-    protected static boolean mkdir(Context context, String dirPath, String mark, boolean needthrowWhenError) {
+    protected static boolean mkdir(String dirPath, String mark, boolean needthrowWhenError) {
         /**
          * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）
          * -r  递归复制，包含目录
@@ -32,7 +30,7 @@ abstract class BasicStorageUtil implements Storageable {
         String cmd = "mkdir -p " + dirPath;
         boolean result = RootUtil.executeCmd(cmd);
         if (!result && needthrowWhenError) {
-            throw new ConverterException(ContextUtil.buildFileMkdirErrorMessage(context, mark));
+            throw new ConverterException(ContextUtil.buildFileMkdirErrorMessage(mark));
         }
         return result;
     }
@@ -50,9 +48,9 @@ abstract class BasicStorageUtil implements Storageable {
     /**
      * 检查读写权限
      */
-    static boolean checkReadWriteable(Context context, String dirPath) {
+    static boolean checkReadWriteable(String dirPath) {
         dirPath += "tmp" + Path.FILE_SPLIT;
-        boolean mkdirRet = mkdir(context, dirPath, null, false);
+        boolean mkdirRet = mkdir(dirPath, null, false);
         if (!mkdirRet) {
             LogHelper.v("mkdirRet false.");
             return false;

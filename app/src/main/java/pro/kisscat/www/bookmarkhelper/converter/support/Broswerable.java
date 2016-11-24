@@ -27,11 +27,11 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 interface Broswerable {
     void fillDefaultAppName(Context context);
 
-    int readBookmarkSum(Context context);
+    int readBookmarkSum();
 
-    List<Bookmark> readBookmark(Context context);
+    List<Bookmark> readBookmark();
 
-    int appendBookmark(Context context, List<Bookmark> bookmarks);
+    int appendBookmark(List<Bookmark> bookmarks);
 
     void fillDefaultIcon(Context context);
 

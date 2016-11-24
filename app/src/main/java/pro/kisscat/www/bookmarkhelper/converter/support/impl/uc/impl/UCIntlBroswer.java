@@ -15,7 +15,6 @@ import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
-import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 /**
  * Created with Android Studio.
@@ -41,9 +40,9 @@ public class UCIntlBroswer extends UCBroswerable {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -61,10 +60,9 @@ public class UCIntlBroswer extends UCBroswerable {
     private static final String fileName_origin = "bookmark.db";
 
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/UCIntl/";
-    private static String notSupportParseHomepageBookmarks;
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -72,13 +70,9 @@ public class UCIntlBroswer extends UCBroswerable {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            if (notSupportParseHomepageBookmarks == null) {
-                notSupportParseHomepageBookmarks = context.getResources().getString(R.string.notSupportParseHomepageBookmarks);
-            }
-            ToastUtil.showMessage(context, notSupportParseHomepageBookmarks);
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
-            List<Bookmark> bookmarksList = fetchBookmarksListByNoUserLogined(context, filePath_origin + fileName_origin, filePath_cp + fileName_origin);
+            List<Bookmark> bookmarksList = fetchBookmarksListByNoUserLogined(filePath_origin + fileName_origin, filePath_cp + fileName_origin);
             LogHelper.v("用户书签数据:" + JsonUtil.toJson(bookmarksList));
             LogHelper.v("书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
@@ -86,15 +80,19 @@ public class UCIntlBroswer extends UCBroswerable {
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
     }
 
+    public String getPreExecuteConverterMessage() {
+        return ContextUtil.buildNotSupportParseHomepageBookmarksMessage();
+    }
+
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

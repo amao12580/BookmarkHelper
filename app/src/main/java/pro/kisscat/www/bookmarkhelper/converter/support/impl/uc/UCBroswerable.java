@@ -1,6 +1,5 @@
 package pro.kisscat.www.bookmarkhelper.converter.support.impl.uc;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -34,27 +33,27 @@ public class UCBroswerable extends BasicBroswer {
     public String packageName = null;
     private final static String[] columns = new String[]{"luid", "parent_id", "title", "url", "folder"};
 
-    protected List<Bookmark> fetchBookmarksListByNoUserLogined(Context context, String sourceFilePath, String dbFilePath) {
+    protected List<Bookmark> fetchBookmarksListByNoUserLogined(String sourceFilePath, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);
         List<Bookmark> result = new LinkedList<>();
         LogHelper.v(TAG + ":origin file path:" + sourceFilePath);
         LogHelper.v(TAG + ":tmp file path:" + dbFilePath);
         try {
-            ExternalStorageUtil.copyFile(context, sourceFilePath, dbFilePath, this.getName());
+            ExternalStorageUtil.copyFile(sourceFilePath, dbFilePath, this.getName());
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             return result;
         }
-        result.addAll(fetchBookmarksList(context, dbFilePath, "bookmark", null, null, "create_time asc"));
+        result.addAll(fetchBookmarksList(dbFilePath, "bookmark", null, null, "create_time asc"));
         LogHelper.v(TAG + ":读取未登录用户书签SQLite数据库结束");
         return result;
     }
 
-    protected List<Bookmark> fetchBookmarksList(Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
-        return fetchBookmarksList(true, context, dbFilePath, tableName, where, whereArgs, orderBy);
+    protected List<Bookmark> fetchBookmarksList(String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
+        return fetchBookmarksList(true, dbFilePath, tableName, where, whereArgs, orderBy);
     }
 
-    protected List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
+    protected List<Bookmark> fetchBookmarksList(boolean needThrowException, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
         LogHelper.v(TAG + ":读取SQLite数据库开始,dbFilePath:" + dbFilePath + ",tableName:" + tableName);
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
@@ -66,7 +65,7 @@ public class UCBroswerable extends BasicBroswer {
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 if (needThrowException) {
-                    throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                    throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(this.getName()));
                 } else {
                     return result;
                 }

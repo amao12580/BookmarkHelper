@@ -42,9 +42,9 @@ public class BaiduBroswer extends BasicBroswer {
     }
 
     @Override
-    public int readBookmarkSum(Context context) {
+    public int readBookmarkSum() {
         if (bookmarks == null) {
-            readBookmark(context);
+            readBookmark();
         }
         return bookmarks.size();
     }
@@ -65,7 +65,7 @@ public class BaiduBroswer extends BasicBroswer {
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Baidu/";
 
     @Override
-    public List<Bookmark> readBookmark(Context context) {
+    public List<Bookmark> readBookmark() {
         if (bookmarks != null) {
             LogHelper.v(TAG + ":bookmarks cache is hit.");
             return bookmarks;
@@ -73,8 +73,8 @@ public class BaiduBroswer extends BasicBroswer {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            ExternalStorageUtil.mkdir(context, filePath_cp, this.getName());
-            List<Bookmark> bookmarksList = fetchBookmarksList(context, filePath_cp, fileName_origin);
+            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
+            List<Bookmark> bookmarksList = fetchBookmarksList(filePath_cp, fileName_origin);
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
@@ -84,34 +84,34 @@ public class BaiduBroswer extends BasicBroswer {
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());
-            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(context, this.getName()));
+            throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
     }
 
-    private List<Bookmark> fetchBookmarksList(Context context, String dir, String fileName) {
+    private List<Bookmark> fetchBookmarksList(String dir, String fileName) {
         String targetFilePath = dir + fileName;
         LogHelper.v("targetFilePath is:" + targetFilePath);
         List<Bookmark> result = new LinkedList<>();
         try {
-            ExternalStorageUtil.copyFile(context, filePath_origin + fileName_origin, targetFilePath, this.getName());
+            ExternalStorageUtil.copyFile(filePath_origin + fileName_origin, targetFilePath, this.getName());
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             return result;
         }
-        result.addAll(fetchBookmarksList(false, context, targetFilePath, "bookmark", null, null, "create_time asc"));
-        result.addAll(fetchBookmarksList(false, context, targetFilePath, "homepage", null, null, "create_time asc"));
-        result.addAll(fetchBookmarksList(false, context, targetFilePath, "pc_bookmark", null, null, "create_time asc"));
+        result.addAll(fetchBookmarksList(false, targetFilePath, "bookmark", null, null, "create_time asc"));
+        result.addAll(fetchBookmarksList(false, targetFilePath, "homepage", null, null, "create_time asc"));
+        result.addAll(fetchBookmarksList(false, targetFilePath, "pc_bookmark", null, null, "create_time asc"));
         return result;
     }
 
-    private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
-        return fetchBookmarksList(needThrowException, context, dbFilePath, tableName, columns, where, whereArgs, orderBy);
+    private List<Bookmark> fetchBookmarksList(boolean needThrowException, String dbFilePath, String tableName, String where, String[] whereArgs, String orderBy) {
+        return fetchBookmarksList(needThrowException, dbFilePath, tableName, columns, where, whereArgs, orderBy);
     }
 
-    private List<Bookmark> fetchBookmarksList(boolean needThrowException, Context context, String dbFilePath, String tableName, String[] columns, String where, String[] whereArgs, String orderBy) {
+    private List<Bookmark> fetchBookmarksList(boolean needThrowException, String dbFilePath, String tableName, String[] columns, String where, String[] whereArgs, String orderBy) {
         LogHelper.v(TAG + ":读取SQLite数据库开始,dbFilePath:" + dbFilePath + ",tableName:" + tableName);
         List<Bookmark> result = new LinkedList<>();
         SQLiteDatabase sqLiteDatabase = null;
@@ -123,7 +123,7 @@ public class BaiduBroswer extends BasicBroswer {
             if (!tableExist) {
                 LogHelper.v(TAG + ":database table " + tableName + " not exist.");
                 if (needThrowException) {
-                    throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(context, this.getName()));
+                    throw new ConverterException(ContextUtil.buildReadBookmarksTableNotExistErrorMessage(this.getName()));
                 } else {
                     return result;
                 }
@@ -216,7 +216,7 @@ public class BaiduBroswer extends BasicBroswer {
     }
 
     @Override
-    public int appendBookmark(Context context, List<Bookmark> bookmarks) {
+    public int appendBookmark(List<Bookmark> bookmarks) {
         return 0;
     }
 }

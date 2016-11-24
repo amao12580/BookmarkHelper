@@ -1,12 +1,10 @@
 package pro.kisscat.www.bookmarkhelper.util.storage;
 
-import android.content.Context;
 import android.os.Environment;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.UUID;
 
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
@@ -14,7 +12,6 @@ import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
-import pro.kisscat.www.bookmarkhelper.util.file.pojo.FileType;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 
@@ -50,21 +47,21 @@ public final class InternalStorageUtil extends BasicStorageUtil {
      * 借用root权限
      * <p>
      */
-    public static boolean deleteFile(Context context, String filePath, String mark) {
-        return deleteFile(true, context, filePath, mark);
+    public static boolean deleteFile(String filePath, String mark) {
+        return deleteFile(true, filePath, mark);
     }
 
-    private static boolean deleteFile(boolean needRetry, Context context, String filePath, String mark) {
+    private static boolean deleteFile(boolean needRetry, String filePath, String mark) {
         String cmd = "rm -rf " + filePath;
         boolean result = RootUtil.executeCmd(cmd);
         if (!result) {
             if (needRetry) {
-                boolean retry = deleteFile(false, context, filePath, mark);
+                boolean retry = deleteFile(false, filePath, mark);
                 if (!retry) {
-                    throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(context, mark));
+                    throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(mark));
                 }
             } else {
-                throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(context, mark));
+                throw new ConverterException(ContextUtil.buildFileDeleteErrorMessage(mark));
             }
         }
         return true;
@@ -168,8 +165,8 @@ public final class InternalStorageUtil extends BasicStorageUtil {
         return files;
     }
 
-    public static boolean remountDataDir(Context context) {
-        return remountDataDir(context, false);
+    public static boolean remountDataDir() {
+        return remountDataDir(false);
     }
 
     private static boolean isReadOnlyNow = true;
@@ -177,8 +174,8 @@ public final class InternalStorageUtil extends BasicStorageUtil {
     /**
      * 重新挂载data目录为读写或只读
      */
-    private static boolean remountDataDir(Context context, boolean isNeedReadOnly) {
-        boolean readWriteable = checkReadWriteable(context, Path.INNER_PATH_DATA + AppListUtil.thisAppPackageName + Path.FILE_SPLIT);
+    private static boolean remountDataDir(boolean isNeedReadOnly) {
+        boolean readWriteable = checkReadWriteable(Path.INNER_PATH_DATA + AppListUtil.thisAppPackageName + Path.FILE_SPLIT);
         LogHelper.v("remountDataDir 读写权限检查结果：" + readWriteable);
         if (readWriteable) {
             return true;
