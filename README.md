@@ -123,6 +123,8 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 4.Bug 修复：Flyme5自带浏览器支持提取时保留文件夹路径。
 
+5.现在转换任务进行异步化，不再阻塞UI响应，对应的，加入处理进度条。
+
 #### 0.0.13版 Draft
 1.增加兼容：支持从[Chrome Canary浏览器](http://www.coolapk.com/apk/com.chrome.canary)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
