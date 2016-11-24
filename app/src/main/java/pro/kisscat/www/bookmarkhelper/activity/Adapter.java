@@ -53,6 +53,9 @@ class Adapter extends SimpleAdapter {
     }
 
     void setCurrentClickItemEnabled(boolean isEnable) {
+        if (currentClickItem.isEnabled() == isEnable) {
+            return;
+        }
         currentClickItem.setEnabled(isEnable);
     }
 

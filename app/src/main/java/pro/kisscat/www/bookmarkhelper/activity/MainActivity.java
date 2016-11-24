@@ -12,6 +12,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -54,20 +55,16 @@ import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncT
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.Params;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.Result;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
-import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
+import pro.kisscat.www.bookmarkhelper.init.executor.InitAsyncTask;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
-import pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil;
 import pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil;
-import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
-import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
-import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 @RuntimePermissions
@@ -75,8 +72,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ListView lv;
     private Adapter adapter;
     private List<ExecuteRule> rules;
-    private boolean isRoot;
-    private boolean isRecordRule = false;
+    private Context context;
     private List<Map<String, Object>> items = new ArrayList<>();
 
     private static Integer dialog_button_ok_color = null;
@@ -92,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = getApplicationContext();
         if (savedInstanceState == null) {
             try {
                 CrashHandler handler = CrashHandler.getInstance();
@@ -106,9 +103,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         if (rules == null) {
             rules = ConverterMaster.cover2Execute(this, ConverterMaster.getSupportRule());
-            if (!isRecordRule) {
-                LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
-            }
+            LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
         }
         lv = (ListView) findViewById(R.id.listViewRules);
         for (ExecuteRule rule : rules) {
@@ -129,15 +124,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         PermissionUtil.checkAndRequest(this);
         lv.setOnItemClickListener(this);
-        Toast.makeText(this, this.getResources().getString(R.string.keepRootAppRunning), Toast.LENGTH_LONG).show();
-        ContextUtil.init(lv.getContext());
-        lv.post(new Runnable() {
-            @Override
-            public void run() {
-                PhoneUtil.record();
-                LogHelper.write();
-            }
-        });
+        ContextUtil.init(context);
+        new InitAsyncTask(context).execute();
     }
 
     private long lastClickItemTime = 0;
@@ -180,14 +168,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             NumberProgressBar progressBar = (NumberProgressBar) view.findViewById(R.id.executeProgressesBar);
             int progress = progressBar.getProgress();
             if (progress == 0) {
-                Toast.makeText(view.getContext(), view.getResources().getString(R.string.keepRootAppRunning), Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(), view.getResources().getString(R.string.keepRootAppRunning), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.VISIBLE);
                 progressBar.setClickable(false);
                 progressBar.setProgress(0);
                 ProgressBarUtil progressBarUtil = new ProgressBarUtil(progressBar);
-                ConverterAsyncTask task = new ConverterAsyncTask(progressBarUtil);
-                task.execute(new Params(rule, converterTaskMessage));
-//                processConverter(rule, progressBarUtil);
+                progressBarUtil.next();
+                new ConverterAsyncTask(progressBarUtil).execute(new Params(rule, converterTaskMessage));
             } else {
                 Toast.makeText(view.getContext(), view.getResources().getString(R.string.someTaskIsRuning), Toast.LENGTH_SHORT).show();
             }
@@ -200,81 +187,44 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @SuppressLint("HandlerLeak")
     private Handler converterTaskMessage = new Handler() {
         public void handleMessage(Message msg) {
-            Bundle data = msg.getData();
+            Bundle data = msg.peekData();
+            if (!data.containsKey("result") || data.get("result") == null) {
+                return;
+            }
+            String resultStr = data.get("result").toString();
+            Result result = JsonUtil.fromJson(resultStr, Result.class);
+            if (result == null) {
+                return;
+            }
+            LogHelper.v("converterTaskMessage：" + JsonUtil.toJson(result));
             if (msg.what == 0) {//toast
-                System.out.println("toast");
-                String resultStr = data.get("result").toString();
-                Result result = JsonUtil.fromJson(resultStr, Result.class);
-                System.out.println("converterTaskMessage：" + JsonUtil.toJson(result));
+                if (result.getErrorMsg() != null) {
+                    Toast.makeText(context, result.getErrorMsg(), Toast.LENGTH_LONG).show();
+                }
+                if (result.getWarnMsg() != null) {
+                    Toast.makeText(context, result.getWarnMsg(), Toast.LENGTH_SHORT).show();
+                }
+                if (result.getSuccessMsg() != null) {
+                    Toast.makeText(context, result.getSuccessMsg(), Toast.LENGTH_SHORT).show();
+                }
             } else if (msg.what == 1) {//dialog
-                System.out.println("dialog");
-                String resultStr = data.get("result").toString();
-                Result result = JsonUtil.fromJson(resultStr, Result.class);
-                System.out.println("converterTaskMessage：" + JsonUtil.toJson(result));
+                if (result.getErrorMsg() != null) {
+                    showDialogMessage(result.getErrorMsg());
+                }
+                if (result.getWarnMsg() != null) {
+                    showDialogMessage(result.getWarnMsg());
+                }
+                if (result.getSuccessMsg() != null) {
+                    showDialogMessage(result.getSuccessMsg());
+                }
             } else {
-                System.out.println("msg.what：" + msg.what);
+                LogHelper.v("msg.what：" + msg.what);
             }
         }
     };
 
     private void setCurrentClickItemEnabled(boolean isEnable) {
         adapter.setCurrentClickItemEnabled(isEnable);
-    }
-
-    private void processConverter(ExecuteRule rule, ProgressBarUtil progressBarUtil) {
-        long start = System.currentTimeMillis();
-        long end = -1;
-        int ret = -1;
-        try {
-            isRoot = RootUtil.upgradeRootPermission(this);
-            if (!isRoot) {
-                String erroUpgrade = "无法获取Root权限，不能使用.";
-                showSimpleDialog(erroUpgrade);
-                LogHelper.v(erroUpgrade);
-                return;
-            } else {
-                progressBarUtil.next();
-                Toast.makeText(progressBarUtil.getProgressBar().getContext(), "正在执行，约需要5秒钟，请等待.", Toast.LENGTH_LONG).show();
-                LogHelper.v("成功获取了Root权限.");
-            }
-            if (!InternalStorageUtil.remountDataDir()) {
-                showDialogMessage(this.getResources().getString(R.string.SystemNotReadOrWriteable));
-                return;
-            }
-            progressBarUtil.next();
-            if (!ExternalStorageUtil.remountSDCardDir()) {
-                showDialogMessage(this.getResources().getString(R.string.SDCardNotReadOrWriteable));
-                return;
-            }
-            progressBarUtil.next();
-            start = System.currentTimeMillis();
-            rule.setStage(1);
-            ret = ConverterMaster.execute(progressBarUtil.getProgressBar().getContext(), rule, progressBarUtil);
-            end = System.currentTimeMillis();
-        } catch (ConverterException e) {
-            showDialogMessage(e.getMessage());
-        } finally {
-            if (ret > 0) {
-                rule.setStage(2);
-                String s = null;
-                if (end > 0) {
-                    long ms = end - start;
-                    if (ms > 1000) {
-                        s = ((end - start) / 1000) + "s";
-                    } else {
-                        s = ms + "ms";
-                    }
-                }
-                showDialogMessage(rule.getSource().getName() + "：" + ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效" + (s == null ? "." : ("，耗时：" + s + ".")));
-            } else if (ret == 0) {
-                rule.setStage(2);
-                showDialogMessage(rule.getSource().getName() + "：" + "所有书签已存在，不需要合并.");
-            } else {
-                rule.setStage(3);
-            }
-            LogHelper.write();
-            setCurrentClickItemEnabled(true);
-        }
     }
 
     private void showDialogMessage(String message) {
@@ -297,9 +247,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             dialog_default_title = lv.getResources().getString(R.string.dialogTitle);
         }
         if (dialog_button_ok_color == null) {
-            dialog_button_ok_color = ContextCompat.getColor(this, R.color.colorDialogButtonOk);
+            dialog_button_ok_color = ContextCompat.getColor(context, R.color.colorDialogButtonOk);
         }
-        final NormalDialog dialog = new NormalDialog(this);
+        final NormalDialog dialog = new NormalDialog(lv.getContext());
         dialog.isTitleShow(true)
                 .title(dialog_default_title)
                 .content(message)
@@ -347,7 +297,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             startActivity(intent);
         } else {
             //您的系统中没有安装应用市场，用WebView打开
-            showToastMessage(this, lv.getResources().getString(R.string.marketAppNoInstalled));
+            Toast.makeText(context, lv.getResources().getString(R.string.marketAppNoInstalled), Toast.LENGTH_LONG).show();
             if (ratingURL == null) {
                 ratingURL = lv.getResources().getString(R.string.ratingURL);
             }
@@ -370,7 +320,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void openUrlInWebview(String url, String title, int logo, boolean withQRCode) {
         if (!NetworkUtil.isNetworkConnected(this)) {
-            Toast.makeText(this, lv.getResources().getString(R.string.networkError), Toast.LENGTH_LONG).show();
+            Toast.makeText(context, lv.getResources().getString(R.string.networkError), Toast.LENGTH_LONG).show();
             Intent intent = new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS);
             startActivity(intent);
             return;

@@ -2,6 +2,7 @@ package pro.kisscat.www.bookmarkhelper.util.context;
 
 import android.content.Context;
 
+import lombok.Getter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 
@@ -28,6 +29,13 @@ public class ContextUtil {
     private static String appUninstall;
     private static String notSupport;
     private static String notSupportParseHomepageBookmarks;
+    @Getter
+    private static String packageCodePath;
+    @Getter
+    private static String SystemNotReadOrWriteable;
+    @Getter
+    private static String SDCardNotReadOrWriteable;
+
 
     public static void init(Context context) {
         if (readBookmarksError == null) {
@@ -62,6 +70,15 @@ public class ContextUtil {
         }
         if (notSupportParseHomepageBookmarks == null) {
             notSupportParseHomepageBookmarks = context.getResources().getString(R.string.notSupportParseHomepageBookmarks);
+        }
+        if (packageCodePath == null) {
+            packageCodePath = context.getPackageCodePath();
+        }
+        if (SystemNotReadOrWriteable == null) {
+            SystemNotReadOrWriteable = context.getResources().getString(R.string.SystemNotReadOrWriteable);
+        }
+        if (SDCardNotReadOrWriteable == null) {
+            SDCardNotReadOrWriteable = context.getResources().getString(R.string.SDCardNotReadOrWriteable);
         }
     }
 

@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import pro.kisscat.www.bookmarkhelper.BuildConfig;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry;
@@ -88,7 +89,7 @@ public class LogHelper {
     }
 
     public static void v(String tag, String text, boolean trim) {
-        if (MetaData.isDebug) {
+        if (BuildConfig.DEBUG) {
             if (text == null || text.isEmpty()) {
                 return;
             }
@@ -96,6 +97,10 @@ public class LogHelper {
                 text = text.substring(0, 1024);
                 text += "...";
             }
+        }
+        if (BuildConfig.DEBUG) {
+            System.out.println(tag + "    " + text);
+        } else {
             log(tag, text, 'v');
         }
     }

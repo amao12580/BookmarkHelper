@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lombok.Getter;
-import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterExecutor;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.FirefoxBroswer;
@@ -20,9 +19,12 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCIntlBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
+import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
+import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil;
 
 /**
@@ -56,10 +58,6 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new LiebaoBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new FirefoxBroswer(), viaBroswerable));
         }
-    }
-
-    public static int execute(Context context, ExecuteRule rule, ProgressBarUtil progressBarUtil) {
-        return new ConverterExecutor(context, rule,progressBarUtil).execute();
     }
 
     public static List<ExecuteRule> cover2Execute(Context context, List<Rule> rules) {

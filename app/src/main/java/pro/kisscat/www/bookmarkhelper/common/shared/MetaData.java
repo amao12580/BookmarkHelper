@@ -10,7 +10,6 @@ package pro.kisscat.www.bookmarkhelper.common.shared;
  */
 
 public final class MetaData {
-    public static final boolean isDebug = true;
     public static final String LOG_V_DEFAULT = "MONITOR";
     public static final String LOG_E_DEFAULT = "EXCEPTION";
     public static final String LOG_E_FATAL = "FATAL";

@@ -1,6 +1,7 @@
 package pro.kisscat.www.bookmarkhelper.converter.support.executor;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created with Android Studio.
@@ -12,22 +13,33 @@ import lombok.Getter;
  */
 
 public class Result {
+    @Setter
     @Getter
-    private boolean isComplete = false;
+    private boolean isComplete;
+    @Setter
     @Getter
     private int successCount = 0;
+    @Setter
     @Getter
     private String errorMsg;
+    @Setter
     @Getter
     private String warnMsg;
+    @Setter
     @Getter
     private String successMsg;
 
-    Result(boolean isComplete, int successCount, String errorMsg, String warnMsg, String successMsg) {
-        this.isComplete = isComplete;
+    Result() {//空的构造方法不能删除，fastjson需要用到
+
+    }
+
+    Result(String warnMsg) {
+        this.warnMsg = warnMsg;
+    }
+
+    Result(int successCount, String errorMsg, String successMsg) {
         this.successCount = successCount;
         this.errorMsg = errorMsg;
-        this.warnMsg = warnMsg;
         this.successMsg = successMsg;
     }
 }
