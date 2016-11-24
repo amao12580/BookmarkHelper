@@ -53,7 +53,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.Params;
-import pro.kisscat.www.bookmarkhelper.converter.support.executor.Result;
+import pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         return;
                     }
                 }
-                showDialogMessage(ContextUtil.buildRuleNotSupportedNowMessage(rule));
+                showDialogMessage(ContextUtil.buildRuleNotSupportedNowMessage());
                 return;
             }
             NumberProgressBar progressBar = (NumberProgressBar) view.findViewById(R.id.executeProgressesBar);
@@ -188,6 +188,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Handler converterTaskMessage = new Handler() {
         public void handleMessage(Message msg) {
             Bundle data = msg.peekData();
+            if (data == null) {
+                return;
+            }
             if (!data.containsKey("result") || data.get("result") == null) {
                 return;
             }

@@ -54,6 +54,8 @@
 -keep public class * extends android.view.View
 -keep public class com.android.vending.licensing.ILicensingService
 
+# 保留os下的所有类及其内部类
+-keep class android..** {*;}
 
 # 保留support下的所有类及其内部类
 -keep class android.support.** {*;}
@@ -158,6 +160,7 @@
 -keep class pro.kisscat.www.bookmarkhelper.converter.support.pojo.** { *; }
 -keep class pro.kisscat.www.bookmarkhelper.util.log.pojo.** { *; }
 -keep class pro.kisscat.www.bookmarkhelper.util.command.pojo.** { *; }
+-keep class pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.** { *; }
 
 
 #忽略警告

@@ -125,7 +125,7 @@ public class ContextUtil {
         return browserName + split + appUninstall;
     }
 
-    public static String buildRuleNotSupportedNowMessage(Rule rule) {
+    public static String buildRuleNotSupportedNowMessage() {
         return notSupport;
     }
 }

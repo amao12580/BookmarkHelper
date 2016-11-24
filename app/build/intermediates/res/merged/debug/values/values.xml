@@ -28,9 +28,7 @@
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorDefault">#FAF0E6</color>
     <color name="colorDialogButtonOk">#4169E1</color>
-    <color name="colorItemChoosed">#DCDCDC</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>

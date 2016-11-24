@@ -147,10 +147,11 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 #### 0.0.20版 Draft
 1.增加兼容：支持从[星尘浏览器](http://www.coolapk.com/apk/com.chaozhuo.browser_phone)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-
-
 #### 0.0.21版 Draft
 1.增加兼容：支持从[360极速浏览器](http://www.coolapk.com/apk/com.qihoo.chrome360)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+#### 0.0.22版 Draft
+1.增加兼容：支持从一加内置QQ浏览器提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 ---
 

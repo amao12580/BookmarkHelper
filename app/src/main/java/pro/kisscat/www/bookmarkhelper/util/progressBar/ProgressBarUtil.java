@@ -60,8 +60,4 @@ public class ProgressBarUtil {
         progressBar.setProgress(min);
         progressBar.setVisibility(View.GONE);
     }
-
-    public boolean isComplete() {
-        return now >= max;
-    }
 }
