@@ -11,7 +11,6 @@ import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
@@ -51,7 +50,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
     @Override
     protected void onPostExecute(Result result) {
         LogHelper.v(TAG, "onPostExecute(Result result) called");
-        LogHelper.v("result:" + JsonUtil.toJson(result));
+        LogHelper.v(TAG, "result:" + JsonUtil.toJson(result));
         super.onPostExecute(result);
         result.setComplete(true);
         Message message = new Message();
@@ -70,9 +69,9 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
         LogHelper.v(TAG, "doInBackground(Params... params) called");
         Params param = params[0];
         handler = param.getHandler();
-        ExecuteRule rule = param.getRule();
+        Rule rule = param.getRule();
         handlePreExecuteMessage(rule);
-        LogHelper.v("params.rule:" + JsonUtil.toJson(rule));
+        LogHelper.v(TAG, "params.rule:" + JsonUtil.toJson(rule));
         return processConverter(rule);
     }
 
@@ -83,7 +82,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
 //    }
 
 
-    private void handlePreExecuteMessage(ExecuteRule rule) {
+    private void handlePreExecuteMessage(Rule rule) {
         String sourceMessage = rule.getSource().getPreExecuteConverterMessage();
         if (sourceMessage != null) {
             Message message = new Message();
@@ -106,7 +105,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
         handler.sendMessage(message);
     }
 
-    private Result processConverter(ExecuteRule rule) {
+    private Result processConverter(Rule rule) {
         Result result = new Result();
         long start = System.currentTimeMillis();
         long end = -1;
@@ -134,7 +133,6 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
             }
             publishProgress(1);
             start = System.currentTimeMillis();
-            rule.setStage(1);
             ret = execute(rule);
             end = System.currentTimeMillis();
         } catch (ConverterException e) {
@@ -142,7 +140,6 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
             return result;
         } finally {
             if (ret > 0) {
-                rule.setStage(2);
                 String s = null;
                 if (end > 0) {
                     long ms = end - start;
@@ -155,11 +152,10 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
                 result.setSuccessCount(ret);
                 result.setSuccessMsg(rule.getSource().getName() + "：" + ret + "条书签合并完成，重启" + rule.getTarget().getName() + "后见效" + (s == null ? "." : ("，耗时：" + s + ".")));
             } else if (ret == 0) {
-                rule.setStage(2);
                 result.setSuccessCount(ret);
                 result.setSuccessMsg(rule.getSource().getName() + "：" + "所有书签已存在，不需要合并.");
             } else {
-                rule.setStage(3);
+                result.setErrorMsg(rule.getSource().getName() + "：" + "转换遇到问题，请联系作者.");
             }
             LogHelper.write();
         }

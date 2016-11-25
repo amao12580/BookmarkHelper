@@ -36,10 +36,4 @@ public class Result {
     public Result(String warnMsg) {
         this.warnMsg = warnMsg;
     }
-
-    public Result(int successCount, String errorMsg, String successMsg) {
-        this.successCount = successCount;
-        this.errorMsg = errorMsg;
-        this.successMsg = successMsg;
-    }
 }

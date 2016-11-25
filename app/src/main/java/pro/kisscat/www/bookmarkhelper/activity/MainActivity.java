@@ -54,7 +54,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.Params;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.init.executor.InitAsyncTask;
@@ -71,7 +71,7 @@ import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView lv;
     private Adapter adapter;
-    private List<ExecuteRule> rules;
+    private List<Rule> rules;
     private Context context;
     private List<Map<String, Object>> items = new ArrayList<>();
 
@@ -102,11 +102,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
         if (rules == null) {
-            rules = ConverterMaster.cover2Execute(this, ConverterMaster.getSupportRule());
+            rules = ConverterMaster.getSupportRule();
             LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
         }
         lv = (ListView) findViewById(R.id.listViewRules);
-        for (ExecuteRule rule : rules) {
+        for (Rule rule : rules) {
             Map<String, Object> map = new HashMap<>();
             BasicBroswer sourceBorswer = rule.getSource();
             map.put("sourceBroswerIcon", sourceBorswer.getIcon());
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
             lastClickItemTime = currentClickItemTime;
             setCurrentClickItemEnabled(false);
-            ExecuteRule rule = rules.get((int) id);
+            Rule rule = rules.get((int) id);
             if (!rule.isCanUse()) {
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     AppListUtil.reInit(this);
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     showDialogMessage(result.getSuccessMsg());
                 }
             } else {
-                LogHelper.v("msg.what：" + msg.what);
+                LogHelper.v("skip msg.what：" + msg.what);
             }
         }
     };

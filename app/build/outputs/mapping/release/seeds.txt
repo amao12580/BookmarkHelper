@@ -30146,6 +30146,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int ic_aboutme
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_arrow
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_baidu
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_chrome
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_chrome_canary
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_donate
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_firefox
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_flyme5
@@ -30470,6 +30471,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int bottom_sheet_behavior
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_360
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_baidu
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome
+pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome_canary
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_firefox
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_flyme5
 pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_liebao
@@ -31428,7 +31430,6 @@ pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: java.lang
 pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: java.lang.String successMsg
 pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: Result()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: Result(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: Result(int,java.lang.String,java.lang.String)
 pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: void setComplete(boolean)
 pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: boolean isComplete()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result: void setSuccessCount(int)
@@ -31521,17 +31522,6 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setTarget(
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer getTarget()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setCanUse(boolean)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: boolean isCanUse()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int stage
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int progress
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: java.lang.String message
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: ExecuteRule(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: void setStage(int)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int getStage()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: void setProgress(int)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: int getProgress()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: void setMessage(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule: java.lang.String getMessage()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String title
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark: java.lang.String url

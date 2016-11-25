@@ -3,7 +3,7 @@ package pro.kisscat.www.bookmarkhelper.converter.support.executor;
 import android.os.Handler;
 
 import lombok.Getter;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 
 /**
  * Created with Android Studio.
@@ -16,12 +16,12 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRu
 
 public class Params {
     @Getter
-    private ExecuteRule rule;
+    private Rule rule;
     @Getter
     private Handler handler;
 
-    public Params(ExecuteRule executeRule, Handler converterTaskMessage) {
-        this.rule = executeRule;
+    public Params(Rule rule, Handler converterTaskMessage) {
+        this.rule = rule;
         this.handler = converterTaskMessage;
     }
 }

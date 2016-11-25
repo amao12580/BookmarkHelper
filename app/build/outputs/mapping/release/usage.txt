@@ -832,17 +832,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
     35:35:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask:
     private static final java.lang.String TAG
-pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterExecutor
-pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterExecutor$1
-pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterExecutor$ConverterAsyncTask
-pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterExecutor$Params
-pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterExecutor$Result
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
-    private static final java.lang.String TAG
-    private static final java.lang.String packageName
-    private static final java.lang.String fileName_origin
-    46:49:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
@@ -886,6 +876,15 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     42:45:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBroswer:
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    41:44:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeCanaryBroswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    38:41:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer:
     private static final java.lang.String fileName_origin
     46:49:public int readBookmarkSum()

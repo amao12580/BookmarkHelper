@@ -7,7 +7,6 @@ import java.util.List;
 
 import lombok.Getter;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.FirefoxBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Flyme5Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBroswer;
@@ -16,11 +15,12 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeCanaryBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCIntlBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.impl.ExecuteRule;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 
 /**
@@ -42,6 +42,7 @@ public class ConverterMaster {
             supportRule = new LinkedList<>();
             ViaBroswerable viaBroswerable = ViaBroswerable.fetchViaBroswer();
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeCanaryBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCIntlBroswer(), viaBroswerable));
@@ -54,13 +55,5 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new LiebaoBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new FirefoxBroswer(), viaBroswerable));
         }
-    }
-
-    public static List<ExecuteRule> cover2Execute(Context context, List<Rule> rules) {
-        List<ExecuteRule> result = new LinkedList<>();
-        for (Rule item : rules) {
-            result.add(new ExecuteRule(context, item));
-        }
-        return result;
     }
 }
