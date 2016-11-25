@@ -157,6 +157,10 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 #### 0.0.22版 Draft
 1.增加兼容：支持从一加内置QQ浏览器提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
+#### 0.0.23版 Draft
+1.增加兼容：支持从[X浏览器-pro](https://play.google.com/store/apps/details?id=com.mmbox.xbrowser.pro)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+
 ---
 
 【FBI Waring！】0.1.X版的开发顺序随时会做出调整，请关注最新README
