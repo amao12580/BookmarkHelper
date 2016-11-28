@@ -171,9 +171,10 @@ com.mmbox.xbrowser.pro
 
 ---
 
-【FBI Waring！】0.1.X版的开发顺序随时会做出调整，请关注最新README
+【FBI Waring！】0.1.X版的开发顺序随时会做出调整(依据作者心情和用户的关注度)，请关注最新README
 
 ---
+
 ### 0.1.X
 #### 0.1.1版 Draft
 1.增加兼容：支持从[Via浏览器](http://www.coolapk.com/apk/mark.via)提取书签，追加到[夸克浏览器](http://www.coolapk.com/apk/com.quark.browser)。
@@ -193,9 +194,32 @@ com.mmbox.xbrowser.pro
 #### 0.1.6版 Draft
 1.增加兼容：支持从[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)提取书签，追加到[X浏览器](http://www.coolapk.com/apk/com.mmbox.xbrowser)。
 
+#### 0.1.7版 Draft
+1.增加兼容：支持从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)提取书签，追加到[QQ浏览器](http://www.coolapk.com/apk/com.tencent.mtt)。
+
 ---
 
+### 0.?.X
+
+"0.?.X"指的是不会在近期开发，仅作为未来开发的计划，最早也需要3个月以后才能实现，这通常是近期版本计划过于密集，只能将一些任务延后。
+
+#### 0.?.1版 Draft
+1.增加兼容：支持从[Opera Mini](http://www.coolapk.com/apk/com.opera.mini.native)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+#### 0.?.2版 Draft
+1.增加兼容：支持从[Opera browser](http://www.coolapk.com/apk/com.opera.android.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
 ## TO-DO List
+
+### Feature
+
+1.导出为文件
+
+可能是sqlite3
+
+2.导入为文件
+
+
 
 ### Issue
 
