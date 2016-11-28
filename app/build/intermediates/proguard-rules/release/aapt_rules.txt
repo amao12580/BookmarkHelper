@@ -17,7 +17,7 @@
 # view sw600dp-v13\res/layout-sw600dp-v13/design_layout_snackbar.xml #generated:18
 -keep class android.support.design.widget.Snackbar$SnackbarLayout { <init>(...); }
 
-# view AndroidManifest.xml #generated:18
+# view AndroidManifest.xml #generated:19
 -keep class android.support.multidex.MultiDexApplication { <init>(...); }
 
 # view res/layout/abc_alert_dialog_material.xml #generated:75
@@ -86,13 +86,13 @@
 # view res/layout/popup_bubble.xml #generated:7
 -keep class com.flyco.dialog.view.TriangleView { <init>(...); }
 
-# view AndroidManifest.xml #generated:37
+# view AndroidManifest.xml #generated:38
 -keep class pro.kisscat.www.bookmarkhelper.activity.Html5Activity { <init>(...); }
 
-# view AndroidManifest.xml #generated:28
+# view AndroidManifest.xml #generated:29
 -keep class pro.kisscat.www.bookmarkhelper.activity.MainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:40
+# view AndroidManifest.xml #generated:41
 -keep class pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity { <init>(...); }
 
 # onClick res/layout/activity_main.xml #generated:34

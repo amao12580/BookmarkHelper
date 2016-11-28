@@ -12,7 +12,6 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
@@ -73,7 +72,6 @@ public class ChromeBetaBroswer extends ChromeBroswerable {
             List<Bookmark> chromeBookmarks = fetchBookmarks(file);
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, chromeBookmarks);
-            LogHelper.v("result:" + JsonUtil.toJson(bookmarks));
         } catch (Exception e) {
             e.printStackTrace();
             LogHelper.e(e.getMessage());

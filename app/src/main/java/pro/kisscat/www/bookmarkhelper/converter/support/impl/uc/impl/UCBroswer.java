@@ -15,7 +15,6 @@ import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
-import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 /**
  * Created with Android Studio.
@@ -59,7 +58,7 @@ public class UCBroswer extends UCBroswerable {
         this.setName(context.getString(R.string.broswer_name_show_uc));
     }
 
-    private static final String fileName_origin = "bookmark.db";
+
     private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/UC/";
 
     @Override
@@ -74,7 +73,7 @@ public class UCBroswer extends UCBroswerable {
             ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
             String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
-            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin);
+            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin, filePath_cp);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_origin + fileName_origin, filePath_cp + fileName_origin);
             LogHelper.v("已登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
             LogHelper.v("已登录的用户书签条数:" + bookmarksListPart1.size());
@@ -93,52 +92,6 @@ public class UCBroswer extends UCBroswerable {
             LogHelper.v(TAG + ":读取书签数据结束");
         }
         return bookmarks;
-    }
-
-    public String getPreExecuteConverterMessage() {
-        return ContextUtil.buildNotSupportParseHomepageBookmarksMessage();
-    }
-
-    private List<Bookmark> fetchBookmarksListByUserHasLogined(String dir) {
-        LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
-        List<Bookmark> result = new LinkedList<>();
-        String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
-        String searchRule = "*.db";
-        List<String> fileNames = InternalStorageUtil.lsFileAndSortByRegular(dir, searchRule);
-        if (fileNames == null || fileNames.isEmpty()) {
-            LogHelper.v(TAG + ":已登录用户没有书签数据");
-            return result;
-        }
-        String targetFilePath = null;
-        String targetFileName = null;
-        for (String item : fileNames) {
-            LogHelper.v("item:" + item);
-            if (item == null) {
-                LogHelper.v("item is null.");
-                break;
-            }
-            if (item.equals(fileName_origin)) {
-                continue;
-            }
-            item = getFileNameByTrimPath(dir, item);
-            if (item.matches(regularRule)) {
-                targetFilePath = dir + item;
-                targetFileName = item;
-                break;
-            } else {
-                LogHelper.v("not match.");
-            }
-        }
-        if (targetFilePath == null) {
-            LogHelper.v("targetFilePath is miss.");
-            return result;
-        }
-        LogHelper.v("targetFilePath is:" + targetFilePath);
-        String tmpFilePath = filePath_cp + targetFileName;
-        ExternalStorageUtil.copyFile(targetFilePath, tmpFilePath, this.getName());
-        result.addAll(fetchBookmarksList(false, tmpFilePath, "bookmark", null, null, "create_time asc"));
-        LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
-        return result;
     }
 
     @Override

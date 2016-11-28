@@ -13,26 +13,30 @@ ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:2:1-39:12
 	android:versionCode
 		INJECTED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml
 		INJECTED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_SUPERUSER
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:5:5-75
+	android:name
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:5:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:5:5-81
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:6:5-81
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:5:22-78
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:6:5-80
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:6:22-77
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:7:22-77
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:7:5-84
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:8:5-84
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:7:22-81
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:8:22-81
 uses-permission#android.permission.INTERNET
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:8:5-67
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:8:22-64
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:9:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:9:5-79
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:10:22-76
 application
 ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:12:5-38:19
 MERGED from [com.android.support:design:25.0.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\AndroidManifest.xml:25:5-20

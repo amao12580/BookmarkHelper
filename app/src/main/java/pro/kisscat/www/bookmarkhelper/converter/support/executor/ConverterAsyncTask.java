@@ -41,15 +41,12 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
     //onProgressUpdate方法用于更新进度信息
     @Override
     protected void onProgressUpdate(Integer... progresses) {
-        LogHelper.v(TAG, "onProgressUpdate(Progress... progresses) called");
-        LogHelper.v(TAG, "progresses[0]:" + progresses[0]);
         progressBarUtil.next();
     }
 
     //onPostExecute方法用于在执行完后台任务后更新UI,显示结果
     @Override
     protected void onPostExecute(Result result) {
-        LogHelper.v(TAG, "onPostExecute(Result result) called");
         LogHelper.v(TAG, "result:" + JsonUtil.toJson(result));
         super.onPostExecute(result);
         result.setComplete(true);
@@ -66,7 +63,6 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
     //doInBackground方法内部执行后台任务,不可在此方法内修改UI
     @Override
     protected Result doInBackground(Params... params) {
-        LogHelper.v(TAG, "doInBackground(Params... params) called");
         Params param = params[0];
         handler = param.getHandler();
         Rule rule = param.getRule();
@@ -95,11 +91,11 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
         }
     }
 
-    private void handleExecuteRuningMessage() {
+    private void handleExecuteRunningMessage() {
         Message message = new Message();
         message.what = 0;
         Bundle bundle = new Bundle();
-        Result result = new Result("正在执行，约需要5秒钟，请等待.");
+        Result result = new Result("正在转换，约需5秒钟，请等待.");
         bundle.putString("result", JsonUtil.toJson(result));
         message.setData(bundle);
         handler.sendMessage(message);
@@ -113,13 +109,13 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
         try {
             boolean isRoot = RootUtil.upgradeRootPermission();
             if (!isRoot) {
-                String erroUpgrade = "无法获取Root权限，不能使用.";
+                String erroUpgrade = "获取Root权限失败，不能使用.";
                 result.setErrorMsg(erroUpgrade);
                 LogHelper.v(erroUpgrade);
                 return result;
             } else {
                 publishProgress(1);
-                handleExecuteRuningMessage();
+                handleExecuteRunningMessage();
                 LogHelper.v("成功获取了Root权限.");
             }
             if (!InternalStorageUtil.remountDataDir()) {

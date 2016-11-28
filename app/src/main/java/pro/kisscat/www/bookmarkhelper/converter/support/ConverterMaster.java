@@ -45,6 +45,7 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeCanaryBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBetaBroswer(), viaBroswerable));
+//            supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeDevBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCIntlBroswer(), viaBroswerable));

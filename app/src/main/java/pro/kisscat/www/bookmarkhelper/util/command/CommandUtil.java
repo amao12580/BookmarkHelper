@@ -71,7 +71,7 @@ public class CommandUtil {
             LogHelper.v("waitFor start.");
             result = process.waitFor();
             LogHelper.v("waitFor end.");
-            int sleep = 20 + RandomUtil.nextInt(10);//随机睡眠20~30毫秒，等待io流线程读取，实测低于10时会出现io流没读完整的问题
+            int sleep = 40 + RandomUtil.nextInt(20);//随机睡眠40~60毫秒，等待io流线程读取，实测低于10时会出现io流没读完整的问题
             LogHelper.v("sleep:" + sleep);
             Thread.sleep(sleep);
             LogHelper.v("result is:" + result + ",successMsg is:" + JsonUtil.toJson(stdoutList) + ",errorMsg is:" + JsonUtil.toJson(erroroutList), false);

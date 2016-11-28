@@ -18,6 +18,7 @@ import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
+import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 /**
  * Created with Android Studio.
@@ -32,6 +33,53 @@ public class UCBroswerable extends BasicBroswer {
     public String TAG = null;
     public String packageName = null;
     private final static String[] columns = new String[]{"luid", "parent_id", "title", "url", "folder"};
+    protected static final String fileName_origin = "bookmark.db";
+
+    public String getPreExecuteConverterMessage() {
+        return ContextUtil.buildNotSupportParseHomepageBookmarksMessage();
+    }
+
+    protected List<Bookmark> fetchBookmarksListByUserHasLogined(String dir, String filePath_cp) {
+        LogHelper.v(TAG + ":开始读取已登录用户的书签SQLite数据库,root dir:" + dir);
+        List<Bookmark> result = new LinkedList<>();
+        String regularRule = "[1-9][0-9]{4,14}.db";//第一位1-9之间的数字，第二位0-9之间的数字，数字范围4-14个之间
+        String searchRule = "*.db";
+        List<String> fileNames = InternalStorageUtil.lsFileAndSortByRegular(dir, searchRule);
+        if (fileNames == null || fileNames.isEmpty()) {
+            LogHelper.v(TAG + ":已登录用户没有书签数据");
+            return result;
+        }
+        String targetFilePath = null;
+        String targetFileName = null;
+        for (String item : fileNames) {
+            LogHelper.v("item:" + item);
+            if (item == null) {
+                LogHelper.v("item is null.");
+                break;
+            }
+            if (item.equals(fileName_origin)) {
+                continue;
+            }
+            item = getFileNameByTrimPath(dir, item);
+            if (item.matches(regularRule)) {
+                targetFilePath = dir + item;
+                targetFileName = item;
+                break;
+            } else {
+                LogHelper.v("not match.");
+            }
+        }
+        if (targetFilePath == null) {
+            LogHelper.v("targetFilePath is miss.");
+            return result;
+        }
+        LogHelper.v("targetFilePath is:" + targetFilePath);
+        String tmpFilePath = filePath_cp + targetFileName;
+        ExternalStorageUtil.copyFile(targetFilePath, tmpFilePath, this.getName());
+        result.addAll(fetchBookmarksList(false, tmpFilePath, "bookmark", null, null, "create_time asc"));
+        LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
+        return result;
+    }
 
     protected List<Bookmark> fetchBookmarksListByNoUserLogined(String sourceFilePath, String dbFilePath) {
         LogHelper.v(TAG + ":开始读取未登录用户的书签SQLite数据库:" + dbFilePath);

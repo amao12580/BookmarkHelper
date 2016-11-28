@@ -829,7 +829,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    35:35:public ConverterMaster()
+    36:36:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask:
     private static final java.lang.String TAG
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
@@ -876,6 +876,11 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     42:45:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBetaBroswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    38:41:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBroswer:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
@@ -885,11 +890,12 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeCanaryBr
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     38:41:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeDevBroswer
+pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBroswerable:
+    protected static final java.lang.String fileName_origin
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer:
-    private static final java.lang.String fileName_origin
-    46:49:public int readBookmarkSum()
+    45:48:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCIntlBroswer:
-    private static final java.lang.String fileName_origin
     44:47:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable:
     public static final java.lang.String packageName
@@ -960,7 +966,7 @@ pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil:
 pro.kisscat.www.bookmarkhelper.util.random.RandomUtil:
     14:14:public RandomUtil()
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
-    16:16:public RootUtil()
+    18:18:public RootUtil()
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil:
     public abstract java.lang.String getRootPath()
 pro.kisscat.www.bookmarkhelper.util.storage.Storageable
