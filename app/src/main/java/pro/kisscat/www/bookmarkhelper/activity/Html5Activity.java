@@ -93,7 +93,7 @@ public class Html5Activity extends AppCompatActivity {
         mWebSettings.setJavaScriptEnabled(true);
         mWebSettings.setBlockNetworkImage(true);
         mWebSettings.setAllowFileAccess(true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mWebSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
         if (Build.VERSION.SDK_INT < 19) {

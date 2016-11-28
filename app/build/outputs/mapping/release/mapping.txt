@@ -34102,10 +34102,11 @@ pro.kisscat.www.bookmarkhelper.exception.ConverterException -> pro.kisscat.www.b
 pro.kisscat.www.bookmarkhelper.exception.CrashHandler -> pro.kisscat.www.bookmarkhelper.b.b:
     pro.kisscat.www.bookmarkhelper.exception.CrashHandler INSTANCE -> a
     android.content.Context context -> b
-    24:26:void <init>() -> <init>
-    29:31:pro.kisscat.www.bookmarkhelper.exception.CrashHandler getInstance() -> a
-    35:36:void init(android.content.Context) -> a
-    41:48:void uncaughtException(java.lang.Thread,java.lang.Throwable) -> uncaughtException
+    30:31:void <init>() -> <init>
+    34:36:pro.kisscat.www.bookmarkhelper.exception.CrashHandler getInstance() -> a
+    40:41:void init(android.content.Context) -> a
+    46:60:void uncaughtException(java.lang.Thread,java.lang.Throwable) -> uncaughtException
+    63:87:java.lang.String printException(java.lang.Throwable) -> a
 pro.kisscat.www.bookmarkhelper.exception.InitException -> pro.kisscat.www.bookmarkhelper.b.c:
     15:16:void <init>(java.lang.String) -> <init>
 pro.kisscat.www.bookmarkhelper.init.executor.InitAsyncTask -> pro.kisscat.www.bookmarkhelper.c.a.a:
