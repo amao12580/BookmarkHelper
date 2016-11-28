@@ -135,8 +135,14 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 3.兼容部分机型，在获取root权限时，返回warning信息。
 
-#### 0.0.15版 Draft
+#### [0.0.15版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.15%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.14.apk)
 1.增加兼容：支持从[Chrome Dev浏览器](http://www.coolapk.com/apk/com.chrome.dev)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+2.Bug 修复：4.4平台webview加载出错的问题
+
+3.Bug 修复：捐助页面左上角无法返回的问题
+
+4.兼容部分机型，在获取root权限时，返回warning信息。
 
 #### 0.0.16版 Draft
 1.增加兼容：支持从[MIUI浏览器](https://play.google.com/store/apps/details?id=com.miui.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
@@ -334,7 +340,10 @@ Bug的快速修复离不开用户的积极反馈，正是因为大量的日志�
 
 鸣谢积极用户
 
+### 酷安网
+
 @〆XYZゾ
 @李小宅
 @大思想家
 @hudiei52
+@redknee
