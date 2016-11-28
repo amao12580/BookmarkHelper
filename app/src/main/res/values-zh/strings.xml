@@ -3,6 +3,7 @@
     <string name="app_name">书签助手</string>
     <string name="broswer_name_show_chrome">Chrome浏览器</string>
     <string name="broswer_name_show_chrome_canary">ChromeCanary</string>
+    <string name="broswer_name_show_chrome_beta">ChromeBeta</string>
     <string name="broswer_name_show_flyme5">Flyme5浏览器</string>
     <string name="broswer_name_show_360">360浏览器</string>
     <string name="broswer_name_show_x">X浏览器</string>

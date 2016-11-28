@@ -3,6 +3,7 @@
     <string name="app_name">BookmarkHelper</string>
     <string name="broswer_name_show_chrome">Chrome Broswer</string>
     <string name="broswer_name_show_chrome_canary">Chrome Canary Broswer</string>
+    <string name="broswer_name_show_chrome_beta">Chrome Beta Broswer</string>
     <string name="broswer_name_show_flyme5">Flyme5 Broswer</string>
     <string name="broswer_name_show_360">360 Broswer</string>
     <string name="broswer_name_show_x">X Broswer</string>

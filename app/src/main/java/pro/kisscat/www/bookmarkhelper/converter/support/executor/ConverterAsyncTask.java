@@ -136,7 +136,9 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
             ret = execute(rule);
             end = System.currentTimeMillis();
         } catch (ConverterException e) {
-            result.setErrorMsg(e.getMessage());
+            if (result.getErrorMsg() == null) {
+                result.setErrorMsg(e.getMessage());
+            }
             return result;
         } finally {
             if (ret > 0) {
@@ -155,7 +157,9 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
                 result.setSuccessCount(ret);
                 result.setSuccessMsg(rule.getSource().getName() + "：" + "所有书签已存在，不需要合并.");
             } else {
-                result.setErrorMsg(rule.getSource().getName() + "：" + "转换遇到问题，请联系作者.");
+                if (result.getErrorMsg() == null) {
+                    result.setErrorMsg(rule.getSource().getName() + "：" + "转换遇到问题，请联系作者.");
+                }
             }
             LogHelper.write();
         }

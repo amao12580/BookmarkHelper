@@ -15,6 +15,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Broswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBetaBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeCanaryBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer;
@@ -43,6 +44,7 @@ public class ConverterMaster {
             ViaBroswerable viaBroswerable = ViaBroswerable.fetchViaBroswer();
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeCanaryBroswer(), viaBroswerable));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBetaBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Broswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBroswer(), viaBroswerable));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCIntlBroswer(), viaBroswerable));
