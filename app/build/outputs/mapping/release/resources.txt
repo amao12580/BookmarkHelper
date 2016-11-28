@@ -842,6 +842,7 @@ Referenced Strings:
   equals
   err
   error
+  errorMsg:
   event
   executeRules:
   extSdCard

@@ -829,7 +829,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer:
     62:62:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.Broswerable
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    36:36:public ConverterMaster()
+    37:37:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask:
     private static final java.lang.String TAG
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBroswer:
@@ -966,7 +966,7 @@ pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil:
 pro.kisscat.www.bookmarkhelper.util.random.RandomUtil:
     14:14:public RandomUtil()
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil:
-    18:18:public RootUtil()
+    16:16:public RootUtil()
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil:
     public abstract java.lang.String getRootPath()
 pro.kisscat.www.bookmarkhelper.util.storage.Storageable

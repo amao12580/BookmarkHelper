@@ -18,6 +18,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBetaBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeCanaryBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeDevBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCIntlBroswer;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBroswerable;

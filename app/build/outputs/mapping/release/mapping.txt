@@ -33556,8 +33556,8 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer -> pro.kisscat.www
     30:30:void setInstalled(boolean) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster -> pro.kisscat.www.bookmarkhelper.converter.support.b:
     java.util.List supportRule -> a
-    41:61:void init(android.content.Context) -> a
-    37:37:java.util.List getSupportRule() -> a
+    42:62:void init(android.content.Context) -> a
+    38:38:java.util.List getSupportRule() -> a
 pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask -> pro.kisscat.www.bookmarkhelper.converter.support.executor.a:
     pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil progressBarUtil -> a
     android.os.Handler handler -> b
@@ -34153,13 +34153,14 @@ pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult -> pro.kisscat.ww
     int result -> result
     java.util.List successMsg -> successMsg
     java.util.List errorMsg -> errorMsg
-    21:35:void <init>() -> <init>
-    21:39:void <init>(int) -> <init>
-    21:45:void <init>(int,java.util.List,java.util.List) -> <init>
-    48:48:boolean isSuccess() -> isSuccess
-    21:21:int getResult() -> getResult
-    26:26:java.util.List getSuccessMsg() -> getSuccessMsg
-    31:31:java.util.List getErrorMsg() -> getErrorMsg
+    23:37:void <init>() -> <init>
+    23:41:void <init>(int) -> <init>
+    23:47:void <init>(int,java.util.List,java.util.List) -> <init>
+    50:58:boolean isSuccess() -> isSuccess
+    62:70:boolean checkEveryError(java.util.List) -> checkEveryError
+    23:23:int getResult() -> getResult
+    28:28:java.util.List getSuccessMsg() -> getSuccessMsg
+    33:33:java.util.List getErrorMsg() -> getErrorMsg
 pro.kisscat.www.bookmarkhelper.util.context.ContextUtil -> pro.kisscat.www.bookmarkhelper.util.b.a:
     java.lang.String readBookmarksError -> a
     java.lang.String readBookmarksEmpty -> b
@@ -34302,10 +34303,9 @@ pro.kisscat.www.bookmarkhelper.util.random.RandomUtil -> pro.kisscat.www.bookmar
     18:18:int nextInt(int) -> a
     15:15:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.util.j.a:
-    25:25:boolean upgradeRootPermission() -> a
-    29:29:boolean executeCmd(java.lang.String) -> a
-    33:40:boolean checkSuccess(pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult) -> a
-    44:50:pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult executeCmd(java.lang.String[]) -> a
+    23:23:boolean upgradeRootPermission() -> a
+    27:27:boolean executeCmd(java.lang.String) -> a
+    31:37:pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult executeCmd(java.lang.String[]) -> a
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil -> pro.kisscat.www.bookmarkhelper.util.k.a:
     22:22:void <init>() -> <init>
     30:35:boolean mkdir(java.lang.String,java.lang.String,boolean) -> a

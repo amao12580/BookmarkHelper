@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (savedInstanceState == null) {
             try {
                 CrashHandler handler = CrashHandler.getInstance();
-                handler.init(getApplicationContext());
+                handler.init(context);
                 Thread.setDefaultUncaughtExceptionHandler(handler);
                 LogHelper.init();
                 ConverterMaster.init(this);

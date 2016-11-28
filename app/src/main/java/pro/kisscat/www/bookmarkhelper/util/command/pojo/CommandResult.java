@@ -3,6 +3,8 @@ package pro.kisscat.www.bookmarkhelper.util.command.pojo;
 import java.util.List;
 
 import lombok.Getter;
+import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
+import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
  * Created with Android Studio.
@@ -45,6 +47,26 @@ public class CommandResult {
     }
 
     public boolean isSuccess() {
-        return result >= 0 && (errorMsg == null || errorMsg.isEmpty());
+        if (result < 0) {
+            return false;
+        }
+        if (errorMsg == null || errorMsg.isEmpty()) {
+            return true;
+        }
+        LogHelper.v("errorMsg size:" + errorMsg.size());
+        LogHelper.v("errorMsg:" + JsonUtil.toJson(errorMsg.size()));
+        return checkEveryError(errorMsg);
+    }
+
+    private boolean checkEveryError(List<String> errors) {
+        for (String item : errors) {
+            if (item == null || item.isEmpty()) {
+                continue;
+            }
+            if (!item.toUpperCase().startsWith("WARNING:")) {
+                return false;
+            }
+        }
+        return true;
     }
 }

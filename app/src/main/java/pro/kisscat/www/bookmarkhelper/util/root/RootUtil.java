@@ -1,7 +1,5 @@
 package pro.kisscat.www.bookmarkhelper.util.root;
 
-import java.util.List;
-
 import pro.kisscat.www.bookmarkhelper.util.command.CommandUtil;
 import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -26,18 +24,7 @@ public final class RootUtil {
     }
 
     public static boolean executeCmd(String cmd) {
-        return checkSuccess(executeCmd(new String[]{cmd}));
-    }
-
-    private static boolean checkSuccess(CommandResult commandResult) {
-        if (commandResult == null) {
-            return false;
-        }
-        if (commandResult.getResult() < 0) {
-            return false;
-        }
-        List<String> errors = commandResult.getErrorMsg();
-        return errors == null || errors.isEmpty() || errors.size() == 1 && (errors.get(0).startsWith("WARNING:"));
+        return executeCmd(new String[]{cmd}).isSuccess();
     }
 
     public static synchronized CommandResult executeCmd(String[] commands) {
