@@ -890,7 +890,11 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeCanaryBr
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     38:41:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeDevBroswer
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeDevBroswer:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    38:41:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBroswerable:
     protected static final java.lang.String fileName_origin
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBroswer:

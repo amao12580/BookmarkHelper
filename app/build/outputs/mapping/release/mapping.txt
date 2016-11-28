@@ -32210,6 +32210,7 @@ pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int pin -> pin
     int progress_circular -> progress_circular
     int progress_horizontal -> progress_horizontal
+    int qrcode_layout -> qrcode_layout
     int qrcode_webview_layout -> qrcode_webview_layout
     int qrcode_webview_toolbar -> qrcode_webview_toolbar
     int radio -> radio
@@ -32285,7 +32286,7 @@ pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$int
     int cancel_button_image_alpha -> cancel_button_image_alpha
     int design_snackbar_text_max_lines -> design_snackbar_text_max_lines
     int status_bar_notification_info_maxnum -> status_bar_notification_info_maxnum
-    2912:2912:void <init>() -> <init>
+    2913:2913:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layout:
     int abc_action_bar_title_item -> abc_action_bar_title_item
     int abc_action_bar_up_container -> abc_action_bar_up_container
@@ -32354,10 +32355,10 @@ pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layo
     int select_dialog_multichoice_material -> select_dialog_multichoice_material
     int select_dialog_singlechoice_material -> select_dialog_singlechoice_material
     int support_simple_spinner_dropdown_item -> support_simple_spinner_dropdown_item
-    2921:2921:void <init>() -> <init>
+    2922:2922:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$mipmap -> pro.kisscat.www.bookmarkhelper.R$mipmap:
     int ic_launcher -> ic_launcher
-    2990:2990:void <init>() -> <init>
+    2991:2991:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$string:
     int SDCardNotReadOrWriteable -> SDCardNotReadOrWriteable
     int SystemNotReadOrWriteable -> SystemNotReadOrWriteable
@@ -32445,7 +32446,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int status_bar_notification_info_overflow -> status_bar_notification_info_overflow
     int target_broswer_icon_contentDescription -> target_broswer_icon_contentDescription
     int viaBookmarksFileMiss -> viaBookmarksFileMiss
-    2993:2993:void <init>() -> <init>
+    2994:2994:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style:
     int AlertDialog_AppCompat -> AlertDialog_AppCompat
     int AlertDialog_AppCompat_Light -> AlertDialog_AppCompat_Light
@@ -32834,7 +32835,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    3081:3081:void <init>() -> <init>
+    3082:3082:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -33342,8 +33343,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3470:3470:void <init>() -> <init>
-    3537:10301:void <clinit>() -> <clinit>
+    3471:3471:void <init>() -> <init>
+    3538:10302:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b
@@ -33464,42 +33465,43 @@ pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity -> pro.kisscat.www
     java.lang.String url -> f
     java.io.File file -> g
     android.os.Handler handler -> h
-    43:204:void <init>() -> <init>
-    55:74:void onCreate(android.os.Bundle) -> onCreate
-    77:84:void initWebView(java.lang.String) -> c
-    88:93:void onLongClickCallBack(java.lang.String) -> a
-    101:107:boolean decodeImage(java.lang.String) -> d
-    130:149:android.graphics.Bitmap getBitmap(java.lang.String) -> b
-    157:190:void showDialog() -> b
-    196:199:void initAdapter() -> c
-    220:226:void sendToFriends() -> d
-    235:255:void saveMyBitmap(android.graphics.Bitmap,java.lang.String) -> a
-    263:270:void saveImageToGallery(android.content.Context) -> a
-    273:276:void goIntent() -> a
-    43:43:boolean access$000(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> a
-    43:43:android.os.Handler access$100(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> b
-    43:43:boolean access$200(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity,java.lang.String) -> a
-    43:43:android.widget.ArrayAdapter access$300(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> c
-    43:43:void access$400(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> d
+    44:211:void <init>() -> <init>
+    56:75:void onCreate(android.os.Bundle) -> onCreate
+    78:85:void initWebView(java.lang.String) -> c
+    89:94:void onLongClickCallBack(java.lang.String) -> a
+    98:99:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    108:114:boolean decodeImage(java.lang.String) -> d
+    137:156:android.graphics.Bitmap getBitmap(java.lang.String) -> b
+    164:197:void showDialog() -> b
+    203:206:void initAdapter() -> c
+    227:233:void sendToFriends() -> d
+    242:262:void saveMyBitmap(android.graphics.Bitmap,java.lang.String) -> a
+    270:277:void saveImageToGallery(android.content.Context) -> a
+    280:283:void goIntent() -> a
+    44:44:boolean access$000(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> a
+    44:44:android.os.Handler access$100(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> b
+    44:44:boolean access$200(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity,java.lang.String) -> a
+    44:44:android.widget.ArrayAdapter access$300(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> c
+    44:44:void access$400(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> d
 pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$1 -> pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$1:
     pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity this$0 -> a
-    158:158:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity,android.content.Context) -> <init>
-    162:187:void initViews() -> a
+    165:165:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity,android.content.Context) -> <init>
+    169:194:void initViews() -> a
 pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$1$1 -> pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$1$1:
     pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$1 this$1 -> a
-    164:164:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$1) -> <init>
-    169:185:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    171:171:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$1) -> <init>
+    176:192:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
 pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$2 -> pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$2:
     pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity this$0 -> a
-    205:205:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> <init>
-    207:213:void handleMessage(android.os.Message) -> handleMessage
+    212:212:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> <init>
+    214:220:void handleMessage(android.os.Message) -> handleMessage
 pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$MyAsyncTask -> pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity$a:
     pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity this$0 -> a
-    110:110:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> <init>
-    113:117:void onPostExecute(java.lang.String) -> a
-    121:122:java.lang.String doInBackground(java.lang.String[]) -> a
-    110:110:void onPostExecute(java.lang.Object) -> onPostExecute
-    110:110:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+    117:117:void <init>(pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity) -> <init>
+    120:124:void onPostExecute(java.lang.String) -> a
+    128:129:java.lang.String doInBackground(java.lang.String[]) -> a
+    117:117:void onPostExecute(java.lang.Object) -> onPostExecute
+    117:117:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 pro.kisscat.www.bookmarkhelper.activity.QRCode.widget.CustomDialog -> pro.kisscat.www.bookmarkhelper.activity.QRCode.widget.a:
     android.content.Context context -> a
     25:29:void <init>(android.content.Context) -> <init>
@@ -33910,6 +33912,17 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeBroswer 
     90:90:int appendBookmark(java.util.List) -> a
     58:59:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeCanaryBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.a.a.c:
+    java.util.List bookmarks -> d
+    java.lang.String filePath_origin -> e
+    java.lang.String filePath_cp -> f
+    27:27:void <init>() -> <init>
+    33:33:java.lang.String getPackageName() -> getPackageName
+    46:47:void fillDefaultIcon(android.content.Context) -> d
+    51:52:void fillDefaultAppName(android.content.Context) -> c
+    60:82:java.util.List readBookmark() -> a
+    87:87:int appendBookmark(java.util.List) -> a
+    55:56:void <clinit>() -> <clinit>
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.ChromeDevBroswer -> pro.kisscat.www.bookmarkhelper.converter.support.a.a.a.d:
     java.util.List bookmarks -> d
     java.lang.String filePath_origin -> e
     java.lang.String filePath_cp -> f

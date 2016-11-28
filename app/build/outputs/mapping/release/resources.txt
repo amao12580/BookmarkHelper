@@ -20,6 +20,7 @@ Referenced Strings:
   /Chrome/
   /ChromeBeta/
   /ChromeCanary/
+  /ChromeDev/
   /Firefox/
   /Flyme5/
   /Liebao/
@@ -158,6 +159,8 @@ Referenced Strings:
   ChromeBeta:读取书签数据结束
   ChromeCanary:开始读取书签数据
   ChromeCanary:读取书签数据结束
+  ChromeDev:开始读取书签数据
+  ChromeDev:读取书签数据结束
   Code
   CompoundButtonCompatGingerbread
   ContextCompat
@@ -773,6 +776,7 @@ Referenced Strings:
   com.baidu.browser.apps
   com.chrome.beta
   com.chrome.canary
+  com.chrome.dev
   com.ijinshan.browser_fast
   com.mmbox.xbrowser
   com.oupeng.mini.android
@@ -1384,7 +1388,7 @@ Marking id:top:2131492909 used because its prefix matches string pool constant t
 Marking id:topPanel:2131492942 used because its prefix matches string pool constant top
 Marking attr:errorEnabled:2130772255 used because its prefix matches string pool constant err
 Marking attr:errorTextAppearance:2130772256 used because its prefix matches string pool constant err
-Marking id:converterDirecterImage:2131493000 used because its prefix matches string pool constant converterDirecterImage
+Marking id:converterDirecterImage:2131493001 used because its prefix matches string pool constant converterDirecterImage
 Marking declare-styleable:FloatingActionButton:-1 used because its prefix matches string pool constant FloatingActionButton
 Marking styleable:FloatingActionButton:-1 used because its prefix matches string pool constant FloatingActionButton
 Marking declare-styleable:FloatingActionButton_Behavior_Layout:-1 used because its prefix matches string pool constant FloatingActionButton
@@ -1395,14 +1399,14 @@ Marking string:appbar_scrolling_view_behavior:2131099731 used because its prefix
 Marking string:app_name:2131099675 used because its prefix matches string pool constant app
 Marking string:appUninstall:2131099674 used because its prefix matches string pool constant app
 Marking string:appendBookmarksError:2131099676 used because its prefix matches string pool constant app
-Marking id:actions:2131493022 used because its prefix matches string pool constant actions
+Marking id:actions:2131493023 used because its prefix matches string pool constant actions
 Marking declare-styleable:Spinner:-1 used because its prefix matches string pool constant Spinner
 Marking styleable:Spinner:-1 used because its prefix matches string pool constant Spinner
-Marking id:targetBroswerIcon:2131493002 used because its prefix matches string pool constant targetBroswerIcon
-Marking id:targetBroswerAppNameText:2131493003 used because its prefix matches string pool constant targetBroswerAppNameText
+Marking id:targetBroswerIcon:2131493003 used because its prefix matches string pool constant targetBroswerIcon
+Marking id:targetBroswerAppNameText:2131493004 used because its prefix matches string pool constant targetBroswerAppNameText
 Marking declare-styleable:RecyclerView:-1 used because its prefix matches string pool constant RecyclerView
 Marking styleable:RecyclerView:-1 used because its prefix matches string pool constant RecyclerView
-Marking id:converterDirecterText:2131493001 used because its prefix matches string pool constant converterDirecterText
+Marking id:converterDirecterText:2131493002 used because its prefix matches string pool constant converterDirecterText
 Marking id:view_offset_helper:2131492876 used because its prefix matches string pool constant view
 Marking declare-styleable:TextInputLayout:-1 used because its prefix matches string pool constant TextInputLayout
 Marking styleable:TextInputLayout:-1 used because its prefix matches string pool constant TextInputLayout
@@ -1499,11 +1503,11 @@ Marking attr:showText:2130772236 used because its prefix matches string pool con
 Marking id:showCustom:2131492883 used because its prefix matches string pool constant show
 Marking id:showHome:2131492884 used because its prefix matches string pool constant show
 Marking id:showTitle:2131492885 used because its prefix matches string pool constant show
-Marking id:targetBroswerAppNameText:2131493003 used because its prefix matches string pool constant target
-Marking id:targetBroswerIcon:2131493002 used because its prefix matches string pool constant target
+Marking id:targetBroswerAppNameText:2131493004 used because its prefix matches string pool constant target
+Marking id:targetBroswerIcon:2131493003 used because its prefix matches string pool constant target
 Marking string:target_broswer_icon_contentDescription:2131099717 used because its prefix matches string pool constant target
 Marking id:shortcut:2131492954 used because its prefix matches string pool constant short
-Marking id:time:2131493017 used because its prefix matches string pool constant time
+Marking id:time:2131493018 used because its prefix matches string pool constant time
 Marking attr:windowActionBar:2130772016 used because its prefix matches string pool constant window
 Marking attr:windowActionBarOverlay:2130772018 used because its prefix matches string pool constant window
 Marking attr:windowActionModeOverlay:2130772019 used because its prefix matches string pool constant window
@@ -1554,9 +1558,9 @@ Marking drawable:notification_icon_background:2130837622 used because its prefix
 Marking drawable:notification_template_icon_bg:2130837625 used because its prefix matches string pool constant notification
 Marking drawable:notification_template_icon_low_bg:2130837626 used because its prefix matches string pool constant notification
 Marking drawable:notification_tile_bg:2130837623 used because its prefix matches string pool constant notification
-Marking id:notification_background:2131493020 used because its prefix matches string pool constant notification
-Marking id:notification_main_column:2131493015 used because its prefix matches string pool constant notification
-Marking id:notification_main_column_container:2131493014 used because its prefix matches string pool constant notification
+Marking id:notification_background:2131493021 used because its prefix matches string pool constant notification
+Marking id:notification_main_column:2131493016 used because its prefix matches string pool constant notification
+Marking id:notification_main_column_container:2131493015 used because its prefix matches string pool constant notification
 Marking layout:notification_action:2130968620 used because its prefix matches string pool constant notification
 Marking layout:notification_action_tombstone:2130968621 used because its prefix matches string pool constant notification
 Marking layout:notification_media_action:2130968622 used because its prefix matches string pool constant notification
@@ -1580,7 +1584,7 @@ Marking styleable:Toolbar:-1 used because its prefix matches string pool constan
 Marking attr:icon:2130771977 used because its prefix matches string pool constant icon
 Marking attr:iconifiedByDefault:2130772213 used because its prefix matches string pool constant icon
 Marking id:icon:2131492937 used because its prefix matches string pool constant icon
-Marking id:icon_group:2131493023 used because its prefix matches string pool constant icon
+Marking id:icon_group:2131493024 used because its prefix matches string pool constant icon
 Marking attr:searchHintIcon:2130772219 used because its prefix matches string pool constant search
 Marking attr:searchIcon:2130772218 used because its prefix matches string pool constant search
 Marking attr:searchViewStyle:2130772083 used because its prefix matches string pool constant search
@@ -1596,8 +1600,8 @@ Marking id:search_src_text:2131492971 used because its prefix matches string poo
 Marking id:search_voice_btn:2131492975 used because its prefix matches string pool constant search
 Marking string:search_menu_title:2131099667 used because its prefix matches string pool constant search
 Marking id:right:2131492907 used because its prefix matches string pool constant right
-Marking id:right_icon:2131493021 used because its prefix matches string pool constant right
-Marking id:right_side:2131493016 used because its prefix matches string pool constant right
+Marking id:right_icon:2131493022 used because its prefix matches string pool constant right
+Marking id:right_side:2131493017 used because its prefix matches string pool constant right
 Marking declare-styleable:CoordinatorLayout:-1 used because its prefix matches string pool constant CoordinatorLayout
 Marking styleable:CoordinatorLayout:-1 used because its prefix matches string pool constant CoordinatorLayout
 Marking declare-styleable:CoordinatorLayout_Layout:-1 used because its prefix matches string pool constant CoordinatorLayout
@@ -1666,7 +1670,7 @@ Marking attr:actionOverflowButtonStyle:2130772029 used because its prefix matche
 Marking attr:actionOverflowMenuStyle:2130772030 used because its prefix matches string pool constant action
 Marking attr:actionProviderClass:2130772185 used because its prefix matches string pool constant action
 Marking attr:actionViewClass:2130772184 used because its prefix matches string pool constant action
-Marking id:action0:2131493009 used because its prefix matches string pool constant action
+Marking id:action0:2131493010 used because its prefix matches string pool constant action
 Marking id:action_bar:2131492962 used because its prefix matches string pool constant action
 Marking id:action_bar_activity_content:2131492864 used because its prefix matches string pool constant action
 Marking id:action_bar_container:2131492961 used because its prefix matches string pool constant action
@@ -1674,17 +1678,17 @@ Marking id:action_bar_root:2131492957 used because its prefix matches string poo
 Marking id:action_bar_spinner:2131492865 used because its prefix matches string pool constant action
 Marking id:action_bar_subtitle:2131492930 used because its prefix matches string pool constant action
 Marking id:action_bar_title:2131492929 used because its prefix matches string pool constant action
-Marking id:action_container:2131493006 used because its prefix matches string pool constant action
+Marking id:action_container:2131493007 used because its prefix matches string pool constant action
 Marking id:action_context_bar:2131492963 used because its prefix matches string pool constant action
-Marking id:action_divider:2131493013 used because its prefix matches string pool constant action
-Marking id:action_image:2131493007 used because its prefix matches string pool constant action
+Marking id:action_divider:2131493014 used because its prefix matches string pool constant action
+Marking id:action_image:2131493008 used because its prefix matches string pool constant action
 Marking id:action_menu_divider:2131492866 used because its prefix matches string pool constant action
 Marking id:action_menu_presenter:2131492867 used because its prefix matches string pool constant action
 Marking id:action_mode_bar:2131492959 used because its prefix matches string pool constant action
 Marking id:action_mode_bar_stub:2131492958 used because its prefix matches string pool constant action
 Marking id:action_mode_close_button:2131492931 used because its prefix matches string pool constant action
-Marking id:action_text:2131493008 used because its prefix matches string pool constant action
-Marking id:actions:2131493022 used because its prefix matches string pool constant action
+Marking id:action_text:2131493009 used because its prefix matches string pool constant action
+Marking id:actions:2131493023 used because its prefix matches string pool constant action
 Marking attr:textAllCaps:2130772015 used because its prefix matches string pool constant text
 Marking attr:textAppearanceLargePopupMenu:2130772054 used because its prefix matches string pool constant text
 Marking attr:textAppearanceListItem:2130772091 used because its prefix matches string pool constant text
@@ -1696,21 +1700,21 @@ Marking attr:textAppearanceSmallPopupMenu:2130772055 used because its prefix mat
 Marking attr:textColorAlertDialogListItem:2130772111 used because its prefix matches string pool constant text
 Marking attr:textColorError:2130772163 used because its prefix matches string pool constant text
 Marking attr:textColorSearchUrl:2130772082 used because its prefix matches string pool constant text
-Marking id:text:2131493027 used because its prefix matches string pool constant text
-Marking id:text2:2131493025 used because its prefix matches string pool constant text
+Marking id:text:2131493028 used because its prefix matches string pool constant text
+Marking id:text2:2131493026 used because its prefix matches string pool constant text
 Marking id:textSpacerNoButtons:2131492948 used because its prefix matches string pool constant text
-Marking id:text_input_password_toggle:2131492997 used because its prefix matches string pool constant text
+Marking id:text_input_password_toggle:2131492998 used because its prefix matches string pool constant text
 Marking attr:isLightTheme:2130771970 used because its prefix matches string pool constant is
 Marking attr:statusBarBackground:2130772154 used because its prefix matches string pool constant status
 Marking attr:statusBarScrim:2130772141 used because its prefix matches string pool constant status
-Marking id:status_bar_latest_event_content:2131493011 used because its prefix matches string pool constant status
+Marking id:status_bar_latest_event_content:2131493012 used because its prefix matches string pool constant status
 Marking integer:status_bar_notification_info_maxnum:2131361798 used because its prefix matches string pool constant status
 Marking string:status_bar_notification_info_overflow:2131099668 used because its prefix matches string pool constant status
 Marking attr:maxActionInlineWidth:2130772225 used because its prefix matches string pool constant max
 Marking attr:maxButtonHeight:2130772276 used because its prefix matches string pool constant max
 Marking attr:max:2130772195 used because its prefix matches string pool constant max
 Marking attr:menu:2130772188 used because its prefix matches string pool constant menu
-Marking id:sourceBroswerIcon:2131492998 used because its prefix matches string pool constant sourceBroswerIcon
+Marking id:sourceBroswerIcon:2131492999 used because its prefix matches string pool constant sourceBroswerIcon
 Marking attr:logo:2130771978 used because its prefix matches string pool constant logo
 Marking attr:logoDescription:2130772282 used because its prefix matches string pool constant logo
 Marking attr:background:2130771980 used because its prefix matches string pool constant background
@@ -1755,7 +1759,7 @@ Marking attr:progress_unreached_color:2130772196 used because its prefix matches
 Marking id:up:2131492875 used because its prefix matches string pool constant up
 Marking attr:queryBackground:2130772223 used because its prefix matches string pool constant query
 Marking attr:queryHint:2130772214 used because its prefix matches string pool constant query
-Marking id:sourceBroswerAppNameText:2131492999 used because its prefix matches string pool constant sourceBroswerAppNameText
+Marking id:sourceBroswerAppNameText:2131493000 used because its prefix matches string pool constant sourceBroswerAppNameText
 Marking declare-styleable:View:-1 used because its prefix matches string pool constant View
 Marking styleable:View:-1 used because its prefix matches string pool constant View
 Marking declare-styleable:ViewBackgroundHelper:-1 used because its prefix matches string pool constant View
@@ -1888,19 +1892,19 @@ layout:design_navigation_item:2130968612 => [attr:selectableItemBackground:21307
 layout:design_navigation_item_header:2130968613 => [dimen:design_navigation_separator_vertical_padding:2131165290]
 layout:design_navigation_item_subheader:2130968615 => [attr:listPreferredItemHeightSmall:2130772085, attr:listPreferredItemPaddingLeft:2130772087, attr:listPreferredItemPaddingRight:2130772088, style:TextAppearance_AppCompat_Body2:2131230944]
 layout:design_navigation_menu:2130968616 => [dimen:design_navigation_padding_bottom:2131165289]
-layout:design_navigation_menu_item:2130968617 => [dimen:design_navigation_icon_padding:2131165287, style:TextAppearance_AppCompat_Body2:2131230944, id:design_menu_item_action_area:2131492996, layout:design_menu_item_action_area:2130968611]
+layout:design_navigation_menu_item:2130968617 => [dimen:design_navigation_icon_padding:2131165287, style:TextAppearance_AppCompat_Body2:2131230944, id:design_menu_item_action_area:2131492997, layout:design_menu_item_action_area:2130968611]
 layout:design_text_input_password_icon:2130968618 => [attr:selectableItemBackgroundBorderless:2130772068]
 layout:notification_action:2130968620 => [style:Widget_AppCompat_NotificationActionContainer:2131230860, dimen:notification_action_icon_size:2131165310, style:Widget_AppCompat_NotificationActionText:2131230861]
 layout:notification_action_tombstone:2130968621 => [style:Widget_AppCompat_NotificationActionContainer:2131230860, dimen:notification_action_icon_size:2131165310, style:Widget_AppCompat_NotificationActionText:2131230861]
-layout:notification_template_big_media:2130968624 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, layout:notification_template_icon_group:2130968629, layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493010, layout:notification_template_lines_media:2130968630, id:media_actions:2131493012]
-layout:notification_template_big_media_custom:2130968625 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, layout:notification_template_icon_group:2130968629, layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493010, dimen:notification_main_column_padding_top:2131165211, dimen:notification_content_margin_start:2131165210, dimen:notification_right_side_padding_top:2131165208, style:TextAppearance_AppCompat_Notification_Time_Media:2131230858, style:TextAppearance_AppCompat_Notification_Info_Media:2131230855, id:media_actions:2131493012]
-layout:notification_template_big_media_narrow:2130968626 => [layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493010, layout:notification_template_lines_media:2130968630, id:icon:2131492937, id:media_actions:2131493012]
-layout:notification_template_big_media_narrow_custom:2130968627 => [layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493010, dimen:notification_large_icon_height:2131165313, dimen:notification_main_column_padding_top:2131165211, dimen:notification_media_narrow_margin:2131165212, dimen:notification_right_side_padding_top:2131165208, style:TextAppearance_AppCompat_Notification_Time_Media:2131230858, style:TextAppearance_AppCompat_Notification_Info_Media:2131230855, id:icon:2131492937, id:media_actions:2131493012]
+layout:notification_template_big_media:2130968624 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, layout:notification_template_icon_group:2130968629, layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493011, layout:notification_template_lines_media:2130968630, id:media_actions:2131493013]
+layout:notification_template_big_media_custom:2130968625 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, layout:notification_template_icon_group:2130968629, layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493011, dimen:notification_main_column_padding_top:2131165211, dimen:notification_content_margin_start:2131165210, dimen:notification_right_side_padding_top:2131165208, style:TextAppearance_AppCompat_Notification_Time_Media:2131230858, style:TextAppearance_AppCompat_Notification_Info_Media:2131230855, id:media_actions:2131493013]
+layout:notification_template_big_media_narrow:2130968626 => [layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493011, layout:notification_template_lines_media:2130968630, id:icon:2131492937, id:media_actions:2131493013]
+layout:notification_template_big_media_narrow_custom:2130968627 => [layout:notification_media_cancel_action:2130968623, id:cancel_action:2131493011, dimen:notification_large_icon_height:2131165313, dimen:notification_main_column_padding_top:2131165211, dimen:notification_media_narrow_margin:2131165212, dimen:notification_right_side_padding_top:2131165208, style:TextAppearance_AppCompat_Notification_Time_Media:2131230858, style:TextAppearance_AppCompat_Notification_Info_Media:2131230855, id:icon:2131492937, id:media_actions:2131493013]
 layout:notification_template_custom_big:2130968628 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, dimen:notification_main_column_padding_top:2131165211, dimen:notification_content_margin_start:2131165210, dimen:notification_right_side_padding_top:2131165208, layout:notification_template_part_time:2130968634, layout:notification_template_part_chronometer:2130968633, style:TextAppearance_AppCompat_Notification_Info:2131230854, layout:notification_template_icon_group:2130968629]
 layout:notification_template_icon_group:2130968629 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, dimen:notification_big_circle_margin:2131165312, dimen:notification_right_icon_size:2131165315]
 layout:notification_template_lines_media:2130968630 => [dimen:notification_content_margin_start:2131165210, style:TextAppearance_AppCompat_Notification_Title_Media:2131230859, style:TextAppearance_AppCompat_Notification_Time_Media:2131230858, style:TextAppearance_AppCompat_Notification_Line2_Media:2131230963, style:TextAppearance_AppCompat_Notification_Media:2131230856, style:TextAppearance_AppCompat_Notification_Info_Media:2131230855]
 layout:notification_template_media:2130968631 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, layout:notification_template_icon_group:2130968629, layout:notification_template_lines_media:2130968630, layout:notification_media_cancel_action:2130968623]
-layout:notification_template_media_custom:2130968632 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, layout:notification_template_icon_group:2130968629, id:cancel_action:2131493010, dimen:notification_main_column_padding_top:2131165211, dimen:notification_content_margin_start:2131165210, dimen:notification_right_side_padding_top:2131165208, style:TextAppearance_AppCompat_Notification_Time_Media:2131230858, style:TextAppearance_AppCompat_Notification_Info_Media:2131230855, layout:notification_media_cancel_action:2130968623]
+layout:notification_template_media_custom:2130968632 => [dimen:notification_large_icon_height:2131165313, dimen:notification_large_icon_width:2131165314, layout:notification_template_icon_group:2130968629, id:cancel_action:2131493011, dimen:notification_main_column_padding_top:2131165211, dimen:notification_content_margin_start:2131165210, dimen:notification_right_side_padding_top:2131165208, style:TextAppearance_AppCompat_Notification_Time_Media:2131230858, style:TextAppearance_AppCompat_Notification_Info_Media:2131230855, layout:notification_media_cancel_action:2130968623]
 layout:notification_template_part_chronometer:2130968633 => [style:TextAppearance_AppCompat_Notification_Time:2131230857]
 layout:notification_template_part_time:2130968634 => [style:TextAppearance_AppCompat_Notification_Time:2131230857]
 layout:select_dialog_item_material:2130968639 => [attr:listPreferredItemHeightSmall:2130772085, attr:listPreferredItemPaddingLeft:2130772087, attr:listPreferredItemPaddingRight:2130772088, attr:textAppearanceListItemSmall:2130772092, attr:textColorAlertDialogListItem:2130772111]
@@ -2602,7 +2606,7 @@ anim:design_fab_in:2131034126,
    drawable:notification_template_icon_bg:2130837625,
    drawable:notification_template_icon_low_bg:2130837626,
    drawable:notification_tile_bg:2130837623,
-   id:action0:2131493009,
+   id:action0:2131493010,
    id:action_bar:2131492962,
    id:action_bar_activity_content:2131492864,
    id:action_bar_container:2131492961,
@@ -2610,60 +2614,60 @@ anim:design_fab_in:2131034126,
    id:action_bar_spinner:2131492865,
    id:action_bar_subtitle:2131492930,
    id:action_bar_title:2131492929,
-   id:action_container:2131493006,
+   id:action_container:2131493007,
    id:action_context_bar:2131492963,
-   id:action_divider:2131493013,
-   id:action_image:2131493007,
+   id:action_divider:2131493014,
+   id:action_image:2131493008,
    id:action_menu_divider:2131492866,
    id:action_menu_presenter:2131492867,
    id:action_mode_bar:2131492959,
    id:action_mode_bar_stub:2131492958,
    id:action_mode_close_button:2131492931,
-   id:action_text:2131493008,
-   id:actions:2131493022,
+   id:action_text:2131493009,
+   id:actions:2131493023,
    id:activity_chooser_view_content:2131492932,
    id:add:2131492892,
    id:alertTitle:2131492944,
    id:bottom:2131492900,
    id:buttonPanel:2131492939,
-   id:cancel_action:2131493010,
-   id:chronometer:2131493018,
+   id:cancel_action:2131493011,
+   id:chronometer:2131493019,
    id:contentPanel:2131492945,
    id:custom:2131492951,
    id:customPanel:2131492950,
    id:decor_content_parent:2131492960,
    id:default_activity_button:2131492935,
-   id:design_bottom_sheet:2131492989,
-   id:design_menu_item_action_area_stub:2131492995,
-   id:design_menu_item_text:2131492994,
+   id:design_bottom_sheet:2131492990,
+   id:design_menu_item_action_area_stub:2131492996,
+   id:design_menu_item_text:2131492995,
    id:edit_query:2131492964,
-   id:end_padder:2131493028,
+   id:end_padder:2131493029,
    id:expand_activities_button:2131492933,
    id:fill:2131492914,
    id:fill_horizontal:2131492915,
    id:fill_vertical:2131492905,
    id:fixed:2131492927,
    id:icon:2131492937,
-   id:icon_group:2131493023,
+   id:icon_group:2131493024,
    id:image:2131492934,
-   id:info:2131493019,
+   id:info:2131493020,
    id:item_touch_helper_previous_elevation:2131492869,
-   id:largeLabel:2131492987,
+   id:largeLabel:2131492988,
    id:left:2131492906,
-   id:line1:2131493024,
-   id:line3:2131493026,
+   id:line1:2131493025,
+   id:line3:2131493027,
    id:listMode:2131492877,
    id:list_item:2131492936,
-   id:media_actions:2131493012,
-   id:notification_background:2131493020,
-   id:notification_main_column:2131493015,
-   id:notification_main_column_container:2131493014,
+   id:media_actions:2131493013,
+   id:notification_background:2131493021,
+   id:notification_main_column:2131493016,
+   id:notification_main_column_container:2131493015,
    id:parentPanel:2131492941,
    id:progress_circular:2131492870,
    id:progress_horizontal:2131492871,
    id:right:2131492907,
-   id:right_icon:2131493021,
-   id:right_side:2131493016,
+   id:right_icon:2131493022,
+   id:right_side:2131493017,
    id:scrollIndicatorDown:2131492949,
    id:scrollIndicatorUp:2131492946,
    id:scrollView:2131492947,
@@ -2681,24 +2685,24 @@ anim:design_fab_in:2131034126,
    id:showCustom:2131492883,
    id:showHome:2131492884,
    id:showTitle:2131492885,
-   id:smallLabel:2131492986,
-   id:snackbar_action:2131492991,
-   id:snackbar_text:2131492990,
+   id:smallLabel:2131492987,
+   id:snackbar_action:2131492992,
+   id:snackbar_text:2131492991,
    id:spacer:2131492940,
    id:split_action_bar:2131492872,
-   id:status_bar_latest_event_content:2131493011,
+   id:status_bar_latest_event_content:2131493012,
    id:submenuarrow:2131492956,
    id:submit_area:2131492973,
-   id:text:2131493027,
-   id:text2:2131493025,
+   id:text:2131493028,
+   id:text2:2131493026,
    id:textSpacerNoButtons:2131492948,
-   id:text_input_password_toggle:2131492997,
-   id:time:2131493017,
+   id:text_input_password_toggle:2131492998,
+   id:time:2131493018,
    id:title:2131492938,
    id:title_template:2131492943,
    id:top:2131492909,
    id:topPanel:2131492942,
-   id:touch_outside:2131492988,
+   id:touch_outside:2131492989,
    id:transition_current_scene:2131492873,
    id:transition_scene_layoutid_cache:2131492874,
    id:up:2131492875,
@@ -3003,6 +3007,7 @@ anim:design_fab_in:2131034126,
    drawable:ic_chrome:2130837596,
    drawable:ic_chrome_beta:2130837597,
    drawable:ic_chrome_canary:2130837598,
+   drawable:ic_chrome_dev:2130837599,
    drawable:ic_donate:2130837600,
    drawable:ic_firefox:2130837601,
    drawable:ic_flyme5:2130837602,
@@ -3017,20 +3022,20 @@ anim:design_fab_in:2131034126,
    drawable:listview_item_default_bg:2130837611,
    drawable:listview_item_selected_bg:2130837612,
    drawable:listview_item_selector:2130837613,
-   id:baseweb_webview:2131492985,
-   id:converterDirecterImage:2131493000,
-   id:converterDirecterText:2131493001,
-   id:executeProgressesBar:2131493005,
-   id:executeProgressesLayout:2131493004,
+   id:baseweb_webview:2131492986,
+   id:converterDirecterImage:2131493001,
+   id:converterDirecterText:2131493002,
+   id:executeProgressesBar:2131493006,
+   id:executeProgressesLayout:2131493005,
    id:listViewRules:2131492977,
-   id:lv_dialog:2131493031,
+   id:lv_dialog:2131493032,
    id:qrcode_webview_layout:2131492983,
    id:qrcode_webview_toolbar:2131492982,
-   id:sourceBroswerAppNameText:2131492999,
-   id:sourceBroswerIcon:2131492998,
-   id:targetBroswerAppNameText:2131493003,
-   id:targetBroswerIcon:2131493002,
-   id:webview_toolbar:2131492984,
+   id:sourceBroswerAppNameText:2131493000,
+   id:sourceBroswerIcon:2131492999,
+   id:targetBroswerAppNameText:2131493004,
+   id:targetBroswerIcon:2131493003,
+   id:webview_toolbar:2131492985,
    layout:activity_main:2130968602,
    layout:activity_qrcode:2130968603,
    layout:activity_webview:2130968604,
@@ -3049,6 +3054,7 @@ anim:design_fab_in:2131034126,
    string:broswer_name_show_chrome:2131099679,
    string:broswer_name_show_chrome_beta:2131099680,
    string:broswer_name_show_chrome_canary:2131099681,
+   string:broswer_name_show_chrome_dev:2131099682,
    string:broswer_name_show_firefox:2131099683,
    string:broswer_name_show_flyme5:2131099684,
    string:broswer_name_show_liebao:2131099685,
@@ -3175,12 +3181,8 @@ Skipped unused resource res/anim/abc_slide_in_bottom.xml: 400 bytes (replaced wi
 Skipped unused resource res/anim/abc_slide_in_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/anim/abc_slide_out_bottom.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/anim/abc_slide_out_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/drawable-hdpi-v4/ic_chrome_dev.png: 5249 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/drawable-mdpi-v4/ic_chrome_dev.png: 3286 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/drawable-xhdpi-v4/ic_chrome_dev.png: 7759 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/drawable-xxhdpi-v4/ic_chrome_dev.png: 12902 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/drawable-xxxhdpi-v4/ic_chrome_dev.png: 18568 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
+Resource shrinking did not work (grew from 1210668 to 1211912); using original instead

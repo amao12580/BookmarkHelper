@@ -30280,6 +30280,7 @@ pro.kisscat.www.bookmarkhelper.R$id: int parentPanel
 pro.kisscat.www.bookmarkhelper.R$id: int pin
 pro.kisscat.www.bookmarkhelper.R$id: int progress_circular
 pro.kisscat.www.bookmarkhelper.R$id: int progress_horizontal
+pro.kisscat.www.bookmarkhelper.R$id: int qrcode_layout
 pro.kisscat.www.bookmarkhelper.R$id: int qrcode_webview_layout
 pro.kisscat.www.bookmarkhelper.R$id: int qrcode_webview_toolbar
 pro.kisscat.www.bookmarkhelper.R$id: int radio
