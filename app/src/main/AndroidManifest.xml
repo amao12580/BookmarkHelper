@@ -30,10 +30,18 @@
         </activity>
         <activity
             android:name=".activity.Html5Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pro.kisscat.www.bookmarkhelper.activity.MainActivity" />
+        </activity>
         <activity
             android:name=".activity.QRCode.QRCodeActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pro.kisscat.www.bookmarkhelper.activity.MainActivity" />
+        </activity>
     </application>
 </manifest>

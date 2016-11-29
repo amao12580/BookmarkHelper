@@ -50,6 +50,20 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
     private Result result;//二维码解析结果
     private String url;
     private File file;
+    /**
+     * 是二维码时，才添加为识别二维码
+     */
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            if (msg.what == 0) {
+                if (isQR) {
+                    adapter.add("识别图中二维码");
+                }
+                adapter.notifyDataSetChanged();
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,8 +109,12 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onSupportNavigateUp();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**
@@ -112,22 +130,6 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
         System.out.println("decodeImage.result:" + result);
         isQR = result != null;
         return isQR;
-    }
-
-    public class MyAsyncTask extends AsyncTask<String, Void, String> {
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            if (isQR) {
-                handler.sendEmptyMessage(0);
-            }
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            decodeImage(params[0]);
-            return null;
-        }
     }
 
     /**
@@ -206,21 +208,6 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
     }
 
     /**
-     * 是二维码时，才添加为识别二维码
-     */
-    @SuppressLint("HandlerLeak")
-    private Handler handler = new Handler() {
-        public void handleMessage(Message msg) {
-            if (msg.what == 0) {
-                if (isQR) {
-                    adapter.add("识别图中二维码");
-                }
-                adapter.notifyDataSetChanged();
-            }
-        }
-    };
-
-    /**
      * 发送给好友
      */
     private void sendToFriends() {
@@ -280,5 +267,21 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
         Uri uri = Uri.parse(result.toString());
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
+    }
+
+    public class MyAsyncTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if (isQR) {
+                handler.sendEmptyMessage(0);
+            }
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            decodeImage(params[0]);
+            return null;
+        }
     }
 }
