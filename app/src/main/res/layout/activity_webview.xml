@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/qrcode_layout"
+    android:id="@+id/webview_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/qrcode_webview_toolbar"
+            android:id="@+id/webview_toolbar"
             android:layout_width="fill_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -20,8 +21,9 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/qrcode_webview_layout"
+    <WebView
+        android:id="@+id/baseweb_webview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+
 </LinearLayout>
