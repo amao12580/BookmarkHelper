@@ -1,5 +1,7 @@
 package pro.kisscat.www.bookmarkhelper.util.phone;
 
+import android.os.Build;
+
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 /**
@@ -21,33 +23,27 @@ public class PhoneUtil {
         }
     }
 
-    /**
-     * http://blog.csdn.net/xx326664162/article/details/52438706
-     */
+    private static final Character split = '\n';
+
     private static String getHandSetInfo() {
-        return "BOARD: " + android.os.Build.BOARD +
-                ", BOOTLOADER: " + android.os.Build.BOOTLOADER +
-                ", BRAND: " + android.os.Build.BRAND +
-                ", CPU_ABI: " + android.os.Build.CPU_ABI +
-                ", CPU_ABI2: " + android.os.Build.CPU_ABI2 +
-                ", DEVICE: " + android.os.Build.DEVICE +
-                ", DISPLAY: " + android.os.Build.DISPLAY +
-                ", FINGERPRINT: " + android.os.Build.FINGERPRINT +
-                ", HARDWARE: " + android.os.Build.HARDWARE +
-                ", HOST: " + android.os.Build.HOST +
-                ", ID: " + android.os.Build.ID +
-                ", MANUFACTURER: " + android.os.Build.MANUFACTURER +
-                ", MODEL: " + android.os.Build.MODEL +
-                ", PRODUCT: " + android.os.Build.PRODUCT +
-                ", RADIO: " + android.os.Build.RADIO +
-                ", RADITAGSO: " + android.os.Build.TAGS +
-                ", TIME: " + android.os.Build.TIME +
-                ", TYPE: " + android.os.Build.TYPE +
-                ", USER: " + android.os.Build.USER +
-                ", VERSION.RELEASE: " + android.os.Build.VERSION.RELEASE +
-                ", VERSION.CODENAME: " + android.os.Build.VERSION.CODENAME +
-                ", VERSION.INCREMENTAL: " + android.os.Build.VERSION.INCREMENTAL +
-                ", VERSION.SDK: " + android.os.Build.VERSION.SDK +
-                ", VERSION.SDK_INT: " + android.os.Build.VERSION.SDK_INT;
+        return "BOARD=" + Build.BOARD + split +
+                "BRAND=" + Build.BRAND + split +
+                "CPU_ABI=" + Build.CPU_ABI + split +
+                "DEVICE=" + Build.DEVICE + split +
+                "DISPLAY=" + Build.DISPLAY + split +
+                "FINGERPRINT=" + Build.FINGERPRINT + split +
+                "HOST=" + Build.HOST + split +
+                "ID=" + Build.ID + split +
+                "MANUFACTURER=" + Build.MANUFACTURER + split +
+                "MODEL=" + Build.MODEL + split +
+                "PRODUCT=" + Build.PRODUCT + split +
+                "TAGS=" + Build.TAGS + split +
+                "TIME=" + Build.TIME + split +
+                "TYPE=" + Build.TYPE + split +
+                "USER=" + Build.USER + split +
+                "VERSION.CODENAME=" + Build.VERSION.CODENAME + split +
+                "VERSION.INCREMENTAL=" + Build.VERSION.INCREMENTAL + split +
+                "VERSION.RELEASE=" + Build.VERSION.RELEASE + split +
+                "VERSION.SDK_INT=" + Build.VERSION.SDK_INT + split;
     }
 }

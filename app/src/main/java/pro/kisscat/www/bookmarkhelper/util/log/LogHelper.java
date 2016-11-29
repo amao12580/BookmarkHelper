@@ -6,6 +6,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -48,8 +51,40 @@ public class LogHelper {
         log(tag, msg.toString(), 'w');
     }
 
-    public static void e(String tag, Object msg) { // 错误信息
-        log(tag, msg.toString(), 'e');
+    public static void e(Throwable throwable) { // 错误信息
+        e(MetaData.LOG_E_DEFAULT, printException(throwable));
+    }
+
+    public static void e(String tag, Throwable throwable) { // 错误信息
+        log(tag, printException(throwable), 'e');
+    }
+
+    private static String printException(Throwable throwable) {
+        String msg = null;
+        Writer result = null;
+        PrintWriter printWriter = null;
+        try {
+            result = new StringWriter();
+            printWriter = new PrintWriter(result);
+            throwable.printStackTrace(printWriter);
+            msg = result.toString();
+        } finally {
+            if (printWriter != null) {
+                printWriter.flush();
+                printWriter.close();
+            }
+            if (result != null) {
+                try {
+                    result.flush();
+                    result.close();
+                } catch (IOException e) {
+                    LogHelper.e("printException finally IOException:" + e.getMessage());
+                    LogHelper.write();
+                    e.printStackTrace();
+                }
+            }
+        }
+        return msg == null ? "" : msg;
     }
 
     public static void d(String tag, Object msg) {// 调试信息
@@ -77,7 +112,7 @@ public class LogHelper {
     }
 
     public static void e(String text) {
-        log(MetaData.LOG_E_DEFAULT, text, 'e');
+        e(MetaData.LOG_E_DEFAULT, text);
     }
 
     public static void d(String tag, String text) {

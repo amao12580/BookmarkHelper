@@ -34,6 +34,7 @@ public class CustomWebView extends WebView implements OnLongClickListener {
         WebSettings mSettings = this.getSettings();
         mSettings.setJavaScriptEnabled(true);//开启javascript
         mSettings.setDomStorageEnabled(true);//开启DOM
+        mSettings.setDisplayZoomControls(false);//关闭页面的放大缩小按钮
         mSettings.setDefaultTextEncodingName("utf-8");//设置字符编码
         //设置web页面
         mSettings.setAllowFileAccess(true);//设置支持文件流
@@ -52,8 +53,6 @@ public class CustomWebView extends WebView implements OnLongClickListener {
 
     @Override
     public boolean onLongClick(View v) {
-        Toast.makeText(v.getContext(), "实验性特性：二维码长按功能处于beta阶段", Toast.LENGTH_LONG).show();
-        System.out.println("longClick hit.");
         // 长按事件监听（注意：需要实现LongClickCallBack接口并传入对象）
         final HitTestResult htr = getHitTestResult();//获取所点击的内容
         if (htr.getType() == HitTestResult.IMAGE_TYPE) {//判断被点击的类型为图片

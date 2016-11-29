@@ -300,32 +300,46 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             startActivity(intent);
         } else {
             //您的系统中没有安装应用市场，用WebView打开
-            Toast.makeText(context, lv.getResources().getString(R.string.marketAppNoInstalled), Toast.LENGTH_LONG).show();
+            Toast.makeText(context, context.getResources().getString(R.string.marketAppNoInstalled), Toast.LENGTH_LONG).show();
             if (ratingURL == null) {
-                ratingURL = lv.getResources().getString(R.string.ratingURL);
+                ratingURL = context.getResources().getString(R.string.ratingURL);
             }
             openUrlInWebview(ratingURL + getPackageName(), lv.getResources().getString(R.string.app_name), R.mipmap.ic_launcher);
         }
     }
 
-    private static String donateURL = null;
-
     public void onclickDonate(View view) {
-        if (donateURL == null) {
-            donateURL = lv.getResources().getString(R.string.donateURL);
+        openDonate();
+    }
+
+    private void openDonate() {
+        if (!checkNetworkAndToSetting()) {
+            return;
         }
-        openUrlInWebview(donateURL, lv.getResources().getString(R.string.donateTitle), R.drawable.ic_donate, true);
+        Intent intent = new Intent(MainActivity.this, QRCodeActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("title", context.getResources().getString(R.string.donateTitle));
+        bundle.putInt("logo", R.drawable.ic_donate);
+        intent.putExtra("bundle", bundle);
+        startActivity(intent);
     }
 
     private void openUrlInWebview(String url, String title, int logo) {
         openUrlInWebview(url, title, logo, false);
     }
 
-    private void openUrlInWebview(String url, String title, int logo, boolean withQRCode) {
+    private boolean checkNetworkAndToSetting() {
         if (!NetworkUtil.isNetworkConnected(this)) {
-            Toast.makeText(context, lv.getResources().getString(R.string.networkError), Toast.LENGTH_LONG).show();
+            Toast.makeText(context, context.getResources().getString(R.string.networkError), Toast.LENGTH_LONG).show();
             Intent intent = new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS);
             startActivity(intent);
+            return false;
+        }
+        return true;
+    }
+
+    private void openUrlInWebview(String url, String title, int logo, boolean withQRCode) {
+        if (!checkNetworkAndToSetting()) {
             return;
         }
         Intent intent;

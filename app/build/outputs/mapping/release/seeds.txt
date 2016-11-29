@@ -28508,12 +28508,13 @@ android.support.v7.widget.util.SortedListAdapterCallback: void onChanged(int,int
 com.alibaba.fastjson.JSON: java.util.TimeZone defaultTimeZone
 com.alibaba.fastjson.JSON: java.util.Locale defaultLocale
 com.alibaba.fastjson.JSON: java.lang.String DEFAULT_TYPE_KEY
-com.alibaba.fastjson.JSON: int DEFAULT_PARSER_FEATURE
 com.alibaba.fastjson.JSON: com.alibaba.fastjson.serializer.SerializeFilter[] emptyFilters
 com.alibaba.fastjson.JSON: java.lang.String DEFFAULT_DATE_FORMAT
+com.alibaba.fastjson.JSON: int DEFAULT_PARSER_FEATURE
 com.alibaba.fastjson.JSON: int DEFAULT_GENERATE_FEATURE
 com.alibaba.fastjson.JSON: java.lang.String VERSION
 com.alibaba.fastjson.JSON: JSON()
+com.alibaba.fastjson.JSON: void setDefaultTypeKey(java.lang.String)
 com.alibaba.fastjson.JSON: java.lang.Object parse(java.lang.String)
 com.alibaba.fastjson.JSON: java.lang.Object parse(java.lang.String,int)
 com.alibaba.fastjson.JSON: java.lang.Object parse(byte[],com.alibaba.fastjson.parser.Feature[])
@@ -28528,34 +28529,48 @@ com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.la
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.lang.reflect.Type,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.lang.reflect.Type,com.alibaba.fastjson.parser.deserializer.ParseProcess,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.lang.reflect.Type,int,com.alibaba.fastjson.parser.Feature[])
+com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.lang.reflect.Type,com.alibaba.fastjson.parser.ParserConfig,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.lang.reflect.Type,com.alibaba.fastjson.parser.ParserConfig,int,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.lang.reflect.Type,com.alibaba.fastjson.parser.ParserConfig,com.alibaba.fastjson.parser.deserializer.ParseProcess,int,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(byte[],java.lang.reflect.Type,com.alibaba.fastjson.parser.Feature[])
+com.alibaba.fastjson.JSON: java.lang.Object parseObject(byte[],int,int,java.nio.charset.Charset,java.lang.reflect.Type,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(byte[],int,int,java.nio.charset.CharsetDecoder,java.lang.reflect.Type,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(char[],int,java.lang.reflect.Type,com.alibaba.fastjson.parser.Feature[])
+com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.io.InputStream,java.lang.reflect.Type,com.alibaba.fastjson.parser.Feature[])
+com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.io.InputStream,java.nio.charset.Charset,java.lang.reflect.Type,com.alibaba.fastjson.parser.Feature[])
 com.alibaba.fastjson.JSON: java.lang.Object parseObject(java.lang.String,java.lang.Class)
 com.alibaba.fastjson.JSON: com.alibaba.fastjson.JSONArray parseArray(java.lang.String)
 com.alibaba.fastjson.JSON: java.util.List parseArray(java.lang.String,java.lang.Class)
 com.alibaba.fastjson.JSON: java.util.List parseArray(java.lang.String,java.lang.reflect.Type[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object)
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,int,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONStringWithDateFormat(java.lang.Object,java.lang.String,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,com.alibaba.fastjson.serializer.SerializeFilter,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,com.alibaba.fastjson.serializer.SerializeFilter[],com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: byte[] toJSONBytes(java.lang.Object,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: byte[] toJSONBytes(java.lang.Object,int,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,com.alibaba.fastjson.serializer.SerializeFilter,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,com.alibaba.fastjson.serializer.SerializeFilter[],com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,com.alibaba.fastjson.serializer.SerializeFilter[],java.lang.String,int,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONStringZ(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: byte[] toJSONBytes(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: byte[] toJSONBytes(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,int,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toJSONString(java.lang.Object,boolean)
 com.alibaba.fastjson.JSON: void writeJSONStringTo(java.lang.Object,java.io.Writer,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: void writeJSONString(java.io.Writer,java.lang.Object,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: void writeJSONString(java.io.Writer,java.lang.Object,int,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: int writeJSONString(java.io.OutputStream,java.lang.Object,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: int writeJSONString(java.io.OutputStream,java.lang.Object,int,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: int writeJSONString(java.io.OutputStream,java.nio.charset.Charset,java.lang.Object,com.alibaba.fastjson.serializer.SerializerFeature[])
+com.alibaba.fastjson.JSON: int writeJSONString(java.io.OutputStream,java.nio.charset.Charset,java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig,com.alibaba.fastjson.serializer.SerializeFilter[],java.lang.String,int,com.alibaba.fastjson.serializer.SerializerFeature[])
 com.alibaba.fastjson.JSON: java.lang.String toString()
 com.alibaba.fastjson.JSON: java.lang.String toJSONString()
 com.alibaba.fastjson.JSON: void writeJSONString(java.lang.Appendable)
 com.alibaba.fastjson.JSON: java.lang.Object toJSON(java.lang.Object)
 com.alibaba.fastjson.JSON: java.lang.Object toJSON(java.lang.Object,com.alibaba.fastjson.parser.ParserConfig)
+com.alibaba.fastjson.JSON: java.lang.Object toJSON(java.lang.Object,com.alibaba.fastjson.serializer.SerializeConfig)
 com.alibaba.fastjson.JSON: java.lang.Object toJavaObject(com.alibaba.fastjson.JSON,java.lang.Class)
 com.alibaba.fastjson.JSON: java.lang.Object toJavaObject(java.lang.Class)
 com.alibaba.fastjson.JSON: void <clinit>()
@@ -28629,7 +28644,6 @@ com.alibaba.fastjson.JSONArray: java.sql.Timestamp getTimestamp(int)
 com.alibaba.fastjson.JSONArray: java.lang.Object clone()
 com.alibaba.fastjson.JSONArray: boolean equals(java.lang.Object)
 com.alibaba.fastjson.JSONArray: int hashCode()
-com.alibaba.fastjson.JSONException: long serialVersionUID
 com.alibaba.fastjson.JSONException: JSONException()
 com.alibaba.fastjson.JSONException: JSONException(java.lang.String)
 com.alibaba.fastjson.JSONException: JSONException(java.lang.String,java.lang.Throwable)
@@ -28702,9 +28716,16 @@ com.alibaba.fastjson.JSONPath$Operator: com.alibaba.fastjson.JSONPath$Operator N
 com.alibaba.fastjson.JSONPath$Operator: com.alibaba.fastjson.JSONPath$Operator[] values()
 com.alibaba.fastjson.JSONPath$Operator: com.alibaba.fastjson.JSONPath$Operator valueOf(java.lang.String)
 com.alibaba.fastjson.JSONPath$Operator: void <clinit>()
-com.alibaba.fastjson.JSONPathException: long serialVersionUID
 com.alibaba.fastjson.JSONPathException: JSONPathException(java.lang.String)
 com.alibaba.fastjson.JSONPathException: JSONPathException(java.lang.String,java.lang.Throwable)
+com.alibaba.fastjson.PropertyNamingStrategy: com.alibaba.fastjson.PropertyNamingStrategy CamelCase
+com.alibaba.fastjson.PropertyNamingStrategy: com.alibaba.fastjson.PropertyNamingStrategy PascalCase
+com.alibaba.fastjson.PropertyNamingStrategy: com.alibaba.fastjson.PropertyNamingStrategy SnakeCase
+com.alibaba.fastjson.PropertyNamingStrategy: com.alibaba.fastjson.PropertyNamingStrategy KebabCase
+com.alibaba.fastjson.PropertyNamingStrategy: com.alibaba.fastjson.PropertyNamingStrategy[] values()
+com.alibaba.fastjson.PropertyNamingStrategy: com.alibaba.fastjson.PropertyNamingStrategy valueOf(java.lang.String)
+com.alibaba.fastjson.PropertyNamingStrategy: java.lang.String translate(java.lang.String)
+com.alibaba.fastjson.PropertyNamingStrategy: void <clinit>()
 com.alibaba.fastjson.parser.Feature: com.alibaba.fastjson.parser.Feature AutoCloseSource
 com.alibaba.fastjson.parser.Feature: com.alibaba.fastjson.parser.Feature AllowComment
 com.alibaba.fastjson.parser.Feature: com.alibaba.fastjson.parser.Feature AllowUnQuotedFieldNames
@@ -28757,8 +28778,11 @@ com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializ
 com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature BrowserSecure
 com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature IgnoreNonFieldGetter
 com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature WriteNonStringValueAsString
+com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature IgnoreErrorGetter
+com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature WriteBigDecimalAsPlain
 com.alibaba.fastjson.serializer.SerializerFeature: int mask
 com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature[] EMPTY
+com.alibaba.fastjson.serializer.SerializerFeature: int WRITE_MAP_NULL_FEATURES
 com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature[] values()
 com.alibaba.fastjson.serializer.SerializerFeature: com.alibaba.fastjson.serializer.SerializerFeature valueOf(java.lang.String)
 com.alibaba.fastjson.serializer.SerializerFeature: int getMask()
@@ -29276,6 +29300,7 @@ com.google.zxing.EncodeHintType: com.google.zxing.EncodeHintType PDF417_COMPACT
 com.google.zxing.EncodeHintType: com.google.zxing.EncodeHintType PDF417_COMPACTION
 com.google.zxing.EncodeHintType: com.google.zxing.EncodeHintType PDF417_DIMENSIONS
 com.google.zxing.EncodeHintType: com.google.zxing.EncodeHintType AZTEC_LAYERS
+com.google.zxing.EncodeHintType: com.google.zxing.EncodeHintType QR_VERSION
 com.google.zxing.EncodeHintType: com.google.zxing.EncodeHintType[] values()
 com.google.zxing.EncodeHintType: com.google.zxing.EncodeHintType valueOf(java.lang.String)
 com.google.zxing.EncodeHintType: void <clinit>()
@@ -29285,6 +29310,7 @@ com.google.zxing.FormatException: void <clinit>()
 com.google.zxing.NotFoundException: com.google.zxing.NotFoundException getNotFoundInstance()
 com.google.zxing.NotFoundException: void <clinit>()
 com.google.zxing.ReaderException: boolean isStackTrace
+com.google.zxing.ReaderException: java.lang.StackTraceElement[] NO_TRACE
 com.google.zxing.ReaderException: ReaderException()
 com.google.zxing.ReaderException: ReaderException(java.lang.Throwable)
 com.google.zxing.ReaderException: java.lang.Throwable fillInStackTrace()
@@ -29391,6 +29417,13 @@ com.google.zxing.multi.qrcode.QRCodeMultiReader$SAComparator: QRCodeMultiReader$
 com.google.zxing.multi.qrcode.detector.MultiFinderPatternFinder$ModuleSizeComparator: int compare(com.google.zxing.qrcode.detector.FinderPattern,com.google.zxing.qrcode.detector.FinderPattern)
 com.google.zxing.multi.qrcode.detector.MultiFinderPatternFinder$ModuleSizeComparator: int compare(java.lang.Object,java.lang.Object)
 com.google.zxing.multi.qrcode.detector.MultiFinderPatternFinder$ModuleSizeComparator: MultiFinderPatternFinder$ModuleSizeComparator(com.google.zxing.multi.qrcode.detector.MultiFinderPatternFinder$1)
+com.google.zxing.oned.Code128Writer$CType: com.google.zxing.oned.Code128Writer$CType UNCODABLE
+com.google.zxing.oned.Code128Writer$CType: com.google.zxing.oned.Code128Writer$CType ONE_DIGIT
+com.google.zxing.oned.Code128Writer$CType: com.google.zxing.oned.Code128Writer$CType TWO_DIGITS
+com.google.zxing.oned.Code128Writer$CType: com.google.zxing.oned.Code128Writer$CType FNC_1
+com.google.zxing.oned.Code128Writer$CType: com.google.zxing.oned.Code128Writer$CType[] values()
+com.google.zxing.oned.Code128Writer$CType: com.google.zxing.oned.Code128Writer$CType valueOf(java.lang.String)
+com.google.zxing.oned.Code128Writer$CType: void <clinit>()
 com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState$State: com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState$State NUMERIC
 com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState$State: com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState$State ALPHA
 com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState$State: com.google.zxing.oned.rss.expanded.decoders.CurrentParsingState$State ISO_IEC_646
@@ -29413,6 +29446,36 @@ com.google.zxing.pdf417.encoder.Compaction: com.google.zxing.pdf417.encoder.Comp
 com.google.zxing.pdf417.encoder.Compaction: com.google.zxing.pdf417.encoder.Compaction[] values()
 com.google.zxing.pdf417.encoder.Compaction: com.google.zxing.pdf417.encoder.Compaction valueOf(java.lang.String)
 com.google.zxing.pdf417.encoder.Compaction: void <clinit>()
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_000
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_001
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_010
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_011
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_100
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_101
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_110
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask DATA_MASK_111
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask[] values()
+com.google.zxing.qrcode.decoder.DataMask: com.google.zxing.qrcode.decoder.DataMask valueOf(java.lang.String)
+com.google.zxing.qrcode.decoder.DataMask: void unmaskBitMatrix(com.google.zxing.common.BitMatrix,int)
+com.google.zxing.qrcode.decoder.DataMask: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask: DataMask(java.lang.String,int,com.google.zxing.qrcode.decoder.DataMask$1)
+com.google.zxing.qrcode.decoder.DataMask: void <clinit>()
+com.google.zxing.qrcode.decoder.DataMask$1: DataMask$1(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$1: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask$2: DataMask$2(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$2: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask$3: DataMask$3(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$3: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask$4: DataMask$4(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$4: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask$5: DataMask$5(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$5: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask$6: DataMask$6(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$6: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask$7: DataMask$7(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$7: boolean isMasked(int,int)
+com.google.zxing.qrcode.decoder.DataMask$8: DataMask$8(java.lang.String,int)
+com.google.zxing.qrcode.decoder.DataMask$8: boolean isMasked(int,int)
 com.google.zxing.qrcode.decoder.ErrorCorrectionLevel: com.google.zxing.qrcode.decoder.ErrorCorrectionLevel L
 com.google.zxing.qrcode.decoder.ErrorCorrectionLevel: com.google.zxing.qrcode.decoder.ErrorCorrectionLevel M
 com.google.zxing.qrcode.decoder.ErrorCorrectionLevel: com.google.zxing.qrcode.decoder.ErrorCorrectionLevel Q
@@ -29454,13 +29517,6 @@ javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$Authenti
 javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$AuthenticationType[] values()
 javax.annotation.Resource$AuthenticationType: javax.annotation.Resource$AuthenticationType valueOf(java.lang.String)
 javax.annotation.Resource$AuthenticationType: void <clinit>()
-org.apache.commons.exec.ExecuteException: long serialVersionUID
-org.apache.commons.exec.ExecuteException: java.lang.Throwable cause
-org.apache.commons.exec.ExecuteException: int exitValue
-org.apache.commons.exec.ExecuteException: ExecuteException(java.lang.String,int)
-org.apache.commons.exec.ExecuteException: ExecuteException(java.lang.String,int,java.lang.Throwable)
-org.apache.commons.exec.ExecuteException: java.lang.Throwable getCause()
-org.apache.commons.exec.ExecuteException: int getExitValue()
 pro.kisscat.www.bookmarkhelper.R$anim
 pro.kisscat.www.bookmarkhelper.R$anim: int abc_fade_in
 pro.kisscat.www.bookmarkhelper.R$anim: int abc_fade_out
@@ -30281,7 +30337,6 @@ pro.kisscat.www.bookmarkhelper.R$id: int pin
 pro.kisscat.www.bookmarkhelper.R$id: int progress_circular
 pro.kisscat.www.bookmarkhelper.R$id: int progress_horizontal
 pro.kisscat.www.bookmarkhelper.R$id: int qrcode_layout
-pro.kisscat.www.bookmarkhelper.R$id: int qrcode_webview_layout
 pro.kisscat.www.bookmarkhelper.R$id: int qrcode_webview_toolbar
 pro.kisscat.www.bookmarkhelper.R$id: int radio
 pro.kisscat.www.bookmarkhelper.R$id: int right
@@ -30493,8 +30548,9 @@ pro.kisscat.www.bookmarkhelper.R$string: int converter_directer_arrow_contentDes
 pro.kisscat.www.bookmarkhelper.R$string: int dialogButtonOk
 pro.kisscat.www.bookmarkhelper.R$string: int dialogTitle
 pro.kisscat.www.bookmarkhelper.R$string: int donate
+pro.kisscat.www.bookmarkhelper.R$string: int donateAlipayURL
 pro.kisscat.www.bookmarkhelper.R$string: int donateTitle
-pro.kisscat.www.bookmarkhelper.R$string: int donateURL
+pro.kisscat.www.bookmarkhelper.R$string: int donateWeixinURL
 pro.kisscat.www.bookmarkhelper.R$string: int fileCPError
 pro.kisscat.www.bookmarkhelper.R$string: int fileDeleteError
 pro.kisscat.www.bookmarkhelper.R$string: int fileMkdirError

@@ -42,7 +42,8 @@
     <string name="marketAppNoInstalled">Not found market app.</string>
     <string name="clickBackToExit">Next click back will exit.</string>
     <string name="someTaskIsRuning">wait for a coffer time.</string>
-    <string name="donateURL">https://amao12580.github.io/rewards/wechat-reward-image.png</string>
+    <string name="donateWeixinURL">https://amao12580.github.io/rewards/wechat-reward-image.png</string>
+    <string name="donateAlipayURL">http://ww2.sinaimg.cn/mw690/becd6b85gw1fa92e11ycmj20u019jwik.jpg</string>
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
     <string name="fileMkdirError">work dir create failed.</string>

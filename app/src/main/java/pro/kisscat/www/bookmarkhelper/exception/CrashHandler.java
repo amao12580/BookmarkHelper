@@ -3,11 +3,6 @@ package pro.kisscat.www.bookmarkhelper.exception;
 import android.content.Context;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
@@ -46,7 +41,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         String fatalErrorMessage = MetaData.LOG_E_FATAL + ":" + AppListUtil.thisAppInfo + " is crash.exception message:" + throwable.getMessage();
         System.out.println(fatalErrorMessage);
         LogHelper.e(MetaData.LOG_E_FATAL, fatalErrorMessage);
-        LogHelper.e(MetaData.LOG_E_FATAL, printException(throwable));
+        LogHelper.e(MetaData.LOG_E_FATAL, throwable);
         LogHelper.write();
         throwable.printStackTrace();
         Toast.makeText(context, "Bug:我们已经妥善保护好现场，请将日志文件发给作者.", Toast.LENGTH_LONG).show();
@@ -57,33 +52,5 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         }
         //干掉当前的程序
         android.os.Process.killProcess(android.os.Process.myPid());
-    }
-
-    private String printException(Throwable throwable) {
-        String msg = null;
-        Writer result = null;
-        PrintWriter printWriter = null;
-        try {
-            result = new StringWriter();
-            printWriter = new PrintWriter(result);
-            throwable.printStackTrace(printWriter);
-            msg = result.toString();
-        } finally {
-            if (printWriter != null) {
-                printWriter.flush();
-                printWriter.close();
-            }
-            if (result != null) {
-                try {
-                    result.flush();
-                    result.close();
-                } catch (IOException e) {
-                    LogHelper.e("printException finally IOException:" + e.getMessage());
-                    LogHelper.write();
-                    e.printStackTrace();
-                }
-            }
-        }
-        return msg == null ? "" : msg;
     }
 }

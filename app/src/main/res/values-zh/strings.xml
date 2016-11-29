@@ -43,7 +43,10 @@
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场.</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
     <string name="someTaskIsRuning">书签转换任务正在执行.</string>
-    <string name="donateURL">http://ww3.sinaimg.cn/large/0060lm7Tgw1f9kfaj0fvsj30u00xc77b.jpg</string>
+    <!--支付宝，可扫描-->
+    <string name="donateAlipayURL">http://ww2.sinaimg.cn/mw690/becd6b85gw1fa92e11ycmj20u019jwik.jpg</string>
+    <!--微信，可扫描-->
+    <string name="donateWeixinURL">http://ww4.sinaimg.cn/mw690/becd6b85gw1fa92htbngpj20u00xcjue.jpg</string>
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="aboutMeURL">https://github.com/amao12580/BookmarkHelper/blob/master/README.md</string>
     <string name="fileMkdirError">无法创建工作目录，可能缺少存储权限.</string>

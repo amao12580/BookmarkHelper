@@ -32,8 +32,9 @@
     <string name="dialogButtonOk">已阅</string>
     <string name="dialogTitle">快看提示！</string>
     <string name="donate">捐助</string>
+    <string name="donateAlipayURL">http://ww2.sinaimg.cn/mw690/becd6b85gw1fa92e11ycmj20u019jwik.jpg</string>
     <string name="donateTitle">请我喝杯咖啡？</string>
-    <string name="donateURL">http://ww3.sinaimg.cn/large/0060lm7Tgw1f9kfaj0fvsj30u00xc77b.jpg</string>
+    <string name="donateWeixinURL">http://ww4.sinaimg.cn/mw690/becd6b85gw1fa92htbngpj20u00xcjue.jpg</string>
     <string name="fileCPError">文件拷贝失败.</string>
     <string name="fileDeleteError">文件删除失败.</string>
     <string name="fileMkdirError">无法创建工作目录，可能缺少存储权限.</string>
