@@ -75,6 +75,9 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
         initWebViews();
     }
 
+    /**
+     * 换用imageview ？？
+     */
     private void initWebViews() {
         mCustomWebView = new CustomWebView(this, this);
         //被tiny压缩的二维码图片，已经丢掉了关键信息，没法解码
