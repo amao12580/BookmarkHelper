@@ -44,6 +44,25 @@ public class Html5Activity extends AppCompatActivity {
     // 用于记录出错页面的url 方便重新加载
     private String mFailingUrl = null;
     private WebView mWebView;
+    private WebChromeClient webChromeClient = new WebChromeClient() {
+
+        @Override
+        public void onGeolocationPermissionsShowPrompt(final String origin, final GeolocationPermissions.Callback callback) {
+            callback.invoke(origin, true, false);//注意个函数，第二个参数就是是否同意定位权限，第三个是是否希望内核记住
+            super.onGeolocationPermissionsShowPrompt(origin, callback);
+        }
+        //=========HTML5定位==========================================================
+
+        //=========多窗口的问题==========================================================
+        @Override
+        public boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg) {
+            WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
+            transport.setWebView(view);
+            resultMsg.sendToTarget();
+            return true;
+        }
+        //=========多窗口的问题==========================================================
+    };
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @JavascriptInterface
@@ -113,8 +132,76 @@ public class Html5Activity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
-        return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onSupportNavigateUp();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void onResume() {
+        super.onResume();
+        if (mWebView != null) {
+            mWebView.onResume();
+            mWebView.resumeTimers();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (mWebView != null) {
+            mWebView.onPause();
+            mWebView.pauseTimers();
+        }
+        super.onPause();
+    }
+
+    /**
+     * 多窗口的问题
+     */
+    private void newWin(WebSettings mWebSettings) {
+        //html中的_bank标签就是新建窗口打开，有时会打不开，需要加以下
+        //然后 复写 WebChromeClient的onCreateWindow方法
+        mWebSettings.setSupportMultipleWindows(false);
+        mWebSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+    }
+
+    /**
+     * HTML5数据存储
+     */
+    private void saveData(WebSettings mWebSettings) {
+        //有时候网页需要自己保存一些关键数据,Android WebView 需要自己设置
+        mWebSettings.setDomStorageEnabled(true);
+        mWebSettings.setDatabaseEnabled(true);
+        mWebSettings.setAppCacheEnabled(true);
+        String appCachePath = getApplicationContext().getCacheDir().getAbsolutePath();
+        mWebSettings.setAppCachePath(appCachePath);
+    }
+
+    //如果不做任何处理，浏览网页，点击系统“Back”键，整个Browser会调用finish()而结束自身
+    //，如果希望浏览的网 页回退而不是推出浏览器，需要在当前Activity中处理并消费掉该Back事件。
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {
+            mWebView.goBack();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mWebView != null) {
+            mWebView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+            mWebView.clearHistory();
+
+            ((ViewGroup) mWebView.getParent()).removeView(mWebView);
+            mWebView.destroy();
+            mWebView = null;
+        }
+        super.onDestroy();
     }
 
     private class MyWebViewClient extends WebViewClient {
@@ -160,91 +247,4 @@ public class Html5Activity extends AppCompatActivity {
             });
         }
     }
-
-    public void onResume() {
-        super.onResume();
-        if (mWebView != null) {
-            mWebView.onResume();
-            mWebView.resumeTimers();
-        }
-    }
-
-    @Override
-    public void onPause() {
-        if (mWebView != null) {
-            mWebView.onPause();
-            mWebView.pauseTimers();
-        }
-        super.onPause();
-    }
-
-
-    /**
-     * 多窗口的问题
-     */
-    private void newWin(WebSettings mWebSettings) {
-        //html中的_bank标签就是新建窗口打开，有时会打不开，需要加以下
-        //然后 复写 WebChromeClient的onCreateWindow方法
-        mWebSettings.setSupportMultipleWindows(false);
-        mWebSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-    }
-
-    /**
-     * HTML5数据存储
-     */
-    private void saveData(WebSettings mWebSettings) {
-        //有时候网页需要自己保存一些关键数据,Android WebView 需要自己设置
-        mWebSettings.setDomStorageEnabled(true);
-        mWebSettings.setDatabaseEnabled(true);
-        mWebSettings.setAppCacheEnabled(true);
-        String appCachePath = getApplicationContext().getCacheDir().getAbsolutePath();
-        mWebSettings.setAppCachePath(appCachePath);
-    }
-
-    private WebChromeClient webChromeClient = new WebChromeClient() {
-
-        @Override
-        public void onGeolocationPermissionsShowPrompt(final String origin, final GeolocationPermissions.Callback callback) {
-            callback.invoke(origin, true, false);//注意个函数，第二个参数就是是否同意定位权限，第三个是是否希望内核记住
-            super.onGeolocationPermissionsShowPrompt(origin, callback);
-        }
-        //=========HTML5定位==========================================================
-
-        //=========多窗口的问题==========================================================
-        @Override
-        public boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg) {
-            WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
-            transport.setWebView(view);
-            resultMsg.sendToTarget();
-            return true;
-        }
-        //=========多窗口的问题==========================================================
-    };
-
-
-    //如果不做任何处理，浏览网页，点击系统“Back”键，整个Browser会调用finish()而结束自身
-    //，如果希望浏览的网 页回退而不是推出浏览器，需要在当前Activity中处理并消费掉该Back事件。
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {
-            mWebView.goBack();
-            return true;
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
-    protected void onDestroy() {
-        if (mWebView != null) {
-            mWebView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
-            mWebView.clearHistory();
-
-            ((ViewGroup) mWebView.getParent()).removeView(mWebView);
-            mWebView.destroy();
-            mWebView = null;
-        }
-        super.onDestroy();
-    }
-
 }

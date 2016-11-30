@@ -1054,8 +1054,9 @@
                     "startLine": 62,
                     "startColumn": 4,
                     "startOffset": 3660,
-                    "endColumn": 89,
-                    "endOffset": 3745
+                    "endLine": 64,
+                    "endColumn": 12,
+                    "endOffset": 3825
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml",
@@ -1063,19 +1064,20 @@
                         "startLine": 15,
                         "startColumn": 4,
                         "startOffset": 540,
-                        "endColumn": 90,
-                        "endOffset": 626
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 707
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 63,
+                    "startLine": 65,
                     "startColumn": 4,
-                    "startOffset": 3750,
-                    "endLine": 66,
+                    "startOffset": 3830,
+                    "endLine": 68,
                     "endColumn": 12,
-                    "endOffset": 3895
+                    "endOffset": 3975
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml",
@@ -1091,20 +1093,20 @@
             },
             {
                 "to": {
-                    "startLine": 67,
+                    "startLine": 69,
                     "startColumn": 4,
-                    "startOffset": 3900,
+                    "startOffset": 3980,
                     "endColumn": 79,
-                    "endOffset": 3975
+                    "endOffset": 4055
                 },
                 "from": {
                     "file": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\values-zh\\styles.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 634,
+                        "startOffset": 715,
                         "endColumn": 80,
-                        "endOffset": 710
+                        "endOffset": 791
                     }
                 }
             }

@@ -32,7 +32,10 @@ class Adapter extends SimpleAdapter {
     private List<? extends Map<String, ?>> mData;
     private int mResource;
     private LayoutInflater mInflater;
-
+    @Getter
+    private int selectItem = -1;
+    @Getter
+    private View currentClickItem;
     Adapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
         mData = data;
@@ -41,11 +44,6 @@ class Adapter extends SimpleAdapter {
         mTo = to;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
-    @Getter
-    private int selectItem = -1;
-    @Getter
-    private View currentClickItem;
 
     void setSelectItem(int position, View view) {
         this.currentClickItem = view;
@@ -63,10 +61,10 @@ class Adapter extends SimpleAdapter {
         View view = createViewFromResource(position, convertView, parent, mResource);
         LinearLayout executeProgressesLayout = (LinearLayout) view.findViewById(R.id.executeProgressesLayout);
         if (position == selectItem) {
-            view.setBackgroundResource(R.drawable.listview_item_selected_bg);
+//            view.setBackgroundResource(R.drawable.listview_item_selected_bg);
             executeProgressesLayout.setVisibility(View.VISIBLE);
         } else {
-            view.setBackgroundResource(R.drawable.listview_item_default_bg);
+//            view.setBackgroundResource(R.drawable.listview_item_default_bg);
             executeProgressesLayout.setVisibility(View.GONE);
         }
         return view;
