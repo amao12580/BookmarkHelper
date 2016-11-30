@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml
@@ -38,7 +38,7 @@ ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:10:5-79
 	android:name
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:10:22-76
 application
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:12:5-38:19
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:12:5-46:19
 MERGED from [com.android.support:design:25.0.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.0.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.0.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\AndroidManifest.xml:25:5-20
@@ -85,19 +85,25 @@ ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:28:17-77
 	android:name
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:28:27-74
 activity#pro.kisscat.www.bookmarkhelper.activity.Html5Activity
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:31:9-33:59
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:31:9-37:20
 	android:theme
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:33:13-56
 	android:name
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:32:13-51
-activity#pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity
-ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:34:9-37:59
-	android:label
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:36:13-45
-	android:theme
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:37:13-56
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:34:13-36:88
+	android:value
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:36:17-85
 	android:name
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:35:13-59
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:35:17-63
+activity#pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity
+ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:38:9-45:20
+	android:label
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:40:13-45
+	android:theme
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:41:13-56
+	android:name
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:39:13-59
 uses-sdk
 INJECTED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
