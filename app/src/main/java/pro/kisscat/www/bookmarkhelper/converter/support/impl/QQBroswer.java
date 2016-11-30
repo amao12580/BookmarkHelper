@@ -82,13 +82,13 @@ public class QQBroswer extends BasicBroswer {
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_cp + fileName_origin);
-            LogHelper.v("已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
-            LogHelper.v("已登录用户书签条数:" + bookmarksListPart1.size());
-            LogHelper.v("未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
-            LogHelper.v("未登录的用户书签条数:" + bookmarksListPart2.size());
+            LogHelper.v(TAG + ":已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
+            LogHelper.v(TAG + ":已登录用户书签条数:" + bookmarksListPart1.size());
+            LogHelper.v(TAG + ":未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
+            LogHelper.v(TAG + ":未登录的用户书签条数:" + bookmarksListPart2.size());
             bookmarksList.addAll(bookmarksListPart1);
             bookmarksList.addAll(bookmarksListPart2);
-            LogHelper.v("总的书签条数:" + bookmarksList.size());
+            LogHelper.v(TAG + ":总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
@@ -120,9 +120,9 @@ public class QQBroswer extends BasicBroswer {
         Map<String, String> QQUser = new LinkedHashMap<>();
         Map<String, String> WechatUser = new LinkedHashMap<>();
         for (String item : fileNames) {
-            LogHelper.v("item:" + item);
+            LogHelper.v(TAG + ":item:" + item);
             if (item == null) {
-                LogHelper.v("item is null.");
+                LogHelper.v(TAG + ":item is null.");
                 break;
             }
             if (item.equals(fileName_origin)) {
@@ -131,31 +131,31 @@ public class QQBroswer extends BasicBroswer {
             item = getFileNameByTrimPath(dir, item);
             String name = item.replaceAll(".db", "");
             if (name.matches(QQRegularRule)) {
-                LogHelper.v("match success QQRegularRule.");
+                LogHelper.v(TAG + ":match success QQRegularRule.");
                 QQUser.put(name, item);
 
             } else {
-                LogHelper.v("not match QQRegularRule.");
+                LogHelper.v(TAG + ":not match QQRegularRule.");
             }
             if (name.matches(WechatRegularRule)) {
-                LogHelper.v("match success WechatRegularRule.");
+                LogHelper.v(TAG + ":match success WechatRegularRule.");
                 WechatUser.put(name, item);
             } else {
-                LogHelper.v("not match WechatRegularRule.");
+                LogHelper.v(TAG + ":not match WechatRegularRule.");
             }
         }
         for (Map.Entry<String, String> entry : QQUser.entrySet()) {
             String name = entry.getKey();
             String item = entry.getValue();
             List<Bookmark> QQUserBookmarks = fetchBookmarksListByUserHasLogined(dir, item);
-            LogHelper.v("QQ用户：" + name + "，书签条数：" + QQUserBookmarks.size());
+            LogHelper.v(TAG + ":QQ用户：" + name + "，书签条数：" + QQUserBookmarks.size());
             result.addAll(QQUserBookmarks);
         }
         for (Map.Entry<String, String> entry : WechatUser.entrySet()) {
             String name = entry.getKey();
             String item = entry.getValue();
             List<Bookmark> WechatUserBookmarks = fetchBookmarksListByUserHasLogined(dir, item);
-            LogHelper.v("微信用户：" + name + "，书签条数：" + WechatUserBookmarks.size());
+            LogHelper.v(TAG + ":微信用户：" + name + "，书签条数：" + WechatUserBookmarks.size());
             result.addAll(WechatUserBookmarks);
         }
         LogHelper.v(TAG + ":读取已登录用户书签SQLite数据库结束");
@@ -164,7 +164,7 @@ public class QQBroswer extends BasicBroswer {
 
     private List<Bookmark> fetchBookmarksListByUserHasLogined(String dir, String fileName) {
         String targetFilePath = dir + fileName;
-        LogHelper.v("targetFilePath is:" + targetFilePath);
+        LogHelper.v(TAG + ":targetFilePath is:" + targetFilePath);
         List<Bookmark> result = new LinkedList<>();
         String tmpFilePath = filePath_cp + fileName;
         try {
@@ -224,7 +224,7 @@ public class QQBroswer extends BasicBroswer {
             cursor = sqLiteDatabase.query(false, tableName, columns, where, whereArgs, null, null, orderBy, null);
             if (cursor != null && cursor.getCount() > 0) {
                 boolean needParseFolder = checkNeedParseFolder(columns);
-                LogHelper.v("needParseFolder:" + needParseFolder);
+                LogHelper.v(TAG + ":needParseFolder:" + needParseFolder);
                 if (!needParseFolder) {
                     parseBookmarkWithoutFolder(cursor, result);
                 } else {

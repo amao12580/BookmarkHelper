@@ -76,13 +76,13 @@ public class Qihoo360Broswer extends BasicBroswer {
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_origin);
-            LogHelper.v("已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
-            LogHelper.v("已登录用户书签条数:" + bookmarksListPart1.size());
-            LogHelper.v("未登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
-            LogHelper.v("未登录用户书签条数:" + bookmarksListPart2.size());
+            LogHelper.v(TAG + ":已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
+            LogHelper.v(TAG + ":已登录用户书签条数:" + bookmarksListPart1.size());
+            LogHelper.v(TAG + ":未登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
+            LogHelper.v(TAG + ":未登录用户书签条数:" + bookmarksListPart2.size());
             bookmarksList.addAll(bookmarksListPart1);
             bookmarksList.addAll(bookmarksListPart2);
-            LogHelper.v("总的书签条数:" + bookmarksList.size());
+            LogHelper.v(TAG + ":总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
@@ -294,9 +294,9 @@ public class Qihoo360Broswer extends BasicBroswer {
         String startKey1 = "qihoo_mobile_bookmark.";
         String startKey2 = "qihoo_online_bookmark.";
         for (String item : fileNames) {
-            LogHelper.v("item:" + item);
+            LogHelper.v(TAG + ":item:" + item);
             if (item == null) {
-                LogHelper.v("item is null.");
+                LogHelper.v(TAG + ":item is null.");
                 break;
             }
             item = getFileNameByTrimPath(appRootDir, item);
@@ -306,12 +306,12 @@ public class Qihoo360Broswer extends BasicBroswer {
                 tmp = tmp.replaceAll(startKey2, "");
                 tmp = tmp.replaceAll(".db", "");
                 if (tmp.matches(regularRule)) {
-                    LogHelper.v("match success regularRule.");
+                    LogHelper.v(TAG + ":match success regularRule.");
                     targetFileNames.add(item);
                     continue;
                 }
             }
-            LogHelper.v("not match.");
+            LogHelper.v(TAG + ":not match.");
         }
         if (targetFileNames.isEmpty()) {
             LogHelper.v(TAG + ":已登录用户真的没有书签数据");
@@ -319,7 +319,7 @@ public class Qihoo360Broswer extends BasicBroswer {
         }
         for (String item : targetFileNames) {
             List<Bookmark> part = fetchBookmarksListByUserHasLogined(originFileDirPath, item);
-            LogHelper.v("part:" + targetFileNames + ",size:" + part.size());
+            LogHelper.v(TAG + ":part:" + targetFileNames + ",size:" + part.size());
             result.addAll(part);
         }
         LogHelper.v(TAG + ":完成读取已登录用户书签,appRootDir:" + appRootDir);

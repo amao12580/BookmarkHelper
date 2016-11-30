@@ -79,13 +79,13 @@ public class SogouBroswer extends BasicBroswer {
             List<Bookmark> bookmarksList = new LinkedList<>();
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_cp + fileName_origin);
-            LogHelper.v("已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
-            LogHelper.v("已登录用户书签条数:" + bookmarksListPart1.size());
-            LogHelper.v("未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
-            LogHelper.v("未登录的用户书签条数:" + bookmarksListPart2.size());
+            LogHelper.v(TAG + ":已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
+            LogHelper.v(TAG + ":已登录用户书签条数:" + bookmarksListPart1.size());
+            LogHelper.v(TAG + ":未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
+            LogHelper.v(TAG + ":未登录的用户书签条数:" + bookmarksListPart2.size());
             bookmarksList.addAll(bookmarksListPart1);
             bookmarksList.addAll(bookmarksListPart2);
-            LogHelper.v("总的书签条数:" + bookmarksList.size());
+            LogHelper.v(TAG + ":总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
@@ -119,9 +119,9 @@ public class SogouBroswer extends BasicBroswer {
         String targetFileNames = null;
         String startKey = "sogou_cloud_";
         for (String item : fileNames) {
-            LogHelper.v("item:" + item);
+            LogHelper.v(TAG + ":item:" + item);
             if (item == null) {
-                LogHelper.v("item is null.");
+                LogHelper.v(TAG + ":item is null.");
                 break;
             }
             item = getFileNameByTrimPath(appRootDir, item);
@@ -129,14 +129,14 @@ public class SogouBroswer extends BasicBroswer {
             if (tmp.startsWith(startKey)) {
                 tmp = tmp.replaceAll(startKey, "");
                 tmp = tmp.replaceAll(".db", "");
-                LogHelper.v("tmp:" + tmp);
+                LogHelper.v(TAG + ":tmp:" + tmp);
                 if (tmp.matches(regularRule)) {
-                    LogHelper.v("match success regularRule.");
+                    LogHelper.v(TAG + ":match success regularRule.");
                     targetFileNames = item;
                     break;
                 }
             }
-            LogHelper.v("not match.");
+            LogHelper.v(TAG + ":not match.");
         }
         if (targetFileNames == null || targetFileNames.isEmpty()) {
             LogHelper.v(TAG + ":已登录用户真的没有书签数据");
@@ -149,7 +149,7 @@ public class SogouBroswer extends BasicBroswer {
 
     private List<Bookmark> fetchBookmarksListByUserHasLogined(String dir, String fileName) {
         String targetFilePath = dir + fileName;
-        LogHelper.v("targetFilePath is:" + targetFilePath);
+        LogHelper.v(TAG + ":targetFilePath is:" + targetFilePath);
         List<Bookmark> result = new LinkedList<>();
         String tmpFilePath = filePath_cp + fileName;
         try {

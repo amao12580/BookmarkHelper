@@ -78,8 +78,8 @@ public class LiebaoBroswer extends BasicBroswer {
             LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
             ExternalStorageUtil.copyFile(originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Bookmark> bookmarksList = fetchBookmarksList(filePath_cp + fileName_origin);
-            LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
-            LogHelper.v("书签条数:" + bookmarksList.size());
+            LogHelper.v(TAG + ":书签数据:" + JsonUtil.toJson(bookmarksList));
+            LogHelper.v(TAG + ":书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {

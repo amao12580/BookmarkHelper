@@ -14,13 +14,9 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
  */
 
 public class PhoneUtil {
-    private static volatile boolean isRecordPhoneInfo = false;
 
     public static synchronized void record() {
-        if (!isRecordPhoneInfo) {
-            LogHelper.v(getHandSetInfo(), false);
-            isRecordPhoneInfo = true;
-        }
+        LogHelper.v(getHandSetInfo(), false);
     }
 
     private static final Character split = '\n';

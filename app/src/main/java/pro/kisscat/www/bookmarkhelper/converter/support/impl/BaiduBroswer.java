@@ -93,7 +93,7 @@ public class BaiduBroswer extends BasicBroswer {
 
     private List<Bookmark> fetchBookmarksList(String dir, String fileName) {
         String targetFilePath = dir + fileName;
-        LogHelper.v("targetFilePath is:" + targetFilePath);
+        LogHelper.v(TAG + ":targetFilePath is:" + targetFilePath);
         List<Bookmark> result = new LinkedList<>();
         try {
             ExternalStorageUtil.copyFile(filePath_origin + fileName_origin, targetFilePath, this.getName());

@@ -92,7 +92,7 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
 //        RelativeLayout relativeLayout2 = (RelativeLayout) findViewById(R.id.qrcode_webview_alipay_layout);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.qrcode_layout);
         linearLayout.addView(mCustomWebView);
-        linearLayout.addView(mCustomWebView2);
+//        linearLayout.addView(mCustomWebView2);
     }
 
     @Override

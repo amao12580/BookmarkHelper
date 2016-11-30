@@ -110,9 +110,16 @@ Referenced Strings:
   356
   357
   360
+  360:item:
+  360:part:
+  360:已登录用户书签数据:
+  360:已登录用户书签条数:
   360:已登录用户没有书签数据
   360:已登录用户真的没有书签数据
   360:开始读取书签数据
+  360:总的书签条数:
+  360:未登录用户书签数据:
+  360:未登录用户书签条数:
   360:读取书签数据结束
   360:读取未登录书签SQLite数据库结束
   361
@@ -185,10 +192,16 @@ Referenced Strings:
   99990
   99991
   :00
+  :item:
   :transport:
   :已登录用户没有书签数据
+  :已登录的用户书签数据:
+  :已登录的用户书签条数:
   :开始读取书签数据
   :开始读取未登录用户的书签SQLite数据库:
+  :总的书签条数:
+  :未登录的用户书签数据:
+  :未登录的用户书签条数:
   :读取书签数据结束
   :读取已登录用户书签SQLite数据库结束
   :读取未登录用户书签SQLite数据库结束
@@ -421,8 +434,12 @@ Referenced Strings:
   Firefox:sourceFilePath:
   Firefox:targetDir:
   Firefox:targetFilePath:
+  Firefox:书签数据:
+  Firefox:书签条数:
   Firefox:开始读取书签SQLite数据库:
   Firefox:开始读取书签数据
+  Firefox:没有找到目标文件夹
+  Firefox:真的没有找到目标文件夹
   Firefox:读取书签SQLite数据库结束
   Firefox:读取书签数据结束
   FloatingActionButton
@@ -515,6 +532,8 @@ Referenced Strings:
   LY
   LayoutInflaterCompatHC
   LayoutState
+  Liebao:书签数据:
+  Liebao:书签条数:
   Liebao:开始读取书签SQLite数据库:
   Liebao:开始读取书签数据
   Liebao:读取书签SQLite数据库结束
@@ -608,10 +627,17 @@ Referenced Strings:
   PrettyFormat
   PrintHelperKitkat
   Q
+  QQ:item:
+  QQ:needParseFolder:
   QQ:尝试解析已登录用户的书签数据
+  QQ:已登录用户书签数据:
+  QQ:已登录用户书签条数:
   QQ:已登录用户没有书签数据
   QQ:开始读取书签数据
   QQ:开始读取未登录用户的书签SQLite数据库:
+  QQ:总的书签条数:
+  QQ:未登录的用户书签数据:
+  QQ:未登录的用户书签条数:
   QQ:读取书签数据结束
   QQ:读取已登录用户书签SQLite数据库结束
   QQ:读取未登录用户书签SQLite数据库结束
@@ -660,10 +686,17 @@ Referenced Strings:
   SkipTransientField
   SlidingPaneLayout
   SnakeCase
+  Sogou:item:
+  Sogou:tmp:
+  Sogou:已登录用户书签数据:
+  Sogou:已登录用户书签条数:
   Sogou:已登录用户没有书签数据
   Sogou:已登录用户真的没有书签数据
   Sogou:开始读取书签数据
   Sogou:开始读取未登录用户的书签SQLite数据库:
+  Sogou:总的书签条数:
+  Sogou:未登录的用户书签数据:
+  Sogou:未登录的用户书签条数:
   Sogou:读取书签数据结束
   Sogou:读取未登录用户书签SQLite数据库结束
   SortFeidFastMatch
@@ -765,6 +798,8 @@ Referenced Strings:
   WriteSlashAsSpecial
   WriteTabAsSpecial
   X
+  X:书签数据:
+  X:书签条数:
   X:开始读取书签SQLite数据库:
   X:开始读取书签数据
   X:读取书签SQLite数据库结束
@@ -1243,7 +1278,6 @@ Referenced Strings:
   isfolder
   iso8601
   item
-  item:
   j
   java.
   java.awt.
@@ -1365,7 +1399,6 @@ Referenced Strings:
   n
   name
   nativeMethod
-  needParseFolder:
   net.sf.cglib.proxy.Factory
   network
   networkInfo
@@ -1414,7 +1447,6 @@ Referenced Strings:
   parseArray
   parseObject
   parseRest
-  part:
   participants
   path
   pathData
@@ -1570,7 +1602,6 @@ Referenced Strings:
   title
   title:
   tmp
-  tmp:
   toCharArray
   toJdbc
   toString
@@ -1666,21 +1697,11 @@ Referenced Strings:
   取消
   后见效
   已保存到相册.
-  已登录用户书签数据:
-  已登录用户书签条数:
-  已登录的用户书签数据:
-  已登录的用户书签条数:
   总的书签条数:
   成功获取了Root权限.
   打赏书签助手10元
   无法获取日志目录
-  未登录用户书签数据:
-  未登录用户书签条数:
-  未登录的用户书签数据:
-  未登录的用户书签条数:
-  没有找到目标文件夹
   温馨提示
-  真的没有找到目标文件夹
   确定
   继续
   识别二维码
@@ -3523,4 +3544,4 @@ Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (r
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 1209548 to 1210808); using original instead
+Resource shrinking did not work (grew from 1210031 to 1211291); using original instead

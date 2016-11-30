@@ -77,8 +77,8 @@ public class FirefoxBroswer extends BasicBroswer {
         try {
             ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             List<Bookmark> bookmarksList = fetchBookmarksList(filePath_origin);
-            LogHelper.v("书签数据:" + JsonUtil.toJson(bookmarksList));
-            LogHelper.v("书签条数:" + bookmarksList.size());
+            LogHelper.v(TAG + ":书签数据:" + JsonUtil.toJson(bookmarksList));
+            LogHelper.v(TAG + ":书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
@@ -101,7 +101,7 @@ public class FirefoxBroswer extends BasicBroswer {
         List<Bookmark> result = new LinkedList<>();
         List<String> dirs = InternalStorageUtil.lsDir(dir);
         if (dirs == null || dirs.isEmpty()) {
-            LogHelper.v("没有找到目标文件夹");
+            LogHelper.v(TAG + ":没有找到目标文件夹");
             return result;
         }
         String targetDir = null;
@@ -119,7 +119,7 @@ public class FirefoxBroswer extends BasicBroswer {
             }
         }
         if (targetDir == null || targetDir.isEmpty()) {
-            LogHelper.v("真的没有找到目标文件夹");
+            LogHelper.v(TAG + ":真的没有找到目标文件夹");
             return result;
         } else {
             LogHelper.v(TAG + ":targetDir:" + targetDir);

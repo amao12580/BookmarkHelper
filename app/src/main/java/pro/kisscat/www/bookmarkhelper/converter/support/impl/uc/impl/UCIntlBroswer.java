@@ -73,13 +73,13 @@ public class UCIntlBroswer extends UCBroswerable {
             String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin, filePath_cp);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_origin + fileName_origin, filePath_cp + fileName_origin);
-            LogHelper.v("已登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
-            LogHelper.v("已登录的用户书签条数:" + bookmarksListPart1.size());
-            LogHelper.v("未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
-            LogHelper.v("未登录的用户书签条数:" + bookmarksListPart2.size());
+            LogHelper.v(TAG + ":已登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
+            LogHelper.v(TAG + ":已登录的用户书签条数:" + bookmarksListPart1.size());
+            LogHelper.v(TAG + ":未登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart2));
+            LogHelper.v(TAG + ":未登录的用户书签条数:" + bookmarksListPart2.size());
             bookmarksList.addAll(bookmarksListPart1);
             bookmarksList.addAll(bookmarksListPart2);
-            LogHelper.v("总的书签条数:" + bookmarksList.size());
+            LogHelper.v(TAG + ":总的书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (Exception e) {

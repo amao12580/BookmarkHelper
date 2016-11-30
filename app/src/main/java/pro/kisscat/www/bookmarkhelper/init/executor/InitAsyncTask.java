@@ -25,15 +25,15 @@ public class InitAsyncTask extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
-    protected void onPreExecute() {
+    protected void onProgressUpdate(Void... values) {
         Toast.makeText(context, context.getResources().getString(R.string.keepRootAppRunning), Toast.LENGTH_LONG).show();
     }
-
 
     @Override
     protected Void doInBackground(Void... v) {
         PhoneUtil.record();
         LogHelper.write();
+        publishProgress();
         return null;
     }
 }

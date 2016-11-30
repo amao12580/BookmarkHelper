@@ -168,7 +168,7 @@ public class BasicBroswer extends App implements Broswerable {
                 continue;
             }
             if (bookmarkTitle == null || bookmarkTitle.isEmpty()) {
-                LogHelper.v("url:" + bookmarkTitle + ",set to default value.");
+                LogHelper.v("url:" + bookmarkTitle + " is empty,set to default value.");
                 bookmarkTitle = MetaData.BOOKMARK_TITLE_DEFAULT;
             }
             Bookmark bookmark = new Bookmark();

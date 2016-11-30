@@ -35283,8 +35283,9 @@ pro.kisscat.www.bookmarkhelper.exception.InitException -> pro.kisscat.www.bookma
 pro.kisscat.www.bookmarkhelper.init.executor.InitAsyncTask -> pro.kisscat.www.bookmarkhelper.c.a.a:
     android.content.Context context -> a
     23:25:void <init>(android.content.Context) -> <init>
-    29:30:void onPreExecute() -> onPreExecute
-    35:37:java.lang.Void doInBackground(java.lang.Void[]) -> a
+    29:30:void onProgressUpdate(java.lang.Void[]) -> a
+    34:37:java.lang.Void doInBackground(java.lang.Void[]) -> b
+    20:20:void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
     20:20:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 pro.kisscat.www.bookmarkhelper.util.Path -> pro.kisscat.www.bookmarkhelper.util.a:
     java.lang.String FILE_SPLIT -> a
@@ -35424,7 +35425,7 @@ pro.kisscat.www.bookmarkhelper.util.log.LogHelper -> pro.kisscat.www.bookmarkhel
     103:104:void v(java.lang.String,boolean) -> a
     111:112:void e(java.lang.String,java.lang.String) -> a
     115:116:void e(java.lang.String) -> b
-    139:141:void v(java.lang.String,java.lang.String,boolean) -> a
+    128:141:void v(java.lang.String,java.lang.String,boolean) -> a
     147:162:void log(java.lang.String,java.lang.String,char) -> a
     165:168:void write() -> a
     171:173:void recordLogToQueue(java.lang.String,java.lang.String,java.lang.String) -> a
@@ -35460,11 +35461,10 @@ pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil -> pro.kisscat.www
     28:29:boolean checkOnly(android.app.Activity) -> a
     34:41:boolean checkAndRequest(android.app.Activity) -> b
 pro.kisscat.www.bookmarkhelper.util.phone.PhoneUtil -> pro.kisscat.www.bookmarkhelper.util.g.a:
-    boolean isRecordPhoneInfo -> a
-    java.lang.Character split -> b
-    20:24:void record() -> a
-    29:29:java.lang.String getHandSetInfo() -> b
-    17:26:void <clinit>() -> <clinit>
+    java.lang.Character split -> a
+    19:20:void record() -> a
+    25:25:java.lang.String getHandSetInfo() -> b
+    22:22:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil -> pro.kisscat.www.bookmarkhelper.util.h.a:
     int min -> a
     int max -> b

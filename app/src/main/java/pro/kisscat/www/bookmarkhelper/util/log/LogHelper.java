@@ -124,7 +124,7 @@ public class LogHelper {
     }
 
     public static void v(String tag, String text, boolean trim) {
-        if (BuildConfig.DEBUG) {
+        if (!BuildConfig.DEBUG) {
             if (text == null || text.isEmpty()) {
                 return;
             }

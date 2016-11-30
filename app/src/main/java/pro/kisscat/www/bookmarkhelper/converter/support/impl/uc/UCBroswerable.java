@@ -52,9 +52,9 @@ public class UCBroswerable extends BasicBroswer {
         String targetFilePath = null;
         String targetFileName = null;
         for (String item : fileNames) {
-            LogHelper.v("item:" + item);
+            LogHelper.v(TAG + ":item:" + item);
             if (item == null) {
-                LogHelper.v("item is null.");
+                LogHelper.v(TAG + ":item is null.");
                 break;
             }
             if (item.equals(fileName_origin)) {
@@ -66,14 +66,14 @@ public class UCBroswerable extends BasicBroswer {
                 targetFileName = item;
                 break;
             } else {
-                LogHelper.v("not match.");
+                LogHelper.v(TAG + ":not match.");
             }
         }
         if (targetFilePath == null) {
-            LogHelper.v("targetFilePath is miss.");
+            LogHelper.v(TAG + ":targetFilePath is miss.");
             return result;
         }
-        LogHelper.v("targetFilePath is:" + targetFilePath);
+        LogHelper.v(TAG + ":targetFilePath is:" + targetFilePath);
         String tmpFilePath = filePath_cp + targetFileName;
         ExternalStorageUtil.copyFile(targetFilePath, tmpFilePath, this.getName());
         result.addAll(fetchBookmarksList(false, tmpFilePath, "bookmark", null, null, "create_time asc"));
