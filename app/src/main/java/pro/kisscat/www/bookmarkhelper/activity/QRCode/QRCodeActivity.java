@@ -106,12 +106,8 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onSupportNavigateUp();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
+        finish();
+        return true;
     }
 
     /**
