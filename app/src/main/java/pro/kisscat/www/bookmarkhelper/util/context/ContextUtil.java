@@ -4,7 +4,6 @@ import android.content.Context;
 
 import lombok.Getter;
 import pro.kisscat.www.bookmarkhelper.R;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 
 /**
  * Created with Android Studio.
@@ -17,6 +16,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 
 public class ContextUtil {
     private static final String split = "：";
+    private static final String newLine = "\n";
 
     private static String readBookmarksError;
     private static String readBookmarksEmpty;
@@ -29,6 +29,7 @@ public class ContextUtil {
     private static String appUninstall;
     private static String notSupport;
     private static String notSupportParseHomepageBookmarks;
+    private static String packageNameDesc;
     @Getter
     private static String packageCodePath;
     @Getter
@@ -80,6 +81,9 @@ public class ContextUtil {
         if (SDCardNotReadOrWriteable == null) {
             SDCardNotReadOrWriteable = context.getResources().getString(R.string.SDCardNotReadOrWriteable);
         }
+        if (packageNameDesc == null) {
+            packageNameDesc = context.getResources().getString(R.string.packageNameDesc);
+        }
     }
 
     public static String buildNotSupportParseHomepageBookmarksMessage() {
@@ -121,8 +125,8 @@ public class ContextUtil {
         return browserName + split + flyme5BookmarksFileMiss;
     }
 
-    public static String buildAppNotInstalledMessage(String browserName) {
-        return browserName + split + appUninstall;
+    public static String buildAppNotInstalledMessage(String browserName, String packageName) {
+        return browserName + split + appUninstall + newLine + newLine + packageNameDesc + "：" + packageName;
     }
 
     public static String buildRuleNotSupportedNowMessage() {

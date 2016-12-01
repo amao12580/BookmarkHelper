@@ -9,7 +9,6 @@ import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebSettings.ZoomDensity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 

@@ -135,7 +135,7 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 3.兼容部分机型，在获取root权限时，返回warning信息。
 
-#### [0.0.15版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.15%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.14.apk)
+#### [0.0.15版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.15%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.15.apk)
 1.增加兼容：支持从[Chrome Dev浏览器](http://www.coolapk.com/apk/com.chrome.dev)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 2.Bug 修复：4.4平台webview加载出错的问题
@@ -144,10 +144,17 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 4.兼容部分机型，在获取root权限时，返回warning信息。
 
-#### 0.0.16版 Draft
-1.增加兼容：支持从[MIUI浏览器](https://play.google.com/store/apps/details?id=com.miui.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+#### [0.0.16版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.16%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.16.apk)
+1.增加兼容：支持从[MIUI浏览器](https://github.com/amao12580/BookmarkHelper/tree/master/origin/resource/miui)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 2.现在捐助页面，支持长按二维码使用微信打开
+
+3.Merger pull request，改善UI交互，感谢酷友@多巴胺
+
+4.部分代码重构，规范化。
+
+-------------------FBI Waring！-------------------
+近期工作忙，停更1到2周，有问题或建议请发邮件。
 
 #### 0.0.17版 Draft
 1.增加兼容：支持从[Yandex浏览器](http://www.coolapk.com/apk/ru.yandex.searchplugin)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

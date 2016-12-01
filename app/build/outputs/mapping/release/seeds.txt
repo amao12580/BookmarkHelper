@@ -30209,6 +30209,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int ic_donate
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_firefox
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_flyme5
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_liebao
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_miui
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_oupeng
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_qq
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_sougou
@@ -30367,8 +30368,8 @@ pro.kisscat.www.bookmarkhelper.R$id: int smallLabel
 pro.kisscat.www.bookmarkhelper.R$id: int snackbar_action
 pro.kisscat.www.bookmarkhelper.R$id: int snackbar_text
 pro.kisscat.www.bookmarkhelper.R$id: int snap
-pro.kisscat.www.bookmarkhelper.R$id: int sourceBroswerAppNameText
-pro.kisscat.www.bookmarkhelper.R$id: int sourceBroswerIcon
+pro.kisscat.www.bookmarkhelper.R$id: int sourceBrowserAppNameText
+pro.kisscat.www.bookmarkhelper.R$id: int sourceBrowserIcon
 pro.kisscat.www.bookmarkhelper.R$id: int spacer
 pro.kisscat.www.bookmarkhelper.R$id: int split_action_bar
 pro.kisscat.www.bookmarkhelper.R$id: int src_atop
@@ -30379,8 +30380,8 @@ pro.kisscat.www.bookmarkhelper.R$id: int status_bar_latest_event_content
 pro.kisscat.www.bookmarkhelper.R$id: int submenuarrow
 pro.kisscat.www.bookmarkhelper.R$id: int submit_area
 pro.kisscat.www.bookmarkhelper.R$id: int tabMode
-pro.kisscat.www.bookmarkhelper.R$id: int targetBroswerAppNameText
-pro.kisscat.www.bookmarkhelper.R$id: int targetBroswerIcon
+pro.kisscat.www.bookmarkhelper.R$id: int targetBrowserAppNameText
+pro.kisscat.www.bookmarkhelper.R$id: int targetBrowserIcon
 pro.kisscat.www.bookmarkhelper.R$id: int text
 pro.kisscat.www.bookmarkhelper.R$id: int text2
 pro.kisscat.www.bookmarkhelper.R$id: int textSpacerNoButtons
@@ -30526,22 +30527,23 @@ pro.kisscat.www.bookmarkhelper.R$string: int app_name
 pro.kisscat.www.bookmarkhelper.R$string: int appbar_scrolling_view_behavior
 pro.kisscat.www.bookmarkhelper.R$string: int appendBookmarksError
 pro.kisscat.www.bookmarkhelper.R$string: int bottom_sheet_behavior
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_360
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_baidu
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome_beta
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome_canary
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_chrome_dev
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_firefox
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_flyme5
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_liebao
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_oupeng
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_qq
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_sougou
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_uc
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_ucintl
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_via
-pro.kisscat.www.bookmarkhelper.R$string: int broswer_name_show_x
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_360
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_baidu
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome_beta
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome_canary
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome_dev
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_firefox
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_flyme5
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_liebao
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_miui
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_oupeng
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_qq
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_sougou
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_uc
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_ucintl
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_via
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_x
 pro.kisscat.www.bookmarkhelper.R$string: int character_counter_pattern
 pro.kisscat.www.bookmarkhelper.R$string: int clickBackToExit
 pro.kisscat.www.bookmarkhelper.R$string: int converter_directer_arrow_contentDescription
@@ -30558,19 +30560,21 @@ pro.kisscat.www.bookmarkhelper.R$string: int flyme5BookmarksFileMiss
 pro.kisscat.www.bookmarkhelper.R$string: int keepRootAppRunning
 pro.kisscat.www.bookmarkhelper.R$string: int marketAppNoInstalled
 pro.kisscat.www.bookmarkhelper.R$string: int networkError
+pro.kisscat.www.bookmarkhelper.R$string: int networkSlowestNotice
 pro.kisscat.www.bookmarkhelper.R$string: int notPermissionForReadInstalledAppList
 pro.kisscat.www.bookmarkhelper.R$string: int notSupport
 pro.kisscat.www.bookmarkhelper.R$string: int notSupportParseHomepageBookmarks
 pro.kisscat.www.bookmarkhelper.R$string: int opeartionTooFast
+pro.kisscat.www.bookmarkhelper.R$string: int packageNameDesc
 pro.kisscat.www.bookmarkhelper.R$string: int rating
 pro.kisscat.www.bookmarkhelper.R$string: int ratingURL
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksEmpty
 pro.kisscat.www.bookmarkhelper.R$string: int readBookmarksError
 pro.kisscat.www.bookmarkhelper.R$string: int search_menu_title
 pro.kisscat.www.bookmarkhelper.R$string: int someTaskIsRuning
-pro.kisscat.www.bookmarkhelper.R$string: int source_broswer_icon_contentDescription
+pro.kisscat.www.bookmarkhelper.R$string: int source_browser_icon_contentDescription
 pro.kisscat.www.bookmarkhelper.R$string: int status_bar_notification_info_overflow
-pro.kisscat.www.bookmarkhelper.R$string: int target_broswer_icon_contentDescription
+pro.kisscat.www.bookmarkhelper.R$string: int target_browser_icon_contentDescription
 pro.kisscat.www.bookmarkhelper.R$string: int viaBookmarksFileMiss
 pro.kisscat.www.bookmarkhelper.R$string: R$string()
 pro.kisscat.www.bookmarkhelper.R$style
@@ -31571,16 +31575,16 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: void s
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node getSynced()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: int id
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer source
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer target
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser source
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser target
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: boolean canUse
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: Rule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer,pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: Rule(int,android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser,pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setId(int)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: int getId()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setSource(pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer getSource()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setTarget(pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer getTarget()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setSource(pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser getSource()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setTarget(pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser getTarget()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: void setCanUse(boolean)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: boolean isCanUse()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.via.ViaBookmark

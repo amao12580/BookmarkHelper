@@ -9,6 +9,6 @@ package pro.kisscat.www.bookmarkhelper.util.storage;
  * Time:15:01
  */
 
-interface Storageable {
+interface StorageAble {
     String getRootPath();
 }

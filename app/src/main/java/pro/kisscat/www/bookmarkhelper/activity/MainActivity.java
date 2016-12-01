@@ -11,10 +11,10 @@ package pro.kisscat.www.bookmarkhelper.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -49,7 +49,7 @@ import permissions.dispatcher.PermissionRequest;
 import permissions.dispatcher.RuntimePermissions;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity;
-import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.Params;
@@ -65,7 +65,6 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil;
-import pro.kisscat.www.bookmarkhelper.util.toast.ToastUtil;
 
 @RuntimePermissions
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 LogHelper.init();
                 ConverterMaster.init(this);
             } catch (InitException e) {
-                showToastMessage(this, e.getMessage());
+                showToastMessage(context, e.getMessage());
                 finish();
             }
         }
@@ -106,26 +105,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
         }
         lv = (ListView) findViewById(R.id.listViewRules);
+        Drawable drawable = ContextCompat.getDrawable(this, R.drawable.ic_arrow);
         for (Rule rule : rules) {
             Map<String, Object> map = new HashMap<>();
-            BasicBroswer sourceBorswer = rule.getSource();
-            map.put("sourceBroswerIcon", sourceBorswer.getIcon());
-            map.put("sourceBroswerAppNameText", sourceBorswer.getName());
-            map.put("converterDirecterImage", ContextCompat.getDrawable(this, R.drawable.ic_arrow));
+            BasicBrowser sourceBorswer = rule.getSource();
+            map.put("sourceBrowserIcon", sourceBorswer.getIcon());
+            map.put("sourceBrowserAppNameText", sourceBorswer.getName());
+            map.put("converterDirecterImage", drawable);
             map.put("converterDirecterText", "~Biu !");
-            BasicBroswer targetBorswer = rule.getTarget();
-            map.put("targetBroswerIcon", targetBorswer.getIcon());
-            map.put("targetBroswerAppNameText", targetBorswer.getName());
+            BasicBrowser targetBorswer = rule.getTarget();
+            map.put("targetBrowserIcon", targetBorswer.getIcon());
+            map.put("targetBrowserAppNameText", targetBorswer.getName());
             items.add(map);
         }
-        adapter = new Adapter(this, items, R.layout.listview_item, new String[]{"sourceBroswerIcon", "sourceBroswerAppNameText", "converterDirecterImage", "converterDirecterText", "targetBroswerIcon", "targetBroswerAppNameText"},
-                new int[]{R.id.sourceBroswerIcon, R.id.sourceBroswerAppNameText, R.id.converterDirecterImage, R.id.converterDirecterText, R.id.targetBroswerIcon, R.id.targetBroswerAppNameText});
+        adapter = new Adapter(this, items, R.layout.listview_item, new String[]{"sourceBrowserIcon", "sourceBrowserAppNameText", "converterDirecterImage", "converterDirecterText", "targetBrowserIcon", "targetBrowserAppNameText"},
+                new int[]{R.id.sourceBrowserIcon, R.id.sourceBrowserAppNameText, R.id.converterDirecterImage, R.id.converterDirecterText, R.id.targetBrowserIcon, R.id.targetBrowserAppNameText});
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         PermissionUtil.checkAndRequest(this);
         lv.setOnItemClickListener(this);
-        ContextUtil.init(context);
         new InitAsyncTask(context).execute();
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private long lastClickItemTime = 0;
@@ -151,14 +155,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     AppListUtil.reInit(this);
                     if (!rule.getSource().isInstalled(this, rule.getSource())) {
-                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getSource().getName()));
+                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getSource().getName(), rule.getSource().getPackageName()));
                         return;
                     }
                 }
                 if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
                     AppListUtil.reInit(this);
                     if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
-                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getTarget().getName()));
+                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getTarget().getName(), rule.getSource().getPackageName()));
                         return;
                     }
                 }
@@ -276,8 +280,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    private void showToastMessage(Activity activity, String message) {
-        ToastUtil.showMessage(activity, message);
+    private void showToastMessage(Context context, String message) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
 
     private static String aboutMeUrl = null;
@@ -287,6 +291,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             aboutMeUrl = lv.getResources().getString(R.string.aboutMeURL);
         }
         openUrlInWebview(aboutMeUrl, lv.getResources().getString(R.string.aboutMeTitle), R.drawable.ic_aboutme);
+        Toast.makeText(context, context.getResources().getString(R.string.networkSlowestNotice), Toast.LENGTH_SHORT).show();
     }
 
     private static String ratingURL = null;

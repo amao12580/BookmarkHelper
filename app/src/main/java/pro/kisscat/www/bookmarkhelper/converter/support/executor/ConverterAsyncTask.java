@@ -7,7 +7,7 @@ import android.os.Message;
 
 import java.util.List;
 
-import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.Result;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
@@ -29,7 +29,7 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
  * Time:10:59
  */
 
-public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
+public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
     private static final String TAG = "ConverterAsyncTask";
     private ProgressBarUtil progressBarUtil;
     private Handler handler;
@@ -38,17 +38,13 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
         this.progressBarUtil = progressBarUtil;
     }
 
-    //onProgressUpdate方法用于更新进度信息
     @Override
-    protected void onProgressUpdate(Integer... progresses) {
+    protected void onProgressUpdate(Void... values) {
         progressBarUtil.next();
     }
 
-    //onPostExecute方法用于在执行完后台任务后更新UI,显示结果
     @Override
     protected void onPostExecute(Result result) {
-        LogHelper.v(TAG, "result:" + JsonUtil.toJson(result));
-        super.onPostExecute(result);
         result.setComplete(true);
         Message message = new Message();
         message.what = 1;
@@ -60,23 +56,18 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
         LogHelper.write();
     }
 
-    //doInBackground方法内部执行后台任务,不可在此方法内修改UI
     @Override
     protected Result doInBackground(Params... params) {
         Params param = params[0];
         handler = param.getHandler();
         Rule rule = param.getRule();
         handlePreExecuteMessage(rule);
-        LogHelper.v(TAG, "params.rule:" + JsonUtil.toJson(rule));
-        return processConverter(rule);
+        long s = System.currentTimeMillis();
+        LogHelper.v(TAG, "开始执行转换，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
+        Result result = processConverter(rule);
+        LogHelper.v(TAG, "完成转换，耗时：" + (System.currentTimeMillis() - s) + "ms，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
+        return result;
     }
-
-    //onCancelled方法用于在取消执行中的任务时更改UI
-//    @Override
-//    protected void onCancelled() {
-//        LogHelper.v(TAG, "onCancelled() called");
-//    }
-
 
     private void handlePreExecuteMessage(Rule rule) {
         String sourceMessage = rule.getSource().getPreExecuteConverterMessage();
@@ -109,12 +100,12 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
         try {
             boolean isRoot = RootUtil.upgradeRootPermission();
             if (!isRoot) {
-                String erroUpgrade = "获取Root权限失败，不能使用.";
-                result.setErrorMsg(erroUpgrade);
-                LogHelper.v(erroUpgrade);
+                String errorUpgrade = "获取Root权限失败，不能使用.";
+                result.setErrorMsg(errorUpgrade);
+                LogHelper.v(errorUpgrade);
                 return result;
             } else {
-                publishProgress(1);
+                publishProgress();
                 handleExecuteRunningMessage();
                 LogHelper.v("成功获取了Root权限.");
             }
@@ -122,12 +113,12 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
                 result.setErrorMsg(ContextUtil.getSystemNotReadOrWriteable());
                 return result;
             }
-            publishProgress(1);
+            publishProgress();
             if (!ExternalStorageUtil.remountSDCardDir()) {
                 result.setErrorMsg(ContextUtil.getSDCardNotReadOrWriteable());
                 return result;
             }
-            publishProgress(1);
+            publishProgress();
             start = System.currentTimeMillis();
             ret = execute(rule);
             end = System.currentTimeMillis();
@@ -159,23 +150,23 @@ public class ConverterAsyncTask extends AsyncTask<Params, Integer, Result> {
             }
             LogHelper.write();
         }
-        publishProgress(1);
+        publishProgress();
         return result;
     }
 
     private int execute(Rule rule) {
-        BasicBroswer source = rule.getSource();
+        BasicBrowser source = rule.getSource();
         List<Bookmark> sourceBookmarks = source.readBookmark();
-        publishProgress(1);
+        publishProgress();
         if (sourceBookmarks == null) {
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(source.getName()));
         }
         if (sourceBookmarks.isEmpty()) {
             throw new ConverterException(ContextUtil.buildReadBookmarksEmptyMessage(source.getName()));
         }
-        BasicBroswer target = rule.getTarget();
+        BasicBrowser target = rule.getTarget();
         int ret = target.appendBookmark(sourceBookmarks);
-        publishProgress(1);
+        publishProgress();
         if (ret < 0) {
             throw new ConverterException(ContextUtil.buildAppendBookmarksErrorMessage(target.getName()));
         }

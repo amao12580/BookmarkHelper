@@ -592,22 +592,23 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="appendBookmarksError">merge bookmarks error.</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="broswer_name_show_360">360 Broswer</string>
-    <string name="broswer_name_show_baidu">Baidu Broswer</string>
-    <string name="broswer_name_show_chrome">Chrome Broswer</string>
-    <string name="broswer_name_show_chrome_beta">Chrome Beta Broswer</string>
-    <string name="broswer_name_show_chrome_canary">Chrome Canary Broswer</string>
-    <string name="broswer_name_show_chrome_dev">Chrome Dev Broswer</string>
-    <string name="broswer_name_show_firefox">Firefox Broswer</string>
-    <string name="broswer_name_show_flyme5">Flyme5 Broswer</string>
-    <string name="broswer_name_show_liebao">Liebao Broswer</string>
-    <string name="broswer_name_show_oupeng">Oupeng Broswer</string>
-    <string name="broswer_name_show_qq">QQ Broswer</string>
-    <string name="broswer_name_show_sougou">Sougou Broswer</string>
-    <string name="broswer_name_show_uc">UC Broswer</string>
-    <string name="broswer_name_show_ucintl">UC international</string>
-    <string name="broswer_name_show_via">Via Broswer</string>
-    <string name="broswer_name_show_x">X Broswer</string>
+    <string name="browser_name_show_360">360 Browser</string>
+    <string name="browser_name_show_baidu">Baidu Browser</string>
+    <string name="browser_name_show_chrome">Chrome Browser</string>
+    <string name="browser_name_show_chrome_beta">Chrome Beta Browser</string>
+    <string name="browser_name_show_chrome_canary">Chrome Canary Browser</string>
+    <string name="browser_name_show_chrome_dev">Chrome Dev Browser</string>
+    <string name="browser_name_show_firefox">Firefox Browser</string>
+    <string name="browser_name_show_flyme5">Flyme5 Browser</string>
+    <string name="browser_name_show_liebao">Liebao Browser</string>
+    <string name="browser_name_show_miui">Miui Browser</string>
+    <string name="browser_name_show_oupeng">Oupeng Browser</string>
+    <string name="browser_name_show_qq">QQ Browser</string>
+    <string name="browser_name_show_sougou">Sougou Browser</string>
+    <string name="browser_name_show_uc">UC Browser</string>
+    <string name="browser_name_show_ucintl">UC international</string>
+    <string name="browser_name_show_via">Via Browser</string>
+    <string name="browser_name_show_x">X Browser</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="clickBackToExit">Next click back will exit.</string>
     <string name="converter_directer_arrow_contentDescription">coverter directer.</string>
@@ -624,19 +625,21 @@
     <string name="keepRootAppRunning">keep root app running,example:SuperSU</string>
     <string name="marketAppNoInstalled">Not found market app.</string>
     <string name="networkError">Network offline.</string>
+    <string name="networkSlowestNotice">Network is limit access.</string>
     <string name="notPermissionForReadInstalledAppList">Permission denied for read installed Applications.</string>
     <string name="notSupport">Not support now.</string>
     <string name="notSupportParseHomepageBookmarks">not support parse UC homepage bookmarks</string>
     <string name="opeartionTooFast">Too fastest.</string>
+    <string name="packageNameDesc">package name</string>
     <string name="rating">Rating</string>
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="readBookmarksEmpty">bookmarks is empty.</string>
     <string name="readBookmarksError">read bookmarks error.</string>
     <string name="search_menu_title">Search</string>
     <string name="someTaskIsRuning">wait for a coffer time.</string>
-    <string name="source_broswer_icon_contentDescription">source broswer</string>
+    <string name="source_browser_icon_contentDescription">source Browser</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="target_broswer_icon_contentDescription">target broswer</string>
+    <string name="target_browser_icon_contentDescription">target Browser</string>
     <string name="viaBookmarksFileMiss">bookmark file missing.</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

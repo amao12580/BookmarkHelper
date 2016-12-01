@@ -19,7 +19,7 @@ import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
  * Time:11:25
  */
 
-abstract class BasicStorageUtil implements Storageable {
+abstract class BasicStorageUtil implements StorageAble {
     protected static boolean mkdir(String dirPath, String mark, boolean needthrowWhenError) {
         /**
          * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）

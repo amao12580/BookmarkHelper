@@ -1,25 +1,26 @@
 <!--不可不知的 Android strings.xml 那些事:http://www.codeceo.com/article/about-android-strings-xml.html-->
 <resources>
     <string name="app_name">BookmarkHelper</string>
-    <string name="broswer_name_show_chrome">Chrome Broswer</string>
-    <string name="broswer_name_show_chrome_canary">Chrome Canary Broswer</string>
-    <string name="broswer_name_show_chrome_beta">Chrome Beta Broswer</string>
-    <string name="broswer_name_show_chrome_dev">Chrome Dev Broswer</string>
-    <string name="broswer_name_show_flyme5">Flyme5 Broswer</string>
-    <string name="broswer_name_show_360">360 Broswer</string>
-    <string name="broswer_name_show_x">X Broswer</string>
-    <string name="broswer_name_show_firefox">Firefox Broswer</string>
-    <string name="broswer_name_show_liebao">Liebao Broswer</string>
-    <string name="broswer_name_show_oupeng">Oupeng Broswer</string>
-    <string name="broswer_name_show_qq">QQ Broswer</string>
-    <string name="broswer_name_show_baidu">Baidu Broswer</string>
-    <string name="broswer_name_show_sougou">Sougou Broswer</string>
-    <string name="broswer_name_show_uc">UC Broswer</string>
-    <string name="broswer_name_show_ucintl">UC international</string>
-    <string name="broswer_name_show_via">Via Broswer</string>
+    <string name="browser_name_show_chrome">Chrome Browser</string>
+    <string name="browser_name_show_chrome_canary">Chrome Canary Browser</string>
+    <string name="browser_name_show_chrome_beta">Chrome Beta Browser</string>
+    <string name="browser_name_show_chrome_dev">Chrome Dev Browser</string>
+    <string name="browser_name_show_flyme5">Flyme5 Browser</string>
+    <string name="browser_name_show_miui">Miui Browser</string>
+    <string name="browser_name_show_360">360 Browser</string>
+    <string name="browser_name_show_x">X Browser</string>
+    <string name="browser_name_show_firefox">Firefox Browser</string>
+    <string name="browser_name_show_liebao">Liebao Browser</string>
+    <string name="browser_name_show_oupeng">Oupeng Browser</string>
+    <string name="browser_name_show_qq">QQ Browser</string>
+    <string name="browser_name_show_baidu">Baidu Browser</string>
+    <string name="browser_name_show_sougou">Sougou Browser</string>
+    <string name="browser_name_show_uc">UC Browser</string>
+    <string name="browser_name_show_ucintl">UC international</string>
+    <string name="browser_name_show_via">Via Browser</string>
 
-    <string name="source_broswer_icon_contentDescription">source broswer</string>
-    <string name="target_broswer_icon_contentDescription">target broswer</string>
+    <string name="source_browser_icon_contentDescription">source Browser</string>
+    <string name="target_browser_icon_contentDescription">target Browser</string>
     <string name="appUninstall"> not install.</string>
     <string name="readBookmarksError">read bookmarks error.</string>
     <string name="readBookmarksEmpty">bookmarks is empty.</string>
@@ -52,4 +53,6 @@
     <string name="SDCardNotReadOrWriteable">Storage is not available.</string>
     <string name="SystemNotReadOrWriteable">System storage is not available.</string>
     <string name="opeartionTooFast">Too fastest.</string>
+    <string name="networkSlowestNotice">Network is limit access.</string>
+    <string name="packageNameDesc">package name</string>
 </resources>

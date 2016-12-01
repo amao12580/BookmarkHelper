@@ -13,7 +13,7 @@ import android.content.Context;
 
 import lombok.Getter;
 import lombok.Setter;
-import pro.kisscat.www.bookmarkhelper.converter.support.BasicBroswer;
+import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 
 /**
  * 从source转换到target
@@ -24,15 +24,15 @@ public class Rule {
     private int id;
     @Setter
     @Getter
-    private BasicBroswer source;
+    private BasicBrowser source;
     @Setter
     @Getter
-    private BasicBroswer target;
+    private BasicBrowser target;
     @Setter
     @Getter
     private boolean canUse;
 
-    public Rule(int id, Context context, BasicBroswer source, BasicBroswer target) {
+    public Rule(int id, Context context, BasicBrowser source, BasicBrowser target) {
         boolean sourceInstalled = false, targetInstalled = false;
         if (source.isInstalled(context, source)) {
             sourceInstalled = true;

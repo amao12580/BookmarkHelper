@@ -1,25 +1,26 @@
 <!--不可不知的 Android strings.xml 那些事:http://www.codeceo.com/article/about-android-strings-xml.html-->
 <resources>
     <string name="app_name">书签助手</string>
-    <string name="broswer_name_show_chrome">Chrome浏览器</string>
-    <string name="broswer_name_show_chrome_canary">ChromeCanary</string>
-    <string name="broswer_name_show_chrome_beta">ChromeBeta</string>
-    <string name="broswer_name_show_chrome_dev">ChromeDev</string>
-    <string name="broswer_name_show_flyme5">Flyme5浏览器</string>
-    <string name="broswer_name_show_360">360浏览器</string>
-    <string name="broswer_name_show_x">X浏览器</string>
-    <string name="broswer_name_show_qq">QQ浏览器</string>
-    <string name="broswer_name_show_via">Via浏览器</string>
-    <string name="broswer_name_show_uc">UC浏览器</string>
-    <string name="broswer_name_show_ucintl">UC国际版</string>
-    <string name="broswer_name_show_sougou">搜狗浏览器</string>
-    <string name="broswer_name_show_baidu">百度浏览器</string>
-    <string name="broswer_name_show_oupeng">欧朋浏览器</string>
-    <string name="broswer_name_show_liebao">猎豹浏览器</string>
-    <string name="broswer_name_show_firefox">Firefox浏览器</string>
+    <string name="browser_name_show_chrome">Chrome浏览器</string>
+    <string name="browser_name_show_chrome_canary">ChromeCanary</string>
+    <string name="browser_name_show_chrome_beta">ChromeBeta</string>
+    <string name="browser_name_show_chrome_dev">ChromeDev</string>
+    <string name="browser_name_show_flyme5">Flyme5浏览器</string>
+    <string name="browser_name_show_miui">Miui浏览器</string>
+    <string name="browser_name_show_360">360浏览器</string>
+    <string name="browser_name_show_x">X浏览器</string>
+    <string name="browser_name_show_qq">QQ浏览器</string>
+    <string name="browser_name_show_via">Via浏览器</string>
+    <string name="browser_name_show_uc">UC浏览器</string>
+    <string name="browser_name_show_ucintl">UC国际版</string>
+    <string name="browser_name_show_sougou">搜狗浏览器</string>
+    <string name="browser_name_show_baidu">百度浏览器</string>
+    <string name="browser_name_show_oupeng">欧朋浏览器</string>
+    <string name="browser_name_show_liebao">猎豹浏览器</string>
+    <string name="browser_name_show_firefox">Firefox浏览器</string>
 
-    <string name="source_broswer_icon_contentDescription">来源浏览器</string>
-    <string name="target_broswer_icon_contentDescription">目标浏览器</string>
+    <string name="source_browser_icon_contentDescription">来源浏览器</string>
+    <string name="target_browser_icon_contentDescription">目标浏览器</string>
     <string name="appUninstall">未安装.</string>
     <string name="readBookmarksError">读取书签信息失败.</string>
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>
@@ -55,4 +56,6 @@
     <string name="SDCardNotReadOrWriteable">无法读写存储，可能缺少权限.</string>
     <string name="SystemNotReadOrWriteable">无法挂载"/data"分区为读写模式.</string>
     <string name="opeartionTooFast">点这么快会被肛的.</string>
+    <string name="networkSlowestNotice">正在访问境外网站，如果打不开，你懂的。</string>
+    <string name="packageNameDesc">包名</string>
 </resources>

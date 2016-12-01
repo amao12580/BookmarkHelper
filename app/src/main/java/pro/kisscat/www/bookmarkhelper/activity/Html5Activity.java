@@ -13,6 +13,7 @@ package pro.kisscat.www.bookmarkhelper.activity;
  */
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,13 +35,13 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 
 public class Html5Activity extends AppCompatActivity {
-
     // 用于记录出错页面的url 方便重新加载
     private String mFailingUrl = null;
     private WebView mWebView;

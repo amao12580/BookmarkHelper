@@ -54,10 +54,10 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        context = getApplicationContext();
         LogHelper.v("QRCodeActivity start.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrcode);
+        context = getApplicationContext();
         Bundle bundle = getIntent().getBundleExtra("bundle");
         String mTitle = bundle.getString("title");
         int mLogo = bundle.getInt("logo");
@@ -85,10 +85,10 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
         mCustomWebView.setFocusable(true);
         mCustomWebView.setFocusableInTouchMode(true);
 
-        mCustomWebView2 = new CustomWebView(this, this);
-        mCustomWebView2.loadUrl(context.getResources().getString(R.string.donateAlipayURL));//加载页面
-        mCustomWebView2.setFocusable(true);
-        mCustomWebView2.setFocusableInTouchMode(true);
+//        mCustomWebView2 = new CustomWebView(this, this);
+//        mCustomWebView2.loadUrl(context.getResources().getString(R.string.donateAlipayURL));//加载页面
+//        mCustomWebView2.setFocusable(true);
+//        mCustomWebView2.setFocusableInTouchMode(true);
 //        RelativeLayout relativeLayout2 = (RelativeLayout) findViewById(R.id.qrcode_webview_alipay_layout);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.qrcode_layout);
         linearLayout.addView(mCustomWebView);
@@ -146,9 +146,7 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
     public Bitmap getBitmap(String sUrl) {
         String dirPath = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.FILE_SPLIT;
         File dir = new File(dirPath);
-        if (dir.isDirectory() && !dir.exists()) {
-            dir.mkdirs();
-        }
+        dir.mkdirs();
         String filePath = dirPath + QRCodeFileName + ".jpg";
         HttpURLConnection conn = null;
         Bitmap bitmap = null;
@@ -301,8 +299,6 @@ public class QRCodeActivity extends AppCompatActivity implements CustomWebView.L
 
     /**
      * https://ydmmocoo.github.io/2016/06/30/Android%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1%E6%89%AB%E4%B8%80%E6%89%AB%E5%92%8C%E6%94%AF%E4%BB%98%E5%AE%9D%E6%89%AB%E4%B8%80%E6%89%AB/
-     *
-     * @param context
      */
     public void goIntent(Context context) {
         try {
