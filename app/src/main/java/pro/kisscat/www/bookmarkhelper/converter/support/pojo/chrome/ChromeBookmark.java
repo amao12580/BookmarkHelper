@@ -44,6 +44,10 @@ public class ChromeBookmark {
         LogHelper.v("synced part size:" + SyncedBookmarks.size());
         result.addAll(SyncedBookmarks);
 
+        List<Bookmark> tabletBookmarks = parseNode(root.getTablet());
+        LogHelper.v("tablet part size:" + tabletBookmarks.size());
+        result.addAll(tabletBookmarks);
+
         return result;
     }
 

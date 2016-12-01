@@ -18,6 +18,7 @@
     <string name="browser_name_show_oupeng">欧朋浏览器</string>
     <string name="browser_name_show_liebao">猎豹浏览器</string>
     <string name="browser_name_show_firefox">Firefox浏览器</string>
+    <string name="browser_name_show_yandex">Yandex浏览器</string>
 
     <string name="source_browser_icon_contentDescription">来源浏览器</string>
     <string name="target_browser_icon_contentDescription">目标浏览器</string>
@@ -30,7 +31,7 @@
     <string name="fileDeleteError">文件删除失败.</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>
     <string name="flyme5BookmarksFileMiss">还未初始化，请最少打开一次.</string>
-    <string name="converter_directer_arrow_contentDescription">转换方向</string>
+    <string name="converter_directer_arrow_contentDescription">合并方向</string>
     <string name="notSupport">暂未支持.</string>
     <string name="notPermissionForReadInstalledAppList">没有权限读取已安装的应用.</string>
     <string name="dialogTitle">快看提示！</string>
@@ -43,7 +44,7 @@
     <string name="networkError">您的网络未连接，快去检查一下！</string>
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场.</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
-    <string name="someTaskIsRuning">书签转换任务正在执行.</string>
+    <string name="someTaskIsRuning">书签合并任务正在执行.</string>
     <!--支付宝，可扫描-->
     <string name="donateAlipayURL">http://ww2.sinaimg.cn/mw690/becd6b85gw1fa92e11ycmj20u019jwik.jpg</string>
     <!--微信，可扫描-->

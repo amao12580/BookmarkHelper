@@ -63,9 +63,9 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
         Rule rule = param.getRule();
         handlePreExecuteMessage(rule);
         long s = System.currentTimeMillis();
-        LogHelper.v(TAG, "开始执行转换，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
+        LogHelper.v(TAG, "开始执行合并，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
         Result result = processConverter(rule);
-        LogHelper.v(TAG, "完成转换，耗时：" + (System.currentTimeMillis() - s) + "ms，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
+        LogHelper.v(TAG, "完成合并，耗时：" + (System.currentTimeMillis() - s) + "ms，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
         return result;
     }
 
@@ -86,7 +86,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
         Message message = new Message();
         message.what = 0;
         Bundle bundle = new Bundle();
-        Result result = new Result("正在转换，约需5秒钟，请等待.");
+        Result result = new Result("正在合并，约需5秒钟，请等待.");
         bundle.putString("result", JsonUtil.toJson(result));
         message.setData(bundle);
         handler.sendMessage(message);
@@ -145,7 +145,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
                 result.setSuccessMsg(rule.getSource().getName() + "：" + "所有书签已存在，不需要合并.");
             } else {
                 if (result.getErrorMsg() == null) {
-                    result.setErrorMsg(rule.getSource().getName() + "：" + "转换遇到问题，请联系作者.");
+                    result.setErrorMsg(rule.getSource().getName() + "：" + "合并遇到问题，请联系作者.");
                 }
             }
             LogHelper.write();

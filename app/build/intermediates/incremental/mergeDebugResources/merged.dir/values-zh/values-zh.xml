@@ -28,8 +28,9 @@
     <string name="browser_name_show_ucintl">UC国际版</string>
     <string name="browser_name_show_via">Via浏览器</string>
     <string name="browser_name_show_x">X浏览器</string>
+    <string name="browser_name_show_yandex">Yandex浏览器</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
-    <string name="converter_directer_arrow_contentDescription">转换方向</string>
+    <string name="converter_directer_arrow_contentDescription">合并方向</string>
     <string name="dialogButtonOk">已阅</string>
     <string name="dialogTitle">快看提示！</string>
     <string name="donate">捐助</string>
@@ -53,7 +54,7 @@
     <string name="ratingURL">http://www.coolapk.com/apk/</string>
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>
     <string name="readBookmarksError">读取书签信息失败.</string>
-    <string name="someTaskIsRuning">书签转换任务正在执行.</string>
+    <string name="someTaskIsRuning">书签合并任务正在执行.</string>
     <string name="source_browser_icon_contentDescription">来源浏览器</string>
     <string name="target_browser_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>

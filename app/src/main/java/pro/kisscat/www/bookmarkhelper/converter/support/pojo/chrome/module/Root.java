@@ -22,4 +22,7 @@ public class Root {
     @Setter
     @Getter
     private Node synced;
+    @Setter
+    @Getter
+    private Node tablet;
 }

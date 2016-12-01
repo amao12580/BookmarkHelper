@@ -16,7 +16,7 @@ import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 
 /**
- * 从source转换到target
+ * 从source合并到target
  */
 public class Rule {
     @Setter
