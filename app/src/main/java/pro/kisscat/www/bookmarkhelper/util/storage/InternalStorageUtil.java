@@ -175,7 +175,7 @@ public final class InternalStorageUtil extends BasicStorageUtil {
      * 重新挂载data目录为读写或只读
      */
     private static boolean remountDataDir(boolean isNeedReadOnly) {
-        boolean readWriteable = checkReadWriteable(Path.INNER_PATH_DATA + AppListUtil.thisAppPackageName + Path.FILE_SPLIT);
+        boolean readWriteable = checkReadWriteAble(Path.INNER_PATH_DATA + AppListUtil.thisAppPackageName + Path.FILE_SPLIT);
         LogHelper.v("remountDataDir 读写权限检查结果：" + readWriteable);
         if (readWriteable) {
             return true;

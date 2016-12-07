@@ -76,7 +76,7 @@ public class DefaultBrowserAble extends BasicBrowser {
         for (DefaultBookmark item : bookmarks) {
             int folder = item.getIsFolder();
             if (folder == 0) {
-                String folderPath = trim(parseFolderPath(folders, item.getParent()));
+                String folderPath = trim(parseFolderPath(folders, item.getId(), item.getParent()));
                 Bookmark bookmark = new Bookmark();
                 bookmark.setTitle(item.getTitle());
                 bookmark.setUrl(item.getUrl());
@@ -86,19 +86,25 @@ public class DefaultBrowserAble extends BasicBrowser {
         }
     }
 
-    private String parseFolderPath(Map<Integer, DefaultBookmark> folders, Integer parentId) {
+    private String parseFolderPath(Map<Integer, DefaultBookmark> folders, Integer currentId, Integer parentId) {
         DefaultBookmark parent = folders.get(parentId);
         if (parent == null) {
             return null;
         }
-        return parseFolderPath(folders, parentId, "");
+        return parseFolderPath(folders, currentId, parentId, "");
     }
 
-    private String parseFolderPath(Map<Integer, DefaultBookmark> folders, Integer parent_uuid, String path) {
-        if (parent_uuid == null || parent_uuid <= 0) {
+    private String parseFolderPath(Map<Integer, DefaultBookmark> folders, Integer currentId, Integer parentId, String path) {
+        if (parentId == null || parentId <= 0) {
             return path;
         }
-        DefaultBookmark parent = folders.get(parent_uuid);
+        if (currentId == null || currentId <= 0) {
+            return path;
+        }
+        if (currentId.intValue() == parentId.intValue()) {
+            return path;
+        }
+        DefaultBookmark parent = folders.get(parentId);
         if (parent == null) {
             return path;
         }
@@ -106,7 +112,7 @@ public class DefaultBrowserAble extends BasicBrowser {
         if (!(title == null || title.isEmpty())) {
             path = title + Path.FILE_SPLIT + path;
         }
-        return parseFolderPath(folders, parent.getParent(), path);
+        return parseFolderPath(folders, parent.getId(), parent.getParent(), path);
     }
 
     private List<DefaultBookmark> parseBookmark(Cursor cursor) {

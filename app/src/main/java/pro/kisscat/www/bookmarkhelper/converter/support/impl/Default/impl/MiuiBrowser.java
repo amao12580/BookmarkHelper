@@ -12,6 +12,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
+import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
@@ -78,11 +79,11 @@ public class MiuiBrowser extends DefaultBrowserAble {
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
-            LogHelper.e(converterException.getMessage());
+            LogHelper.e(converterException);
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(e.getMessage());
+            LogHelper.e(e);
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");

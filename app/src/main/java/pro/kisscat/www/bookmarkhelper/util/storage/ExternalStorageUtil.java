@@ -86,9 +86,9 @@ public final class ExternalStorageUtil extends BasicStorageUtil {
     }
 
     public static boolean remountSDCardDir() {
-        boolean readWriteable = checkReadWriteable(Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH);
-        LogHelper.v("remountSDCardDir 读写权限检查结果：" + readWriteable);
-        if (readWriteable) {
+        boolean readWriteAble = checkReadWriteAble(Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH);
+        LogHelper.v("remountSDCardDir 读写权限检查结果：" + readWriteAble);
+        if (readWriteAble) {
             return true;
         }
         String command = "mount -o remount, rw /sdcard";
@@ -99,6 +99,8 @@ public final class ExternalStorageUtil extends BasicStorageUtil {
             RootUtil.executeCmd(command);
             return false;
         }
-        return true;
+        boolean readWriteAbleAgin = checkReadWriteAble(Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH);
+        LogHelper.v("readWriteAbleAgin 读写权限检查结果：" + readWriteAbleAgin);
+        return readWriteAbleAgin;
     }
 }

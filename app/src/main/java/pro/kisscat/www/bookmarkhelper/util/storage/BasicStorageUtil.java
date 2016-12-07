@@ -20,7 +20,7 @@ import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
  */
 
 abstract class BasicStorageUtil implements StorageAble {
-    protected static boolean mkdir(String dirPath, String mark, boolean needthrowWhenError) {
+    protected static boolean mkdir(String dirPath, String mark, boolean needThrowExceptionWhenError) {
         /**
          * -f  强制覆盖，不询问yes/no（-i的默认的，即默认为交互模式，询问是否覆盖）
          * -r  递归复制，包含目录
@@ -29,7 +29,7 @@ abstract class BasicStorageUtil implements StorageAble {
          */
         String cmd = "mkdir -p " + dirPath;
         boolean result = RootUtil.executeCmd(cmd);
-        if (!result && needthrowWhenError) {
+        if (!result && needThrowExceptionWhenError) {
             throw new ConverterException(ContextUtil.buildFileMkdirErrorMessage(mark));
         }
         return result;
@@ -48,7 +48,7 @@ abstract class BasicStorageUtil implements StorageAble {
     /**
      * 检查读写权限
      */
-    static boolean checkReadWriteable(String dirPath) {
+    static boolean checkReadWriteAble(String dirPath) {
         dirPath += "tmp" + Path.FILE_SPLIT;
         boolean mkdirRet = mkdir(dirPath, null, false);
         if (!mkdirRet) {

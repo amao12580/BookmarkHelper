@@ -72,9 +72,13 @@ public class ChromeCanaryBrowser extends ChromeBrowserAble {
             List<Bookmark> chromeBookmarks = fetchBookmarks(file);
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, chromeBookmarks);
+        } catch (ConverterException converterException) {
+            converterException.printStackTrace();
+            LogHelper.e(converterException.getMessage());
+            throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(e.getMessage());
+            LogHelper.e(e);
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");

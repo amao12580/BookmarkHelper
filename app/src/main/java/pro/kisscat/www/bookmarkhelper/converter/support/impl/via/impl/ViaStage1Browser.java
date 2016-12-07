@@ -77,11 +77,11 @@ public class ViaStage1Browser extends ViaBrowserAble {
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, list);
         } catch (ConverterException converterException) {
-            LogHelper.e(converterException.getMessage());
             converterException.printStackTrace();
+            LogHelper.e(converterException);
             throw converterException;
         } catch (Exception e) {
-            LogHelper.e(e.getMessage());
+            LogHelper.e(e);
             e.printStackTrace();
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {

@@ -89,11 +89,11 @@ public class SogouBrowser extends BasicBrowser {
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
-            LogHelper.e(converterException.getMessage());
+            LogHelper.e(converterException);
             converterException.printStackTrace();
             throw converterException;
         } catch (Exception e) {
-            LogHelper.e(e.getMessage());
+            LogHelper.e(e);
             e.printStackTrace();
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {

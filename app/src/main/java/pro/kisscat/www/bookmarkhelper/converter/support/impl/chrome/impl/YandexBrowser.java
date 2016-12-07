@@ -75,9 +75,13 @@ public class YandexBrowser extends ChromeBrowserAble {
             List<Bookmark> bookmarks = fetchBookmarks(file);
             this.bookmarks = new LinkedList<>();
             fetchValidBookmarks(this.bookmarks, bookmarks);
+        } catch (ConverterException converterException) {
+            converterException.printStackTrace();
+            LogHelper.e(converterException.getMessage());
+            throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(e.getMessage());
+            LogHelper.e(e);
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");

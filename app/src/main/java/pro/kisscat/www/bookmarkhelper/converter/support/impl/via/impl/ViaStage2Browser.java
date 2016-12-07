@@ -62,12 +62,12 @@ public class ViaStage2Browser extends ViaBrowserAble {
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
-            LogHelper.e(converterException.getMessage());
             converterException.printStackTrace();
+            LogHelper.e(converterException);
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(e.getMessage());
+            LogHelper.e(e);
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");

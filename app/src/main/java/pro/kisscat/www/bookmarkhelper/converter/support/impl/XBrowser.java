@@ -81,11 +81,11 @@ public class XBrowser extends BasicBrowser {
             fetchValidBookmarks(bookmarks, bookmarksList);
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
-            LogHelper.e(converterException.getMessage());
+            LogHelper.e(converterException);
             throw converterException;
         } catch (Exception e) {
             e.printStackTrace();
-            LogHelper.e(e.getMessage());
+            LogHelper.e(e);
             throw new ConverterException(ContextUtil.buildReadBookmarksErrorMessage(this.getName()));
         } finally {
             LogHelper.v(TAG + ":读取书签数据结束");
