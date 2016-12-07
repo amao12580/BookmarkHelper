@@ -10,6 +10,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Default.impl.Flyme5Browser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.Default.impl.MiuiBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.FirefoxBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.H5Browser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.OupengBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBrowser;
@@ -64,6 +65,7 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new MiuiBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new YandexBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new QiyuBrowser(), viaBrowserAble));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new H5Browser(), viaBrowserAble));
         }
     }
 }

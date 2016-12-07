@@ -171,7 +171,7 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 2.Bug 修复：Flyme5浏览器转换到Via时出错
 
-#### 0.0.19版 Draft
+#### [0.0.19版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.19%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.19.apk)
 1.增加兼容：支持从[H5浏览器](http://www.coolapk.com/apk/org.noear.h5)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 #### 0.0.20版 Draft

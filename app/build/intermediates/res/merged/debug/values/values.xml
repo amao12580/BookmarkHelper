@@ -600,6 +600,7 @@
     <string name="browser_name_show_chrome_dev">Chrome Dev Browser</string>
     <string name="browser_name_show_firefox">Firefox Browser</string>
     <string name="browser_name_show_flyme5">Flyme5 Browser</string>
+    <string name="browser_name_show_h5">H5 Browser</string>
     <string name="browser_name_show_liebao">Liebao Browser</string>
     <string name="browser_name_show_miui">Miui Browser</string>
     <string name="browser_name_show_oupeng">Oupeng Browser</string>

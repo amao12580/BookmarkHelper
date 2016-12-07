@@ -30208,6 +30208,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int ic_chrome_dev
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_donate
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_firefox
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_flyme5
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_h5
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_liebao
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_miui
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_oupeng
@@ -30537,6 +30538,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome_canary
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome_dev
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_firefox
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_flyme5
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_h5
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_liebao
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_miui
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_oupeng

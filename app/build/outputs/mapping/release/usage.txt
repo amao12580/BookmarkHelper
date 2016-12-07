@@ -941,7 +941,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser:
     62:62:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.BrowserAble
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    40:40:public ConverterMaster()
+    41:41:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask:
     private static final java.lang.String TAG
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBrowser:
@@ -960,6 +960,11 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.FirefoxBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     48:51:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.H5Browser:
+    private static final java.lang.String TAG
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    42:45:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
