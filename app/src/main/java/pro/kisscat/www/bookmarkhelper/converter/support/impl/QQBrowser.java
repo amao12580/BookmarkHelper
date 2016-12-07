@@ -231,7 +231,6 @@ public class QQBrowser extends BasicBrowser {
                     parseBookmarkWithFolder(cursor, result);
                 }
             }
-
         } finally {
             if (cursor != null) {
                 cursor.close();

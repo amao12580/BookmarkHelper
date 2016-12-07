@@ -106,7 +106,6 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
                 return result;
             } else {
                 publishProgress();
-                handleExecuteRunningMessage();
                 LogHelper.v("成功获取了Root权限.");
             }
             if (!InternalStorageUtil.remountDataDir()) {
@@ -119,9 +118,11 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
                 return result;
             }
             publishProgress();
+            handleExecuteRunningMessage();
             start = System.currentTimeMillis();
             ret = execute(rule);
             end = System.currentTimeMillis();
+            publishProgress();
         } catch (ConverterException e) {
             if (result.getErrorMsg() == null) {
                 result.setErrorMsg(e.getMessage());

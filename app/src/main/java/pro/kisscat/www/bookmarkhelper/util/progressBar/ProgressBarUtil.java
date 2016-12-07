@@ -20,7 +20,7 @@ public class ProgressBarUtil {
     private int min = 0;
     private int max = 0;
     private int now = 0;
-    private int n = 10;
+    private int weight = 10;
     @Getter
     private NumberProgressBar progressBar = null;
 
@@ -31,6 +31,11 @@ public class ProgressBarUtil {
     }
 
     public void next() {
+        nextOnce();
+        nextOnce();
+    }
+
+    private void nextOnce() {
         int remainder = max - now;
         if (remainder <= 1) {
             now = max;
@@ -38,10 +43,10 @@ public class ProgressBarUtil {
             return;
         }
         if (remainder > min) {
-            if (remainder < n) {
-                n = n / 2;
+            if (remainder < weight) {
+                weight = weight / 2;
             }
-            now += remainder / n;
+            now += remainder / weight;
             if (now > max) {
                 now = max;
             }
