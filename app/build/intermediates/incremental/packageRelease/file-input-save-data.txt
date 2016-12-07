@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Dec 07 17:45:19 CST 2016
+#Wed Dec 07 17:49:18 CST 2016
 2185.file=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\proguard\\release\\jars\\3\\1f\\main.jar\\android\\support\\v7\\appcompat\\R$bool.class
 1425.base=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\proguard\\release\\jars\\3\\1f\\main.jar
 2716.set=ANDROID_RESOURCE
