@@ -31582,25 +31582,43 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: void s
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node getSynced()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: void setTablet(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root: pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node getTablet()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.lang.String name
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.lang.String type
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.lang.String url
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.util.List children
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: QiyuJsonBookmark()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.util.List fetchAll()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.util.List parseNode(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: boolean checkIsFolder(pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.lang.String addPath(java.lang.String,java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: void addAll(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: void setName(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.lang.String getName()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: void setType(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.lang.String getType()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: void setUrl(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.lang.String getUrl()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: void setChildren(java.util.List)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark: java.util.List getChildren()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: java.lang.String name
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: java.lang.String url
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: long data_added
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: HomepageBookmark()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: void setName(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: java.lang.String getName()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: void setUrl(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: java.lang.String getUrl()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: void setData_added(long)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark: long getData_added()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.lang.String name
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.lang.String type
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.lang.String url
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.util.List children
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: QiyuBookmark()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.util.List fetchAll()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.util.List parseNode(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: boolean checkIsFolder(pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.lang.String addPath(java.lang.String,java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: void addAll(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: void setName(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.lang.String getName()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: void setType(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.lang.String getType()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: void setUrl(java.lang.String)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.lang.String getUrl()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: void setChildren(java.util.List)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark: java.util.List getChildren()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark: java.util.List homeBookmark
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark: QiyuHasLoginedBookmark()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark: java.util.List fetchAll()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark: java.util.List fetchAllHomepageBookmark()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark: void setHomeBookmark(java.util.List)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark: java.util.List getHomeBookmark()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: int id
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule: pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser source

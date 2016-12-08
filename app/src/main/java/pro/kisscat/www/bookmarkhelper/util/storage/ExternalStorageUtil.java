@@ -71,7 +71,7 @@ public final class ExternalStorageUtil extends BasicStorageUtil {
          * -p  保持新文件的属性不变
          */
         String cmd = "cp -fr " + source + " " + target;
-        boolean result = RootUtil.executeCmd(cmd);
+        boolean result = RootUtil.executeCmd(cmd, true);
         if (!result) {
             throw new ConverterException(ContextUtil.buildFileCPErrorMessage(mark));
         }

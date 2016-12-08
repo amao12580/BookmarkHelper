@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import lombok.Setter;
+import pro.kisscat.www.bookmarkhelper.BuildConfig;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
@@ -30,8 +31,8 @@ public class BasicBrowser extends App implements BrowserAble {
     @Setter
     protected boolean installed;
 
-    public boolean isInstalled(Context context, BasicBrowser broswer) {
-        setInstalled(AppListUtil.isInstalled(context, broswer.getPackageName()));
+    public boolean isInstalled(Context context, BasicBrowser browser) {
+        setInstalled(AppListUtil.isInstalled(context, browser.getPackageName()));
         return installed;
     }
 
@@ -120,11 +121,11 @@ public class BasicBrowser extends App implements BrowserAble {
         if (currentIndex <= 1) {
             denyPrintBookmarkHasShow = false;
         }
-        int threshold = 10;
+        int threshold = 5;
         if (allSize < threshold) {
             return true;
         }
-        if (currentIndex > threshold) {
+        if (!BuildConfig.DEBUG && currentIndex > threshold) {
             if (!denyPrintBookmarkHasShow) {
                 LogHelper.v("There too many bookmark,skip unnecessary print.currentIndex:" + currentIndex + ",allSize:" + allSize);
                 denyPrintBookmarkHasShow = true;

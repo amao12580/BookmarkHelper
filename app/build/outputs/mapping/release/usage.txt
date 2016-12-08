@@ -938,7 +938,7 @@ pro.kisscat.www.bookmarkhelper.activity.QRCode.zxing.RGBLuminanceSource:
     91:95:private static android.graphics.Bitmap loadBitmap(java.lang.String)
 pro.kisscat.www.bookmarkhelper.common.shared.MetaData
 pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser:
-    62:62:public int readBookmarkSum()
+    63:63:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.BrowserAble
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
     41:41:public ConverterMaster()
@@ -989,7 +989,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QiyuBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String dirJsonName_origin
     private static final java.lang.String dirDBName_origin
-    49:52:public int readBookmarkSum()
+    51:54:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

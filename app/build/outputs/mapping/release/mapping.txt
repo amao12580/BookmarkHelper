@@ -34706,24 +34706,24 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser -> pro.kisscat.www
     int bookmarkSum -> a
     boolean installed -> b
     boolean denyPrintBookmarkHasShow -> c
-    27:117:void <init>() -> <init>
-    34:35:boolean isInstalled(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser) -> a
-    39:43:void fillName(android.content.Context) -> a
-    46:53:void fillVersion(android.content.Context) -> b
-    58:58:void fillDefaultAppName(android.content.Context) -> c
-    68:68:void fillDefaultIcon(android.content.Context) -> d
-    72:72:java.lang.String getPackageName() -> getPackageName
-    78:78:java.util.List readBookmark() -> a
-    83:83:int appendBookmark(java.util.List) -> a
-    87:106:java.util.Set buildNoRepeat(java.util.List,java.util.List) -> a
-    110:114:boolean isValidUrl(java.lang.String) -> b
-    120:134:boolean allowPrintBookmark(int,int) -> a
-    138:141:java.lang.String trim(java.lang.String) -> a
-    145:183:void fetchValidBookmarks(java.util.List,java.util.List) -> b
-    186:192:java.lang.String getFileNameByTrimPath(java.lang.String,java.lang.String) -> a
-    196:196:java.lang.String getPreExecuteConverterMessage() -> b
-    28:28:void setBookmarkSum(int) -> a
-    30:30:void setInstalled(boolean) -> a
+    28:118:void <init>() -> <init>
+    35:36:boolean isInstalled(android.content.Context,pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser) -> a
+    40:44:void fillName(android.content.Context) -> a
+    47:54:void fillVersion(android.content.Context) -> b
+    59:59:void fillDefaultAppName(android.content.Context) -> c
+    69:69:void fillDefaultIcon(android.content.Context) -> d
+    73:73:java.lang.String getPackageName() -> getPackageName
+    79:79:java.util.List readBookmark() -> a
+    84:84:int appendBookmark(java.util.List) -> a
+    88:107:java.util.Set buildNoRepeat(java.util.List,java.util.List) -> a
+    111:115:boolean isValidUrl(java.lang.String) -> b
+    121:135:boolean allowPrintBookmark(int,int) -> a
+    139:142:java.lang.String trim(java.lang.String) -> a
+    146:184:void fetchValidBookmarks(java.util.List,java.util.List) -> b
+    187:193:java.lang.String getFileNameByTrimPath(java.lang.String,java.lang.String) -> a
+    197:197:java.lang.String getPreExecuteConverterMessage() -> b
+    29:29:void setBookmarkSum(int) -> a
+    31:31:void setInstalled(boolean) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster -> pro.kisscat.www.bookmarkhelper.converter.support.b:
     java.util.List supportRule -> a
     46:70:void init(android.content.Context) -> a
@@ -35040,17 +35040,19 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QiyuBrowser -> pro.kisscat
     java.lang.String fileHomepageDBName_origin -> f
     java.lang.String filePath_origin -> g
     java.lang.String filePath_cp -> h
-    38:38:void <init>() -> <init>
-    44:44:java.lang.String getPackageName() -> getPackageName
-    57:58:void fillDefaultIcon(android.content.Context) -> d
-    62:63:void fillDefaultAppName(android.content.Context) -> c
-    76:111:java.util.List readBookmark() -> a
-    115:161:java.util.List fetchBookmarksListByHomepage() -> c
-    166:209:java.util.List fetchBookmarksListByUserHasLogined() -> d
-    213:229:java.util.List fetchBookmarksListByNoUserLogined() -> e
-    233:260:java.util.List fetchBookmarksByJsonFile(java.io.File) -> a
-    267:267:int appendBookmark(java.util.List) -> a
-    66:72:void <clinit>() -> <clinit>
+    40:40:void <init>() -> <init>
+    46:46:java.lang.String getPackageName() -> getPackageName
+    59:60:void fillDefaultIcon(android.content.Context) -> d
+    64:65:void fillDefaultAppName(android.content.Context) -> c
+    78:113:java.util.List readBookmark() -> a
+    117:163:java.util.List fetchBookmarksListByHomepage() -> c
+    167:209:java.util.List fetchBookmarksListByUserHasLogined() -> d
+    213:220:java.util.List fetchBookmarksListByNoUserLogined() -> e
+    224:267:java.util.List fetchBookmarksListByNoUserLoginedWithDB() -> f
+    271:287:java.util.List fetchBookmarksListByNoUserLoginedWithJson() -> g
+    291:323:java.util.List fetchBookmarksByJsonFile(java.io.File,boolean) -> a
+    330:330:int appendBookmark(java.util.List) -> a
+    68:74:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBrowser -> pro.kisscat.www.bookmarkhelper.converter.support.a.i:
     java.lang.String[] columns -> c
     java.util.List bookmarks -> d
@@ -35307,17 +35309,28 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Root -> pro.
     23:23:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node getSynced() -> getSynced
     25:25:void setTablet(pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node) -> setTablet
     26:26:pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.module.Node getTablet() -> getTablet
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark:
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.HomepageBookmark:
+    java.lang.String name -> name
+    java.lang.String url -> url
+    long data_added -> data_added
+    15:15:void <init>() -> <init>
+    16:16:void setName(java.lang.String) -> setName
+    17:17:java.lang.String getName() -> getName
+    19:19:void setUrl(java.lang.String) -> setUrl
+    20:20:java.lang.String getUrl() -> getUrl
+    22:22:void setData_added(long) -> setData_added
+    23:23:long getData_added() -> getData_added
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark:
     java.lang.String name -> name
     java.lang.String type -> type
     java.lang.String url -> url
     java.util.List children -> children
     22:22:void <init>() -> <init>
     37:38:java.util.List fetchAll() -> fetchAll
-    42:58:java.util.List parseNode(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark) -> parseNode
-    62:62:boolean checkIsFolder(pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark) -> checkIsFolder
+    42:58:java.util.List parseNode(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark) -> parseNode
+    62:62:boolean checkIsFolder(pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark) -> checkIsFolder
     66:69:java.lang.String addPath(java.lang.String,java.lang.String) -> addPath
-    73:81:void addAll(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark) -> addAll
+    73:81:void addAll(java.util.List,java.lang.String,pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark) -> addAll
     23:23:void setName(java.lang.String) -> setName
     24:24:java.lang.String getName() -> getName
     26:26:void setType(java.lang.String) -> setType
@@ -35326,6 +35339,13 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark
     30:30:java.lang.String getUrl() -> getUrl
     32:32:void setChildren(java.util.List) -> setChildren
     33:33:java.util.List getChildren() -> getChildren
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark:
+    java.util.List homeBookmark -> homeBookmark
+    20:20:void <init>() -> <init>
+    26:29:java.util.List fetchAll() -> fetchAll
+    33:46:java.util.List fetchAllHomepageBookmark() -> fetchAllHomepageBookmark
+    21:21:void setHomeBookmark(java.util.List) -> setHomeBookmark
+    22:22:java.util.List getHomeBookmark() -> getHomeBookmark
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule -> pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule:
     int id -> id
     pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser source -> source
@@ -35401,8 +35421,9 @@ pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil -> pro.kisscat.www.bookm
 pro.kisscat.www.bookmarkhelper.util.command.CommandUtil -> pro.kisscat.www.bookmarkhelper.util.command.a:
     pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult commandResult -> a
     25:30:void <init>() -> <init>
-    34:35:void executeCommand(java.lang.String[]) -> a
-    38:124:void executeCommand(java.lang.String,java.lang.String[]) -> a
+    34:41:long getWaitForExecuteTime(boolean) -> a
+    45:46:void executeCommand(java.lang.String[],boolean) -> a
+    49:135:void executeCommand(java.lang.String,java.lang.String[],boolean) -> a
     30:30:pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult getCommandResult() -> a
 pro.kisscat.www.bookmarkhelper.util.command.IOThread -> pro.kisscat.www.bookmarkhelper.util.command.b:
     boolean needExitNow -> a
@@ -35574,7 +35595,8 @@ pro.kisscat.www.bookmarkhelper.util.random.RandomUtil -> pro.kisscat.www.bookmar
 pro.kisscat.www.bookmarkhelper.util.root.RootUtil -> pro.kisscat.www.bookmarkhelper.util.j.a:
     23:23:boolean upgradeRootPermission() -> a
     27:27:boolean executeCmd(java.lang.String) -> a
-    31:37:pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult executeCmd(java.lang.String[]) -> a
+    31:31:boolean executeCmd(java.lang.String,boolean) -> a
+    35:41:pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult executeCmd(java.lang.String[],boolean) -> a
 pro.kisscat.www.bookmarkhelper.util.storage.BasicStorageUtil -> pro.kisscat.www.bookmarkhelper.util.k.a:
     22:22:void <init>() -> <init>
     30:35:boolean mkdir(java.lang.String,java.lang.String,boolean) -> a

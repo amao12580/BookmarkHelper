@@ -30,11 +30,22 @@ public class CommandUtil {
     @Getter
     public CommandResult commandResult = null;
 
-    public void executeCommand(String[] commands) {
-        executeCommand(COMMAND_SU, commands);
+    private long getWaitForExecuteTime(boolean isLongCommand) {
+        int base = 40;
+        int Float = 20;
+        LogHelper.v("isLongCommand:" + isLongCommand);
+        if (isLongCommand) {
+            base = 3 * base;
+            Float = 3 * Float;
+        }
+        return base + RandomUtil.nextInt(Float);//随机睡眠40~60毫秒，等待io流线程读取，实测低于10时会出现io流没读完整的问题
     }
 
-    private void executeCommand(String excuteUser, String[] commands) {
+    public void executeCommand(String[] commands, boolean isLongCommand) {
+        executeCommand(COMMAND_SU, commands, isLongCommand);
+    }
+
+    private void executeCommand(String excuteUser, String[] commands, boolean isLongCommand) {
         int result = -1;
         if (commands == null || commands.length == 0) {
             commandResult = new CommandResult(result);
@@ -71,7 +82,7 @@ public class CommandUtil {
             LogHelper.v("waitFor start.");
             result = process.waitFor();
             LogHelper.v("waitFor end.");
-            int sleep = 40 + RandomUtil.nextInt(20);//随机睡眠40~60毫秒，等待io流线程读取，实测低于10时会出现io流没读完整的问题
+            long sleep = getWaitForExecuteTime(isLongCommand);
             LogHelper.v("sleep:" + sleep);
             Thread.sleep(sleep);
             LogHelper.v("result is:" + result + ",successMsg is:" + JsonUtil.toJson(stdoutList) + ",errorMsg is:" + JsonUtil.toJson(erroroutList), false);
@@ -120,6 +131,6 @@ public class CommandUtil {
             }
         }
         commandResult = new CommandResult(result, stdoutList, erroroutList);
-        LogHelper.v("commandResult is :" + JsonUtil.toJson(commandResult));
+        LogHelper.v("commandResult is :" + JsonUtil.toJson(commandResult), false);
     }
 }

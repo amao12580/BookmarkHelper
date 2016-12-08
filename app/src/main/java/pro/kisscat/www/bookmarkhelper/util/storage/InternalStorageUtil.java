@@ -78,7 +78,7 @@ public final class InternalStorageUtil extends BasicStorageUtil {
                 return null;
             }
             command.append(dir);
-            CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()});
+            CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()}, false);
             if (commandResult != null && commandResult.isSuccess()) {
                 return commandResult.getSuccessMsg();
             }
@@ -112,7 +112,7 @@ public final class InternalStorageUtil extends BasicStorageUtil {
                 command.append(regularRule);
             }
             command.append(" -l");
-            CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()});
+            CommandResult commandResult = RootUtil.executeCmd(new String[]{command.toString()}, false);
             if (commandResult != null && commandResult.isSuccess()) {
                 if (needSort) {
                     return parseFileAndSortByFileChangeTimeDesc(commandResult.getSuccessMsg());

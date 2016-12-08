@@ -15,7 +15,8 @@ import java.util.List;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuJsonBookmark;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
@@ -25,6 +26,7 @@ import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
+import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 /**
  * Created with Android Studio.
@@ -82,8 +84,8 @@ public class QiyuBrowser extends BasicBrowser {
         try {
             ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
-            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByNoUserLogined();
-            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByUserHasLogined();
+            List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined();
+            List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined();
             List<Bookmark> bookmarksListPart3 = fetchBookmarksListByHomepage();
             LogHelper.v(TAG + ":已登录用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));
             LogHelper.v(TAG + ":已登录用户书签条数:" + bookmarksListPart1.size());
@@ -159,10 +161,66 @@ public class QiyuBrowser extends BasicBrowser {
         }
         LogHelper.v(TAG + ":读取首页的书签sqlite数据库结束");
         return result;
-
     }
 
     private List<Bookmark> fetchBookmarksListByUserHasLogined() {
+        List<Bookmark> result = new LinkedList<>();
+        String origin_dir = filePath_origin + dirJsonName_origin + Path.FILE_SPLIT + "profiles" + Path.FILE_SPLIT;
+        LogHelper.v(TAG + ":开始读取已登录用户的书签json文件:" + origin_dir);
+        if (!InternalStorageUtil.isExistDir(origin_dir)) {
+            LogHelper.v(origin_dir + " is not existed.skip");
+            return result;
+        }
+        List<String> dirs = InternalStorageUtil.lsDir(origin_dir);
+        if (dirs == null || dirs.isEmpty()) {
+            LogHelper.v(TAG + ":没有找到目标文件夹");
+            return result;
+        }
+        String targetDir = null;
+        String rule = "[0-9]{6,10}";
+        for (String item : dirs) {
+            if (item != null) {
+                if (item.matches(rule)) {
+                    targetDir = item;
+                    break;
+                }
+            }
+        }
+        if (targetDir == null || targetDir.isEmpty()) {
+            LogHelper.v(TAG + ":真的没有找到目标文件夹");
+            return result;
+        } else {
+            LogHelper.v(TAG + ":targetDir:" + targetDir);
+        }
+        String fileName_origin = "Bookmarks";
+        origin_dir += targetDir + Path.FILE_SPLIT;
+        String sourceFilePath = origin_dir + fileName_origin;
+        LogHelper.v(TAG + ":sourceFilePath:" + sourceFilePath);
+
+        java.io.File file;
+        try {
+            file = ExternalStorageUtil.copyFile(sourceFilePath, filePath_cp + fileName_origin, this.getName());
+            result.addAll(fetchBookmarksByJsonFile(file, true));
+        } catch (Exception e) {
+            LogHelper.e(e.getMessage());
+            return result;
+        }
+        LogHelper.v(TAG + ":读取已登录用户的书签json文件结束");
+        return result;
+    }
+
+    private List<Bookmark> fetchBookmarksListByNoUserLogined() {
+        List<Bookmark> result = new LinkedList<>();
+        List<Bookmark> part1 = fetchBookmarksListByNoUserLoginedWithDB();
+        List<Bookmark> part2 = fetchBookmarksListByNoUserLoginedWithJson();
+        LogHelper.v(TAG + ":未登录的用户书签，json部分，条数:" + part1.size());
+        LogHelper.v(TAG + ":未登录的用户书签，sqlite部分，条数:" + part2.size());
+        result.addAll(part1);
+        result.addAll(part2);
+        return result;
+    }
+
+    private List<Bookmark> fetchBookmarksListByNoUserLoginedWithDB() {
         String origin_dir = filePath_origin + dirDBName_origin;
         String origin_file = origin_dir + fileUserDBName_origin;
         String cp_file = filePath_cp + fileUserDBName_origin;
@@ -209,7 +267,7 @@ public class QiyuBrowser extends BasicBrowser {
         return result;
     }
 
-    private List<Bookmark> fetchBookmarksListByNoUserLogined() {
+    private List<Bookmark> fetchBookmarksListByNoUserLoginedWithJson() {
         String origin_dir = filePath_origin + dirJsonName_origin;
         String origin_file = origin_dir + fileJsonName_origin;
         String cp_file = filePath_cp + fileJsonName_origin;
@@ -220,7 +278,7 @@ public class QiyuBrowser extends BasicBrowser {
         java.io.File file;
         try {
             file = ExternalStorageUtil.copyFile(origin_file, cp_file, this.getName());
-            result.addAll(fetchBookmarksByJsonFile(file));
+            result.addAll(fetchBookmarksByJsonFile(file, false));
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             return result;
@@ -229,12 +287,17 @@ public class QiyuBrowser extends BasicBrowser {
         return result;
     }
 
-    private List<Bookmark> fetchBookmarksByJsonFile(java.io.File file) throws FileNotFoundException {
+    private List<Bookmark> fetchBookmarksByJsonFile(java.io.File file, boolean isLogined) throws FileNotFoundException {
         JSONReader jsonReader = null;
         List<Bookmark> result = new LinkedList<>();
         try {
             jsonReader = new JSONReader(new FileReader(file));
-            QiyuJsonBookmark qiyuJsonBookmark = jsonReader.readObject(QiyuJsonBookmark.class);
+            QiyuBookmark qiyuJsonBookmark;
+            if (isLogined) {
+                qiyuJsonBookmark = jsonReader.readObject(QiyuHasLoginedBookmark.class);
+            } else {
+                qiyuJsonBookmark = jsonReader.readObject(QiyuBookmark.class);
+            }
             if (qiyuJsonBookmark == null) {
                 LogHelper.v("qiyuJsonBookmark is null.");
                 return result;

@@ -37,12 +37,12 @@ abstract class BasicStorageUtil implements StorageAble {
 
     private static boolean createNewFile(String file) {
         String cmd = "touch " + file;
-        return RootUtil.executeCmd(cmd);
+        return RootUtil.executeCmd(cmd, true);
     }
 
     private static boolean readFile(String file) {
         String cmd = "cat " + file;
-        return RootUtil.executeCmd(cmd);
+        return RootUtil.executeCmd(cmd, true);
     }
 
     /**
@@ -103,7 +103,7 @@ abstract class BasicStorageUtil implements StorageAble {
         commands[1] = "then echo " + existFlag;
         commands[2] = "else echo " + notExistFlag;
         commands[3] = "fi";
-        CommandResult commandResult = RootUtil.executeCmd(commands);
+        CommandResult commandResult = RootUtil.executeCmd(commands, true);
         return commandResult != null && commandResult.isSuccess() && commandResult.getSuccessMsg() != null &&
                 existFlag == Integer.valueOf(commandResult.getSuccessMsg().isEmpty() ? "0" : commandResult.getSuccessMsg().get(0));
     }

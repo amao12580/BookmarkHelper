@@ -20,16 +20,20 @@ public final class RootUtil {
      * @return 应用程序是/否获取Root权限
      */
     public static boolean upgradeRootPermission() {
-        return executeCmd("chmod 777 " + ContextUtil.getPackageCodePath());
+        return executeCmd("chmod 777 " + ContextUtil.getPackageCodePath(), true);
     }
 
     public static boolean executeCmd(String cmd) {
-        return executeCmd(new String[]{cmd}).isSuccess();
+        return executeCmd(new String[]{cmd}, false).isSuccess();
     }
 
-    public static synchronized CommandResult executeCmd(String[] commands) {
+    public static boolean executeCmd(String cmd, boolean isLongCommand) {
+        return executeCmd(new String[]{cmd}, isLongCommand).isSuccess();
+    }
+
+    public static synchronized CommandResult executeCmd(String[] commands, boolean isLongCommand) {
         CommandUtil util = new CommandUtil();
-        util.executeCommand(commands);
+        util.executeCommand(commands, isLongCommand);
         CommandResult commandResult = util.getCommandResult();
         if (commandResult == null) {
             commandResult = new CommandResult();
