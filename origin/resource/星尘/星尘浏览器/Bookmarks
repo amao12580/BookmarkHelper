@@ -1,0 +1,148 @@
+{
+   "checksum": "61a25b399295d6a6f707c72f8966c388",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13125663467908743",
+         "date_modified": "0",
+         "id": "1",
+         "name": "桌面书签",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13125663467908765",
+         "date_modified": "0",
+         "id": "2",
+         "name": "其他书签",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [ {
+            "date_added": "13125663739401854",
+            "id": "6",
+            "name": "手机网易网",
+            "type": "url",
+            "url": "http://3g.163.com/touch/all?nav=2&dataversion=A&version=v_standard"
+         }, {
+            "date_added": "13125663771536362",
+            "id": "8",
+            "name": "新疆昌吉州发生6.2级地震,新疆昌吉州发生6.2级地震 震源深度6千米_手机网易网",
+            "type": "url",
+            "url": "http://3g.163.com/touch/specail_view.html?channel=all&offset=4&sid=S1481174839128"
+         }, {
+            "children": [ {
+               "children": [ {
+                  "children": [ {
+                     "children": [  ],
+                     "date_added": "13125663844482478",
+                     "date_modified": "13125663844482479",
+                     "id": "13",
+                     "name": "llo",
+                     "type": "folder"
+                  } ],
+                  "date_added": "13125663807259987",
+                  "date_modified": "13125663807259989",
+                  "id": "11",
+                  "name": "ghi",
+                  "type": "folder"
+               }, {
+                  "date_added": "13125663833240940",
+                  "id": "12",
+                  "name": "新疆昌吉州呼图壁县发生3.9级地震 震源深度7千米_手机网易网",
+                  "type": "url",
+                  "url": "http://3g.163.com/touch/article.html?docid=C7P34H320001875N"
+               }, {
+                  "children": [  ],
+                  "date_added": "13125663853108844",
+                  "date_modified": "13125663853108845",
+                  "id": "14",
+                  "name": "jkl",
+                  "type": "folder"
+               } ],
+               "date_added": "13125663799580175",
+               "date_modified": "13125663833240940",
+               "id": "10",
+               "name": "def",
+               "type": "folder"
+            }, {
+               "date_added": "13125663747022816",
+               "id": "7",
+               "name": "惊吓！网红竟晒浓妆艳抹军装照冒充军委干部_手机网易网",
+               "type": "url",
+               "url": "http://3g.163.com/touch/photoview.html?channel=all&offset=3&setid=116482&channelid=0096"
+            } ],
+            "date_added": "13125663790880113",
+            "date_modified": "13125663816907862",
+            "id": "9",
+            "name": "abc",
+            "type": "folder"
+         }, {
+            "date_added": "13125664085452083",
+            "id": "15",
+            "name": "姑娘，你的身体比什么都值钱 - 周灿_ - 简书",
+            "type": "url",
+            "url": "http://www.jianshu.com/p/0f792a8019ab"
+         }, {
+            "date_added": "13125664122297752",
+            "id": "18",
+            "name": "直到大三，我才醒悟本不该这样过 - 阿萝少女 - 简书",
+            "type": "url",
+            "url": "http://www.jianshu.com/p/6adad882b802"
+         }, {
+            "children": [ {
+               "date_added": "13125664109269949",
+               "id": "16",
+               "name": "三行诗 轮回 - 乙舒 - 简书",
+               "type": "url",
+               "url": "http://www.jianshu.com/p/0a07c402f04e"
+            }, {
+               "children": [ {
+                  "children": [ {
+                     "children": [  ],
+                     "date_added": "13125664175149127",
+                     "date_modified": "13125664175149129",
+                     "id": "22",
+                     "name": "tgh",
+                     "type": "folder"
+                  } ],
+                  "date_added": "13125664153767457",
+                  "date_modified": "13125664153767459",
+                  "id": "21",
+                  "name": "edf",
+                  "type": "folder"
+               }, {
+                  "date_added": "13125664114903586",
+                  "id": "17",
+                  "name": "细品《琅琊榜》（十八）：善于迂回的静妃，才是最有权谋的人 - windy天意晚晴 - 简书",
+                  "type": "url",
+                  "url": "http://www.jianshu.com/p/cbe7c3831466"
+               }, {
+                  "children": [  ],
+                  "date_added": "13125664180714391",
+                  "date_modified": "13125664180714393",
+                  "id": "23",
+                  "name": "sdc",
+                  "type": "folder"
+               } ],
+               "date_added": "13125664147654112",
+               "date_modified": "13125664163680214",
+               "id": "20",
+               "name": "ert",
+               "type": "folder"
+            } ],
+            "date_added": "13125664130267453",
+            "date_modified": "13125664142460656",
+            "id": "19",
+            "name": "vbn",
+            "type": "folder"
+         } ],
+         "date_added": "13125663467908773",
+         "date_modified": "13125664122297752",
+         "id": "3",
+         "name": "移动设备书签",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
