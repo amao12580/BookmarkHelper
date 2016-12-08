@@ -8,6 +8,6 @@ public final class BuildConfig {
   public static final String APPLICATION_ID = "pro.kisscat.www.bookmarkhelper";
   public static final String BUILD_TYPE = "release";
   public static final String FLAVOR = "";
-  public static final int VERSION_CODE = 137;
-  public static final String VERSION_NAME = "0.0.19-f1";
+  public static final int VERSION_CODE = 138;
+  public static final String VERSION_NAME = "0.0.19-f2";
 }

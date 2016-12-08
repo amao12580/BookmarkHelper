@@ -15,6 +15,7 @@ import java.util.List;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuBookmark;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.qiyu.json.QiyuHasLoginedBookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
@@ -196,17 +197,80 @@ public class QiyuBrowser extends BasicBrowser {
         origin_dir += targetDir + Path.FILE_SPLIT;
         String sourceFilePath = origin_dir + fileName_origin;
         LogHelper.v(TAG + ":sourceFilePath:" + sourceFilePath);
-
-        java.io.File file;
         try {
-            file = ExternalStorageUtil.copyFile(sourceFilePath, filePath_cp + fileName_origin, this.getName());
-            result.addAll(fetchBookmarksByJsonFile(file, true));
+            if (InternalStorageUtil.isExistFile(sourceFilePath)) {
+                List<Bookmark> part1 = fetchBookmarksByJsonFile(ExternalStorageUtil.copyFile(sourceFilePath, filePath_cp + fileName_origin, this.getName()), true);
+                LogHelper.v(TAG + ":" + fileName_origin + " part size:" + part1.size());
+                result.addAll(part1);
+            }
+        } catch (Exception e) {
+            LogHelper.e(e.getMessage());
+            return result;
+        }
+
+        fileName_origin = "pc_bm.json";
+        sourceFilePath = origin_dir + fileName_origin;
+        LogHelper.v(TAG + ":sourceFilePath:" + sourceFilePath);
+        try {
+            if (InternalStorageUtil.isExistFile(sourceFilePath)) {
+                List<Bookmark> part2 = fetchBookmarksByJsonFileWithChrome(ExternalStorageUtil.copyFile(sourceFilePath, filePath_cp + fileName_origin, this.getName()));
+                LogHelper.v(TAG + ":" + fileName_origin + " part size:" + part2.size());
+                result.addAll(part2);
+            }
+        } catch (Exception e) {
+            LogHelper.e(e.getMessage());
+            return result;
+        }
+
+        fileName_origin = "user_bm.json";
+        sourceFilePath = origin_dir + fileName_origin;
+        LogHelper.v(TAG + ":sourceFilePath:" + sourceFilePath);
+        try {
+            if (InternalStorageUtil.isExistFile(sourceFilePath)) {
+                List<Bookmark> part2 = fetchBookmarksByJsonFile(ExternalStorageUtil.copyFile(sourceFilePath, filePath_cp + fileName_origin, this.getName()), true);
+                LogHelper.v(TAG + ":" + fileName_origin + " part size:" + part2.size());
+                result.addAll(part2);
+            }
         } catch (Exception e) {
             LogHelper.e(e.getMessage());
             return result;
         }
         LogHelper.v(TAG + ":读取已登录用户的书签json文件结束");
         return result;
+    }
+
+    private List<Bookmark> fetchBookmarksByJsonFileWithChrome(java.io.File file) throws FileNotFoundException {
+        JSONReader jsonReader = null;
+        List<Bookmark> result = new LinkedList<>();
+        try {
+            jsonReader = new JSONReader(new FileReader(file));
+            ChromeBookmark qiyuJsonBookmark;
+            qiyuJsonBookmark = jsonReader.readObject(ChromeBookmark.class);
+            if (qiyuJsonBookmark == null) {
+                LogHelper.v("qiyuJsonBookmark is null.");
+                return result;
+            }
+            File fileShow = FileUtil.formatFileSize(file);
+            if (fileShow.isOver10KB()) {
+                LogHelper.v("书签数据文件大小超过10KB,skip print.size:" + fileShow.toString());
+            } else {
+                LogHelper.v("书签数据:" + JsonUtil.toJson(qiyuJsonBookmark));
+            }
+            List<Bookmark> bookmarks = qiyuJsonBookmark.fetchAll();
+            if (bookmarks == null) {
+                LogHelper.v("bookmarks is null.");
+                return result;
+            }
+            LogHelper.v("书签条数:" + bookmarks.size());
+            return bookmarks;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            if (jsonReader != null) {
+                jsonReader.close();
+            }
+        }
     }
 
     private List<Bookmark> fetchBookmarksListByNoUserLogined() {

@@ -989,7 +989,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QiyuBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String dirJsonName_origin
     private static final java.lang.String dirDBName_origin
-    51:54:public int readBookmarkSum()
+    52:55:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

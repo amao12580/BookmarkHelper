@@ -35040,19 +35040,20 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QiyuBrowser -> pro.kisscat
     java.lang.String fileHomepageDBName_origin -> f
     java.lang.String filePath_origin -> g
     java.lang.String filePath_cp -> h
-    40:40:void <init>() -> <init>
-    46:46:java.lang.String getPackageName() -> getPackageName
-    59:60:void fillDefaultIcon(android.content.Context) -> d
-    64:65:void fillDefaultAppName(android.content.Context) -> c
-    78:113:java.util.List readBookmark() -> a
-    117:163:java.util.List fetchBookmarksListByHomepage() -> c
-    167:209:java.util.List fetchBookmarksListByUserHasLogined() -> d
-    213:220:java.util.List fetchBookmarksListByNoUserLogined() -> e
-    224:267:java.util.List fetchBookmarksListByNoUserLoginedWithDB() -> f
-    271:287:java.util.List fetchBookmarksListByNoUserLoginedWithJson() -> g
-    291:323:java.util.List fetchBookmarksByJsonFile(java.io.File,boolean) -> a
-    330:330:int appendBookmark(java.util.List) -> a
-    68:74:void <clinit>() -> <clinit>
+    41:41:void <init>() -> <init>
+    47:47:java.lang.String getPackageName() -> getPackageName
+    60:61:void fillDefaultIcon(android.content.Context) -> d
+    65:66:void fillDefaultAppName(android.content.Context) -> c
+    79:114:java.util.List readBookmark() -> a
+    118:164:java.util.List fetchBookmarksListByHomepage() -> c
+    168:239:java.util.List fetchBookmarksListByUserHasLogined() -> d
+    243:271:java.util.List fetchBookmarksByJsonFileWithChrome(java.io.File) -> a
+    277:284:java.util.List fetchBookmarksListByNoUserLogined() -> e
+    288:331:java.util.List fetchBookmarksListByNoUserLoginedWithDB() -> f
+    335:351:java.util.List fetchBookmarksListByNoUserLoginedWithJson() -> g
+    355:387:java.util.List fetchBookmarksByJsonFile(java.io.File,boolean) -> a
+    394:394:int appendBookmark(java.util.List) -> a
+    69:75:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBrowser -> pro.kisscat.www.bookmarkhelper.converter.support.a.i:
     java.lang.String[] columns -> c
     java.util.List bookmarks -> d
