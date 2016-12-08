@@ -177,6 +177,10 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 #### 0.0.20版 Draft
 1.增加兼容：支持从[星尘浏览器](http://www.coolapk.com/apk/com.chaozhuo.browser_phone)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
+2.增加兼容：支持从[星尘浏览器 平板x86版](http://www.coolapk.com/apk/com.chaozhuo.browser.x86)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+2.增加兼容：支持从[星尘浏览器（平板版）](http://www.coolapk.com/apk/com.chaozhuo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
 #### 0.0.21版 Draft
 1.增加兼容：支持从[360极速浏览器](http://www.coolapk.com/apk/com.qihoo.chrome360)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
@@ -192,8 +196,14 @@ com.mmbox.xbrowser.gp
 
 com.mmbox.xbrowser.pro
 
+com.mmbox.browser
 
+这X浏览器是要上天？
 
+#### 0.0.24版 Draft
+1.增加兼容：支持从[欧朋浏览器经典版](https://play.google.com/store/apps/details?id=com.mmbox.xbrowser.pro)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+com.oupeng.mini.classic
 
 ---
 
@@ -234,6 +244,9 @@ com.mmbox.xbrowser.pro
 
 #### 0.?.2版 Draft
 1.增加兼容：支持从[Opera browser](http://www.coolapk.com/apk/com.opera.android.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+#### 0.?.3版 Draft
+1.增加兼容：支持从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)提取书签，追加到[Via浏览器GP版](https://apkpure.com/cn/via-web-browser/mark.via.gp)。
 
 ## TO-DO List
 
