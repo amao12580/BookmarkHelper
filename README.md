@@ -201,7 +201,7 @@ com.mmbox.browser
 这X浏览器是要上天？
 
 #### 0.0.24版 Draft
-1.增加兼容：支持从[欧朋浏览器经典版](https://play.google.com/store/apps/details?id=com.mmbox.xbrowser.pro)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+1.增加兼容：支持从[欧朋浏览器经典版](https://github.com/amao12580/BookmarkHelper/blob/master/origin/resource/%E6%AC%A7%E6%9C%8B/com.oupeng.mini.classic-1.apk)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 com.oupeng.mini.classic
 
