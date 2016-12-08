@@ -92,7 +92,6 @@ public class XingchenPhoneBrowser extends ChromeBrowserAble {
             bookmarks.addAll(bookmarksPart2);
             this.bookmarks = new LinkedList<>();
             fetchValidBookmarks(this.bookmarks, bookmarks);
-            LogHelper.v("result:" + JsonUtil.toJson(bookmarks));
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(converterException.getMessage());

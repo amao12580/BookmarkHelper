@@ -174,12 +174,12 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 #### [0.0.19版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.19%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.19.apk)
 1.增加兼容：支持从[H5浏览器](http://www.coolapk.com/apk/org.noear.h5)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-#### 0.0.20版 Draft
+#### [0.0.20版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.20%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.20.apk)
 1.增加兼容：支持从[星尘浏览器](http://www.coolapk.com/apk/com.chaozhuo.browser_phone)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-2.增加兼容：支持从[星尘浏览器 平板x86版](http://www.coolapk.com/apk/com.chaozhuo.browser.x86)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+【未完成】2.增加兼容：支持从[星尘浏览器 平板x86版](http://www.coolapk.com/apk/com.chaozhuo.browser.x86)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-3.增加兼容：支持从[星尘浏览器（平板版）](http://www.coolapk.com/apk/com.chaozhuo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+【未完成】3.增加兼容：支持从[星尘浏览器（平板版）](http://www.coolapk.com/apk/com.chaozhuo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 #### 0.0.21版 Draft
 1.增加兼容：支持从[360极速浏览器](http://www.coolapk.com/apk/com.qihoo.chrome360)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
