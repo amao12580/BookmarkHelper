@@ -256,6 +256,9 @@ com.oupeng.mini.classic
 #### 0.?.3版 Draft
 1.增加兼容：支持从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)提取书签，追加到[Via浏览器GP版](https://apkpure.com/cn/via-web-browser/mark.via.gp)。
 
+#### 0.?.4版 Draft
+1.增加兼容：支持从[傲游浏览器](http://www.coolapk.com/apk/com.mx.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
 ## TO-DO List
 
 ### Feature
