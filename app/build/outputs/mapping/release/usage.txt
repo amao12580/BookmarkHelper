@@ -941,7 +941,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser:
     63:63:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.BrowserAble
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    43:43:public ConverterMaster()
+    44:44:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask:
     private static final java.lang.String TAG
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBrowser:
@@ -980,10 +980,6 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     51:54:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Browser:
-    private static final java.lang.String TAG
-    private static final java.lang.String packageName
-    47:50:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.QiyuBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
@@ -1031,6 +1027,12 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     45:48:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.qihoo360.impl.Qihoo360Browser:
+    private static final java.lang.String packageName
+    44:47:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.qihoo360.impl.Qihoo360FastestBrowser:
+    private static final java.lang.String packageName
+    44:47:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble:
     protected static final java.lang.String fileName_origin
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBrowser:

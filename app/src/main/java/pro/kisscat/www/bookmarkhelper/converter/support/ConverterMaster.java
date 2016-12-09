@@ -14,7 +14,6 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.H5Browser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.LiebaoBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.OupengBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.QQBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.Qihoo360Browser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.QiyuBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBrowser;
@@ -25,6 +24,8 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeDevBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenPhoneBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenTabletBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.qihoo360.impl.Qihoo360Browser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.qihoo360.impl.Qihoo360FastestBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCInternationalBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble;
@@ -59,6 +60,7 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new QQBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new XBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Browser(), viaBrowserAble));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360FastestBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new SogouBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new BaiduBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new OupengBrowser(), viaBrowserAble));

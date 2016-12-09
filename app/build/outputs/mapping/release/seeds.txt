@@ -30198,6 +30198,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int design_fab_background
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_ic_visibility
 pro.kisscat.www.bookmarkhelper.R$drawable: int design_snackbar_background
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_360
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_360_fastest
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_aboutme
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_arrow
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_baidu
@@ -30533,6 +30534,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int appbar_scrolling_view_behavior
 pro.kisscat.www.bookmarkhelper.R$string: int appendBookmarksError
 pro.kisscat.www.bookmarkhelper.R$string: int bottom_sheet_behavior
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_360
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_360_fastest
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_baidu
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_chrome_beta

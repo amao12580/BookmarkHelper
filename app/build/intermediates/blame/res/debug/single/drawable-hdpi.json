@@ -20,6 +20,10 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_ucintl.png"
     },
     {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_360_fastest.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_360_fastest.png"
+    },
+    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_miui.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_miui.png"
     },

@@ -593,6 +593,7 @@
     <string name="appendBookmarksError">merge bookmarks error.</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="browser_name_show_360">360 Browser</string>
+    <string name="browser_name_show_360_fastest">360 fastest Browser</string>
     <string name="browser_name_show_baidu">Baidu Browser</string>
     <string name="browser_name_show_chrome">Chrome Browser</string>
     <string name="browser_name_show_chrome_beta">Chrome Beta Browser</string>

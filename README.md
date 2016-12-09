@@ -183,8 +183,14 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 3.增加兼容：支持从[星尘浏览器（平板版）](http://www.coolapk.com/apk/com.chaozhuo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-#### 0.0.21版 Draft
+#### [0.0.21版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.21%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.21.apk)
 1.增加兼容：支持从[360极速浏览器](http://www.coolapk.com/apk/com.qihoo.chrome360)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+
+2.Bug 修复：UC浏览器转换到Via报错
+
+3.Bug 修复：UC浏览器国际版转换到Via报错
+
+4.Bug 修复：星尘手机版转换到Via报错
 
 #### 0.0.22版 Draft
 1.增加兼容：支持从一加内置QQ浏览器提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
