@@ -179,6 +179,8 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 【未完成】2.增加兼容：支持从[星尘浏览器 平板x86版](http://www.coolapk.com/apk/com.chaozhuo.browser.x86)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
+备注：下载量不超过1w，放弃适配
+
 【未完成】3.增加兼容：支持从[星尘浏览器（平板版）](http://www.coolapk.com/apk/com.chaozhuo.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 #### 0.0.21版 Draft
