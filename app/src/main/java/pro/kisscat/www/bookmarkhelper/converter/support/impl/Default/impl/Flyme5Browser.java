@@ -12,7 +12,6 @@ import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
@@ -57,7 +56,7 @@ public class Flyme5Browser extends DefaultBrowserAble {
 
 
     private static final String fileName_origin = "browser2.db";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Flyme5/";
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "Flyme5" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {
@@ -68,7 +67,7 @@ public class Flyme5Browser extends DefaultBrowserAble {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            String filePath_origin = Path.INNER_PATH_DATA + super.packageName + "/databases/";
+            String filePath_origin = Path.INNER_PATH_DATA + super.packageName + Path.FILE_SPLIT + "databases" + Path.FILE_SPLIT;
             String originFilePathFull = filePath_origin + fileName_origin;
             LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
             ExternalStorageUtil.mkdir(filePath_cp, this.getName());

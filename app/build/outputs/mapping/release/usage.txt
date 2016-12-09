@@ -951,10 +951,10 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBrowser:
     46:49:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Default.impl.Flyme5Browser:
     private static final java.lang.String fileName_origin
-    42:45:public int readBookmarkSum()
+    41:44:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Default.impl.MiuiBrowser:
     private static final java.lang.String fileName_origin
-    42:45:public int readBookmarkSum()
+    41:44:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.FirefoxBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName

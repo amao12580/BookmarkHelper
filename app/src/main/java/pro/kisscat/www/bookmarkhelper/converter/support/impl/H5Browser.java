@@ -57,8 +57,8 @@ public class H5Browser extends BasicBrowser {
 
 
     private static final String fileName_origin = "h5db.db";
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/H5/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "databases" + Path.FILE_SPLIT;
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "H5" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {
@@ -79,7 +79,7 @@ public class H5Browser extends BasicBrowser {
             LogHelper.v(TAG + ":书签条数:" + bookmarksList.size());
             bookmarks = new LinkedList<>();
             fetchValidBookmarks(bookmarks, bookmarksList);
-            LogHelper.v("result:"+JsonUtil.toJson(bookmarks));
+            LogHelper.v("result:" + JsonUtil.toJson(bookmarks));
         } catch (ConverterException converterException) {
             converterException.printStackTrace();
             LogHelper.e(converterException);

@@ -30220,6 +30220,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int ic_ucintl
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_via
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_x
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_xingchen_phone
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_xingchen_tablet
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_yandex
 pro.kisscat.www.bookmarkhelper.R$drawable: int listview_item_default_bg
 pro.kisscat.www.bookmarkhelper.R$drawable: int listview_item_selected_bg

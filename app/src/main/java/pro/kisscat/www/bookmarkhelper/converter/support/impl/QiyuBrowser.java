@@ -72,7 +72,7 @@ public class QiyuBrowser extends BasicBrowser {
     private static final String fileHomepageDBName_origin = Path.FILE_SPLIT + "homepage";
     private static final String dirDBName_origin = "databases";
     private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT;
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Qiyu/";
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "Qiyu" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {

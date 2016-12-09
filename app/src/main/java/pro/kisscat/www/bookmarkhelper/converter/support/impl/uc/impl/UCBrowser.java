@@ -59,7 +59,7 @@ public class UCBrowser extends UCBrowserAble {
     }
 
 
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/UC/";
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "UC" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {
@@ -72,7 +72,7 @@ public class UCBrowser extends UCBrowserAble {
         try {
             ExternalStorageUtil.mkdir(filePath_cp, this.getName());
             List<Bookmark> bookmarksList = new LinkedList<>();
-            String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
+            String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "databases" + Path.FILE_SPLIT;
             List<Bookmark> bookmarksListPart1 = fetchBookmarksListByUserHasLogined(filePath_origin, filePath_cp);
             List<Bookmark> bookmarksListPart2 = fetchBookmarksListByNoUserLogined(filePath_origin + fileName_origin, filePath_cp + fileName_origin);
             LogHelper.v(TAG + ":已登录的用户书签数据:" + JsonUtil.toJson(bookmarksListPart1));

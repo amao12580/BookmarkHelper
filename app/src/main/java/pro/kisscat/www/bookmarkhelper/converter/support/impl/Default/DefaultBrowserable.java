@@ -140,5 +140,4 @@ public class DefaultBrowserAble extends BasicBrowser {
         @Setter
         private int parent;
     }
-
 }

@@ -61,8 +61,8 @@ public class BaiduBrowser extends BasicBrowser {
 
 
     private static final String fileName_origin = "dbbrowser.db";
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Baidu/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "databases" + Path.FILE_SPLIT;
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "Baidu" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {

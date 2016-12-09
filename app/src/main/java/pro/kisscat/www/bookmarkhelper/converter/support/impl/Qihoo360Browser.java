@@ -60,8 +60,8 @@ public class Qihoo360Browser extends BasicBrowser {
         this.setName(context.getString(R.string.browser_name_show_360));
     }
 
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/360/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT;
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "360" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {

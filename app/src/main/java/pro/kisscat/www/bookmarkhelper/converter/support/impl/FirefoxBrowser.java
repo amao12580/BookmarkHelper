@@ -63,8 +63,8 @@ public class FirefoxBrowser extends BasicBrowser {
 
 
     private static final String fileName_origin = "browser.db";
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/files/mozilla/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Firefox/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "files" + Path.FILE_SPLIT + "mozilla" + Path.FILE_SPLIT;
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "Firefox" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {

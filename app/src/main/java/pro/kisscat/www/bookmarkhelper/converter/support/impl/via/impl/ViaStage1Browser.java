@@ -37,8 +37,8 @@ public class ViaStage1Browser extends ViaBrowserAble {
     private static final String TAG = "ViaStage1";
 
     private static final String fileName_origin = "bookmarks.dat";
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/files/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Via/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "files" + Path.FILE_SPLIT;
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "Via" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {

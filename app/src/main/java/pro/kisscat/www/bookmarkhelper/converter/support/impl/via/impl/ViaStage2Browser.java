@@ -35,9 +35,9 @@ public class ViaStage2Browser extends ViaBrowserAble {
     private static final String TAG = "ViaStage2";
     public static final int minVersionCode = 20161113;
     private static final String fileName_origin = "via";
-    private static final String databaseDirPath_origin = Path.INNER_PATH_DATA + packageName + "/databases/";
-    private static final String filesDirPath_origin = Path.INNER_PATH_DATA + packageName + "/files/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/Via/";
+    private static final String databaseDirPath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "databases" + Path.FILE_SPLIT;
+    private static final String filesDirPath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "files" + Path.FILE_SPLIT;
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "Via" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {

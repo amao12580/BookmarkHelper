@@ -52,8 +52,8 @@ public class ChromeDevBrowser extends ChromeBrowserAble {
     }
 
     private static final String fileName_origin = "Bookmarks";
-    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + "/app_chrome/Default/";
-    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + "/ChromeDev/";
+    private static final String filePath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "app_chrome" + Path.FILE_SPLIT + "Default" + Path.FILE_SPLIT;
+    private static final String filePath_cp = Path.SDCARD_ROOTPATH + Path.SDCARD_APP_ROOTPATH + Path.SDCARD_TMP_ROOTPATH + Path.FILE_SPLIT + "ChromeDev" + Path.FILE_SPLIT;
 
     @Override
     public List<Bookmark> readBookmark() {

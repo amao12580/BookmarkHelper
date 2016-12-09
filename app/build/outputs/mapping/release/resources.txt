@@ -16,31 +16,6 @@ Referenced Strings:
   .sharecompat_
   .xml
   .zip
-  /360/
-  /Baidu/
-  /Chrome/
-  /ChromeBeta/
-  /ChromeCanary/
-  /ChromeDev/
-  /Firefox/
-  /Flyme5/
-  /H5/
-  /Liebao/
-  /Miui/
-  /Oupeng/
-  /QQ/
-  /Qiyu/
-  /Sogou/
-  /UC/
-  /UCInternational/
-  /Via/
-  /X/
-  /Yandex/
-  /app_chrome/Default/
-  /app_chromium/Default/
-  /databases/
-  /files/
-  /files/mozilla/
   0
   0.00
   00
@@ -310,6 +285,7 @@ Referenced Strings:
   BY
   BYTE
   BYTE_SEGMENTS
+  Baidu
   Baidu:开始读取书签数据
   Baidu:读取书签数据结束
   BeanToArray
@@ -361,10 +337,13 @@ Referenced Strings:
   CheckedTextView
   ChildrenHelper
   Chrome
+  ChromeBeta
   ChromeBeta:开始读取书签数据
   ChromeBeta:读取书签数据结束
+  ChromeCanary
   ChromeCanary:开始读取书签数据
   ChromeCanary:读取书签数据结束
+  ChromeDev
   ChromeDev:开始读取书签数据
   ChromeDev:读取书签数据结束
   Code
@@ -445,6 +424,7 @@ Referenced Strings:
   FR
   Fade
   FastjsonASMDeserializer_
+  Firefox
   Firefox:sourceFilePath:
   Firefox:targetDir:
   Firefox:targetFilePath:
@@ -476,6 +456,7 @@ Referenced Strings:
   GT
   GridLayoutManager
   H
+  H5
   H5:书签数据:
   H5:书签条数:
   H5:开始读取书签SQLite数据库:
@@ -549,6 +530,7 @@ Referenced Strings:
   LY
   LayoutInflaterCompatHC
   LayoutState
+  Liebao
   Liebao:书签数据:
   Liebao:书签条数:
   Liebao:开始读取书签SQLite数据库:
@@ -616,6 +598,7 @@ Referenced Strings:
   OTHER
   Operations:
   OrderedField
+  Oupeng
   Oupeng:开始读取书签SQLite数据库:
   Oupeng:开始读取书签数据
   Oupeng:读取书签SQLite数据库结束
@@ -645,6 +628,7 @@ Referenced Strings:
   PrettyFormat
   PrintHelperKitkat
   Q
+  QQ
   QQ:item:
   QQ:needParseFolder:
   QQ:尝试解析已登录用户的书签数据
@@ -660,6 +644,7 @@ Referenced Strings:
   QQ:读取已登录用户书签SQLite数据库结束
   QQ:读取未登录用户书签SQLite数据库结束
   QR_CODE
+  Qiyu
   Qiyu:
   Qiyu:sourceFilePath:
   Qiyu:targetDir:
@@ -726,6 +711,7 @@ Referenced Strings:
   SkipTransientField
   SlidingPaneLayout
   SnakeCase
+  Sogou
   Sogou:item:
   Sogou:tmp:
   Sogou:已登录用户书签数据:
@@ -802,6 +788,7 @@ Referenced Strings:
   VN
   VdcInflateDelegate
   VectorDrawableCompat
+  Via
   ViaStage1:合并书签数据结束
   ViaStage1:开始读取书签数据
   ViaStage1:读取书签数据结束
@@ -1084,7 +1071,9 @@ Referenced Strings:
   android:visibility:visibility
   app
   app_bookmark
+  app_chrome
   app_chromeshell
+  app_chromium
   app_color
   app_data
   appcompat:local_night_mode
@@ -1445,6 +1434,7 @@ Referenced Strings:
   moduleVersion
   mount
   mounted
+  mozilla
   ms
   msg
   mtt_bookmarks
@@ -1784,9 +1774,9 @@ Marking attr:listPreferredItemPaddingLeft:2130772087 used because its prefix mat
 Marking attr:listPreferredItemPaddingRight:2130772088 used because its prefix matches string pool constant list
 Marking id:listMode:2131492877 used because its prefix matches string pool constant list
 Marking id:list_item:2131492936 used because its prefix matches string pool constant list
-Marking drawable:listview_item_default_bg:2130837616 used because its prefix matches string pool constant list
-Marking drawable:listview_item_selected_bg:2130837617 used because its prefix matches string pool constant list
-Marking drawable:listview_item_selector:2130837618 used because its prefix matches string pool constant list
+Marking drawable:listview_item_default_bg:2130837617 used because its prefix matches string pool constant list
+Marking drawable:listview_item_selected_bg:2130837618 used because its prefix matches string pool constant list
+Marking drawable:listview_item_selector:2130837619 used because its prefix matches string pool constant list
 Marking id:listViewRules:2131492977 used because its prefix matches string pool constant list
 Marking layout:listview_item:2130968619 used because its prefix matches string pool constant list
 Marking id:withText:2131492924 used because its prefix matches string pool constant with
@@ -2090,17 +2080,17 @@ Marking dimen:notification_small_icon_size_as_large:2131165317 used because its 
 Marking dimen:notification_subtext_size:2131165318 used because its prefix matches string pool constant notification
 Marking dimen:notification_top_pad:2131165319 used because its prefix matches string pool constant notification
 Marking dimen:notification_top_pad_large_text:2131165320 used because its prefix matches string pool constant notification
-Marking drawable:notification_action_background:2130837620 used because its prefix matches string pool constant notification
-Marking drawable:notification_bg:2130837621 used because its prefix matches string pool constant notification
-Marking drawable:notification_bg_low:2130837622 used because its prefix matches string pool constant notification
-Marking drawable:notification_bg_low_normal:2130837623 used because its prefix matches string pool constant notification
-Marking drawable:notification_bg_low_pressed:2130837624 used because its prefix matches string pool constant notification
-Marking drawable:notification_bg_normal:2130837625 used because its prefix matches string pool constant notification
-Marking drawable:notification_bg_normal_pressed:2130837626 used because its prefix matches string pool constant notification
-Marking drawable:notification_icon_background:2130837627 used because its prefix matches string pool constant notification
-Marking drawable:notification_template_icon_bg:2130837630 used because its prefix matches string pool constant notification
-Marking drawable:notification_template_icon_low_bg:2130837631 used because its prefix matches string pool constant notification
-Marking drawable:notification_tile_bg:2130837628 used because its prefix matches string pool constant notification
+Marking drawable:notification_action_background:2130837621 used because its prefix matches string pool constant notification
+Marking drawable:notification_bg:2130837622 used because its prefix matches string pool constant notification
+Marking drawable:notification_bg_low:2130837623 used because its prefix matches string pool constant notification
+Marking drawable:notification_bg_low_normal:2130837624 used because its prefix matches string pool constant notification
+Marking drawable:notification_bg_low_pressed:2130837625 used because its prefix matches string pool constant notification
+Marking drawable:notification_bg_normal:2130837626 used because its prefix matches string pool constant notification
+Marking drawable:notification_bg_normal_pressed:2130837627 used because its prefix matches string pool constant notification
+Marking drawable:notification_icon_background:2130837628 used because its prefix matches string pool constant notification
+Marking drawable:notification_template_icon_bg:2130837631 used because its prefix matches string pool constant notification
+Marking drawable:notification_template_icon_low_bg:2130837632 used because its prefix matches string pool constant notification
+Marking drawable:notification_tile_bg:2130837629 used because its prefix matches string pool constant notification
 Marking id:notification_background:2131493020 used because its prefix matches string pool constant notification
 Marking id:notification_main_column:2131493015 used because its prefix matches string pool constant notification
 Marking id:notification_main_column_container:2131493014 used because its prefix matches string pool constant notification
@@ -2271,12 +2261,12 @@ drawable:abc_tab_indicator_material:2130837572 => [drawable:abc_tab_indicator_mt
 drawable:abc_textfield_search_material:2130837585 => [drawable:abc_textfield_search_activated_mtrl_alpha:2130837583, drawable:abc_textfield_search_default_mtrl_alpha:2130837584]
 drawable:design_bottom_navigation_item_background:2130837588 => [attr:colorPrimary:2130772097]
 drawable:design_snackbar_background:2130837591 => [dimen:design_snackbar_background_corner_radius:2131165202, color:design_snackbar_background_color:2131427359]
-drawable:navigation_empty_icon:2130837619 => [dimen:design_navigation_icon_size:2131165288]
-drawable:notification_action_background:2130837620 => [color:ripple_material_light:2131427393, drawable:abc_btn_default_mtrl_shape:2130837511]
-drawable:notification_bg:2130837621 => [drawable:notification_bg_normal_pressed:2130837626, drawable:notification_bg_normal:2130837625]
-drawable:notification_bg_low:2130837622 => [drawable:notification_bg_low_pressed:2130837624, drawable:notification_bg_low_normal:2130837623]
-drawable:notification_icon_background:2130837627 => [color:notification_icon_bg_color:2131427382]
-drawable:notification_tile_bg:2130837628 => [drawable:notify_panel_notification_icon_bg:2130837629]
+drawable:navigation_empty_icon:2130837620 => [dimen:design_navigation_icon_size:2131165288]
+drawable:notification_action_background:2130837621 => [color:ripple_material_light:2131427393, drawable:abc_btn_default_mtrl_shape:2130837511]
+drawable:notification_bg:2130837622 => [drawable:notification_bg_normal_pressed:2130837627, drawable:notification_bg_normal:2130837626]
+drawable:notification_bg_low:2130837623 => [drawable:notification_bg_low_pressed:2130837625, drawable:notification_bg_low_normal:2130837624]
+drawable:notification_icon_background:2130837628 => [color:notification_icon_bg_color:2131427382]
+drawable:notification_tile_bg:2130837629 => [drawable:notify_panel_notification_icon_bg:2130837630]
 layout:abc_action_bar_title_item:2130968576 => [style:RtlOverlay_Widget_AppCompat_ActionBar_TitleItem:2131230766, dimen:abc_action_bar_subtitle_top_margin_material:2131165220]
 layout:abc_action_bar_up_container:2130968577 => [attr:actionBarItemBackground:2130772038]
 layout:abc_action_bar_view_list_nav_layout:2130968578 => [attr:actionBarTabBarStyle:2130772027]
@@ -2659,7 +2649,7 @@ style:Widget_AppCompat_ListPopupWindow:2131231075 => [style:Base_Widget_AppCompa
 style:Widget_AppCompat_ListView:2131231076 => [style:Base_Widget_AppCompat_ListView:2131230839]
 style:Widget_AppCompat_ListView_DropDown:2131231077 => [style:Widget_AppCompat_Light_ListView_DropDown:2131231069, style:Base_Widget_AppCompat_ListView_DropDown:2131230840]
 style:Widget_AppCompat_ListView_Menu:2131231078 => [style:Base_Widget_AppCompat_ListView_Menu:2131230841]
-style:Widget_AppCompat_NotificationActionContainer:2131230860 => [drawable:notification_action_background:2130837620]
+style:Widget_AppCompat_NotificationActionContainer:2131230860 => [drawable:notification_action_background:2130837621]
 style:Widget_AppCompat_NotificationActionText:2131230861 => [color:secondary_text_default_material_light:2131427395, dimen:notification_action_text_size:2131165311]
 style:Widget_AppCompat_PopupMenu:2131231079 => [style:Base_Widget_AppCompat_PopupMenu:2131230842]
 style:Widget_AppCompat_PopupMenu_Overflow:2131231080 => [style:Base_Widget_AppCompat_PopupMenu_Overflow:2131230843]
@@ -3011,18 +3001,18 @@ anim:design_fab_in:2131034126,
    drawable:abc_textfield_search_material:2130837585,
    drawable:abc_vector_test:2130837586,
    drawable:design_bottom_navigation_item_background:2130837588,
-   drawable:navigation_empty_icon:2130837619,
-   drawable:notification_action_background:2130837620,
-   drawable:notification_bg:2130837621,
-   drawable:notification_bg_low:2130837622,
-   drawable:notification_bg_low_normal:2130837623,
-   drawable:notification_bg_low_pressed:2130837624,
-   drawable:notification_bg_normal:2130837625,
-   drawable:notification_bg_normal_pressed:2130837626,
-   drawable:notification_icon_background:2130837627,
-   drawable:notification_template_icon_bg:2130837630,
-   drawable:notification_template_icon_low_bg:2130837631,
-   drawable:notification_tile_bg:2130837628,
+   drawable:navigation_empty_icon:2130837620,
+   drawable:notification_action_background:2130837621,
+   drawable:notification_bg:2130837622,
+   drawable:notification_bg_low:2130837623,
+   drawable:notification_bg_low_normal:2130837624,
+   drawable:notification_bg_low_pressed:2130837625,
+   drawable:notification_bg_normal:2130837626,
+   drawable:notification_bg_normal_pressed:2130837627,
+   drawable:notification_icon_background:2130837628,
+   drawable:notification_template_icon_bg:2130837631,
+   drawable:notification_template_icon_low_bg:2130837632,
+   drawable:notification_tile_bg:2130837629,
    id:action0:2131493009,
    id:action_bar:2131492962,
    id:action_bar_activity_content:2131492864,
@@ -3441,10 +3431,10 @@ anim:design_fab_in:2131034126,
    drawable:ic_via:2130837612,
    drawable:ic_x:2130837613,
    drawable:ic_xingchen_phone:2130837614,
-   drawable:ic_yandex:2130837615,
-   drawable:listview_item_default_bg:2130837616,
-   drawable:listview_item_selected_bg:2130837617,
-   drawable:listview_item_selector:2130837618,
+   drawable:ic_yandex:2130837616,
+   drawable:listview_item_default_bg:2130837617,
+   drawable:listview_item_selected_bg:2130837618,
+   drawable:listview_item_selector:2130837619,
    id:baseweb_webview:2131492985,
    id:converterDirecterImage:2131493000,
    id:converterDirecterText:2131493001,
@@ -3611,8 +3601,12 @@ Skipped unused resource res/anim/abc_slide_in_bottom.xml: 400 bytes (replaced wi
 Skipped unused resource res/anim/abc_slide_in_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/anim/abc_slide_out_bottom.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/anim/abc_slide_out_top.xml: 400 bytes (replaced with small dummy file of size 104 bytes)
+Skipped unused resource res/drawable-hdpi-v4/ic_xingchen_tablet.png: 4175 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-mdpi-v4/ic_xingchen_tablet.png: 2634 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-xhdpi-v4/ic_xingchen_tablet.png: 5546 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-xxhdpi-v4/ic_xingchen_tablet.png: 15382 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/drawable-xxxhdpi-v4/ic_xingchen_tablet.png: 11592 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 1302340 to 1303600); using original instead

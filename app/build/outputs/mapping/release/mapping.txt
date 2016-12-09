@@ -33244,6 +33244,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable -> pro.kisscat.www.bookmarkhelper.R$dr
     int ic_via -> ic_via
     int ic_x -> ic_x
     int ic_xingchen_phone -> ic_xingchen_phone
+    int ic_xingchen_tablet -> ic_xingchen_tablet
     int ic_yandex -> ic_yandex
     int listview_item_default_bg -> listview_item_default_bg
     int listview_item_selected_bg -> listview_item_selected_bg
@@ -33431,7 +33432,7 @@ pro.kisscat.www.bookmarkhelper.R$id -> pro.kisscat.www.bookmarkhelper.R$id:
     int webview_toolbar -> webview_toolbar
     int withText -> withText
     int wrap_content -> wrap_content
-    2747:2747:void <init>() -> <init>
+    2748:2748:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$integer:
     int abc_config_activityDefaultDur -> abc_config_activityDefaultDur
     int abc_config_activityShortDur -> abc_config_activityShortDur
@@ -33440,7 +33441,7 @@ pro.kisscat.www.bookmarkhelper.R$integer -> pro.kisscat.www.bookmarkhelper.R$int
     int cancel_button_image_alpha -> cancel_button_image_alpha
     int design_snackbar_text_max_lines -> design_snackbar_text_max_lines
     int status_bar_notification_info_maxnum -> status_bar_notification_info_maxnum
-    2917:2917:void <init>() -> <init>
+    2918:2918:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layout:
     int abc_action_bar_title_item -> abc_action_bar_title_item
     int abc_action_bar_up_container -> abc_action_bar_up_container
@@ -33509,10 +33510,10 @@ pro.kisscat.www.bookmarkhelper.R$layout -> pro.kisscat.www.bookmarkhelper.R$layo
     int select_dialog_multichoice_material -> select_dialog_multichoice_material
     int select_dialog_singlechoice_material -> select_dialog_singlechoice_material
     int support_simple_spinner_dropdown_item -> support_simple_spinner_dropdown_item
-    2926:2926:void <init>() -> <init>
+    2927:2927:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$mipmap -> pro.kisscat.www.bookmarkhelper.R$mipmap:
     int ic_launcher -> ic_launcher
-    2995:2995:void <init>() -> <init>
+    2996:2996:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$string:
     int SDCardNotReadOrWriteable -> SDCardNotReadOrWriteable
     int SystemNotReadOrWriteable -> SystemNotReadOrWriteable
@@ -33608,7 +33609,7 @@ pro.kisscat.www.bookmarkhelper.R$string -> pro.kisscat.www.bookmarkhelper.R$stri
     int status_bar_notification_info_overflow -> status_bar_notification_info_overflow
     int target_browser_icon_contentDescription -> target_browser_icon_contentDescription
     int viaBookmarksFileMiss -> viaBookmarksFileMiss
-    2998:2998:void <init>() -> <init>
+    2999:2999:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style:
     int AlertDialog_AppCompat -> AlertDialog_AppCompat
     int AlertDialog_AppCompat_Light -> AlertDialog_AppCompat_Light
@@ -33997,7 +33998,7 @@ pro.kisscat.www.bookmarkhelper.R$style -> pro.kisscat.www.bookmarkhelper.R$style
     int Widget_Design_Snackbar -> Widget_Design_Snackbar
     int Widget_Design_TabLayout -> Widget_Design_TabLayout
     int Widget_Design_TextInputLayout -> Widget_Design_TextInputLayout
-    3094:3094:void <init>() -> <init>
+    3095:3095:void <init>() -> <init>
 pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$styleable:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
@@ -34505,8 +34506,8 @@ pro.kisscat.www.bookmarkhelper.R$styleable -> pro.kisscat.www.bookmarkhelper.R$s
     int ViewStubCompat_android_id -> ViewStubCompat_android_id
     int ViewStubCompat_android_inflatedId -> ViewStubCompat_android_inflatedId
     int ViewStubCompat_android_layout -> ViewStubCompat_android_layout
-    3483:3483:void <init>() -> <init>
-    3550:10314:void <clinit>() -> <clinit>
+    3484:3484:void <init>() -> <init>
+    3551:10315:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.activity.Adapter -> pro.kisscat.www.bookmarkhelper.activity.a:
     int[] mTo -> a
     java.lang.String[] mFrom -> b
@@ -34827,24 +34828,24 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.Default.impl.Flyme5Browser
     java.lang.String TAG -> e
     java.util.List bookmarks -> f
     java.lang.String filePath_cp -> g
-    29:34:void <init>() -> <init>
-    37:37:java.lang.String getPackageName() -> getPackageName
-    50:51:void fillDefaultIcon(android.content.Context) -> d
-    55:56:void fillDefaultAppName(android.content.Context) -> c
-    64:91:java.util.List readBookmark() -> a
-    96:96:int appendBookmark(java.util.List) -> a
-    60:60:void <clinit>() -> <clinit>
+    28:33:void <init>() -> <init>
+    36:36:java.lang.String getPackageName() -> getPackageName
+    49:50:void fillDefaultIcon(android.content.Context) -> d
+    54:55:void fillDefaultAppName(android.content.Context) -> c
+    63:90:java.util.List readBookmark() -> a
+    95:95:int appendBookmark(java.util.List) -> a
+    59:59:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.Default.impl.MiuiBrowser -> pro.kisscat.www.bookmarkhelper.converter.support.a.a.a.b:
     java.lang.String TAG -> e
     java.util.List bookmarks -> f
     java.lang.String filePath_cp -> g
-    29:34:void <init>() -> <init>
-    37:37:java.lang.String getPackageName() -> getPackageName
-    50:51:void fillDefaultIcon(android.content.Context) -> d
-    55:56:void fillDefaultAppName(android.content.Context) -> c
-    64:91:java.util.List readBookmark() -> a
-    96:96:int appendBookmark(java.util.List) -> a
-    60:60:void <clinit>() -> <clinit>
+    28:33:void <init>() -> <init>
+    36:36:java.lang.String getPackageName() -> getPackageName
+    49:50:void fillDefaultIcon(android.content.Context) -> d
+    54:55:void fillDefaultAppName(android.content.Context) -> c
+    63:90:java.util.List readBookmark() -> a
+    95:95:int appendBookmark(java.util.List) -> a
+    59:59:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.FirefoxBrowser -> pro.kisscat.www.bookmarkhelper.converter.support.a.b:
     java.util.List bookmarks -> c
     java.lang.String filePath_origin -> d
