@@ -30552,6 +30552,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_ucintl
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_via
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_x
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_xingchen_phone
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_xingchen_tablet
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_yandex
 pro.kisscat.www.bookmarkhelper.R$string: int character_counter_pattern
 pro.kisscat.www.bookmarkhelper.R$string: int clickBackToExit

@@ -4,6 +4,7 @@
     <string name="browser_name_show_chrome">Chrome Browser</string>
     <string name="browser_name_show_yandex">Yandex Browser</string>
     <string name="browser_name_show_xingchen_phone">Xingchen phone Browser</string>
+    <string name="browser_name_show_xingchen_tablet">Xingchen tablet Browser</string>
     <string name="browser_name_show_chrome_canary">Chrome Canary Browser</string>
     <string name="browser_name_show_chrome_beta">Chrome Beta Browser</string>
     <string name="browser_name_show_chrome_dev">Chrome Dev Browser</string>

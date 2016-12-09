@@ -52,12 +52,12 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_h5.png"
     },
     {
-        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_firefox.png",
-        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_firefox.png"
-    },
-    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_baidu.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_baidu.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_firefox.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_firefox.png"
     },
     {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_aboutme.png",

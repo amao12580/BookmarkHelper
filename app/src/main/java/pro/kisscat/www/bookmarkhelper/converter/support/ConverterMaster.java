@@ -19,11 +19,12 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.QiyuBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.SogouBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.XBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.YandexBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeBetaBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeCanaryBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeDevBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.XingchenPhoneBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeBetaBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeCanaryBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeDevBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenPhoneBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenTabletBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCInternationalBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble;
@@ -68,6 +69,7 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new QiyuBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new H5Browser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new XingchenPhoneBrowser(), viaBrowserAble));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new XingchenTabletBrowser(), viaBrowserAble));
         }
     }
 }

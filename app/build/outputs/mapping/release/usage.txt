@@ -941,7 +941,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser:
     63:63:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.BrowserAble
 pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster:
-    42:42:public ConverterMaster()
+    43:43:public ConverterMaster()
 pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask:
     private static final java.lang.String TAG
 pro.kisscat.www.bookmarkhelper.converter.support.impl.BaiduBrowser:
@@ -1004,29 +1004,33 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.YandexBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     41:44:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeBetaBrowser:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeBetaBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     38:41:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeBrowser:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     41:44:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeCanaryBrowser:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeCanaryBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     38:41:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.ChromeDevBrowser:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.ChromeDevBrowser:
     private static final java.lang.String TAG
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
     38:41:public int readBookmarkSum()
-pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.XingchenPhoneBrowser:
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenPhoneBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    49:52:public int readBookmarkSum()
+    46:49:public int readBookmarkSum()
+pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenTabletBrowser:
+    private static final java.lang.String packageName
+    private static final java.lang.String fileName_origin
+    46:49:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble:
     protected static final java.lang.String fileName_origin
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBrowser:

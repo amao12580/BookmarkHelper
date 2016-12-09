@@ -1,0 +1,181 @@
+{
+   "checksum": "8583d81e2adef478af7bb6007d562f39",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13125721432636422",
+         "date_modified": "0",
+         "id": "1",
+         "name": "桌面书签",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13125721432636459",
+         "date_modified": "0",
+         "id": "2",
+         "name": "其他书签",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13125721594252418",
+               "id": "7",
+               "name": "手机网易网",
+               "type": "url",
+               "url": "http://3g.163.com/touch/all?nav=2&dataversion=A&version=v_standard"
+            }, {
+               "date_added": "13125721594252949",
+               "id": "8",
+               "name": "新疆昌吉州发生6.2级地震,新疆昌吉州发生6.2级地震 震源深度6千米_手机网易网",
+               "type": "url",
+               "url": "http://3g.163.com/touch/specail_view.html?channel=all&offset=4&sid=S1481174839128"
+            }, {
+               "children": [ {
+                  "children": [ {
+                     "children": [ {
+                        "children": [  ],
+                        "date_added": "13125721594253977",
+                        "date_modified": "13125721594253978",
+                        "id": "12",
+                        "name": "llo",
+                        "type": "folder"
+                     } ],
+                     "date_added": "13125721594253916",
+                     "date_modified": "13125721594253917",
+                     "id": "11",
+                     "name": "ghi",
+                     "type": "folder"
+                  }, {
+                     "date_added": "13125721594254069",
+                     "id": "13",
+                     "name": "新疆昌吉州呼图壁县发生3.9级地震 震源深度7千米_手机网易网",
+                     "type": "url",
+                     "url": "http://3g.163.com/touch/article.html?docid=C7P34H320001875N"
+                  }, {
+                     "children": [  ],
+                     "date_added": "13125721594254629",
+                     "date_modified": "13125721594254631",
+                     "id": "14",
+                     "name": "jkl",
+                     "type": "folder"
+                  } ],
+                  "date_added": "13125721594253860",
+                  "date_modified": "13125721594254069",
+                  "id": "10",
+                  "name": "def",
+                  "type": "folder"
+               }, {
+                  "date_added": "13125721594254712",
+                  "id": "15",
+                  "name": "惊吓！网红竟晒浓妆艳抹军装照冒充军委干部_手机网易网",
+                  "type": "url",
+                  "url": "http://3g.163.com/touch/photoview.html?channel=all&offset=3&setid=116482&channelid=0096"
+               } ],
+               "date_added": "13125721594253782",
+               "date_modified": "13125721594254712",
+               "id": "9",
+               "name": "abc",
+               "type": "folder"
+            }, {
+               "date_added": "13125721594256138",
+               "id": "16",
+               "name": "姑娘，你的身体比什么都值钱 - 周灿_ - 简书",
+               "type": "url",
+               "url": "http://www.jianshu.com/p/0f792a8019ab"
+            }, {
+               "date_added": "13125721594258900",
+               "id": "17",
+               "name": "直到大三，我才醒悟本不该这样过 - 阿萝少女 - 简书",
+               "type": "url",
+               "url": "http://www.jianshu.com/p/6adad882b802"
+            }, {
+               "children": [ {
+                  "date_added": "13125721594259926",
+                  "id": "19",
+                  "name": "三行诗 轮回 - 乙舒 - 简书",
+                  "type": "url",
+                  "url": "http://www.jianshu.com/p/0a07c402f04e"
+               }, {
+                  "children": [ {
+                     "children": [ {
+                        "children": [  ],
+                        "date_added": "13125721594260709",
+                        "date_modified": "13125721594260710",
+                        "id": "22",
+                        "name": "tgh",
+                        "type": "folder"
+                     } ],
+                     "date_added": "13125721594260654",
+                     "date_modified": "13125721594260655",
+                     "id": "21",
+                     "name": "edf",
+                     "type": "folder"
+                  }, {
+                     "date_added": "13125721594260810",
+                     "id": "23",
+                     "name": "细品《琅琊榜》（十八）：善于迂回的静妃，才是最有权谋的人 - windy天意晚晴 - 简书",
+                     "type": "url",
+                     "url": "http://www.jianshu.com/p/cbe7c3831466"
+                  }, {
+                     "children": [  ],
+                     "date_added": "13125721594261794",
+                     "date_modified": "13125721594261795",
+                     "id": "24",
+                     "name": "sdc",
+                     "type": "folder"
+                  } ],
+                  "date_added": "13125721594260592",
+                  "date_modified": "13125721594260810",
+                  "id": "20",
+                  "name": "ert",
+                  "type": "folder"
+               } ],
+               "date_added": "13125721594259819",
+               "date_modified": "13125721594259926",
+               "id": "18",
+               "name": "vbn",
+               "type": "folder"
+            } ],
+            "date_added": "13125721594252002",
+            "date_modified": "13125721594258900",
+            "id": "6",
+            "name": "bookmarks_from_phone",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13125721679527663",
+               "id": "26",
+               "name": "京东(JD.COM)-综合网购首选-正品低价、品质保障、配送及时、轻松购物！",
+               "type": "url",
+               "url": "http://www.jd.com/"
+            } ],
+            "date_added": "13125721674934844",
+            "date_modified": "13125721679527663",
+            "id": "25",
+            "name": "Rfg",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13125721699295342",
+               "id": "28",
+               "name": "服装饰品城-服装鞋帽_皮箱包包_户外用品_首饰配饰-京东",
+               "type": "url",
+               "url": "https://channel.jd.com/fashion.html"
+            } ],
+            "date_added": "13125721692771731",
+            "date_modified": "13125721699295342",
+            "id": "27",
+            "name": "Ghy",
+            "type": "folder"
+         } ],
+         "date_added": "13125721432636468",
+         "date_modified": "0",
+         "id": "3",
+         "name": "移动设备书签",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

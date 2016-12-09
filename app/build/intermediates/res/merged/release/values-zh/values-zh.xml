@@ -31,6 +31,7 @@
     <string name="browser_name_show_via">Via浏览器</string>
     <string name="browser_name_show_x">X浏览器</string>
     <string name="browser_name_show_xingchen_phone">星尘手机版</string>
+    <string name="browser_name_show_xingchen_tablet">星尘平板版</string>
     <string name="browser_name_show_yandex">Yandex浏览器</string>
     <string name="clickBackToExit">再按一次返回键退出</string>
     <string name="converter_directer_arrow_contentDescription">合并方向</string>

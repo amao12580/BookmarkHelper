@@ -22,6 +22,7 @@
     <string name="browser_name_show_firefox">Firefox浏览器</string>
     <string name="browser_name_show_yandex">Yandex浏览器</string>
     <string name="browser_name_show_xingchen_phone">星尘手机版</string>
+    <string name="browser_name_show_xingchen_tablet">星尘平板版</string>
 
     <string name="source_browser_icon_contentDescription">来源浏览器</string>
     <string name="target_browser_icon_contentDescription">目标浏览器</string>

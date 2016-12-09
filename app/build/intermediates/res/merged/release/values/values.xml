@@ -612,6 +612,7 @@
     <string name="browser_name_show_via">Via Browser</string>
     <string name="browser_name_show_x">X Browser</string>
     <string name="browser_name_show_xingchen_phone">Xingchen phone Browser</string>
+    <string name="browser_name_show_xingchen_tablet">Xingchen tablet Browser</string>
     <string name="browser_name_show_yandex">Yandex Browser</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="clickBackToExit">Next click back will exit.</string>
