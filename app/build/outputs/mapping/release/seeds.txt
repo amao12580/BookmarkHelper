@@ -31519,18 +31519,18 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.App
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String name
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String packageName
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String versionName
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: int versionCode
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: long versionCode
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: android.graphics.drawable.Drawable icon
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: App()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String getName()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String getPackageName()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: java.lang.String getVersionName()
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: int getVersionCode()
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: long getVersionCode()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: android.graphics.drawable.Drawable getIcon()
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setName(java.lang.String)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setPackageName(java.lang.String)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setVersionName(java.lang.String)
-pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setVersionCode(int)
+pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setVersionCode(long)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: void setIcon(android.graphics.drawable.Drawable)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: boolean equals(java.lang.Object)
 pro.kisscat.www.bookmarkhelper.converter.support.pojo.App: boolean canEqual(java.lang.Object)

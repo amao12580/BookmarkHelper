@@ -87,9 +87,14 @@ public class UCBrowserAble extends BasicBrowser {
         LogHelper.v(TAG + ":origin file path:" + sourceFilePath);
         LogHelper.v(TAG + ":tmp file path:" + dbFilePath);
         try {
-            ExternalStorageUtil.copyFile(sourceFilePath, dbFilePath, this.getName());
+            if (InternalStorageUtil.isExistFile(sourceFilePath)) {
+                ExternalStorageUtil.copyFile(sourceFilePath, dbFilePath, this.getName());
+            } else {
+                return result;
+            }
         } catch (Exception e) {
-            LogHelper.e(e.getMessage());
+            e.printStackTrace();
+            LogHelper.e(e);
             return result;
         }
         result.addAll(fetchBookmarksList(dbFilePath, "bookmark", null, null, "create_time asc"));

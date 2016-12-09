@@ -1026,11 +1026,11 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.Ch
 pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenPhoneBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    46:49:public int readBookmarkSum()
+    48:51:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenTabletBrowser:
     private static final java.lang.String packageName
     private static final java.lang.String fileName_origin
-    46:49:public int readBookmarkSum()
+    45:48:public int readBookmarkSum()
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble:
     protected static final java.lang.String fileName_origin
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBrowser:
@@ -1045,7 +1045,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage1Browser:
     private static final java.lang.String fileName_origin
 pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Browser:
     private static final java.lang.String TAG
-    public static final int minVersionCode
+    public static final long minVersionCode
     private static final java.lang.String fileName_origin
     private static final java.lang.String tableName
 pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper:

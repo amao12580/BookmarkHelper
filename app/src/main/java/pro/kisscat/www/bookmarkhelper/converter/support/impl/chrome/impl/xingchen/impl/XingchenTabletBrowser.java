@@ -14,7 +14,6 @@ import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
-import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 
 /**
  * Created with Android Studio.
@@ -73,13 +72,8 @@ public class XingchenTabletBrowser extends XingchenBrowserAble {
         LogHelper.v(TAG + ":bookmarks cache is miss.");
         LogHelper.v(TAG + ":开始读取书签数据");
         try {
-            String originFilePathFull = filePath_origin + fileJsonPath_origin + fileName_origin;
-            LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
-            ExternalStorageUtil.mkdir(filePath_cp, this.getName());
-            LogHelper.v(TAG + ":tmp file path:" + filePath_cp + fileName_origin);
-            java.io.File file = ExternalStorageUtil.copyFile(originFilePathFull, filePath_cp + fileName_origin, this.getName());
             List<Bookmark> bookmarks = new LinkedList<>();
-            List<Bookmark> bookmarksPart1 = fetchBookmarks(file);
+            List<Bookmark> bookmarksPart1 = this.fetchBookmarks(filePath_origin + fileJsonPath_origin, fileName_origin, filePath_cp);
             List<Bookmark> bookmarksPart2 = fetchBookmarksByHomePage(filePath_origin, filePath_cp);
             LogHelper.v(TAG + ":Json书签数据:" + JsonUtil.toJson(bookmarksPart1));
             LogHelper.v(TAG + ":Json书签条数:" + bookmarksPart1.size());

@@ -19,7 +19,7 @@ public class App {
     public String name = "";
     public String packageName = "";
     public String versionName = "";
-    public int versionCode = 0;
+    public long versionCode = 0;
     @JSONField(serialize = false)
     public transient Drawable icon;
 }

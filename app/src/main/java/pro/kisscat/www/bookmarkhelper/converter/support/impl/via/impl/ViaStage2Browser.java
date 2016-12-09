@@ -33,7 +33,7 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 public class ViaStage2Browser extends ViaBrowserAble {
     private static final String TAG = "ViaStage2";
-    public static final int minVersionCode = 20161113;
+    public static final long minVersionCode = 20161113L;
     private static final String fileName_origin = "via";
     private static final String databaseDirPath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "databases" + Path.FILE_SPLIT;
     private static final String filesDirPath_origin = Path.INNER_PATH_DATA + packageName + Path.FILE_SPLIT + "files" + Path.FILE_SPLIT;

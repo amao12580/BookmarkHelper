@@ -3,6 +3,7 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingch
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
+import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 /**
  * Created with Android Studio.
@@ -75,5 +77,25 @@ public class XingchenBrowserAble extends ChromeBrowserAble {
         }
         LogHelper.v(TAG + ":读取已登录用户书签sqlite数据库结束");
         return result;
+    }
+
+    protected List<Bookmark> fetchBookmarks(String originPathDir, String originFileName, String cpPath) {
+        List<Bookmark> result = new LinkedList<>();
+        String originFilePathFull = originPathDir + originFileName;
+        if (InternalStorageUtil.isExistFile(originFilePathFull)) {
+            LogHelper.v(TAG + ":origin file path:" + originFilePathFull);
+            ExternalStorageUtil.mkdir(cpPath, this.getName());
+            LogHelper.v(TAG + ":tmp file path:" + cpPath + originFileName);
+            java.io.File file = ExternalStorageUtil.copyFile(originFilePathFull, cpPath + originFileName, this.getName());
+            try {
+                return fetchBookmarks(file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                LogHelper.e(e);
+                return result;
+            }
+        } else {
+            return result;
+        }
     }
 }

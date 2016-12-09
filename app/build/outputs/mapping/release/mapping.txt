@@ -35167,32 +35167,33 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.chrome.impl.Ch
     91:91:int appendBookmark(java.util.List) -> a
     55:56:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.XingchenBrowserAble -> pro.kisscat.www.bookmarkhelper.converter.support.a.b.a.b.a:
-    27:27:void <init>() -> <init>
-    30:77:java.util.List fetchBookmarksByHomePage(java.lang.String,java.lang.String) -> b
+    29:29:void <init>() -> <init>
+    32:79:java.util.List fetchBookmarksByHomePage(java.lang.String,java.lang.String) -> b
+    83:98:java.util.List fetchBookmarks(java.lang.String,java.lang.String,java.lang.String) -> a
 pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenPhoneBrowser -> pro.kisscat.www.bookmarkhelper.converter.support.a.b.a.b.a.a:
     java.util.List bookmarks -> d
     java.lang.String fileJsonPath_origin -> e
     java.lang.String filePath_origin -> f
     java.lang.String filePath_cp -> g
-    36:38:void <init>() -> <init>
-    41:41:java.lang.String getPackageName() -> getPackageName
-    54:55:void fillDefaultIcon(android.content.Context) -> d
-    59:60:void fillDefaultAppName(android.content.Context) -> c
-    69:103:java.util.List readBookmark() -> a
-    108:108:int appendBookmark(java.util.List) -> a
-    63:65:void <clinit>() -> <clinit>
+    38:40:void <init>() -> <init>
+    43:43:java.lang.String getPackageName() -> getPackageName
+    56:57:void fillDefaultIcon(android.content.Context) -> d
+    61:62:void fillDefaultAppName(android.content.Context) -> c
+    71:100:java.util.List readBookmark() -> a
+    105:105:int appendBookmark(java.util.List) -> a
+    65:67:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.impl.XingchenTabletBrowser -> pro.kisscat.www.bookmarkhelper.converter.support.a.b.a.b.a.b:
     java.util.List bookmarks -> d
     java.lang.String fileJsonPath_origin -> e
     java.lang.String filePath_origin -> f
     java.lang.String filePath_cp -> g
-    36:38:void <init>() -> <init>
-    41:41:java.lang.String getPackageName() -> getPackageName
-    54:55:void fillDefaultIcon(android.content.Context) -> d
-    59:60:void fillDefaultAppName(android.content.Context) -> c
-    69:103:java.util.List readBookmark() -> a
-    108:108:int appendBookmark(java.util.List) -> a
-    63:65:void <clinit>() -> <clinit>
+    35:37:void <init>() -> <init>
+    40:40:java.lang.String getPackageName() -> getPackageName
+    53:54:void fillDefaultIcon(android.content.Context) -> d
+    58:59:void fillDefaultAppName(android.content.Context) -> c
+    68:97:java.util.List readBookmark() -> a
+    102:102:int appendBookmark(java.util.List) -> a
+    62:64:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble -> pro.kisscat.www.bookmarkhelper.converter.support.a.c.a:
     java.lang.String TAG -> c
     java.lang.String packageName -> d
@@ -35200,13 +35201,13 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble -> pro.ki
     32:34:void <init>() -> <init>
     39:39:java.lang.String getPreExecuteConverterMessage() -> b
     43:81:java.util.List fetchBookmarksListByUserHasLogined(java.lang.String,java.lang.String) -> b
-    85:97:java.util.List fetchBookmarksListByNoUserLogined(java.lang.String,java.lang.String) -> c
-    101:101:java.util.List fetchBookmarksList(java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    105:135:java.util.List fetchBookmarksList(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
-    139:159:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> a
-    162:166:java.lang.String parseFolderPath(java.util.Map,long) -> a
-    170:178:java.lang.String parseFolderPath(java.util.Map,long,java.lang.String) -> a
-    182:192:java.util.List parseBookmark(android.database.Cursor) -> a
+    85:102:java.util.List fetchBookmarksListByNoUserLogined(java.lang.String,java.lang.String) -> c
+    106:106:java.util.List fetchBookmarksList(java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    110:140:java.util.List fetchBookmarksList(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String[],java.lang.String) -> a
+    144:164:void parseBookmarkWithFolder(android.database.Cursor,java.util.List) -> a
+    167:171:java.lang.String parseFolderPath(java.util.Map,long) -> a
+    175:183:java.lang.String parseFolderPath(java.util.Map,long,java.lang.String) -> a
+    187:197:java.util.List parseBookmark(android.database.Cursor) -> a
     35:35:void <clinit>() -> <clinit>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble$1 -> pro.kisscat.www.bookmarkhelper.converter.support.a.c.a$1:
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble$UCBookmark -> pro.kisscat.www.bookmarkhelper.converter.support.a.c.a$a:
@@ -35214,14 +35215,14 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble$UCBookmar
     long parent_id -> b
     int isFolder -> c
     pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble this$0 -> d
-    195:195:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble) -> <init>
-    196:196:long getLuid() -> a
-    197:197:void setLuid(long) -> a
-    199:199:long getParent_id() -> b
-    200:200:void setParent_id(long) -> b
-    202:202:int getIsFolder() -> c
-    203:203:void setIsFolder(int) -> a
-    195:195:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble,pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble$1) -> <init>
+    200:200:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble) -> <init>
+    201:201:long getLuid() -> a
+    202:202:void setLuid(long) -> a
+    204:204:long getParent_id() -> b
+    205:205:void setParent_id(long) -> b
+    207:207:int getIsFolder() -> c
+    208:208:void setIsFolder(int) -> a
+    200:200:void <init>(pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble,pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.UCBrowserAble$1) -> <init>
 pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCBrowser -> pro.kisscat.www.bookmarkhelper.converter.support.a.c.a.a:
     java.util.List bookmarks -> e
     java.lang.String filePath_cp -> f
@@ -35247,7 +35248,7 @@ pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble -> pro.
     java.util.List bookmarks -> c
     25:25:void <init>() -> <init>
     30:38:pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble fetchViaBrowser() -> c
-    42:45:pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble fetchViaBrowser(java.lang.String,int) -> a
+    42:45:pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble fetchViaBrowser(java.lang.String,long) -> a
     51:51:pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble chooseDefault() -> d
     55:55:java.lang.String getPackageName() -> getPackageName
     68:69:void fillDefaultIcon(android.content.Context) -> d
@@ -35274,18 +35275,18 @@ pro.kisscat.www.bookmarkhelper.converter.support.pojo.App -> pro.kisscat.www.boo
     java.lang.String name -> name
     java.lang.String packageName -> packageName
     java.lang.String versionName -> versionName
-    int versionCode -> versionCode
+    long versionCode -> versionCode
     android.graphics.drawable.Drawable icon -> icon
     17:22:void <init>() -> <init>
     19:19:java.lang.String getName() -> getName
     20:20:java.lang.String getPackageName() -> getPackageName
     21:21:java.lang.String getVersionName() -> getVersionName
-    22:22:int getVersionCode() -> getVersionCode
+    22:22:long getVersionCode() -> getVersionCode
     24:24:android.graphics.drawable.Drawable getIcon() -> getIcon
     17:17:void setName(java.lang.String) -> setName
     17:17:void setPackageName(java.lang.String) -> setPackageName
     17:17:void setVersionName(java.lang.String) -> setVersionName
-    17:17:void setVersionCode(int) -> setVersionCode
+    17:17:void setVersionCode(long) -> setVersionCode
     17:17:void setIcon(android.graphics.drawable.Drawable) -> setIcon
     17:17:boolean equals(java.lang.Object) -> equals
     17:17:boolean canEqual(java.lang.Object) -> canEqual

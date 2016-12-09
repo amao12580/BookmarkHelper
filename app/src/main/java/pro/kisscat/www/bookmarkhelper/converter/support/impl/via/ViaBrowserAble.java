@@ -38,7 +38,7 @@ public class ViaBrowserAble extends BasicBrowser {
         return viaBrowserable;
     }
 
-    private static ViaBrowserAble fetchViaBrowser(String versionName, int versionCode) {
+    private static ViaBrowserAble fetchViaBrowser(String versionName, long versionCode) {
         if (versionCode >= ViaStage2Browser.minVersionCode && versionName != null && !versionName.isEmpty()) {
             return new ViaStage2Browser();
         } else {
