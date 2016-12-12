@@ -50,7 +50,7 @@
     <string name="keepRootAppRunning">请保持Root程序运行，如：SuperSU</string>
     <string name="marketAppNoInstalled">您的系统中没有安装应用市场.</string>
     <string name="networkError">您的网络未连接，快去检查一下！</string>
-    <string name="networkSlowestNotice">正在Github(国外)网站，响应时间可能较长，请自备爬墙软件。\n您也可以打开浏览器访问，网址已经复制。</string>
+    <string name="networkSlowestNotice">正在Github(国外)网站，响应时间可能较长，请自备爬墙软件。\n\n您也可以打开浏览器访问，网址已经复制。</string>
     <string name="notPermissionForReadInstalledAppList">没有权限读取已安装的应用.</string>
     <string name="notSupport">暂未支持.</string>
     <string name="notSupportParseHomepageBookmarks">暂不支持读取UC首页书签，无法解密.</string>

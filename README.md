@@ -4,7 +4,9 @@ BookmarkHelper（书签助手）是一款Android平台下，浏览器书签转�
 
 使用举例：从[Chrome浏览器](http://www.coolapk.com/apk/com.android.chrome)中，提取用户书签数据，追加合并到[Via浏览器](http://www.coolapk.com/apk/mark.via)，带你轻松脱坑，成功用上最牛逼浏览器！
 
-BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥用Root权限，使用完毕可立即卸载，运行时按需连接网络。如果你用的爽，可以[鼓励一下](https://www.kisscat.pro/rewards/wechat-reward-image.png)，我将用于：支付VPS月租，开发更多精彩APP，谢谢您的点滴支持！
+BookmarkHelper是个人作品，完整开源代码，持续维护，永不考虑收费推广，不滥用Root权限，使用完毕可立即卸载，运行时按需连接网络。如果你用的爽，可以[鼓励一下](https://www.kisscat.pro/rewards/wechat-reward-image.png)，我将用于：支付VPS月租，开发更多精彩APP，谢谢您的点滴支持！
+
+BookmarkHelper APP目前仅在[酷安网上架](http://www.coolapk.com/apk/pro.kisscat.www.bookmarkhelper)并维护，如果您在其他渠道获得APK，则可能遭受盗版软件的困扰，请您在[酷安网](http://www.coolapk.com/apk/pro.kisscat.www.bookmarkhelper)获取最新稳定版软件。
 
 <a target="_blank" href="http://ww2.sinaimg.cn/mw690/becd6b85gw1f9oaniwbdig208e0dwu11.gif">使用教程Gif：5.8MB</a>
 
@@ -192,7 +194,7 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 
 4.Bug 修复：星尘手机版转换到Via报错
 
-#### 0.0.22版 Draft
+#### [0.0.22版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.22%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.22.apk)
 1.增加兼容：支持从[一加内置QQ浏览器](https://github.com/amao12580/BookmarkHelper/blob/master/origin/resource/qq/%E4%B8%80%E5%8A%A0/%E6%B5%8F%E8%A7%88%E5%99%A8_2.1.4.apk)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 #### 0.0.23版 Draft

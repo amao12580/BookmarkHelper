@@ -55,6 +55,10 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
         handleMessage(0, msg);
     }
 
+    private void handleToastMessage(Result result) {
+        handleToastMessage(JsonUtil.toJson(result));
+    }
+
     private void handleDialogMessage(String msg) {
         handleMessage(1, msg);
     }
@@ -90,19 +94,19 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
     }
 
     private void handleExecuteRunningMessage() {
-        handleToastMessage("正在合并，约需5秒钟，请等待.");
+        handleToastMessage(new Result("正在合并，约需5秒钟，请等待."));
     }
 
     private void handleExecuteCompleteMessage() {
-        handleToastMessage("已完成合并.");
+        handleToastMessage(new Result("已完成合并."));
     }
 
     private void handleUpgradeRootPermissionMessage() {
-        handleToastMessage("正在获取Root权限，如长时间无响应，请打开Root管理App.");
+        handleToastMessage(new Result("正在获取Root权限，如长时间无响应，请打开Root管理App."));
     }
 
     private void handleCheckReadAndWriteAbleMessage() {
-        handleToastMessage("正在检查是否可读写存储.");
+        handleToastMessage(new Result("正在检查存储读写权限."));
     }
 
     private Result processConverter(Rule rule) {

@@ -1,0 +1,37 @@
+-injars 'D:\GitHub\BookmarkHelper\app\build\intermediates\transforms\proguard\release\jars\3\1f\main.jar'
+-outjars 'D:\GitHub\BookmarkHelper\app\build\intermediates\multi-dex\release\componentClasses.jar'
+
+-libraryjars 'D:\Android\sdk\build-tools\24.0.3\lib\shrinkedAndroid.jar'
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **
+-dontwarn **
+-printconfiguration 'D:\GitHub\BookmarkHelper\app\build\intermediates\multi-dex\release\components.flags'
+
+
+-keep public class * extends android.app.Instrumentation {
+    <init>();
+}
+
+-keep public class * extends android.app.Application {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.fd.** {
+    <fields>;
+    <methods>;
+}
