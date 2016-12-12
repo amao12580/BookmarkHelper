@@ -129,9 +129,8 @@ public class LogHelper {
         if (BuildConfig.DEBUG) {
             System.out.println("v    " + tag + "    " + text);
         } else {
-//            log(tag, text, 'v');
+            log(tag, text, 'v');
         }
-        log(tag, text, 'v');
     }
 
     /**

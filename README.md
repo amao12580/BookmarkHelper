@@ -193,7 +193,7 @@ BookmarkHelper是个人作品，持续维护，永不考虑收费推广，不滥
 4.Bug 修复：星尘手机版转换到Via报错
 
 #### 0.0.22版 Draft
-1.增加兼容：支持从一加内置QQ浏览器提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+1.增加兼容：支持从[一加内置QQ浏览器](https://github.com/amao12580/BookmarkHelper/blob/master/origin/resource/qq/%E4%B8%80%E5%8A%A0/%E6%B5%8F%E8%A7%88%E5%99%A8_2.1.4.apk)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 #### 0.0.23版 Draft
 1.增加兼容：支持从[X浏览器-pro](https://play.google.com/store/apps/details?id=com.mmbox.xbrowser.pro)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

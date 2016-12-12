@@ -59,6 +59,7 @@ import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.init.executor.InitAsyncTask;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
+import pro.kisscat.www.bookmarkhelper.util.clipboard.ClipboardUtil;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
@@ -290,8 +291,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (aboutMeUrl == null) {
             aboutMeUrl = lv.getResources().getString(R.string.aboutMeURL);
         }
+        ClipboardUtil.replace(context, aboutMeUrl);
         openUrlInWebview(aboutMeUrl, lv.getResources().getString(R.string.aboutMeTitle), R.drawable.ic_aboutme);
-        Toast.makeText(context, context.getResources().getString(R.string.networkSlowestNotice), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, context.getResources().getString(R.string.networkSlowestNotice), Toast.LENGTH_LONG).show();
     }
 
     private static String ratingURL = null;

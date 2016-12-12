@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Dec 12 17:51:23 CST 2016
+#Mon Dec 12 18:15:42 CST 2016
 210.set=ANDROID_RESOURCE
 282.file=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim-v21\\design_bottom_sheet_slide_out.xml
 14.set=ANDROID_RESOURCE

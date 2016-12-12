@@ -46,14 +46,26 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
     @Override
     protected void onPostExecute(Result result) {
         result.setComplete(true);
-        Message message = new Message();
-        message.what = 1;
-        Bundle bundle = new Bundle();
-        bundle.putString("result", JsonUtil.toJson(result));
-        message.setData(bundle);
-        handler.sendMessage(message);
+        handleDialogMessage(JsonUtil.toJson(result));
         progressBarUtil.stop();
         LogHelper.write();
+    }
+
+    private void handleToastMessage(String msg) {
+        handleMessage(0, msg);
+    }
+
+    private void handleDialogMessage(String msg) {
+        handleMessage(1, msg);
+    }
+
+    private void handleMessage(int whhat, String msg) {
+        Message message = new Message();
+        message.what = whhat;
+        Bundle bundle = new Bundle();
+        bundle.putString("result", msg);
+        message.setData(bundle);
+        handler.sendMessage(message);
     }
 
     @Override
@@ -72,24 +84,25 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
     private void handlePreExecuteMessage(Rule rule) {
         String sourceMessage = rule.getSource().getPreExecuteConverterMessage();
         if (sourceMessage != null) {
-            Message message = new Message();
-            message.what = 0;
-            Bundle bundle = new Bundle();
             Result result = new Result(sourceMessage);
-            bundle.putString("result", JsonUtil.toJson(result));
-            message.setData(bundle);
-            handler.sendMessage(message);
+            handleToastMessage(JsonUtil.toJson(result));
         }
     }
 
     private void handleExecuteRunningMessage() {
-        Message message = new Message();
-        message.what = 0;
-        Bundle bundle = new Bundle();
-        Result result = new Result("正在合并，约需5秒钟，请等待.");
-        bundle.putString("result", JsonUtil.toJson(result));
-        message.setData(bundle);
-        handler.sendMessage(message);
+        handleToastMessage("正在合并，约需5秒钟，请等待.");
+    }
+
+    private void handleExecuteCompleteMessage() {
+        handleToastMessage("已完成合并.");
+    }
+
+    private void handleUpgradeRootPermissionMessage() {
+        handleToastMessage("正在获取Root权限，如长时间无响应，请打开Root管理App.");
+    }
+
+    private void handleCheckReadAndWriteAbleMessage() {
+        handleToastMessage("正在检查是否可读写存储.");
     }
 
     private Result processConverter(Rule rule) {
@@ -98,6 +111,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
         long end = -1;
         int ret = -1;
         try {
+            handleUpgradeRootPermissionMessage();
             boolean isRoot = RootUtil.upgradeRootPermission();
             if (!isRoot) {
                 String errorUpgrade = "获取Root权限失败，不能使用.";
@@ -108,6 +122,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
                 publishProgress();
                 LogHelper.v("成功获取了Root权限.");
             }
+            handleCheckReadAndWriteAbleMessage();
             if (!InternalStorageUtil.remountDataDir()) {
                 result.setErrorMsg(ContextUtil.getSystemNotReadOrWriteable());
                 return result;
@@ -123,6 +138,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
             ret = execute(rule);
             end = System.currentTimeMillis();
             publishProgress();
+            handleExecuteCompleteMessage();
         } catch (ConverterException e) {
             if (result.getErrorMsg() == null) {
                 result.setErrorMsg(e.getMessage());

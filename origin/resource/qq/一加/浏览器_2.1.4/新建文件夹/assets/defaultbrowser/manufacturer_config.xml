@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 厂商对应的xml文件.manufacturer不分小小写。值为Build.MANUFACTURER;-->
-<resources>
-	<config manufacturer="motorola">adaptive_config_motorola.xml</config>
-	<config manufacturer="Samsung">adaptive_config_samsung.xml</config>
-	<config manufacturer="HTC">adaptive_config_htc.xml</config>
-	<config manufacturer="xiaomi">adaptive_config_xiaomi.xml</config>
-	<config manufacturer="meizu">adaptive_config_meizu.xml</config>
-</resources>

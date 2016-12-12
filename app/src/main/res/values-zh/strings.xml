@@ -63,6 +63,6 @@
     <string name="SDCardNotReadOrWriteable">无法读写存储，可能缺少权限.</string>
     <string name="SystemNotReadOrWriteable">无法挂载"/data"分区为读写模式.</string>
     <string name="opeartionTooFast">点这么快会被肛的.</string>
-    <string name="networkSlowestNotice">正在访问境外网站，如果打不开，你懂的。</string>
+    <string name="networkSlowestNotice">正在Github(国外)网站，响应时间可能较长，请自备爬墙软件。\n您也可以打开浏览器访问，网址已经复制。</string>
     <string name="packageNameDesc">包名</string>
 </resources>
