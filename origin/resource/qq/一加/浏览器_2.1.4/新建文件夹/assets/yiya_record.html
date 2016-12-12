@@ -1,0 +1,782 @@
+﻿<!DOCTYPE html>
+<html><!--Android给终端缓存文件 需要去掉manifest 自己发布需要加上-->
+	<head>
+		<meta charset="utf-8" />
+		<title>record</title>
+		<meta name="Keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="author" content="mikoyin" />
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+        <style>
+            /* Reset */
+            body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,figure,menu,input,fieldset,textarea,button,select,th,td{margin:0;padding:0;}
+            h1,h2,h3,h4,h5,h6,b,strong{font-size:100%;font-weight:normal;}
+            li{list-style:none;}
+            em,i{font-style:normal;}
+            a,a:visited,a:active{text-decoration:none;border:none;}
+            fieldset,img,input{border:none;}
+            input,textarea{resize:none;outline:none;-webkit-appearance:none;}
+            body{font:14px "Helvetica","Microsoft Yahei";line-height:1;
+                word-wrap:break-word;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
+                -webkit-touch-callout:none;-webkit-user-select:none;}
+
+            /* public */
+            .clear{zoom:1;}
+            .clear:before,
+            .clear:after{content:"";display:block;}
+            .clear:after{clear:both;}
+            .fl{display:block;float:left;}
+            .fr{display:block;float:right;}
+            .none{display:none!important;}
+            .opacity{opacity:0!important;}
+
+            /* yiyaweb */
+            .yyw{}
+
+            .yyw .mic .img2{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAYAAADiI6WIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowNTE4ZDAzNy03MDg0LWYwNDgtOTYzNC0wNDY2YWFiNTliOTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTIzN0VEQUE3NjEwMTFFNDhCQTVGOUI0MTQwRENDMEIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTIzN0VEQTk3NjEwMTFFNDhCQTVGOUI0MTQwRENDMEIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmJkM2VkNGQ1LTkxNjAtNDU0ZC1iMjZmLWMxYjg4MzFhOGUzYyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowNTE4ZDAzNy03MDg0LWYwNDgtOTYzNC0wNDY2YWFiNTliOTYiLz4gPC9y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") no-repeat;background-size:60px;}
+
+            .yyw .mic .box.active .img2{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2MTEwNjMwRDZFMDgxMUU0QjMxRkUzOEU0ODQ2RDk4QyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2MTEwNjMwRTZFMDgxMUU0QjMxRkUzOEU0ODQ2RDk4QyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMTA2MzBCNkUwODExRTRCMzFGRTM4RTQ4NDZEOThDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjYxMTA2MzBDNkUwODExRTRCMzFGRTM4RTQ4NDZEOThDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8pOADAAAA6hJREFUeNrsWztoVEEUffkLq2uKREghEfwQjEUKNQiKq2JjCDGVokhQSQoT0MJP/DUqKJJKiIUStLFWi2gRghqLSNQ0RiOKGBTjj0CMH4yrxHvxLA7De7Pv7ZvZvGXnwmFnd+7cuee9mTvfLZiZmXHySYpVmUu7vuYcoZcH5ynzC508k+Is1TOf0EzYQFhOWED4RXhPeE24Q7hO+JLrhMsIbYR2QlzKKyEsATYTOgkXCZcIP005ZLJJLyTcJhx1IesmcZC+hbI5RbiKcINQk0HZGpStyhXC3Ix7QjpcBRtzcoFwK6FOg5062Io04XJCh0Z77bAZWcLNPgOUX4nDZmQJJwx0kUSUCdcaIFwbZcKVBghXRplwiQHCJVEmHHmxhC1hS9gStoQtYUvYEraELeEsE+ZNtXF8Rk1uBvHNL+HV0meUZFUQ32yT9pCkkC5V6H0z4GNSkVfqUy8w4R9CWrVJ98kA4c+KvLiHj6EJfxTS1Qq9VwYIP1XkVXv4GJrwmJBWbardNUBYZXOFh4+hCT8R0usUenzkOaWR7BRseslaDx9DE34gpNcTYh56k4RujYS7YdNNYvDFzcfQhIec/4fVcwmNCt3LhFENZJ/Dlpc0whcHvg3pHpZ6he985lPkocuH2Xv9BhEP+UDY43gfjBfBh5T06h6WWK4K6cWE7WmCXBPeUiZvtilNENoGH9x800Z4hHBP+H7cUZ8KvCFsIZzzGcimoMtl3ir0uM4TUhQfMbVaOkX4gzQfY15QNO1U82adejygPsI7NL8k0n3Iq4eu6n5HEXRSR6jsy+kgBIJeauFgxCfzbULE5jscZ9KU46ByBQgjnVJk7gkaIDNZPJyVKtlH2J+Fef8BKVCNwhfjGwDTiMITwm9H0CxNrL4KYfuw8NsEfJjO1o4HR9AWKRjx079GqNBItgI226Xg1uJ3KqlzPTxM2CnNhLh/DRB2hLRdCBsDUp+dRJ3DptfDXvKY0CCNtxxBuwj9GC9jAezFML73w0a5ND43oM6MpUB1fTjAbdoy9LFWl8j/HWPlfSz1xoSuwOvZRViB8aIk4fKAfmOKed5Pn013m1YX4ZQsI5wkbNLUh/sxzr7wWyAdYd2XS9mxXc6/G7O70QSD3rOaxNyYx+xnukO+qdu07OghwjHCSsIaLNa5+da4zJ3HMD0cJDzyuxCIEmFxlTUIpGRc0tnoZFHsNq0lbAlbwkFF3Ht6mO3Ki2eB8NbZfMMF+fbPtLzrw38FGAC/170YlFYykwAAAABJRU5ErkJggg==") no-repeat;background-size:30px;}
+
+            /* yiyaweb_pop */
+            .yyw .pop{background-color:rgba(0,0,0,.92);bottom:0;left:0;position:fixed;right:0;top:0;z-index:10000;}
+
+
+            /* mic */
+
+            /* mic_con */
+            .yyw .mic .con{bottom:170px;color:#dee7ff;left:50%;line-height:2;padding:30px;position:absolute;
+                text-align:center;white-space:nowrap;-webkit-transition:all .5s;-webkit-transform:translateX(-50%);}
+            .yyw .mic .con.left{opacity:0;-webkit-transform:translateX(-90%);}
+            .yyw .mic .con.right{opacity:0;-webkit-transform:translateX(20%);}
+            .yyw .mic .con.bottom .txt2{opacity:0;-webkit-transform:translateY(80%);}
+            .yyw .mic .con.bottom .txt3{opacity:0;-webkit-transform:translateY(80%);}
+            .yyw .mic .con .txt2{font-size:26px;-webkit-transition:all .25s;}
+            .yyw .mic .con .txt3{font-size:13px;-webkit-transition:all .25s linear .25s;}
+            .yyw .mic .box{bottom:40px;display:block;height:156px;left:0;margin:0 auto;position:absolute;right:0;
+                width:156px;z-index:200;-webkit-transition:all .5s;}
+            .yyw .mic .box.bottom{opacity:0;-webkit-transform:translateY(80%);}
+            .yyw .mic .box i{bottom:0;box-sizing:border-box;border-radius:32px;display:block;left:0;margin:auto;
+                pointer-events:none;position:absolute;right:0;top:0;}
+            .yyw .mic .box i.img1{background-color:#212e7c;border:2px solid #456aff;
+                box-shadow:0 0 1px #456aff,0 0 34px rgba(48,72,255,.6);height:64px;width:64px;
+                -webkit-transition:all .4s;}
+            .yyw .mic .box i.img2{background-position:center center;bottom:0;content:"";left:0;position:absolute;
+                right:0;top:0;z-index:220;}
+            .yyw .mic .box i.sound{border-radius:8px;height:18px;overflow:hidden;top:-8px;width:12px;z-index:210;}
+            .yyw .mic .box i.sound b{background-color:#fff;bottom:0;height:0%;left:0;position:absolute;right:0;
+                -webkit-transition:all .01s;}
+
+            .yyw .mic .box a.btn{bottom:0;display:block;height:90px;left:0;margin:auto;overflow:hidden;
+                position:absolute;right:0;text-indent:-9999em;top:0;width:90px;}
+
+            /* active */
+            .yyw .mic .box.active .img1{background-color:#fff;border: 2px solid #248bf2;
+                box-shadow:0 0 1px #fff,0 0 10px rgba(36,139,242,.6);}
+            .yyw .mic .box.active .img2{background-position:center center;}
+
+            /* yyw_animation */
+            /* @-webkit-keyframes ani_asc{0%{height:64px;opacity:1;width:64px;}} */
+            @-webkit-keyframes ani_asc{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1);}}
+            @-webkit-keyframes ani_desc{0%{height:144px;opacity:0;width:144px;}}
+            @-webkit-keyframes ani_loading{0%{-webkit-transform:rotateZ(0deg);transform:rotateZ(0deg);}}
+            @-webkit-keyframes ani_out{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1);}}
+            @-webkit-keyframes ani_in{0%{opacity:0;-webkit-transform:scale(.7);transform:scale(.7);}}
+            @-webkit-keyframes ani_scale{
+                0%{-webkit-transform:scale(1);transform:scale(1);}
+                50%{-webkit-transform:scale(.8);transform:scale(.8);}
+                100%{-webkit-transform:scale(1);transform:scale(1);}
+            }
+
+            /* mic.step1 */
+            .yyw .mic.step1 .box i:nth-of-type(2),
+            .yyw .mic.step1 .box i:nth-of-type(3){border:1px solid #456aff;box-shadow:0 0 1px #456aff;height:64px;
+                opacity:0;width:64px;-webkit-transform:scale(2.25);-webkit-animation:ani_asc 1.2s infinite;
+                transform:scale(2.25);animation:ani_asc 1.2s infinite;}
+            .yyw .mic.step1 .box i:nth-of-type(3){-webkit-animation:ani_asc 1.2s infinite .6s;animation:ani_asc 1.2s infinite .6s;}
+
+            /* mic.step2 */
+            .yyw .mic.step2 .box i.img1{box-shadow:0 0 1px #456aff,0 0 34px rgba(48,72,255,.75);
+                -webkit-animation:ani_scale .5s;}
+            .yyw .mic.step2 .box i.img2{background-position:center center;
+                opacity:0;-webkit-animation:ani_out .5s;}
+            .yyw .mic.step2 .box i.sound{opacity:0;-webkit-animation:ani_out .5s;}
+
+            /* mic.step3 */
+            .yyw .mic.step3 .box i.img2{display:none;}
+            .yyw .mic.step3 .box i:nth-of-type(4){height:64px;width:64px;-webkit-transform:rotateZ(360deg);
+                -webkit-animation:ani_loading 1s linear infinite;}
+            .yyw .mic.step3 .box i:nth-of-type(4):before{background-color:#47c5ff;border-radius:2px;
+                content:"";height:4px;position:absolute;right:-1px;top:50%;width:4px;
+                -webkit-transform:translateY(-50%);}
+            .yyw .mic.step3 .box i.sound{display:none;}
+
+            /* mic.step4 */
+            .yyw .mic.step4 .box i.img1{box-shadow:0 0 1px #456aff,0 0 34px rgba(48,72,255,.75);}
+            .yyw .mic.step4 .box i.img2{opacity:1;-webkit-transform:scale(1);-webkit-animation:ani_in .5s;}
+            .yyw .mic.step4 .box i:nth-of-type(2),
+            .yyw .mic.step4 .box i:nth-of-type(3){border:1px solid #456aff;box-shadow:0 0 1px #456aff;
+                height:64px;opacity:1;width:64px;-webkit-animation:ani_desc .6s linear;}
+            .yyw .mic.step4 .box i:nth-of-type(3){-webkit-animation:ani_desc .6s linear .3s;}
+
+            /* mic.sound */
+            /*
+            .yyw .mic.sound1 .box i.img1{box-shadow:0 0 1px #456aff,0 0 18px rgba(48,72,255,.6);}
+            .yyw .mic.sound2 .box i.img1{box-shadow:0 0 1px #456aff,0 0 34px rgba(48,72,255,.8);}
+            .yyw .mic.sound3 .box i.img1{box-shadow:0 0 1px #456aff,0 0 50px rgba(48,72,255,1);}
+            */
+
+            /* mic.error */
+            .yyw .mic.err .box i.img1{background-color:transparent;border:none;box-shadow:none;}
+            .yyw .mic.err .box i.img2{background-color:#342525;border:2px solid #ff250e;
+                box-shadow: 0 0 1px #ff250e,0 0 16px rgba(255,31,7,.75);height:64px;width:64px;}
+
+            /* keyword */
+            .keyword{bottom:300px;display:-webkit-box;left:0;position:absolute;right:0;top:0;
+                -webkit-box-align:center;-webkit-box-pack:center;-webkit-transition:all .5s;}
+            .keyword_wrap{height:140px;overflow:hidden;text-align:center;width:300px;}
+            .keyword .txt{color:rgba(222,231,255,.5);display:inline-block;font-size:15px;padding:18px;
+                -webkit-transition:all .5s;}
+            .keyword .txt.left{opacity:0;-webkit-transform:translateX(-50%);}
+            .keyword .txt.right{opacity:0;-webkit-transform:translateX(50%);}
+
+            /* pop_toast_txt */
+            .pop_toast{bottom:20px;display:-webkit-box;left:0;pointer-events:none;position:fixed;right:0;
+                z-index:100000;-webkit-box-pack:center;-webkit-transition:all .5s linear;}
+            .pop_toast.fadeout{opacity:0;}
+            .pop_toast_box{background-color:rgba(30,30,30,.9);border-radius:2px;color:#fff;font-size:16px;
+                padding:10px 23px;pointer-events:auto;}
+            .pop_toast_link{color:#248bf2;}
+
+            /* 竖屏 */
+            @media only screen and (orientation : portrait) {
+
+            }
+
+            /* 横屏 */
+            @media only screen and (orientation : landscape) {
+
+            }
+
+            /* height 小于等于 480 */
+            @media only screen and (max-height:480px) {
+                .keyword{display:none;}
+            }
+
+
+        </style>
+	</head>
+	<body>
+		<div class="yyw">
+			<!-- pop_start -->
+			<div class="pop">
+                <!-- keyword_start -->
+                <div class="keyword">
+                    <div id="keyword" class="keyword_wrap"></div>
+                </div>
+                <!-- keyword_end -->
+				<!-- mic_start -->
+				<div id="mic" class="mic">
+					<!-- div class="con" -->
+					<!-- div class="con right" -->
+					<!-- div class="con left" -->
+					<div class="con bottom">
+						<p class="txt2"><strong>请说话</strong></p>
+						<p class="txt3">&nbsp;</p>
+					</div>
+					<div class="con right">
+						<p class="txt2"><strong>正在识别</strong></p>
+						<p class="txt3">&nbsp;</p>
+					</div>
+					<div class="con right">
+						<p class="txt2"><strong>没听清您说什么</strong></p>
+						<p class="txt3">点击话筒重试</p>
+					</div>
+                    <div class="con right">
+						<p class="txt2"><strong>已取消录音</strong></p>
+						<p class="txt3">点击话筒说话</p>
+					</div>
+					<div class="box bottom">
+						<i class="img1"></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i class="img2"></i>
+                        <i class="sound">
+                            <b></b>
+                        </i>
+						<a class="btn" href="javascript:void(0)">重试</a>
+					</div>
+				</div>
+				<!-- mic_end -->
+			</div>
+			<!-- pop_end -->
+		</div>
+
+	</body>
+    <script>
+        (
+                function(){
+                    var x5 = x5 || {};
+                    x5.android = x5.android || {};
+
+                    var rankCallbackId = new Date().getTime();
+                    window.x5CallbackObj = {};
+                    window.x5AndroidSuc = function(id, para)
+                    {
+                        if(window.x5CallbackObj[id] && x5CallbackObj[id]["suc"])
+                        {
+                            x5CallbackObj[id]["suc"](para);
+                            delete x5CallbackObj[id];
+                        }
+                    };
+
+                    window.x5AndroidErr = function(id, para)
+                    {
+                        if(x5CallbackObj[id] && x5CallbackObj[id]["err"])
+                        {
+                            x5CallbackObj[id]["err"](para);
+                            delete x5CallbackObj[id];
+                        }
+                    };
+
+                    x5.android.exec = function (action, option, suc, err) {
+                        rankCallbackId++;
+                        if(window["yiya"] && window["yiya"][action])
+                        {
+                            x5CallbackObj[rankCallbackId] = {
+                                suc: suc,
+                                err: err,
+                                option: option
+                            };
+                            window["yiya"][action](JSON.stringify(option), x5AndroidSuc + "", x5AndroidErr + "", rankCallbackId);
+                        }
+                        else{
+//                            alert('exec err:' + action);
+                        }
+                    };
+
+                    x5.android.yiyaGetStatus = function (options, suc, err) {
+                        x5.android.exec("getStatus", options, suc, err);
+                    };
+                    //以下接口为5.6版本新加接口
+                    //用来调起录音
+                    x5.android.yiyaRecord = function (options, suc, err) {
+                        x5.android.exec("record", options, suc, err);
+                    };
+
+                    //用来关闭录音遮罩层
+                    x5.android.yiyaCloseRecordDialog = function (options, suc, err) {
+                        x5.android.exec("closeRecordDialog", options, suc, err);
+                    };
+
+                    x5.android.yiyaCloseRecord = function (options, suc, err) {
+                        x5.android.exec("closeRecord", options, suc, err);
+                    };
+                    /////////////////// 安卓5.0及其以上接口的版本 end /////////////////////
+
+                    // 旧的版本采用T5Kit,新的版本采用x5(协议)
+                    window.T5Kit = {};
+                    for(var i in x5)
+                    {
+                        T5Kit[i] = x5[i];
+                    }
+
+                    x5.yiyaGetStatus = function(option, suc, err)
+                    {
+                        x5.android.yiyaGetStatus(option, suc, err);
+                    };
+
+                    /**
+                     * yiyaRecord  录音接口
+                     * @param suc
+                     * @param err
+                     */
+                    x5.yiyaRecord = function(option, suc, err)
+                    {
+                        x5.android.yiyaRecord(option, suc, err);
+                    };
+
+                    /**
+                     * yiyaCloseRecordDialog 关闭遮罩层接口
+                     * @param suc
+                     * @param err
+                     */
+                    x5.yiyaCloseRecordDialog = function(option, suc, err)
+                    {
+                        x5.android.yiyaCloseRecordDialog(option, suc, err);
+                    };
+
+                    /**
+                     * yiyaCloseRecord
+                     * 中断录音
+                     * @param suc
+                     * @param err
+                     */
+                    x5.yiyaCloseRecord = function(option, suc, err)
+                    {
+                        x5.android.yiyaCloseRecord(option,suc, err);
+                    };
+
+                    window.x5 = x5;
+                    //客户端预埋接口
+                    window.ReqWeb = function (key, value) {
+                        if(mNativeFunction[key] != undefined ){
+                            mNativeFunction[key](value);
+                        }
+                    }
+
+                    window.mNativeFunction = {};
+
+                    //监听native
+                    window.lisenNative = function (key, func) {
+                        mNativeFunction[key] = func;
+                    }
+                }
+                )();
+    </script>
+    <script>
+    window.onload = function(){
+        createTipsDomAndAnimation();
+        var $MicId = document.getElementById("mic");
+        var volumeOfSound = 0;//音量
+        var isRecordIng = false;
+        var currentShowDom = "";
+        var timeOutFunc = "";
+        timeInit();
+        addBodyEvent();
+        getVtipsFromBack();
+
+        var allComDom = $MicId.querySelectorAll(".con");
+        //初试动画
+        window.init = function(){
+            offBodyEvent();
+            volumeOfSound = 0;//音量
+            if(currentShowDom!=""){
+                clearTimeout(timeOutFunc);
+                currentShowDom.className = "con left";
+                timeOutFunc = setTimeout(function(){
+                    currentShowDom.className = "con right";
+                    allComDom[0].className = "con";
+                    currentShowDom = allComDom[0];
+                    $MicId.querySelector(".box").className="box";
+                    $MicId.className = "mic step1";
+                    addBodyEvent();
+                }, 500);
+            }else{
+                allComDom[0].className = "con";
+                currentShowDom = allComDom[0];
+                $MicId.querySelector(".box").className="box";
+                $MicId.className = "mic step1";
+                addBodyEvent();
+            }
+        }
+        //开始录音
+        window.startRecord = function(){
+            localStorage.startRecordTime = (new Date()).getTime();
+        }
+        //识别中
+        window.identificationRecord = function(){
+            offBodyEvent();
+            localStorage.identificationRecordTime = (new Date()).getTime();
+            $MicId.className = "mic step2";
+            currentShowDom.className = "con left";
+            clearTimeout(timeOutFunc);
+            timeOutFunc = setTimeout(function(){
+                currentShowDom.className = "con right";
+                allComDom[1].className = "con";
+                currentShowDom = allComDom[1];
+                //麦克风
+                $MicId.className = "mic step3";
+                addBodyEvent();
+            }, 500);
+        }
+
+        window.recordFail = function(){
+            offBodyEvent();
+            isRecordIng = false;
+            //文本内容
+            currentShowDom.className = "con left";
+            clearTimeout(timeOutFunc);
+            timeOutFunc = setTimeout(function(){
+                currentShowDom.className = "con right";
+                allComDom[2].className = "con";
+                currentShowDom = allComDom[2];
+                //麦克风
+                $MicId.className = "mic step4";
+                addBodyEvent();
+            }, 500);
+        }
+
+        window.cancelRecord = function(){
+            offBodyEvent();
+            isRecordIng = false;
+            $MicId.className = "mic step4";
+            currentShowDom.className = "con left";
+            clearTimeout(timeOutFunc);
+            timeOutFunc =setTimeout(function(){
+                currentShowDom.className = "con right";
+                allComDom[3].className = "con";
+                currentShowDom = allComDom[3];
+                addBodyEvent();
+            }, 500);
+        }
+
+        //识别完成
+        window.endRecord = function(){
+            localStorage.endRecordTime = (new Date()).getTime();
+        }
+
+        //toast弹框
+        window.showToast = function(word){
+            var popDom = document.getElementById("popToast");
+            var hideTime = "";
+
+            var fadeoutToast = function(){
+                popDom.className = "pop_toast fadeout";
+                setTimeout(function(){
+                    popDom.className = "pop_toast none";
+                },1000)
+            }
+            if(popDom!=null){
+                popDom.querySelector("span").innerHTML=word;
+                popDom.className = "pop_toast";
+
+                hideTime = setTimeout(function(){
+                    fadeoutToast();
+                },2000);
+            }else{
+                var toastDom = '<div class="pop_toast_box">\
+                                            <span>'+word+'</span><!--图片已保存，</span><a class="pop_toast_link" href="javascript:void(0)">点击查看-->\
+                                       </div>';
+
+                var popToastElement = document.createElement("div");
+                popToastElement.setAttribute('id', 'popToast');
+                popToastElement.setAttribute('class', 'pop_toast');
+                popToastElement.innerHTML = toastDom;
+
+                document.body.appendChild(popToastElement);
+                popDom = document.getElementById("popToast");
+
+                hideTime = setTimeout(function(){
+                    fadeoutToast();
+                },2000);
+
+                popDom.addEventListener("touchstart",function(){
+                    clearTimeout(hideTime);
+                    fadeoutToast();
+                })
+            }
+        }
+        //调用录音接口
+        var yiyaRecord = function(){
+            var option = {};
+            //调录音接口
+            x5.yiyaRecord(option,function(json){
+                if(json.status == 0){
+                    isRecordIng = true;
+                    timeInit();
+                    setTimeout(function(){init()}, 0);
+                }
+            },function (json) {
+                var status = json.status;
+                if(status == 1){
+                    showToast("无网络!");
+                }else if(status == 2){
+                    showToast("微信引擎调用失败!");
+                }else if(status == 3){
+                    showToast("麦克风未启用!");
+                }else{
+                    showToast("录音失败!");
+                }
+            })
+        }
+
+        //中断录音接口
+        var yiyaCloseRecord = function(){
+            var option = {};
+            //调录音接口
+            x5.yiyaCloseRecord(option,function(json){
+                if(json.status == 0){
+                    isRecordIng = false;
+                    cancelRecord();
+                }
+            },function () {})
+        }
+
+        //调用关闭遮罩接口
+        var closeYiyaRecord = function(){
+            var option = {};
+            //调用关闭录音遮罩接口
+            x5.yiyaCloseRecordDialog(option,function(json){
+
+            },function (json) { showToast("录音关闭失败!");})
+        }
+        yiyaRecord();
+
+        //1表示录音开始 2录音完成开始识别3表示识别完成准备切换 4表示音频大小 5表示由于后台识别超市造成录音失败 6表示由于听不清楚造成录音失败7微信引擎失败
+        lisenNative('recordStatusChange',function (value) {
+            var status = value.status;
+            if(status == 1){
+                startRecord();
+            }else if(status == 2){
+                identificationRecord();
+            }else if(status == 5||status == 6||status == 7){
+                recordFail();
+            }else if(status == 4){
+                if(volumeOfSound!=value.text){
+                    volumeOfSound = value.text;
+                    volumeOfSoundChange(volumeOfSound);
+                }
+            }else if(status == 3){
+                endRecord();
+            }
+        });
+
+
+        window.volumeOfSoundChange = function(size){
+            var cell = 0;
+            if(typeof yiya == undefined){//ios 0-30
+                cell = Math.ceil(size/31*100);
+            }else{ //android 0-7
+                cell = Math.ceil(size/8*100);
+            }
+
+            $MicId.querySelector(".sound b").style.height = cell+"%";
+            setTimeout(function(){
+                $MicId.querySelector(".sound b").style.height = "0%";
+            },150)
+        }
+
+        function addBodyEvent(){
+            document.body.addEventListener("touchstart",bodyTouchEvent);
+        }
+
+        function offBodyEvent(){
+            document.body.removeEventListener("touchstart",bodyTouchEvent);
+        }
+
+        function bodyTouchEvent(event){
+            var touchDom = event.srcElement;
+            if(touchDom.className == "box"||touchDom.parentNode.className == "box"||touchDom.parentNode.className == "con"||touchDom.parentNode.parentNode.className == "con"
+                    ||touchDom.className == "con"){
+                if(isRecordIng){
+                    yiyaCloseRecord();
+                }else{
+                    yiyaRecord();
+                }
+            }else{
+                if(touchDom.className == "keyword_wrap"||touchDom.parentNode.className == "keyword_wrap"){
+
+                }else{
+                    closeYiyaRecord();
+                }
+            }
+        }
+        //重置统计时间
+        function timeInit(){
+            localStorage.loadFirstTime = (new Date()).getTime();
+            localStorage.startRecordTime = 0;
+            localStorage.identificationRecordTime = 0;
+            localStorage.endRecordTime = 0;
+        }
+        //写入tips内容 并动画展示
+        function createTipDom(){
+            var localVTips = localStorage.vTip;
+            if(localVTips !="undefined"&&localVTips !=undefined){
+                var  vTips= JSON.parse(localVTips);
+            }else{
+                var  vTips= [ "试试“我要看武媚娘传奇”", "试试“我要看奔跑吧兄弟”", "试试“小说吞噬星空”", "试试“下载天天酷跑”", "试试“我要听邓紫棋的歌”",
+                    "试试“电视剧何以笙箫默”", "试试“双色球开奖结果”", "试试“附近的美食”", "试试“大盘走势如何”", "试试“打开淘宝网”", "试试“给我讲个笑话”"
+                    , "试试“明天从成都到武汉的火车”", "试试“我要看电影”", "试试“射手座今天的运势”" ];
+            }
+            var tipIndex = 0;
+            var tipsTotleNumb = vTips.length;
+            if(tipsTotleNumb>7){ //保护防止后台数据异常造成页面异常
+                var localTipIndex = localStorage.tipIndex;
+                if(localTipIndex == undefined||localTipIndex<0||localTipIndex>=tipsTotleNumb){
+                    tipIndex = 0
+                }else{
+                    tipIndex = parseInt(localTipIndex,10) + 7;
+                    if(tipIndex>=tipsTotleNumb){
+                        tipIndex  = tipIndex-tipsTotleNumb;
+                    }
+                }
+                localStorage.tipIndex = tipIndex;
+                var hotwordHtml = "";
+                for(var i=0;i<7;i++){
+                    if(tipIndex+i>=tipsTotleNumb){
+                        hotwordHtml+='<i class="txt right">'+getHotWord(vTips[tipIndex+i-tipsTotleNumb])+'</i>';
+                    }else{
+                        hotwordHtml+='<i class="txt right">'+getHotWord(vTips[tipIndex+i])+'</i>';
+                    }
+                }
+                document.getElementById("keyword").innerHTML = hotwordHtml;
+            }
+        }
+
+        function getHotWord(word){
+            return word.substr(3,word.length-4);
+        }
+
+        function hotwordAnimation(intervalTime){
+            createTipDom();
+            for(var i=0;i<7;i++){
+                (function(j){
+                    //右侧淡进
+                    window.setTimeout(function(){
+                        document.getElementById("keyword").querySelectorAll(".txt")[j].className="txt";
+                        if(j==6){
+                            console.log("淡进");
+                        }
+                    }, 100 * j);
+                })(i);
+            }
+
+            for(var i=0;i<7;i++){
+                (function(j){
+                    //左侧淡出
+                    window.setTimeout(function(){
+                        document.getElementById("keyword").querySelectorAll(".txt")[j].className="txt left";
+                    }, intervalTime-100 * (j+2));
+                })(i);
+            }
+        }
+
+        function createTipsDomAndAnimation(){
+            var intervalTime = 10000;
+            hotwordAnimation(intervalTime);
+            window.setInterval(function(){console.log("再次开始动画！");hotwordAnimation(intervalTime)}, intervalTime);
+        }
+
+        //从后台获取动态热词
+        function getVtipsFromBack(){
+            var isFirstOpen = localStorage.isFirstOpen;
+            if(isFirstOpen==undefined||isFirstOpen == "true"){
+                x5.yiyaGetStatus({},function(statusData){
+                    var msg = statusData;
+                    var jsonData = {
+                        cmd : 11,
+                        data : JSON.stringify({
+                            sGUID : msg.vcGUID,
+                            iVersion : msg.iVersion,
+                            iSessionStatus : 2,
+                            sParam : "",
+                            sQUA : msg.sQUA,
+                            sIMEI : msg.sIMEI,
+                            sPkgName : msg.sPkgName,
+                            sOtherGUID : '',
+                            stTermReq :{
+                                iScene:0,
+                                iCmd:0,
+                                sParam:""
+                            }
+                        })
+                    }
+                    //获取动态热词
+                    var ajaxOption = {
+                        type: 'post',//ajax method
+                        url: "/ajax?time="+(new Date()).getTime(),//ajax 请求地址
+                        data: JSON.stringify(jsonData),//发送数据
+                        dataType: 'json',//数据格式，支持text,json
+                        timeout: 60,//超时时间,单位是毫秒，0代表永不超时
+                        success: function(data){
+                            if(data.vcContent != undefined&&JSON.parse(data.vcContent).vTip.length>0){
+                                localStorage.vTip = JSON.stringify(JSON.parse(data.vcContent).vTip);
+                            }else{
+
+                            }
+                        },//数据成功返回后的回调方法
+                        error: function(data){
+//                            alert("ajax error失败！"+data);
+                        }//数据错误的回调方法
+                    }
+                    ajax(ajaxOption);
+                },function(){
+//                    alert("调用getstatus代码失败！");
+                });
+            }
+            localStorage.isFirstOpen = true;
+        }
+        //ajax公用方法
+        function ajax(options){
+            var defaultOptions = {
+                type: 'get',//ajax method
+                url: false,//ajax 请求地址
+                data: null,//发送数据
+                dataType: 'json',//数据格式，支持text,json
+                timeout: 0,//超时时间,单位是毫秒，0代表永不超时
+                success: false,//数据成功返回后的回调方法
+                error: false//数据错误的回调方法
+            };
+
+            //默认值
+            for (var i in defaultOptions) {
+                if (options[i]===undefined) {
+                    options[i] = defaultOptions[i];
+                }
+            }
+
+
+            function onStateChange(a) {
+                if(xhr.readyState == 4)
+                {
+                    if(timeout > 0)
+                        clearTimeout(abortTimeout);
+                    var result, error = false;
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                        var dataType = options.dataType;
+                        result = xhr.responseText;
+                        try{
+                            if(dataType=="json")
+                            {
+                                if(window.JSON)
+                                {
+                                    result = JSON.parse(result);
+                                }
+                                else
+                                {
+                                    result = eval('(' + result + ')');
+                                }
+                            }
+                        }
+                        catch(ex)
+                        {
+                            error = ex;
+                        }
+
+                        if (error)
+                            options.error("json解析失败！");
+                        else
+                            options.success(result);
+
+                    }
+                    else
+                    {
+                        //服务器返回状态码不对
+                        options.error("服务器返回状态码不对！");
+                    }
+                }
+            }
+
+            var xhr =xhr|| new XMLHttpRequest();
+            var timeout = options.timeout;
+            var url = options.url;
+
+            xhr.open(options.type, url);
+            xhr.onreadystatechange = onStateChange;
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(options.data ? options.data : null);
+
+            var abortTimeout;
+            if (timeout > 0)
+            {
+                abortTimeout = setTimeout(function () {
+                    xhr.onreadystatechange = function(){};
+                    xhr.abort();
+                    options.error("网络超时！");
+                }, timeout*1000);
+            }
+        }
+    };
+    </script>
+</html>

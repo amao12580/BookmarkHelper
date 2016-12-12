@@ -8,6 +8,10 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_360.png"
     },
     {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_qqwithoneplus.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_qqwithoneplus.png"
+    },
+    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ic_uc.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-hdpi\\ic_uc.png"
     },

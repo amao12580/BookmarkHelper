@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config model = "xiaomi">
+    <rom
+		model = "MI4"
+		rom_version = "KTU84" 
+		anim_show_direction = "2"
+		cover_enter_time = "1000"
+		max_page_capacity = "9"
+		icon_display_type = "4"
+		icon_width = "300"
+		icon_height = "265"
+		icon_left_padding = "0"
+		icon_top_padding = "0"
+		icon_right_padding = "0"
+		icon_bottom_padding = "70"
+		button_width = "680"
+		button_height = "95"
+		button_left_padding = "0"
+		button_top_padding = "0"
+		button_right_padding = "0"
+		button_bottom_padding = "130">
+	</rom>
+	<rom
+		model = "MI3"
+		rom_version = "KTU84" 
+		anim_show_direction = "2"
+		cover_enter_time = "1000"
+		max_page_capacity = "9"
+		icon_display_type = "4"
+		icon_width = "300"
+		icon_height = "265"
+		icon_left_padding = "0"
+		icon_top_padding = "0"
+		icon_right_padding = "0"
+		icon_bottom_padding = "70"
+		button_width = "680"
+		button_height = "95"
+		button_left_padding = "0"
+		button_top_padding = "0"
+		button_right_padding = "0"
+		button_bottom_padding = "130">
+	</rom>
+
+	<rom
+		model = "MI2"
+		rom_version = "JRO03" 
+		anim_show_direction = "2"
+		cover_enter_time = "1000"
+		max_page_capacity = "9"
+		icon_display_type = "4"
+		icon_width = "190"
+		icon_height = "196"
+		icon_left_padding = "0"
+		icon_top_padding = "0"
+		icon_right_padding = "0"
+		icon_bottom_padding = "40"
+		button_width = "496"
+		button_height = "65"
+		button_left_padding = "0"
+		button_top_padding = "0"
+		button_right_padding = "0"
+		button_bottom_padding = "260">
+	</rom>
+
+	<rom
+		model = "HMNOTE1"
+		rom_version = "JH3CN0" 
+		anim_show_direction = "2"
+		cover_enter_time = "1000"
+		max_page_capacity = "9"
+		icon_display_type = "4"
+		icon_width = "233"
+		icon_height = "213"
+		icon_left_padding = "0"
+		icon_top_padding = "0"
+		icon_right_padding = "0"
+		icon_bottom_padding = "40"
+		button_width = "496"
+		button_height = "65"
+		button_left_padding = "0"
+		button_top_padding = "0"
+		button_right_padding = "0"
+		button_bottom_padding = "260">
+	</rom>
+	
+	<rom
+		model = "GT-I9300"
+		rom_version = "JRO03" 
+		anim_show_direction = "2"
+		cover_enter_time = "1000"
+		max_page_capacity = "9"
+		icon_display_type = "4"
+		icon_width = "240"
+		icon_height = "240"
+		icon_left_padding = "0"
+		icon_top_padding = "0"
+		icon_right_padding = "0"
+		icon_bottom_padding = "0"
+		button_width = "680"
+		button_height = "95"
+		button_left_padding = "0"
+		button_top_padding = "0"
+		button_right_padding = "240"
+		button_bottom_padding = "250">
+	</rom>
+</config>

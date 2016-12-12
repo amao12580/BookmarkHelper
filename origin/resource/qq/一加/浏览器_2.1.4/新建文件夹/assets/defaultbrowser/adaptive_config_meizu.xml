@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 资源文件，resource的 name为机型名字Build.model ， dao的name值为机型对应名字的实现类
+-->
+
+<!-- 魅族M351 -->
+<config model = "meizu">
+	<rom
+		model = "MX4"
+		rom_version = "Flyme OS 4"
+		anim_show_direction = "2"
+		cover_enter_time = "500"
+		max_page_capacity = "9"
+		icon_display_type = "5"
+		icon_width = "229"
+		icon_height = "283"
+		icon_left_padding = "118"
+		icon_top_padding = "0"
+		icon_right_padding = "0"
+		icon_bottom_padding = "0"
+		button_width = "657"
+		button_height = "167"
+		button_left_padding = "118"
+		button_top_padding = "-91"
+		button_right_padding = "0"
+		button_bottom_padding = "0">
+	</rom>
+	
+</config>
+

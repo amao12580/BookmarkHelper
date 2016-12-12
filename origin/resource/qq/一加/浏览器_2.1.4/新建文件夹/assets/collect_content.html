@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html style="height:100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>手机微云收藏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content="微云收藏" />
+    <meta name="description" content="微云收藏" />
+    <style type="text/css">
+        /*reset*/
+        body,div,p,ul,li,table,tbody,tr,td,textarea,form,input,h1,h2,h3,h4,h5,dl,dt,dd,img,iframe,header,nav,section,article,footer,figure,figcaption,menu{margin:0;padding:0;font-size:14px;color:#222; list-style:none;}
+        body{font-family:"DroidSansFallback","microsoft yahei",Helvetica;-webkit-user-select:none;-webkit-text-size-adjust:none;line-height:24px;}
+        a{text-decoration:none;color:#0b63b4;}
+        header,nav,section,article,footer,figure,figcaption{display:block;}
+        ol,ul{margin:0;padding:0;}
+        fieldset{border:none;margin:0;padding:0;}
+        /*page start*/
+        .main-content {
+            margin: 0 25px;
+            padding: 25px 0 0;
+        }
+        .art-title{
+            font-size:<%title_fontsize%>px;
+            line-height:31px;
+            color:#1e1e1e;
+            word-wrap:break-word;
+            word-break: normal;
+            font-weight: normal;
+        }
+        .art-pub{
+            font-size:<%pub_fontsize%>px;
+        }
+		 .art-info{
+            font-size:12px;
+            color:#8d8d8d;
+            line-height:14px;
+            position:relative;
+            margin: 14px 0 0;
+        }
+        .art-content{
+            padding:15px 0 0;
+            text-align:justify;
+        }
+        .art-content p{
+            line-height:27px;
+            color:#1e1e1e;
+            margin-bottom: 17px;
+            font-size: <%pra_fontsize%>px;
+            word-wrap:break-word;
+        }
+        .art-content p.sub-title{
+            font-weight: bold;
+            font-size: <%pra_fontsize%>px;
+        }
+        .art-content .news-img{
+            text-align:center;
+            width:100%;
+            overflow:hidden;
+            line-height: 0.9;
+        }
+        .art-content .news-img{
+            max-width:100%;
+        }
+        .art-content .news-video{
+            text-align:center;
+        }
+        .default-video, .news-img > span{
+            background:url(data:image/png;base64,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) center no-repeat #f3f3f3;
+            background-size:46px 46px;
+        }
+        .default-video{
+            width:280px;
+            height:200px;
+            margin:0 auto;
+        }
+        .news-img > span {
+            display:inline-block;
+            min-height:60px;
+            min-width:60px;
+            border:none;
+            outline:none;
+            line-height: 0.8;
+        }
+        .news-img img{
+            max-width: 100%;
+        }
+        .end{
+            padding: 16px 0 20px 0;
+        }
+         .btn-website{
+            color: #8d8d8d;
+			<%link_switch%>
+             font-size: 12px;
+         }
+        .btn-website::before{
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: url("data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/7gAOQWRvYmUAZMAAAAAB/9sAhAAGBAQEBQQGBQUGCQYFBgkLCAYGCAsMCgoLCgoMEAwMDAwMDBAMDg8QDw4MExMUFBMTHBsbGxwfHx8fHx8fHx8fAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAASABIDAREAAhEBAxEB/8QAcQAAAQUAAAAAAAAAAAAAAAAABwIDBAUGAQEAAAAAAAAAAAAAAAAAAAAAEAAABAMFAgoLAAAAAAAAAAABAgMFAAQGESExEjI0NvBBUWFxgSIzQ1NCUmJyE4NUlBUWBxEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AMlAsNNlpyTqtxJlcSCuuu4KLKhYJVjktEM2UeyFmF8APn8hKif3Ccp5uUCUIArKlIAjcGpUS+jmG/KEBtfjr+YbcnPiOv1unngIzbLsbz/N21omH2XbJpBVVQ6aqqYeMoIAomYxBwNaEBpZFwo2lqZmUmdykV5pFBRULV0jHXXKQRLmApsw2muAAgFftq30CO7v5fAdXke5AUzjt8xuZ3htp77HxPa5YBguoNx8eLHqgCP8Ab7Pw+VAf/9k=") no-repeat;
+            -webkit-background-size: 12px auto;
+            vertical-align: -2px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body style="opacity:0;">
+  <div class="wrap">
+        <article class="main-content">
+            <h3 class="art-title"> <%title%></h3>
+            <div class="art-info">
+                <span class="art-pub"><%fromsite%><%addtime%></span>
+            </div>
+            <section class="art-content"></section>
+        <div class="end">
+            <a class="btn-website" href=<%url%>>查看原网页</a>
+        </div>
+        </article>
+    </div>
+</body>
+<script type="text/javascript" src="http://res.imtt.qq.com/favplus/js/zepto.min.js"></script>
+<script type="text/javascript">
+
+    (function ($) {
+        $.getScript = function(src, func) {
+            var script = document.createElement('script');
+            script.async = "async";
+            script.charset = "utf-8";
+            script.src = src;
+            if (func) {
+               script.onload = func;
+            }
+            document.getElementsByTagName("head")[0].appendChild( script );
+        }
+    })($);
+
+    var videoUtil = {
+
+        _loadVideoScript: function(onload) {
+            if(window.tvp && window.tvp.VideoInfo) {
+                onload && onload.call(null, null, {});
+            } else {
+                $.getScript("http://qzs.qq.com/tencentvideo_v1/js/tvp/tvp.player_lite.js", function(event) {
+                    onload && onload.call(null, event);
+                });
+            }
+        },
+
+        _videoPlayers: {},
+
+        _writeVideo: function(vid) {
+            if(window.tvp && window.tvp.VideoInfo) {
+                var video = new window.tvp.VideoInfo();
+                video.setVid(vid);
+                
+                var player = new window.tvp.Player(window.innerWidth - 40, 200);
+                player.isUseHLS = function() {return true;};
+                player.setCurVideo(video);
+                player.addParam("autoplay", 0);
+              
+                player.write(vid);
+
+                this._videoPlayers[vid] = player;
+            }
+        },
+
+     
+        pauseVideo: function(vids) {
+            var players = this._videoPlayers, index;
+            if(vids) {
+                vids.length && (vids = (vids.length == 1 ? [vids] : vids));
+            }
+
+            if(vids) {
+                for(index in vids) {
+                    if(players[vids[index]]) {
+                        players[vids[index]].pause();
+                    }
+                }
+            } else {
+                for (index in players) {
+                    players[index].pause();
+                };
+            }
+        },
+
+        loadVideo: function() {
+            var view = this,            
+                videos = $(".art-content .news-video");
+            videos.length && view._loadVideoScript(function(event) {
+                videos.each(function() {
+                    var vid = $(this).attr('id');
+                    view._writeVideo(vid);
+                    $(this).show();
+                });
+            });
+        }
+    };
+    
+    function x5ReadChangeFontSize(px){
+        var pElems = $('.art-content p'),
+            len = pElems.length,
+            artTitle = $('.art-title'),
+            artPub = $('.art-pub');
+        for(var i=0; i < len; i ++){
+            pElems.eq(i).css('font-size', px + 'px');
+        }
+       
+            artTitle && (artTitle.get(0).style.fontSize = (px*3/2) + 'px');
+            artPub && (artPub.css('font-size', (px*3/4) + 'px'));
+        
+    }
+    function showContent(content){ 
+        $('.art-content').html(content);
+        videoUtil.loadVideo();
+    }
+
+    function beautifyTitle($dom){
+        var $inline = document.createElement('span');
+        $inline.innerHTML = $dom.innerHTML;
+        $dom.innerHTML = '';
+        $dom.appendChild($inline);
+
+        var baserect = $inline.getBoundingClientRect(),
+            rects = $inline.getClientRects(),
+            lastrect = rects[rects.length-1];
+
+        if (rects.length>=2 && baserect.width>lastrect.width*2){
+            var fontsize = window.getComputedStyle($dom, null).getPropertyValue('font-size');
+            fontsize = parseInt(fontsize) || 0;
+            $dom.style.width = '-webkit-calc(100% - '+2*fontsize+'px)';
+        }
+    }
+    /*beautifyTitle(document.querySelector('.art-title'));*/
+    document.body.style.opacity = '1';
+</script>
+</html>

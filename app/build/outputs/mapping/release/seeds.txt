@@ -30215,6 +30215,7 @@ pro.kisscat.www.bookmarkhelper.R$drawable: int ic_miui
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_oupeng
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_qiyu
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_qq
+pro.kisscat.www.bookmarkhelper.R$drawable: int ic_qqwithoneplus
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_sougou
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_uc
 pro.kisscat.www.bookmarkhelper.R$drawable: int ic_ucintl
@@ -30548,6 +30549,7 @@ pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_miui
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_oupeng
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_qiyu
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_qq
+pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_qqwithoneplus
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_sougou
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_uc
 pro.kisscat.www.bookmarkhelper.R$string: int browser_name_show_ucintl

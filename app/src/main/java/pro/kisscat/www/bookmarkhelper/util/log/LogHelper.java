@@ -1,7 +1,5 @@
 package pro.kisscat.www.bookmarkhelper.util.log;
 
-import android.util.Log;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -31,9 +29,6 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
  */
 
 public class LogHelper {
-    private static boolean MYLOG_SWITCH = true; // 日志文件总开关
-    private static boolean MYLOG_WRITE_TO_FILE = true;// 日志写入文件开关
-    private static char MYLOG_TYPE = 'v';// 输入日志类型，w代表只输出告警信息等，v代表输出所有信息
     private static String LOG_DIR = Path.SDCARD_APP_ROOTPATH + Path.SDCARD_LOG_ROOTPATH;// 日志聚集的目录名
     private static String MYLOG_PATH_SDCARD_DIR = null;// 日志文件在sdcard中的路径
     private static int SDCARD_LOG_FILE_SAVE_DAYS = 30;// sd卡中日志文件的最多保存天数
@@ -124,41 +119,26 @@ public class LogHelper {
     }
 
     public static void v(String tag, String text, boolean trim) {
-        if (!BuildConfig.DEBUG) {
-            if (text == null || text.isEmpty()) {
-                return;
-            }
-            if (trim && text.length() > 1024) {
-                text = text.substring(0, 1024);
-                text += "...";
-            }
+        if (text == null || text.isEmpty()) {
+            return;
+        }
+        if (!BuildConfig.DEBUG && trim && text.length() > 1024) {
+            text = text.substring(0, 1024);
+            text += "...";
         }
         if (BuildConfig.DEBUG) {
-            System.out.println(tag + "    " + text);
+            System.out.println("v    " + tag + "    " + text);
         } else {
-            log(tag, text, 'v');
+//            log(tag, text, 'v');
         }
+        log(tag, text, 'v');
     }
 
     /**
      * 根据tag, msg和等级，输出日志
      */
     private static void log(String tag, String msg, char level) {
-        if (MYLOG_SWITCH) {
-            if ('e' == level && ('e' == MYLOG_TYPE || 'v' == MYLOG_TYPE)) { // 输出错误信息
-                Log.e(tag, msg);
-            } else if ('w' == level && ('w' == MYLOG_TYPE || 'v' == MYLOG_TYPE)) {
-                Log.w(tag, msg);
-            } else if ('d' == level && ('d' == MYLOG_TYPE || 'v' == MYLOG_TYPE)) {
-                Log.d(tag, msg);
-            } else if ('i' == level && ('d' == MYLOG_TYPE || 'v' == MYLOG_TYPE)) {
-                Log.i(tag, msg);
-            } else {
-                Log.v(tag, msg);
-            }
-            if (MYLOG_WRITE_TO_FILE)
-                recordLogToQueue(String.valueOf(level), tag, msg);
-        }
+        recordLogToQueue(String.valueOf(level), tag, msg);
     }
 
     public static void write() {

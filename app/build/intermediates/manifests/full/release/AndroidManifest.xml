@@ -2,8 +2,8 @@
 <!-- manifest文件详解：http://www.cnblogs.com/pilang/archive/2011/04/20/2022932.html -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pro.kisscat.www.bookmarkhelper"
-    android:versionCode="146"
-    android:versionName="0.0.21" >
+    android:versionCode="148"
+    android:versionName="0.0.22" >
 
     <uses-sdk
         android:minSdkVersion="16"

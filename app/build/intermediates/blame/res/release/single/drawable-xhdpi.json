@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\ic_qqwithoneplus.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xhdpi\\ic_qqwithoneplus.png"
+    },
+    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\ic_chrome_canary.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xhdpi\\ic_chrome_canary.png"
     },

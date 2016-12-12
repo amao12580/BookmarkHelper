@@ -36,6 +36,10 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-mdpi\\ic_oupeng.png"
     },
     {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_qqwithoneplus.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-mdpi\\ic_qqwithoneplus.png"
+    },
+    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_xingchen_tablet.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-mdpi\\ic_xingchen_tablet.png"
     },

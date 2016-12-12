@@ -1,0 +1,30 @@
+body {
+background-color: #181923;
+}
+section {
+background-color: #1d1e2a;
+}
+.title h2{
+color: #1d4776;
+}
+.title img,.video-info a img{
+	opacity: 0.4;
+}
+.title-nav li.current, .title-nav li.current a {
+color: #215fa2;
+}
+.title-nav li{
+	color: #365d7b;
+}
+.more{
+	color: #363943;
+}
+.title .content{
+	border-bottom: 1px solid #2c2b3b;
+}
+.pic-item-list01 ul li{
+	opacity: 0.4;
+}
+.video-info.active,.link-list li.active,.more.active{
+    background-color: #363943;
+}

@@ -1,0 +1,69 @@
+body {
+    background: rgba(255, 255, 255, .098);
+}
+
+.active, .btn-operation ul li a.active, .btn-operation ul li.active, .title-wrap.active,.classify-item-list ul li.active,
+.item-list ul li.active, .mod-icon-and-list > li a.active, .news-item-list li.active a,
+.mod-weather .location > span.active, .mod-weather .top-section.active, .mod-weather .week-weather.active,
+.mod-zodiac .zodiac-detail .zodiac-txt.active, .mod-zodiac .my-luck.active,
+.game-news-list li.active, .game-time-table .game-content > div.active, .game-time-table .game-time-title,
+.mod-icon-and-txt ul li.active, .mod-hot-tags ul li.active, .mod-site-nav ul li.active,
+.real-hot div.active, .classify-item-list li a, .shopping-links > .title-wrap{
+    background-color: rgba(255,255,255,.15) !important;
+}
+.figure-and-txt::after{
+    border-color: rgba(255,255,255,.15) !important;
+}
+.btn-operation ul li a, .btn-operation ul li a:visited{
+    color: #fff;
+}
+p,a, a:visited, .classify-item-list li a, .update-now span, .news-item-list li a,
+.mod-card-nba .game-vs-list li .left-team, .mod-card-nba .game-vs-list li .right-team,
+.mod-quick-links .links li a{
+    color: #fff !important;
+}
+.game .title:visited, .shopping-links .link:visited, .software .title:visited, .update-now li a:visited,
+.mod-zodiac .my-luck a, .mod-zodiac .my-luck a:visited, .mod-12306helper .buy-date span, .mod-12306helper .title,
+.mod-12306helper .buy-date time > span, .mod-video-list .list li .box .info,
+.game-rank-list .game-detail .game-title, .figure-and-txt .txt > p, .figure-and-txt .txt .source,
+.game-rank-list .game-detail .game-info, .game-rank-list .game-detail .game-summary, .mod-card-joke .index,
+.mod-nba-card .team .team-name, .mod-nba-card .game-info .info,.mod-img-txt .item .item-txt .title,
+.mod-img-txt .item .item-txt .summary, .btn-operation .new-operation .check-more a,
+.mod-app-list ul li,.mod-app-list ul li .app-status, .mod-txt-list ul li,
+.btn-operation .new-operation .change{
+    color: #fff !important;
+}
+.btn-operation ul::before, .mod-weather .week-weather::before, .mod-img-txt::before,
+.real-hot div::before, .real-hot div::after, .mod-card-nba .game-vs-list li::after,
+.mod-wx-list ul li::after,
+.mod-game-rank .game-rank-list li::after,
+.btn-operation .new-operation::before,.figure-and-txt::after,
+.mod-qqfm .mod-app-list > .app-item::after{
+    background-color: rgba(255,255,255,.1) !important;
+}
+.btn-operation ul li:after, .mod-wx-list ul li::after{
+    opacity: .05;
+}
+.mod-weather .week-weather{
+    background: transparent;
+}
+.mod-weather, .mod-weather .week-weather .day-weather, .mod-weather .week-weather .day-weather .degrees-wrap,
+.mod-zodiac .zodiac-detail .zodiac-txt, .news-item-list li .reply-num,
+.game-time-table .game-time-title, .game-news-list li > .txt > h4,.game-news-list li > .txt > p,
+.game-time-table .game-content > div, .mod-icon-and-txt ul li p, .pic-item-list01 li a > span,
+.mod-video-list ul li .video-title, .gods-pic-list ul li .price, .mod-wx-list ul li .title, .real-hot div a,
+.mod-icon-list ul .item, .btn-operation .new-operation > div, .btn-operation .new-operation > div a{
+    color: #fff !important;
+}
+.btn-operation .new-operation .change path,
+.btn-operation .icon-change path{
+    fill: #fff;
+}
+/* 图片占位 */
+.mod-zodiac .zodiac-detail .zodiac-icon,.mod-card-push .card-icon div,
+.game .m-banner .pic-item, .game .s-banner .pic-item, .mod-mutil-banner .m-banner .pic-item,
+.mod-mutil-banner .s-banner .pic-item, .news-img, .pic-item-list01 ul li .img-wrap,
+.game-news-list li > .cover, .mod-assistant .mod-two-banner figure div, .news-img a .pic-item,
+.mod-card-box .card-list .card .card-img,.mod-add-detail .card-screenshot{
+    background-color: rgba(237,238,239, .1);
+}

@@ -1,0 +1,62 @@
+body {
+    background: rgba(255, 255, 255, .4);
+}
+.active, .btn-operation ul li a.active, .btn-operation ul li.active, .title-wrap.active,.classify-item-list ul li.active,
+.item-list ul li.active, .mod-icon-and-list > li a.active, .news-item-list li.active a,
+.mod-weather .location > span.active, .mod-weather .top-section.active, .mod-weather .week-weather.active,
+.mod-zodiac .zodiac-detail .zodiac-txt.active, .mod-zodiac .my-luck.active,
+.game-news-list li.active, .game-time-table .game-content > div.active, .game-time-table .game-time-title,
+.mod-hot-tags ul li.active, .mod-site-nav ul li.active,
+.real-hot div.active{
+    background: rgba(243,243,243, .4);
+}
+
+.btn-operation ul li a, .btn-operation ul li a:visited{
+    color: #272727;
+}
+.btn-operation ul li:after, .mod-wx-list ul li::after{
+    opacity: .05;
+}
+.btn-operation ul li:before, .mod-weather .week-weather::before,
+.real-hot div::before, .real-hot div::after, .mod-wx-list ul li::after,
+.mod-img-txt::before,.btn-recommend ul li::after,.btn-recommend ul::before{
+    opacity: .9;
+}
+p,a, a:visited, .classify-item-list li a, .update-now span, .news-item-list li a,
+.real-hot div a, .mod-quick-links .links li a,.btn-recommend ul li a,
+.mod-new-year .date::after{
+    color: #272727;
+}
+.game .title:visited, .shopping-links .link:visited, .software .title:visited, .update-now li a:visited,
+.mod-zodiac .my-luck a, .mod-zodiac .my-luck a:visited, .mod-wx-list ul li .title,
+.mod-12306helper .buy-date span, .mod-12306helper .title,
+.mod-12306helper .buy-date time > span,
+.game-rank-list .game-detail .game-title, .pic-item-list01 li a > span,
+.game-rank-list .game-detail .game-info, .game-rank-list .game-detail .game-summary,
+.btn-operation .new-operation > div, .btn-operation .new-operation > div a,
+.mod-img-txt .item .item-txt .title, .mod-img-txt .item .item-txt .summary,
+.mod-nba-card .team .team-name{
+    color: #272727;
+}
+.mod-weather .week-weather{
+    background: transparent;
+}
+.mod-weather, .mod-weather .week-weather .day-weather, .mod-weather .week-weather .day-weather .degrees-wrap,
+.game-time-table .game-time-title, .game-news-list li > .txt > h4,.game-news-list li > .txt > p,
+.game-time-table .game-content > div, .mod-icon-and-txt ul li p, .mod-icon-list ul .item,
+.mod-video-list .list li .box .info{
+    color: #272727;
+}
+
+.classify-item-list li a {
+    background-color: rgba(243, 243, 243, .5);
+}
+/* 图片占位 */
+.mod-zodiac .zodiac-detail .zodiac-icon,.mod-card-push .card-icon div,
+.game .m-banner .pic-item, .game .s-banner .pic-item, .mod-mutil-banner .m-banner .pic-item,
+.mod-mutil-banner .s-banner .pic-item, .news-img, .pic-item-list01 ul li .img-wrap,
+.game-news-list li > .cover, .mod-two-banner figure div, .news-img a .pic-item,
+.mod-card-box .card-list .card .card-img,.mod-add-detail .card-screenshot
+{
+    background-color: rgba(237,238,239, .8);
+}

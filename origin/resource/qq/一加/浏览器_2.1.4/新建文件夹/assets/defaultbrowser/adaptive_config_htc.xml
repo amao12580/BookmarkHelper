@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 资源文件，resource的 name为机型名字Build.model ， dao的name值为机型对应名字的实现类
+-->
+
+<!-- HTCD820us -->
+<config model = "HTCD820us">
+
+	<rom
+		model = "HTCM8"
+		rom_version = "KOT49H"
+		anim_show_direction = "1"
+		cover_enter_time = "500"
+		max_page_capacity = "6"
+		icon_display_type = "3"
+		icon_width = "550"
+		icon_height = "145"
+		icon_left_padding = "-191"
+		icon_top_padding = "0"
+		icon_right_padding = "-85"
+		icon_bottom_padding = "10"
+		button_width = "466"
+		button_height = "145"
+		button_left_padding = "-191"
+		button_top_padding = "0"
+		button_right_padding = "0"
+		button_bottom_padding = "10">
+	</rom>
+	
+	<rom
+		model = "HTCONE"
+		rom_version = "KTU84L"
+		anim_show_direction = "1"
+		cover_enter_time = "500"
+		max_page_capacity = "6"
+		icon_display_type = "3"
+		icon_width = "550"
+		icon_height = "145"
+		icon_left_padding = "-191"
+		icon_top_padding = "0"
+		icon_right_padding = "-85"
+		icon_bottom_padding = "10"
+		button_width = "466"
+		button_height = "145"
+		button_left_padding = "-191"
+		button_top_padding = "0"
+		button_right_padding = "0"
+		button_bottom_padding = "10">
+	</rom>
+	
+</config>

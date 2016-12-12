@@ -56,12 +56,12 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_ucintl.png"
     },
     {
-        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi\\ic_miui.png",
-        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_miui.png"
-    },
-    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi\\ic_chrome_beta.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_chrome_beta.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi\\ic_miui.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_miui.png"
     },
     {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi\\ic_chrome_dev.png",
@@ -90,6 +90,10 @@
     {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi\\ic_xingchen_phone.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_xingchen_phone.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi\\ic_qqwithoneplus.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_qqwithoneplus.png"
     },
     {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi\\ic_donate.png",
