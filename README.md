@@ -269,7 +269,7 @@ com.oupeng.mini.classic
 
 可能是sqlite3
 
-2.导入为文件
+2.从文件导入
 
 
 
