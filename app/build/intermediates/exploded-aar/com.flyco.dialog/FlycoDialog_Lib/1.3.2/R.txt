@@ -1,0 +1,4 @@
+int id ll_content 0x7f030000
+int id triangle_view 0x7f030001
+int layout popup_base 0x7f020000
+int layout popup_bubble 0x7f020001
