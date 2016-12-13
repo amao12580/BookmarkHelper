@@ -31,6 +31,8 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.uc.impl.UCInternati
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XWithGooglePlayBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XWithMaskBrowser;
+import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XWithProBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 
@@ -56,20 +58,31 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeCanaryBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeBetaBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new ChromeDevBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Browser(), viaBrowserAble));
+
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new UCInternationalBrowser(), viaBrowserAble));
+
             supportRule.add(new Rule(supportRule.size() + 1, context, new QQBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new QQWithOnePlusBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new FirefoxBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new OupengBrowser(), viaBrowserAble));
+
             supportRule.add(new Rule(supportRule.size() + 1, context, new XBrowser(), viaBrowserAble));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new XWithMaskBrowser(), viaBrowserAble));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new XWithProBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new XWithGooglePlayBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Browser(), viaBrowserAble));
+
             supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Browser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360FastestBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new SogouBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new BaiduBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new OupengBrowser(), viaBrowserAble));
+
             supportRule.add(new Rule(supportRule.size() + 1, context, new LiebaoBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new FirefoxBrowser(), viaBrowserAble));
+
             supportRule.add(new Rule(supportRule.size() + 1, context, new MiuiBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new YandexBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new QiyuBrowser(), viaBrowserAble));

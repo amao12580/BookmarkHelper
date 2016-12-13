@@ -14,6 +14,8 @@
     <string name="browser_name_show_360_fastest">360 fastest Browser</string>
     <string name="browser_name_show_x">X Browser</string>
     <string name="browser_name_show_x_gp">X Browser(Google Play)</string>
+    <string name="browser_name_show_x_mask">X Browser</string>
+    <string name="browser_name_show_x_pro">X Browser(Pro)</string>
     <string name="browser_name_show_h5">H5 Browser</string>
     <string name="browser_name_show_qiyu">Qiyu Browser</string>
     <string name="browser_name_show_firefox">Firefox Browser</string>

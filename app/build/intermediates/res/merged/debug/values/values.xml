@@ -614,6 +614,8 @@
     <string name="browser_name_show_via">Via Browser</string>
     <string name="browser_name_show_x">X Browser</string>
     <string name="browser_name_show_x_gp">X Browser(Google Play)</string>
+    <string name="browser_name_show_x_mask">X Browser</string>
+    <string name="browser_name_show_x_pro">X Browser(Pro)</string>
     <string name="browser_name_show_xingchen_phone">Xingchen phone Browser</string>
     <string name="browser_name_show_xingchen_tablet">Xingchen tablet Browser</string>
     <string name="browser_name_show_yandex">Yandex Browser</string>

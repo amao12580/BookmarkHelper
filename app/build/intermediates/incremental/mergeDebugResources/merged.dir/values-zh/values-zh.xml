@@ -32,7 +32,9 @@
     <string name="browser_name_show_ucintl">UC国际版</string>
     <string name="browser_name_show_via">Via浏览器</string>
     <string name="browser_name_show_x">X浏览器</string>
-    <string name="browser_name_show_x_gp">X浏览器(GooglePlay)</string>
+    <string name="browser_name_show_x_gp">X浏览器-GP</string>
+    <string name="browser_name_show_x_mask">X浏览器</string>
+    <string name="browser_name_show_x_pro">X浏览器-Pro</string>
     <string name="browser_name_show_xingchen_phone">星尘手机版</string>
     <string name="browser_name_show_xingchen_tablet">星尘平板版</string>
     <string name="browser_name_show_yandex">Yandex浏览器</string>
