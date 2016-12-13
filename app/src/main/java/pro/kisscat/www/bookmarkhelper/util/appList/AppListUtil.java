@@ -36,26 +36,28 @@ public class AppListUtil {
     }
 
     public static void reInit(Context context) {
-        LogHelper.v("AppListUtil reInit");
+        LogHelper.v("AppListUtil reInit begining.");
         installedAllApp = null;
         init(context);
+        LogHelper.v("AppListUtil reInit completed.");
     }
 
     public static void init(Context context) {
-        LogHelper.v("AppListUtil init");
+        LogHelper.v("AppListUtil init begining.");
         String globalMsg = context.getResources().getString(R.string.notPermissionForReadInstalledAppList);
         if (installedAllApp != null) {
+            LogHelper.v("AppListUtil init is not necessary.");
             return;
         }
         installedAllApp = new TreeMap<>();
         PackageManager packageManager = context.getPackageManager();
         if (packageManager == null) {
-            LogHelper.v("context.getPackageManager is null.");
+            LogHelper.v("AppListUtil init failure,context.getPackageManager is null.");
             throw new InitException(globalMsg);
         }
         List<PackageInfo> packages = packageManager.getInstalledPackages(0);
         if (packages == null || packages.isEmpty()) {
-            LogHelper.v("packageManager.getInstalledPackages(0) is null or empty.");
+            LogHelper.v("AppListUtil init failure,packageManager.getInstalledPackages(0) is null or empty.");
             throw new InitException(globalMsg);
         }
         String mePackageName = context.getPackageName();
@@ -84,6 +86,7 @@ public class AppListUtil {
             LogHelper.e("AppListUtil init failure,installedAllApp is null.");
             throw new InitException("无法获取应用列表，请确认权限.");
         }
+        LogHelper.v("AppListUtil init success.");
     }
 
     public static boolean isInstalled(Context context, String packageName) {

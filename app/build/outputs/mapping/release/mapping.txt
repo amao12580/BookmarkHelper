@@ -35486,12 +35486,12 @@ pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil -> pro.kisscat.www.bookm
     java.lang.String thisAppInfo -> a
     java.lang.String thisAppPackageName -> b
     32:35:java.util.Map getInstalledAllApp(android.content.Context) -> c
-    39:42:void reInit(android.content.Context) -> a
-    45:87:void init(android.content.Context) -> b
-    90:90:boolean isInstalled(android.content.Context,java.lang.String) -> a
-    101:104:java.lang.String getAppName(android.content.Context,java.lang.String) -> b
-    108:111:pro.kisscat.www.bookmarkhelper.converter.support.pojo.App getAppInfo(android.content.Context,java.lang.String) -> c
-    115:118:pro.kisscat.www.bookmarkhelper.converter.support.pojo.App getAppInfo(java.lang.String) -> a
+    39:43:void reInit(android.content.Context) -> a
+    46:90:void init(android.content.Context) -> b
+    93:93:boolean isInstalled(android.content.Context,java.lang.String) -> a
+    104:107:java.lang.String getAppName(android.content.Context,java.lang.String) -> b
+    111:114:pro.kisscat.www.bookmarkhelper.converter.support.pojo.App getAppInfo(android.content.Context,java.lang.String) -> c
+    118:121:pro.kisscat.www.bookmarkhelper.converter.support.pojo.App getAppInfo(java.lang.String) -> a
 pro.kisscat.www.bookmarkhelper.util.clipboard.ClipboardUtil -> pro.kisscat.www.bookmarkhelper.util.b.a:
     18:20:void replace(android.content.Context,java.lang.String) -> a
 pro.kisscat.www.bookmarkhelper.util.command.CommandUtil -> pro.kisscat.www.bookmarkhelper.util.command.a:
