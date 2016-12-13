@@ -200,7 +200,6 @@ BookmarkHelper APP目前仅在[酷安网上架](http://www.coolapk.com/apk/pro.k
 #### 0.0.23版 Draft
 1.增加兼容：支持从[X浏览器-pro](https://play.google.com/store/apps/details?id=com.mmbox.xbrowser.pro)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-com.mmbox.xbrowser
 
 com.mmbox.xbrowser.gp
 
