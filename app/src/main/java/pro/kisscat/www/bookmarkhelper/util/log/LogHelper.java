@@ -42,6 +42,10 @@ public class LogHelper {
         v(MetaData.LOG_V_DEFAULT, msg);
     }
 
+    public static void w(Object msg) { // 警告信息
+        log(MetaData.LOG_W_DEFAULT, msg.toString(), 'w');
+    }
+
     public static void w(String tag, Object msg) { // 警告信息
         log(tag, msg.toString(), 'w');
     }

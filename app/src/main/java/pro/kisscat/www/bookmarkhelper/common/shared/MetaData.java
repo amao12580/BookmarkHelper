@@ -11,6 +11,7 @@ package pro.kisscat.www.bookmarkhelper.common.shared;
 
 public final class MetaData {
     public static final String LOG_V_DEFAULT = "MONITOR";
+    public static final String LOG_W_DEFAULT = "WARN";
     public static final String LOG_E_DEFAULT = "EXCEPTION";
     public static final String LOG_E_FATAL = "FATAL";
     public static final String BOOKMARK_TITLE_DEFAULT = "UnNamed";
