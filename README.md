@@ -197,17 +197,14 @@ BookmarkHelper APP目前仅在[酷安网上架](http://www.coolapk.com/apk/pro.k
 #### [0.0.22版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.22%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.22.apk)
 1.增加兼容：支持从[一加内置QQ浏览器](https://github.com/amao12580/BookmarkHelper/blob/master/origin/resource/qq/%E4%B8%80%E5%8A%A0/%E6%B5%8F%E8%A7%88%E5%99%A8_2.1.4.apk)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-#### 0.0.23版 Draft
-1.增加兼容：支持从[X浏览器-pro](https://play.google.com/store/apps/details?id=com.mmbox.xbrowser.pro)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
+#### [0.0.23版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.23%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.23.apk)
+1.增加兼容：支持从[X浏览器-pro](https://apkpure.com/x-browser-super-fast-mini/com.mmbox.xbrowser.pro)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
+2.增加兼容：支持从[X浏览器-gp](https://apkpure.com/x-browser/com.mmbox.xbrowser.gp)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-com.mmbox.xbrowser.gp
+3.增加兼容：支持从[X浏览器-套壳](https://apkpure.com/fastest-mini-browser/com.mmbox.browser)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
-com.mmbox.xbrowser.pro
-
-com.mmbox.browser
-
-这X浏览器是要上天？
+加上0.0.5版，共适配了4款，这X浏览器是要上天？
 
 #### 0.0.24版 Draft
 1.增加兼容：支持从[欧朋浏览器经典版](https://github.com/amao12580/BookmarkHelper/blob/master/origin/resource/%E6%AC%A7%E6%9C%8B/com.oupeng.mini.classic-1.apk)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。

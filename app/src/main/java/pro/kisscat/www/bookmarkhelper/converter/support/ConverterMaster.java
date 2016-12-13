@@ -74,21 +74,28 @@ public class ConverterMaster {
             supportRule.add(new Rule(supportRule.size() + 1, context, new XWithProBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new XWithGooglePlayBrowser(), viaBrowserAble));
 
-            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Browser(), viaBrowserAble));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new BaiduBrowser(), viaBrowserAble));
 
             supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360Browser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new Qihoo360FastestBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new SogouBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new BaiduBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new H5Browser(), viaBrowserAble));
 
             supportRule.add(new Rule(supportRule.size() + 1, context, new LiebaoBrowser(), viaBrowserAble));
 
-            supportRule.add(new Rule(supportRule.size() + 1, context, new MiuiBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new YandexBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new QiyuBrowser(), viaBrowserAble));
-            supportRule.add(new Rule(supportRule.size() + 1, context, new H5Browser(), viaBrowserAble));
+            supportRule.add(new Rule(supportRule.size() + 1, context, new SogouBrowser(), viaBrowserAble));
+
             supportRule.add(new Rule(supportRule.size() + 1, context, new XingchenPhoneBrowser(), viaBrowserAble));
             supportRule.add(new Rule(supportRule.size() + 1, context, new XingchenTabletBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new YandexBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new QiyuBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new MiuiBrowser(), viaBrowserAble));
+
+            supportRule.add(new Rule(supportRule.size() + 1, context, new Flyme5Browser(), viaBrowserAble));
+
         }
     }
 }
