@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;

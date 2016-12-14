@@ -9,9 +9,9 @@ import java.util.List;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
-import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
+import pro.kisscat.www.bookmarkhelper.entry.command.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
-import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
+import pro.kisscat.www.bookmarkhelper.entry.file.File;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.root.RootUtil;
 

@@ -1,6 +1,6 @@
 package pro.kisscat.www.bookmarkhelper.util.file;
 
-import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
+import pro.kisscat.www.bookmarkhelper.entry.file.File;
 
 /**
  * Created with Android Studio.

@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import pro.kisscat.www.bookmarkhelper.BuildConfig;
 import pro.kisscat.www.bookmarkhelper.common.shared.MetaData;
 import pro.kisscat.www.bookmarkhelper.util.Path;
-import pro.kisscat.www.bookmarkhelper.util.log.pojo.LogEntry;
+import pro.kisscat.www.bookmarkhelper.entry.log.LogEntry;
 import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
 import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 

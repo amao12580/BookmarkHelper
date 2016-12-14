@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import lombok.Getter;
-import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
+import pro.kisscat.www.bookmarkhelper.entry.command.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.random.RandomUtil;

@@ -9,8 +9,8 @@ import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage1Browser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.impl.ViaStage2Browser;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.App;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.entry.app.App;
+import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 
 /**

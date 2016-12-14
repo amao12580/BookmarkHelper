@@ -8,10 +8,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.chrome.ChromeBookmark;
+import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
+import pro.kisscat.www.bookmarkhelper.pojo.converter.chrome.ChromeBookmark;
 import pro.kisscat.www.bookmarkhelper.util.file.FileUtil;
-import pro.kisscat.www.bookmarkhelper.util.file.pojo.File;
+import pro.kisscat.www.bookmarkhelper.entry.file.File;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 

@@ -3611,4 +3611,4 @@ Skipped unused resource res/layout/abc_action_bar_up_container.xml: 448 bytes (r
 Skipped unused resource res/layout/abc_action_bar_view_list_nav_layout.xml: 396 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_base.xml: 524 bytes (replaced with small dummy file of size 104 bytes)
 Skipped unused resource res/layout/popup_bubble.xml: 724 bytes (replaced with small dummy file of size 104 bytes)
-Resource shrinking did not work (grew from 1505198 to 1506458); using original instead
+Resource shrinking did not work (grew from 1505197 to 1506457); using original instead

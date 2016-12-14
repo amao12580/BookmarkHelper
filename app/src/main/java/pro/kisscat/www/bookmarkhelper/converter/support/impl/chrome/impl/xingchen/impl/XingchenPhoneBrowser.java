@@ -3,20 +3,17 @@ package pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingch
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 
-import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
 
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.chrome.impl.xingchen.XingchenBrowserAble;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
-import pro.kisscat.www.bookmarkhelper.util.storage.ExternalStorageUtil;
-import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 
 /**
  * Created with Android Studio.

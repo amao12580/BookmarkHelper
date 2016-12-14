@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.via.ViaBrowserAble;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;

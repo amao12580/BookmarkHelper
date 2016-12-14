@@ -157,10 +157,7 @@
 
 #-----------处理实体类---------------
 # 在开发的时候我们可以将所有的实体类放在一个包内，这样我们写一次混淆就行了。
--keep class pro.kisscat.www.bookmarkhelper.converter.support.pojo.** { *; }
--keep class pro.kisscat.www.bookmarkhelper.util.log.pojo.** { *; }
--keep class pro.kisscat.www.bookmarkhelper.util.command.pojo.** { *; }
--keep class pro.kisscat.www.bookmarkhelper.converter.support.executor.pojo.** { *; }
+-keep class pro.kisscat.www.bookmarkhelper.pojo.** { *; }
 
 
 #忽略警告

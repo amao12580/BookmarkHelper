@@ -33,7 +33,7 @@ import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XWithGooglePlayBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XWithMaskBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.impl.x.impl.XWithProBrowser;
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.rule.Rule;
+import pro.kisscat.www.bookmarkhelper.entry.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 
 /**

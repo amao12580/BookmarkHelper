@@ -211,6 +211,7 @@ android/support/annotation/CallSuper.class
 android/support/v4/media/MediaBrowserCompat$MediaBrowserServiceCallbackImpl.class
 android/support/annotation/DrawableRes.class
 android/support/v4/media/MediaMetadataCompat$BitmapKey.class
+pro/kisscat/www/bookmarkhelper/c/a/a.class
 android/support/v4/util/MapCollections.class
 android/support/v4/graphics/drawable/DrawableCompat.class
 android/support/multidex/ZipUtil$CentralDirectory.class
@@ -302,7 +303,6 @@ android/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChanged
 android/support/design/widget/DirectedAcyclicGraph.class
 android/support/v4/media/MediaMetadataCompat$1.class
 pro/kisscat/www/bookmarkhelper/activity/Html5Activity.class
-pro/kisscat/www/bookmarkhelper/converter/support/pojo/App.class
 android/support/v7/app/AlertDialog$Builder.class
 android/support/design/R.class
 android/support/design/widget/Snackbar$6.class
@@ -342,6 +342,7 @@ android/support/design/widget/ValueAnimatorCompat$Creator.class
 android/support/design/widget/HeaderBehavior.class
 android/support/v4/widget/EdgeEffectCompat.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
+pro/kisscat/www/bookmarkhelper/pojo/converter/via/ViaBookmark.class
 android/support/design/widget/TabLayout.class
 android/support/v7/widget/RecyclerView$OnItemTouchListener.class
 android/support/v4/media/session/PlaybackStateCompat.class
@@ -452,7 +453,6 @@ android/support/v7/widget/RecyclerView$ItemAnimator$ItemAnimatorFinishedListener
 android/support/v4/media/MediaBrowserCompat$MediaBrowserImplApi23.class
 android/support/v4/view/ViewCompat$KitKatViewCompatImpl.class
 android/support/v4/media/session/MediaSessionCompat$OnActiveChangeListener.class
-pro/kisscat/www/bookmarkhelper/converter/support/pojo/via/ViaBookmark.class
 android/support/v4/util/Pools.class
 android/support/design/widget/ViewGroupUtils.class
 android/support/design/widget/BottomSheetBehavior$BottomSheetCallback.class

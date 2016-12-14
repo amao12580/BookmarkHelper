@@ -4,7 +4,7 @@ import android.content.Context;
 
 import java.util.List;
 
-import pro.kisscat.www.bookmarkhelper.converter.support.pojo.Bookmark;
+import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
 
 /**
  * Created with Android Studio.

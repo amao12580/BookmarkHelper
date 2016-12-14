@@ -1,7 +1,7 @@
 package pro.kisscat.www.bookmarkhelper.util.root;
 
 import pro.kisscat.www.bookmarkhelper.util.command.CommandUtil;
-import pro.kisscat.www.bookmarkhelper.util.command.pojo.CommandResult;
+import pro.kisscat.www.bookmarkhelper.entry.command.CommandResult;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 
 /**
