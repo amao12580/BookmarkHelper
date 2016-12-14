@@ -10,6 +10,10 @@ BookmarkHelper APP目前仅在[酷安网上架](http://www.coolapk.com/apk/pro.k
 
 <a target="_blank" href="http://ww2.sinaimg.cn/mw690/becd6b85gw1f9oaniwbdig208e0dwu11.gif">使用教程Gif：5.8MB</a>
 
+## 精彩报道
+
+1.[书签助手，迈出换用 Via 浏览器的第一步 _ App+1 - 少数派](http://sspai.com/36385)
+
 ## 版本计划
 ### 0.0.X
 #### [0.0.1版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.1%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.1.apk)
