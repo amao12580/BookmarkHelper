@@ -9,7 +9,7 @@ package pro.kisscat.www.bookmarkhelper.entry.file;
  * Time:15:46
  */
 
-public enum Measure {
+enum Measure {
     BYTE, KB, MB, GB;
 
     @Override

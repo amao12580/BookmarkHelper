@@ -1,0 +1,7 @@
+#Wed Dec 14 16:33:44 CST 2016
+base.0=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ed10044c93824f0db7378e6518335b10de8fd39d
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_00428ffb90ed6918c970efe7e64355fecb0f11ab\\classes.dex
+base.1=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_00428ffb90ed6918c970efe7e64355fecb0f11ab
+file.0=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ed10044c93824f0db7378e6518335b10de8fd39d\\classes.dex
