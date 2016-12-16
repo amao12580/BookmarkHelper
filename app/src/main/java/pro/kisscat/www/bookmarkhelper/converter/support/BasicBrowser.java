@@ -196,4 +196,9 @@ public class BasicBrowser extends App implements BrowserAble {
     public String getPreExecuteConverterMessage() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "\"bookmarkSum\":" + bookmarkSum + ",\"installed\":" + installed + "," + super.toString(this.getPackageName());
+    }
 }

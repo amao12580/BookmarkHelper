@@ -96,6 +96,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
         handlePreExecuteMessage(rule);
         long s = System.currentTimeMillis();
         LogHelper.v(TAG, "开始执行合并，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
+        LogHelper.v(TAG, "rule detail info:" + rule.toString());
         Result result = processConverter(rule);
         LogHelper.v(TAG, "完成合并，耗时：" + (System.currentTimeMillis() - s) + "ms，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
         if (needFC) {

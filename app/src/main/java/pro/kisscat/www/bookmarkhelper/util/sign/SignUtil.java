@@ -61,14 +61,16 @@ public class SignUtil {
         MessageDigest sha256 = MessageDigest.getInstance("SHA256");
         byte[] b2 = sha256.digest(encodeByte);
         String signSHA256key = byte2HexFormatted(b2);
-        LogHelper.v("signName:" + cert.getSigAlgName());
-        LogHelper.v("pubKey:" + pubKey);
-        LogHelper.v("algorithm:" + algorithm);
-        LogHelper.v("signNumber:" + signNumber);
-        LogHelper.v("subjectDN:" + cert.getSubjectDN().toString());
-        LogHelper.v("signMD5key:" + signMD5key);
-        LogHelper.v("signSHA1key:" + signSHA1key);
-        LogHelper.v("signSHA256key:" + signSHA256key);
+        if (BuildConfig.DEBUG) {
+            LogHelper.v("signName:" + cert.getSigAlgName());
+            LogHelper.v("pubKey:" + pubKey);
+            LogHelper.v("algorithm:" + algorithm);
+            LogHelper.v("signNumber:" + signNumber);
+            LogHelper.v("subjectDN:" + cert.getSubjectDN().toString());
+            LogHelper.v("signMD5key:" + signMD5key);
+            LogHelper.v("signSHA1key:" + signSHA1key);
+            LogHelper.v("signSHA256key:" + signSHA256key);
+        }
         isAppCanUse = BuildConfig.DEBUG || (equalsMD5(signMD5key) && equalsSHA1(signSHA1key) && equalsSHA256(signSHA256key));
     }
 

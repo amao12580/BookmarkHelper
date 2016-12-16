@@ -61,4 +61,9 @@ public class Rule {
         this.source = source;
         this.target = target;
     }
+
+    @Override
+    public String toString() {
+        return "{\"id\":" + id + ",\"source\":{" + source.toString() + "},\"target\":{" + target.toString() + "},\"canUse\":" + canUse + "}";
+    }
 }

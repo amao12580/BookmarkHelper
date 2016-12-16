@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         if (rules == null) {
             rules = ConverterMaster.getSupportRule();
-            LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
         }
         Drawable drawable = ContextCompat.getDrawable(this, R.drawable.ic_arrow);
         for (Rule rule : rules) {
