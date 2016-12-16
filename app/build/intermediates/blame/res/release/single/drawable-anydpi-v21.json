@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.1.0\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.1.0\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    }
+]

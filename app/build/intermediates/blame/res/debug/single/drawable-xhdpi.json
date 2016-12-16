@@ -96,6 +96,10 @@
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xhdpi\\ic_x.png"
     },
     {
+        "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_oupeng_classic.png",
+        "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xhdpi\\ic_oupeng_classic.png"
+    },
+    {
         "merged": "D:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_xingchen_phone.png",
         "source": "D:\\GitHub\\BookmarkHelper\\app\\src\\main\\res\\drawable-xhdpi\\ic_xingchen_phone.png"
     },

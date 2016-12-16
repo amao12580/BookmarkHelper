@@ -21,6 +21,7 @@
     <string name="browser_name_show_firefox">Firefox Browser</string>
     <string name="browser_name_show_liebao">Liebao Browser</string>
     <string name="browser_name_show_oupeng">Oupeng Browser</string>
+    <string name="browser_name_show_oupeng_classic">Oupeng Classic Browser</string>
     <string name="browser_name_show_qq">QQ Browser</string>
     <string name="browser_name_show_qqwithoneplus">QQ OnePlus Browser</string>
     <string name="browser_name_show_baidu">Baidu Browser</string>

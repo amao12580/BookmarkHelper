@@ -23,6 +23,7 @@
     <string name="browser_name_show_sougou">搜狗浏览器</string>
     <string name="browser_name_show_baidu">百度浏览器</string>
     <string name="browser_name_show_oupeng">欧朋浏览器</string>
+    <string name="browser_name_show_oupeng_classic">欧朋经典版</string>
     <string name="browser_name_show_liebao">猎豹浏览器</string>
     <string name="browser_name_show_firefox">Firefox浏览器</string>
     <string name="browser_name_show_yandex">Yandex浏览器</string>

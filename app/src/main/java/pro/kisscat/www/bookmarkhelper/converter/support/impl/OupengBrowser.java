@@ -14,8 +14,8 @@ import lombok.Getter;
 import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.R;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
-import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
 import pro.kisscat.www.bookmarkhelper.database.SQLite.DBHelper;
+import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
 import pro.kisscat.www.bookmarkhelper.util.Path;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -112,9 +112,7 @@ public class OupengBrowser extends BasicBrowser {
             }
             cursor = sqLiteDatabase.query(false, tableName, columns, null, null, null, null, null, null);
             if (cursor != null && cursor.getCount() > 0) {
-                while (cursor.moveToNext()) {
-                    parseBookmarkWithFolder(cursor, result);
-                }
+                parseBookmarkWithFolder(cursor, result);
             }
         } finally {
             if (cursor != null) {

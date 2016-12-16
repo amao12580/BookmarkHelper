@@ -35,6 +35,15 @@
 # 这个过滤器是谷歌推荐的算法，一般不做更改
 -optimizations !code/simplification/cast,!field/*,!class/merging/*
 
+#把混淆类中的方法名也混淆了
+
+-useuniqueclassmembernames
+
+#优化时允许访问并修改有修饰符的类和类的成员
+
+-allowaccessmodification
+
+
 
 #############################################
 #
