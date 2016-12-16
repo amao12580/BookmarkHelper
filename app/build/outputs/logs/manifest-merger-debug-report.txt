@@ -59,9 +59,9 @@ MERGED from [com.android.support:support-compat:25.1.0] D:\GitHub\BookmarkHelper
 	android:windowNoTitle
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:21:9-37
 	android:fullBackupContent
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:15:9-42
 	android:allowBackup
-		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:14:9-36
 	android:icon
 		ADDED from D:\GitHub\BookmarkHelper\app\src\main\AndroidManifest.xml:16:9-43
 	android:theme

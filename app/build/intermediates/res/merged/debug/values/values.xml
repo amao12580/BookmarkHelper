@@ -659,6 +659,7 @@
     <string name="readBookmarksError">read bookmarks error.</string>
     <string name="search_menu_title">Search</string>
     <string name="someTaskIsRuning">wait for a coffer time.</string>
+    <string name="sourceValidationFailed">Apk source validation failed</string>
     <string name="source_browser_icon_contentDescription">source Browser</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="target_browser_icon_contentDescription">target Browser</string>

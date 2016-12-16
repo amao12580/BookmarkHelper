@@ -52,12 +52,12 @@ import pro.kisscat.www.bookmarkhelper.activity.QRCode.QRCodeActivity;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
 import pro.kisscat.www.bookmarkhelper.converter.support.ConverterMaster;
 import pro.kisscat.www.bookmarkhelper.converter.support.executor.ConverterAsyncTask;
-import pro.kisscat.www.bookmarkhelper.entry.executor.Params;
-import pro.kisscat.www.bookmarkhelper.pojo.executor.Result;
+import pro.kisscat.www.bookmarkhelper.entry.converter.Params;
 import pro.kisscat.www.bookmarkhelper.entry.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.exception.CrashHandler;
 import pro.kisscat.www.bookmarkhelper.exception.InitException;
 import pro.kisscat.www.bookmarkhelper.init.executor.InitAsyncTask;
+import pro.kisscat.www.bookmarkhelper.pojo.executor.Result;
 import pro.kisscat.www.bookmarkhelper.util.appList.AppListUtil;
 import pro.kisscat.www.bookmarkhelper.util.clipboard.ClipboardUtil;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
@@ -66,6 +66,7 @@ import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
 import pro.kisscat.www.bookmarkhelper.util.network.NetworkUtil;
 import pro.kisscat.www.bookmarkhelper.util.permission.PermissionUtil;
 import pro.kisscat.www.bookmarkhelper.util.progressBar.ProgressBarUtil;
+import pro.kisscat.www.bookmarkhelper.util.sign.SignUtil;
 
 @RuntimePermissions
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = getApplicationContext();
+        lv = (ListView) findViewById(R.id.listViewRules);
         if (savedInstanceState == null) {
             try {
                 CrashHandler handler = CrashHandler.getInstance();
@@ -105,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             rules = ConverterMaster.getSupportRule();
             LogHelper.v("executeRules:" + JsonUtil.toJson(rules), false);
         }
-        lv = (ListView) findViewById(R.id.listViewRules);
         Drawable drawable = ContextCompat.getDrawable(this, R.drawable.ic_arrow);
         for (Rule rule : rules) {
             Map<String, Object> map = new HashMap<>();
@@ -125,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         PermissionUtil.checkAndRequest(this);
         lv.setOnItemClickListener(this);
-        new InitAsyncTask(context).execute();
+        new InitAsyncTask(context).execute(new pro.kisscat.www.bookmarkhelper.entry.init.Params(initTaskMessage));
         try {
             Thread.sleep(50);
         } catch (InterruptedException e) {
@@ -140,6 +141,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (!SignUtil.isAppCanUse) {
+            LogHelper.e(context.getResources().getString(R.string.sourceValidationFailed));
+            return;
+        }
         adapter.setSelectItem(position, view);
         adapter.notifyDataSetInvalidated();
         try {
@@ -156,18 +161,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (!rule.getSource().isInstalled(this, rule.getSource())) {
                     AppListUtil.reInit(this);
                     if (!rule.getSource().isInstalled(this, rule.getSource())) {
-                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getSource().getName(), rule.getSource().getPackageName()));
+                        showDialogMessage(view.getContext(), ContextUtil.buildAppNotInstalledMessage(rule.getSource().getName(), rule.getSource().getPackageName()));
                         return;
                     }
                 }
                 if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
                     AppListUtil.reInit(this);
                     if (!rule.getTarget().isInstalled(this, rule.getTarget())) {
-                        showDialogMessage(ContextUtil.buildAppNotInstalledMessage(rule.getTarget().getName(), rule.getSource().getPackageName()));
+                        showDialogMessage(view.getContext(), ContextUtil.buildAppNotInstalledMessage(rule.getTarget().getName(), rule.getSource().getPackageName()));
                         return;
                     }
                 }
-                showDialogMessage(ContextUtil.buildRuleNotSupportedNowMessage());
+                showDialogMessage(view.getContext(), ContextUtil.buildRuleNotSupportedNowMessage());
                 return;
             }
             NumberProgressBar progressBar = (NumberProgressBar) view.findViewById(R.id.executeProgressesBar);
@@ -179,15 +184,38 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 progressBar.setProgress(0);
                 ProgressBarUtil progressBarUtil = new ProgressBarUtil(progressBar);
                 progressBarUtil.next();
-                new ConverterAsyncTask(progressBarUtil).execute(new Params(rule, converterTaskMessage));
+                currentConverterAsyncTask = new ConverterAsyncTask(progressBarUtil);
+                currentConverterAsyncTask.execute(new Params(rule, converterTaskMessage));
             } else {
                 Toast.makeText(view.getContext(), view.getResources().getString(R.string.someTaskIsRuning), Toast.LENGTH_SHORT).show();
             }
         } catch (InitException e) {
-            showDialogMessage(e.getMessage());
+            showDialogMessage(view.getContext(), e.getMessage());
             e.printStackTrace();
         }
     }
+
+    private ConverterAsyncTask currentConverterAsyncTask;
+
+    @SuppressLint("HandlerLeak")
+    private Handler initTaskMessage = new Handler() {
+        public void handleMessage(Message msg) {
+            Bundle data = msg.peekData();
+            if (data == null) {
+                finish();
+            }
+            if (!data.containsKey("message") || data.get("message") == null) {
+                finish();
+            }
+            String resultStr = data.get("message").toString();
+            if (msg.what == 10) {
+                if (currentConverterAsyncTask != null) {
+                    currentConverterAsyncTask.setNeedFC(true);
+                }
+                showSimpleDialog(lv.getContext(), resultStr, true);
+            }
+        }
+    };
 
     @SuppressLint("HandlerLeak")
     private Handler converterTaskMessage = new Handler() {
@@ -217,13 +245,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             } else if (msg.what == 1) {//dialog
                 if (result.getErrorMsg() != null) {
-                    showDialogMessage(result.getErrorMsg());
+                    showDialogMessage(lv.getContext(), result.getErrorMsg());
                 }
                 if (result.getWarnMsg() != null) {
-                    showDialogMessage(result.getWarnMsg());
+                    showDialogMessage(lv.getContext(), result.getWarnMsg());
                 }
                 if (result.getSuccessMsg() != null) {
-                    showDialogMessage(result.getSuccessMsg());
+                    showDialogMessage(lv.getContext(), result.getSuccessMsg());
                 }
             } else {
                 LogHelper.v("skip msg.what：" + msg.what);
@@ -235,8 +263,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter.setCurrentClickItemEnabled(isEnable);
     }
 
-    private void showDialogMessage(String message) {
-        showSimpleDialog(message);
+    private void showDialogMessage(Context context, String message) {
+        showSimpleDialog(context, message);
     }
 
     private final static BaseAnimatorSet bas_in = new FlipVerticalSwingEnter();
@@ -247,17 +275,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     /**
      * http://www.jianshu.com/p/f4d3a20d281c
      */
-    private void showSimpleDialog(String message) {
+    private NormalDialog showSimpleDialog(Context context, String message) {
+        return showSimpleDialog(context, message, false);
+    }
+
+    private NormalDialog showSimpleDialog(Context context, String message, final boolean needFC) {
         if (dialog_default_button_ok == null) {
-            dialog_default_button_ok = lv.getResources().getString(R.string.dialogButtonOk);
+            dialog_default_button_ok = context.getResources().getString(R.string.dialogButtonOk);
         }
         if (dialog_default_title == null) {
-            dialog_default_title = lv.getResources().getString(R.string.dialogTitle);
+            dialog_default_title = context.getResources().getString(R.string.dialogTitle);
         }
         if (dialog_button_ok_color == null) {
             dialog_button_ok_color = ContextCompat.getColor(context, R.color.colorDialogButtonOk);
         }
-        final NormalDialog dialog = new NormalDialog(lv.getContext());
+        final NormalDialog dialog = new NormalDialog(context);
         dialog.isTitleShow(true)
                 .title(dialog_default_title)
                 .content(message)
@@ -267,6 +299,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 .showAnim(bas_in)
                 .dismissAnim(bas_out)
                 .show();
+        if (needFC) {
+            dialog.autoDismiss(true);
+            dialog.autoDismissDelay(1200);
+        }
         dialog.setOnBtnClickL(new OnBtnClickL() {
             @Override
             public void onBtnClick() {
@@ -276,9 +312,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                setCurrentClickItemEnabled(true);
+                if (needFC) {
+                    finish();
+                } else {
+                    setCurrentClickItemEnabled(true);
+                }
             }
         });
+        return dialog;
     }
 
     private void showToastMessage(Context context, String message) {

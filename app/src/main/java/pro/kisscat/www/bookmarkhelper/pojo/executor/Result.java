@@ -36,4 +36,9 @@ public class Result {
     public Result(String warnMsg) {
         this.warnMsg = warnMsg;
     }
+
+    public Result(boolean isComplete, String errorMsg) {
+        this.isComplete = isComplete;
+        this.errorMsg = errorMsg;
+    }
 }

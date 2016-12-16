@@ -7,12 +7,13 @@ import android.os.Message;
 
 import java.util.List;
 
+import lombok.Setter;
 import pro.kisscat.www.bookmarkhelper.converter.support.BasicBrowser;
-import pro.kisscat.www.bookmarkhelper.entry.executor.Params;
-import pro.kisscat.www.bookmarkhelper.pojo.executor.Result;
 import pro.kisscat.www.bookmarkhelper.entry.app.Bookmark;
+import pro.kisscat.www.bookmarkhelper.entry.converter.Params;
 import pro.kisscat.www.bookmarkhelper.entry.rule.Rule;
 import pro.kisscat.www.bookmarkhelper.exception.ConverterException;
+import pro.kisscat.www.bookmarkhelper.pojo.executor.Result;
 import pro.kisscat.www.bookmarkhelper.util.context.ContextUtil;
 import pro.kisscat.www.bookmarkhelper.util.json.JsonUtil;
 import pro.kisscat.www.bookmarkhelper.util.log.LogHelper;
@@ -33,6 +34,9 @@ import pro.kisscat.www.bookmarkhelper.util.storage.InternalStorageUtil;
 public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
     private static final String TAG = "ConverterAsyncTask";
     private ProgressBarUtil progressBarUtil;
+    @Setter
+    private boolean needFC = false;
+    private static final Result fcResult = new Result(true, "force close task.");
     private Handler handler;
 
     public ConverterAsyncTask(ProgressBarUtil progressBarUtil) {
@@ -41,6 +45,9 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
 
     @Override
     protected void onProgressUpdate(Void... values) {
+        if (needFC) {
+            this.cancel(true);
+        }
         progressBarUtil.next();
     }
 
@@ -64,25 +71,36 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
         handleMessage(1, msg);
     }
 
-    private void handleMessage(int whhat, String msg) {
-        Message message = new Message();
-        message.what = whhat;
-        Bundle bundle = new Bundle();
-        bundle.putString("result", msg);
-        message.setData(bundle);
-        handler.sendMessage(message);
+    private void handleMessage(int what, String msg) {
+        if (handler != null) {
+            Message message = new Message();
+            message.what = what;
+            Bundle bundle = new Bundle();
+            bundle.putString("result", msg);
+            message.setData(bundle);
+            handler.sendMessage(message);
+        }
     }
 
     @Override
     protected Result doInBackground(Params... params) {
+        if (needFC) {
+            return fcResult;
+        }
         Params param = params[0];
         handler = param.getHandler();
         Rule rule = param.getRule();
+        if (needFC) {
+            return fcResult;
+        }
         handlePreExecuteMessage(rule);
         long s = System.currentTimeMillis();
         LogHelper.v(TAG, "开始执行合并，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
         Result result = processConverter(rule);
         LogHelper.v(TAG, "完成合并，耗时：" + (System.currentTimeMillis() - s) + "ms，规则是:" + rule.getSource().getName() + "----------->" + rule.getTarget().getName());
+        if (needFC) {
+            return fcResult;
+        }
         return result;
     }
 
@@ -95,7 +113,7 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
     }
 
     private void handleExecuteRunningMessage() {
-        handleToastMessage(new Result("正在合并，约需5秒钟，请等待."));
+        handleToastMessage(new Result("正在合并，约需30秒，请等待."));
     }
 
     private void handleExecuteCompleteMessage() {
@@ -116,6 +134,9 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
         long end = -1;
         int ret = -1;
         try {
+            if (needFC) {
+                return fcResult;
+            }
             handleUpgradeRootPermissionMessage();
             boolean isRoot = RootUtil.upgradeRootPermission();
             if (!isRoot) {
@@ -124,6 +145,9 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
                 LogHelper.v(errorUpgrade);
                 return result;
             } else {
+                if (needFC) {
+                    return fcResult;
+                }
                 publishProgress();
                 LogHelper.v("成功获取了Root权限.");
             }
@@ -132,16 +156,25 @@ public class ConverterAsyncTask extends AsyncTask<Params, Void, Result> {
                 result.setErrorMsg(ContextUtil.getSystemNotReadOrWriteable());
                 return result;
             }
+            if (needFC) {
+                return fcResult;
+            }
             publishProgress();
             if (!ExternalStorageUtil.remountSDCardDir()) {
                 result.setErrorMsg(ContextUtil.getSDCardNotReadOrWriteable());
                 return result;
+            }
+            if (needFC) {
+                return fcResult;
             }
             publishProgress();
             handleExecuteRunningMessage();
             start = System.currentTimeMillis();
             ret = execute(rule);
             end = System.currentTimeMillis();
+            if (needFC) {
+                return fcResult;
+            }
             publishProgress();
             handleExecuteCompleteMessage();
         } catch (ConverterException e) {

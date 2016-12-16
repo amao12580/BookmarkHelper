@@ -65,4 +65,5 @@
     <string name="opeartionTooFast">Too fastest.</string>
     <string name="networkSlowestNotice">Network is limit access.</string>
     <string name="packageNameDesc">package name</string>
+    <string name="sourceValidationFailed">Apk source validation failed</string>
 </resources>

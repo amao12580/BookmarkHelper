@@ -56,7 +56,7 @@
     <string name="networkSlowestNotice">正在Github(国外)网站，响应时间可能较长，请自备爬墙软件。\n\n您也可以打开浏览器访问，网址已经复制。</string>
     <string name="notPermissionForReadInstalledAppList">没有权限读取已安装的应用.</string>
     <string name="notSupport">暂未支持.</string>
-    <string name="notSupportParseHomepageBookmarks">暂不支持读取UC首页书签，无法解密.</string>
+    <string name="notSupportParseHomepageBookmarks">暂不支持读取【首页】书签，无法解密.</string>
     <string name="opeartionTooFast">点这么快会被肛的.</string>
     <string name="packageNameDesc">包名</string>
     <string name="rating">五星好评</string>
@@ -64,6 +64,7 @@
     <string name="readBookmarksEmpty">没有读取到书签信息.</string>
     <string name="readBookmarksError">读取书签信息失败.</string>
     <string name="someTaskIsRuning">书签合并任务正在执行.</string>
+    <string name="sourceValidationFailed">无效的APK，可能是盗版软件，请卸载后在【酷市场】获取最新版本.</string>
     <string name="source_browser_icon_contentDescription">来源浏览器</string>
     <string name="target_browser_icon_contentDescription">目标浏览器</string>
     <string name="viaBookmarksFileMiss">还未初始化，请最少打开一次.</string>
