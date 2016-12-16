@@ -80,9 +80,9 @@ public final class R {
 		public static final int logo = 0x7f01000a;
 		public static final int max = 0x7f0100e4;
 		public static final int navigationMode = 0x7f010004;
-		public static final int numberProgressBarStyle = 0x7f01012e;
-		public static final int paddingEnd = 0x7f010141;
-		public static final int paddingStart = 0x7f010140;
+		public static final int numberProgressBarStyle = 0x7f010131;
+		public static final int paddingEnd = 0x7f010144;
+		public static final int paddingStart = 0x7f010143;
 		public static final int panelMenuListTheme = 0x7f010080;
 		public static final int panelMenuListWidth = 0x7f01007f;
 		public static final int popupMenuStyle = 0x7f01006c;
@@ -414,9 +414,9 @@ public final class R {
 		public static final int[] Spinner = { 0x010100b2, 0x01010176, 0x0101017b, 0x01010262, 0x7f01001d };
 		public static final int Spinner_android_dropDownWidth = 3;
 		public static final int Spinner_android_popupBackground = 1;
-		public static final int[] Themes = { 0x7f01012e };
+		public static final int[] Themes = { 0x7f010131 };
 		public static final int Themes_numberProgressBarStyle = 0;
-		public static final int[] View = { 0x01010000, 0x010100da, 0x7f010140, 0x7f010141, 0x7f010142 };
+		public static final int[] View = { 0x01010000, 0x010100da, 0x7f010143, 0x7f010144, 0x7f010145 };
 		public static final int View_android_focusable = 1;
 		public static final int View_paddingEnd = 3;
 		public static final int View_paddingStart = 2;

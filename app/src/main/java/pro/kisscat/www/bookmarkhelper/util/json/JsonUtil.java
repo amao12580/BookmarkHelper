@@ -22,9 +22,12 @@ public class JsonUtil {
      * @return 返回json字符串
      */
     public static <T> String toJson(T src) {
+        return toJson(src, false);
+    }
 
+    public static <T> String toJson(T src, boolean prettyFormat) {
         try {
-            return src instanceof String ? (String) src : JSON.toJSONString(src);
+            return src instanceof String ? (String) src : JSON.toJSONString(src, prettyFormat);
         } catch (Exception e) {
             e.printStackTrace();
         }

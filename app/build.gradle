@@ -98,6 +98,7 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.google.zxing:core:3.3.0'
     compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
 }
 
 //Android + Git，发布自动版本号方案：http://www.race604.com/android-auto-version/

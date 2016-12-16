@@ -122,6 +122,7 @@ MERGED from [com.android.support:support-core-ui:25.1.0] D:\GitHub\BookmarkHelpe
 MERGED from [com.android.support:support-core-utils:25.1.0] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.1.0] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\AndroidManifest.xml:21:5-23:58
 MERGED from [com.daimajia.numberprogressbar:library:1.2] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.daimajia.numberprogressbar\library\1.2\AndroidManifest.xml:7:5-9:41
+MERGED from [se.emilsjolander:stickylistheaders:2.7.0] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\se.emilsjolander\stickylistheaders\2.7.0\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.1.0] D:\GitHub\BookmarkHelper\app\build\intermediates\exploded-aar\com.android.support\design\25.1.0\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
