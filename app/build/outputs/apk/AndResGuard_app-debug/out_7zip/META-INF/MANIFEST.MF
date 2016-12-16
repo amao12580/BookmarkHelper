@@ -1064,7 +1064,7 @@ Name: r/z/x.xml
 SHA1-Digest: HgJSSz+ps+EElAfQZy/K5BIqNKY=
 
 Name: AndroidManifest.xml
-SHA1-Digest: U+mtzDR8QJ/mQ104apIelOVZn5Q=
+SHA1-Digest: fHmFETfjAQi25yHsyPGBS/JN7VM=
 
 Name: r/i/d4.9.png
 SHA1-Digest: ralFi/xjLzZzimSmlAGCFAUgfbE=

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Dec 16 15:24:59 CST 2016
+#Fri Dec 16 15:26:23 CST 2016
 2185.file=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\proguard\\release\\jars\\3\\1f\\main.jar\\android\\support\\v7\\widget\\OrientationHelper$1.class
 1425.base=D\:\\GitHub\\BookmarkHelper\\app\\build\\intermediates\\transforms\\proguard\\release\\jars\\3\\1f\\main.jar
 2716.set=JAVA_RESOURCE

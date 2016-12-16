@@ -212,7 +212,7 @@ BookmarkHelper APP目前仅在[酷安网上架](http://www.coolapk.com/apk/pro.k
 
 加上[0.0.5版](https://github.com/amao12580/BookmarkHelper#005版-release)，共适配了4款X浏览器，这X浏览器是要上天？
 
-#### 0.0.24版 Draft
+#### [0.0.24版 Release](https://github.com/amao12580/BookmarkHelper/raw/master/origin/release/0.0.24%E7%89%88/pro.kisscat.www.bookmarkhelper_0.0.24.apk)
 1.增加兼容：支持从[欧朋浏览器经典版](https://github.com/amao12580/BookmarkHelper/blob/master/origin/resource/%E6%AC%A7%E6%9C%8B/com.oupeng.mini.classic-1.apk)提取书签，追加到[Via浏览器](http://www.coolapk.com/apk/mark.via)。
 
 com.oupeng.mini.classic

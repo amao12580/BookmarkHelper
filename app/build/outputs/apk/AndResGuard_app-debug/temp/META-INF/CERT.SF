@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 X-Android-APK-Signed: 2
-SHA1-Digest-Manifest: GAJngFRs8UkymLymsipB9OyIX5o=
+SHA1-Digest-Manifest: 9uabHHpU3+h0GSdmN1h2x1X3ibA=
 Created-By: 1.0 (Android)
 
 Name: res/anim/design_snackbar_in.xml
@@ -1119,7 +1119,7 @@ Name: res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png
 SHA1-Digest: WYYEXP9zXPHmkO70T8BA20aSj+U=
 
 Name: AndroidManifest.xml
-SHA1-Digest: U+mtzDR8QJ/mQ104apIelOVZn5Q=
+SHA1-Digest: fHmFETfjAQi25yHsyPGBS/JN7VM=
 
 Name: res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
 SHA1-Digest: cK/LCW7Y07tXQ8e5BdotU64US0I=
