@@ -270,12 +270,17 @@ com.oupeng.mini.classic
 
 ### Feature
 
-1.导出为文件
+#### import
 
-可能是sqlite3
+导出为文件，可能是sqlite3
 
-2.从文件导入
+#### export
 
+从文件导入
+
+#### auto
+
+记忆用户书签迁移的源浏览器和目标浏览器，并定期自动同步。
 
 
 ### Issue
